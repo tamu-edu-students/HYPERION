@@ -1,0 +1,174 @@
+VO_V120		
+BEGIN WinFonts
+    Font		 "Consolas,10,700,0"
+    Font		 "Consolas,12,700,0"
+    Font		 "Consolas,14,700,0"
+END
+HideCursor		 No
+IsShowingModels		 Yes
+RelativeModelScale		 1
+AbsoluteModelScale		 100
+IsUsingDetailThresholds		 Yes
+DetailLevel0		 70000
+DetailLevel1		 140000
+DetailLevel2		 28000000
+DetailLevel3		 56000000
+DisableDefKbdActions		 No
+DisableViewErrMsgs		 No
+KMLListView		 0
+UseModelShaders		 Yes
+ChunkTerrainTextureCacheSizeMb		 128
+ChunkTerrainCacheSizeMb		 64
+ReadAllNeededTextures		 No
+UseStoredViewTime		 Yes
+UseStoredViewImageSets		 No
+UseSmoothTransitions		 No
+RunStoredViewConFile		 No
+MaintainViewTimeOrder		 Yes
+DefaultBingServerName		 virtualearth.net
+BingServerName		 virtualearth.net
+
+BEGIN DefaultViewAngles
+    AIRCRAFT		 0 30
+    AREATARGET		 0 90
+    FACILITY		 0 30
+    GROUNDVEHICLE		 0 30
+    LAUNCHVEHICLE		 0 30
+    MISSILE		 0 30
+    PLACE		 0 90
+    PLANET		 0 0
+    SATELLITE		 0 0
+    SENSOR		 0 0
+    SHIP		 0 30
+    TARGET		 0 90
+END DefaultViewAngles
+
+BEGIN EditData
+    AxisScale		 20
+    PointScale		 5
+    Linewidth		 1
+    LineStyle		 0
+    ColorRGB		 1 1 0
+    AllowNegativeAlt		 No
+    EnableDropLines		 Yes
+END EditData
+
+BEGIN DefaultRefCrdnData
+    BEGIN Point
+        BEGIN CentralBodyCrdns
+        END
+    END
+    BEGIN Direction
+    END
+    BEGIN Untethered
+    END
+END DefaultRefCrdnData
+
+BEGIN DefaultRefSystemData
+    BEGIN Point
+    END
+    BEGIN Direction
+    END
+    BEGIN Untethered
+    END
+END DefaultRefSystemData
+
+BEGIN ViewPathManager
+    EnableLighting		 Yes
+    ShowCameraObj		 Yes
+    ShowKeyframeCtrlPts		 Yes
+    KeyframeCtrlPtColor		 #ffffff
+    KeyframeCtrlPtSize		 10
+    ShowKeyframeOrientVecs		 No
+    KeyframeOrientVecSize		 50
+    ShowNonKeyframeCtrlPts		 Yes
+    NonKeyframeCtrlPtColor		 #ffff00
+    NonKeyframeCtrlPtSize		 8
+    RippleTimeChanges		 Yes
+    OptimizeWhileEditing		 Yes
+END ViewPathManager
+TextAntialias		 No
+TextShadowStyle		 Dark
+TextShadowColor		 #000000
+
+SurfaceLineType		 OnTerrainWhenTrnSvrEnabled
+SurfaceLineFadeFactor		 1
+CompToolsDontRender		 Yes
+
+BEGIN Async3dPickOptions
+    SpecialKeysIgnore		 No
+END Async3dPickOptions
+_AGI_PIBEGINTYPEMGR3DINPDEVMODE
+END
+EarthShapeModel		 "WGS84"
+BEGIN View
+    ViewName		 HomeView
+    ViewTime		 -86400
+    ViewUpdateDelta		 10
+    CentralBody		 Earth
+    BEGIN ViewCrdnAxes
+        BEGIN AXES
+            Type		 AXES_LINKTO
+            Name		 Inertial
+            AbsolutePath		 CentralBody/Earth
+        END AXES
+    END
+    BEGIN FromViewCrdnPoint
+        BEGIN POINT
+            Type		 POINT_LINKTO
+            Name		 Center
+            AbsolutePath		 CentralBody/Earth
+        END POINT
+    END
+    BEGIN ToViewCrdnPoint
+        BEGIN POINT
+            Type		 POINT_LINKTO
+            Name		 Center
+            AbsolutePath		 CentralBody/Earth
+        END POINT
+    END
+    fov		 0.7853981633974483
+    FarNearPlaneDistanceRatio		 1000
+    NearPlaneDistance		 1
+    FarPlaneDistance		 10000000000
+    PanOnCentralBodies		 Yes
+    UseArcBallRotateSpeedOpt		 No
+    ArcBallRotateSpeed		 0
+    ArcBallRadius		 0.9
+    ArcBallRotateMode		 From
+    ZoomSpeed		 0
+    ZoomUseDistanceToCb		 Yes
+    GlobeDetailLevel		 1
+    UseLayer		 Yes
+    FromName		 "Earth"
+    FromRegPosAttView		 "Point"
+    FromPosition		 -2.2976826566766988e+07 -2.6507631854646560e+07  0.0000000000000000e+00
+    FromOffset		  0.0000000000000000e+00  0.0000000000000000e+00  0.0000000000000000e+00
+    FromOffsetLLR		  0.0000000000000000e+00 -2.2849634053883978e+00  3.5079753500000000e+07
+    ToName		 "Earth"
+    ToRegPosAttView		 "Point"
+    ToPosition		  0.0000000000000000e+00  0.0000000000000000e+00  0.0000000000000000e+00
+    ToOffset		  0.0000000000000000e+00  0.0000000000000000e+00  0.0000000000000000e+00
+    ToOffsetLLR		  0.0000000000000000e+00  0.0000000000000000e+00  0.0000000000000000e+00
+    ConstantDistanceType		 None
+    ConstantDistanceValue		 1
+    UpVector		  0.0000000000000000e+00  0.0000000000000000e+00  0.0000000000000000e+00
+    ViewRad		  3.5079753500000000e+07
+    ViewQuat		  9.0966704239117913e-01  0.0000000000000000e+00  0.0000000000000000e+00  4.1533826212773223e-01
+    ViewCoordSystem		 From
+    ViewFromToMode		 FromTo
+    ViewToCBIMtx		  0.0000000000000000e+00  0.0000000000000000e+00  0.0000000000000000e+00  0.0000000000000000e+00  0.0000000000000000e+00  0.0000000000000000e+00  0.0000000000000000e+00  0.0000000000000000e+00  0.0000000000000000e+00
+    UseUpAxis		 Yes
+    UpAxisType		 Z
+    UserDefinedUpAxis		  0.0000000000000000e+00  0.0000000000000000e+00  1.0000000000000000e+00
+    OverUpAxis		 No
+    LockInViewDir		 No
+    NoZoom		 No
+    NoPan		 No
+    MinAngleToUpAxis		  8.7266462599716477e-03
+    InitUpAxisUp		 Yes
+    TempUpAxisUp		 Yes
+    CrossAxis		  1.0000000000000000e+00  0.0000000000000000e+00  0.0000000000000000e+00
+    DefaultOffset		  3.5079753500000000e+07
+    BaseDefaultOffset		  6.3781370000000000e+06
+END View

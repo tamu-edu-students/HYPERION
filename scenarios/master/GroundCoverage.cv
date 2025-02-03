@@ -1,0 +1,250 @@
+stk.v.12.0
+WrittenBy    STK_v12.9.0
+
+BEGIN CoverageDefinition
+
+    Name		 GroundCoverage
+
+    BEGIN GridDefinition
+
+        VersionIndicator		 20080103
+        BEGIN LatitudeBounds
+            MinLatitude		 -90
+            MaxLatitude		 90
+        END LatitudeBounds
+        LatResolution		  1.0000000000000000e+01
+        LonResolution		  1.0000000000000000e+01
+        UsePolarRegions		 Yes
+        GridClass		 Target
+        PointLocationMethod		 EqualArea
+        CustomPtAltMethod		 ValueFromFile
+        CentralBody		 Earth
+        GroundAltMethod		 UseAltType
+        GroundAlt		 0
+        AltitudeMethod		 Altitude
+        BEGIN AltitudeList
+            0.000000
+        END AltitudeList
+
+    END GridDefinition
+
+    BEGIN AccessDefinition
+
+        DataRetention		 AllData
+        Convergence		 0.005
+        AbsValueConvergence		 1e-14
+        RelValueConvergence		 1e-08
+        MaxTimeStep		 360
+        MinTimeStep		 0.01
+        UseLightTimeDelay		 No
+        TimeSense		 PerAsset
+        DetectEventsUsingSamplesOnly		 No
+        LastRequestedToBeComputedInParallel		 No
+        AutoRecompute		 No
+        UseAllAssetAccess		 No
+        AssetSatisType		 AtLeast
+        AssetSatisThreshold		 1
+        AccessSaveMode		 SaveWith
+        RegionAccessAccel		 Auto
+
+    END AccessDefinition
+
+    BEGIN AssetList
+
+        SatelliteCollection/HYPERION/Subset/AllLEOSWIR_Sensors		 Active
+        Required		 No
+        UseConstConstraints		 No
+        BEGIN SubAssets
+            LEO_P1_S1.Sensor.LEOSWIR		 Active
+            Required		 No
+            LEO_P1_S2.Sensor.LEOSWIR		 Active
+            Required		 No
+            LEO_P1_S3.Sensor.LEOSWIR		 Active
+            Required		 No
+            LEO_P1_S4.Sensor.LEOSWIR		 Active
+            Required		 No
+            LEO_P1_S5.Sensor.LEOSWIR		 Active
+            Required		 No
+            LEO_P1_S6.Sensor.LEOSWIR		 Active
+            Required		 No
+            LEO_P2_S1.Sensor.LEOSWIR		 Active
+            Required		 No
+            LEO_P2_S2.Sensor.LEOSWIR		 Active
+            Required		 No
+            LEO_P2_S3.Sensor.LEOSWIR		 Active
+            Required		 No
+            LEO_P2_S4.Sensor.LEOSWIR		 Active
+            Required		 No
+            LEO_P2_S5.Sensor.LEOSWIR		 Active
+            Required		 No
+            LEO_P2_S6.Sensor.LEOSWIR		 Active
+            Required		 No
+            LEO_P3_S1.Sensor.LEOSWIR		 Active
+            Required		 No
+            LEO_P3_S2.Sensor.LEOSWIR		 Active
+            Required		 No
+            LEO_P3_S3.Sensor.LEOSWIR		 Active
+            Required		 No
+            LEO_P3_S4.Sensor.LEOSWIR		 Active
+            Required		 No
+            LEO_P3_S5.Sensor.LEOSWIR		 Active
+            Required		 No
+            LEO_P3_S6.Sensor.LEOSWIR		 Active
+            Required		 No
+            LEO_P4_S1.Sensor.LEOSWIR		 Active
+            Required		 No
+            LEO_P4_S2.Sensor.LEOSWIR		 Active
+            Required		 No
+            LEO_P4_S3.Sensor.LEOSWIR		 Active
+            Required		 No
+            LEO_P4_S4.Sensor.LEOSWIR		 Active
+            Required		 No
+            LEO_P4_S5.Sensor.LEOSWIR		 Active
+            Required		 No
+            LEO_P4_S6.Sensor.LEOSWIR		 Active
+            Required		 No
+            LEO_P5_S1.Sensor.LEOSWIR		 Active
+            Required		 No
+            LEO_P5_S2.Sensor.LEOSWIR		 Active
+            Required		 No
+            LEO_P5_S3.Sensor.LEOSWIR		 Active
+            Required		 No
+            LEO_P5_S4.Sensor.LEOSWIR		 Active
+            Required		 No
+            LEO_P5_S5.Sensor.LEOSWIR		 Active
+            Required		 No
+            LEO_P5_S6.Sensor.LEOSWIR		 Active
+            Required		 No
+            LEO_Equatorial_P1_S1.Sensor.LEOSWIR		 Active
+            Required		 No
+            LEO_Equatorial_P1_S2.Sensor.LEOSWIR		 Active
+            Required		 No
+        END SubAssets
+        SatelliteCollection/HYPERION/Subset/AllMEOSWIR_Sensors		 Active
+        Required		 No
+        UseConstConstraints		 No
+        BEGIN SubAssets
+            MEO_P1_S1.Sensor.MEOSWIR		 Active
+            Required		 No
+            MEO_P1_S2.Sensor.MEOSWIR		 Active
+            Required		 No
+            MEO_P1_S3.Sensor.MEOSWIR		 Active
+            Required		 No
+            MEO_P2_S1.Sensor.MEOSWIR		 Active
+            Required		 No
+            MEO_P2_S2.Sensor.MEOSWIR		 Active
+            Required		 No
+            MEO_P2_S3.Sensor.MEOSWIR		 Active
+            Required		 No
+            MEO_P3_S1.Sensor.MEOSWIR		 Active
+            Required		 No
+            MEO_P3_S2.Sensor.MEOSWIR		 Active
+            Required		 No
+            MEO_P3_S3.Sensor.MEOSWIR		 Active
+            Required		 No
+            MEO_P4_S1.Sensor.MEOSWIR		 Active
+            Required		 No
+            MEO_P4_S2.Sensor.MEOSWIR		 Active
+            Required		 No
+            MEO_P4_S3.Sensor.MEOSWIR		 Active
+            Required		 No
+            MEO_P5_S1.Sensor.MEOSWIR		 Active
+            Required		 No
+            MEO_P5_S2.Sensor.MEOSWIR		 Active
+            Required		 No
+            MEO_P5_S3.Sensor.MEOSWIR		 Active
+            Required		 No
+            MEO_P6_S1.Sensor.MEOSWIR		 Active
+            Required		 No
+            MEO_P6_S2.Sensor.MEOSWIR		 Active
+            Required		 No
+            MEO_P6_S3.Sensor.MEOSWIR		 Active
+            Required		 No
+            MEO_P7_S1.Sensor.MEOSWIR		 Active
+            Required		 No
+            MEO_P7_S2.Sensor.MEOSWIR		 Active
+            Required		 No
+            MEO_P7_S3.Sensor.MEOSWIR		 Active
+            Required		 No
+        END SubAssets
+
+    END AssetList
+
+    BEGIN Interval
+
+        AccStart		 10 Nov 2024 18:00:00.000000000
+        AccStop		 11 Nov 2024 18:00:00.000000000
+        UseScenarioInterval		 No
+        AccIntervalPtr		
+        BEGIN EVENTINTERVAL
+            EventInterval		
+            BEGIN EVENTINTERVAL
+                Type		 EVENTINTERVAL_LINKTO
+                Name		 AnalysisInterval
+                AbsolutePath		 Scenario
+            END EVENTINTERVAL
+            IntervalState		 Implicit
+        END EVENTINTERVAL
+
+
+    END Interval
+
+    BEGIN Extensions
+
+        BEGIN ExternData
+        END ExternData
+
+        BEGIN ADFFileData
+        END ADFFileData
+
+        BEGIN Desc
+        END Desc
+
+        BEGIN Crdn
+        END Crdn
+
+        BEGIN Graphics
+
+            BEGIN Attributes
+
+                GridMarkerStyle		 1
+                GridColor		 #ff00ff
+                ProgressColor		 #0000ff
+                SatisfactionColor		 #ffff00
+                GridTranslucency		 0.5
+                SatisfactionTranslucency		 0.7000000000000001
+
+            END Attributes
+
+            BEGIN Graphics
+
+                Show		 No
+                ShowGrid		 Yes
+                ShowRegions		 No
+                ShowRegionsText		 No
+                ShowPoints		 Yes
+                FillPoints		 No
+                ShowProgress		 Yes
+                ShowSatisfaction		 No
+
+            END Graphics
+        END Graphics
+
+        BEGIN VO
+        END VO
+
+    END Extensions
+
+    BEGIN SubObjects
+
+        Class FigureOfMerit
+
+            AvgRevisit		
+            MaxRevisit		
+
+        END Class
+
+    END SubObjects
+
+END CoverageDefinition
+

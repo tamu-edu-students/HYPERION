@@ -1,0 +1,1347 @@
+(11/12/2024 9:48:39 AM) 
+(11/12/2024 9:48:39 AM) --- 11/12/2024 9:48:39 AM
+(11/12/2024 9:48:39 AM) --- Starting Analyzer: 12.9.1
+(11/12/2024 9:48:39 AM) 
+(11/12/2024 9:48:39 AM) Model Directory: C:\Users\brigh\TAMU Programming\Fall 2024\Aero 401\HYPERION\MEO
+(11/12/2024 9:48:39 AM) Retrieved Custom Script Variables: 
+(11/12/2024 9:48:39 AM) Running Macro: AnalyzerInit
+(11/12/2024 9:48:39 AM) Running Macro: Init
+(11/12/2024 9:48:40 AM) Retrieved Custom Script Variables: 
+(11/12/2024 9:48:40 AM) Running Macro: AnalyzerInit
+(11/12/2024 9:48:40 AM) Running Macro: Init
+(11/12/2024 9:49:26 AM) Running Macro: AnalyzerPreRun
+(11/12/2024 9:49:26 AM) Running Macro: PreRun
+(11/12/2024 9:49:26 AM) 
+(11/12/2024 9:49:26 AM) --- 11/12/2024 9:49:26 AM
+(11/12/2024 9:49:26 AM) --- Running STK
+(11/12/2024 9:49:26 AM) 
+(11/12/2024 9:49:26 AM) -Sending values to STK
+(11/12/2024 9:49:26 AM) IAgChain.AutoRecompute=false /Application/STK/Scenario/MEO/Chain/MEO2Missiles
+(11/12/2024 9:49:26 AM) Input Variable from getValueAsString MEO.MEOSats.Walker.Shell_MEO.Planes, Value: 10
+(11/12/2024 9:49:26 AM) Input Variable from getValue: MEO.MEOSats.Walker.Shell_MEO.Planes, Value: 10
+(11/12/2024 9:49:26 AM) Input Variable from getValueAsObject: MEO.MEOSats.Walker.Shell_MEO.Planes, Value: 10
+(11/12/2024 9:49:26 AM) Input Variable from getValueAsString MEO.MEOSats.Walker.Shell_MEO.SatellitesInPlanes, Value: 3
+(11/12/2024 9:49:26 AM) Input Variable from getValue: MEO.MEOSats.Walker.Shell_MEO.SatellitesInPlanes, Value: 3
+(11/12/2024 9:49:26 AM) Input Variable from getValueAsObject: MEO.MEOSats.Walker.Shell_MEO.SatellitesInPlanes, Value: 3
+(11/12/2024 9:49:26 AM) Input Variable from getValueAsString MEO.MEOSats.Walker.Shell_MEO.InterPlanePhaseIncrement, Value: 9
+(11/12/2024 9:49:26 AM) Input Variable from getValue: MEO.MEOSats.Walker.Shell_MEO.InterPlanePhaseIncrement, Value: 9
+(11/12/2024 9:49:26 AM) Input Variable from getValueAsObject: MEO.MEOSats.Walker.Shell_MEO.InterPlanePhaseIncrement, Value: 9
+(11/12/2024 9:49:26 AM) Input Variable from getValueAsString MEO.MEOSats.Walker.Shell_MEO.SemiMajorAxis, Value: 16378
+(11/12/2024 9:49:26 AM) Input Variable from getValue: MEO.MEOSats.Walker.Shell_MEO.SemiMajorAxis, Value: 16378
+(11/12/2024 9:49:26 AM) Input Variable from getValueAsObject: MEO.MEOSats.Walker.Shell_MEO.SemiMajorAxis, Value: 16378
+(11/12/2024 9:49:26 AM) Input Variable from getValueAsString MEO.MEOSats.Walker.Shell_MEO.Inclination, Value: 90
+(11/12/2024 9:49:26 AM) Input Variable from getValue: MEO.MEOSats.Walker.Shell_MEO.Inclination, Value: 90
+(11/12/2024 9:49:26 AM) Input Variable from getValueAsObject: MEO.MEOSats.Walker.Shell_MEO.Inclination, Value: 90
+(11/12/2024 9:49:26 AM) Input Variable from getValueAsString MEO.MEOSat.SWIR.SimpleConic.coneAngle, Value: 25
+(11/12/2024 9:49:26 AM) Input Variable from getValue: MEO.MEOSat.SWIR.SimpleConic.coneAngle, Value: 25
+(11/12/2024 9:49:26 AM) Input Variable from getValueAsObject: MEO.MEOSat.SWIR.SimpleConic.coneAngle, Value: 25
+(11/12/2024 9:49:26 AM) Output Variable: MEO.GroundCoverage.AvgAccess.Overall_Value.Average
+(11/12/2024 9:49:26 AM) Output Variable: MEO.Missile1Chain.Complete_Access.Duration.Total
+(11/12/2024 9:49:26 AM) Output Variable: MEO.Missile2Chain.Complete_Access.Duration.Total
+(11/12/2024 9:49:26 AM) Output Variable: MEO.Missile3Chain.Complete_Access.Duration.Total
+(11/12/2024 9:49:26 AM) Output Variable: MEO.MEO2Missiles.Strand_Access.Duration.Mean
+(11/12/2024 9:49:26 AM) Output Variable: MEO.GroundCoverage.MaxRevisit.Overall_Value.Maximum
+(11/12/2024 9:49:26 AM) Output Variable: MEO.GroundCoverage.AvgRevisit.Overall_Value.Average
+(11/12/2024 9:49:26 AM) >SetUnits / EpSec
+(11/12/2024 9:49:26 AM) 
+(11/12/2024 9:49:27 AM) >SetUnits / UTCG
+(11/12/2024 9:49:27 AM) 
+(11/12/2024 9:49:27 AM) >SetUnits / EpSec
+(11/12/2024 9:49:27 AM) 
+(11/12/2024 9:49:27 AM) >SetUnits / UTCG
+(11/12/2024 9:49:27 AM) 
+(11/12/2024 9:49:27 AM) >SetUnits / EpSec
+(11/12/2024 9:49:27 AM) 
+(11/12/2024 9:49:27 AM) >SetUnits / UTCG
+(11/12/2024 9:49:27 AM) 
+(11/12/2024 9:49:27 AM) >SetUnits / EpSec
+(11/12/2024 9:49:27 AM) 
+(11/12/2024 9:49:27 AM) >SetUnits / UTCG
+(11/12/2024 9:49:27 AM) 
+(11/12/2024 9:49:27 AM) >SetUnits / EpSec
+(11/12/2024 9:49:27 AM) 
+(11/12/2024 9:49:27 AM) >SetUnits / UTCG
+(11/12/2024 9:49:27 AM) 
+(11/12/2024 9:49:27 AM) >SetUnits / EpSec
+(11/12/2024 9:49:27 AM) 
+(11/12/2024 9:49:27 AM) >SetUnits / UTCG
+(11/12/2024 9:49:27 AM) 
+(11/12/2024 9:49:27 AM) >SetUnits / EpSec
+(11/12/2024 9:49:27 AM) 
+(11/12/2024 9:49:27 AM) >SetUnits / UTCG
+(11/12/2024 9:49:27 AM) 
+(11/12/2024 9:49:27 AM) >SetUnits / EpSec
+(11/12/2024 9:49:27 AM) 
+(11/12/2024 9:49:27 AM) >SetUnits / UTCG
+(11/12/2024 9:49:27 AM) 
+(11/12/2024 9:49:27 AM) >SetUnits / EpSec
+(11/12/2024 9:49:27 AM) 
+(11/12/2024 9:49:27 AM) >SetUnits / UTCG
+(11/12/2024 9:49:27 AM) 
+(11/12/2024 9:49:27 AM) -Propagating objects
+(11/12/2024 9:49:27 AM) --->Scenario Analysis Period: 10 Nov 2024 18:00:00.000 <> 11 Nov 2024 18:00:00.000
+(11/12/2024 9:49:27 AM) -Computing Accesses
+(11/12/2024 9:49:27 AM) IAgChain.ComputeAccess() - /Scenario/MEO/Chain/Missile1Chain
+(11/12/2024 9:49:28 AM) IAgChain.ComputeAccess() - /Scenario/MEO/Chain/Missile2Chain
+(11/12/2024 9:49:28 AM) IAgChain.ComputeAccess() - /Scenario/MEO/Chain/Missile3Chain
+(11/12/2024 9:49:28 AM) IAgChain.ComputeAccess() - /Scenario/MEO/Chain/MEO2Missiles
+(11/12/2024 9:49:28 AM) IAgCoverageDefinition.ClearAccesses() /Application/STK/Scenario/MEO/CoverageDefinition/GroundCoverage
+(11/12/2024 9:49:28 AM) IAgCoverageDefinition.ComputeAccesses() /Application/STK/Scenario/MEO/CoverageDefinition/GroundCoverage
+(11/12/2024 9:50:10 AM) -Getting Output Values
+(11/12/2024 9:50:10 AM) >SetUnits / EpSec
+(11/12/2024 9:50:10 AM) 
+(11/12/2024 9:50:10 AM) >SetUnits / UTCG
+(11/12/2024 9:50:10 AM) 
+(11/12/2024 9:50:10 AM) >SetUnits / EpSec
+(11/12/2024 9:50:10 AM) 
+(11/12/2024 9:50:10 AM) >SetUnits / UTCG
+(11/12/2024 9:50:10 AM) 
+(11/12/2024 9:50:10 AM) >SetUnits / EpSec
+(11/12/2024 9:50:10 AM) 
+(11/12/2024 9:50:10 AM) Executing Data Provider
+(11/12/2024 9:50:10 AM)    Name: Overall Value
+(11/12/2024 9:50:10 AM)    Object: /Scenario/MEO/CoverageDefinition/GroundCoverage/FigureOfMerit/AvgAccess
+(11/12/2024 9:50:11 AM) Set Variable: MEO.GroundCoverage.AvgAccess.Overall_Value.Average + output value: 6321.09192375352
+(11/12/2024 9:50:11 AM) >SetUnits / UTCG
+(11/12/2024 9:50:11 AM) 
+(11/12/2024 9:50:11 AM) >SetUnits / EpSec
+(11/12/2024 9:50:11 AM) 
+(11/12/2024 9:50:11 AM) Executing Data Provider
+(11/12/2024 9:50:11 AM)    Name: Complete Access
+(11/12/2024 9:50:11 AM)    Object: /Scenario/MEO/Chain/Missile1Chain
+(11/12/2024 9:50:11 AM) >SetUnits / EpSec
+(11/12/2024 9:50:11 AM) 
+(11/12/2024 9:50:11 AM) >SetUnits / EpSec
+(11/12/2024 9:50:11 AM) 
+(11/12/2024 9:50:11 AM)    Start: 0
+(11/12/2024 9:50:11 AM)    Stop: 86400
+(11/12/2024 9:50:11 AM) Set Variable: MEO.Missile1Chain.Complete_Access.Duration.Total + output value: 4334.471455
+(11/12/2024 9:50:11 AM) >SetUnits / UTCG
+(11/12/2024 9:50:11 AM) 
+(11/12/2024 9:50:11 AM) >SetUnits / EpSec
+(11/12/2024 9:50:11 AM) 
+(11/12/2024 9:50:11 AM) Executing Data Provider
+(11/12/2024 9:50:11 AM)    Name: Complete Access
+(11/12/2024 9:50:11 AM)    Object: /Scenario/MEO/Chain/Missile2Chain
+(11/12/2024 9:50:11 AM) >SetUnits / EpSec
+(11/12/2024 9:50:11 AM) 
+(11/12/2024 9:50:11 AM) >SetUnits / EpSec
+(11/12/2024 9:50:11 AM) 
+(11/12/2024 9:50:11 AM)    Start: 0
+(11/12/2024 9:50:11 AM)    Stop: 86400
+(11/12/2024 9:50:12 AM) Set Variable: MEO.Missile2Chain.Complete_Access.Duration.Total + output value: 3503.429018
+(11/12/2024 9:50:12 AM) >SetUnits / UTCG
+(11/12/2024 9:50:12 AM) 
+(11/12/2024 9:50:12 AM) >SetUnits / EpSec
+(11/12/2024 9:50:12 AM) 
+(11/12/2024 9:50:12 AM) Executing Data Provider
+(11/12/2024 9:50:12 AM)    Name: Complete Access
+(11/12/2024 9:50:12 AM)    Object: /Scenario/MEO/Chain/Missile3Chain
+(11/12/2024 9:50:12 AM) >SetUnits / EpSec
+(11/12/2024 9:50:12 AM) 
+(11/12/2024 9:50:12 AM) >SetUnits / EpSec
+(11/12/2024 9:50:12 AM) 
+(11/12/2024 9:50:12 AM)    Start: 0
+(11/12/2024 9:50:12 AM)    Stop: 86400
+(11/12/2024 9:50:12 AM) Set Variable: MEO.Missile3Chain.Complete_Access.Duration.Total + output value: 4740.17924200001
+(11/12/2024 9:50:12 AM) >SetUnits / UTCG
+(11/12/2024 9:50:12 AM) 
+(11/12/2024 9:50:12 AM) >SetUnits / EpSec
+(11/12/2024 9:50:12 AM) 
+(11/12/2024 9:50:12 AM) Executing Data Provider
+(11/12/2024 9:50:12 AM)    Name: Strand Access
+(11/12/2024 9:50:12 AM)    Object: /Scenario/MEO/Chain/MEO2Missiles
+(11/12/2024 9:50:12 AM) >SetUnits / EpSec
+(11/12/2024 9:50:12 AM) 
+(11/12/2024 9:50:12 AM) >SetUnits / EpSec
+(11/12/2024 9:50:12 AM) 
+(11/12/2024 9:50:12 AM)    Start: 0
+(11/12/2024 9:50:12 AM)    Stop: 86400
+(11/12/2024 9:50:14 AM) Set Variable: MEO.MEO2Missiles.Strand_Access.Duration.Mean + output value: 2521.43673490003
+(11/12/2024 9:50:14 AM) >SetUnits / UTCG
+(11/12/2024 9:50:14 AM) 
+(11/12/2024 9:50:14 AM) >SetUnits / EpSec
+(11/12/2024 9:50:14 AM) 
+(11/12/2024 9:50:14 AM) Executing Data Provider
+(11/12/2024 9:50:14 AM)    Name: Overall Value
+(11/12/2024 9:50:14 AM)    Object: /Scenario/MEO/CoverageDefinition/GroundCoverage/FigureOfMerit/MaxRevisit
+(11/12/2024 9:50:15 AM) Set Variable: MEO.GroundCoverage.MaxRevisit.Overall_Value.Maximum + output value: 0
+(11/12/2024 9:50:15 AM) >SetUnits / UTCG
+(11/12/2024 9:50:15 AM) 
+(11/12/2024 9:50:15 AM) >SetUnits / EpSec
+(11/12/2024 9:50:15 AM) 
+(11/12/2024 9:50:15 AM) Executing Data Provider
+(11/12/2024 9:50:15 AM)    Name: Overall Value
+(11/12/2024 9:50:15 AM)    Object: /Scenario/MEO/CoverageDefinition/GroundCoverage/FigureOfMerit/AvgRevisit
+(11/12/2024 9:50:15 AM) Set Variable: MEO.GroundCoverage.AvgRevisit.Overall_Value.Average + output value: 0
+(11/12/2024 9:50:15 AM) >SetUnits / UTCG
+(11/12/2024 9:50:15 AM) 
+(11/12/2024 9:50:15 AM) IAgStkObjectRoot.BeginUpdate()
+(11/12/2024 9:50:15 AM) IAgStkObjectRoot.EndUpdate()
+(11/12/2024 9:50:15 AM) IAgChain.AutoRecompute=false /Application/STK/Scenario/MEO/Chain/MEO2Missiles
+(11/12/2024 9:50:15 AM) Running Macro: AnalyzerPostRun
+(11/12/2024 9:50:15 AM) Running Macro: PostRun
+(11/12/2024 9:50:15 AM) Running Macro: AnalyzerPreRun
+(11/12/2024 9:50:15 AM) Running Macro: PreRun
+(11/12/2024 9:50:15 AM) 
+(11/12/2024 9:50:15 AM) --- 11/12/2024 9:50:15 AM
+(11/12/2024 9:50:15 AM) --- Running STK
+(11/12/2024 9:50:15 AM) 
+(11/12/2024 9:50:15 AM) -Sending values to STK
+(11/12/2024 9:50:15 AM) IAgChain.AutoRecompute=false /Application/STK/Scenario/MEO/Chain/MEO2Missiles
+(11/12/2024 9:50:15 AM) Input Variable from getValueAsString MEO.MEOSats.Walker.Shell_MEO.Planes, Value: 10
+(11/12/2024 9:50:15 AM) Input Variable from getValue: MEO.MEOSats.Walker.Shell_MEO.Planes, Value: 10
+(11/12/2024 9:50:15 AM) Input Variable from getValueAsObject: MEO.MEOSats.Walker.Shell_MEO.Planes, Value: 10
+(11/12/2024 9:50:15 AM) Input Variable from getValueAsString MEO.MEOSats.Walker.Shell_MEO.SatellitesInPlanes, Value: 3
+(11/12/2024 9:50:15 AM) Input Variable from getValue: MEO.MEOSats.Walker.Shell_MEO.SatellitesInPlanes, Value: 3
+(11/12/2024 9:50:15 AM) Input Variable from getValueAsObject: MEO.MEOSats.Walker.Shell_MEO.SatellitesInPlanes, Value: 3
+(11/12/2024 9:50:15 AM) Input Variable from getValueAsString MEO.MEOSats.Walker.Shell_MEO.InterPlanePhaseIncrement, Value: 8
+(11/12/2024 9:50:15 AM) Input Variable from getValue: MEO.MEOSats.Walker.Shell_MEO.InterPlanePhaseIncrement, Value: 8
+(11/12/2024 9:50:15 AM) Input Variable from getValueAsObject: MEO.MEOSats.Walker.Shell_MEO.InterPlanePhaseIncrement, Value: 8
+(11/12/2024 9:50:15 AM) Input Variable from getValueAsString MEO.MEOSats.Walker.Shell_MEO.SemiMajorAxis, Value: 16378
+(11/12/2024 9:50:15 AM) Input Variable from getValue: MEO.MEOSats.Walker.Shell_MEO.SemiMajorAxis, Value: 16378
+(11/12/2024 9:50:15 AM) Input Variable from getValueAsObject: MEO.MEOSats.Walker.Shell_MEO.SemiMajorAxis, Value: 16378
+(11/12/2024 9:50:15 AM) Input Variable from getValueAsString MEO.MEOSats.Walker.Shell_MEO.Inclination, Value: 90
+(11/12/2024 9:50:15 AM) Input Variable from getValue: MEO.MEOSats.Walker.Shell_MEO.Inclination, Value: 90
+(11/12/2024 9:50:15 AM) Input Variable from getValueAsObject: MEO.MEOSats.Walker.Shell_MEO.Inclination, Value: 90
+(11/12/2024 9:50:15 AM) Input Variable from getValueAsString MEO.MEOSat.SWIR.SimpleConic.coneAngle, Value: 25
+(11/12/2024 9:50:15 AM) Input Variable from getValue: MEO.MEOSat.SWIR.SimpleConic.coneAngle, Value: 25
+(11/12/2024 9:50:15 AM) Input Variable from getValueAsObject: MEO.MEOSat.SWIR.SimpleConic.coneAngle, Value: 25
+(11/12/2024 9:50:15 AM) Output Variable: MEO.GroundCoverage.AvgAccess.Overall_Value.Average
+(11/12/2024 9:50:15 AM) Output Variable: MEO.Missile1Chain.Complete_Access.Duration.Total
+(11/12/2024 9:50:15 AM) Output Variable: MEO.Missile2Chain.Complete_Access.Duration.Total
+(11/12/2024 9:50:15 AM) Output Variable: MEO.Missile3Chain.Complete_Access.Duration.Total
+(11/12/2024 9:50:15 AM) Output Variable: MEO.MEO2Missiles.Strand_Access.Duration.Mean
+(11/12/2024 9:50:15 AM) Output Variable: MEO.GroundCoverage.MaxRevisit.Overall_Value.Maximum
+(11/12/2024 9:50:15 AM) Output Variable: MEO.GroundCoverage.AvgRevisit.Overall_Value.Average
+(11/12/2024 9:50:15 AM) >SetUnits / EpSec
+(11/12/2024 9:50:15 AM) 
+(11/12/2024 9:50:16 AM) >SetUnits / UTCG
+(11/12/2024 9:50:16 AM) 
+(11/12/2024 9:50:16 AM) >SetUnits / EpSec
+(11/12/2024 9:50:16 AM) 
+(11/12/2024 9:50:16 AM) >SetUnits / UTCG
+(11/12/2024 9:50:16 AM) 
+(11/12/2024 9:50:16 AM) >SetUnits / EpSec
+(11/12/2024 9:50:16 AM) 
+(11/12/2024 9:50:16 AM) >SetUnits / UTCG
+(11/12/2024 9:50:16 AM) 
+(11/12/2024 9:50:16 AM) >SetUnits / EpSec
+(11/12/2024 9:50:16 AM) 
+(11/12/2024 9:50:16 AM) >SetUnits / UTCG
+(11/12/2024 9:50:16 AM) 
+(11/12/2024 9:50:16 AM) >SetUnits / EpSec
+(11/12/2024 9:50:16 AM) 
+(11/12/2024 9:50:16 AM) >SetUnits / UTCG
+(11/12/2024 9:50:16 AM) 
+(11/12/2024 9:50:16 AM) >SetUnits / EpSec
+(11/12/2024 9:50:16 AM) 
+(11/12/2024 9:50:16 AM) >SetUnits / UTCG
+(11/12/2024 9:50:16 AM) 
+(11/12/2024 9:50:16 AM) >SetUnits / EpSec
+(11/12/2024 9:50:16 AM) 
+(11/12/2024 9:50:16 AM) >SetUnits / UTCG
+(11/12/2024 9:50:16 AM) 
+(11/12/2024 9:50:16 AM) >SetUnits / EpSec
+(11/12/2024 9:50:16 AM) 
+(11/12/2024 9:50:16 AM) >SetUnits / UTCG
+(11/12/2024 9:50:16 AM) 
+(11/12/2024 9:50:16 AM) >SetUnits / EpSec
+(11/12/2024 9:50:16 AM) 
+(11/12/2024 9:50:16 AM) >SetUnits / UTCG
+(11/12/2024 9:50:16 AM) 
+(11/12/2024 9:50:16 AM) -Propagating objects
+(11/12/2024 9:50:16 AM) --->Scenario Analysis Period: 10 Nov 2024 18:00:00.000 <> 11 Nov 2024 18:00:00.000
+(11/12/2024 9:50:16 AM) -Computing Accesses
+(11/12/2024 9:50:16 AM) IAgChain.ComputeAccess() - /Scenario/MEO/Chain/Missile1Chain
+(11/12/2024 9:50:17 AM) IAgChain.ComputeAccess() - /Scenario/MEO/Chain/Missile2Chain
+(11/12/2024 9:50:17 AM) IAgChain.ComputeAccess() - /Scenario/MEO/Chain/Missile3Chain
+(11/12/2024 9:50:17 AM) IAgChain.ComputeAccess() - /Scenario/MEO/Chain/MEO2Missiles
+(11/12/2024 9:50:17 AM) IAgCoverageDefinition.ClearAccesses() /Application/STK/Scenario/MEO/CoverageDefinition/GroundCoverage
+(11/12/2024 9:50:18 AM) IAgCoverageDefinition.ComputeAccesses() /Application/STK/Scenario/MEO/CoverageDefinition/GroundCoverage
+(11/12/2024 9:51:03 AM) -Getting Output Values
+(11/12/2024 9:51:03 AM) >SetUnits / EpSec
+(11/12/2024 9:51:03 AM) 
+(11/12/2024 9:51:03 AM) >SetUnits / UTCG
+(11/12/2024 9:51:03 AM) 
+(11/12/2024 9:51:03 AM) >SetUnits / EpSec
+(11/12/2024 9:51:03 AM) 
+(11/12/2024 9:51:03 AM) >SetUnits / UTCG
+(11/12/2024 9:51:03 AM) 
+(11/12/2024 9:51:03 AM) >SetUnits / EpSec
+(11/12/2024 9:51:03 AM) 
+(11/12/2024 9:51:03 AM) Executing Data Provider
+(11/12/2024 9:51:03 AM)    Name: Overall Value
+(11/12/2024 9:51:03 AM)    Object: /Scenario/MEO/CoverageDefinition/GroundCoverage/FigureOfMerit/AvgAccess
+(11/12/2024 9:51:03 AM) Set Variable: MEO.GroundCoverage.AvgAccess.Overall_Value.Average + output value: 6319.91567691131
+(11/12/2024 9:51:03 AM) >SetUnits / UTCG
+(11/12/2024 9:51:03 AM) 
+(11/12/2024 9:51:03 AM) >SetUnits / EpSec
+(11/12/2024 9:51:03 AM) 
+(11/12/2024 9:51:03 AM) Executing Data Provider
+(11/12/2024 9:51:03 AM)    Name: Complete Access
+(11/12/2024 9:51:03 AM)    Object: /Scenario/MEO/Chain/Missile1Chain
+(11/12/2024 9:51:03 AM) >SetUnits / EpSec
+(11/12/2024 9:51:03 AM) 
+(11/12/2024 9:51:03 AM) >SetUnits / EpSec
+(11/12/2024 9:51:03 AM) 
+(11/12/2024 9:51:03 AM)    Start: 0
+(11/12/2024 9:51:03 AM)    Stop: 86400
+(11/12/2024 9:51:04 AM) Set Variable: MEO.Missile1Chain.Complete_Access.Duration.Total + output value: 4334.473589
+(11/12/2024 9:51:04 AM) >SetUnits / UTCG
+(11/12/2024 9:51:04 AM) 
+(11/12/2024 9:51:04 AM) >SetUnits / EpSec
+(11/12/2024 9:51:04 AM) 
+(11/12/2024 9:51:04 AM) Executing Data Provider
+(11/12/2024 9:51:04 AM)    Name: Complete Access
+(11/12/2024 9:51:04 AM)    Object: /Scenario/MEO/Chain/Missile2Chain
+(11/12/2024 9:51:04 AM) >SetUnits / EpSec
+(11/12/2024 9:51:04 AM) 
+(11/12/2024 9:51:04 AM) >SetUnits / EpSec
+(11/12/2024 9:51:04 AM) 
+(11/12/2024 9:51:04 AM)    Start: 0
+(11/12/2024 9:51:04 AM)    Stop: 86400
+(11/12/2024 9:51:04 AM) Set Variable: MEO.Missile2Chain.Complete_Access.Duration.Total + output value: 3503.429305
+(11/12/2024 9:51:04 AM) >SetUnits / UTCG
+(11/12/2024 9:51:04 AM) 
+(11/12/2024 9:51:04 AM) >SetUnits / EpSec
+(11/12/2024 9:51:04 AM) 
+(11/12/2024 9:51:04 AM) Executing Data Provider
+(11/12/2024 9:51:04 AM)    Name: Complete Access
+(11/12/2024 9:51:04 AM)    Object: /Scenario/MEO/Chain/Missile3Chain
+(11/12/2024 9:51:04 AM) >SetUnits / EpSec
+(11/12/2024 9:51:04 AM) 
+(11/12/2024 9:51:04 AM) >SetUnits / EpSec
+(11/12/2024 9:51:04 AM) 
+(11/12/2024 9:51:04 AM)    Start: 0
+(11/12/2024 9:51:04 AM)    Stop: 86400
+(11/12/2024 9:51:04 AM) Set Variable: MEO.Missile3Chain.Complete_Access.Duration.Total + output value: 4740.180488
+(11/12/2024 9:51:04 AM) >SetUnits / UTCG
+(11/12/2024 9:51:05 AM) 
+(11/12/2024 9:51:05 AM) >SetUnits / EpSec
+(11/12/2024 9:51:05 AM) 
+(11/12/2024 9:51:05 AM) Executing Data Provider
+(11/12/2024 9:51:05 AM)    Name: Strand Access
+(11/12/2024 9:51:05 AM)    Object: /Scenario/MEO/Chain/MEO2Missiles
+(11/12/2024 9:51:05 AM) >SetUnits / EpSec
+(11/12/2024 9:51:05 AM) 
+(11/12/2024 9:51:05 AM) >SetUnits / EpSec
+(11/12/2024 9:51:05 AM) 
+(11/12/2024 9:51:05 AM)    Start: 0
+(11/12/2024 9:51:05 AM)    Stop: 86400
+(11/12/2024 9:51:07 AM) Set Variable: MEO.MEO2Missiles.Strand_Access.Duration.Mean + output value: 2723.02788522486
+(11/12/2024 9:51:07 AM) >SetUnits / UTCG
+(11/12/2024 9:51:07 AM) 
+(11/12/2024 9:51:07 AM) >SetUnits / EpSec
+(11/12/2024 9:51:07 AM) 
+(11/12/2024 9:51:07 AM) Executing Data Provider
+(11/12/2024 9:51:07 AM)    Name: Overall Value
+(11/12/2024 9:51:07 AM)    Object: /Scenario/MEO/CoverageDefinition/GroundCoverage/FigureOfMerit/MaxRevisit
+(11/12/2024 9:51:07 AM) Set Variable: MEO.GroundCoverage.MaxRevisit.Overall_Value.Maximum + output value: 0
+(11/12/2024 9:51:07 AM) >SetUnits / UTCG
+(11/12/2024 9:51:07 AM) 
+(11/12/2024 9:51:07 AM) >SetUnits / EpSec
+(11/12/2024 9:51:07 AM) 
+(11/12/2024 9:51:07 AM) Executing Data Provider
+(11/12/2024 9:51:07 AM)    Name: Overall Value
+(11/12/2024 9:51:07 AM)    Object: /Scenario/MEO/CoverageDefinition/GroundCoverage/FigureOfMerit/AvgRevisit
+(11/12/2024 9:51:07 AM) Set Variable: MEO.GroundCoverage.AvgRevisit.Overall_Value.Average + output value: 0
+(11/12/2024 9:51:07 AM) >SetUnits / UTCG
+(11/12/2024 9:51:07 AM) 
+(11/12/2024 9:51:07 AM) IAgStkObjectRoot.BeginUpdate()
+(11/12/2024 9:51:07 AM) IAgStkObjectRoot.EndUpdate()
+(11/12/2024 9:51:07 AM) IAgChain.AutoRecompute=false /Application/STK/Scenario/MEO/Chain/MEO2Missiles
+(11/12/2024 9:51:07 AM) Running Macro: AnalyzerPostRun
+(11/12/2024 9:51:07 AM) Running Macro: PostRun
+(11/12/2024 9:51:07 AM) 
+(11/12/2024 9:51:07 AM) --- 11/12/2024 9:51:07 AM
+(11/12/2024 9:51:07 AM) --- Running STK
+(11/12/2024 9:51:07 AM) 
+(11/12/2024 9:51:07 AM) -Sending values to STK
+(11/12/2024 9:51:07 AM) Input Variable from getValueAsString MEO.MEOSats.Walker.Shell_MEO.Planes, Value: 10
+(11/12/2024 9:51:07 AM) Input Variable from getValue: MEO.MEOSats.Walker.Shell_MEO.Planes, Value: 10
+(11/12/2024 9:51:07 AM) Input Variable from getValueAsObject: MEO.MEOSats.Walker.Shell_MEO.Planes, Value: 10
+(11/12/2024 9:51:07 AM) Input Variable from getValueAsString MEO.MEOSats.Walker.Shell_MEO.SatellitesInPlanes, Value: 3
+(11/12/2024 9:51:07 AM) Input Variable from getValue: MEO.MEOSats.Walker.Shell_MEO.SatellitesInPlanes, Value: 3
+(11/12/2024 9:51:07 AM) Input Variable from getValueAsObject: MEO.MEOSats.Walker.Shell_MEO.SatellitesInPlanes, Value: 3
+(11/12/2024 9:51:07 AM) Input Variable from getValueAsString MEO.MEOSats.Walker.Shell_MEO.InterPlanePhaseIncrement, Value: 8
+(11/12/2024 9:51:07 AM) Input Variable from getValue: MEO.MEOSats.Walker.Shell_MEO.InterPlanePhaseIncrement, Value: 8
+(11/12/2024 9:51:07 AM) Input Variable from getValueAsObject: MEO.MEOSats.Walker.Shell_MEO.InterPlanePhaseIncrement, Value: 8
+(11/12/2024 9:51:07 AM) Input Variable from getValueAsString MEO.MEOSats.Walker.Shell_MEO.SemiMajorAxis, Value: 16378
+(11/12/2024 9:51:07 AM) Input Variable from getValue: MEO.MEOSats.Walker.Shell_MEO.SemiMajorAxis, Value: 16378
+(11/12/2024 9:51:07 AM) Input Variable from getValueAsObject: MEO.MEOSats.Walker.Shell_MEO.SemiMajorAxis, Value: 16378
+(11/12/2024 9:51:07 AM) Input Variable from getValueAsString MEO.MEOSats.Walker.Shell_MEO.Inclination, Value: 90
+(11/12/2024 9:51:07 AM) Input Variable from getValue: MEO.MEOSats.Walker.Shell_MEO.Inclination, Value: 90
+(11/12/2024 9:51:07 AM) Input Variable from getValueAsObject: MEO.MEOSats.Walker.Shell_MEO.Inclination, Value: 90
+(11/12/2024 9:51:07 AM) Input Variable from getValueAsString MEO.MEOSat.SWIR.SimpleConic.coneAngle, Value: 25
+(11/12/2024 9:51:07 AM) Input Variable from getValue: MEO.MEOSat.SWIR.SimpleConic.coneAngle, Value: 25
+(11/12/2024 9:51:07 AM) Input Variable from getValueAsObject: MEO.MEOSat.SWIR.SimpleConic.coneAngle, Value: 25
+(11/12/2024 9:51:07 AM) Output Variable: MEO.GroundCoverage.AvgAccess.Overall_Value.Average
+(11/12/2024 9:51:07 AM) Output Variable: MEO.Missile1Chain.Complete_Access.Duration.Total
+(11/12/2024 9:51:07 AM) Output Variable: MEO.Missile2Chain.Complete_Access.Duration.Total
+(11/12/2024 9:51:07 AM) Output Variable: MEO.Missile3Chain.Complete_Access.Duration.Total
+(11/12/2024 9:51:07 AM) Output Variable: MEO.MEO2Missiles.Strand_Access.Duration.Mean
+(11/12/2024 9:51:07 AM) Output Variable: MEO.GroundCoverage.MaxRevisit.Overall_Value.Maximum
+(11/12/2024 9:51:07 AM) Output Variable: MEO.GroundCoverage.AvgRevisit.Overall_Value.Average
+(11/12/2024 9:51:07 AM) >SetUnits / EpSec
+(11/12/2024 9:51:07 AM) 
+(11/12/2024 9:51:07 AM) >SetUnits / UTCG
+(11/12/2024 9:51:08 AM) 
+(11/12/2024 9:51:08 AM) >SetUnits / EpSec
+(11/12/2024 9:51:08 AM) 
+(11/12/2024 9:51:08 AM) >SetUnits / UTCG
+(11/12/2024 9:51:08 AM) 
+(11/12/2024 9:51:08 AM) >SetUnits / EpSec
+(11/12/2024 9:51:08 AM) 
+(11/12/2024 9:51:08 AM) >SetUnits / UTCG
+(11/12/2024 9:51:08 AM) 
+(11/12/2024 9:51:08 AM) >SetUnits / EpSec
+(11/12/2024 9:51:08 AM) 
+(11/12/2024 9:51:08 AM) >SetUnits / UTCG
+(11/12/2024 9:51:08 AM) 
+(11/12/2024 9:51:08 AM) >SetUnits / EpSec
+(11/12/2024 9:51:08 AM) 
+(11/12/2024 9:51:08 AM) >SetUnits / UTCG
+(11/12/2024 9:51:08 AM) 
+(11/12/2024 9:51:08 AM) >SetUnits / EpSec
+(11/12/2024 9:51:08 AM) 
+(11/12/2024 9:51:08 AM) >SetUnits / UTCG
+(11/12/2024 9:51:08 AM) 
+(11/12/2024 9:51:08 AM) >SetUnits / EpSec
+(11/12/2024 9:51:08 AM) 
+(11/12/2024 9:51:08 AM) >SetUnits / UTCG
+(11/12/2024 9:51:08 AM) 
+(11/12/2024 9:51:08 AM) >SetUnits / EpSec
+(11/12/2024 9:51:08 AM) 
+(11/12/2024 9:51:08 AM) >SetUnits / UTCG
+(11/12/2024 9:51:08 AM) 
+(11/12/2024 9:51:08 AM) >SetUnits / EpSec
+(11/12/2024 9:51:08 AM) 
+(11/12/2024 9:51:08 AM) >SetUnits / UTCG
+(11/12/2024 9:51:08 AM) 
+(11/12/2024 9:51:08 AM) -Propagating objects
+(11/12/2024 9:51:08 AM) --->Scenario Analysis Period: 10 Nov 2024 18:00:00.000 <> 11 Nov 2024 18:00:00.000
+(11/12/2024 9:51:08 AM) -Getting Output Values
+(11/12/2024 9:51:08 AM) >SetUnits / EpSec
+(11/12/2024 9:51:08 AM) 
+(11/12/2024 9:51:08 AM) >SetUnits / UTCG
+(11/12/2024 9:51:08 AM) 
+(11/12/2024 9:51:08 AM) >SetUnits / EpSec
+(11/12/2024 9:51:08 AM) 
+(11/12/2024 9:51:08 AM) >SetUnits / UTCG
+(11/12/2024 9:51:08 AM) 
+(11/12/2024 9:51:08 AM) >SetUnits / EpSec
+(11/12/2024 9:51:08 AM) 
+(11/12/2024 9:51:08 AM) Executing Data Provider
+(11/12/2024 9:51:08 AM)    Name: Overall Value
+(11/12/2024 9:51:08 AM)    Object: /Scenario/MEO/CoverageDefinition/GroundCoverage/FigureOfMerit/AvgAccess
+(11/12/2024 9:51:08 AM) Set Variable: MEO.GroundCoverage.AvgAccess.Overall_Value.Average + output value: 0
+(11/12/2024 9:51:08 AM) >SetUnits / UTCG
+(11/12/2024 9:51:08 AM) 
+(11/12/2024 9:51:08 AM) >SetUnits / EpSec
+(11/12/2024 9:51:08 AM) 
+(11/12/2024 9:51:08 AM) Executing Data Provider
+(11/12/2024 9:51:08 AM)    Name: Complete Access
+(11/12/2024 9:51:08 AM)    Object: /Scenario/MEO/Chain/Missile1Chain
+(11/12/2024 9:51:08 AM) >SetUnits / EpSec
+(11/12/2024 9:51:08 AM) 
+(11/12/2024 9:51:08 AM) >SetUnits / EpSec
+(11/12/2024 9:51:08 AM) 
+(11/12/2024 9:51:08 AM)    Start: 0
+(11/12/2024 9:51:08 AM)    Stop: 86400
+(11/12/2024 9:51:08 AM) Set Variable: MEO.Missile1Chain.Complete_Access.Duration.Total + output value: 4334.473589
+(11/12/2024 9:51:08 AM) >SetUnits / UTCG
+(11/12/2024 9:51:08 AM) 
+(11/12/2024 9:51:08 AM) >SetUnits / EpSec
+(11/12/2024 9:51:08 AM) 
+(11/12/2024 9:51:08 AM) Executing Data Provider
+(11/12/2024 9:51:08 AM)    Name: Complete Access
+(11/12/2024 9:51:08 AM)    Object: /Scenario/MEO/Chain/Missile2Chain
+(11/12/2024 9:51:08 AM) >SetUnits / EpSec
+(11/12/2024 9:51:08 AM) 
+(11/12/2024 9:51:08 AM) >SetUnits / EpSec
+(11/12/2024 9:51:09 AM) 
+(11/12/2024 9:51:09 AM)    Start: 0
+(11/12/2024 9:51:09 AM)    Stop: 86400
+(11/12/2024 9:51:09 AM) Set Variable: MEO.Missile2Chain.Complete_Access.Duration.Total + output value: 3503.429305
+(11/12/2024 9:51:09 AM) >SetUnits / UTCG
+(11/12/2024 9:51:09 AM) 
+(11/12/2024 9:51:09 AM) >SetUnits / EpSec
+(11/12/2024 9:51:09 AM) 
+(11/12/2024 9:51:09 AM) Executing Data Provider
+(11/12/2024 9:51:09 AM)    Name: Complete Access
+(11/12/2024 9:51:09 AM)    Object: /Scenario/MEO/Chain/Missile3Chain
+(11/12/2024 9:51:09 AM) >SetUnits / EpSec
+(11/12/2024 9:51:09 AM) 
+(11/12/2024 9:51:09 AM) >SetUnits / EpSec
+(11/12/2024 9:51:09 AM) 
+(11/12/2024 9:51:09 AM)    Start: 0
+(11/12/2024 9:51:09 AM)    Stop: 86400
+(11/12/2024 9:51:09 AM) Set Variable: MEO.Missile3Chain.Complete_Access.Duration.Total + output value: 4740.180488
+(11/12/2024 9:51:09 AM) >SetUnits / UTCG
+(11/12/2024 9:51:09 AM) 
+(11/12/2024 9:51:09 AM) >SetUnits / EpSec
+(11/12/2024 9:51:09 AM) 
+(11/12/2024 9:51:09 AM) Executing Data Provider
+(11/12/2024 9:51:09 AM)    Name: Strand Access
+(11/12/2024 9:51:09 AM)    Object: /Scenario/MEO/Chain/MEO2Missiles
+(11/12/2024 9:51:09 AM) >SetUnits / EpSec
+(11/12/2024 9:51:09 AM) 
+(11/12/2024 9:51:09 AM) >SetUnits / EpSec
+(11/12/2024 9:51:09 AM) 
+(11/12/2024 9:51:09 AM)    Start: 0
+(11/12/2024 9:51:09 AM)    Stop: 86400
+(11/12/2024 9:51:10 AM) Set Variable: MEO.MEO2Missiles.Strand_Access.Duration.Mean + output value: 2723.02788522486
+(11/12/2024 9:51:10 AM) >SetUnits / UTCG
+(11/12/2024 9:51:11 AM) 
+(11/12/2024 9:51:11 AM) >SetUnits / EpSec
+(11/12/2024 9:51:11 AM) 
+(11/12/2024 9:51:11 AM) Executing Data Provider
+(11/12/2024 9:51:11 AM)    Name: Overall Value
+(11/12/2024 9:51:11 AM)    Object: /Scenario/MEO/CoverageDefinition/GroundCoverage/FigureOfMerit/MaxRevisit
+(11/12/2024 9:51:11 AM) Set Variable: MEO.GroundCoverage.MaxRevisit.Overall_Value.Maximum + output value: 86400
+(11/12/2024 9:51:11 AM) >SetUnits / UTCG
+(11/12/2024 9:51:11 AM) 
+(11/12/2024 9:51:11 AM) >SetUnits / EpSec
+(11/12/2024 9:51:11 AM) 
+(11/12/2024 9:51:11 AM) Executing Data Provider
+(11/12/2024 9:51:11 AM)    Name: Overall Value
+(11/12/2024 9:51:11 AM)    Object: /Scenario/MEO/CoverageDefinition/GroundCoverage/FigureOfMerit/AvgRevisit
+(11/12/2024 9:51:11 AM) Set Variable: MEO.GroundCoverage.AvgRevisit.Overall_Value.Average + output value: 86400
+(11/12/2024 9:51:11 AM) >SetUnits / UTCG
+(11/12/2024 9:51:11 AM) 
+(11/12/2024 9:51:11 AM) IAgStkObjectRoot.BeginUpdate()
+(11/12/2024 9:51:11 AM) IAgStkObjectRoot.EndUpdate()
+(11/12/2024 9:51:11 AM) 
+(11/12/2024 9:51:11 AM) --- 11/12/2024 9:51:11 AM
+(11/12/2024 9:51:11 AM) --- Running STK
+(11/12/2024 9:51:11 AM) 
+(11/12/2024 9:51:11 AM) -Sending values to STK
+(11/12/2024 9:51:11 AM) Input Variable from getValueAsString MEO.MEOSats.Walker.Shell_MEO.Planes, Value: 10
+(11/12/2024 9:51:11 AM) Input Variable from getValue: MEO.MEOSats.Walker.Shell_MEO.Planes, Value: 10
+(11/12/2024 9:51:11 AM) Input Variable from getValueAsObject: MEO.MEOSats.Walker.Shell_MEO.Planes, Value: 10
+(11/12/2024 9:51:11 AM) Input Variable from getValueAsString MEO.MEOSats.Walker.Shell_MEO.SatellitesInPlanes, Value: 3
+(11/12/2024 9:51:11 AM) Input Variable from getValue: MEO.MEOSats.Walker.Shell_MEO.SatellitesInPlanes, Value: 3
+(11/12/2024 9:51:11 AM) Input Variable from getValueAsObject: MEO.MEOSats.Walker.Shell_MEO.SatellitesInPlanes, Value: 3
+(11/12/2024 9:51:11 AM) Input Variable from getValueAsString MEO.MEOSats.Walker.Shell_MEO.InterPlanePhaseIncrement, Value: 8
+(11/12/2024 9:51:11 AM) Input Variable from getValue: MEO.MEOSats.Walker.Shell_MEO.InterPlanePhaseIncrement, Value: 8
+(11/12/2024 9:51:11 AM) Input Variable from getValueAsObject: MEO.MEOSats.Walker.Shell_MEO.InterPlanePhaseIncrement, Value: 8
+(11/12/2024 9:51:11 AM) Input Variable from getValueAsString MEO.MEOSats.Walker.Shell_MEO.SemiMajorAxis, Value: 16378
+(11/12/2024 9:51:11 AM) Input Variable from getValue: MEO.MEOSats.Walker.Shell_MEO.SemiMajorAxis, Value: 16378
+(11/12/2024 9:51:11 AM) Input Variable from getValueAsObject: MEO.MEOSats.Walker.Shell_MEO.SemiMajorAxis, Value: 16378
+(11/12/2024 9:51:11 AM) Input Variable from getValueAsString MEO.MEOSats.Walker.Shell_MEO.Inclination, Value: 90
+(11/12/2024 9:51:11 AM) Input Variable from getValue: MEO.MEOSats.Walker.Shell_MEO.Inclination, Value: 90
+(11/12/2024 9:51:11 AM) Input Variable from getValueAsObject: MEO.MEOSats.Walker.Shell_MEO.Inclination, Value: 90
+(11/12/2024 9:51:11 AM) Input Variable from getValueAsString MEO.MEOSat.SWIR.SimpleConic.coneAngle, Value: 25
+(11/12/2024 9:51:11 AM) Input Variable from getValue: MEO.MEOSat.SWIR.SimpleConic.coneAngle, Value: 25
+(11/12/2024 9:51:11 AM) Input Variable from getValueAsObject: MEO.MEOSat.SWIR.SimpleConic.coneAngle, Value: 25
+(11/12/2024 9:51:11 AM) Output Variable: MEO.GroundCoverage.AvgAccess.Overall_Value.Average
+(11/12/2024 9:51:11 AM) Output Variable: MEO.Missile1Chain.Complete_Access.Duration.Total
+(11/12/2024 9:51:11 AM) Output Variable: MEO.Missile2Chain.Complete_Access.Duration.Total
+(11/12/2024 9:51:11 AM) Output Variable: MEO.Missile3Chain.Complete_Access.Duration.Total
+(11/12/2024 9:51:11 AM) Output Variable: MEO.MEO2Missiles.Strand_Access.Duration.Mean
+(11/12/2024 9:51:11 AM) Output Variable: MEO.GroundCoverage.MaxRevisit.Overall_Value.Maximum
+(11/12/2024 9:51:11 AM) Output Variable: MEO.GroundCoverage.AvgRevisit.Overall_Value.Average
+(11/12/2024 9:51:11 AM) >SetUnits / EpSec
+(11/12/2024 9:51:11 AM) 
+(11/12/2024 9:51:11 AM) >SetUnits / UTCG
+(11/12/2024 9:51:11 AM) 
+(11/12/2024 9:51:11 AM) >SetUnits / EpSec
+(11/12/2024 9:51:11 AM) 
+(11/12/2024 9:51:11 AM) >SetUnits / UTCG
+(11/12/2024 9:51:11 AM) 
+(11/12/2024 9:51:11 AM) >SetUnits / EpSec
+(11/12/2024 9:51:11 AM) 
+(11/12/2024 9:51:11 AM) >SetUnits / UTCG
+(11/12/2024 9:51:11 AM) 
+(11/12/2024 9:51:11 AM) >SetUnits / EpSec
+(11/12/2024 9:51:11 AM) 
+(11/12/2024 9:51:11 AM) >SetUnits / UTCG
+(11/12/2024 9:51:11 AM) 
+(11/12/2024 9:51:11 AM) >SetUnits / EpSec
+(11/12/2024 9:51:11 AM) 
+(11/12/2024 9:51:11 AM) >SetUnits / UTCG
+(11/12/2024 9:51:11 AM) 
+(11/12/2024 9:51:11 AM) >SetUnits / EpSec
+(11/12/2024 9:51:11 AM) 
+(11/12/2024 9:51:11 AM) >SetUnits / UTCG
+(11/12/2024 9:51:11 AM) 
+(11/12/2024 9:51:11 AM) >SetUnits / EpSec
+(11/12/2024 9:51:11 AM) 
+(11/12/2024 9:51:11 AM) >SetUnits / UTCG
+(11/12/2024 9:51:11 AM) 
+(11/12/2024 9:51:11 AM) >SetUnits / EpSec
+(11/12/2024 9:51:11 AM) 
+(11/12/2024 9:51:11 AM) >SetUnits / UTCG
+(11/12/2024 9:51:11 AM) 
+(11/12/2024 9:51:11 AM) >SetUnits / EpSec
+(11/12/2024 9:51:11 AM) 
+(11/12/2024 9:51:11 AM) >SetUnits / UTCG
+(11/12/2024 9:51:11 AM) 
+(11/12/2024 9:51:11 AM) -Propagating objects
+(11/12/2024 9:51:11 AM) --->Scenario Analysis Period: 10 Nov 2024 18:00:00.000 <> 11 Nov 2024 18:00:00.000
+(11/12/2024 9:51:11 AM) -Getting Output Values
+(11/12/2024 9:51:11 AM) >SetUnits / EpSec
+(11/12/2024 9:51:11 AM) 
+(11/12/2024 9:51:11 AM) >SetUnits / UTCG
+(11/12/2024 9:51:11 AM) 
+(11/12/2024 9:51:11 AM) >SetUnits / EpSec
+(11/12/2024 9:51:11 AM) 
+(11/12/2024 9:51:11 AM) >SetUnits / UTCG
+(11/12/2024 9:51:11 AM) 
+(11/12/2024 9:51:11 AM) >SetUnits / EpSec
+(11/12/2024 9:51:11 AM) 
+(11/12/2024 9:51:11 AM) Executing Data Provider
+(11/12/2024 9:51:11 AM)    Name: Overall Value
+(11/12/2024 9:51:11 AM)    Object: /Scenario/MEO/CoverageDefinition/GroundCoverage/FigureOfMerit/AvgAccess
+(11/12/2024 9:51:11 AM) Set Variable: MEO.GroundCoverage.AvgAccess.Overall_Value.Average + output value: 0
+(11/12/2024 9:51:11 AM) >SetUnits / UTCG
+(11/12/2024 9:51:12 AM) 
+(11/12/2024 9:51:12 AM) >SetUnits / EpSec
+(11/12/2024 9:51:12 AM) 
+(11/12/2024 9:51:12 AM) Executing Data Provider
+(11/12/2024 9:51:12 AM)    Name: Complete Access
+(11/12/2024 9:51:12 AM)    Object: /Scenario/MEO/Chain/Missile1Chain
+(11/12/2024 9:51:12 AM) >SetUnits / EpSec
+(11/12/2024 9:51:12 AM) 
+(11/12/2024 9:51:12 AM) >SetUnits / EpSec
+(11/12/2024 9:51:12 AM) 
+(11/12/2024 9:51:12 AM)    Start: 0
+(11/12/2024 9:51:12 AM)    Stop: 86400
+(11/12/2024 9:51:12 AM) Set Variable: MEO.Missile1Chain.Complete_Access.Duration.Total + output value: 4334.473589
+(11/12/2024 9:51:12 AM) >SetUnits / UTCG
+(11/12/2024 9:51:12 AM) 
+(11/12/2024 9:51:12 AM) >SetUnits / EpSec
+(11/12/2024 9:51:12 AM) 
+(11/12/2024 9:51:12 AM) Executing Data Provider
+(11/12/2024 9:51:12 AM)    Name: Complete Access
+(11/12/2024 9:51:12 AM)    Object: /Scenario/MEO/Chain/Missile2Chain
+(11/12/2024 9:51:12 AM) >SetUnits / EpSec
+(11/12/2024 9:51:12 AM) 
+(11/12/2024 9:51:12 AM) >SetUnits / EpSec
+(11/12/2024 9:51:12 AM) 
+(11/12/2024 9:51:12 AM)    Start: 0
+(11/12/2024 9:51:12 AM)    Stop: 86400
+(11/12/2024 9:51:13 AM) Set Variable: MEO.Missile2Chain.Complete_Access.Duration.Total + output value: 3503.429305
+(11/12/2024 9:51:13 AM) >SetUnits / UTCG
+(11/12/2024 9:51:13 AM) 
+(11/12/2024 9:51:13 AM) >SetUnits / EpSec
+(11/12/2024 9:51:13 AM) 
+(11/12/2024 9:51:13 AM) Executing Data Provider
+(11/12/2024 9:51:13 AM)    Name: Complete Access
+(11/12/2024 9:51:13 AM)    Object: /Scenario/MEO/Chain/Missile3Chain
+(11/12/2024 9:51:13 AM) >SetUnits / EpSec
+(11/12/2024 9:51:13 AM) 
+(11/12/2024 9:51:13 AM) >SetUnits / EpSec
+(11/12/2024 9:51:13 AM) 
+(11/12/2024 9:51:13 AM)    Start: 0
+(11/12/2024 9:51:13 AM)    Stop: 86400
+(11/12/2024 9:51:13 AM) Set Variable: MEO.Missile3Chain.Complete_Access.Duration.Total + output value: 4740.180488
+(11/12/2024 9:51:13 AM) >SetUnits / UTCG
+(11/12/2024 9:51:13 AM) 
+(11/12/2024 9:51:13 AM) >SetUnits / EpSec
+(11/12/2024 9:51:13 AM) 
+(11/12/2024 9:51:13 AM) Executing Data Provider
+(11/12/2024 9:51:13 AM)    Name: Strand Access
+(11/12/2024 9:51:13 AM)    Object: /Scenario/MEO/Chain/MEO2Missiles
+(11/12/2024 9:51:13 AM) >SetUnits / EpSec
+(11/12/2024 9:51:13 AM) 
+(11/12/2024 9:51:13 AM) >SetUnits / EpSec
+(11/12/2024 9:51:13 AM) 
+(11/12/2024 9:51:13 AM)    Start: 0
+(11/12/2024 9:51:13 AM)    Stop: 86400
+(11/12/2024 9:51:15 AM) Set Variable: MEO.MEO2Missiles.Strand_Access.Duration.Mean + output value: 2723.02788522486
+(11/12/2024 9:51:15 AM) >SetUnits / UTCG
+(11/12/2024 9:51:15 AM) 
+(11/12/2024 9:51:15 AM) >SetUnits / EpSec
+(11/12/2024 9:51:15 AM) 
+(11/12/2024 9:51:15 AM) Executing Data Provider
+(11/12/2024 9:51:15 AM)    Name: Overall Value
+(11/12/2024 9:51:15 AM)    Object: /Scenario/MEO/CoverageDefinition/GroundCoverage/FigureOfMerit/MaxRevisit
+(11/12/2024 9:51:15 AM) Set Variable: MEO.GroundCoverage.MaxRevisit.Overall_Value.Maximum + output value: 86400
+(11/12/2024 9:51:15 AM) >SetUnits / UTCG
+(11/12/2024 9:51:15 AM) 
+(11/12/2024 9:51:15 AM) >SetUnits / EpSec
+(11/12/2024 9:51:15 AM) 
+(11/12/2024 9:51:15 AM) Executing Data Provider
+(11/12/2024 9:51:15 AM)    Name: Overall Value
+(11/12/2024 9:51:15 AM)    Object: /Scenario/MEO/CoverageDefinition/GroundCoverage/FigureOfMerit/AvgRevisit
+(11/12/2024 9:51:15 AM) Set Variable: MEO.GroundCoverage.AvgRevisit.Overall_Value.Average + output value: 86400
+(11/12/2024 9:51:15 AM) >SetUnits / UTCG
+(11/12/2024 9:51:15 AM) 
+(11/12/2024 9:51:15 AM) IAgStkObjectRoot.BeginUpdate()
+(11/12/2024 9:51:15 AM) IAgStkObjectRoot.EndUpdate()
+(11/12/2024 9:54:00 AM) Running Macro: AnalyzerPreRun
+(11/12/2024 9:54:00 AM) Running Macro: PreRun
+(11/12/2024 9:54:00 AM) 
+(11/12/2024 9:54:00 AM) --- 11/12/2024 9:54:00 AM
+(11/12/2024 9:54:00 AM) --- Running STK
+(11/12/2024 9:54:00 AM) 
+(11/12/2024 9:54:00 AM) -Sending values to STK
+(11/12/2024 9:54:00 AM) IAgChain.AutoRecompute=false /Application/STK/Scenario/MEO/Chain/MEO2Missiles
+(11/12/2024 9:54:00 AM) Input Variable from getValueAsString MEO.MEOSats.Walker.Shell_MEO.Planes, Value: 10
+(11/12/2024 9:54:00 AM) Input Variable from getValue: MEO.MEOSats.Walker.Shell_MEO.Planes, Value: 10
+(11/12/2024 9:54:00 AM) Input Variable from getValueAsObject: MEO.MEOSats.Walker.Shell_MEO.Planes, Value: 10
+(11/12/2024 9:54:00 AM) Input Variable from getValueAsString MEO.MEOSats.Walker.Shell_MEO.SatellitesInPlanes, Value: 3
+(11/12/2024 9:54:00 AM) Input Variable from getValue: MEO.MEOSats.Walker.Shell_MEO.SatellitesInPlanes, Value: 3
+(11/12/2024 9:54:00 AM) Input Variable from getValueAsObject: MEO.MEOSats.Walker.Shell_MEO.SatellitesInPlanes, Value: 3
+(11/12/2024 9:54:00 AM) Input Variable from getValueAsString MEO.MEOSats.Walker.Shell_MEO.InterPlanePhaseIncrement, Value: 8
+(11/12/2024 9:54:00 AM) Input Variable from getValue: MEO.MEOSats.Walker.Shell_MEO.InterPlanePhaseIncrement, Value: 8
+(11/12/2024 9:54:00 AM) Input Variable from getValueAsObject: MEO.MEOSats.Walker.Shell_MEO.InterPlanePhaseIncrement, Value: 8
+(11/12/2024 9:54:00 AM) Input Variable from getValueAsString MEO.MEOSats.Walker.Shell_MEO.SemiMajorAxis, Value: 16378
+(11/12/2024 9:54:00 AM) Input Variable from getValue: MEO.MEOSats.Walker.Shell_MEO.SemiMajorAxis, Value: 16378
+(11/12/2024 9:54:00 AM) Input Variable from getValueAsObject: MEO.MEOSats.Walker.Shell_MEO.SemiMajorAxis, Value: 16378
+(11/12/2024 9:54:00 AM) Input Variable from getValueAsString MEO.MEOSats.Walker.Shell_MEO.Inclination, Value: 90
+(11/12/2024 9:54:00 AM) Input Variable from getValue: MEO.MEOSats.Walker.Shell_MEO.Inclination, Value: 90
+(11/12/2024 9:54:00 AM) Input Variable from getValueAsObject: MEO.MEOSats.Walker.Shell_MEO.Inclination, Value: 90
+(11/12/2024 9:54:00 AM) Input Variable from getValueAsString MEO.MEOSat.SWIR.SimpleConic.coneAngle, Value: 25
+(11/12/2024 9:54:00 AM) Input Variable from getValue: MEO.MEOSat.SWIR.SimpleConic.coneAngle, Value: 25
+(11/12/2024 9:54:00 AM) Input Variable from getValueAsObject: MEO.MEOSat.SWIR.SimpleConic.coneAngle, Value: 25
+(11/12/2024 9:54:00 AM) Output Variable: MEO.GroundCoverage.AvgAccess.Overall_Value.Average
+(11/12/2024 9:54:00 AM) Output Variable: MEO.Missile1Chain.Complete_Access.Duration.Total
+(11/12/2024 9:54:00 AM) Output Variable: MEO.Missile2Chain.Complete_Access.Duration.Total
+(11/12/2024 9:54:00 AM) Output Variable: MEO.Missile3Chain.Complete_Access.Duration.Total
+(11/12/2024 9:54:00 AM) Output Variable: MEO.MEO2Missiles.Strand_Access.Duration.Mean
+(11/12/2024 9:54:00 AM) Output Variable: MEO.GroundCoverage.MaxRevisit.Overall_Value.Maximum
+(11/12/2024 9:54:00 AM) Output Variable: MEO.GroundCoverage.AvgRevisit.Overall_Value.Average
+(11/12/2024 9:54:00 AM) >SetUnits / EpSec
+(11/12/2024 9:54:00 AM) 
+(11/12/2024 9:54:00 AM) >SetUnits / UTCG
+(11/12/2024 9:54:00 AM) 
+(11/12/2024 9:54:00 AM) >SetUnits / EpSec
+(11/12/2024 9:54:00 AM) 
+(11/12/2024 9:54:01 AM) >SetUnits / UTCG
+(11/12/2024 9:54:01 AM) 
+(11/12/2024 9:54:01 AM) >SetUnits / EpSec
+(11/12/2024 9:54:01 AM) 
+(11/12/2024 9:54:01 AM) >SetUnits / UTCG
+(11/12/2024 9:54:01 AM) 
+(11/12/2024 9:54:01 AM) >SetUnits / EpSec
+(11/12/2024 9:54:01 AM) 
+(11/12/2024 9:54:01 AM) >SetUnits / UTCG
+(11/12/2024 9:54:01 AM) 
+(11/12/2024 9:54:01 AM) >SetUnits / EpSec
+(11/12/2024 9:54:01 AM) 
+(11/12/2024 9:54:01 AM) >SetUnits / UTCG
+(11/12/2024 9:54:01 AM) 
+(11/12/2024 9:54:01 AM) >SetUnits / EpSec
+(11/12/2024 9:54:01 AM) 
+(11/12/2024 9:54:01 AM) >SetUnits / UTCG
+(11/12/2024 9:54:01 AM) 
+(11/12/2024 9:54:01 AM) >SetUnits / EpSec
+(11/12/2024 9:54:01 AM) 
+(11/12/2024 9:54:01 AM) >SetUnits / UTCG
+(11/12/2024 9:54:01 AM) 
+(11/12/2024 9:54:01 AM) >SetUnits / EpSec
+(11/12/2024 9:54:01 AM) 
+(11/12/2024 9:54:01 AM) >SetUnits / UTCG
+(11/12/2024 9:54:01 AM) 
+(11/12/2024 9:54:01 AM) >SetUnits / EpSec
+(11/12/2024 9:54:01 AM) 
+(11/12/2024 9:54:01 AM) >SetUnits / UTCG
+(11/12/2024 9:54:01 AM) 
+(11/12/2024 9:54:01 AM) -Propagating objects
+(11/12/2024 9:54:01 AM) --->Scenario Analysis Period: 10 Nov 2024 18:00:00.000 <> 11 Nov 2024 18:00:00.000
+(11/12/2024 9:54:01 AM) -Computing Accesses
+(11/12/2024 9:54:01 AM) IAgChain.ComputeAccess() - /Scenario/MEO/Chain/Missile1Chain
+(11/12/2024 9:54:01 AM) IAgChain.ComputeAccess() - /Scenario/MEO/Chain/Missile2Chain
+(11/12/2024 9:54:02 AM) IAgChain.ComputeAccess() - /Scenario/MEO/Chain/Missile3Chain
+(11/12/2024 9:54:02 AM) IAgChain.ComputeAccess() - /Scenario/MEO/Chain/MEO2Missiles
+(11/12/2024 9:54:02 AM) IAgCoverageDefinition.ClearAccesses() /Application/STK/Scenario/MEO/CoverageDefinition/GroundCoverage
+(11/12/2024 9:54:03 AM) IAgCoverageDefinition.ComputeAccesses() /Application/STK/Scenario/MEO/CoverageDefinition/GroundCoverage
+(11/12/2024 9:54:46 AM) -Getting Output Values
+(11/12/2024 9:54:46 AM) >SetUnits / EpSec
+(11/12/2024 9:54:46 AM) 
+(11/12/2024 9:54:46 AM) >SetUnits / UTCG
+(11/12/2024 9:54:46 AM) 
+(11/12/2024 9:54:46 AM) >SetUnits / EpSec
+(11/12/2024 9:54:46 AM) 
+(11/12/2024 9:54:46 AM) >SetUnits / UTCG
+(11/12/2024 9:54:46 AM) 
+(11/12/2024 9:54:46 AM) >SetUnits / EpSec
+(11/12/2024 9:54:46 AM) 
+(11/12/2024 9:54:46 AM) Executing Data Provider
+(11/12/2024 9:54:46 AM)    Name: Overall Value
+(11/12/2024 9:54:46 AM)    Object: /Scenario/MEO/CoverageDefinition/GroundCoverage/FigureOfMerit/AvgAccess
+(11/12/2024 9:54:46 AM) Set Variable: MEO.GroundCoverage.AvgAccess.Overall_Value.Average + output value: 6319.91567691131
+(11/12/2024 9:54:46 AM) >SetUnits / UTCG
+(11/12/2024 9:54:46 AM) 
+(11/12/2024 9:54:46 AM) >SetUnits / EpSec
+(11/12/2024 9:54:46 AM) 
+(11/12/2024 9:54:46 AM) Executing Data Provider
+(11/12/2024 9:54:46 AM)    Name: Complete Access
+(11/12/2024 9:54:46 AM)    Object: /Scenario/MEO/Chain/Missile1Chain
+(11/12/2024 9:54:46 AM) >SetUnits / EpSec
+(11/12/2024 9:54:46 AM) 
+(11/12/2024 9:54:46 AM) >SetUnits / EpSec
+(11/12/2024 9:54:46 AM) 
+(11/12/2024 9:54:46 AM)    Start: 0
+(11/12/2024 9:54:46 AM)    Stop: 86400
+(11/12/2024 9:54:46 AM) Set Variable: MEO.Missile1Chain.Complete_Access.Duration.Total + output value: 4334.473589
+(11/12/2024 9:54:46 AM) >SetUnits / UTCG
+(11/12/2024 9:54:46 AM) 
+(11/12/2024 9:54:46 AM) >SetUnits / EpSec
+(11/12/2024 9:54:46 AM) 
+(11/12/2024 9:54:46 AM) Executing Data Provider
+(11/12/2024 9:54:46 AM)    Name: Complete Access
+(11/12/2024 9:54:46 AM)    Object: /Scenario/MEO/Chain/Missile2Chain
+(11/12/2024 9:54:46 AM) >SetUnits / EpSec
+(11/12/2024 9:54:46 AM) 
+(11/12/2024 9:54:46 AM) >SetUnits / EpSec
+(11/12/2024 9:54:46 AM) 
+(11/12/2024 9:54:46 AM)    Start: 0
+(11/12/2024 9:54:46 AM)    Stop: 86400
+(11/12/2024 9:54:47 AM) Set Variable: MEO.Missile2Chain.Complete_Access.Duration.Total + output value: 3503.429305
+(11/12/2024 9:54:47 AM) >SetUnits / UTCG
+(11/12/2024 9:54:47 AM) 
+(11/12/2024 9:54:47 AM) >SetUnits / EpSec
+(11/12/2024 9:54:47 AM) 
+(11/12/2024 9:54:47 AM) Executing Data Provider
+(11/12/2024 9:54:47 AM)    Name: Complete Access
+(11/12/2024 9:54:47 AM)    Object: /Scenario/MEO/Chain/Missile3Chain
+(11/12/2024 9:54:47 AM) >SetUnits / EpSec
+(11/12/2024 9:54:47 AM) 
+(11/12/2024 9:54:47 AM) >SetUnits / EpSec
+(11/12/2024 9:54:47 AM) 
+(11/12/2024 9:54:47 AM)    Start: 0
+(11/12/2024 9:54:47 AM)    Stop: 86400
+(11/12/2024 9:54:47 AM) Set Variable: MEO.Missile3Chain.Complete_Access.Duration.Total + output value: 4740.180488
+(11/12/2024 9:54:47 AM) >SetUnits / UTCG
+(11/12/2024 9:54:47 AM) 
+(11/12/2024 9:54:47 AM) >SetUnits / EpSec
+(11/12/2024 9:54:47 AM) 
+(11/12/2024 9:54:47 AM) Executing Data Provider
+(11/12/2024 9:54:47 AM)    Name: Strand Access
+(11/12/2024 9:54:47 AM)    Object: /Scenario/MEO/Chain/MEO2Missiles
+(11/12/2024 9:54:47 AM) >SetUnits / EpSec
+(11/12/2024 9:54:47 AM) 
+(11/12/2024 9:54:47 AM) >SetUnits / EpSec
+(11/12/2024 9:54:47 AM) 
+(11/12/2024 9:54:47 AM)    Start: 0
+(11/12/2024 9:54:47 AM)    Stop: 86400
+(11/12/2024 9:54:49 AM) Set Variable: MEO.MEO2Missiles.Strand_Access.Duration.Mean + output value: 2723.02788522486
+(11/12/2024 9:54:49 AM) >SetUnits / UTCG
+(11/12/2024 9:54:49 AM) 
+(11/12/2024 9:54:49 AM) >SetUnits / EpSec
+(11/12/2024 9:54:49 AM) 
+(11/12/2024 9:54:49 AM) Executing Data Provider
+(11/12/2024 9:54:49 AM)    Name: Overall Value
+(11/12/2024 9:54:49 AM)    Object: /Scenario/MEO/CoverageDefinition/GroundCoverage/FigureOfMerit/MaxRevisit
+(11/12/2024 9:54:50 AM) Set Variable: MEO.GroundCoverage.MaxRevisit.Overall_Value.Maximum + output value: 0
+(11/12/2024 9:54:50 AM) >SetUnits / UTCG
+(11/12/2024 9:54:50 AM) 
+(11/12/2024 9:54:50 AM) >SetUnits / EpSec
+(11/12/2024 9:54:50 AM) 
+(11/12/2024 9:54:50 AM) Executing Data Provider
+(11/12/2024 9:54:50 AM)    Name: Overall Value
+(11/12/2024 9:54:50 AM)    Object: /Scenario/MEO/CoverageDefinition/GroundCoverage/FigureOfMerit/AvgRevisit
+(11/12/2024 9:54:50 AM) Set Variable: MEO.GroundCoverage.AvgRevisit.Overall_Value.Average + output value: 0
+(11/12/2024 9:54:50 AM) >SetUnits / UTCG
+(11/12/2024 9:54:50 AM) 
+(11/12/2024 9:54:50 AM) IAgStkObjectRoot.BeginUpdate()
+(11/12/2024 9:54:50 AM) IAgStkObjectRoot.EndUpdate()
+(11/12/2024 9:54:50 AM) IAgChain.AutoRecompute=false /Application/STK/Scenario/MEO/Chain/MEO2Missiles
+(11/12/2024 9:54:50 AM) Running Macro: AnalyzerPostRun
+(11/12/2024 9:54:50 AM) Running Macro: PostRun
+(11/12/2024 9:54:50 AM) Running Macro: AnalyzerPreRun
+(11/12/2024 9:54:50 AM) Running Macro: PreRun
+(11/12/2024 9:54:50 AM) 
+(11/12/2024 9:54:50 AM) --- 11/12/2024 9:54:50 AM
+(11/12/2024 9:54:50 AM) --- Running STK
+(11/12/2024 9:54:50 AM) 
+(11/12/2024 9:54:50 AM) -Sending values to STK
+(11/12/2024 9:54:50 AM) IAgChain.AutoRecompute=false /Application/STK/Scenario/MEO/Chain/MEO2Missiles
+(11/12/2024 9:54:50 AM) Input Variable from getValueAsString MEO.MEOSats.Walker.Shell_MEO.Planes, Value: 9
+(11/12/2024 9:54:50 AM) Input Variable from getValue: MEO.MEOSats.Walker.Shell_MEO.Planes, Value: 9
+(11/12/2024 9:54:50 AM) Input Variable from getValueAsObject: MEO.MEOSats.Walker.Shell_MEO.Planes, Value: 9
+(11/12/2024 9:54:50 AM) Input Variable from getValueAsString MEO.MEOSats.Walker.Shell_MEO.SatellitesInPlanes, Value: 3
+(11/12/2024 9:54:50 AM) Input Variable from getValue: MEO.MEOSats.Walker.Shell_MEO.SatellitesInPlanes, Value: 3
+(11/12/2024 9:54:50 AM) Input Variable from getValueAsObject: MEO.MEOSats.Walker.Shell_MEO.SatellitesInPlanes, Value: 3
+(11/12/2024 9:54:50 AM) Input Variable from getValueAsString MEO.MEOSats.Walker.Shell_MEO.InterPlanePhaseIncrement, Value: 8
+(11/12/2024 9:54:50 AM) Input Variable from getValue: MEO.MEOSats.Walker.Shell_MEO.InterPlanePhaseIncrement, Value: 8
+(11/12/2024 9:54:50 AM) Input Variable from getValueAsObject: MEO.MEOSats.Walker.Shell_MEO.InterPlanePhaseIncrement, Value: 8
+(11/12/2024 9:54:50 AM) Input Variable from getValueAsString MEO.MEOSats.Walker.Shell_MEO.SemiMajorAxis, Value: 16378
+(11/12/2024 9:54:50 AM) Input Variable from getValue: MEO.MEOSats.Walker.Shell_MEO.SemiMajorAxis, Value: 16378
+(11/12/2024 9:54:50 AM) Input Variable from getValueAsObject: MEO.MEOSats.Walker.Shell_MEO.SemiMajorAxis, Value: 16378
+(11/12/2024 9:54:50 AM) Input Variable from getValueAsString MEO.MEOSats.Walker.Shell_MEO.Inclination, Value: 90
+(11/12/2024 9:54:50 AM) Input Variable from getValue: MEO.MEOSats.Walker.Shell_MEO.Inclination, Value: 90
+(11/12/2024 9:54:50 AM) Input Variable from getValueAsObject: MEO.MEOSats.Walker.Shell_MEO.Inclination, Value: 90
+(11/12/2024 9:54:50 AM) Input Variable from getValueAsString MEO.MEOSat.SWIR.SimpleConic.coneAngle, Value: 25
+(11/12/2024 9:54:50 AM) Input Variable from getValue: MEO.MEOSat.SWIR.SimpleConic.coneAngle, Value: 25
+(11/12/2024 9:54:50 AM) Input Variable from getValueAsObject: MEO.MEOSat.SWIR.SimpleConic.coneAngle, Value: 25
+(11/12/2024 9:54:50 AM) Output Variable: MEO.GroundCoverage.AvgAccess.Overall_Value.Average
+(11/12/2024 9:54:50 AM) Output Variable: MEO.Missile1Chain.Complete_Access.Duration.Total
+(11/12/2024 9:54:50 AM) Output Variable: MEO.Missile2Chain.Complete_Access.Duration.Total
+(11/12/2024 9:54:50 AM) Output Variable: MEO.Missile3Chain.Complete_Access.Duration.Total
+(11/12/2024 9:54:50 AM) Output Variable: MEO.MEO2Missiles.Strand_Access.Duration.Mean
+(11/12/2024 9:54:50 AM) Output Variable: MEO.GroundCoverage.MaxRevisit.Overall_Value.Maximum
+(11/12/2024 9:54:50 AM) Output Variable: MEO.GroundCoverage.AvgRevisit.Overall_Value.Average
+(11/12/2024 9:54:50 AM) >SetUnits / EpSec
+(11/12/2024 9:54:50 AM) 
+(11/12/2024 9:54:50 AM) >SetUnits / UTCG
+(11/12/2024 9:54:50 AM) 
+(11/12/2024 9:54:50 AM) >SetUnits / EpSec
+(11/12/2024 9:54:50 AM) 
+(11/12/2024 9:54:51 AM) >SetUnits / UTCG
+(11/12/2024 9:54:51 AM) 
+(11/12/2024 9:54:51 AM) >SetUnits / EpSec
+(11/12/2024 9:54:51 AM) 
+(11/12/2024 9:54:51 AM) >SetUnits / UTCG
+(11/12/2024 9:54:51 AM) 
+(11/12/2024 9:54:51 AM) >SetUnits / EpSec
+(11/12/2024 9:54:51 AM) 
+(11/12/2024 9:54:51 AM) >SetUnits / UTCG
+(11/12/2024 9:54:51 AM) 
+(11/12/2024 9:54:51 AM) >SetUnits / EpSec
+(11/12/2024 9:54:51 AM) 
+(11/12/2024 9:54:51 AM) >SetUnits / UTCG
+(11/12/2024 9:54:51 AM) 
+(11/12/2024 9:54:51 AM) >SetUnits / EpSec
+(11/12/2024 9:54:51 AM) 
+(11/12/2024 9:54:51 AM) >SetUnits / UTCG
+(11/12/2024 9:54:51 AM) 
+(11/12/2024 9:54:51 AM) >SetUnits / EpSec
+(11/12/2024 9:54:51 AM) 
+(11/12/2024 9:54:51 AM) >SetUnits / UTCG
+(11/12/2024 9:54:51 AM) 
+(11/12/2024 9:54:51 AM) >SetUnits / EpSec
+(11/12/2024 9:54:51 AM) 
+(11/12/2024 9:54:51 AM) >SetUnits / UTCG
+(11/12/2024 9:54:51 AM) 
+(11/12/2024 9:54:51 AM) >SetUnits / EpSec
+(11/12/2024 9:54:51 AM) 
+(11/12/2024 9:54:51 AM) >SetUnits / UTCG
+(11/12/2024 9:54:51 AM) 
+(11/12/2024 9:54:51 AM) -Propagating objects
+(11/12/2024 9:54:51 AM) --->Scenario Analysis Period: 10 Nov 2024 18:00:00.000 <> 11 Nov 2024 18:00:00.000
+(11/12/2024 9:54:51 AM) -Computing Accesses
+(11/12/2024 9:54:51 AM) IAgChain.ComputeAccess() - /Scenario/MEO/Chain/Missile1Chain
+(11/12/2024 9:54:51 AM) IAgChain.ComputeAccess() - /Scenario/MEO/Chain/Missile2Chain
+(11/12/2024 9:54:51 AM) IAgChain.ComputeAccess() - /Scenario/MEO/Chain/Missile3Chain
+(11/12/2024 9:54:52 AM) IAgChain.ComputeAccess() - /Scenario/MEO/Chain/MEO2Missiles
+(11/12/2024 9:54:52 AM) IAgCoverageDefinition.ClearAccesses() /Application/STK/Scenario/MEO/CoverageDefinition/GroundCoverage
+(11/12/2024 9:54:52 AM) IAgCoverageDefinition.ComputeAccesses() /Application/STK/Scenario/MEO/CoverageDefinition/GroundCoverage
+(11/12/2024 9:55:33 AM) -Getting Output Values
+(11/12/2024 9:55:33 AM) >SetUnits / EpSec
+(11/12/2024 9:55:33 AM) 
+(11/12/2024 9:55:33 AM) >SetUnits / UTCG
+(11/12/2024 9:55:33 AM) 
+(11/12/2024 9:55:33 AM) >SetUnits / EpSec
+(11/12/2024 9:55:33 AM) 
+(11/12/2024 9:55:33 AM) >SetUnits / UTCG
+(11/12/2024 9:55:33 AM) 
+(11/12/2024 9:55:33 AM) >SetUnits / EpSec
+(11/12/2024 9:55:33 AM) 
+(11/12/2024 9:55:33 AM) Executing Data Provider
+(11/12/2024 9:55:33 AM)    Name: Overall Value
+(11/12/2024 9:55:33 AM)    Object: /Scenario/MEO/CoverageDefinition/GroundCoverage/FigureOfMerit/AvgAccess
+(11/12/2024 9:55:33 AM) Set Variable: MEO.GroundCoverage.AvgAccess.Overall_Value.Average + output value: 6318.98449359205
+(11/12/2024 9:55:33 AM) >SetUnits / UTCG
+(11/12/2024 9:55:33 AM) 
+(11/12/2024 9:55:33 AM) >SetUnits / EpSec
+(11/12/2024 9:55:33 AM) 
+(11/12/2024 9:55:33 AM) Executing Data Provider
+(11/12/2024 9:55:33 AM)    Name: Complete Access
+(11/12/2024 9:55:33 AM)    Object: /Scenario/MEO/Chain/Missile1Chain
+(11/12/2024 9:55:33 AM) >SetUnits / EpSec
+(11/12/2024 9:55:33 AM) 
+(11/12/2024 9:55:33 AM) >SetUnits / EpSec
+(11/12/2024 9:55:33 AM) 
+(11/12/2024 9:55:33 AM)    Start: 0
+(11/12/2024 9:55:33 AM)    Stop: 86400
+(11/12/2024 9:55:33 AM) Set Variable: MEO.Missile1Chain.Complete_Access.Duration.Total + output value: 4334.470773
+(11/12/2024 9:55:33 AM) >SetUnits / UTCG
+(11/12/2024 9:55:33 AM) 
+(11/12/2024 9:55:33 AM) >SetUnits / EpSec
+(11/12/2024 9:55:33 AM) 
+(11/12/2024 9:55:33 AM) Executing Data Provider
+(11/12/2024 9:55:33 AM)    Name: Complete Access
+(11/12/2024 9:55:33 AM)    Object: /Scenario/MEO/Chain/Missile2Chain
+(11/12/2024 9:55:34 AM) >SetUnits / EpSec
+(11/12/2024 9:55:34 AM) 
+(11/12/2024 9:55:34 AM) >SetUnits / EpSec
+(11/12/2024 9:55:34 AM) 
+(11/12/2024 9:55:34 AM)    Start: 0
+(11/12/2024 9:55:34 AM)    Stop: 86400
+(11/12/2024 9:55:34 AM) Set Variable: MEO.Missile2Chain.Complete_Access.Duration.Total + output value: 3503.429059
+(11/12/2024 9:55:34 AM) >SetUnits / UTCG
+(11/12/2024 9:55:34 AM) 
+(11/12/2024 9:55:34 AM) >SetUnits / EpSec
+(11/12/2024 9:55:34 AM) 
+(11/12/2024 9:55:34 AM) Executing Data Provider
+(11/12/2024 9:55:34 AM)    Name: Complete Access
+(11/12/2024 9:55:34 AM)    Object: /Scenario/MEO/Chain/Missile3Chain
+(11/12/2024 9:55:34 AM) >SetUnits / EpSec
+(11/12/2024 9:55:34 AM) 
+(11/12/2024 9:55:34 AM) >SetUnits / EpSec
+(11/12/2024 9:55:34 AM) 
+(11/12/2024 9:55:34 AM)    Start: 0
+(11/12/2024 9:55:34 AM)    Stop: 86400
+(11/12/2024 9:55:34 AM) Set Variable: MEO.Missile3Chain.Complete_Access.Duration.Total + output value: 4740.179303
+(11/12/2024 9:55:34 AM) >SetUnits / UTCG
+(11/12/2024 9:55:34 AM) 
+(11/12/2024 9:55:34 AM) >SetUnits / EpSec
+(11/12/2024 9:55:34 AM) 
+(11/12/2024 9:55:34 AM) Executing Data Provider
+(11/12/2024 9:55:34 AM)    Name: Strand Access
+(11/12/2024 9:55:34 AM)    Object: /Scenario/MEO/Chain/MEO2Missiles
+(11/12/2024 9:55:34 AM) >SetUnits / EpSec
+(11/12/2024 9:55:34 AM) 
+(11/12/2024 9:55:34 AM) >SetUnits / EpSec
+(11/12/2024 9:55:34 AM) 
+(11/12/2024 9:55:34 AM)    Start: 0
+(11/12/2024 9:55:34 AM)    Stop: 86400
+(11/12/2024 9:55:35 AM) Set Variable: MEO.MEO2Missiles.Strand_Access.Duration.Mean + output value: 2542.12568271086
+(11/12/2024 9:55:35 AM) >SetUnits / UTCG
+(11/12/2024 9:55:35 AM) 
+(11/12/2024 9:55:35 AM) >SetUnits / EpSec
+(11/12/2024 9:55:35 AM) 
+(11/12/2024 9:55:35 AM) Executing Data Provider
+(11/12/2024 9:55:35 AM)    Name: Overall Value
+(11/12/2024 9:55:35 AM)    Object: /Scenario/MEO/CoverageDefinition/GroundCoverage/FigureOfMerit/MaxRevisit
+(11/12/2024 9:55:35 AM) Set Variable: MEO.GroundCoverage.MaxRevisit.Overall_Value.Maximum + output value: 0
+(11/12/2024 9:55:35 AM) >SetUnits / UTCG
+(11/12/2024 9:55:35 AM) 
+(11/12/2024 9:55:35 AM) >SetUnits / EpSec
+(11/12/2024 9:55:35 AM) 
+(11/12/2024 9:55:35 AM) Executing Data Provider
+(11/12/2024 9:55:35 AM)    Name: Overall Value
+(11/12/2024 9:55:35 AM)    Object: /Scenario/MEO/CoverageDefinition/GroundCoverage/FigureOfMerit/AvgRevisit
+(11/12/2024 9:55:35 AM) Set Variable: MEO.GroundCoverage.AvgRevisit.Overall_Value.Average + output value: 0
+(11/12/2024 9:55:35 AM) >SetUnits / UTCG
+(11/12/2024 9:55:35 AM) 
+(11/12/2024 9:55:35 AM) IAgStkObjectRoot.BeginUpdate()
+(11/12/2024 9:55:35 AM) IAgStkObjectRoot.EndUpdate()
+(11/12/2024 9:55:35 AM) IAgChain.AutoRecompute=false /Application/STK/Scenario/MEO/Chain/MEO2Missiles
+(11/12/2024 9:55:35 AM) Running Macro: AnalyzerPostRun
+(11/12/2024 9:55:35 AM) Running Macro: PostRun
+(11/12/2024 9:55:42 AM) 
+(11/12/2024 9:55:42 AM) --- 11/12/2024 9:55:42 AM
+(11/12/2024 9:55:42 AM) --- Running STK
+(11/12/2024 9:55:42 AM) 
+(11/12/2024 9:55:42 AM) -Sending values to STK
+(11/12/2024 9:55:42 AM) Input Variable from getValueAsString MEO.MEOSats.Walker.Shell_MEO.Planes, Value: 9
+(11/12/2024 9:55:42 AM) Input Variable from getValue: MEO.MEOSats.Walker.Shell_MEO.Planes, Value: 9
+(11/12/2024 9:55:42 AM) Input Variable from getValueAsObject: MEO.MEOSats.Walker.Shell_MEO.Planes, Value: 9
+(11/12/2024 9:55:42 AM) Input Variable from getValueAsString MEO.MEOSats.Walker.Shell_MEO.SatellitesInPlanes, Value: 3
+(11/12/2024 9:55:42 AM) Input Variable from getValue: MEO.MEOSats.Walker.Shell_MEO.SatellitesInPlanes, Value: 3
+(11/12/2024 9:55:42 AM) Input Variable from getValueAsObject: MEO.MEOSats.Walker.Shell_MEO.SatellitesInPlanes, Value: 3
+(11/12/2024 9:55:42 AM) Input Variable from getValueAsString MEO.MEOSats.Walker.Shell_MEO.InterPlanePhaseIncrement, Value: 8
+(11/12/2024 9:55:42 AM) Input Variable from getValue: MEO.MEOSats.Walker.Shell_MEO.InterPlanePhaseIncrement, Value: 8
+(11/12/2024 9:55:42 AM) Input Variable from getValueAsObject: MEO.MEOSats.Walker.Shell_MEO.InterPlanePhaseIncrement, Value: 8
+(11/12/2024 9:55:42 AM) Input Variable from getValueAsString MEO.MEOSats.Walker.Shell_MEO.SemiMajorAxis, Value: 16378
+(11/12/2024 9:55:42 AM) Input Variable from getValue: MEO.MEOSats.Walker.Shell_MEO.SemiMajorAxis, Value: 16378
+(11/12/2024 9:55:42 AM) Input Variable from getValueAsObject: MEO.MEOSats.Walker.Shell_MEO.SemiMajorAxis, Value: 16378
+(11/12/2024 9:55:42 AM) Input Variable from getValueAsString MEO.MEOSats.Walker.Shell_MEO.Inclination, Value: 90
+(11/12/2024 9:55:42 AM) Input Variable from getValue: MEO.MEOSats.Walker.Shell_MEO.Inclination, Value: 90
+(11/12/2024 9:55:42 AM) Input Variable from getValueAsObject: MEO.MEOSats.Walker.Shell_MEO.Inclination, Value: 90
+(11/12/2024 9:55:42 AM) Input Variable from getValueAsString MEO.MEOSat.SWIR.SimpleConic.coneAngle, Value: 25
+(11/12/2024 9:55:42 AM) Input Variable from getValue: MEO.MEOSat.SWIR.SimpleConic.coneAngle, Value: 25
+(11/12/2024 9:55:42 AM) Input Variable from getValueAsObject: MEO.MEOSat.SWIR.SimpleConic.coneAngle, Value: 25
+(11/12/2024 9:55:42 AM) Output Variable: MEO.GroundCoverage.AvgAccess.Overall_Value.Average
+(11/12/2024 9:55:42 AM) Output Variable: MEO.Missile1Chain.Complete_Access.Duration.Total
+(11/12/2024 9:55:42 AM) Output Variable: MEO.Missile2Chain.Complete_Access.Duration.Total
+(11/12/2024 9:55:42 AM) Output Variable: MEO.Missile3Chain.Complete_Access.Duration.Total
+(11/12/2024 9:55:42 AM) Output Variable: MEO.MEO2Missiles.Strand_Access.Duration.Mean
+(11/12/2024 9:55:42 AM) Output Variable: MEO.GroundCoverage.MaxRevisit.Overall_Value.Maximum
+(11/12/2024 9:55:42 AM) Output Variable: MEO.GroundCoverage.AvgRevisit.Overall_Value.Average
+(11/12/2024 9:55:42 AM) >SetUnits / EpSec
+(11/12/2024 9:55:42 AM) 
+(11/12/2024 9:55:42 AM) >SetUnits / UTCG
+(11/12/2024 9:55:42 AM) 
+(11/12/2024 9:55:42 AM) >SetUnits / EpSec
+(11/12/2024 9:55:42 AM) 
+(11/12/2024 9:55:43 AM) >SetUnits / UTCG
+(11/12/2024 9:55:43 AM) 
+(11/12/2024 9:55:43 AM) >SetUnits / EpSec
+(11/12/2024 9:55:43 AM) 
+(11/12/2024 9:55:43 AM) >SetUnits / UTCG
+(11/12/2024 9:55:43 AM) 
+(11/12/2024 9:55:43 AM) >SetUnits / EpSec
+(11/12/2024 9:55:43 AM) 
+(11/12/2024 9:55:43 AM) >SetUnits / UTCG
+(11/12/2024 9:55:43 AM) 
+(11/12/2024 9:55:43 AM) >SetUnits / EpSec
+(11/12/2024 9:55:43 AM) 
+(11/12/2024 9:55:43 AM) >SetUnits / UTCG
+(11/12/2024 9:55:43 AM) 
+(11/12/2024 9:55:43 AM) >SetUnits / EpSec
+(11/12/2024 9:55:43 AM) 
+(11/12/2024 9:55:43 AM) >SetUnits / UTCG
+(11/12/2024 9:55:43 AM) 
+(11/12/2024 9:55:43 AM) >SetUnits / EpSec
+(11/12/2024 9:55:43 AM) 
+(11/12/2024 9:55:43 AM) >SetUnits / UTCG
+(11/12/2024 9:55:43 AM) 
+(11/12/2024 9:55:43 AM) >SetUnits / EpSec
+(11/12/2024 9:55:43 AM) 
+(11/12/2024 9:55:43 AM) >SetUnits / UTCG
+(11/12/2024 9:55:43 AM) 
+(11/12/2024 9:55:43 AM) >SetUnits / EpSec
+(11/12/2024 9:55:43 AM) 
+(11/12/2024 9:55:43 AM) >SetUnits / UTCG
+(11/12/2024 9:55:43 AM) 
+(11/12/2024 9:55:43 AM) -Propagating objects
+(11/12/2024 9:55:43 AM) --->Scenario Analysis Period: 10 Nov 2024 18:00:00.000 <> 11 Nov 2024 18:00:00.000
+(11/12/2024 9:55:43 AM) -Getting Output Values
+(11/12/2024 9:55:43 AM) >SetUnits / EpSec
+(11/12/2024 9:55:43 AM) 
+(11/12/2024 9:55:43 AM) >SetUnits / UTCG
+(11/12/2024 9:55:43 AM) 
+(11/12/2024 9:55:43 AM) >SetUnits / EpSec
+(11/12/2024 9:55:43 AM) 
+(11/12/2024 9:55:43 AM) >SetUnits / UTCG
+(11/12/2024 9:55:43 AM) 
+(11/12/2024 9:55:43 AM) >SetUnits / EpSec
+(11/12/2024 9:55:43 AM) 
+(11/12/2024 9:55:43 AM) Executing Data Provider
+(11/12/2024 9:55:43 AM)    Name: Overall Value
+(11/12/2024 9:55:43 AM)    Object: /Scenario/MEO/CoverageDefinition/GroundCoverage/FigureOfMerit/AvgAccess
+(11/12/2024 9:55:43 AM) Set Variable: MEO.GroundCoverage.AvgAccess.Overall_Value.Average + output value: 0
+(11/12/2024 9:55:43 AM) >SetUnits / UTCG
+(11/12/2024 9:55:43 AM) 
+(11/12/2024 9:55:43 AM) >SetUnits / EpSec
+(11/12/2024 9:55:43 AM) 
+(11/12/2024 9:55:43 AM) Executing Data Provider
+(11/12/2024 9:55:43 AM)    Name: Complete Access
+(11/12/2024 9:55:43 AM)    Object: /Scenario/MEO/Chain/Missile1Chain
+(11/12/2024 9:55:43 AM) >SetUnits / EpSec
+(11/12/2024 9:55:43 AM) 
+(11/12/2024 9:55:43 AM) >SetUnits / EpSec
+(11/12/2024 9:55:43 AM) 
+(11/12/2024 9:55:43 AM)    Start: 0
+(11/12/2024 9:55:43 AM)    Stop: 86400
+(11/12/2024 9:55:44 AM) Set Variable: MEO.Missile1Chain.Complete_Access.Duration.Total + output value: 4334.470773
+(11/12/2024 9:55:44 AM) >SetUnits / UTCG
+(11/12/2024 9:55:44 AM) 
+(11/12/2024 9:55:44 AM) >SetUnits / EpSec
+(11/12/2024 9:55:44 AM) 
+(11/12/2024 9:55:44 AM) Executing Data Provider
+(11/12/2024 9:55:44 AM)    Name: Complete Access
+(11/12/2024 9:55:44 AM)    Object: /Scenario/MEO/Chain/Missile2Chain
+(11/12/2024 9:55:44 AM) >SetUnits / EpSec
+(11/12/2024 9:55:44 AM) 
+(11/12/2024 9:55:44 AM) >SetUnits / EpSec
+(11/12/2024 9:55:44 AM) 
+(11/12/2024 9:55:44 AM)    Start: 0
+(11/12/2024 9:55:44 AM)    Stop: 86400
+(11/12/2024 9:55:44 AM) Set Variable: MEO.Missile2Chain.Complete_Access.Duration.Total + output value: 3503.429059
+(11/12/2024 9:55:44 AM) >SetUnits / UTCG
+(11/12/2024 9:55:44 AM) 
+(11/12/2024 9:55:44 AM) >SetUnits / EpSec
+(11/12/2024 9:55:44 AM) 
+(11/12/2024 9:55:44 AM) Executing Data Provider
+(11/12/2024 9:55:44 AM)    Name: Complete Access
+(11/12/2024 9:55:44 AM)    Object: /Scenario/MEO/Chain/Missile3Chain
+(11/12/2024 9:55:44 AM) >SetUnits / EpSec
+(11/12/2024 9:55:44 AM) 
+(11/12/2024 9:55:44 AM) >SetUnits / EpSec
+(11/12/2024 9:55:44 AM) 
+(11/12/2024 9:55:44 AM)    Start: 0
+(11/12/2024 9:55:44 AM)    Stop: 86400
+(11/12/2024 9:55:45 AM) Set Variable: MEO.Missile3Chain.Complete_Access.Duration.Total + output value: 4740.179303
+(11/12/2024 9:55:45 AM) >SetUnits / UTCG
+(11/12/2024 9:55:45 AM) 
+(11/12/2024 9:55:45 AM) >SetUnits / EpSec
+(11/12/2024 9:55:45 AM) 
+(11/12/2024 9:55:45 AM) Executing Data Provider
+(11/12/2024 9:55:45 AM)    Name: Strand Access
+(11/12/2024 9:55:45 AM)    Object: /Scenario/MEO/Chain/MEO2Missiles
+(11/12/2024 9:55:45 AM) >SetUnits / EpSec
+(11/12/2024 9:55:45 AM) 
+(11/12/2024 9:55:45 AM) >SetUnits / EpSec
+(11/12/2024 9:55:45 AM) 
+(11/12/2024 9:55:45 AM)    Start: 0
+(11/12/2024 9:55:45 AM)    Stop: 86400
+(11/12/2024 9:55:47 AM) Set Variable: MEO.MEO2Missiles.Strand_Access.Duration.Mean + output value: 2542.12568271086
+(11/12/2024 9:55:47 AM) >SetUnits / UTCG
+(11/12/2024 9:55:47 AM) 
+(11/12/2024 9:55:47 AM) >SetUnits / EpSec
+(11/12/2024 9:55:47 AM) 
+(11/12/2024 9:55:47 AM) Executing Data Provider
+(11/12/2024 9:55:47 AM)    Name: Overall Value
+(11/12/2024 9:55:47 AM)    Object: /Scenario/MEO/CoverageDefinition/GroundCoverage/FigureOfMerit/MaxRevisit
+(11/12/2024 9:55:47 AM) Set Variable: MEO.GroundCoverage.MaxRevisit.Overall_Value.Maximum + output value: 86400
+(11/12/2024 9:55:47 AM) >SetUnits / UTCG
+(11/12/2024 9:55:47 AM) 
+(11/12/2024 9:55:47 AM) >SetUnits / EpSec
+(11/12/2024 9:55:47 AM) 
+(11/12/2024 9:55:47 AM) Executing Data Provider
+(11/12/2024 9:55:47 AM)    Name: Overall Value
+(11/12/2024 9:55:47 AM)    Object: /Scenario/MEO/CoverageDefinition/GroundCoverage/FigureOfMerit/AvgRevisit
+(11/12/2024 9:55:47 AM) Set Variable: MEO.GroundCoverage.AvgRevisit.Overall_Value.Average + output value: 86400
+(11/12/2024 9:55:47 AM) >SetUnits / UTCG
+(11/12/2024 9:55:47 AM) 
+(11/12/2024 9:55:47 AM) IAgStkObjectRoot.BeginUpdate()
+(11/12/2024 9:55:47 AM) IAgStkObjectRoot.EndUpdate()
+(11/12/2024 9:55:47 AM) 
+(11/12/2024 9:55:47 AM) --- 11/12/2024 9:55:47 AM
+(11/12/2024 9:55:47 AM) --- Running STK
+(11/12/2024 9:55:47 AM) 
+(11/12/2024 9:55:47 AM) -Sending values to STK
+(11/12/2024 9:55:47 AM) Input Variable from getValueAsString MEO.MEOSats.Walker.Shell_MEO.Planes, Value: 9
+(11/12/2024 9:55:47 AM) Input Variable from getValue: MEO.MEOSats.Walker.Shell_MEO.Planes, Value: 9
+(11/12/2024 9:55:47 AM) Input Variable from getValueAsObject: MEO.MEOSats.Walker.Shell_MEO.Planes, Value: 9
+(11/12/2024 9:55:47 AM) Input Variable from getValueAsString MEO.MEOSats.Walker.Shell_MEO.SatellitesInPlanes, Value: 3
+(11/12/2024 9:55:47 AM) Input Variable from getValue: MEO.MEOSats.Walker.Shell_MEO.SatellitesInPlanes, Value: 3
+(11/12/2024 9:55:47 AM) Input Variable from getValueAsObject: MEO.MEOSats.Walker.Shell_MEO.SatellitesInPlanes, Value: 3
+(11/12/2024 9:55:47 AM) Input Variable from getValueAsString MEO.MEOSats.Walker.Shell_MEO.InterPlanePhaseIncrement, Value: 8
+(11/12/2024 9:55:47 AM) Input Variable from getValue: MEO.MEOSats.Walker.Shell_MEO.InterPlanePhaseIncrement, Value: 8
+(11/12/2024 9:55:47 AM) Input Variable from getValueAsObject: MEO.MEOSats.Walker.Shell_MEO.InterPlanePhaseIncrement, Value: 8
+(11/12/2024 9:55:47 AM) Input Variable from getValueAsString MEO.MEOSats.Walker.Shell_MEO.SemiMajorAxis, Value: 16378
+(11/12/2024 9:55:47 AM) Input Variable from getValue: MEO.MEOSats.Walker.Shell_MEO.SemiMajorAxis, Value: 16378
+(11/12/2024 9:55:47 AM) Input Variable from getValueAsObject: MEO.MEOSats.Walker.Shell_MEO.SemiMajorAxis, Value: 16378
+(11/12/2024 9:55:47 AM) Input Variable from getValueAsString MEO.MEOSats.Walker.Shell_MEO.Inclination, Value: 90
+(11/12/2024 9:55:47 AM) Input Variable from getValue: MEO.MEOSats.Walker.Shell_MEO.Inclination, Value: 90
+(11/12/2024 9:55:47 AM) Input Variable from getValueAsObject: MEO.MEOSats.Walker.Shell_MEO.Inclination, Value: 90
+(11/12/2024 9:55:47 AM) Input Variable from getValueAsString MEO.MEOSat.SWIR.SimpleConic.coneAngle, Value: 25
+(11/12/2024 9:55:47 AM) Input Variable from getValue: MEO.MEOSat.SWIR.SimpleConic.coneAngle, Value: 25
+(11/12/2024 9:55:47 AM) Input Variable from getValueAsObject: MEO.MEOSat.SWIR.SimpleConic.coneAngle, Value: 25
+(11/12/2024 9:55:47 AM) Output Variable: MEO.GroundCoverage.AvgAccess.Overall_Value.Average
+(11/12/2024 9:55:47 AM) Output Variable: MEO.Missile1Chain.Complete_Access.Duration.Total
+(11/12/2024 9:55:47 AM) Output Variable: MEO.Missile2Chain.Complete_Access.Duration.Total
+(11/12/2024 9:55:47 AM) Output Variable: MEO.Missile3Chain.Complete_Access.Duration.Total
+(11/12/2024 9:55:47 AM) Output Variable: MEO.MEO2Missiles.Strand_Access.Duration.Mean
+(11/12/2024 9:55:47 AM) Output Variable: MEO.GroundCoverage.MaxRevisit.Overall_Value.Maximum
+(11/12/2024 9:55:47 AM) Output Variable: MEO.GroundCoverage.AvgRevisit.Overall_Value.Average
+(11/12/2024 9:55:47 AM) >SetUnits / EpSec
+(11/12/2024 9:55:47 AM) 
+(11/12/2024 9:55:48 AM) >SetUnits / UTCG
+(11/12/2024 9:55:48 AM) 
+(11/12/2024 9:55:48 AM) >SetUnits / EpSec
+(11/12/2024 9:55:48 AM) 
+(11/12/2024 9:55:48 AM) >SetUnits / UTCG
+(11/12/2024 9:55:48 AM) 
+(11/12/2024 9:55:48 AM) >SetUnits / EpSec
+(11/12/2024 9:55:48 AM) 
+(11/12/2024 9:55:48 AM) >SetUnits / UTCG
+(11/12/2024 9:55:48 AM) 
+(11/12/2024 9:55:48 AM) >SetUnits / EpSec
+(11/12/2024 9:55:48 AM) 
+(11/12/2024 9:55:48 AM) >SetUnits / UTCG
+(11/12/2024 9:55:48 AM) 
+(11/12/2024 9:55:48 AM) >SetUnits / EpSec
+(11/12/2024 9:55:48 AM) 
+(11/12/2024 9:55:48 AM) >SetUnits / UTCG
+(11/12/2024 9:55:48 AM) 
+(11/12/2024 9:55:48 AM) >SetUnits / EpSec
+(11/12/2024 9:55:48 AM) 
+(11/12/2024 9:55:48 AM) >SetUnits / UTCG
+(11/12/2024 9:55:48 AM) 
+(11/12/2024 9:55:48 AM) >SetUnits / EpSec
+(11/12/2024 9:55:48 AM) 
+(11/12/2024 9:55:48 AM) >SetUnits / UTCG
+(11/12/2024 9:55:48 AM) 
+(11/12/2024 9:55:48 AM) >SetUnits / EpSec
+(11/12/2024 9:55:48 AM) 
+(11/12/2024 9:55:48 AM) >SetUnits / UTCG
+(11/12/2024 9:55:48 AM) 
+(11/12/2024 9:55:48 AM) >SetUnits / EpSec
+(11/12/2024 9:55:48 AM) 
+(11/12/2024 9:55:48 AM) >SetUnits / UTCG
+(11/12/2024 9:55:48 AM) 
+(11/12/2024 9:55:48 AM) -Propagating objects
+(11/12/2024 9:55:48 AM) --->Scenario Analysis Period: 10 Nov 2024 18:00:00.000 <> 11 Nov 2024 18:00:00.000
+(11/12/2024 9:55:48 AM) -Getting Output Values
+(11/12/2024 9:55:48 AM) >SetUnits / EpSec
+(11/12/2024 9:55:48 AM) 
+(11/12/2024 9:55:48 AM) >SetUnits / UTCG
+(11/12/2024 9:55:48 AM) 
+(11/12/2024 9:55:48 AM) >SetUnits / EpSec
+(11/12/2024 9:55:48 AM) 
+(11/12/2024 9:55:48 AM) >SetUnits / UTCG
+(11/12/2024 9:55:48 AM) 
+(11/12/2024 9:55:48 AM) >SetUnits / EpSec
+(11/12/2024 9:55:48 AM) 
+(11/12/2024 9:55:48 AM) Executing Data Provider
+(11/12/2024 9:55:48 AM)    Name: Overall Value
+(11/12/2024 9:55:48 AM)    Object: /Scenario/MEO/CoverageDefinition/GroundCoverage/FigureOfMerit/AvgAccess
+(11/12/2024 9:55:48 AM) Set Variable: MEO.GroundCoverage.AvgAccess.Overall_Value.Average + output value: 0
+(11/12/2024 9:55:48 AM) >SetUnits / UTCG
+(11/12/2024 9:55:48 AM) 
+(11/12/2024 9:55:48 AM) >SetUnits / EpSec
+(11/12/2024 9:55:48 AM) 
+(11/12/2024 9:55:48 AM) Executing Data Provider
+(11/12/2024 9:55:48 AM)    Name: Complete Access
+(11/12/2024 9:55:48 AM)    Object: /Scenario/MEO/Chain/Missile1Chain
+(11/12/2024 9:55:48 AM) >SetUnits / EpSec
+(11/12/2024 9:55:48 AM) 
+(11/12/2024 9:55:48 AM) >SetUnits / EpSec
+(11/12/2024 9:55:48 AM) 
+(11/12/2024 9:55:48 AM)    Start: 0
+(11/12/2024 9:55:48 AM)    Stop: 86400
+(11/12/2024 9:55:49 AM) Set Variable: MEO.Missile1Chain.Complete_Access.Duration.Total + output value: 4334.470773
+(11/12/2024 9:55:49 AM) >SetUnits / UTCG
+(11/12/2024 9:55:49 AM) 
+(11/12/2024 9:55:49 AM) >SetUnits / EpSec
+(11/12/2024 9:55:49 AM) 
+(11/12/2024 9:55:49 AM) Executing Data Provider
+(11/12/2024 9:55:49 AM)    Name: Complete Access
+(11/12/2024 9:55:49 AM)    Object: /Scenario/MEO/Chain/Missile2Chain
+(11/12/2024 9:55:49 AM) >SetUnits / EpSec
+(11/12/2024 9:55:49 AM) 
+(11/12/2024 9:55:49 AM) >SetUnits / EpSec
+(11/12/2024 9:55:49 AM) 
+(11/12/2024 9:55:49 AM)    Start: 0
+(11/12/2024 9:55:49 AM)    Stop: 86400
+(11/12/2024 9:55:49 AM) Set Variable: MEO.Missile2Chain.Complete_Access.Duration.Total + output value: 3503.429059
+(11/12/2024 9:55:49 AM) >SetUnits / UTCG
+(11/12/2024 9:55:49 AM) 
+(11/12/2024 9:55:49 AM) >SetUnits / EpSec
+(11/12/2024 9:55:49 AM) 
+(11/12/2024 9:55:49 AM) Executing Data Provider
+(11/12/2024 9:55:49 AM)    Name: Complete Access
+(11/12/2024 9:55:49 AM)    Object: /Scenario/MEO/Chain/Missile3Chain
+(11/12/2024 9:55:49 AM) >SetUnits / EpSec
+(11/12/2024 9:55:49 AM) 
+(11/12/2024 9:55:49 AM) >SetUnits / EpSec
+(11/12/2024 9:55:49 AM) 
+(11/12/2024 9:55:49 AM)    Start: 0
+(11/12/2024 9:55:49 AM)    Stop: 86400
+(11/12/2024 9:55:50 AM) Set Variable: MEO.Missile3Chain.Complete_Access.Duration.Total + output value: 4740.179303
+(11/12/2024 9:55:50 AM) >SetUnits / UTCG
+(11/12/2024 9:55:50 AM) 
+(11/12/2024 9:55:50 AM) >SetUnits / EpSec
+(11/12/2024 9:55:50 AM) 
+(11/12/2024 9:55:50 AM) Executing Data Provider
+(11/12/2024 9:55:50 AM)    Name: Strand Access
+(11/12/2024 9:55:50 AM)    Object: /Scenario/MEO/Chain/MEO2Missiles
+(11/12/2024 9:55:50 AM) >SetUnits / EpSec
+(11/12/2024 9:55:50 AM) 
+(11/12/2024 9:55:50 AM) >SetUnits / EpSec
+(11/12/2024 9:55:50 AM) 
+(11/12/2024 9:55:50 AM)    Start: 0
+(11/12/2024 9:55:50 AM)    Stop: 86400
+(11/12/2024 9:55:51 AM) Set Variable: MEO.MEO2Missiles.Strand_Access.Duration.Mean + output value: 2542.12568271086
+(11/12/2024 9:55:51 AM) >SetUnits / UTCG
+(11/12/2024 9:55:51 AM) 
+(11/12/2024 9:55:51 AM) >SetUnits / EpSec
+(11/12/2024 9:55:51 AM) 
+(11/12/2024 9:55:51 AM) Executing Data Provider
+(11/12/2024 9:55:51 AM)    Name: Overall Value
+(11/12/2024 9:55:51 AM)    Object: /Scenario/MEO/CoverageDefinition/GroundCoverage/FigureOfMerit/MaxRevisit
+(11/12/2024 9:55:51 AM) Set Variable: MEO.GroundCoverage.MaxRevisit.Overall_Value.Maximum + output value: 86400
+(11/12/2024 9:55:51 AM) >SetUnits / UTCG
+(11/12/2024 9:55:51 AM) 
+(11/12/2024 9:55:51 AM) >SetUnits / EpSec
+(11/12/2024 9:55:51 AM) 
+(11/12/2024 9:55:51 AM) Executing Data Provider
+(11/12/2024 9:55:51 AM)    Name: Overall Value
+(11/12/2024 9:55:51 AM)    Object: /Scenario/MEO/CoverageDefinition/GroundCoverage/FigureOfMerit/AvgRevisit
+(11/12/2024 9:55:51 AM) Set Variable: MEO.GroundCoverage.AvgRevisit.Overall_Value.Average + output value: 86400
+(11/12/2024 9:55:51 AM) >SetUnits / UTCG
+(11/12/2024 9:55:51 AM) 
+(11/12/2024 9:55:51 AM) IAgStkObjectRoot.BeginUpdate()
+(11/12/2024 9:55:51 AM) IAgStkObjectRoot.EndUpdate()
+(11/12/2024 10:10:53 AM) >GetDirectory / Scenario
+(11/12/2024 10:10:53 AM) C:\Users\brigh\TAMU Programming\Fall 2024\Aero 401\HYPERION\MEO\
+(11/12/2024 11:15:26 AM) 
+(11/12/2024 11:15:26 AM) --- 11/12/2024 11:15:26 AM
+(11/12/2024 11:15:26 AM) --- Exiting STK Plug-In
+(11/12/2024 11:15:26 AM) 
+(11/12/2024 11:15:26 AM) Running Macro: AnalyzerEnd
+(11/12/2024 11:15:26 AM) Running Macro: End
+(11/12/2024 11:15:26 AM) 
+(11/12/2024 11:15:26 AM) --- 11/12/2024 11:15:26 AM
+(11/12/2024 11:15:26 AM) --- Exiting Analyzer
+(11/12/2024 11:15:26 AM) 

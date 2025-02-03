@@ -1,0 +1,2611 @@
+(11/13/2024 12:45:01 PM) 
+(11/13/2024 12:45:01 PM) --- 11/13/2024 12:45:01 PM
+(11/13/2024 12:45:01 PM) --- Starting Analyzer: 12.9.1
+(11/13/2024 12:45:01 PM) 
+(11/13/2024 12:45:01 PM) Model Directory: C:\Users\brigh\TAMU Programming\Fall 2024\Aero 401\HYPERION\LEO
+(11/13/2024 12:45:02 PM) Retrieved Custom Script Variables: 
+(11/13/2024 12:45:02 PM) Running Macro: AnalyzerInit
+(11/13/2024 12:45:02 PM) Running Macro: Init
+(11/13/2024 12:45:03 PM) >GetDirectory / Scenario
+(11/13/2024 12:45:03 PM) C:\Users\brigh\TAMU Programming\Fall 2024\Aero 401\HYPERION\LEO\
+(11/13/2024 12:49:09 PM) Retrieved Custom Script Variables: 
+(11/13/2024 12:49:09 PM) Running Macro: AnalyzerInit
+(11/13/2024 12:49:09 PM) Running Macro: Init
+(11/13/2024 12:50:53 PM) 
+(11/13/2024 12:50:53 PM) --- 11/13/2024 12:50:53 PM
+(11/13/2024 12:50:53 PM) --- Running STK
+(11/13/2024 12:50:53 PM) 
+(11/13/2024 12:50:53 PM) -Sending values to STK
+(11/13/2024 12:50:53 PM) Output Variable: LEO.GroundCoverage.AvgRevisit.Overall_Value.Average
+(11/13/2024 12:50:53 PM) Output Variable: LEO.GroundCoverage.MaxRevisit.Overall_Value.Maximum
+(11/13/2024 12:50:53 PM) Output Variable: LEO.Missile1Chain.Time_Instant.CompleteChainAccessStartTime.Time_Instant
+(11/13/2024 12:50:53 PM) Output Variable: LEO.Missile2Chain.Time_Instant.CompleteChainAccessStartTime.Time_Instant
+(11/13/2024 12:50:53 PM) Output Variable: LEO.Missile3Chain.Time_Instant.CompleteChainAccessStartTime.Time_Instant
+(11/13/2024 12:50:53 PM) Output Variable: LEO.LEO2Missiles.Strand_Access.Duration.Mean
+(11/13/2024 12:50:53 PM) Input Variable from getValueAsString LEO.LEOSats.Walker.Shell_LEO_Equatorial.Inclination, Value: 0
+(11/13/2024 12:50:53 PM) Input Variable from getValue: LEO.LEOSats.Walker.Shell_LEO_Equatorial.Inclination, Value: 0
+(11/13/2024 12:50:53 PM) Input Variable from getValueAsObject: LEO.LEOSats.Walker.Shell_LEO_Equatorial.Inclination, Value: 0
+(11/13/2024 12:50:53 PM) >SetUnits / EpSec
+(11/13/2024 12:50:53 PM) 
+(11/13/2024 12:50:53 PM) >SetUnits / UTCG
+(11/13/2024 12:50:53 PM) 
+(11/13/2024 12:50:54 PM) >SetUnits / EpSec
+(11/13/2024 12:50:54 PM) 
+(11/13/2024 12:50:54 PM) >SetUnits / UTCG
+(11/13/2024 12:50:54 PM) 
+(11/13/2024 12:50:54 PM) >SetUnits / EpSec
+(11/13/2024 12:50:54 PM) 
+(11/13/2024 12:50:54 PM) >SetUnits / UTCG
+(11/13/2024 12:50:54 PM) 
+(11/13/2024 12:50:54 PM) >SetUnits / EpSec
+(11/13/2024 12:50:54 PM) 
+(11/13/2024 12:50:54 PM) >SetUnits / UTCG
+(11/13/2024 12:50:54 PM) 
+(11/13/2024 12:50:54 PM) >SetUnits / EpSec
+(11/13/2024 12:50:54 PM) 
+(11/13/2024 12:50:54 PM) >SetUnits / UTCG
+(11/13/2024 12:50:54 PM) 
+(11/13/2024 12:50:54 PM) >SetUnits / EpSec
+(11/13/2024 12:50:54 PM) 
+(11/13/2024 12:50:54 PM) >SetUnits / UTCG
+(11/13/2024 12:50:54 PM) 
+(11/13/2024 12:50:54 PM) >SetUnits / EpSec
+(11/13/2024 12:50:54 PM) 
+(11/13/2024 12:50:54 PM) >SetUnits / UTCG
+(11/13/2024 12:50:54 PM) 
+(11/13/2024 12:50:54 PM) -Propagating objects
+(11/13/2024 12:50:54 PM) --->Scenario Analysis Period: 10 Nov 2024 18:00:00.000 <> 11 Nov 2024 18:00:00.000
+(11/13/2024 12:50:54 PM) -Getting Output Values
+(11/13/2024 12:50:54 PM) >SetUnits / EpSec
+(11/13/2024 12:50:54 PM) 
+(11/13/2024 12:50:54 PM) Executing Data Provider
+(11/13/2024 12:50:54 PM)    Name: Overall Value
+(11/13/2024 12:50:54 PM)    Object: /Scenario/LEO/CoverageDefinition/GroundCoverage/FigureOfMerit/AvgRevisit
+(11/13/2024 12:50:54 PM) >SetUnits / UTCG
+(11/13/2024 12:50:54 PM) 
+(11/13/2024 12:50:54 PM) >SetUnits / EpSec
+(11/13/2024 12:50:54 PM) 
+(11/13/2024 12:50:54 PM) Executing Data Provider
+(11/13/2024 12:50:54 PM)    Name: Overall Value
+(11/13/2024 12:50:54 PM)    Object: /Scenario/LEO/CoverageDefinition/GroundCoverage/FigureOfMerit/MaxRevisit
+(11/13/2024 12:50:54 PM) >SetUnits / UTCG
+(11/13/2024 12:50:54 PM) 
+(11/13/2024 12:50:54 PM) >SetUnits / EpSec
+(11/13/2024 12:50:54 PM) 
+(11/13/2024 12:50:54 PM) Executing Data Provider
+(11/13/2024 12:50:54 PM)    Name: CompleteChainAccessStartTime
+(11/13/2024 12:50:54 PM)    Object: /Scenario/LEO/Chain/Missile1Chain
+(11/13/2024 12:50:54 PM) >SetUnits / EpSec
+(11/13/2024 12:50:54 PM) 
+(11/13/2024 12:50:55 PM) >SetUnits / EpSec
+(11/13/2024 12:50:55 PM) 
+(11/13/2024 12:50:55 PM)    Start: 0
+(11/13/2024 12:50:55 PM)    Stop: 86400
+(11/13/2024 12:50:55 PM) -Exception encountered getting values from STK: Time Instant does not occur.
+(11/13/2024 12:50:55 PM) >SetUnits / UTCG
+(11/13/2024 12:50:55 PM) 
+(11/13/2024 12:50:55 PM) >SetUnits / EpSec
+(11/13/2024 12:50:55 PM) 
+(11/13/2024 12:50:55 PM) Executing Data Provider
+(11/13/2024 12:50:55 PM)    Name: CompleteChainAccessStartTime
+(11/13/2024 12:50:55 PM)    Object: /Scenario/LEO/Chain/Missile2Chain
+(11/13/2024 12:50:55 PM) >SetUnits / EpSec
+(11/13/2024 12:50:55 PM) 
+(11/13/2024 12:50:55 PM) >SetUnits / EpSec
+(11/13/2024 12:50:55 PM) 
+(11/13/2024 12:50:55 PM)    Start: 0
+(11/13/2024 12:50:55 PM)    Stop: 86400
+(11/13/2024 12:50:55 PM) -Exception encountered getting values from STK: Time Instant does not occur.
+(11/13/2024 12:50:55 PM) >SetUnits / UTCG
+(11/13/2024 12:50:55 PM) 
+(11/13/2024 12:50:55 PM) >SetUnits / EpSec
+(11/13/2024 12:50:55 PM) 
+(11/13/2024 12:50:55 PM) Executing Data Provider
+(11/13/2024 12:50:55 PM)    Name: CompleteChainAccessStartTime
+(11/13/2024 12:50:55 PM)    Object: /Scenario/LEO/Chain/Missile3Chain
+(11/13/2024 12:50:55 PM) >SetUnits / EpSec
+(11/13/2024 12:50:55 PM) 
+(11/13/2024 12:50:55 PM) >SetUnits / EpSec
+(11/13/2024 12:50:55 PM) 
+(11/13/2024 12:50:55 PM)    Start: 0
+(11/13/2024 12:50:55 PM)    Stop: 86400
+(11/13/2024 12:50:55 PM) -Exception encountered getting values from STK: Time Instant does not occur.
+(11/13/2024 12:50:55 PM) >SetUnits / UTCG
+(11/13/2024 12:50:55 PM) 
+(11/13/2024 12:50:55 PM) >SetUnits / EpSec
+(11/13/2024 12:50:55 PM) 
+(11/13/2024 12:50:55 PM) Executing Data Provider
+(11/13/2024 12:50:55 PM)    Name: Strand Access
+(11/13/2024 12:50:55 PM)    Object: /Scenario/LEO/Chain/LEO2Missiles
+(11/13/2024 12:50:55 PM) >SetUnits / EpSec
+(11/13/2024 12:50:55 PM) 
+(11/13/2024 12:50:55 PM) >SetUnits / EpSec
+(11/13/2024 12:50:56 PM) 
+(11/13/2024 12:50:56 PM)    Start: 0
+(11/13/2024 12:50:56 PM)    Stop: 86400
+(11/13/2024 12:50:59 PM) Set Variable: LEO.LEO2Missiles.Strand_Access.Duration.Mean + output value: 414.29681497701
+(11/13/2024 12:50:59 PM) >SetUnits / UTCG
+(11/13/2024 12:50:59 PM) 
+(11/13/2024 12:50:59 PM) >SetUnits / EpSec
+(11/13/2024 12:50:59 PM) 
+(11/13/2024 12:50:59 PM) >SetUnits / UTCG
+(11/13/2024 12:50:59 PM) 
+(11/13/2024 12:50:59 PM) IAgStkObjectRoot.BeginUpdate()
+(11/13/2024 12:50:59 PM) IAgStkObjectRoot.EndUpdate()
+(11/13/2024 12:51:29 PM) >GetDirectory / Scenario
+(11/13/2024 12:51:29 PM) C:\Users\brigh\TAMU Programming\Fall 2024\Aero 401\HYPERION\LEO\
+(11/13/2024 12:52:35 PM) Skipped adding: Crdn Available Times Data Provider- PreData not supported!
+(11/13/2024 12:52:36 PM) Skipped adding: Time Value By Point Data Provider- PreData not supported!
+(11/13/2024 12:53:18 PM) Skipped adding: Time Value By Point Data Provider- PreData not supported!
+(11/13/2024 12:53:21 PM) Skipped adding: Time Value By Point Data Provider- PreData not supported!
+(11/13/2024 12:54:59 PM) Retrieved Custom Script Variables: 
+(11/13/2024 12:54:59 PM) Running Macro: AnalyzerInit
+(11/13/2024 12:54:59 PM) Running Macro: Init
+(11/13/2024 12:55:33 PM) Running Macro: AnalyzerPreRun
+(11/13/2024 12:55:33 PM) Running Macro: PreRun
+(11/13/2024 12:55:33 PM) 
+(11/13/2024 12:55:33 PM) --- 11/13/2024 12:55:33 PM
+(11/13/2024 12:55:33 PM) --- Running STK
+(11/13/2024 12:55:33 PM) 
+(11/13/2024 12:55:33 PM) -Sending values to STK
+(11/13/2024 12:55:34 PM) IAgChain.AutoRecompute=false /Application/STK/Scenario/LEO/Chain/LEO2Missiles
+(11/13/2024 12:55:34 PM) Input Variable from getValueAsString LEO.LEOSats.Walker.Shell_LEO_Equatorial.Inclination, Value: 15
+(11/13/2024 12:55:34 PM) Input Variable from getValue: LEO.LEOSats.Walker.Shell_LEO_Equatorial.Inclination, Value: 15
+(11/13/2024 12:55:34 PM) Input Variable from getValueAsObject: LEO.LEOSats.Walker.Shell_LEO_Equatorial.Inclination, Value: 15
+(11/13/2024 12:55:34 PM) Output Variable: LEO.GroundCoverage.AvgRevisit.Overall_Value.Average
+(11/13/2024 12:55:34 PM) Output Variable: LEO.GroundCoverage.MaxRevisit.Overall_Value.Maximum
+(11/13/2024 12:55:34 PM) Output Variable: LEO.Missile1Chain.Time_Instant.CompleteChainAccessStartTime.Time_Instant
+(11/13/2024 12:55:34 PM) Output Variable: LEO.Missile2Chain.Time_Instant.CompleteChainAccessStartTime.Time_Instant
+(11/13/2024 12:55:34 PM) Output Variable: LEO.Missile3Chain.Time_Instant.CompleteChainAccessStartTime.Time_Instant
+(11/13/2024 12:55:34 PM) Output Variable: LEO.LEO2Missiles.Strand_Access.Duration.Mean
+(11/13/2024 12:55:34 PM) >SetUnits / EpSec
+(11/13/2024 12:55:34 PM) 
+(11/13/2024 12:55:34 PM) >SetUnits / UTCG
+(11/13/2024 12:55:34 PM) 
+(11/13/2024 12:55:34 PM) >SetUnits / EpSec
+(11/13/2024 12:55:34 PM) 
+(11/13/2024 12:55:34 PM) >SetUnits / UTCG
+(11/13/2024 12:55:34 PM) 
+(11/13/2024 12:55:34 PM) >SetUnits / EpSec
+(11/13/2024 12:55:34 PM) 
+(11/13/2024 12:55:34 PM) >SetUnits / UTCG
+(11/13/2024 12:55:34 PM) 
+(11/13/2024 12:55:34 PM) >SetUnits / EpSec
+(11/13/2024 12:55:34 PM) 
+(11/13/2024 12:55:34 PM) >SetUnits / UTCG
+(11/13/2024 12:55:34 PM) 
+(11/13/2024 12:55:34 PM) >SetUnits / EpSec
+(11/13/2024 12:55:34 PM) 
+(11/13/2024 12:55:34 PM) >SetUnits / UTCG
+(11/13/2024 12:55:34 PM) 
+(11/13/2024 12:55:34 PM) >SetUnits / EpSec
+(11/13/2024 12:55:34 PM) 
+(11/13/2024 12:55:34 PM) >SetUnits / UTCG
+(11/13/2024 12:55:34 PM) 
+(11/13/2024 12:55:34 PM) >SetUnits / EpSec
+(11/13/2024 12:55:34 PM) 
+(11/13/2024 12:55:34 PM) >SetUnits / UTCG
+(11/13/2024 12:55:34 PM) 
+(11/13/2024 12:55:34 PM) -Propagating objects
+(11/13/2024 12:55:34 PM) --->Scenario Analysis Period: 10 Nov 2024 18:00:00.000 <> 11 Nov 2024 18:00:00.000
+(11/13/2024 12:55:34 PM) -Computing Accesses
+(11/13/2024 12:55:34 PM) IAgChain.ComputeAccess() - /Scenario/LEO/Chain/Missile1Chain
+(11/13/2024 12:55:35 PM) IAgChain.ComputeAccess() - /Scenario/LEO/Chain/Missile2Chain
+(11/13/2024 12:55:35 PM) IAgChain.ComputeAccess() - /Scenario/LEO/Chain/Missile3Chain
+(11/13/2024 12:55:35 PM) IAgChain.ComputeAccess() - /Scenario/LEO/Chain/LEO2Missiles
+(11/13/2024 12:55:36 PM) IAgCoverageDefinition.ClearAccesses() /Application/STK/Scenario/LEO/CoverageDefinition/GroundCoverage
+(11/13/2024 12:55:36 PM) IAgCoverageDefinition.ComputeAccesses() /Application/STK/Scenario/LEO/CoverageDefinition/GroundCoverage
+(11/13/2024 12:56:41 PM) -Getting Output Values
+(11/13/2024 12:56:41 PM) >SetUnits / EpSec
+(11/13/2024 12:56:41 PM) 
+(11/13/2024 12:56:41 PM) >SetUnits / UTCG
+(11/13/2024 12:56:41 PM) 
+(11/13/2024 12:56:41 PM) >SetUnits / EpSec
+(11/13/2024 12:56:41 PM) 
+(11/13/2024 12:56:41 PM) Executing Data Provider
+(11/13/2024 12:56:41 PM)    Name: Overall Value
+(11/13/2024 12:56:41 PM)    Object: /Scenario/LEO/CoverageDefinition/GroundCoverage/FigureOfMerit/AvgRevisit
+(11/13/2024 12:56:42 PM) Set Variable: LEO.GroundCoverage.AvgRevisit.Overall_Value.Average + output value: 19.0385780759961
+(11/13/2024 12:56:42 PM) >SetUnits / UTCG
+(11/13/2024 12:56:42 PM) 
+(11/13/2024 12:56:42 PM) >SetUnits / EpSec
+(11/13/2024 12:56:42 PM) 
+(11/13/2024 12:56:42 PM) Executing Data Provider
+(11/13/2024 12:56:42 PM)    Name: Overall Value
+(11/13/2024 12:56:42 PM)    Object: /Scenario/LEO/CoverageDefinition/GroundCoverage/FigureOfMerit/MaxRevisit
+(11/13/2024 12:56:42 PM) Set Variable: LEO.GroundCoverage.MaxRevisit.Overall_Value.Maximum + output value: 98.7788865813272
+(11/13/2024 12:56:42 PM) >SetUnits / UTCG
+(11/13/2024 12:56:42 PM) 
+(11/13/2024 12:56:42 PM) >SetUnits / EpSec
+(11/13/2024 12:56:42 PM) 
+(11/13/2024 12:56:42 PM) Executing Data Provider
+(11/13/2024 12:56:42 PM)    Name: CompleteChainAccessStartTime
+(11/13/2024 12:56:42 PM)    Object: /Scenario/LEO/Chain/Missile1Chain
+(11/13/2024 12:56:42 PM) >SetUnits / EpSec
+(11/13/2024 12:56:42 PM) 
+(11/13/2024 12:56:42 PM) >SetUnits / EpSec
+(11/13/2024 12:56:42 PM) 
+(11/13/2024 12:56:42 PM)    Start: 0
+(11/13/2024 12:56:42 PM)    Stop: 86400
+(11/13/2024 12:56:42 PM) Set Variable: LEO.Missile1Chain.Time_Instant.CompleteChainAccessStartTime.Time_Instant + output value: 1668276060.004
+(11/13/2024 12:56:42 PM) >SetUnits / UTCG
+(11/13/2024 12:56:42 PM) 
+(11/13/2024 12:56:42 PM) >SetUnits / EpSec
+(11/13/2024 12:56:42 PM) 
+(11/13/2024 12:56:42 PM) Executing Data Provider
+(11/13/2024 12:56:42 PM)    Name: CompleteChainAccessStartTime
+(11/13/2024 12:56:42 PM)    Object: /Scenario/LEO/Chain/Missile2Chain
+(11/13/2024 12:56:42 PM) >SetUnits / EpSec
+(11/13/2024 12:56:42 PM) 
+(11/13/2024 12:56:42 PM) >SetUnits / EpSec
+(11/13/2024 12:56:42 PM) 
+(11/13/2024 12:56:42 PM)    Start: 0
+(11/13/2024 12:56:42 PM)    Stop: 86400
+(11/13/2024 12:56:43 PM) Set Variable: LEO.Missile2Chain.Time_Instant.CompleteChainAccessStartTime.Time_Instant + output value: 1668319200.007
+(11/13/2024 12:56:43 PM) >SetUnits / UTCG
+(11/13/2024 12:56:43 PM) 
+(11/13/2024 12:56:43 PM) >SetUnits / EpSec
+(11/13/2024 12:56:43 PM) 
+(11/13/2024 12:56:43 PM) Executing Data Provider
+(11/13/2024 12:56:43 PM)    Name: CompleteChainAccessStartTime
+(11/13/2024 12:56:43 PM)    Object: /Scenario/LEO/Chain/Missile3Chain
+(11/13/2024 12:56:43 PM) >SetUnits / EpSec
+(11/13/2024 12:56:43 PM) 
+(11/13/2024 12:56:43 PM) >SetUnits / EpSec
+(11/13/2024 12:56:43 PM) 
+(11/13/2024 12:56:43 PM)    Start: 0
+(11/13/2024 12:56:43 PM)    Stop: 86400
+(11/13/2024 12:56:43 PM) Set Variable: LEO.Missile3Chain.Time_Instant.CompleteChainAccessStartTime.Time_Instant + output value: 1668351600.004
+(11/13/2024 12:56:43 PM) >SetUnits / UTCG
+(11/13/2024 12:56:43 PM) 
+(11/13/2024 12:56:43 PM) >SetUnits / EpSec
+(11/13/2024 12:56:43 PM) 
+(11/13/2024 12:56:43 PM) Executing Data Provider
+(11/13/2024 12:56:43 PM)    Name: Strand Access
+(11/13/2024 12:56:43 PM)    Object: /Scenario/LEO/Chain/LEO2Missiles
+(11/13/2024 12:56:43 PM) >SetUnits / EpSec
+(11/13/2024 12:56:43 PM) 
+(11/13/2024 12:56:43 PM) >SetUnits / EpSec
+(11/13/2024 12:56:43 PM) 
+(11/13/2024 12:56:43 PM)    Start: 0
+(11/13/2024 12:56:43 PM)    Stop: 86400
+(11/13/2024 12:56:45 PM) Set Variable: LEO.LEO2Missiles.Strand_Access.Duration.Mean + output value: 415.690730172692
+(11/13/2024 12:56:45 PM) >SetUnits / UTCG
+(11/13/2024 12:56:45 PM) 
+(11/13/2024 12:56:45 PM) IAgStkObjectRoot.BeginUpdate()
+(11/13/2024 12:56:45 PM) IAgStkObjectRoot.EndUpdate()
+(11/13/2024 12:56:45 PM) IAgChain.AutoRecompute=false /Application/STK/Scenario/LEO/Chain/LEO2Missiles
+(11/13/2024 12:56:45 PM) Running Macro: AnalyzerPostRun
+(11/13/2024 12:56:45 PM) Running Macro: PostRun
+(11/13/2024 12:56:45 PM) >GetDirectory / Scenario
+(11/13/2024 12:56:45 PM) C:\Users\brigh\TAMU Programming\Fall 2024\Aero 401\HYPERION\LEO\
+(11/13/2024 12:56:46 PM) Running Macro: AnalyzerPreRun
+(11/13/2024 12:56:46 PM) Running Macro: PreRun
+(11/13/2024 12:56:46 PM) 
+(11/13/2024 12:56:46 PM) --- 11/13/2024 12:56:46 PM
+(11/13/2024 12:56:46 PM) --- Running STK
+(11/13/2024 12:56:46 PM) 
+(11/13/2024 12:56:46 PM) -Sending values to STK
+(11/13/2024 12:56:46 PM) IAgChain.AutoRecompute=false /Application/STK/Scenario/LEO/Chain/LEO2Missiles
+(11/13/2024 12:56:46 PM) Input Variable from getValueAsString LEO.LEOSats.Walker.Shell_LEO_Equatorial.Inclination, Value: 14
+(11/13/2024 12:56:46 PM) Input Variable from getValue: LEO.LEOSats.Walker.Shell_LEO_Equatorial.Inclination, Value: 14
+(11/13/2024 12:56:46 PM) Input Variable from getValueAsObject: LEO.LEOSats.Walker.Shell_LEO_Equatorial.Inclination, Value: 14
+(11/13/2024 12:56:46 PM) Output Variable: LEO.GroundCoverage.AvgRevisit.Overall_Value.Average
+(11/13/2024 12:56:46 PM) Output Variable: LEO.GroundCoverage.MaxRevisit.Overall_Value.Maximum
+(11/13/2024 12:56:46 PM) Output Variable: LEO.Missile1Chain.Time_Instant.CompleteChainAccessStartTime.Time_Instant
+(11/13/2024 12:56:46 PM) Output Variable: LEO.Missile2Chain.Time_Instant.CompleteChainAccessStartTime.Time_Instant
+(11/13/2024 12:56:46 PM) Output Variable: LEO.Missile3Chain.Time_Instant.CompleteChainAccessStartTime.Time_Instant
+(11/13/2024 12:56:46 PM) Output Variable: LEO.LEO2Missiles.Strand_Access.Duration.Mean
+(11/13/2024 12:56:46 PM) >SetUnits / EpSec
+(11/13/2024 12:56:46 PM) 
+(11/13/2024 12:56:47 PM) >SetUnits / UTCG
+(11/13/2024 12:56:47 PM) 
+(11/13/2024 12:56:47 PM) >SetUnits / EpSec
+(11/13/2024 12:56:47 PM) 
+(11/13/2024 12:56:47 PM) >SetUnits / UTCG
+(11/13/2024 12:56:47 PM) 
+(11/13/2024 12:56:47 PM) >SetUnits / EpSec
+(11/13/2024 12:56:47 PM) 
+(11/13/2024 12:56:47 PM) >SetUnits / UTCG
+(11/13/2024 12:56:47 PM) 
+(11/13/2024 12:56:47 PM) >SetUnits / EpSec
+(11/13/2024 12:56:47 PM) 
+(11/13/2024 12:56:47 PM) >SetUnits / UTCG
+(11/13/2024 12:56:47 PM) 
+(11/13/2024 12:56:47 PM) >SetUnits / EpSec
+(11/13/2024 12:56:47 PM) 
+(11/13/2024 12:56:47 PM) >SetUnits / UTCG
+(11/13/2024 12:56:47 PM) 
+(11/13/2024 12:56:47 PM) >SetUnits / EpSec
+(11/13/2024 12:56:47 PM) 
+(11/13/2024 12:56:47 PM) >SetUnits / UTCG
+(11/13/2024 12:56:47 PM) 
+(11/13/2024 12:56:47 PM) >SetUnits / EpSec
+(11/13/2024 12:56:47 PM) 
+(11/13/2024 12:56:47 PM) >SetUnits / UTCG
+(11/13/2024 12:56:47 PM) 
+(11/13/2024 12:56:47 PM) -Propagating objects
+(11/13/2024 12:56:47 PM) --->Scenario Analysis Period: 10 Nov 2024 18:00:00.000 <> 11 Nov 2024 18:00:00.000
+(11/13/2024 12:56:47 PM) -Computing Accesses
+(11/13/2024 12:56:47 PM) IAgChain.ComputeAccess() - /Scenario/LEO/Chain/Missile1Chain
+(11/13/2024 12:56:47 PM) IAgChain.ComputeAccess() - /Scenario/LEO/Chain/Missile2Chain
+(11/13/2024 12:56:48 PM) IAgChain.ComputeAccess() - /Scenario/LEO/Chain/Missile3Chain
+(11/13/2024 12:56:48 PM) IAgChain.ComputeAccess() - /Scenario/LEO/Chain/LEO2Missiles
+(11/13/2024 12:56:48 PM) IAgCoverageDefinition.ClearAccesses() /Application/STK/Scenario/LEO/CoverageDefinition/GroundCoverage
+(11/13/2024 12:56:48 PM) IAgCoverageDefinition.ComputeAccesses() /Application/STK/Scenario/LEO/CoverageDefinition/GroundCoverage
+(11/13/2024 12:57:58 PM) -Getting Output Values
+(11/13/2024 12:57:58 PM) >SetUnits / EpSec
+(11/13/2024 12:57:58 PM) 
+(11/13/2024 12:57:58 PM) >SetUnits / UTCG
+(11/13/2024 12:57:59 PM) 
+(11/13/2024 12:57:59 PM) >SetUnits / EpSec
+(11/13/2024 12:57:59 PM) 
+(11/13/2024 12:57:59 PM) Executing Data Provider
+(11/13/2024 12:57:59 PM)    Name: Overall Value
+(11/13/2024 12:57:59 PM)    Object: /Scenario/LEO/CoverageDefinition/GroundCoverage/FigureOfMerit/AvgRevisit
+(11/13/2024 12:57:59 PM) Set Variable: LEO.GroundCoverage.AvgRevisit.Overall_Value.Average + output value: 19.0438938618893
+(11/13/2024 12:57:59 PM) >SetUnits / UTCG
+(11/13/2024 12:57:59 PM) 
+(11/13/2024 12:57:59 PM) >SetUnits / EpSec
+(11/13/2024 12:57:59 PM) 
+(11/13/2024 12:57:59 PM) Executing Data Provider
+(11/13/2024 12:57:59 PM)    Name: Overall Value
+(11/13/2024 12:57:59 PM)    Object: /Scenario/LEO/CoverageDefinition/GroundCoverage/FigureOfMerit/MaxRevisit
+(11/13/2024 12:57:59 PM) Set Variable: LEO.GroundCoverage.MaxRevisit.Overall_Value.Maximum + output value: 98.7788865813272
+(11/13/2024 12:57:59 PM) >SetUnits / UTCG
+(11/13/2024 12:57:59 PM) 
+(11/13/2024 12:57:59 PM) >SetUnits / EpSec
+(11/13/2024 12:57:59 PM) 
+(11/13/2024 12:57:59 PM) Executing Data Provider
+(11/13/2024 12:57:59 PM)    Name: CompleteChainAccessStartTime
+(11/13/2024 12:57:59 PM)    Object: /Scenario/LEO/Chain/Missile1Chain
+(11/13/2024 12:57:59 PM) >SetUnits / EpSec
+(11/13/2024 12:57:59 PM) 
+(11/13/2024 12:57:59 PM) >SetUnits / EpSec
+(11/13/2024 12:57:59 PM) 
+(11/13/2024 12:57:59 PM)    Start: 0
+(11/13/2024 12:57:59 PM)    Stop: 86400
+(11/13/2024 12:57:59 PM) Set Variable: LEO.Missile1Chain.Time_Instant.CompleteChainAccessStartTime.Time_Instant + output value: 1668276060.004
+(11/13/2024 12:57:59 PM) >SetUnits / UTCG
+(11/13/2024 12:57:59 PM) 
+(11/13/2024 12:57:59 PM) >SetUnits / EpSec
+(11/13/2024 12:57:59 PM) 
+(11/13/2024 12:57:59 PM) Executing Data Provider
+(11/13/2024 12:57:59 PM)    Name: CompleteChainAccessStartTime
+(11/13/2024 12:57:59 PM)    Object: /Scenario/LEO/Chain/Missile2Chain
+(11/13/2024 12:57:59 PM) >SetUnits / EpSec
+(11/13/2024 12:57:59 PM) 
+(11/13/2024 12:57:59 PM) >SetUnits / EpSec
+(11/13/2024 12:57:59 PM) 
+(11/13/2024 12:57:59 PM)    Start: 0
+(11/13/2024 12:57:59 PM)    Stop: 86400
+(11/13/2024 12:57:59 PM) Set Variable: LEO.Missile2Chain.Time_Instant.CompleteChainAccessStartTime.Time_Instant + output value: 1668319200.007
+(11/13/2024 12:57:59 PM) >SetUnits / UTCG
+(11/13/2024 12:57:59 PM) 
+(11/13/2024 12:57:59 PM) >SetUnits / EpSec
+(11/13/2024 12:58:00 PM) 
+(11/13/2024 12:58:00 PM) Executing Data Provider
+(11/13/2024 12:58:00 PM)    Name: CompleteChainAccessStartTime
+(11/13/2024 12:58:00 PM)    Object: /Scenario/LEO/Chain/Missile3Chain
+(11/13/2024 12:58:00 PM) >SetUnits / EpSec
+(11/13/2024 12:58:00 PM) 
+(11/13/2024 12:58:00 PM) >SetUnits / EpSec
+(11/13/2024 12:58:00 PM) 
+(11/13/2024 12:58:00 PM)    Start: 0
+(11/13/2024 12:58:00 PM)    Stop: 86400
+(11/13/2024 12:58:00 PM) Set Variable: LEO.Missile3Chain.Time_Instant.CompleteChainAccessStartTime.Time_Instant + output value: 1668351600.004
+(11/13/2024 12:58:00 PM) >SetUnits / UTCG
+(11/13/2024 12:58:00 PM) 
+(11/13/2024 12:58:00 PM) >SetUnits / EpSec
+(11/13/2024 12:58:00 PM) 
+(11/13/2024 12:58:00 PM) Executing Data Provider
+(11/13/2024 12:58:00 PM)    Name: Strand Access
+(11/13/2024 12:58:00 PM)    Object: /Scenario/LEO/Chain/LEO2Missiles
+(11/13/2024 12:58:00 PM) >SetUnits / EpSec
+(11/13/2024 12:58:00 PM) 
+(11/13/2024 12:58:00 PM) >SetUnits / EpSec
+(11/13/2024 12:58:00 PM) 
+(11/13/2024 12:58:00 PM)    Start: 0
+(11/13/2024 12:58:00 PM)    Stop: 86400
+(11/13/2024 12:58:02 PM) Set Variable: LEO.LEO2Missiles.Strand_Access.Duration.Mean + output value: 414.869681747319
+(11/13/2024 12:58:02 PM) >SetUnits / UTCG
+(11/13/2024 12:58:02 PM) 
+(11/13/2024 12:58:02 PM) IAgStkObjectRoot.BeginUpdate()
+(11/13/2024 12:58:02 PM) IAgStkObjectRoot.EndUpdate()
+(11/13/2024 12:58:02 PM) IAgChain.AutoRecompute=false /Application/STK/Scenario/LEO/Chain/LEO2Missiles
+(11/13/2024 12:58:02 PM) Running Macro: AnalyzerPostRun
+(11/13/2024 12:58:02 PM) Running Macro: PostRun
+(11/13/2024 12:58:02 PM) >GetDirectory / Scenario
+(11/13/2024 12:58:02 PM) C:\Users\brigh\TAMU Programming\Fall 2024\Aero 401\HYPERION\LEO\
+(11/13/2024 12:58:02 PM) Running Macro: AnalyzerPreRun
+(11/13/2024 12:58:03 PM) Running Macro: PreRun
+(11/13/2024 12:58:03 PM) 
+(11/13/2024 12:58:03 PM) --- 11/13/2024 12:58:03 PM
+(11/13/2024 12:58:03 PM) --- Running STK
+(11/13/2024 12:58:03 PM) 
+(11/13/2024 12:58:03 PM) -Sending values to STK
+(11/13/2024 12:58:03 PM) IAgChain.AutoRecompute=false /Application/STK/Scenario/LEO/Chain/LEO2Missiles
+(11/13/2024 12:58:03 PM) Input Variable from getValueAsString LEO.LEOSats.Walker.Shell_LEO_Equatorial.Inclination, Value: 13
+(11/13/2024 12:58:03 PM) Input Variable from getValue: LEO.LEOSats.Walker.Shell_LEO_Equatorial.Inclination, Value: 13
+(11/13/2024 12:58:03 PM) Input Variable from getValueAsObject: LEO.LEOSats.Walker.Shell_LEO_Equatorial.Inclination, Value: 13
+(11/13/2024 12:58:03 PM) Output Variable: LEO.GroundCoverage.AvgRevisit.Overall_Value.Average
+(11/13/2024 12:58:03 PM) Output Variable: LEO.GroundCoverage.MaxRevisit.Overall_Value.Maximum
+(11/13/2024 12:58:03 PM) Output Variable: LEO.Missile1Chain.Time_Instant.CompleteChainAccessStartTime.Time_Instant
+(11/13/2024 12:58:03 PM) Output Variable: LEO.Missile2Chain.Time_Instant.CompleteChainAccessStartTime.Time_Instant
+(11/13/2024 12:58:03 PM) Output Variable: LEO.Missile3Chain.Time_Instant.CompleteChainAccessStartTime.Time_Instant
+(11/13/2024 12:58:03 PM) Output Variable: LEO.LEO2Missiles.Strand_Access.Duration.Mean
+(11/13/2024 12:58:03 PM) >SetUnits / EpSec
+(11/13/2024 12:58:03 PM) 
+(11/13/2024 12:58:03 PM) >SetUnits / UTCG
+(11/13/2024 12:58:03 PM) 
+(11/13/2024 12:58:03 PM) >SetUnits / EpSec
+(11/13/2024 12:58:03 PM) 
+(11/13/2024 12:58:03 PM) >SetUnits / UTCG
+(11/13/2024 12:58:04 PM) 
+(11/13/2024 12:58:04 PM) >SetUnits / EpSec
+(11/13/2024 12:58:04 PM) 
+(11/13/2024 12:58:04 PM) >SetUnits / UTCG
+(11/13/2024 12:58:04 PM) 
+(11/13/2024 12:58:04 PM) >SetUnits / EpSec
+(11/13/2024 12:58:04 PM) 
+(11/13/2024 12:58:04 PM) >SetUnits / UTCG
+(11/13/2024 12:58:04 PM) 
+(11/13/2024 12:58:04 PM) >SetUnits / EpSec
+(11/13/2024 12:58:04 PM) 
+(11/13/2024 12:58:04 PM) >SetUnits / UTCG
+(11/13/2024 12:58:04 PM) 
+(11/13/2024 12:58:04 PM) >SetUnits / EpSec
+(11/13/2024 12:58:04 PM) 
+(11/13/2024 12:58:04 PM) >SetUnits / UTCG
+(11/13/2024 12:58:04 PM) 
+(11/13/2024 12:58:04 PM) >SetUnits / EpSec
+(11/13/2024 12:58:04 PM) 
+(11/13/2024 12:58:04 PM) >SetUnits / UTCG
+(11/13/2024 12:58:04 PM) 
+(11/13/2024 12:58:04 PM) -Propagating objects
+(11/13/2024 12:58:04 PM) --->Scenario Analysis Period: 10 Nov 2024 18:00:00.000 <> 11 Nov 2024 18:00:00.000
+(11/13/2024 12:58:04 PM) -Computing Accesses
+(11/13/2024 12:58:04 PM) IAgChain.ComputeAccess() - /Scenario/LEO/Chain/Missile1Chain
+(11/13/2024 12:58:04 PM) IAgChain.ComputeAccess() - /Scenario/LEO/Chain/Missile2Chain
+(11/13/2024 12:58:05 PM) IAgChain.ComputeAccess() - /Scenario/LEO/Chain/Missile3Chain
+(11/13/2024 12:58:05 PM) IAgChain.ComputeAccess() - /Scenario/LEO/Chain/LEO2Missiles
+(11/13/2024 12:58:06 PM) IAgCoverageDefinition.ClearAccesses() /Application/STK/Scenario/LEO/CoverageDefinition/GroundCoverage
+(11/13/2024 12:58:06 PM) IAgCoverageDefinition.ComputeAccesses() /Application/STK/Scenario/LEO/CoverageDefinition/GroundCoverage
+(11/13/2024 12:59:14 PM) -Getting Output Values
+(11/13/2024 12:59:14 PM) >SetUnits / EpSec
+(11/13/2024 12:59:14 PM) 
+(11/13/2024 12:59:14 PM) >SetUnits / UTCG
+(11/13/2024 12:59:14 PM) 
+(11/13/2024 12:59:14 PM) >SetUnits / EpSec
+(11/13/2024 12:59:14 PM) 
+(11/13/2024 12:59:14 PM) Executing Data Provider
+(11/13/2024 12:59:14 PM)    Name: Overall Value
+(11/13/2024 12:59:14 PM)    Object: /Scenario/LEO/CoverageDefinition/GroundCoverage/FigureOfMerit/AvgRevisit
+(11/13/2024 12:59:14 PM) Set Variable: LEO.GroundCoverage.AvgRevisit.Overall_Value.Average + output value: 19.0112187212398
+(11/13/2024 12:59:14 PM) >SetUnits / UTCG
+(11/13/2024 12:59:14 PM) 
+(11/13/2024 12:59:14 PM) >SetUnits / EpSec
+(11/13/2024 12:59:14 PM) 
+(11/13/2024 12:59:14 PM) Executing Data Provider
+(11/13/2024 12:59:14 PM)    Name: Overall Value
+(11/13/2024 12:59:14 PM)    Object: /Scenario/LEO/CoverageDefinition/GroundCoverage/FigureOfMerit/MaxRevisit
+(11/13/2024 12:59:14 PM) Set Variable: LEO.GroundCoverage.MaxRevisit.Overall_Value.Maximum + output value: 98.7788865813272
+(11/13/2024 12:59:14 PM) >SetUnits / UTCG
+(11/13/2024 12:59:14 PM) 
+(11/13/2024 12:59:14 PM) >SetUnits / EpSec
+(11/13/2024 12:59:14 PM) 
+(11/13/2024 12:59:14 PM) Executing Data Provider
+(11/13/2024 12:59:14 PM)    Name: CompleteChainAccessStartTime
+(11/13/2024 12:59:14 PM)    Object: /Scenario/LEO/Chain/Missile1Chain
+(11/13/2024 12:59:14 PM) >SetUnits / EpSec
+(11/13/2024 12:59:15 PM) 
+(11/13/2024 12:59:15 PM) >SetUnits / EpSec
+(11/13/2024 12:59:15 PM) 
+(11/13/2024 12:59:15 PM)    Start: 0
+(11/13/2024 12:59:15 PM)    Stop: 86400
+(11/13/2024 12:59:15 PM) Set Variable: LEO.Missile1Chain.Time_Instant.CompleteChainAccessStartTime.Time_Instant + output value: 1668276060.004
+(11/13/2024 12:59:15 PM) >SetUnits / UTCG
+(11/13/2024 12:59:15 PM) 
+(11/13/2024 12:59:15 PM) >SetUnits / EpSec
+(11/13/2024 12:59:15 PM) 
+(11/13/2024 12:59:15 PM) Executing Data Provider
+(11/13/2024 12:59:15 PM)    Name: CompleteChainAccessStartTime
+(11/13/2024 12:59:15 PM)    Object: /Scenario/LEO/Chain/Missile2Chain
+(11/13/2024 12:59:15 PM) >SetUnits / EpSec
+(11/13/2024 12:59:15 PM) 
+(11/13/2024 12:59:15 PM) >SetUnits / EpSec
+(11/13/2024 12:59:15 PM) 
+(11/13/2024 12:59:15 PM)    Start: 0
+(11/13/2024 12:59:15 PM)    Stop: 86400
+(11/13/2024 12:59:15 PM) Set Variable: LEO.Missile2Chain.Time_Instant.CompleteChainAccessStartTime.Time_Instant + output value: 1668319200.007
+(11/13/2024 12:59:15 PM) >SetUnits / UTCG
+(11/13/2024 12:59:15 PM) 
+(11/13/2024 12:59:15 PM) >SetUnits / EpSec
+(11/13/2024 12:59:15 PM) 
+(11/13/2024 12:59:15 PM) Executing Data Provider
+(11/13/2024 12:59:15 PM)    Name: CompleteChainAccessStartTime
+(11/13/2024 12:59:15 PM)    Object: /Scenario/LEO/Chain/Missile3Chain
+(11/13/2024 12:59:15 PM) >SetUnits / EpSec
+(11/13/2024 12:59:15 PM) 
+(11/13/2024 12:59:15 PM) >SetUnits / EpSec
+(11/13/2024 12:59:15 PM) 
+(11/13/2024 12:59:15 PM)    Start: 0
+(11/13/2024 12:59:15 PM)    Stop: 86400
+(11/13/2024 12:59:16 PM) Set Variable: LEO.Missile3Chain.Time_Instant.CompleteChainAccessStartTime.Time_Instant + output value: 1668351600.004
+(11/13/2024 12:59:16 PM) >SetUnits / UTCG
+(11/13/2024 12:59:16 PM) 
+(11/13/2024 12:59:16 PM) >SetUnits / EpSec
+(11/13/2024 12:59:16 PM) 
+(11/13/2024 12:59:16 PM) Executing Data Provider
+(11/13/2024 12:59:16 PM)    Name: Strand Access
+(11/13/2024 12:59:16 PM)    Object: /Scenario/LEO/Chain/LEO2Missiles
+(11/13/2024 12:59:16 PM) >SetUnits / EpSec
+(11/13/2024 12:59:16 PM) 
+(11/13/2024 12:59:16 PM) >SetUnits / EpSec
+(11/13/2024 12:59:16 PM) 
+(11/13/2024 12:59:16 PM)    Start: 0
+(11/13/2024 12:59:16 PM)    Stop: 86400
+(11/13/2024 12:59:19 PM) Set Variable: LEO.LEO2Missiles.Strand_Access.Duration.Mean + output value: 413.906517751292
+(11/13/2024 12:59:19 PM) >SetUnits / UTCG
+(11/13/2024 12:59:19 PM) 
+(11/13/2024 12:59:19 PM) IAgStkObjectRoot.BeginUpdate()
+(11/13/2024 12:59:19 PM) IAgStkObjectRoot.EndUpdate()
+(11/13/2024 12:59:19 PM) IAgChain.AutoRecompute=false /Application/STK/Scenario/LEO/Chain/LEO2Missiles
+(11/13/2024 12:59:19 PM) Running Macro: AnalyzerPostRun
+(11/13/2024 12:59:19 PM) Running Macro: PostRun
+(11/13/2024 12:59:20 PM) >GetDirectory / Scenario
+(11/13/2024 12:59:20 PM) C:\Users\brigh\TAMU Programming\Fall 2024\Aero 401\HYPERION\LEO\
+(11/13/2024 12:59:20 PM) Running Macro: AnalyzerPreRun
+(11/13/2024 12:59:20 PM) Running Macro: PreRun
+(11/13/2024 12:59:20 PM) 
+(11/13/2024 12:59:20 PM) --- 11/13/2024 12:59:20 PM
+(11/13/2024 12:59:20 PM) --- Running STK
+(11/13/2024 12:59:20 PM) 
+(11/13/2024 12:59:20 PM) -Sending values to STK
+(11/13/2024 12:59:20 PM) IAgChain.AutoRecompute=false /Application/STK/Scenario/LEO/Chain/LEO2Missiles
+(11/13/2024 12:59:20 PM) Input Variable from getValueAsString LEO.LEOSats.Walker.Shell_LEO_Equatorial.Inclination, Value: 12
+(11/13/2024 12:59:20 PM) Input Variable from getValue: LEO.LEOSats.Walker.Shell_LEO_Equatorial.Inclination, Value: 12
+(11/13/2024 12:59:20 PM) Input Variable from getValueAsObject: LEO.LEOSats.Walker.Shell_LEO_Equatorial.Inclination, Value: 12
+(11/13/2024 12:59:20 PM) Output Variable: LEO.GroundCoverage.AvgRevisit.Overall_Value.Average
+(11/13/2024 12:59:20 PM) Output Variable: LEO.GroundCoverage.MaxRevisit.Overall_Value.Maximum
+(11/13/2024 12:59:20 PM) Output Variable: LEO.Missile1Chain.Time_Instant.CompleteChainAccessStartTime.Time_Instant
+(11/13/2024 12:59:20 PM) Output Variable: LEO.Missile2Chain.Time_Instant.CompleteChainAccessStartTime.Time_Instant
+(11/13/2024 12:59:20 PM) Output Variable: LEO.Missile3Chain.Time_Instant.CompleteChainAccessStartTime.Time_Instant
+(11/13/2024 12:59:20 PM) Output Variable: LEO.LEO2Missiles.Strand_Access.Duration.Mean
+(11/13/2024 12:59:20 PM) >SetUnits / EpSec
+(11/13/2024 12:59:20 PM) 
+(11/13/2024 12:59:21 PM) >SetUnits / UTCG
+(11/13/2024 12:59:21 PM) 
+(11/13/2024 12:59:21 PM) >SetUnits / EpSec
+(11/13/2024 12:59:21 PM) 
+(11/13/2024 12:59:21 PM) >SetUnits / UTCG
+(11/13/2024 12:59:21 PM) 
+(11/13/2024 12:59:21 PM) >SetUnits / EpSec
+(11/13/2024 12:59:21 PM) 
+(11/13/2024 12:59:21 PM) >SetUnits / UTCG
+(11/13/2024 12:59:21 PM) 
+(11/13/2024 12:59:21 PM) >SetUnits / EpSec
+(11/13/2024 12:59:21 PM) 
+(11/13/2024 12:59:21 PM) >SetUnits / UTCG
+(11/13/2024 12:59:21 PM) 
+(11/13/2024 12:59:21 PM) >SetUnits / EpSec
+(11/13/2024 12:59:21 PM) 
+(11/13/2024 12:59:21 PM) >SetUnits / UTCG
+(11/13/2024 12:59:21 PM) 
+(11/13/2024 12:59:21 PM) >SetUnits / EpSec
+(11/13/2024 12:59:21 PM) 
+(11/13/2024 12:59:21 PM) >SetUnits / UTCG
+(11/13/2024 12:59:21 PM) 
+(11/13/2024 12:59:21 PM) >SetUnits / EpSec
+(11/13/2024 12:59:21 PM) 
+(11/13/2024 12:59:21 PM) >SetUnits / UTCG
+(11/13/2024 12:59:21 PM) 
+(11/13/2024 12:59:21 PM) -Propagating objects
+(11/13/2024 12:59:21 PM) --->Scenario Analysis Period: 10 Nov 2024 18:00:00.000 <> 11 Nov 2024 18:00:00.000
+(11/13/2024 12:59:21 PM) -Computing Accesses
+(11/13/2024 12:59:21 PM) IAgChain.ComputeAccess() - /Scenario/LEO/Chain/Missile1Chain
+(11/13/2024 12:59:21 PM) IAgChain.ComputeAccess() - /Scenario/LEO/Chain/Missile2Chain
+(11/13/2024 12:59:22 PM) IAgChain.ComputeAccess() - /Scenario/LEO/Chain/Missile3Chain
+(11/13/2024 12:59:22 PM) IAgChain.ComputeAccess() - /Scenario/LEO/Chain/LEO2Missiles
+(11/13/2024 12:59:23 PM) IAgCoverageDefinition.ClearAccesses() /Application/STK/Scenario/LEO/CoverageDefinition/GroundCoverage
+(11/13/2024 12:59:23 PM) IAgCoverageDefinition.ComputeAccesses() /Application/STK/Scenario/LEO/CoverageDefinition/GroundCoverage
+(11/13/2024 1:00:52 PM) -Getting Output Values
+(11/13/2024 1:00:52 PM) >SetUnits / EpSec
+(11/13/2024 1:00:52 PM) 
+(11/13/2024 1:00:52 PM) >SetUnits / UTCG
+(11/13/2024 1:00:52 PM) 
+(11/13/2024 1:00:52 PM) >SetUnits / EpSec
+(11/13/2024 1:00:52 PM) 
+(11/13/2024 1:00:52 PM) Executing Data Provider
+(11/13/2024 1:00:52 PM)    Name: Overall Value
+(11/13/2024 1:00:52 PM)    Object: /Scenario/LEO/CoverageDefinition/GroundCoverage/FigureOfMerit/AvgRevisit
+(11/13/2024 1:00:52 PM) Set Variable: LEO.GroundCoverage.AvgRevisit.Overall_Value.Average + output value: 18.9803608587661
+(11/13/2024 1:00:52 PM) >SetUnits / UTCG
+(11/13/2024 1:00:52 PM) 
+(11/13/2024 1:00:52 PM) >SetUnits / EpSec
+(11/13/2024 1:00:52 PM) 
+(11/13/2024 1:00:52 PM) Executing Data Provider
+(11/13/2024 1:00:52 PM)    Name: Overall Value
+(11/13/2024 1:00:52 PM)    Object: /Scenario/LEO/CoverageDefinition/GroundCoverage/FigureOfMerit/MaxRevisit
+(11/13/2024 1:00:52 PM) Set Variable: LEO.GroundCoverage.MaxRevisit.Overall_Value.Maximum + output value: 98.7788865813272
+(11/13/2024 1:00:52 PM) >SetUnits / UTCG
+(11/13/2024 1:00:52 PM) 
+(11/13/2024 1:00:52 PM) >SetUnits / EpSec
+(11/13/2024 1:00:52 PM) 
+(11/13/2024 1:00:52 PM) Executing Data Provider
+(11/13/2024 1:00:52 PM)    Name: CompleteChainAccessStartTime
+(11/13/2024 1:00:52 PM)    Object: /Scenario/LEO/Chain/Missile1Chain
+(11/13/2024 1:00:52 PM) >SetUnits / EpSec
+(11/13/2024 1:00:52 PM) 
+(11/13/2024 1:00:52 PM) >SetUnits / EpSec
+(11/13/2024 1:00:52 PM) 
+(11/13/2024 1:00:52 PM)    Start: 0
+(11/13/2024 1:00:52 PM)    Stop: 86400
+(11/13/2024 1:00:52 PM) Set Variable: LEO.Missile1Chain.Time_Instant.CompleteChainAccessStartTime.Time_Instant + output value: 1668276060.004
+(11/13/2024 1:00:52 PM) >SetUnits / UTCG
+(11/13/2024 1:00:52 PM) 
+(11/13/2024 1:00:52 PM) >SetUnits / EpSec
+(11/13/2024 1:00:52 PM) 
+(11/13/2024 1:00:53 PM) Executing Data Provider
+(11/13/2024 1:00:53 PM)    Name: CompleteChainAccessStartTime
+(11/13/2024 1:00:53 PM)    Object: /Scenario/LEO/Chain/Missile2Chain
+(11/13/2024 1:00:53 PM) >SetUnits / EpSec
+(11/13/2024 1:00:53 PM) 
+(11/13/2024 1:00:53 PM) >SetUnits / EpSec
+(11/13/2024 1:00:53 PM) 
+(11/13/2024 1:00:53 PM)    Start: 0
+(11/13/2024 1:00:53 PM)    Stop: 86400
+(11/13/2024 1:00:53 PM) Set Variable: LEO.Missile2Chain.Time_Instant.CompleteChainAccessStartTime.Time_Instant + output value: 1668319200.007
+(11/13/2024 1:00:53 PM) >SetUnits / UTCG
+(11/13/2024 1:00:53 PM) 
+(11/13/2024 1:00:53 PM) >SetUnits / EpSec
+(11/13/2024 1:00:53 PM) 
+(11/13/2024 1:00:53 PM) Executing Data Provider
+(11/13/2024 1:00:53 PM)    Name: CompleteChainAccessStartTime
+(11/13/2024 1:00:53 PM)    Object: /Scenario/LEO/Chain/Missile3Chain
+(11/13/2024 1:00:53 PM) >SetUnits / EpSec
+(11/13/2024 1:00:53 PM) 
+(11/13/2024 1:00:53 PM) >SetUnits / EpSec
+(11/13/2024 1:00:53 PM) 
+(11/13/2024 1:00:53 PM)    Start: 0
+(11/13/2024 1:00:53 PM)    Stop: 86400
+(11/13/2024 1:00:53 PM) Set Variable: LEO.Missile3Chain.Time_Instant.CompleteChainAccessStartTime.Time_Instant + output value: 1668351600.004
+(11/13/2024 1:00:53 PM) >SetUnits / UTCG
+(11/13/2024 1:00:53 PM) 
+(11/13/2024 1:00:53 PM) >SetUnits / EpSec
+(11/13/2024 1:00:53 PM) 
+(11/13/2024 1:00:53 PM) Executing Data Provider
+(11/13/2024 1:00:53 PM)    Name: Strand Access
+(11/13/2024 1:00:53 PM)    Object: /Scenario/LEO/Chain/LEO2Missiles
+(11/13/2024 1:00:53 PM) >SetUnits / EpSec
+(11/13/2024 1:00:53 PM) 
+(11/13/2024 1:00:53 PM) >SetUnits / EpSec
+(11/13/2024 1:00:53 PM) 
+(11/13/2024 1:00:53 PM)    Start: 0
+(11/13/2024 1:00:53 PM)    Stop: 86400
+(11/13/2024 1:00:55 PM) Set Variable: LEO.LEO2Missiles.Strand_Access.Duration.Mean + output value: 412.707869500894
+(11/13/2024 1:00:55 PM) >SetUnits / UTCG
+(11/13/2024 1:00:55 PM) 
+(11/13/2024 1:00:55 PM) IAgStkObjectRoot.BeginUpdate()
+(11/13/2024 1:00:55 PM) IAgStkObjectRoot.EndUpdate()
+(11/13/2024 1:00:55 PM) IAgChain.AutoRecompute=false /Application/STK/Scenario/LEO/Chain/LEO2Missiles
+(11/13/2024 1:00:55 PM) Running Macro: AnalyzerPostRun
+(11/13/2024 1:00:55 PM) Running Macro: PostRun
+(11/13/2024 1:00:56 PM) >GetDirectory / Scenario
+(11/13/2024 1:00:56 PM) C:\Users\brigh\TAMU Programming\Fall 2024\Aero 401\HYPERION\LEO\
+(11/13/2024 1:00:56 PM) Running Macro: AnalyzerPreRun
+(11/13/2024 1:00:56 PM) Running Macro: PreRun
+(11/13/2024 1:00:56 PM) 
+(11/13/2024 1:00:56 PM) --- 11/13/2024 1:00:56 PM
+(11/13/2024 1:00:56 PM) --- Running STK
+(11/13/2024 1:00:56 PM) 
+(11/13/2024 1:00:56 PM) -Sending values to STK
+(11/13/2024 1:00:56 PM) IAgChain.AutoRecompute=false /Application/STK/Scenario/LEO/Chain/LEO2Missiles
+(11/13/2024 1:00:56 PM) Input Variable from getValueAsString LEO.LEOSats.Walker.Shell_LEO_Equatorial.Inclination, Value: 11
+(11/13/2024 1:00:56 PM) Input Variable from getValue: LEO.LEOSats.Walker.Shell_LEO_Equatorial.Inclination, Value: 11
+(11/13/2024 1:00:56 PM) Input Variable from getValueAsObject: LEO.LEOSats.Walker.Shell_LEO_Equatorial.Inclination, Value: 11
+(11/13/2024 1:00:56 PM) Output Variable: LEO.GroundCoverage.AvgRevisit.Overall_Value.Average
+(11/13/2024 1:00:56 PM) Output Variable: LEO.GroundCoverage.MaxRevisit.Overall_Value.Maximum
+(11/13/2024 1:00:56 PM) Output Variable: LEO.Missile1Chain.Time_Instant.CompleteChainAccessStartTime.Time_Instant
+(11/13/2024 1:00:56 PM) Output Variable: LEO.Missile2Chain.Time_Instant.CompleteChainAccessStartTime.Time_Instant
+(11/13/2024 1:00:56 PM) Output Variable: LEO.Missile3Chain.Time_Instant.CompleteChainAccessStartTime.Time_Instant
+(11/13/2024 1:00:56 PM) Output Variable: LEO.LEO2Missiles.Strand_Access.Duration.Mean
+(11/13/2024 1:00:56 PM) >SetUnits / EpSec
+(11/13/2024 1:00:56 PM) 
+(11/13/2024 1:00:57 PM) >SetUnits / UTCG
+(11/13/2024 1:00:57 PM) 
+(11/13/2024 1:00:57 PM) >SetUnits / EpSec
+(11/13/2024 1:00:57 PM) 
+(11/13/2024 1:00:57 PM) >SetUnits / UTCG
+(11/13/2024 1:00:57 PM) 
+(11/13/2024 1:00:57 PM) >SetUnits / EpSec
+(11/13/2024 1:00:57 PM) 
+(11/13/2024 1:00:57 PM) >SetUnits / UTCG
+(11/13/2024 1:00:57 PM) 
+(11/13/2024 1:00:57 PM) >SetUnits / EpSec
+(11/13/2024 1:00:57 PM) 
+(11/13/2024 1:00:57 PM) >SetUnits / UTCG
+(11/13/2024 1:00:57 PM) 
+(11/13/2024 1:00:57 PM) >SetUnits / EpSec
+(11/13/2024 1:00:57 PM) 
+(11/13/2024 1:00:57 PM) >SetUnits / UTCG
+(11/13/2024 1:00:57 PM) 
+(11/13/2024 1:00:57 PM) >SetUnits / EpSec
+(11/13/2024 1:00:57 PM) 
+(11/13/2024 1:00:57 PM) >SetUnits / UTCG
+(11/13/2024 1:00:57 PM) 
+(11/13/2024 1:00:57 PM) >SetUnits / EpSec
+(11/13/2024 1:00:57 PM) 
+(11/13/2024 1:00:57 PM) >SetUnits / UTCG
+(11/13/2024 1:00:57 PM) 
+(11/13/2024 1:00:57 PM) -Propagating objects
+(11/13/2024 1:00:57 PM) --->Scenario Analysis Period: 10 Nov 2024 18:00:00.000 <> 11 Nov 2024 18:00:00.000
+(11/13/2024 1:00:57 PM) -Computing Accesses
+(11/13/2024 1:00:57 PM) IAgChain.ComputeAccess() - /Scenario/LEO/Chain/Missile1Chain
+(11/13/2024 1:00:57 PM) IAgChain.ComputeAccess() - /Scenario/LEO/Chain/Missile2Chain
+(11/13/2024 1:00:58 PM) IAgChain.ComputeAccess() - /Scenario/LEO/Chain/Missile3Chain
+(11/13/2024 1:00:58 PM) IAgChain.ComputeAccess() - /Scenario/LEO/Chain/LEO2Missiles
+(11/13/2024 1:00:59 PM) IAgCoverageDefinition.ClearAccesses() /Application/STK/Scenario/LEO/CoverageDefinition/GroundCoverage
+(11/13/2024 1:00:59 PM) IAgCoverageDefinition.ComputeAccesses() /Application/STK/Scenario/LEO/CoverageDefinition/GroundCoverage
+(11/13/2024 1:02:28 PM) -Getting Output Values
+(11/13/2024 1:02:28 PM) >SetUnits / EpSec
+(11/13/2024 1:02:28 PM) 
+(11/13/2024 1:02:28 PM) >SetUnits / UTCG
+(11/13/2024 1:02:28 PM) 
+(11/13/2024 1:02:28 PM) >SetUnits / EpSec
+(11/13/2024 1:02:28 PM) 
+(11/13/2024 1:02:28 PM) Executing Data Provider
+(11/13/2024 1:02:28 PM)    Name: Overall Value
+(11/13/2024 1:02:28 PM)    Object: /Scenario/LEO/CoverageDefinition/GroundCoverage/FigureOfMerit/AvgRevisit
+(11/13/2024 1:02:28 PM) Set Variable: LEO.GroundCoverage.AvgRevisit.Overall_Value.Average + output value: 18.9657152271141
+(11/13/2024 1:02:28 PM) >SetUnits / UTCG
+(11/13/2024 1:02:28 PM) 
+(11/13/2024 1:02:28 PM) >SetUnits / EpSec
+(11/13/2024 1:02:28 PM) 
+(11/13/2024 1:02:28 PM) Executing Data Provider
+(11/13/2024 1:02:28 PM)    Name: Overall Value
+(11/13/2024 1:02:28 PM)    Object: /Scenario/LEO/CoverageDefinition/GroundCoverage/FigureOfMerit/MaxRevisit
+(11/13/2024 1:02:28 PM) Set Variable: LEO.GroundCoverage.MaxRevisit.Overall_Value.Maximum + output value: 98.7788865813272
+(11/13/2024 1:02:28 PM) >SetUnits / UTCG
+(11/13/2024 1:02:28 PM) 
+(11/13/2024 1:02:28 PM) >SetUnits / EpSec
+(11/13/2024 1:02:28 PM) 
+(11/13/2024 1:02:28 PM) Executing Data Provider
+(11/13/2024 1:02:28 PM)    Name: CompleteChainAccessStartTime
+(11/13/2024 1:02:28 PM)    Object: /Scenario/LEO/Chain/Missile1Chain
+(11/13/2024 1:02:28 PM) >SetUnits / EpSec
+(11/13/2024 1:02:28 PM) 
+(11/13/2024 1:02:28 PM) >SetUnits / EpSec
+(11/13/2024 1:02:28 PM) 
+(11/13/2024 1:02:28 PM)    Start: 0
+(11/13/2024 1:02:28 PM)    Stop: 86400
+(11/13/2024 1:02:29 PM) Set Variable: LEO.Missile1Chain.Time_Instant.CompleteChainAccessStartTime.Time_Instant + output value: 1668276060.004
+(11/13/2024 1:02:29 PM) >SetUnits / UTCG
+(11/13/2024 1:02:29 PM) 
+(11/13/2024 1:02:29 PM) >SetUnits / EpSec
+(11/13/2024 1:02:29 PM) 
+(11/13/2024 1:02:29 PM) Executing Data Provider
+(11/13/2024 1:02:29 PM)    Name: CompleteChainAccessStartTime
+(11/13/2024 1:02:29 PM)    Object: /Scenario/LEO/Chain/Missile2Chain
+(11/13/2024 1:02:29 PM) >SetUnits / EpSec
+(11/13/2024 1:02:29 PM) 
+(11/13/2024 1:02:29 PM) >SetUnits / EpSec
+(11/13/2024 1:02:29 PM) 
+(11/13/2024 1:02:29 PM)    Start: 0
+(11/13/2024 1:02:29 PM)    Stop: 86400
+(11/13/2024 1:02:29 PM) Set Variable: LEO.Missile2Chain.Time_Instant.CompleteChainAccessStartTime.Time_Instant + output value: 1668319200.006
+(11/13/2024 1:02:29 PM) >SetUnits / UTCG
+(11/13/2024 1:02:29 PM) 
+(11/13/2024 1:02:29 PM) >SetUnits / EpSec
+(11/13/2024 1:02:29 PM) 
+(11/13/2024 1:02:29 PM) Executing Data Provider
+(11/13/2024 1:02:29 PM)    Name: CompleteChainAccessStartTime
+(11/13/2024 1:02:29 PM)    Object: /Scenario/LEO/Chain/Missile3Chain
+(11/13/2024 1:02:29 PM) >SetUnits / EpSec
+(11/13/2024 1:02:29 PM) 
+(11/13/2024 1:02:29 PM) >SetUnits / EpSec
+(11/13/2024 1:02:29 PM) 
+(11/13/2024 1:02:29 PM)    Start: 0
+(11/13/2024 1:02:29 PM)    Stop: 86400
+(11/13/2024 1:02:29 PM) Set Variable: LEO.Missile3Chain.Time_Instant.CompleteChainAccessStartTime.Time_Instant + output value: 1668351600.004
+(11/13/2024 1:02:29 PM) >SetUnits / UTCG
+(11/13/2024 1:02:29 PM) 
+(11/13/2024 1:02:29 PM) >SetUnits / EpSec
+(11/13/2024 1:02:29 PM) 
+(11/13/2024 1:02:29 PM) Executing Data Provider
+(11/13/2024 1:02:29 PM)    Name: Strand Access
+(11/13/2024 1:02:29 PM)    Object: /Scenario/LEO/Chain/LEO2Missiles
+(11/13/2024 1:02:29 PM) >SetUnits / EpSec
+(11/13/2024 1:02:29 PM) 
+(11/13/2024 1:02:30 PM) >SetUnits / EpSec
+(11/13/2024 1:02:30 PM) 
+(11/13/2024 1:02:30 PM)    Start: 0
+(11/13/2024 1:02:30 PM)    Stop: 86400
+(11/13/2024 1:02:32 PM) Set Variable: LEO.LEO2Missiles.Strand_Access.Duration.Mean + output value: 410.932326122177
+(11/13/2024 1:02:32 PM) >SetUnits / UTCG
+(11/13/2024 1:02:32 PM) 
+(11/13/2024 1:02:32 PM) IAgStkObjectRoot.BeginUpdate()
+(11/13/2024 1:02:32 PM) IAgStkObjectRoot.EndUpdate()
+(11/13/2024 1:02:32 PM) IAgChain.AutoRecompute=false /Application/STK/Scenario/LEO/Chain/LEO2Missiles
+(11/13/2024 1:02:32 PM) Running Macro: AnalyzerPostRun
+(11/13/2024 1:02:32 PM) Running Macro: PostRun
+(11/13/2024 1:02:32 PM) >GetDirectory / Scenario
+(11/13/2024 1:02:32 PM) C:\Users\brigh\TAMU Programming\Fall 2024\Aero 401\HYPERION\LEO\
+(11/13/2024 1:02:32 PM) Running Macro: AnalyzerPreRun
+(11/13/2024 1:02:32 PM) Running Macro: PreRun
+(11/13/2024 1:02:32 PM) 
+(11/13/2024 1:02:32 PM) --- 11/13/2024 1:02:32 PM
+(11/13/2024 1:02:32 PM) --- Running STK
+(11/13/2024 1:02:32 PM) 
+(11/13/2024 1:02:32 PM) -Sending values to STK
+(11/13/2024 1:02:32 PM) IAgChain.AutoRecompute=false /Application/STK/Scenario/LEO/Chain/LEO2Missiles
+(11/13/2024 1:02:33 PM) Input Variable from getValueAsString LEO.LEOSats.Walker.Shell_LEO_Equatorial.Inclination, Value: 10
+(11/13/2024 1:02:33 PM) Input Variable from getValue: LEO.LEOSats.Walker.Shell_LEO_Equatorial.Inclination, Value: 10
+(11/13/2024 1:02:33 PM) Input Variable from getValueAsObject: LEO.LEOSats.Walker.Shell_LEO_Equatorial.Inclination, Value: 10
+(11/13/2024 1:02:33 PM) Output Variable: LEO.GroundCoverage.AvgRevisit.Overall_Value.Average
+(11/13/2024 1:02:33 PM) Output Variable: LEO.GroundCoverage.MaxRevisit.Overall_Value.Maximum
+(11/13/2024 1:02:33 PM) Output Variable: LEO.Missile1Chain.Time_Instant.CompleteChainAccessStartTime.Time_Instant
+(11/13/2024 1:02:33 PM) Output Variable: LEO.Missile2Chain.Time_Instant.CompleteChainAccessStartTime.Time_Instant
+(11/13/2024 1:02:33 PM) Output Variable: LEO.Missile3Chain.Time_Instant.CompleteChainAccessStartTime.Time_Instant
+(11/13/2024 1:02:33 PM) Output Variable: LEO.LEO2Missiles.Strand_Access.Duration.Mean
+(11/13/2024 1:02:33 PM) >SetUnits / EpSec
+(11/13/2024 1:02:33 PM) 
+(11/13/2024 1:02:33 PM) >SetUnits / UTCG
+(11/13/2024 1:02:33 PM) 
+(11/13/2024 1:02:33 PM) >SetUnits / EpSec
+(11/13/2024 1:02:33 PM) 
+(11/13/2024 1:02:33 PM) >SetUnits / UTCG
+(11/13/2024 1:02:33 PM) 
+(11/13/2024 1:02:33 PM) >SetUnits / EpSec
+(11/13/2024 1:02:33 PM) 
+(11/13/2024 1:02:33 PM) >SetUnits / UTCG
+(11/13/2024 1:02:33 PM) 
+(11/13/2024 1:02:33 PM) >SetUnits / EpSec
+(11/13/2024 1:02:33 PM) 
+(11/13/2024 1:02:33 PM) >SetUnits / UTCG
+(11/13/2024 1:02:33 PM) 
+(11/13/2024 1:02:33 PM) >SetUnits / EpSec
+(11/13/2024 1:02:33 PM) 
+(11/13/2024 1:02:33 PM) >SetUnits / UTCG
+(11/13/2024 1:02:33 PM) 
+(11/13/2024 1:02:33 PM) >SetUnits / EpSec
+(11/13/2024 1:02:33 PM) 
+(11/13/2024 1:02:33 PM) >SetUnits / UTCG
+(11/13/2024 1:02:33 PM) 
+(11/13/2024 1:02:33 PM) >SetUnits / EpSec
+(11/13/2024 1:02:33 PM) 
+(11/13/2024 1:02:34 PM) >SetUnits / UTCG
+(11/13/2024 1:02:34 PM) 
+(11/13/2024 1:02:34 PM) -Propagating objects
+(11/13/2024 1:02:34 PM) --->Scenario Analysis Period: 10 Nov 2024 18:00:00.000 <> 11 Nov 2024 18:00:00.000
+(11/13/2024 1:02:34 PM) -Computing Accesses
+(11/13/2024 1:02:34 PM) IAgChain.ComputeAccess() - /Scenario/LEO/Chain/Missile1Chain
+(11/13/2024 1:02:34 PM) IAgChain.ComputeAccess() - /Scenario/LEO/Chain/Missile2Chain
+(11/13/2024 1:02:34 PM) IAgChain.ComputeAccess() - /Scenario/LEO/Chain/Missile3Chain
+(11/13/2024 1:02:35 PM) IAgChain.ComputeAccess() - /Scenario/LEO/Chain/LEO2Missiles
+(11/13/2024 1:02:35 PM) IAgCoverageDefinition.ClearAccesses() /Application/STK/Scenario/LEO/CoverageDefinition/GroundCoverage
+(11/13/2024 1:02:35 PM) IAgCoverageDefinition.ComputeAccesses() /Application/STK/Scenario/LEO/CoverageDefinition/GroundCoverage
+(11/13/2024 1:04:05 PM) -Getting Output Values
+(11/13/2024 1:04:05 PM) >SetUnits / EpSec
+(11/13/2024 1:04:05 PM) 
+(11/13/2024 1:04:05 PM) >SetUnits / UTCG
+(11/13/2024 1:04:05 PM) 
+(11/13/2024 1:04:05 PM) >SetUnits / EpSec
+(11/13/2024 1:04:05 PM) 
+(11/13/2024 1:04:05 PM) Executing Data Provider
+(11/13/2024 1:04:05 PM)    Name: Overall Value
+(11/13/2024 1:04:05 PM)    Object: /Scenario/LEO/CoverageDefinition/GroundCoverage/FigureOfMerit/AvgRevisit
+(11/13/2024 1:04:05 PM) Set Variable: LEO.GroundCoverage.AvgRevisit.Overall_Value.Average + output value: 18.9097339206381
+(11/13/2024 1:04:05 PM) >SetUnits / UTCG
+(11/13/2024 1:04:05 PM) 
+(11/13/2024 1:04:05 PM) >SetUnits / EpSec
+(11/13/2024 1:04:05 PM) 
+(11/13/2024 1:04:05 PM) Executing Data Provider
+(11/13/2024 1:04:05 PM)    Name: Overall Value
+(11/13/2024 1:04:05 PM)    Object: /Scenario/LEO/CoverageDefinition/GroundCoverage/FigureOfMerit/MaxRevisit
+(11/13/2024 1:04:05 PM) Set Variable: LEO.GroundCoverage.MaxRevisit.Overall_Value.Maximum + output value: 98.7788865813272
+(11/13/2024 1:04:05 PM) >SetUnits / UTCG
+(11/13/2024 1:04:05 PM) 
+(11/13/2024 1:04:05 PM) >SetUnits / EpSec
+(11/13/2024 1:04:05 PM) 
+(11/13/2024 1:04:05 PM) Executing Data Provider
+(11/13/2024 1:04:05 PM)    Name: CompleteChainAccessStartTime
+(11/13/2024 1:04:05 PM)    Object: /Scenario/LEO/Chain/Missile1Chain
+(11/13/2024 1:04:05 PM) >SetUnits / EpSec
+(11/13/2024 1:04:05 PM) 
+(11/13/2024 1:04:06 PM) >SetUnits / EpSec
+(11/13/2024 1:04:06 PM) 
+(11/13/2024 1:04:06 PM)    Start: 0
+(11/13/2024 1:04:06 PM)    Stop: 86400
+(11/13/2024 1:04:06 PM) Set Variable: LEO.Missile1Chain.Time_Instant.CompleteChainAccessStartTime.Time_Instant + output value: 1668276060.004
+(11/13/2024 1:04:06 PM) >SetUnits / UTCG
+(11/13/2024 1:04:06 PM) 
+(11/13/2024 1:04:06 PM) >SetUnits / EpSec
+(11/13/2024 1:04:06 PM) 
+(11/13/2024 1:04:06 PM) Executing Data Provider
+(11/13/2024 1:04:06 PM)    Name: CompleteChainAccessStartTime
+(11/13/2024 1:04:06 PM)    Object: /Scenario/LEO/Chain/Missile2Chain
+(11/13/2024 1:04:06 PM) >SetUnits / EpSec
+(11/13/2024 1:04:06 PM) 
+(11/13/2024 1:04:06 PM) >SetUnits / EpSec
+(11/13/2024 1:04:06 PM) 
+(11/13/2024 1:04:06 PM)    Start: 0
+(11/13/2024 1:04:06 PM)    Stop: 86400
+(11/13/2024 1:04:06 PM) Set Variable: LEO.Missile2Chain.Time_Instant.CompleteChainAccessStartTime.Time_Instant + output value: 1668319200.006
+(11/13/2024 1:04:06 PM) >SetUnits / UTCG
+(11/13/2024 1:04:06 PM) 
+(11/13/2024 1:04:06 PM) >SetUnits / EpSec
+(11/13/2024 1:04:06 PM) 
+(11/13/2024 1:04:06 PM) Executing Data Provider
+(11/13/2024 1:04:06 PM)    Name: CompleteChainAccessStartTime
+(11/13/2024 1:04:06 PM)    Object: /Scenario/LEO/Chain/Missile3Chain
+(11/13/2024 1:04:06 PM) >SetUnits / EpSec
+(11/13/2024 1:04:06 PM) 
+(11/13/2024 1:04:06 PM) >SetUnits / EpSec
+(11/13/2024 1:04:06 PM) 
+(11/13/2024 1:04:06 PM)    Start: 0
+(11/13/2024 1:04:06 PM)    Stop: 86400
+(11/13/2024 1:04:06 PM) Set Variable: LEO.Missile3Chain.Time_Instant.CompleteChainAccessStartTime.Time_Instant + output value: 1668351600.004
+(11/13/2024 1:04:06 PM) >SetUnits / UTCG
+(11/13/2024 1:04:06 PM) 
+(11/13/2024 1:04:06 PM) >SetUnits / EpSec
+(11/13/2024 1:04:06 PM) 
+(11/13/2024 1:04:07 PM) Executing Data Provider
+(11/13/2024 1:04:07 PM)    Name: Strand Access
+(11/13/2024 1:04:07 PM)    Object: /Scenario/LEO/Chain/LEO2Missiles
+(11/13/2024 1:04:07 PM) >SetUnits / EpSec
+(11/13/2024 1:04:07 PM) 
+(11/13/2024 1:04:07 PM) >SetUnits / EpSec
+(11/13/2024 1:04:07 PM) 
+(11/13/2024 1:04:07 PM)    Start: 0
+(11/13/2024 1:04:07 PM)    Stop: 86400
+(11/13/2024 1:04:09 PM) Set Variable: LEO.LEO2Missiles.Strand_Access.Duration.Mean + output value: 413.872180468335
+(11/13/2024 1:04:09 PM) >SetUnits / UTCG
+(11/13/2024 1:04:09 PM) 
+(11/13/2024 1:04:09 PM) IAgStkObjectRoot.BeginUpdate()
+(11/13/2024 1:04:09 PM) IAgStkObjectRoot.EndUpdate()
+(11/13/2024 1:04:09 PM) IAgChain.AutoRecompute=false /Application/STK/Scenario/LEO/Chain/LEO2Missiles
+(11/13/2024 1:04:09 PM) Running Macro: AnalyzerPostRun
+(11/13/2024 1:04:09 PM) Running Macro: PostRun
+(11/13/2024 1:04:10 PM) >GetDirectory / Scenario
+(11/13/2024 1:04:10 PM) C:\Users\brigh\TAMU Programming\Fall 2024\Aero 401\HYPERION\LEO\
+(11/13/2024 1:04:10 PM) Running Macro: AnalyzerPreRun
+(11/13/2024 1:04:10 PM) Running Macro: PreRun
+(11/13/2024 1:04:10 PM) 
+(11/13/2024 1:04:10 PM) --- 11/13/2024 1:04:10 PM
+(11/13/2024 1:04:10 PM) --- Running STK
+(11/13/2024 1:04:10 PM) 
+(11/13/2024 1:04:10 PM) -Sending values to STK
+(11/13/2024 1:04:10 PM) IAgChain.AutoRecompute=false /Application/STK/Scenario/LEO/Chain/LEO2Missiles
+(11/13/2024 1:04:10 PM) Input Variable from getValueAsString LEO.LEOSats.Walker.Shell_LEO_Equatorial.Inclination, Value: 9
+(11/13/2024 1:04:10 PM) Input Variable from getValue: LEO.LEOSats.Walker.Shell_LEO_Equatorial.Inclination, Value: 9
+(11/13/2024 1:04:10 PM) Input Variable from getValueAsObject: LEO.LEOSats.Walker.Shell_LEO_Equatorial.Inclination, Value: 9
+(11/13/2024 1:04:10 PM) Output Variable: LEO.GroundCoverage.AvgRevisit.Overall_Value.Average
+(11/13/2024 1:04:10 PM) Output Variable: LEO.GroundCoverage.MaxRevisit.Overall_Value.Maximum
+(11/13/2024 1:04:10 PM) Output Variable: LEO.Missile1Chain.Time_Instant.CompleteChainAccessStartTime.Time_Instant
+(11/13/2024 1:04:10 PM) Output Variable: LEO.Missile2Chain.Time_Instant.CompleteChainAccessStartTime.Time_Instant
+(11/13/2024 1:04:10 PM) Output Variable: LEO.Missile3Chain.Time_Instant.CompleteChainAccessStartTime.Time_Instant
+(11/13/2024 1:04:10 PM) Output Variable: LEO.LEO2Missiles.Strand_Access.Duration.Mean
+(11/13/2024 1:04:10 PM) >SetUnits / EpSec
+(11/13/2024 1:04:10 PM) 
+(11/13/2024 1:04:11 PM) >SetUnits / UTCG
+(11/13/2024 1:04:11 PM) 
+(11/13/2024 1:04:11 PM) >SetUnits / EpSec
+(11/13/2024 1:04:11 PM) 
+(11/13/2024 1:04:11 PM) >SetUnits / UTCG
+(11/13/2024 1:04:11 PM) 
+(11/13/2024 1:04:11 PM) >SetUnits / EpSec
+(11/13/2024 1:04:11 PM) 
+(11/13/2024 1:04:11 PM) >SetUnits / UTCG
+(11/13/2024 1:04:11 PM) 
+(11/13/2024 1:04:11 PM) >SetUnits / EpSec
+(11/13/2024 1:04:11 PM) 
+(11/13/2024 1:04:11 PM) >SetUnits / UTCG
+(11/13/2024 1:04:11 PM) 
+(11/13/2024 1:04:11 PM) >SetUnits / EpSec
+(11/13/2024 1:04:11 PM) 
+(11/13/2024 1:04:11 PM) >SetUnits / UTCG
+(11/13/2024 1:04:11 PM) 
+(11/13/2024 1:04:11 PM) >SetUnits / EpSec
+(11/13/2024 1:04:11 PM) 
+(11/13/2024 1:04:11 PM) >SetUnits / UTCG
+(11/13/2024 1:04:11 PM) 
+(11/13/2024 1:04:11 PM) >SetUnits / EpSec
+(11/13/2024 1:04:11 PM) 
+(11/13/2024 1:04:11 PM) >SetUnits / UTCG
+(11/13/2024 1:04:11 PM) 
+(11/13/2024 1:04:11 PM) -Propagating objects
+(11/13/2024 1:04:11 PM) --->Scenario Analysis Period: 10 Nov 2024 18:00:00.000 <> 11 Nov 2024 18:00:00.000
+(11/13/2024 1:04:11 PM) -Computing Accesses
+(11/13/2024 1:04:11 PM) IAgChain.ComputeAccess() - /Scenario/LEO/Chain/Missile1Chain
+(11/13/2024 1:04:11 PM) IAgChain.ComputeAccess() - /Scenario/LEO/Chain/Missile2Chain
+(11/13/2024 1:04:12 PM) IAgChain.ComputeAccess() - /Scenario/LEO/Chain/Missile3Chain
+(11/13/2024 1:04:12 PM) IAgChain.ComputeAccess() - /Scenario/LEO/Chain/LEO2Missiles
+(11/13/2024 1:04:13 PM) IAgCoverageDefinition.ClearAccesses() /Application/STK/Scenario/LEO/CoverageDefinition/GroundCoverage
+(11/13/2024 1:04:13 PM) IAgCoverageDefinition.ComputeAccesses() /Application/STK/Scenario/LEO/CoverageDefinition/GroundCoverage
+(11/13/2024 1:05:18 PM) -Getting Output Values
+(11/13/2024 1:05:18 PM) >SetUnits / EpSec
+(11/13/2024 1:05:18 PM) 
+(11/13/2024 1:05:18 PM) >SetUnits / UTCG
+(11/13/2024 1:05:18 PM) 
+(11/13/2024 1:05:18 PM) >SetUnits / EpSec
+(11/13/2024 1:05:18 PM) 
+(11/13/2024 1:05:18 PM) Executing Data Provider
+(11/13/2024 1:05:18 PM)    Name: Overall Value
+(11/13/2024 1:05:18 PM)    Object: /Scenario/LEO/CoverageDefinition/GroundCoverage/FigureOfMerit/AvgRevisit
+(11/13/2024 1:05:18 PM) Set Variable: LEO.GroundCoverage.AvgRevisit.Overall_Value.Average + output value: 18.9662266903628
+(11/13/2024 1:05:18 PM) >SetUnits / UTCG
+(11/13/2024 1:05:18 PM) 
+(11/13/2024 1:05:18 PM) >SetUnits / EpSec
+(11/13/2024 1:05:18 PM) 
+(11/13/2024 1:05:18 PM) Executing Data Provider
+(11/13/2024 1:05:18 PM)    Name: Overall Value
+(11/13/2024 1:05:18 PM)    Object: /Scenario/LEO/CoverageDefinition/GroundCoverage/FigureOfMerit/MaxRevisit
+(11/13/2024 1:05:18 PM) Set Variable: LEO.GroundCoverage.MaxRevisit.Overall_Value.Maximum + output value: 98.7788865813272
+(11/13/2024 1:05:18 PM) >SetUnits / UTCG
+(11/13/2024 1:05:18 PM) 
+(11/13/2024 1:05:18 PM) >SetUnits / EpSec
+(11/13/2024 1:05:18 PM) 
+(11/13/2024 1:05:18 PM) Executing Data Provider
+(11/13/2024 1:05:18 PM)    Name: CompleteChainAccessStartTime
+(11/13/2024 1:05:18 PM)    Object: /Scenario/LEO/Chain/Missile1Chain
+(11/13/2024 1:05:18 PM) >SetUnits / EpSec
+(11/13/2024 1:05:18 PM) 
+(11/13/2024 1:05:18 PM) >SetUnits / EpSec
+(11/13/2024 1:05:18 PM) 
+(11/13/2024 1:05:18 PM)    Start: 0
+(11/13/2024 1:05:18 PM)    Stop: 86400
+(11/13/2024 1:05:19 PM) Set Variable: LEO.Missile1Chain.Time_Instant.CompleteChainAccessStartTime.Time_Instant + output value: 1668276060.004
+(11/13/2024 1:05:19 PM) >SetUnits / UTCG
+(11/13/2024 1:05:19 PM) 
+(11/13/2024 1:05:19 PM) >SetUnits / EpSec
+(11/13/2024 1:05:19 PM) 
+(11/13/2024 1:05:19 PM) Executing Data Provider
+(11/13/2024 1:05:19 PM)    Name: CompleteChainAccessStartTime
+(11/13/2024 1:05:19 PM)    Object: /Scenario/LEO/Chain/Missile2Chain
+(11/13/2024 1:05:19 PM) >SetUnits / EpSec
+(11/13/2024 1:05:19 PM) 
+(11/13/2024 1:05:19 PM) >SetUnits / EpSec
+(11/13/2024 1:05:19 PM) 
+(11/13/2024 1:05:19 PM)    Start: 0
+(11/13/2024 1:05:19 PM)    Stop: 86400
+(11/13/2024 1:05:19 PM) Set Variable: LEO.Missile2Chain.Time_Instant.CompleteChainAccessStartTime.Time_Instant + output value: 1668319200.006
+(11/13/2024 1:05:19 PM) >SetUnits / UTCG
+(11/13/2024 1:05:19 PM) 
+(11/13/2024 1:05:19 PM) >SetUnits / EpSec
+(11/13/2024 1:05:19 PM) 
+(11/13/2024 1:05:19 PM) Executing Data Provider
+(11/13/2024 1:05:19 PM)    Name: CompleteChainAccessStartTime
+(11/13/2024 1:05:19 PM)    Object: /Scenario/LEO/Chain/Missile3Chain
+(11/13/2024 1:05:19 PM) >SetUnits / EpSec
+(11/13/2024 1:05:19 PM) 
+(11/13/2024 1:05:19 PM) >SetUnits / EpSec
+(11/13/2024 1:05:19 PM) 
+(11/13/2024 1:05:19 PM)    Start: 0
+(11/13/2024 1:05:19 PM)    Stop: 86400
+(11/13/2024 1:05:19 PM) Set Variable: LEO.Missile3Chain.Time_Instant.CompleteChainAccessStartTime.Time_Instant + output value: 1668351600.004
+(11/13/2024 1:05:19 PM) >SetUnits / UTCG
+(11/13/2024 1:05:19 PM) 
+(11/13/2024 1:05:19 PM) >SetUnits / EpSec
+(11/13/2024 1:05:19 PM) 
+(11/13/2024 1:05:20 PM) Executing Data Provider
+(11/13/2024 1:05:20 PM)    Name: Strand Access
+(11/13/2024 1:05:20 PM)    Object: /Scenario/LEO/Chain/LEO2Missiles
+(11/13/2024 1:05:20 PM) >SetUnits / EpSec
+(11/13/2024 1:05:20 PM) 
+(11/13/2024 1:05:20 PM) >SetUnits / EpSec
+(11/13/2024 1:05:20 PM) 
+(11/13/2024 1:05:20 PM)    Start: 0
+(11/13/2024 1:05:20 PM)    Stop: 86400
+(11/13/2024 1:05:22 PM) Set Variable: LEO.LEO2Missiles.Strand_Access.Duration.Mean + output value: 413.935972535904
+(11/13/2024 1:05:22 PM) >SetUnits / UTCG
+(11/13/2024 1:05:22 PM) 
+(11/13/2024 1:05:22 PM) IAgStkObjectRoot.BeginUpdate()
+(11/13/2024 1:05:22 PM) IAgStkObjectRoot.EndUpdate()
+(11/13/2024 1:05:22 PM) IAgChain.AutoRecompute=false /Application/STK/Scenario/LEO/Chain/LEO2Missiles
+(11/13/2024 1:05:22 PM) Running Macro: AnalyzerPostRun
+(11/13/2024 1:05:22 PM) Running Macro: PostRun
+(11/13/2024 1:05:22 PM) >GetDirectory / Scenario
+(11/13/2024 1:05:22 PM) C:\Users\brigh\TAMU Programming\Fall 2024\Aero 401\HYPERION\LEO\
+(11/13/2024 1:05:22 PM) Running Macro: AnalyzerPreRun
+(11/13/2024 1:05:22 PM) Running Macro: PreRun
+(11/13/2024 1:05:22 PM) 
+(11/13/2024 1:05:22 PM) --- 11/13/2024 1:05:22 PM
+(11/13/2024 1:05:22 PM) --- Running STK
+(11/13/2024 1:05:22 PM) 
+(11/13/2024 1:05:22 PM) -Sending values to STK
+(11/13/2024 1:05:22 PM) IAgChain.AutoRecompute=false /Application/STK/Scenario/LEO/Chain/LEO2Missiles
+(11/13/2024 1:05:23 PM) Input Variable from getValueAsString LEO.LEOSats.Walker.Shell_LEO_Equatorial.Inclination, Value: 8
+(11/13/2024 1:05:23 PM) Input Variable from getValue: LEO.LEOSats.Walker.Shell_LEO_Equatorial.Inclination, Value: 8
+(11/13/2024 1:05:23 PM) Input Variable from getValueAsObject: LEO.LEOSats.Walker.Shell_LEO_Equatorial.Inclination, Value: 8
+(11/13/2024 1:05:23 PM) Output Variable: LEO.GroundCoverage.AvgRevisit.Overall_Value.Average
+(11/13/2024 1:05:23 PM) Output Variable: LEO.GroundCoverage.MaxRevisit.Overall_Value.Maximum
+(11/13/2024 1:05:23 PM) Output Variable: LEO.Missile1Chain.Time_Instant.CompleteChainAccessStartTime.Time_Instant
+(11/13/2024 1:05:23 PM) Output Variable: LEO.Missile2Chain.Time_Instant.CompleteChainAccessStartTime.Time_Instant
+(11/13/2024 1:05:23 PM) Output Variable: LEO.Missile3Chain.Time_Instant.CompleteChainAccessStartTime.Time_Instant
+(11/13/2024 1:05:23 PM) Output Variable: LEO.LEO2Missiles.Strand_Access.Duration.Mean
+(11/13/2024 1:05:23 PM) >SetUnits / EpSec
+(11/13/2024 1:05:23 PM) 
+(11/13/2024 1:05:23 PM) >SetUnits / UTCG
+(11/13/2024 1:05:23 PM) 
+(11/13/2024 1:05:23 PM) >SetUnits / EpSec
+(11/13/2024 1:05:23 PM) 
+(11/13/2024 1:05:23 PM) >SetUnits / UTCG
+(11/13/2024 1:05:23 PM) 
+(11/13/2024 1:05:23 PM) >SetUnits / EpSec
+(11/13/2024 1:05:23 PM) 
+(11/13/2024 1:05:23 PM) >SetUnits / UTCG
+(11/13/2024 1:05:23 PM) 
+(11/13/2024 1:05:23 PM) >SetUnits / EpSec
+(11/13/2024 1:05:23 PM) 
+(11/13/2024 1:05:23 PM) >SetUnits / UTCG
+(11/13/2024 1:05:23 PM) 
+(11/13/2024 1:05:23 PM) >SetUnits / EpSec
+(11/13/2024 1:05:23 PM) 
+(11/13/2024 1:05:23 PM) >SetUnits / UTCG
+(11/13/2024 1:05:23 PM) 
+(11/13/2024 1:05:23 PM) >SetUnits / EpSec
+(11/13/2024 1:05:23 PM) 
+(11/13/2024 1:05:23 PM) >SetUnits / UTCG
+(11/13/2024 1:05:23 PM) 
+(11/13/2024 1:05:23 PM) >SetUnits / EpSec
+(11/13/2024 1:05:23 PM) 
+(11/13/2024 1:05:24 PM) >SetUnits / UTCG
+(11/13/2024 1:05:24 PM) 
+(11/13/2024 1:05:24 PM) -Propagating objects
+(11/13/2024 1:05:24 PM) --->Scenario Analysis Period: 10 Nov 2024 18:00:00.000 <> 11 Nov 2024 18:00:00.000
+(11/13/2024 1:05:24 PM) -Computing Accesses
+(11/13/2024 1:05:24 PM) IAgChain.ComputeAccess() - /Scenario/LEO/Chain/Missile1Chain
+(11/13/2024 1:05:24 PM) IAgChain.ComputeAccess() - /Scenario/LEO/Chain/Missile2Chain
+(11/13/2024 1:05:24 PM) IAgChain.ComputeAccess() - /Scenario/LEO/Chain/Missile3Chain
+(11/13/2024 1:05:25 PM) IAgChain.ComputeAccess() - /Scenario/LEO/Chain/LEO2Missiles
+(11/13/2024 1:05:25 PM) IAgCoverageDefinition.ClearAccesses() /Application/STK/Scenario/LEO/CoverageDefinition/GroundCoverage
+(11/13/2024 1:05:25 PM) IAgCoverageDefinition.ComputeAccesses() /Application/STK/Scenario/LEO/CoverageDefinition/GroundCoverage
+(11/13/2024 1:06:33 PM) -Getting Output Values
+(11/13/2024 1:06:33 PM) >SetUnits / EpSec
+(11/13/2024 1:06:33 PM) 
+(11/13/2024 1:06:33 PM) >SetUnits / UTCG
+(11/13/2024 1:06:33 PM) 
+(11/13/2024 1:06:33 PM) >SetUnits / EpSec
+(11/13/2024 1:06:33 PM) 
+(11/13/2024 1:06:33 PM) Executing Data Provider
+(11/13/2024 1:06:33 PM)    Name: Overall Value
+(11/13/2024 1:06:33 PM)    Object: /Scenario/LEO/CoverageDefinition/GroundCoverage/FigureOfMerit/AvgRevisit
+(11/13/2024 1:06:33 PM) Set Variable: LEO.GroundCoverage.AvgRevisit.Overall_Value.Average + output value: 18.92096134405
+(11/13/2024 1:06:33 PM) >SetUnits / UTCG
+(11/13/2024 1:06:33 PM) 
+(11/13/2024 1:06:33 PM) >SetUnits / EpSec
+(11/13/2024 1:06:33 PM) 
+(11/13/2024 1:06:34 PM) Executing Data Provider
+(11/13/2024 1:06:34 PM)    Name: Overall Value
+(11/13/2024 1:06:34 PM)    Object: /Scenario/LEO/CoverageDefinition/GroundCoverage/FigureOfMerit/MaxRevisit
+(11/13/2024 1:06:34 PM) Set Variable: LEO.GroundCoverage.MaxRevisit.Overall_Value.Maximum + output value: 98.7788865813272
+(11/13/2024 1:06:34 PM) >SetUnits / UTCG
+(11/13/2024 1:06:34 PM) 
+(11/13/2024 1:06:34 PM) >SetUnits / EpSec
+(11/13/2024 1:06:34 PM) 
+(11/13/2024 1:06:34 PM) Executing Data Provider
+(11/13/2024 1:06:34 PM)    Name: CompleteChainAccessStartTime
+(11/13/2024 1:06:34 PM)    Object: /Scenario/LEO/Chain/Missile1Chain
+(11/13/2024 1:06:34 PM) >SetUnits / EpSec
+(11/13/2024 1:06:34 PM) 
+(11/13/2024 1:06:34 PM) >SetUnits / EpSec
+(11/13/2024 1:06:34 PM) 
+(11/13/2024 1:06:34 PM)    Start: 0
+(11/13/2024 1:06:34 PM)    Stop: 86400
+(11/13/2024 1:06:34 PM) Set Variable: LEO.Missile1Chain.Time_Instant.CompleteChainAccessStartTime.Time_Instant + output value: 1668276060.004
+(11/13/2024 1:06:34 PM) >SetUnits / UTCG
+(11/13/2024 1:06:34 PM) 
+(11/13/2024 1:06:34 PM) >SetUnits / EpSec
+(11/13/2024 1:06:34 PM) 
+(11/13/2024 1:06:34 PM) Executing Data Provider
+(11/13/2024 1:06:34 PM)    Name: CompleteChainAccessStartTime
+(11/13/2024 1:06:34 PM)    Object: /Scenario/LEO/Chain/Missile2Chain
+(11/13/2024 1:06:34 PM) >SetUnits / EpSec
+(11/13/2024 1:06:34 PM) 
+(11/13/2024 1:06:35 PM) >SetUnits / EpSec
+(11/13/2024 1:06:35 PM) 
+(11/13/2024 1:06:35 PM)    Start: 0
+(11/13/2024 1:06:35 PM)    Stop: 86400
+(11/13/2024 1:06:35 PM) Set Variable: LEO.Missile2Chain.Time_Instant.CompleteChainAccessStartTime.Time_Instant + output value: 1668319200.006
+(11/13/2024 1:06:35 PM) >SetUnits / UTCG
+(11/13/2024 1:06:35 PM) 
+(11/13/2024 1:06:35 PM) >SetUnits / EpSec
+(11/13/2024 1:06:35 PM) 
+(11/13/2024 1:06:35 PM) Executing Data Provider
+(11/13/2024 1:06:35 PM)    Name: CompleteChainAccessStartTime
+(11/13/2024 1:06:35 PM)    Object: /Scenario/LEO/Chain/Missile3Chain
+(11/13/2024 1:06:35 PM) >SetUnits / EpSec
+(11/13/2024 1:06:35 PM) 
+(11/13/2024 1:06:35 PM) >SetUnits / EpSec
+(11/13/2024 1:06:35 PM) 
+(11/13/2024 1:06:35 PM)    Start: 0
+(11/13/2024 1:06:35 PM)    Stop: 86400
+(11/13/2024 1:06:35 PM) Set Variable: LEO.Missile3Chain.Time_Instant.CompleteChainAccessStartTime.Time_Instant + output value: 1668351600.004
+(11/13/2024 1:06:35 PM) >SetUnits / UTCG
+(11/13/2024 1:06:35 PM) 
+(11/13/2024 1:06:35 PM) >SetUnits / EpSec
+(11/13/2024 1:06:35 PM) 
+(11/13/2024 1:06:35 PM) Executing Data Provider
+(11/13/2024 1:06:35 PM)    Name: Strand Access
+(11/13/2024 1:06:35 PM)    Object: /Scenario/LEO/Chain/LEO2Missiles
+(11/13/2024 1:06:35 PM) >SetUnits / EpSec
+(11/13/2024 1:06:35 PM) 
+(11/13/2024 1:06:35 PM) >SetUnits / EpSec
+(11/13/2024 1:06:35 PM) 
+(11/13/2024 1:06:35 PM)    Start: 0
+(11/13/2024 1:06:35 PM)    Stop: 86400
+(11/13/2024 1:06:37 PM) Set Variable: LEO.LEO2Missiles.Strand_Access.Duration.Mean + output value: 413.993590823342
+(11/13/2024 1:06:37 PM) >SetUnits / UTCG
+(11/13/2024 1:06:37 PM) 
+(11/13/2024 1:06:37 PM) IAgStkObjectRoot.BeginUpdate()
+(11/13/2024 1:06:37 PM) IAgStkObjectRoot.EndUpdate()
+(11/13/2024 1:06:37 PM) IAgChain.AutoRecompute=false /Application/STK/Scenario/LEO/Chain/LEO2Missiles
+(11/13/2024 1:06:37 PM) Running Macro: AnalyzerPostRun
+(11/13/2024 1:06:37 PM) Running Macro: PostRun
+(11/13/2024 1:06:38 PM) >GetDirectory / Scenario
+(11/13/2024 1:06:38 PM) C:\Users\brigh\TAMU Programming\Fall 2024\Aero 401\HYPERION\LEO\
+(11/13/2024 1:06:38 PM) Running Macro: AnalyzerPreRun
+(11/13/2024 1:06:38 PM) Running Macro: PreRun
+(11/13/2024 1:06:38 PM) 
+(11/13/2024 1:06:38 PM) --- 11/13/2024 1:06:38 PM
+(11/13/2024 1:06:38 PM) --- Running STK
+(11/13/2024 1:06:38 PM) 
+(11/13/2024 1:06:38 PM) -Sending values to STK
+(11/13/2024 1:06:38 PM) IAgChain.AutoRecompute=false /Application/STK/Scenario/LEO/Chain/LEO2Missiles
+(11/13/2024 1:06:38 PM) Input Variable from getValueAsString LEO.LEOSats.Walker.Shell_LEO_Equatorial.Inclination, Value: 7
+(11/13/2024 1:06:38 PM) Input Variable from getValue: LEO.LEOSats.Walker.Shell_LEO_Equatorial.Inclination, Value: 7
+(11/13/2024 1:06:38 PM) Input Variable from getValueAsObject: LEO.LEOSats.Walker.Shell_LEO_Equatorial.Inclination, Value: 7
+(11/13/2024 1:06:38 PM) Output Variable: LEO.GroundCoverage.AvgRevisit.Overall_Value.Average
+(11/13/2024 1:06:38 PM) Output Variable: LEO.GroundCoverage.MaxRevisit.Overall_Value.Maximum
+(11/13/2024 1:06:38 PM) Output Variable: LEO.Missile1Chain.Time_Instant.CompleteChainAccessStartTime.Time_Instant
+(11/13/2024 1:06:38 PM) Output Variable: LEO.Missile2Chain.Time_Instant.CompleteChainAccessStartTime.Time_Instant
+(11/13/2024 1:06:38 PM) Output Variable: LEO.Missile3Chain.Time_Instant.CompleteChainAccessStartTime.Time_Instant
+(11/13/2024 1:06:38 PM) Output Variable: LEO.LEO2Missiles.Strand_Access.Duration.Mean
+(11/13/2024 1:06:38 PM) >SetUnits / EpSec
+(11/13/2024 1:06:38 PM) 
+(11/13/2024 1:06:38 PM) >SetUnits / UTCG
+(11/13/2024 1:06:38 PM) 
+(11/13/2024 1:06:39 PM) >SetUnits / EpSec
+(11/13/2024 1:06:39 PM) 
+(11/13/2024 1:06:39 PM) >SetUnits / UTCG
+(11/13/2024 1:06:39 PM) 
+(11/13/2024 1:06:39 PM) >SetUnits / EpSec
+(11/13/2024 1:06:39 PM) 
+(11/13/2024 1:06:39 PM) >SetUnits / UTCG
+(11/13/2024 1:06:39 PM) 
+(11/13/2024 1:06:39 PM) >SetUnits / EpSec
+(11/13/2024 1:06:39 PM) 
+(11/13/2024 1:06:39 PM) >SetUnits / UTCG
+(11/13/2024 1:06:39 PM) 
+(11/13/2024 1:06:39 PM) >SetUnits / EpSec
+(11/13/2024 1:06:39 PM) 
+(11/13/2024 1:06:39 PM) >SetUnits / UTCG
+(11/13/2024 1:06:39 PM) 
+(11/13/2024 1:06:39 PM) >SetUnits / EpSec
+(11/13/2024 1:06:39 PM) 
+(11/13/2024 1:06:39 PM) >SetUnits / UTCG
+(11/13/2024 1:06:39 PM) 
+(11/13/2024 1:06:39 PM) >SetUnits / EpSec
+(11/13/2024 1:06:39 PM) 
+(11/13/2024 1:06:39 PM) >SetUnits / UTCG
+(11/13/2024 1:06:39 PM) 
+(11/13/2024 1:06:39 PM) -Propagating objects
+(11/13/2024 1:06:39 PM) --->Scenario Analysis Period: 10 Nov 2024 18:00:00.000 <> 11 Nov 2024 18:00:00.000
+(11/13/2024 1:06:39 PM) -Computing Accesses
+(11/13/2024 1:06:39 PM) IAgChain.ComputeAccess() - /Scenario/LEO/Chain/Missile1Chain
+(11/13/2024 1:06:39 PM) IAgChain.ComputeAccess() - /Scenario/LEO/Chain/Missile2Chain
+(11/13/2024 1:06:40 PM) IAgChain.ComputeAccess() - /Scenario/LEO/Chain/Missile3Chain
+(11/13/2024 1:06:40 PM) IAgChain.ComputeAccess() - /Scenario/LEO/Chain/LEO2Missiles
+(11/13/2024 1:06:41 PM) IAgCoverageDefinition.ClearAccesses() /Application/STK/Scenario/LEO/CoverageDefinition/GroundCoverage
+(11/13/2024 1:06:41 PM) IAgCoverageDefinition.ComputeAccesses() /Application/STK/Scenario/LEO/CoverageDefinition/GroundCoverage
+(11/13/2024 1:08:08 PM) -Getting Output Values
+(11/13/2024 1:08:08 PM) >SetUnits / EpSec
+(11/13/2024 1:08:08 PM) 
+(11/13/2024 1:08:08 PM) >SetUnits / UTCG
+(11/13/2024 1:08:08 PM) 
+(11/13/2024 1:08:08 PM) >SetUnits / EpSec
+(11/13/2024 1:08:08 PM) 
+(11/13/2024 1:08:08 PM) Executing Data Provider
+(11/13/2024 1:08:08 PM)    Name: Overall Value
+(11/13/2024 1:08:08 PM)    Object: /Scenario/LEO/CoverageDefinition/GroundCoverage/FigureOfMerit/AvgRevisit
+(11/13/2024 1:08:08 PM) Set Variable: LEO.GroundCoverage.AvgRevisit.Overall_Value.Average + output value: 18.9309046982536
+(11/13/2024 1:08:08 PM) >SetUnits / UTCG
+(11/13/2024 1:08:08 PM) 
+(11/13/2024 1:08:08 PM) >SetUnits / EpSec
+(11/13/2024 1:08:08 PM) 
+(11/13/2024 1:08:08 PM) Executing Data Provider
+(11/13/2024 1:08:08 PM)    Name: Overall Value
+(11/13/2024 1:08:08 PM)    Object: /Scenario/LEO/CoverageDefinition/GroundCoverage/FigureOfMerit/MaxRevisit
+(11/13/2024 1:08:08 PM) Set Variable: LEO.GroundCoverage.MaxRevisit.Overall_Value.Maximum + output value: 98.7788865813272
+(11/13/2024 1:08:08 PM) >SetUnits / UTCG
+(11/13/2024 1:08:08 PM) 
+(11/13/2024 1:08:08 PM) >SetUnits / EpSec
+(11/13/2024 1:08:08 PM) 
+(11/13/2024 1:08:08 PM) Executing Data Provider
+(11/13/2024 1:08:08 PM)    Name: CompleteChainAccessStartTime
+(11/13/2024 1:08:08 PM)    Object: /Scenario/LEO/Chain/Missile1Chain
+(11/13/2024 1:08:08 PM) >SetUnits / EpSec
+(11/13/2024 1:08:08 PM) 
+(11/13/2024 1:08:08 PM) >SetUnits / EpSec
+(11/13/2024 1:08:08 PM) 
+(11/13/2024 1:08:08 PM)    Start: 0
+(11/13/2024 1:08:08 PM)    Stop: 86400
+(11/13/2024 1:08:08 PM) Set Variable: LEO.Missile1Chain.Time_Instant.CompleteChainAccessStartTime.Time_Instant + output value: 1668276060.004
+(11/13/2024 1:08:09 PM) >SetUnits / UTCG
+(11/13/2024 1:08:09 PM) 
+(11/13/2024 1:08:09 PM) >SetUnits / EpSec
+(11/13/2024 1:08:09 PM) 
+(11/13/2024 1:08:09 PM) Executing Data Provider
+(11/13/2024 1:08:09 PM)    Name: CompleteChainAccessStartTime
+(11/13/2024 1:08:09 PM)    Object: /Scenario/LEO/Chain/Missile2Chain
+(11/13/2024 1:08:09 PM) >SetUnits / EpSec
+(11/13/2024 1:08:09 PM) 
+(11/13/2024 1:08:09 PM) >SetUnits / EpSec
+(11/13/2024 1:08:09 PM) 
+(11/13/2024 1:08:09 PM)    Start: 0
+(11/13/2024 1:08:09 PM)    Stop: 86400
+(11/13/2024 1:08:09 PM) Set Variable: LEO.Missile2Chain.Time_Instant.CompleteChainAccessStartTime.Time_Instant + output value: 1668319200.006
+(11/13/2024 1:08:09 PM) >SetUnits / UTCG
+(11/13/2024 1:08:09 PM) 
+(11/13/2024 1:08:09 PM) >SetUnits / EpSec
+(11/13/2024 1:08:09 PM) 
+(11/13/2024 1:08:09 PM) Executing Data Provider
+(11/13/2024 1:08:09 PM)    Name: CompleteChainAccessStartTime
+(11/13/2024 1:08:09 PM)    Object: /Scenario/LEO/Chain/Missile3Chain
+(11/13/2024 1:08:09 PM) >SetUnits / EpSec
+(11/13/2024 1:08:09 PM) 
+(11/13/2024 1:08:09 PM) >SetUnits / EpSec
+(11/13/2024 1:08:09 PM) 
+(11/13/2024 1:08:09 PM)    Start: 0
+(11/13/2024 1:08:09 PM)    Stop: 86400
+(11/13/2024 1:08:09 PM) Set Variable: LEO.Missile3Chain.Time_Instant.CompleteChainAccessStartTime.Time_Instant + output value: 1668351600.004
+(11/13/2024 1:08:09 PM) >SetUnits / UTCG
+(11/13/2024 1:08:09 PM) 
+(11/13/2024 1:08:09 PM) >SetUnits / EpSec
+(11/13/2024 1:08:09 PM) 
+(11/13/2024 1:08:09 PM) Executing Data Provider
+(11/13/2024 1:08:09 PM)    Name: Strand Access
+(11/13/2024 1:08:09 PM)    Object: /Scenario/LEO/Chain/LEO2Missiles
+(11/13/2024 1:08:09 PM) >SetUnits / EpSec
+(11/13/2024 1:08:09 PM) 
+(11/13/2024 1:08:09 PM) >SetUnits / EpSec
+(11/13/2024 1:08:09 PM) 
+(11/13/2024 1:08:09 PM)    Start: 0
+(11/13/2024 1:08:09 PM)    Stop: 86400
+(11/13/2024 1:08:11 PM) Set Variable: LEO.LEO2Missiles.Strand_Access.Duration.Mean + output value: 414.045821410458
+(11/13/2024 1:08:11 PM) >SetUnits / UTCG
+(11/13/2024 1:08:11 PM) 
+(11/13/2024 1:08:11 PM) IAgStkObjectRoot.BeginUpdate()
+(11/13/2024 1:08:11 PM) IAgStkObjectRoot.EndUpdate()
+(11/13/2024 1:08:11 PM) IAgChain.AutoRecompute=false /Application/STK/Scenario/LEO/Chain/LEO2Missiles
+(11/13/2024 1:08:11 PM) Running Macro: AnalyzerPostRun
+(11/13/2024 1:08:11 PM) Running Macro: PostRun
+(11/13/2024 1:08:12 PM) >GetDirectory / Scenario
+(11/13/2024 1:08:12 PM) C:\Users\brigh\TAMU Programming\Fall 2024\Aero 401\HYPERION\LEO\
+(11/13/2024 1:08:12 PM) Running Macro: AnalyzerPreRun
+(11/13/2024 1:08:12 PM) Running Macro: PreRun
+(11/13/2024 1:08:12 PM) 
+(11/13/2024 1:08:12 PM) --- 11/13/2024 1:08:12 PM
+(11/13/2024 1:08:12 PM) --- Running STK
+(11/13/2024 1:08:12 PM) 
+(11/13/2024 1:08:12 PM) -Sending values to STK
+(11/13/2024 1:08:12 PM) IAgChain.AutoRecompute=false /Application/STK/Scenario/LEO/Chain/LEO2Missiles
+(11/13/2024 1:08:12 PM) Input Variable from getValueAsString LEO.LEOSats.Walker.Shell_LEO_Equatorial.Inclination, Value: 6
+(11/13/2024 1:08:12 PM) Input Variable from getValue: LEO.LEOSats.Walker.Shell_LEO_Equatorial.Inclination, Value: 6
+(11/13/2024 1:08:12 PM) Input Variable from getValueAsObject: LEO.LEOSats.Walker.Shell_LEO_Equatorial.Inclination, Value: 6
+(11/13/2024 1:08:12 PM) Output Variable: LEO.GroundCoverage.AvgRevisit.Overall_Value.Average
+(11/13/2024 1:08:12 PM) Output Variable: LEO.GroundCoverage.MaxRevisit.Overall_Value.Maximum
+(11/13/2024 1:08:12 PM) Output Variable: LEO.Missile1Chain.Time_Instant.CompleteChainAccessStartTime.Time_Instant
+(11/13/2024 1:08:12 PM) Output Variable: LEO.Missile2Chain.Time_Instant.CompleteChainAccessStartTime.Time_Instant
+(11/13/2024 1:08:12 PM) Output Variable: LEO.Missile3Chain.Time_Instant.CompleteChainAccessStartTime.Time_Instant
+(11/13/2024 1:08:12 PM) Output Variable: LEO.LEO2Missiles.Strand_Access.Duration.Mean
+(11/13/2024 1:08:12 PM) >SetUnits / EpSec
+(11/13/2024 1:08:12 PM) 
+(11/13/2024 1:08:12 PM) >SetUnits / UTCG
+(11/13/2024 1:08:12 PM) 
+(11/13/2024 1:08:12 PM) >SetUnits / EpSec
+(11/13/2024 1:08:12 PM) 
+(11/13/2024 1:08:12 PM) >SetUnits / UTCG
+(11/13/2024 1:08:12 PM) 
+(11/13/2024 1:08:12 PM) >SetUnits / EpSec
+(11/13/2024 1:08:12 PM) 
+(11/13/2024 1:08:12 PM) >SetUnits / UTCG
+(11/13/2024 1:08:12 PM) 
+(11/13/2024 1:08:12 PM) >SetUnits / EpSec
+(11/13/2024 1:08:13 PM) 
+(11/13/2024 1:08:13 PM) >SetUnits / UTCG
+(11/13/2024 1:08:13 PM) 
+(11/13/2024 1:08:13 PM) >SetUnits / EpSec
+(11/13/2024 1:08:13 PM) 
+(11/13/2024 1:08:13 PM) >SetUnits / UTCG
+(11/13/2024 1:08:13 PM) 
+(11/13/2024 1:08:13 PM) >SetUnits / EpSec
+(11/13/2024 1:08:13 PM) 
+(11/13/2024 1:08:13 PM) >SetUnits / UTCG
+(11/13/2024 1:08:13 PM) 
+(11/13/2024 1:08:13 PM) >SetUnits / EpSec
+(11/13/2024 1:08:13 PM) 
+(11/13/2024 1:08:13 PM) >SetUnits / UTCG
+(11/13/2024 1:08:13 PM) 
+(11/13/2024 1:08:13 PM) -Propagating objects
+(11/13/2024 1:08:13 PM) --->Scenario Analysis Period: 10 Nov 2024 18:00:00.000 <> 11 Nov 2024 18:00:00.000
+(11/13/2024 1:08:13 PM) -Computing Accesses
+(11/13/2024 1:08:13 PM) IAgChain.ComputeAccess() - /Scenario/LEO/Chain/Missile1Chain
+(11/13/2024 1:08:13 PM) IAgChain.ComputeAccess() - /Scenario/LEO/Chain/Missile2Chain
+(11/13/2024 1:08:14 PM) IAgChain.ComputeAccess() - /Scenario/LEO/Chain/Missile3Chain
+(11/13/2024 1:08:14 PM) IAgChain.ComputeAccess() - /Scenario/LEO/Chain/LEO2Missiles
+(11/13/2024 1:08:15 PM) IAgCoverageDefinition.ClearAccesses() /Application/STK/Scenario/LEO/CoverageDefinition/GroundCoverage
+(11/13/2024 1:08:15 PM) IAgCoverageDefinition.ComputeAccesses() /Application/STK/Scenario/LEO/CoverageDefinition/GroundCoverage
+(11/13/2024 1:09:42 PM) -Getting Output Values
+(11/13/2024 1:09:42 PM) >SetUnits / EpSec
+(11/13/2024 1:09:42 PM) 
+(11/13/2024 1:09:42 PM) >SetUnits / UTCG
+(11/13/2024 1:09:42 PM) 
+(11/13/2024 1:09:42 PM) >SetUnits / EpSec
+(11/13/2024 1:09:42 PM) 
+(11/13/2024 1:09:42 PM) Executing Data Provider
+(11/13/2024 1:09:42 PM)    Name: Overall Value
+(11/13/2024 1:09:42 PM)    Object: /Scenario/LEO/CoverageDefinition/GroundCoverage/FigureOfMerit/AvgRevisit
+(11/13/2024 1:09:42 PM) Set Variable: LEO.GroundCoverage.AvgRevisit.Overall_Value.Average + output value: 18.9472526608335
+(11/13/2024 1:09:42 PM) >SetUnits / UTCG
+(11/13/2024 1:09:42 PM) 
+(11/13/2024 1:09:42 PM) >SetUnits / EpSec
+(11/13/2024 1:09:42 PM) 
+(11/13/2024 1:09:42 PM) Executing Data Provider
+(11/13/2024 1:09:42 PM)    Name: Overall Value
+(11/13/2024 1:09:42 PM)    Object: /Scenario/LEO/CoverageDefinition/GroundCoverage/FigureOfMerit/MaxRevisit
+(11/13/2024 1:09:42 PM) Set Variable: LEO.GroundCoverage.MaxRevisit.Overall_Value.Maximum + output value: 98.7788865813272
+(11/13/2024 1:09:42 PM) >SetUnits / UTCG
+(11/13/2024 1:09:42 PM) 
+(11/13/2024 1:09:42 PM) >SetUnits / EpSec
+(11/13/2024 1:09:42 PM) 
+(11/13/2024 1:09:43 PM) Executing Data Provider
+(11/13/2024 1:09:43 PM)    Name: CompleteChainAccessStartTime
+(11/13/2024 1:09:43 PM)    Object: /Scenario/LEO/Chain/Missile1Chain
+(11/13/2024 1:09:43 PM) >SetUnits / EpSec
+(11/13/2024 1:09:43 PM) 
+(11/13/2024 1:09:43 PM) >SetUnits / EpSec
+(11/13/2024 1:09:43 PM) 
+(11/13/2024 1:09:43 PM)    Start: 0
+(11/13/2024 1:09:43 PM)    Stop: 86400
+(11/13/2024 1:09:43 PM) Set Variable: LEO.Missile1Chain.Time_Instant.CompleteChainAccessStartTime.Time_Instant + output value: 1668276060.004
+(11/13/2024 1:09:43 PM) >SetUnits / UTCG
+(11/13/2024 1:09:43 PM) 
+(11/13/2024 1:09:43 PM) >SetUnits / EpSec
+(11/13/2024 1:09:43 PM) 
+(11/13/2024 1:09:43 PM) Executing Data Provider
+(11/13/2024 1:09:43 PM)    Name: CompleteChainAccessStartTime
+(11/13/2024 1:09:43 PM)    Object: /Scenario/LEO/Chain/Missile2Chain
+(11/13/2024 1:09:43 PM) >SetUnits / EpSec
+(11/13/2024 1:09:43 PM) 
+(11/13/2024 1:09:43 PM) >SetUnits / EpSec
+(11/13/2024 1:09:43 PM) 
+(11/13/2024 1:09:43 PM)    Start: 0
+(11/13/2024 1:09:43 PM)    Stop: 86400
+(11/13/2024 1:09:43 PM) Set Variable: LEO.Missile2Chain.Time_Instant.CompleteChainAccessStartTime.Time_Instant + output value: 1668319200.006
+(11/13/2024 1:09:43 PM) >SetUnits / UTCG
+(11/13/2024 1:09:43 PM) 
+(11/13/2024 1:09:43 PM) >SetUnits / EpSec
+(11/13/2024 1:09:43 PM) 
+(11/13/2024 1:09:43 PM) Executing Data Provider
+(11/13/2024 1:09:43 PM)    Name: CompleteChainAccessStartTime
+(11/13/2024 1:09:43 PM)    Object: /Scenario/LEO/Chain/Missile3Chain
+(11/13/2024 1:09:43 PM) >SetUnits / EpSec
+(11/13/2024 1:09:43 PM) 
+(11/13/2024 1:09:43 PM) >SetUnits / EpSec
+(11/13/2024 1:09:43 PM) 
+(11/13/2024 1:09:43 PM)    Start: 0
+(11/13/2024 1:09:43 PM)    Stop: 86400
+(11/13/2024 1:09:44 PM) Set Variable: LEO.Missile3Chain.Time_Instant.CompleteChainAccessStartTime.Time_Instant + output value: 1668351600.004
+(11/13/2024 1:09:44 PM) >SetUnits / UTCG
+(11/13/2024 1:09:44 PM) 
+(11/13/2024 1:09:44 PM) >SetUnits / EpSec
+(11/13/2024 1:09:44 PM) 
+(11/13/2024 1:09:44 PM) Executing Data Provider
+(11/13/2024 1:09:44 PM)    Name: Strand Access
+(11/13/2024 1:09:44 PM)    Object: /Scenario/LEO/Chain/LEO2Missiles
+(11/13/2024 1:09:44 PM) >SetUnits / EpSec
+(11/13/2024 1:09:44 PM) 
+(11/13/2024 1:09:44 PM) >SetUnits / EpSec
+(11/13/2024 1:09:44 PM) 
+(11/13/2024 1:09:44 PM)    Start: 0
+(11/13/2024 1:09:44 PM)    Stop: 86400
+(11/13/2024 1:09:46 PM) Set Variable: LEO.LEO2Missiles.Strand_Access.Duration.Mean + output value: 414.093000567666
+(11/13/2024 1:09:46 PM) >SetUnits / UTCG
+(11/13/2024 1:09:46 PM) 
+(11/13/2024 1:09:46 PM) IAgStkObjectRoot.BeginUpdate()
+(11/13/2024 1:09:46 PM) IAgStkObjectRoot.EndUpdate()
+(11/13/2024 1:09:46 PM) IAgChain.AutoRecompute=false /Application/STK/Scenario/LEO/Chain/LEO2Missiles
+(11/13/2024 1:09:46 PM) Running Macro: AnalyzerPostRun
+(11/13/2024 1:09:46 PM) Running Macro: PostRun
+(11/13/2024 1:09:46 PM) >GetDirectory / Scenario
+(11/13/2024 1:09:46 PM) C:\Users\brigh\TAMU Programming\Fall 2024\Aero 401\HYPERION\LEO\
+(11/13/2024 1:09:46 PM) Running Macro: AnalyzerPreRun
+(11/13/2024 1:09:46 PM) Running Macro: PreRun
+(11/13/2024 1:09:47 PM) 
+(11/13/2024 1:09:47 PM) --- 11/13/2024 1:09:47 PM
+(11/13/2024 1:09:47 PM) --- Running STK
+(11/13/2024 1:09:47 PM) 
+(11/13/2024 1:09:47 PM) -Sending values to STK
+(11/13/2024 1:09:47 PM) IAgChain.AutoRecompute=false /Application/STK/Scenario/LEO/Chain/LEO2Missiles
+(11/13/2024 1:09:47 PM) Input Variable from getValueAsString LEO.LEOSats.Walker.Shell_LEO_Equatorial.Inclination, Value: 5
+(11/13/2024 1:09:47 PM) Input Variable from getValue: LEO.LEOSats.Walker.Shell_LEO_Equatorial.Inclination, Value: 5
+(11/13/2024 1:09:47 PM) Input Variable from getValueAsObject: LEO.LEOSats.Walker.Shell_LEO_Equatorial.Inclination, Value: 5
+(11/13/2024 1:09:47 PM) Output Variable: LEO.GroundCoverage.AvgRevisit.Overall_Value.Average
+(11/13/2024 1:09:47 PM) Output Variable: LEO.GroundCoverage.MaxRevisit.Overall_Value.Maximum
+(11/13/2024 1:09:47 PM) Output Variable: LEO.Missile1Chain.Time_Instant.CompleteChainAccessStartTime.Time_Instant
+(11/13/2024 1:09:47 PM) Output Variable: LEO.Missile2Chain.Time_Instant.CompleteChainAccessStartTime.Time_Instant
+(11/13/2024 1:09:47 PM) Output Variable: LEO.Missile3Chain.Time_Instant.CompleteChainAccessStartTime.Time_Instant
+(11/13/2024 1:09:47 PM) Output Variable: LEO.LEO2Missiles.Strand_Access.Duration.Mean
+(11/13/2024 1:09:47 PM) >SetUnits / EpSec
+(11/13/2024 1:09:47 PM) 
+(11/13/2024 1:09:47 PM) >SetUnits / UTCG
+(11/13/2024 1:09:47 PM) 
+(11/13/2024 1:09:47 PM) >SetUnits / EpSec
+(11/13/2024 1:09:47 PM) 
+(11/13/2024 1:09:47 PM) >SetUnits / UTCG
+(11/13/2024 1:09:47 PM) 
+(11/13/2024 1:09:47 PM) >SetUnits / EpSec
+(11/13/2024 1:09:47 PM) 
+(11/13/2024 1:09:47 PM) >SetUnits / UTCG
+(11/13/2024 1:09:47 PM) 
+(11/13/2024 1:09:47 PM) >SetUnits / EpSec
+(11/13/2024 1:09:47 PM) 
+(11/13/2024 1:09:47 PM) >SetUnits / UTCG
+(11/13/2024 1:09:47 PM) 
+(11/13/2024 1:09:47 PM) >SetUnits / EpSec
+(11/13/2024 1:09:47 PM) 
+(11/13/2024 1:09:47 PM) >SetUnits / UTCG
+(11/13/2024 1:09:47 PM) 
+(11/13/2024 1:09:47 PM) >SetUnits / EpSec
+(11/13/2024 1:09:47 PM) 
+(11/13/2024 1:09:47 PM) >SetUnits / UTCG
+(11/13/2024 1:09:47 PM) 
+(11/13/2024 1:09:47 PM) >SetUnits / EpSec
+(11/13/2024 1:09:48 PM) 
+(11/13/2024 1:09:48 PM) >SetUnits / UTCG
+(11/13/2024 1:09:48 PM) 
+(11/13/2024 1:09:48 PM) -Propagating objects
+(11/13/2024 1:09:48 PM) --->Scenario Analysis Period: 10 Nov 2024 18:00:00.000 <> 11 Nov 2024 18:00:00.000
+(11/13/2024 1:09:48 PM) -Computing Accesses
+(11/13/2024 1:09:48 PM) IAgChain.ComputeAccess() - /Scenario/LEO/Chain/Missile1Chain
+(11/13/2024 1:09:48 PM) IAgChain.ComputeAccess() - /Scenario/LEO/Chain/Missile2Chain
+(11/13/2024 1:09:48 PM) IAgChain.ComputeAccess() - /Scenario/LEO/Chain/Missile3Chain
+(11/13/2024 1:09:49 PM) IAgChain.ComputeAccess() - /Scenario/LEO/Chain/LEO2Missiles
+(11/13/2024 1:09:49 PM) IAgCoverageDefinition.ClearAccesses() /Application/STK/Scenario/LEO/CoverageDefinition/GroundCoverage
+(11/13/2024 1:09:49 PM) IAgCoverageDefinition.ComputeAccesses() /Application/STK/Scenario/LEO/CoverageDefinition/GroundCoverage
+(11/13/2024 1:11:18 PM) -Getting Output Values
+(11/13/2024 1:11:18 PM) >SetUnits / EpSec
+(11/13/2024 1:11:18 PM) 
+(11/13/2024 1:11:18 PM) >SetUnits / UTCG
+(11/13/2024 1:11:18 PM) 
+(11/13/2024 1:11:18 PM) >SetUnits / EpSec
+(11/13/2024 1:11:18 PM) 
+(11/13/2024 1:11:18 PM) Executing Data Provider
+(11/13/2024 1:11:18 PM)    Name: Overall Value
+(11/13/2024 1:11:18 PM)    Object: /Scenario/LEO/CoverageDefinition/GroundCoverage/FigureOfMerit/AvgRevisit
+(11/13/2024 1:11:18 PM) Set Variable: LEO.GroundCoverage.AvgRevisit.Overall_Value.Average + output value: 19.0682051954024
+(11/13/2024 1:11:18 PM) >SetUnits / UTCG
+(11/13/2024 1:11:18 PM) 
+(11/13/2024 1:11:18 PM) >SetUnits / EpSec
+(11/13/2024 1:11:18 PM) 
+(11/13/2024 1:11:18 PM) Executing Data Provider
+(11/13/2024 1:11:18 PM)    Name: Overall Value
+(11/13/2024 1:11:18 PM)    Object: /Scenario/LEO/CoverageDefinition/GroundCoverage/FigureOfMerit/MaxRevisit
+(11/13/2024 1:11:19 PM) Set Variable: LEO.GroundCoverage.MaxRevisit.Overall_Value.Maximum + output value: 98.7788865813272
+(11/13/2024 1:11:19 PM) >SetUnits / UTCG
+(11/13/2024 1:11:19 PM) 
+(11/13/2024 1:11:19 PM) >SetUnits / EpSec
+(11/13/2024 1:11:19 PM) 
+(11/13/2024 1:11:19 PM) Executing Data Provider
+(11/13/2024 1:11:19 PM)    Name: CompleteChainAccessStartTime
+(11/13/2024 1:11:19 PM)    Object: /Scenario/LEO/Chain/Missile1Chain
+(11/13/2024 1:11:19 PM) >SetUnits / EpSec
+(11/13/2024 1:11:19 PM) 
+(11/13/2024 1:11:19 PM) >SetUnits / EpSec
+(11/13/2024 1:11:19 PM) 
+(11/13/2024 1:11:19 PM)    Start: 0
+(11/13/2024 1:11:19 PM)    Stop: 86400
+(11/13/2024 1:11:19 PM) Set Variable: LEO.Missile1Chain.Time_Instant.CompleteChainAccessStartTime.Time_Instant + output value: 1668276060.004
+(11/13/2024 1:11:19 PM) >SetUnits / UTCG
+(11/13/2024 1:11:19 PM) 
+(11/13/2024 1:11:19 PM) >SetUnits / EpSec
+(11/13/2024 1:11:19 PM) 
+(11/13/2024 1:11:19 PM) Executing Data Provider
+(11/13/2024 1:11:19 PM)    Name: CompleteChainAccessStartTime
+(11/13/2024 1:11:19 PM)    Object: /Scenario/LEO/Chain/Missile2Chain
+(11/13/2024 1:11:19 PM) >SetUnits / EpSec
+(11/13/2024 1:11:19 PM) 
+(11/13/2024 1:11:19 PM) >SetUnits / EpSec
+(11/13/2024 1:11:19 PM) 
+(11/13/2024 1:11:19 PM)    Start: 0
+(11/13/2024 1:11:19 PM)    Stop: 86400
+(11/13/2024 1:11:19 PM) Set Variable: LEO.Missile2Chain.Time_Instant.CompleteChainAccessStartTime.Time_Instant + output value: 1668319200.006
+(11/13/2024 1:11:19 PM) >SetUnits / UTCG
+(11/13/2024 1:11:19 PM) 
+(11/13/2024 1:11:20 PM) >SetUnits / EpSec
+(11/13/2024 1:11:20 PM) 
+(11/13/2024 1:11:20 PM) Executing Data Provider
+(11/13/2024 1:11:20 PM)    Name: CompleteChainAccessStartTime
+(11/13/2024 1:11:20 PM)    Object: /Scenario/LEO/Chain/Missile3Chain
+(11/13/2024 1:11:20 PM) >SetUnits / EpSec
+(11/13/2024 1:11:20 PM) 
+(11/13/2024 1:11:20 PM) >SetUnits / EpSec
+(11/13/2024 1:11:20 PM) 
+(11/13/2024 1:11:20 PM)    Start: 0
+(11/13/2024 1:11:20 PM)    Stop: 86400
+(11/13/2024 1:11:20 PM) Set Variable: LEO.Missile3Chain.Time_Instant.CompleteChainAccessStartTime.Time_Instant + output value: 1668351600.004
+(11/13/2024 1:11:20 PM) >SetUnits / UTCG
+(11/13/2024 1:11:20 PM) 
+(11/13/2024 1:11:20 PM) >SetUnits / EpSec
+(11/13/2024 1:11:20 PM) 
+(11/13/2024 1:11:20 PM) Executing Data Provider
+(11/13/2024 1:11:20 PM)    Name: Strand Access
+(11/13/2024 1:11:20 PM)    Object: /Scenario/LEO/Chain/LEO2Missiles
+(11/13/2024 1:11:20 PM) >SetUnits / EpSec
+(11/13/2024 1:11:20 PM) 
+(11/13/2024 1:11:20 PM) >SetUnits / EpSec
+(11/13/2024 1:11:20 PM) 
+(11/13/2024 1:11:20 PM)    Start: 0
+(11/13/2024 1:11:20 PM)    Stop: 86400
+(11/13/2024 1:11:22 PM) Set Variable: LEO.LEO2Missiles.Strand_Access.Duration.Mean + output value: 414.135815798851
+(11/13/2024 1:11:22 PM) >SetUnits / UTCG
+(11/13/2024 1:11:22 PM) 
+(11/13/2024 1:11:22 PM) IAgStkObjectRoot.BeginUpdate()
+(11/13/2024 1:11:22 PM) IAgStkObjectRoot.EndUpdate()
+(11/13/2024 1:11:22 PM) IAgChain.AutoRecompute=false /Application/STK/Scenario/LEO/Chain/LEO2Missiles
+(11/13/2024 1:11:22 PM) Running Macro: AnalyzerPostRun
+(11/13/2024 1:11:22 PM) Running Macro: PostRun
+(11/13/2024 1:11:23 PM) >GetDirectory / Scenario
+(11/13/2024 1:11:23 PM) C:\Users\brigh\TAMU Programming\Fall 2024\Aero 401\HYPERION\LEO\
+(11/13/2024 1:11:23 PM) Running Macro: AnalyzerPreRun
+(11/13/2024 1:11:23 PM) Running Macro: PreRun
+(11/13/2024 1:11:23 PM) 
+(11/13/2024 1:11:23 PM) --- 11/13/2024 1:11:23 PM
+(11/13/2024 1:11:23 PM) --- Running STK
+(11/13/2024 1:11:23 PM) 
+(11/13/2024 1:11:23 PM) -Sending values to STK
+(11/13/2024 1:11:23 PM) IAgChain.AutoRecompute=false /Application/STK/Scenario/LEO/Chain/LEO2Missiles
+(11/13/2024 1:11:23 PM) Input Variable from getValueAsString LEO.LEOSats.Walker.Shell_LEO_Equatorial.Inclination, Value: 4
+(11/13/2024 1:11:23 PM) Input Variable from getValue: LEO.LEOSats.Walker.Shell_LEO_Equatorial.Inclination, Value: 4
+(11/13/2024 1:11:23 PM) Input Variable from getValueAsObject: LEO.LEOSats.Walker.Shell_LEO_Equatorial.Inclination, Value: 4
+(11/13/2024 1:11:23 PM) Output Variable: LEO.GroundCoverage.AvgRevisit.Overall_Value.Average
+(11/13/2024 1:11:23 PM) Output Variable: LEO.GroundCoverage.MaxRevisit.Overall_Value.Maximum
+(11/13/2024 1:11:23 PM) Output Variable: LEO.Missile1Chain.Time_Instant.CompleteChainAccessStartTime.Time_Instant
+(11/13/2024 1:11:23 PM) Output Variable: LEO.Missile2Chain.Time_Instant.CompleteChainAccessStartTime.Time_Instant
+(11/13/2024 1:11:23 PM) Output Variable: LEO.Missile3Chain.Time_Instant.CompleteChainAccessStartTime.Time_Instant
+(11/13/2024 1:11:23 PM) Output Variable: LEO.LEO2Missiles.Strand_Access.Duration.Mean
+(11/13/2024 1:11:23 PM) >SetUnits / EpSec
+(11/13/2024 1:11:23 PM) 
+(11/13/2024 1:11:23 PM) >SetUnits / UTCG
+(11/13/2024 1:11:23 PM) 
+(11/13/2024 1:11:23 PM) >SetUnits / EpSec
+(11/13/2024 1:11:23 PM) 
+(11/13/2024 1:11:23 PM) >SetUnits / UTCG
+(11/13/2024 1:11:24 PM) 
+(11/13/2024 1:11:24 PM) >SetUnits / EpSec
+(11/13/2024 1:11:24 PM) 
+(11/13/2024 1:11:24 PM) >SetUnits / UTCG
+(11/13/2024 1:11:24 PM) 
+(11/13/2024 1:11:24 PM) >SetUnits / EpSec
+(11/13/2024 1:11:24 PM) 
+(11/13/2024 1:11:24 PM) >SetUnits / UTCG
+(11/13/2024 1:11:24 PM) 
+(11/13/2024 1:11:24 PM) >SetUnits / EpSec
+(11/13/2024 1:11:24 PM) 
+(11/13/2024 1:11:24 PM) >SetUnits / UTCG
+(11/13/2024 1:11:24 PM) 
+(11/13/2024 1:11:24 PM) >SetUnits / EpSec
+(11/13/2024 1:11:24 PM) 
+(11/13/2024 1:11:24 PM) >SetUnits / UTCG
+(11/13/2024 1:11:24 PM) 
+(11/13/2024 1:11:24 PM) >SetUnits / EpSec
+(11/13/2024 1:11:24 PM) 
+(11/13/2024 1:11:24 PM) >SetUnits / UTCG
+(11/13/2024 1:11:24 PM) 
+(11/13/2024 1:11:24 PM) -Propagating objects
+(11/13/2024 1:11:24 PM) --->Scenario Analysis Period: 10 Nov 2024 18:00:00.000 <> 11 Nov 2024 18:00:00.000
+(11/13/2024 1:11:24 PM) -Computing Accesses
+(11/13/2024 1:11:24 PM) IAgChain.ComputeAccess() - /Scenario/LEO/Chain/Missile1Chain
+(11/13/2024 1:11:24 PM) IAgChain.ComputeAccess() - /Scenario/LEO/Chain/Missile2Chain
+(11/13/2024 1:11:25 PM) IAgChain.ComputeAccess() - /Scenario/LEO/Chain/Missile3Chain
+(11/13/2024 1:11:25 PM) IAgChain.ComputeAccess() - /Scenario/LEO/Chain/LEO2Missiles
+(11/13/2024 1:11:26 PM) IAgCoverageDefinition.ClearAccesses() /Application/STK/Scenario/LEO/CoverageDefinition/GroundCoverage
+(11/13/2024 1:11:26 PM) IAgCoverageDefinition.ComputeAccesses() /Application/STK/Scenario/LEO/CoverageDefinition/GroundCoverage
+(11/13/2024 1:12:31 PM) -Getting Output Values
+(11/13/2024 1:12:31 PM) >SetUnits / EpSec
+(11/13/2024 1:12:31 PM) 
+(11/13/2024 1:12:31 PM) >SetUnits / UTCG
+(11/13/2024 1:12:31 PM) 
+(11/13/2024 1:12:31 PM) >SetUnits / EpSec
+(11/13/2024 1:12:31 PM) 
+(11/13/2024 1:12:31 PM) Executing Data Provider
+(11/13/2024 1:12:31 PM)    Name: Overall Value
+(11/13/2024 1:12:31 PM)    Object: /Scenario/LEO/CoverageDefinition/GroundCoverage/FigureOfMerit/AvgRevisit
+(11/13/2024 1:12:31 PM) Set Variable: LEO.GroundCoverage.AvgRevisit.Overall_Value.Average + output value: 19.0803664769552
+(11/13/2024 1:12:31 PM) >SetUnits / UTCG
+(11/13/2024 1:12:31 PM) 
+(11/13/2024 1:12:31 PM) >SetUnits / EpSec
+(11/13/2024 1:12:31 PM) 
+(11/13/2024 1:12:31 PM) Executing Data Provider
+(11/13/2024 1:12:31 PM)    Name: Overall Value
+(11/13/2024 1:12:31 PM)    Object: /Scenario/LEO/CoverageDefinition/GroundCoverage/FigureOfMerit/MaxRevisit
+(11/13/2024 1:12:31 PM) Set Variable: LEO.GroundCoverage.MaxRevisit.Overall_Value.Maximum + output value: 98.7788865813272
+(11/13/2024 1:12:31 PM) >SetUnits / UTCG
+(11/13/2024 1:12:31 PM) 
+(11/13/2024 1:12:31 PM) >SetUnits / EpSec
+(11/13/2024 1:12:31 PM) 
+(11/13/2024 1:12:31 PM) Executing Data Provider
+(11/13/2024 1:12:31 PM)    Name: CompleteChainAccessStartTime
+(11/13/2024 1:12:31 PM)    Object: /Scenario/LEO/Chain/Missile1Chain
+(11/13/2024 1:12:31 PM) >SetUnits / EpSec
+(11/13/2024 1:12:31 PM) 
+(11/13/2024 1:12:31 PM) >SetUnits / EpSec
+(11/13/2024 1:12:31 PM) 
+(11/13/2024 1:12:31 PM)    Start: 0
+(11/13/2024 1:12:31 PM)    Stop: 86400
+(11/13/2024 1:12:32 PM) Set Variable: LEO.Missile1Chain.Time_Instant.CompleteChainAccessStartTime.Time_Instant + output value: 1668276060.004
+(11/13/2024 1:12:32 PM) >SetUnits / UTCG
+(11/13/2024 1:12:32 PM) 
+(11/13/2024 1:12:32 PM) >SetUnits / EpSec
+(11/13/2024 1:12:32 PM) 
+(11/13/2024 1:12:32 PM) Executing Data Provider
+(11/13/2024 1:12:32 PM)    Name: CompleteChainAccessStartTime
+(11/13/2024 1:12:32 PM)    Object: /Scenario/LEO/Chain/Missile2Chain
+(11/13/2024 1:12:32 PM) >SetUnits / EpSec
+(11/13/2024 1:12:32 PM) 
+(11/13/2024 1:12:32 PM) >SetUnits / EpSec
+(11/13/2024 1:12:32 PM) 
+(11/13/2024 1:12:32 PM)    Start: 0
+(11/13/2024 1:12:32 PM)    Stop: 86400
+(11/13/2024 1:12:32 PM) Set Variable: LEO.Missile2Chain.Time_Instant.CompleteChainAccessStartTime.Time_Instant + output value: 1668319200.006
+(11/13/2024 1:12:32 PM) >SetUnits / UTCG
+(11/13/2024 1:12:32 PM) 
+(11/13/2024 1:12:32 PM) >SetUnits / EpSec
+(11/13/2024 1:12:32 PM) 
+(11/13/2024 1:12:32 PM) Executing Data Provider
+(11/13/2024 1:12:32 PM)    Name: CompleteChainAccessStartTime
+(11/13/2024 1:12:32 PM)    Object: /Scenario/LEO/Chain/Missile3Chain
+(11/13/2024 1:12:32 PM) >SetUnits / EpSec
+(11/13/2024 1:12:32 PM) 
+(11/13/2024 1:12:32 PM) >SetUnits / EpSec
+(11/13/2024 1:12:32 PM) 
+(11/13/2024 1:12:32 PM)    Start: 0
+(11/13/2024 1:12:32 PM)    Stop: 86400
+(11/13/2024 1:12:32 PM) Set Variable: LEO.Missile3Chain.Time_Instant.CompleteChainAccessStartTime.Time_Instant + output value: 1668351600.004
+(11/13/2024 1:12:32 PM) >SetUnits / UTCG
+(11/13/2024 1:12:32 PM) 
+(11/13/2024 1:12:32 PM) >SetUnits / EpSec
+(11/13/2024 1:12:32 PM) 
+(11/13/2024 1:12:32 PM) Executing Data Provider
+(11/13/2024 1:12:32 PM)    Name: Strand Access
+(11/13/2024 1:12:32 PM)    Object: /Scenario/LEO/Chain/LEO2Missiles
+(11/13/2024 1:12:32 PM) >SetUnits / EpSec
+(11/13/2024 1:12:32 PM) 
+(11/13/2024 1:12:32 PM) >SetUnits / EpSec
+(11/13/2024 1:12:32 PM) 
+(11/13/2024 1:12:32 PM)    Start: 0
+(11/13/2024 1:12:32 PM)    Stop: 86400
+(11/13/2024 1:12:34 PM) Set Variable: LEO.LEO2Missiles.Strand_Access.Duration.Mean + output value: 414.174605960125
+(11/13/2024 1:12:34 PM) >SetUnits / UTCG
+(11/13/2024 1:12:34 PM) 
+(11/13/2024 1:12:34 PM) IAgStkObjectRoot.BeginUpdate()
+(11/13/2024 1:12:34 PM) IAgStkObjectRoot.EndUpdate()
+(11/13/2024 1:12:34 PM) IAgChain.AutoRecompute=false /Application/STK/Scenario/LEO/Chain/LEO2Missiles
+(11/13/2024 1:12:34 PM) Running Macro: AnalyzerPostRun
+(11/13/2024 1:12:34 PM) Running Macro: PostRun
+(11/13/2024 1:12:35 PM) >GetDirectory / Scenario
+(11/13/2024 1:12:35 PM) C:\Users\brigh\TAMU Programming\Fall 2024\Aero 401\HYPERION\LEO\
+(11/13/2024 1:12:35 PM) Running Macro: AnalyzerPreRun
+(11/13/2024 1:12:35 PM) Running Macro: PreRun
+(11/13/2024 1:12:35 PM) 
+(11/13/2024 1:12:35 PM) --- 11/13/2024 1:12:35 PM
+(11/13/2024 1:12:35 PM) --- Running STK
+(11/13/2024 1:12:35 PM) 
+(11/13/2024 1:12:35 PM) -Sending values to STK
+(11/13/2024 1:12:35 PM) IAgChain.AutoRecompute=false /Application/STK/Scenario/LEO/Chain/LEO2Missiles
+(11/13/2024 1:12:35 PM) Input Variable from getValueAsString LEO.LEOSats.Walker.Shell_LEO_Equatorial.Inclination, Value: 3
+(11/13/2024 1:12:35 PM) Input Variable from getValue: LEO.LEOSats.Walker.Shell_LEO_Equatorial.Inclination, Value: 3
+(11/13/2024 1:12:35 PM) Input Variable from getValueAsObject: LEO.LEOSats.Walker.Shell_LEO_Equatorial.Inclination, Value: 3
+(11/13/2024 1:12:35 PM) Output Variable: LEO.GroundCoverage.AvgRevisit.Overall_Value.Average
+(11/13/2024 1:12:35 PM) Output Variable: LEO.GroundCoverage.MaxRevisit.Overall_Value.Maximum
+(11/13/2024 1:12:35 PM) Output Variable: LEO.Missile1Chain.Time_Instant.CompleteChainAccessStartTime.Time_Instant
+(11/13/2024 1:12:35 PM) Output Variable: LEO.Missile2Chain.Time_Instant.CompleteChainAccessStartTime.Time_Instant
+(11/13/2024 1:12:35 PM) Output Variable: LEO.Missile3Chain.Time_Instant.CompleteChainAccessStartTime.Time_Instant
+(11/13/2024 1:12:35 PM) Output Variable: LEO.LEO2Missiles.Strand_Access.Duration.Mean
+(11/13/2024 1:12:35 PM) >SetUnits / EpSec
+(11/13/2024 1:12:35 PM) 
+(11/13/2024 1:12:36 PM) >SetUnits / UTCG
+(11/13/2024 1:12:36 PM) 
+(11/13/2024 1:12:36 PM) >SetUnits / EpSec
+(11/13/2024 1:12:36 PM) 
+(11/13/2024 1:12:36 PM) >SetUnits / UTCG
+(11/13/2024 1:12:36 PM) 
+(11/13/2024 1:12:36 PM) >SetUnits / EpSec
+(11/13/2024 1:12:36 PM) 
+(11/13/2024 1:12:36 PM) >SetUnits / UTCG
+(11/13/2024 1:12:36 PM) 
+(11/13/2024 1:12:36 PM) >SetUnits / EpSec
+(11/13/2024 1:12:36 PM) 
+(11/13/2024 1:12:36 PM) >SetUnits / UTCG
+(11/13/2024 1:12:36 PM) 
+(11/13/2024 1:12:36 PM) >SetUnits / EpSec
+(11/13/2024 1:12:36 PM) 
+(11/13/2024 1:12:36 PM) >SetUnits / UTCG
+(11/13/2024 1:12:36 PM) 
+(11/13/2024 1:12:36 PM) >SetUnits / EpSec
+(11/13/2024 1:12:36 PM) 
+(11/13/2024 1:12:36 PM) >SetUnits / UTCG
+(11/13/2024 1:12:36 PM) 
+(11/13/2024 1:12:36 PM) >SetUnits / EpSec
+(11/13/2024 1:12:36 PM) 
+(11/13/2024 1:12:36 PM) >SetUnits / UTCG
+(11/13/2024 1:12:36 PM) 
+(11/13/2024 1:12:36 PM) -Propagating objects
+(11/13/2024 1:12:36 PM) --->Scenario Analysis Period: 10 Nov 2024 18:00:00.000 <> 11 Nov 2024 18:00:00.000
+(11/13/2024 1:12:36 PM) -Computing Accesses
+(11/13/2024 1:12:36 PM) IAgChain.ComputeAccess() - /Scenario/LEO/Chain/Missile1Chain
+(11/13/2024 1:12:36 PM) IAgChain.ComputeAccess() - /Scenario/LEO/Chain/Missile2Chain
+(11/13/2024 1:12:37 PM) IAgChain.ComputeAccess() - /Scenario/LEO/Chain/Missile3Chain
+(11/13/2024 1:12:37 PM) IAgChain.ComputeAccess() - /Scenario/LEO/Chain/LEO2Missiles
+(11/13/2024 1:12:38 PM) IAgCoverageDefinition.ClearAccesses() /Application/STK/Scenario/LEO/CoverageDefinition/GroundCoverage
+(11/13/2024 1:12:38 PM) IAgCoverageDefinition.ComputeAccesses() /Application/STK/Scenario/LEO/CoverageDefinition/GroundCoverage
+(11/13/2024 1:13:41 PM) -Getting Output Values
+(11/13/2024 1:13:41 PM) >SetUnits / EpSec
+(11/13/2024 1:13:42 PM) 
+(11/13/2024 1:13:42 PM) >SetUnits / UTCG
+(11/13/2024 1:13:42 PM) 
+(11/13/2024 1:13:42 PM) >SetUnits / EpSec
+(11/13/2024 1:13:42 PM) 
+(11/13/2024 1:13:42 PM) Executing Data Provider
+(11/13/2024 1:13:42 PM)    Name: Overall Value
+(11/13/2024 1:13:42 PM)    Object: /Scenario/LEO/CoverageDefinition/GroundCoverage/FigureOfMerit/AvgRevisit
+(11/13/2024 1:13:42 PM) Set Variable: LEO.GroundCoverage.AvgRevisit.Overall_Value.Average + output value: 19.0363103330295
+(11/13/2024 1:13:42 PM) >SetUnits / UTCG
+(11/13/2024 1:13:42 PM) 
+(11/13/2024 1:13:42 PM) >SetUnits / EpSec
+(11/13/2024 1:13:42 PM) 
+(11/13/2024 1:13:42 PM) Executing Data Provider
+(11/13/2024 1:13:42 PM)    Name: Overall Value
+(11/13/2024 1:13:42 PM)    Object: /Scenario/LEO/CoverageDefinition/GroundCoverage/FigureOfMerit/MaxRevisit
+(11/13/2024 1:13:42 PM) Set Variable: LEO.GroundCoverage.MaxRevisit.Overall_Value.Maximum + output value: 98.7788865813272
+(11/13/2024 1:13:42 PM) >SetUnits / UTCG
+(11/13/2024 1:13:42 PM) 
+(11/13/2024 1:13:42 PM) >SetUnits / EpSec
+(11/13/2024 1:13:42 PM) 
+(11/13/2024 1:13:42 PM) Executing Data Provider
+(11/13/2024 1:13:42 PM)    Name: CompleteChainAccessStartTime
+(11/13/2024 1:13:42 PM)    Object: /Scenario/LEO/Chain/Missile1Chain
+(11/13/2024 1:13:42 PM) >SetUnits / EpSec
+(11/13/2024 1:13:42 PM) 
+(11/13/2024 1:13:42 PM) >SetUnits / EpSec
+(11/13/2024 1:13:42 PM) 
+(11/13/2024 1:13:42 PM)    Start: 0
+(11/13/2024 1:13:42 PM)    Stop: 86400
+(11/13/2024 1:13:43 PM) Set Variable: LEO.Missile1Chain.Time_Instant.CompleteChainAccessStartTime.Time_Instant + output value: 1668276060.004
+(11/13/2024 1:13:43 PM) >SetUnits / UTCG
+(11/13/2024 1:13:43 PM) 
+(11/13/2024 1:13:43 PM) >SetUnits / EpSec
+(11/13/2024 1:13:43 PM) 
+(11/13/2024 1:13:43 PM) Executing Data Provider
+(11/13/2024 1:13:43 PM)    Name: CompleteChainAccessStartTime
+(11/13/2024 1:13:43 PM)    Object: /Scenario/LEO/Chain/Missile2Chain
+(11/13/2024 1:13:43 PM) >SetUnits / EpSec
+(11/13/2024 1:13:43 PM) 
+(11/13/2024 1:13:43 PM) >SetUnits / EpSec
+(11/13/2024 1:13:43 PM) 
+(11/13/2024 1:13:43 PM)    Start: 0
+(11/13/2024 1:13:43 PM)    Stop: 86400
+(11/13/2024 1:13:43 PM) Set Variable: LEO.Missile2Chain.Time_Instant.CompleteChainAccessStartTime.Time_Instant + output value: 1668319200.006
+(11/13/2024 1:13:43 PM) >SetUnits / UTCG
+(11/13/2024 1:13:43 PM) 
+(11/13/2024 1:13:43 PM) >SetUnits / EpSec
+(11/13/2024 1:13:43 PM) 
+(11/13/2024 1:13:43 PM) Executing Data Provider
+(11/13/2024 1:13:43 PM)    Name: CompleteChainAccessStartTime
+(11/13/2024 1:13:43 PM)    Object: /Scenario/LEO/Chain/Missile3Chain
+(11/13/2024 1:13:43 PM) >SetUnits / EpSec
+(11/13/2024 1:13:43 PM) 
+(11/13/2024 1:13:43 PM) >SetUnits / EpSec
+(11/13/2024 1:13:43 PM) 
+(11/13/2024 1:13:43 PM)    Start: 0
+(11/13/2024 1:13:43 PM)    Stop: 86400
+(11/13/2024 1:13:43 PM) Set Variable: LEO.Missile3Chain.Time_Instant.CompleteChainAccessStartTime.Time_Instant + output value: 1668351600.004
+(11/13/2024 1:13:43 PM) >SetUnits / UTCG
+(11/13/2024 1:13:43 PM) 
+(11/13/2024 1:13:44 PM) >SetUnits / EpSec
+(11/13/2024 1:13:44 PM) 
+(11/13/2024 1:13:44 PM) Executing Data Provider
+(11/13/2024 1:13:44 PM)    Name: Strand Access
+(11/13/2024 1:13:44 PM)    Object: /Scenario/LEO/Chain/LEO2Missiles
+(11/13/2024 1:13:44 PM) >SetUnits / EpSec
+(11/13/2024 1:13:44 PM) 
+(11/13/2024 1:13:44 PM) >SetUnits / EpSec
+(11/13/2024 1:13:44 PM) 
+(11/13/2024 1:13:44 PM)    Start: 0
+(11/13/2024 1:13:44 PM)    Stop: 86400
+(11/13/2024 1:13:46 PM) Set Variable: LEO.LEO2Missiles.Strand_Access.Duration.Mean + output value: 414.20973875492
+(11/13/2024 1:13:46 PM) >SetUnits / UTCG
+(11/13/2024 1:13:46 PM) 
+(11/13/2024 1:13:46 PM) IAgStkObjectRoot.BeginUpdate()
+(11/13/2024 1:13:46 PM) IAgStkObjectRoot.EndUpdate()
+(11/13/2024 1:13:46 PM) IAgChain.AutoRecompute=false /Application/STK/Scenario/LEO/Chain/LEO2Missiles
+(11/13/2024 1:13:46 PM) Running Macro: AnalyzerPostRun
+(11/13/2024 1:13:46 PM) Running Macro: PostRun
+(11/13/2024 1:13:46 PM) >GetDirectory / Scenario
+(11/13/2024 1:13:47 PM) C:\Users\brigh\TAMU Programming\Fall 2024\Aero 401\HYPERION\LEO\
+(11/13/2024 1:13:47 PM) Running Macro: AnalyzerPreRun
+(11/13/2024 1:13:47 PM) Running Macro: PreRun
+(11/13/2024 1:13:47 PM) 
+(11/13/2024 1:13:47 PM) --- 11/13/2024 1:13:47 PM
+(11/13/2024 1:13:47 PM) --- Running STK
+(11/13/2024 1:13:47 PM) 
+(11/13/2024 1:13:47 PM) -Sending values to STK
+(11/13/2024 1:13:47 PM) IAgChain.AutoRecompute=false /Application/STK/Scenario/LEO/Chain/LEO2Missiles
+(11/13/2024 1:13:47 PM) Input Variable from getValueAsString LEO.LEOSats.Walker.Shell_LEO_Equatorial.Inclination, Value: 2
+(11/13/2024 1:13:47 PM) Input Variable from getValue: LEO.LEOSats.Walker.Shell_LEO_Equatorial.Inclination, Value: 2
+(11/13/2024 1:13:47 PM) Input Variable from getValueAsObject: LEO.LEOSats.Walker.Shell_LEO_Equatorial.Inclination, Value: 2
+(11/13/2024 1:13:47 PM) Output Variable: LEO.GroundCoverage.AvgRevisit.Overall_Value.Average
+(11/13/2024 1:13:47 PM) Output Variable: LEO.GroundCoverage.MaxRevisit.Overall_Value.Maximum
+(11/13/2024 1:13:47 PM) Output Variable: LEO.Missile1Chain.Time_Instant.CompleteChainAccessStartTime.Time_Instant
+(11/13/2024 1:13:47 PM) Output Variable: LEO.Missile2Chain.Time_Instant.CompleteChainAccessStartTime.Time_Instant
+(11/13/2024 1:13:47 PM) Output Variable: LEO.Missile3Chain.Time_Instant.CompleteChainAccessStartTime.Time_Instant
+(11/13/2024 1:13:47 PM) Output Variable: LEO.LEO2Missiles.Strand_Access.Duration.Mean
+(11/13/2024 1:13:47 PM) >SetUnits / EpSec
+(11/13/2024 1:13:47 PM) 
+(11/13/2024 1:13:47 PM) >SetUnits / UTCG
+(11/13/2024 1:13:47 PM) 
+(11/13/2024 1:13:47 PM) >SetUnits / EpSec
+(11/13/2024 1:13:47 PM) 
+(11/13/2024 1:13:47 PM) >SetUnits / UTCG
+(11/13/2024 1:13:48 PM) 
+(11/13/2024 1:13:48 PM) >SetUnits / EpSec
+(11/13/2024 1:13:48 PM) 
+(11/13/2024 1:13:48 PM) >SetUnits / UTCG
+(11/13/2024 1:13:48 PM) 
+(11/13/2024 1:13:48 PM) >SetUnits / EpSec
+(11/13/2024 1:13:48 PM) 
+(11/13/2024 1:13:48 PM) >SetUnits / UTCG
+(11/13/2024 1:13:48 PM) 
+(11/13/2024 1:13:48 PM) >SetUnits / EpSec
+(11/13/2024 1:13:48 PM) 
+(11/13/2024 1:13:48 PM) >SetUnits / UTCG
+(11/13/2024 1:13:48 PM) 
+(11/13/2024 1:13:48 PM) >SetUnits / EpSec
+(11/13/2024 1:13:48 PM) 
+(11/13/2024 1:13:48 PM) >SetUnits / UTCG
+(11/13/2024 1:13:48 PM) 
+(11/13/2024 1:13:48 PM) >SetUnits / EpSec
+(11/13/2024 1:13:48 PM) 
+(11/13/2024 1:13:48 PM) >SetUnits / UTCG
+(11/13/2024 1:13:48 PM) 
+(11/13/2024 1:13:48 PM) -Propagating objects
+(11/13/2024 1:13:48 PM) --->Scenario Analysis Period: 10 Nov 2024 18:00:00.000 <> 11 Nov 2024 18:00:00.000
+(11/13/2024 1:13:48 PM) -Computing Accesses
+(11/13/2024 1:13:48 PM) IAgChain.ComputeAccess() - /Scenario/LEO/Chain/Missile1Chain
+(11/13/2024 1:13:48 PM) IAgChain.ComputeAccess() - /Scenario/LEO/Chain/Missile2Chain
+(11/13/2024 1:13:49 PM) IAgChain.ComputeAccess() - /Scenario/LEO/Chain/Missile3Chain
+(11/13/2024 1:13:49 PM) IAgChain.ComputeAccess() - /Scenario/LEO/Chain/LEO2Missiles
+(11/13/2024 1:13:50 PM) IAgCoverageDefinition.ClearAccesses() /Application/STK/Scenario/LEO/CoverageDefinition/GroundCoverage
+(11/13/2024 1:13:50 PM) IAgCoverageDefinition.ComputeAccesses() /Application/STK/Scenario/LEO/CoverageDefinition/GroundCoverage
+(11/13/2024 1:15:21 PM) -Getting Output Values
+(11/13/2024 1:15:21 PM) >SetUnits / EpSec
+(11/13/2024 1:15:21 PM) 
+(11/13/2024 1:15:21 PM) >SetUnits / UTCG
+(11/13/2024 1:15:21 PM) 
+(11/13/2024 1:15:21 PM) >SetUnits / EpSec
+(11/13/2024 1:15:21 PM) 
+(11/13/2024 1:15:21 PM) Executing Data Provider
+(11/13/2024 1:15:21 PM)    Name: Overall Value
+(11/13/2024 1:15:21 PM)    Object: /Scenario/LEO/CoverageDefinition/GroundCoverage/FigureOfMerit/AvgRevisit
+(11/13/2024 1:15:21 PM) Set Variable: LEO.GroundCoverage.AvgRevisit.Overall_Value.Average + output value: 19.0752747740935
+(11/13/2024 1:15:21 PM) >SetUnits / UTCG
+(11/13/2024 1:15:21 PM) 
+(11/13/2024 1:15:21 PM) >SetUnits / EpSec
+(11/13/2024 1:15:21 PM) 
+(11/13/2024 1:15:21 PM) Executing Data Provider
+(11/13/2024 1:15:21 PM)    Name: Overall Value
+(11/13/2024 1:15:21 PM)    Object: /Scenario/LEO/CoverageDefinition/GroundCoverage/FigureOfMerit/MaxRevisit
+(11/13/2024 1:15:21 PM) Set Variable: LEO.GroundCoverage.MaxRevisit.Overall_Value.Maximum + output value: 98.7788865813272
+(11/13/2024 1:15:21 PM) >SetUnits / UTCG
+(11/13/2024 1:15:21 PM) 
+(11/13/2024 1:15:21 PM) >SetUnits / EpSec
+(11/13/2024 1:15:21 PM) 
+(11/13/2024 1:15:21 PM) Executing Data Provider
+(11/13/2024 1:15:21 PM)    Name: CompleteChainAccessStartTime
+(11/13/2024 1:15:21 PM)    Object: /Scenario/LEO/Chain/Missile1Chain
+(11/13/2024 1:15:21 PM) >SetUnits / EpSec
+(11/13/2024 1:15:21 PM) 
+(11/13/2024 1:15:22 PM) >SetUnits / EpSec
+(11/13/2024 1:15:22 PM) 
+(11/13/2024 1:15:22 PM)    Start: 0
+(11/13/2024 1:15:22 PM)    Stop: 86400
+(11/13/2024 1:15:22 PM) Set Variable: LEO.Missile1Chain.Time_Instant.CompleteChainAccessStartTime.Time_Instant + output value: 1668276060.004
+(11/13/2024 1:15:22 PM) >SetUnits / UTCG
+(11/13/2024 1:15:22 PM) 
+(11/13/2024 1:15:22 PM) >SetUnits / EpSec
+(11/13/2024 1:15:22 PM) 
+(11/13/2024 1:15:22 PM) Executing Data Provider
+(11/13/2024 1:15:22 PM)    Name: CompleteChainAccessStartTime
+(11/13/2024 1:15:22 PM)    Object: /Scenario/LEO/Chain/Missile2Chain
+(11/13/2024 1:15:22 PM) >SetUnits / EpSec
+(11/13/2024 1:15:22 PM) 
+(11/13/2024 1:15:22 PM) >SetUnits / EpSec
+(11/13/2024 1:15:22 PM) 
+(11/13/2024 1:15:22 PM)    Start: 0
+(11/13/2024 1:15:22 PM)    Stop: 86400
+(11/13/2024 1:15:22 PM) Set Variable: LEO.Missile2Chain.Time_Instant.CompleteChainAccessStartTime.Time_Instant + output value: 1668319200.006
+(11/13/2024 1:15:22 PM) >SetUnits / UTCG
+(11/13/2024 1:15:22 PM) 
+(11/13/2024 1:15:22 PM) >SetUnits / EpSec
+(11/13/2024 1:15:22 PM) 
+(11/13/2024 1:15:22 PM) Executing Data Provider
+(11/13/2024 1:15:22 PM)    Name: CompleteChainAccessStartTime
+(11/13/2024 1:15:22 PM)    Object: /Scenario/LEO/Chain/Missile3Chain
+(11/13/2024 1:15:22 PM) >SetUnits / EpSec
+(11/13/2024 1:15:22 PM) 
+(11/13/2024 1:15:22 PM) >SetUnits / EpSec
+(11/13/2024 1:15:22 PM) 
+(11/13/2024 1:15:22 PM)    Start: 0
+(11/13/2024 1:15:22 PM)    Stop: 86400
+(11/13/2024 1:15:23 PM) Set Variable: LEO.Missile3Chain.Time_Instant.CompleteChainAccessStartTime.Time_Instant + output value: 1668351600.004
+(11/13/2024 1:15:23 PM) >SetUnits / UTCG
+(11/13/2024 1:15:23 PM) 
+(11/13/2024 1:15:23 PM) >SetUnits / EpSec
+(11/13/2024 1:15:23 PM) 
+(11/13/2024 1:15:23 PM) Executing Data Provider
+(11/13/2024 1:15:23 PM)    Name: Strand Access
+(11/13/2024 1:15:23 PM)    Object: /Scenario/LEO/Chain/LEO2Missiles
+(11/13/2024 1:15:23 PM) >SetUnits / EpSec
+(11/13/2024 1:15:23 PM) 
+(11/13/2024 1:15:23 PM) >SetUnits / EpSec
+(11/13/2024 1:15:23 PM) 
+(11/13/2024 1:15:23 PM)    Start: 0
+(11/13/2024 1:15:23 PM)    Stop: 86400
+(11/13/2024 1:15:25 PM) Set Variable: LEO.LEO2Missiles.Strand_Access.Duration.Mean + output value: 414.241596404142
+(11/13/2024 1:15:25 PM) >SetUnits / UTCG
+(11/13/2024 1:15:25 PM) 
+(11/13/2024 1:15:25 PM) IAgStkObjectRoot.BeginUpdate()
+(11/13/2024 1:15:25 PM) IAgStkObjectRoot.EndUpdate()
+(11/13/2024 1:15:25 PM) IAgChain.AutoRecompute=false /Application/STK/Scenario/LEO/Chain/LEO2Missiles
+(11/13/2024 1:15:25 PM) Running Macro: AnalyzerPostRun
+(11/13/2024 1:15:25 PM) Running Macro: PostRun
+(11/13/2024 1:15:25 PM) >GetDirectory / Scenario
+(11/13/2024 1:15:25 PM) C:\Users\brigh\TAMU Programming\Fall 2024\Aero 401\HYPERION\LEO\
+(11/13/2024 1:15:25 PM) Running Macro: AnalyzerPreRun
+(11/13/2024 1:15:25 PM) Running Macro: PreRun
+(11/13/2024 1:15:25 PM) 
+(11/13/2024 1:15:25 PM) --- 11/13/2024 1:15:25 PM
+(11/13/2024 1:15:25 PM) --- Running STK
+(11/13/2024 1:15:25 PM) 
+(11/13/2024 1:15:25 PM) -Sending values to STK
+(11/13/2024 1:15:26 PM) IAgChain.AutoRecompute=false /Application/STK/Scenario/LEO/Chain/LEO2Missiles
+(11/13/2024 1:15:26 PM) Input Variable from getValueAsString LEO.LEOSats.Walker.Shell_LEO_Equatorial.Inclination, Value: 1
+(11/13/2024 1:15:26 PM) Input Variable from getValue: LEO.LEOSats.Walker.Shell_LEO_Equatorial.Inclination, Value: 1
+(11/13/2024 1:15:26 PM) Input Variable from getValueAsObject: LEO.LEOSats.Walker.Shell_LEO_Equatorial.Inclination, Value: 1
+(11/13/2024 1:15:26 PM) Output Variable: LEO.GroundCoverage.AvgRevisit.Overall_Value.Average
+(11/13/2024 1:15:26 PM) Output Variable: LEO.GroundCoverage.MaxRevisit.Overall_Value.Maximum
+(11/13/2024 1:15:26 PM) Output Variable: LEO.Missile1Chain.Time_Instant.CompleteChainAccessStartTime.Time_Instant
+(11/13/2024 1:15:26 PM) Output Variable: LEO.Missile2Chain.Time_Instant.CompleteChainAccessStartTime.Time_Instant
+(11/13/2024 1:15:26 PM) Output Variable: LEO.Missile3Chain.Time_Instant.CompleteChainAccessStartTime.Time_Instant
+(11/13/2024 1:15:26 PM) Output Variable: LEO.LEO2Missiles.Strand_Access.Duration.Mean
+(11/13/2024 1:15:26 PM) >SetUnits / EpSec
+(11/13/2024 1:15:26 PM) 
+(11/13/2024 1:15:26 PM) >SetUnits / UTCG
+(11/13/2024 1:15:26 PM) 
+(11/13/2024 1:15:26 PM) >SetUnits / EpSec
+(11/13/2024 1:15:26 PM) 
+(11/13/2024 1:15:26 PM) >SetUnits / UTCG
+(11/13/2024 1:15:26 PM) 
+(11/13/2024 1:15:26 PM) >SetUnits / EpSec
+(11/13/2024 1:15:26 PM) 
+(11/13/2024 1:15:26 PM) >SetUnits / UTCG
+(11/13/2024 1:15:26 PM) 
+(11/13/2024 1:15:26 PM) >SetUnits / EpSec
+(11/13/2024 1:15:26 PM) 
+(11/13/2024 1:15:26 PM) >SetUnits / UTCG
+(11/13/2024 1:15:26 PM) 
+(11/13/2024 1:15:26 PM) >SetUnits / EpSec
+(11/13/2024 1:15:26 PM) 
+(11/13/2024 1:15:26 PM) >SetUnits / UTCG
+(11/13/2024 1:15:26 PM) 
+(11/13/2024 1:15:26 PM) >SetUnits / EpSec
+(11/13/2024 1:15:26 PM) 
+(11/13/2024 1:15:26 PM) >SetUnits / UTCG
+(11/13/2024 1:15:26 PM) 
+(11/13/2024 1:15:26 PM) >SetUnits / EpSec
+(11/13/2024 1:15:26 PM) 
+(11/13/2024 1:15:26 PM) >SetUnits / UTCG
+(11/13/2024 1:15:26 PM) 
+(11/13/2024 1:15:26 PM) -Propagating objects
+(11/13/2024 1:15:26 PM) --->Scenario Analysis Period: 10 Nov 2024 18:00:00.000 <> 11 Nov 2024 18:00:00.000
+(11/13/2024 1:15:26 PM) -Computing Accesses
+(11/13/2024 1:15:26 PM) IAgChain.ComputeAccess() - /Scenario/LEO/Chain/Missile1Chain
+(11/13/2024 1:15:27 PM) IAgChain.ComputeAccess() - /Scenario/LEO/Chain/Missile2Chain
+(11/13/2024 1:15:27 PM) IAgChain.ComputeAccess() - /Scenario/LEO/Chain/Missile3Chain
+(11/13/2024 1:15:28 PM) IAgChain.ComputeAccess() - /Scenario/LEO/Chain/LEO2Missiles
+(11/13/2024 1:15:28 PM) IAgCoverageDefinition.ClearAccesses() /Application/STK/Scenario/LEO/CoverageDefinition/GroundCoverage
+(11/13/2024 1:15:28 PM) IAgCoverageDefinition.ComputeAccesses() /Application/STK/Scenario/LEO/CoverageDefinition/GroundCoverage
+(11/13/2024 1:17:02 PM) -Getting Output Values
+(11/13/2024 1:17:02 PM) >SetUnits / EpSec
+(11/13/2024 1:17:02 PM) 
+(11/13/2024 1:17:02 PM) >SetUnits / UTCG
+(11/13/2024 1:17:02 PM) 
+(11/13/2024 1:17:02 PM) >SetUnits / EpSec
+(11/13/2024 1:17:02 PM) 
+(11/13/2024 1:17:02 PM) Executing Data Provider
+(11/13/2024 1:17:02 PM)    Name: Overall Value
+(11/13/2024 1:17:02 PM)    Object: /Scenario/LEO/CoverageDefinition/GroundCoverage/FigureOfMerit/AvgRevisit
+(11/13/2024 1:17:03 PM) Set Variable: LEO.GroundCoverage.AvgRevisit.Overall_Value.Average + output value: 19.0387795863224
+(11/13/2024 1:17:03 PM) >SetUnits / UTCG
+(11/13/2024 1:17:03 PM) 
+(11/13/2024 1:17:03 PM) >SetUnits / EpSec
+(11/13/2024 1:17:03 PM) 
+(11/13/2024 1:17:03 PM) Executing Data Provider
+(11/13/2024 1:17:03 PM)    Name: Overall Value
+(11/13/2024 1:17:03 PM)    Object: /Scenario/LEO/CoverageDefinition/GroundCoverage/FigureOfMerit/MaxRevisit
+(11/13/2024 1:17:03 PM) Set Variable: LEO.GroundCoverage.MaxRevisit.Overall_Value.Maximum + output value: 98.7788865813272
+(11/13/2024 1:17:03 PM) >SetUnits / UTCG
+(11/13/2024 1:17:03 PM) 
+(11/13/2024 1:17:03 PM) >SetUnits / EpSec
+(11/13/2024 1:17:03 PM) 
+(11/13/2024 1:17:03 PM) Executing Data Provider
+(11/13/2024 1:17:03 PM)    Name: CompleteChainAccessStartTime
+(11/13/2024 1:17:03 PM)    Object: /Scenario/LEO/Chain/Missile1Chain
+(11/13/2024 1:17:03 PM) >SetUnits / EpSec
+(11/13/2024 1:17:03 PM) 
+(11/13/2024 1:17:03 PM) >SetUnits / EpSec
+(11/13/2024 1:17:03 PM) 
+(11/13/2024 1:17:03 PM)    Start: 0
+(11/13/2024 1:17:03 PM)    Stop: 86400
+(11/13/2024 1:17:03 PM) Set Variable: LEO.Missile1Chain.Time_Instant.CompleteChainAccessStartTime.Time_Instant + output value: 1668276060.004
+(11/13/2024 1:17:03 PM) >SetUnits / UTCG
+(11/13/2024 1:17:03 PM) 
+(11/13/2024 1:17:03 PM) >SetUnits / EpSec
+(11/13/2024 1:17:03 PM) 
+(11/13/2024 1:17:03 PM) Executing Data Provider
+(11/13/2024 1:17:03 PM)    Name: CompleteChainAccessStartTime
+(11/13/2024 1:17:03 PM)    Object: /Scenario/LEO/Chain/Missile2Chain
+(11/13/2024 1:17:03 PM) >SetUnits / EpSec
+(11/13/2024 1:17:03 PM) 
+(11/13/2024 1:17:04 PM) >SetUnits / EpSec
+(11/13/2024 1:17:04 PM) 
+(11/13/2024 1:17:04 PM)    Start: 0
+(11/13/2024 1:17:04 PM)    Stop: 86400
+(11/13/2024 1:17:04 PM) Set Variable: LEO.Missile2Chain.Time_Instant.CompleteChainAccessStartTime.Time_Instant + output value: 1668319200.006
+(11/13/2024 1:17:04 PM) >SetUnits / UTCG
+(11/13/2024 1:17:04 PM) 
+(11/13/2024 1:17:04 PM) >SetUnits / EpSec
+(11/13/2024 1:17:04 PM) 
+(11/13/2024 1:17:04 PM) Executing Data Provider
+(11/13/2024 1:17:04 PM)    Name: CompleteChainAccessStartTime
+(11/13/2024 1:17:04 PM)    Object: /Scenario/LEO/Chain/Missile3Chain
+(11/13/2024 1:17:04 PM) >SetUnits / EpSec
+(11/13/2024 1:17:04 PM) 
+(11/13/2024 1:17:04 PM) >SetUnits / EpSec
+(11/13/2024 1:17:04 PM) 
+(11/13/2024 1:17:04 PM)    Start: 0
+(11/13/2024 1:17:04 PM)    Stop: 86400
+(11/13/2024 1:17:04 PM) Set Variable: LEO.Missile3Chain.Time_Instant.CompleteChainAccessStartTime.Time_Instant + output value: 1668351600.004
+(11/13/2024 1:17:04 PM) >SetUnits / UTCG
+(11/13/2024 1:17:04 PM) 
+(11/13/2024 1:17:04 PM) >SetUnits / EpSec
+(11/13/2024 1:17:04 PM) 
+(11/13/2024 1:17:04 PM) Executing Data Provider
+(11/13/2024 1:17:04 PM)    Name: Strand Access
+(11/13/2024 1:17:04 PM)    Object: /Scenario/LEO/Chain/LEO2Missiles
+(11/13/2024 1:17:04 PM) >SetUnits / EpSec
+(11/13/2024 1:17:04 PM) 
+(11/13/2024 1:17:04 PM) >SetUnits / EpSec
+(11/13/2024 1:17:04 PM) 
+(11/13/2024 1:17:04 PM)    Start: 0
+(11/13/2024 1:17:04 PM)    Stop: 86400
+(11/13/2024 1:17:06 PM) Set Variable: LEO.LEO2Missiles.Strand_Access.Duration.Mean + output value: 414.270497678773
+(11/13/2024 1:17:06 PM) >SetUnits / UTCG
+(11/13/2024 1:17:07 PM) 
+(11/13/2024 1:17:07 PM) IAgStkObjectRoot.BeginUpdate()
+(11/13/2024 1:17:07 PM) IAgStkObjectRoot.EndUpdate()
+(11/13/2024 1:17:07 PM) IAgChain.AutoRecompute=false /Application/STK/Scenario/LEO/Chain/LEO2Missiles
+(11/13/2024 1:17:07 PM) Running Macro: AnalyzerPostRun
+(11/13/2024 1:17:07 PM) Running Macro: PostRun
+(11/13/2024 1:17:07 PM) >GetDirectory / Scenario
+(11/13/2024 1:17:07 PM) C:\Users\brigh\TAMU Programming\Fall 2024\Aero 401\HYPERION\LEO\
+(11/13/2024 1:17:07 PM) Running Macro: AnalyzerPreRun
+(11/13/2024 1:17:07 PM) Running Macro: PreRun
+(11/13/2024 1:17:07 PM) 
+(11/13/2024 1:17:07 PM) --- 11/13/2024 1:17:07 PM
+(11/13/2024 1:17:07 PM) --- Running STK
+(11/13/2024 1:17:07 PM) 
+(11/13/2024 1:17:07 PM) -Sending values to STK
+(11/13/2024 1:17:07 PM) IAgChain.AutoRecompute=false /Application/STK/Scenario/LEO/Chain/LEO2Missiles
+(11/13/2024 1:17:07 PM) Input Variable from getValueAsString LEO.LEOSats.Walker.Shell_LEO_Equatorial.Inclination, Value: 0
+(11/13/2024 1:17:07 PM) Input Variable from getValue: LEO.LEOSats.Walker.Shell_LEO_Equatorial.Inclination, Value: 0
+(11/13/2024 1:17:07 PM) Input Variable from getValueAsObject: LEO.LEOSats.Walker.Shell_LEO_Equatorial.Inclination, Value: 0
+(11/13/2024 1:17:07 PM) Output Variable: LEO.GroundCoverage.AvgRevisit.Overall_Value.Average
+(11/13/2024 1:17:07 PM) Output Variable: LEO.GroundCoverage.MaxRevisit.Overall_Value.Maximum
+(11/13/2024 1:17:07 PM) Output Variable: LEO.Missile1Chain.Time_Instant.CompleteChainAccessStartTime.Time_Instant
+(11/13/2024 1:17:07 PM) Output Variable: LEO.Missile2Chain.Time_Instant.CompleteChainAccessStartTime.Time_Instant
+(11/13/2024 1:17:07 PM) Output Variable: LEO.Missile3Chain.Time_Instant.CompleteChainAccessStartTime.Time_Instant
+(11/13/2024 1:17:07 PM) Output Variable: LEO.LEO2Missiles.Strand_Access.Duration.Mean
+(11/13/2024 1:17:07 PM) >SetUnits / EpSec
+(11/13/2024 1:17:07 PM) 
+(11/13/2024 1:17:08 PM) >SetUnits / UTCG
+(11/13/2024 1:17:08 PM) 
+(11/13/2024 1:17:08 PM) >SetUnits / EpSec
+(11/13/2024 1:17:08 PM) 
+(11/13/2024 1:17:08 PM) >SetUnits / UTCG
+(11/13/2024 1:17:08 PM) 
+(11/13/2024 1:17:08 PM) >SetUnits / EpSec
+(11/13/2024 1:17:08 PM) 
+(11/13/2024 1:17:08 PM) >SetUnits / UTCG
+(11/13/2024 1:17:08 PM) 
+(11/13/2024 1:17:08 PM) >SetUnits / EpSec
+(11/13/2024 1:17:08 PM) 
+(11/13/2024 1:17:08 PM) >SetUnits / UTCG
+(11/13/2024 1:17:08 PM) 
+(11/13/2024 1:17:08 PM) >SetUnits / EpSec
+(11/13/2024 1:17:08 PM) 
+(11/13/2024 1:17:08 PM) >SetUnits / UTCG
+(11/13/2024 1:17:08 PM) 
+(11/13/2024 1:17:08 PM) >SetUnits / EpSec
+(11/13/2024 1:17:08 PM) 
+(11/13/2024 1:17:08 PM) >SetUnits / UTCG
+(11/13/2024 1:17:08 PM) 
+(11/13/2024 1:17:08 PM) >SetUnits / EpSec
+(11/13/2024 1:17:08 PM) 
+(11/13/2024 1:17:08 PM) >SetUnits / UTCG
+(11/13/2024 1:17:08 PM) 
+(11/13/2024 1:17:08 PM) -Propagating objects
+(11/13/2024 1:17:08 PM) --->Scenario Analysis Period: 10 Nov 2024 18:00:00.000 <> 11 Nov 2024 18:00:00.000
+(11/13/2024 1:17:08 PM) -Computing Accesses
+(11/13/2024 1:17:08 PM) IAgChain.ComputeAccess() - /Scenario/LEO/Chain/Missile1Chain
+(11/13/2024 1:17:09 PM) IAgChain.ComputeAccess() - /Scenario/LEO/Chain/Missile2Chain
+(11/13/2024 1:17:09 PM) IAgChain.ComputeAccess() - /Scenario/LEO/Chain/Missile3Chain
+(11/13/2024 1:17:09 PM) IAgChain.ComputeAccess() - /Scenario/LEO/Chain/LEO2Missiles
+(11/13/2024 1:17:10 PM) IAgCoverageDefinition.ClearAccesses() /Application/STK/Scenario/LEO/CoverageDefinition/GroundCoverage
+(11/13/2024 1:17:10 PM) IAgCoverageDefinition.ComputeAccesses() /Application/STK/Scenario/LEO/CoverageDefinition/GroundCoverage
+(11/13/2024 1:18:20 PM) -Getting Output Values
+(11/13/2024 1:18:20 PM) >SetUnits / EpSec
+(11/13/2024 1:18:20 PM) 
+(11/13/2024 1:18:20 PM) >SetUnits / UTCG
+(11/13/2024 1:18:20 PM) 
+(11/13/2024 1:18:21 PM) >SetUnits / EpSec
+(11/13/2024 1:18:21 PM) 
+(11/13/2024 1:18:21 PM) Executing Data Provider
+(11/13/2024 1:18:21 PM)    Name: Overall Value
+(11/13/2024 1:18:21 PM)    Object: /Scenario/LEO/CoverageDefinition/GroundCoverage/FigureOfMerit/AvgRevisit
+(11/13/2024 1:18:21 PM) Set Variable: LEO.GroundCoverage.AvgRevisit.Overall_Value.Average + output value: 18.9802176820811
+(11/13/2024 1:18:21 PM) >SetUnits / UTCG
+(11/13/2024 1:18:21 PM) 
+(11/13/2024 1:18:21 PM) >SetUnits / EpSec
+(11/13/2024 1:18:21 PM) 
+(11/13/2024 1:18:21 PM) Executing Data Provider
+(11/13/2024 1:18:21 PM)    Name: Overall Value
+(11/13/2024 1:18:21 PM)    Object: /Scenario/LEO/CoverageDefinition/GroundCoverage/FigureOfMerit/MaxRevisit
+(11/13/2024 1:18:21 PM) Set Variable: LEO.GroundCoverage.MaxRevisit.Overall_Value.Maximum + output value: 98.7788865813272
+(11/13/2024 1:18:21 PM) >SetUnits / UTCG
+(11/13/2024 1:18:21 PM) 
+(11/13/2024 1:18:21 PM) >SetUnits / EpSec
+(11/13/2024 1:18:21 PM) 
+(11/13/2024 1:18:21 PM) Executing Data Provider
+(11/13/2024 1:18:21 PM)    Name: CompleteChainAccessStartTime
+(11/13/2024 1:18:21 PM)    Object: /Scenario/LEO/Chain/Missile1Chain
+(11/13/2024 1:18:21 PM) >SetUnits / EpSec
+(11/13/2024 1:18:21 PM) 
+(11/13/2024 1:18:21 PM) >SetUnits / EpSec
+(11/13/2024 1:18:21 PM) 
+(11/13/2024 1:18:21 PM)    Start: 0
+(11/13/2024 1:18:21 PM)    Stop: 86400
+(11/13/2024 1:18:21 PM) Set Variable: LEO.Missile1Chain.Time_Instant.CompleteChainAccessStartTime.Time_Instant + output value: 1668276060.004
+(11/13/2024 1:18:21 PM) >SetUnits / UTCG
+(11/13/2024 1:18:21 PM) 
+(11/13/2024 1:18:21 PM) >SetUnits / EpSec
+(11/13/2024 1:18:21 PM) 
+(11/13/2024 1:18:21 PM) Executing Data Provider
+(11/13/2024 1:18:21 PM)    Name: CompleteChainAccessStartTime
+(11/13/2024 1:18:21 PM)    Object: /Scenario/LEO/Chain/Missile2Chain
+(11/13/2024 1:18:21 PM) >SetUnits / EpSec
+(11/13/2024 1:18:21 PM) 
+(11/13/2024 1:18:22 PM) >SetUnits / EpSec
+(11/13/2024 1:18:22 PM) 
+(11/13/2024 1:18:22 PM)    Start: 0
+(11/13/2024 1:18:22 PM)    Stop: 86400
+(11/13/2024 1:18:22 PM) Set Variable: LEO.Missile2Chain.Time_Instant.CompleteChainAccessStartTime.Time_Instant + output value: 1668319200.006
+(11/13/2024 1:18:22 PM) >SetUnits / UTCG
+(11/13/2024 1:18:22 PM) 
+(11/13/2024 1:18:22 PM) >SetUnits / EpSec
+(11/13/2024 1:18:22 PM) 
+(11/13/2024 1:18:22 PM) Executing Data Provider
+(11/13/2024 1:18:22 PM)    Name: CompleteChainAccessStartTime
+(11/13/2024 1:18:22 PM)    Object: /Scenario/LEO/Chain/Missile3Chain
+(11/13/2024 1:18:22 PM) >SetUnits / EpSec
+(11/13/2024 1:18:22 PM) 
+(11/13/2024 1:18:22 PM) >SetUnits / EpSec
+(11/13/2024 1:18:22 PM) 
+(11/13/2024 1:18:22 PM)    Start: 0
+(11/13/2024 1:18:22 PM)    Stop: 86400
+(11/13/2024 1:18:22 PM) Set Variable: LEO.Missile3Chain.Time_Instant.CompleteChainAccessStartTime.Time_Instant + output value: 1668351600.004
+(11/13/2024 1:18:22 PM) >SetUnits / UTCG
+(11/13/2024 1:18:22 PM) 
+(11/13/2024 1:18:22 PM) >SetUnits / EpSec
+(11/13/2024 1:18:22 PM) 
+(11/13/2024 1:18:22 PM) Executing Data Provider
+(11/13/2024 1:18:22 PM)    Name: Strand Access
+(11/13/2024 1:18:22 PM)    Object: /Scenario/LEO/Chain/LEO2Missiles
+(11/13/2024 1:18:22 PM) >SetUnits / EpSec
+(11/13/2024 1:18:22 PM) 
+(11/13/2024 1:18:22 PM) >SetUnits / EpSec
+(11/13/2024 1:18:22 PM) 
+(11/13/2024 1:18:22 PM)    Start: 0
+(11/13/2024 1:18:22 PM)    Stop: 86400
+(11/13/2024 1:18:24 PM) Set Variable: LEO.LEO2Missiles.Strand_Access.Duration.Mean + output value: 414.29681497701
+(11/13/2024 1:18:24 PM) >SetUnits / UTCG
+(11/13/2024 1:18:24 PM) 
+(11/13/2024 1:18:24 PM) IAgStkObjectRoot.BeginUpdate()
+(11/13/2024 1:18:24 PM) IAgStkObjectRoot.EndUpdate()
+(11/13/2024 1:18:24 PM) IAgChain.AutoRecompute=false /Application/STK/Scenario/LEO/Chain/LEO2Missiles
+(11/13/2024 1:18:24 PM) Running Macro: AnalyzerPostRun
+(11/13/2024 1:18:25 PM) Running Macro: PostRun
+(11/13/2024 1:18:25 PM) >GetDirectory / Scenario
+(11/13/2024 1:18:25 PM) C:\Users\brigh\TAMU Programming\Fall 2024\Aero 401\HYPERION\LEO\
+(11/13/2024 1:18:25 PM) 
+(11/13/2024 1:18:25 PM) --- 11/13/2024 1:18:25 PM
+(11/13/2024 1:18:25 PM) --- Running STK
+(11/13/2024 1:18:25 PM) 
+(11/13/2024 1:18:25 PM) -Sending values to STK
+(11/13/2024 1:18:25 PM) Input Variable from getValueAsString LEO.LEOSats.Walker.Shell_LEO_Equatorial.Inclination, Value: 0
+(11/13/2024 1:18:25 PM) Input Variable from getValue: LEO.LEOSats.Walker.Shell_LEO_Equatorial.Inclination, Value: 0
+(11/13/2024 1:18:25 PM) Input Variable from getValueAsObject: LEO.LEOSats.Walker.Shell_LEO_Equatorial.Inclination, Value: 0
+(11/13/2024 1:18:25 PM) Output Variable: LEO.GroundCoverage.AvgRevisit.Overall_Value.Average
+(11/13/2024 1:18:25 PM) Output Variable: LEO.GroundCoverage.MaxRevisit.Overall_Value.Maximum
+(11/13/2024 1:18:25 PM) Output Variable: LEO.Missile1Chain.Time_Instant.CompleteChainAccessStartTime.Time_Instant
+(11/13/2024 1:18:25 PM) Output Variable: LEO.Missile2Chain.Time_Instant.CompleteChainAccessStartTime.Time_Instant
+(11/13/2024 1:18:25 PM) Output Variable: LEO.Missile3Chain.Time_Instant.CompleteChainAccessStartTime.Time_Instant
+(11/13/2024 1:18:25 PM) Output Variable: LEO.LEO2Missiles.Strand_Access.Duration.Mean
+(11/13/2024 1:18:25 PM) >SetUnits / EpSec
+(11/13/2024 1:18:25 PM) 
+(11/13/2024 1:18:25 PM) >SetUnits / UTCG
+(11/13/2024 1:18:25 PM) 
+(11/13/2024 1:18:25 PM) >SetUnits / EpSec
+(11/13/2024 1:18:25 PM) 
+(11/13/2024 1:18:25 PM) >SetUnits / UTCG
+(11/13/2024 1:18:25 PM) 
+(11/13/2024 1:18:25 PM) >SetUnits / EpSec
+(11/13/2024 1:18:25 PM) 
+(11/13/2024 1:18:25 PM) >SetUnits / UTCG
+(11/13/2024 1:18:25 PM) 
+(11/13/2024 1:18:25 PM) >SetUnits / EpSec
+(11/13/2024 1:18:25 PM) 
+(11/13/2024 1:18:25 PM) >SetUnits / UTCG
+(11/13/2024 1:18:25 PM) 
+(11/13/2024 1:18:25 PM) >SetUnits / EpSec
+(11/13/2024 1:18:25 PM) 
+(11/13/2024 1:18:25 PM) >SetUnits / UTCG
+(11/13/2024 1:18:25 PM) 
+(11/13/2024 1:18:25 PM) >SetUnits / EpSec
+(11/13/2024 1:18:25 PM) 
+(11/13/2024 1:18:25 PM) >SetUnits / UTCG
+(11/13/2024 1:18:25 PM) 
+(11/13/2024 1:18:25 PM) >SetUnits / EpSec
+(11/13/2024 1:18:25 PM) 
+(11/13/2024 1:18:25 PM) >SetUnits / UTCG
+(11/13/2024 1:18:25 PM) 
+(11/13/2024 1:18:25 PM) -Propagating objects
+(11/13/2024 1:18:25 PM) --->Scenario Analysis Period: 10 Nov 2024 18:00:00.000 <> 11 Nov 2024 18:00:00.000
+(11/13/2024 1:18:25 PM) -Getting Output Values
+(11/13/2024 1:18:25 PM) >SetUnits / EpSec
+(11/13/2024 1:18:25 PM) 
+(11/13/2024 1:18:25 PM) >SetUnits / UTCG
+(11/13/2024 1:18:25 PM) 
+(11/13/2024 1:18:25 PM) >SetUnits / EpSec
+(11/13/2024 1:18:25 PM) 
+(11/13/2024 1:18:25 PM) Executing Data Provider
+(11/13/2024 1:18:25 PM)    Name: Overall Value
+(11/13/2024 1:18:25 PM)    Object: /Scenario/LEO/CoverageDefinition/GroundCoverage/FigureOfMerit/AvgRevisit
+(11/13/2024 1:18:26 PM) Set Variable: LEO.GroundCoverage.AvgRevisit.Overall_Value.Average + output value: 18.9802176820811
+(11/13/2024 1:18:26 PM) >SetUnits / UTCG
+(11/13/2024 1:18:26 PM) 
+(11/13/2024 1:18:26 PM) >SetUnits / EpSec
+(11/13/2024 1:18:26 PM) 
+(11/13/2024 1:18:26 PM) Executing Data Provider
+(11/13/2024 1:18:26 PM)    Name: Overall Value
+(11/13/2024 1:18:26 PM)    Object: /Scenario/LEO/CoverageDefinition/GroundCoverage/FigureOfMerit/MaxRevisit
+(11/13/2024 1:18:26 PM) Set Variable: LEO.GroundCoverage.MaxRevisit.Overall_Value.Maximum + output value: 98.7788865813272
+(11/13/2024 1:18:26 PM) >SetUnits / UTCG
+(11/13/2024 1:18:26 PM) 
+(11/13/2024 1:18:26 PM) >SetUnits / EpSec
+(11/13/2024 1:18:26 PM) 
+(11/13/2024 1:18:26 PM) Executing Data Provider
+(11/13/2024 1:18:26 PM)    Name: CompleteChainAccessStartTime
+(11/13/2024 1:18:26 PM)    Object: /Scenario/LEO/Chain/Missile1Chain
+(11/13/2024 1:18:26 PM) >SetUnits / EpSec
+(11/13/2024 1:18:26 PM) 
+(11/13/2024 1:18:26 PM) >SetUnits / EpSec
+(11/13/2024 1:18:26 PM) 
+(11/13/2024 1:18:26 PM)    Start: 0
+(11/13/2024 1:18:26 PM)    Stop: 86400
+(11/13/2024 1:18:26 PM) Set Variable: LEO.Missile1Chain.Time_Instant.CompleteChainAccessStartTime.Time_Instant + output value: 1668276060.004
+(11/13/2024 1:18:26 PM) >SetUnits / UTCG
+(11/13/2024 1:18:26 PM) 
+(11/13/2024 1:18:26 PM) >SetUnits / EpSec
+(11/13/2024 1:18:26 PM) 
+(11/13/2024 1:18:26 PM) Executing Data Provider
+(11/13/2024 1:18:26 PM)    Name: CompleteChainAccessStartTime
+(11/13/2024 1:18:26 PM)    Object: /Scenario/LEO/Chain/Missile2Chain
+(11/13/2024 1:18:26 PM) >SetUnits / EpSec
+(11/13/2024 1:18:26 PM) 
+(11/13/2024 1:18:26 PM) >SetUnits / EpSec
+(11/13/2024 1:18:26 PM) 
+(11/13/2024 1:18:26 PM)    Start: 0
+(11/13/2024 1:18:26 PM)    Stop: 86400
+(11/13/2024 1:18:26 PM) Set Variable: LEO.Missile2Chain.Time_Instant.CompleteChainAccessStartTime.Time_Instant + output value: 1668319200.006
+(11/13/2024 1:18:26 PM) >SetUnits / UTCG
+(11/13/2024 1:18:26 PM) 
+(11/13/2024 1:18:26 PM) >SetUnits / EpSec
+(11/13/2024 1:18:26 PM) 
+(11/13/2024 1:18:26 PM) Executing Data Provider
+(11/13/2024 1:18:26 PM)    Name: CompleteChainAccessStartTime
+(11/13/2024 1:18:26 PM)    Object: /Scenario/LEO/Chain/Missile3Chain
+(11/13/2024 1:18:26 PM) >SetUnits / EpSec
+(11/13/2024 1:18:26 PM) 
+(11/13/2024 1:18:27 PM) >SetUnits / EpSec
+(11/13/2024 1:18:27 PM) 
+(11/13/2024 1:18:27 PM)    Start: 0
+(11/13/2024 1:18:27 PM)    Stop: 86400
+(11/13/2024 1:18:27 PM) Set Variable: LEO.Missile3Chain.Time_Instant.CompleteChainAccessStartTime.Time_Instant + output value: 1668351600.004
+(11/13/2024 1:18:27 PM) >SetUnits / UTCG
+(11/13/2024 1:18:27 PM) 
+(11/13/2024 1:18:27 PM) >SetUnits / EpSec
+(11/13/2024 1:18:27 PM) 
+(11/13/2024 1:18:27 PM) Executing Data Provider
+(11/13/2024 1:18:27 PM)    Name: Strand Access
+(11/13/2024 1:18:27 PM)    Object: /Scenario/LEO/Chain/LEO2Missiles
+(11/13/2024 1:18:27 PM) >SetUnits / EpSec
+(11/13/2024 1:18:27 PM) 
+(11/13/2024 1:18:27 PM) >SetUnits / EpSec
+(11/13/2024 1:18:27 PM) 
+(11/13/2024 1:18:27 PM)    Start: 0
+(11/13/2024 1:18:27 PM)    Stop: 86400
+(11/13/2024 1:18:29 PM) Set Variable: LEO.LEO2Missiles.Strand_Access.Duration.Mean + output value: 414.29681497701
+(11/13/2024 1:18:29 PM) >SetUnits / UTCG
+(11/13/2024 1:18:29 PM) 
+(11/13/2024 1:18:29 PM) IAgStkObjectRoot.BeginUpdate()
+(11/13/2024 1:18:29 PM) IAgStkObjectRoot.EndUpdate()
+(11/13/2024 1:18:29 PM) >GetDirectory / Scenario
+(11/13/2024 1:18:29 PM) C:\Users\brigh\TAMU Programming\Fall 2024\Aero 401\HYPERION\LEO\
+(11/13/2024 1:18:29 PM) 
+(11/13/2024 1:18:29 PM) --- 11/13/2024 1:18:29 PM
+(11/13/2024 1:18:29 PM) --- Running STK
+(11/13/2024 1:18:29 PM) 
+(11/13/2024 1:18:29 PM) -Sending values to STK
+(11/13/2024 1:18:29 PM) Input Variable from getValueAsString LEO.LEOSats.Walker.Shell_LEO_Equatorial.Inclination, Value: 0
+(11/13/2024 1:18:29 PM) Input Variable from getValue: LEO.LEOSats.Walker.Shell_LEO_Equatorial.Inclination, Value: 0
+(11/13/2024 1:18:29 PM) Input Variable from getValueAsObject: LEO.LEOSats.Walker.Shell_LEO_Equatorial.Inclination, Value: 0
+(11/13/2024 1:18:29 PM) Output Variable: LEO.GroundCoverage.AvgRevisit.Overall_Value.Average
+(11/13/2024 1:18:29 PM) Output Variable: LEO.GroundCoverage.MaxRevisit.Overall_Value.Maximum
+(11/13/2024 1:18:29 PM) Output Variable: LEO.Missile1Chain.Time_Instant.CompleteChainAccessStartTime.Time_Instant
+(11/13/2024 1:18:29 PM) Output Variable: LEO.Missile2Chain.Time_Instant.CompleteChainAccessStartTime.Time_Instant
+(11/13/2024 1:18:29 PM) Output Variable: LEO.Missile3Chain.Time_Instant.CompleteChainAccessStartTime.Time_Instant
+(11/13/2024 1:18:29 PM) Output Variable: LEO.LEO2Missiles.Strand_Access.Duration.Mean
+(11/13/2024 1:18:29 PM) >SetUnits / EpSec
+(11/13/2024 1:18:29 PM) 
+(11/13/2024 1:18:29 PM) >SetUnits / UTCG
+(11/13/2024 1:18:29 PM) 
+(11/13/2024 1:18:29 PM) >SetUnits / EpSec
+(11/13/2024 1:18:29 PM) 
+(11/13/2024 1:18:29 PM) >SetUnits / UTCG
+(11/13/2024 1:18:29 PM) 
+(11/13/2024 1:18:29 PM) >SetUnits / EpSec
+(11/13/2024 1:18:29 PM) 
+(11/13/2024 1:18:29 PM) >SetUnits / UTCG
+(11/13/2024 1:18:29 PM) 
+(11/13/2024 1:18:29 PM) >SetUnits / EpSec
+(11/13/2024 1:18:29 PM) 
+(11/13/2024 1:18:29 PM) >SetUnits / UTCG
+(11/13/2024 1:18:29 PM) 
+(11/13/2024 1:18:29 PM) >SetUnits / EpSec
+(11/13/2024 1:18:29 PM) 
+(11/13/2024 1:18:29 PM) >SetUnits / UTCG
+(11/13/2024 1:18:30 PM) 
+(11/13/2024 1:18:30 PM) >SetUnits / EpSec
+(11/13/2024 1:18:30 PM) 
+(11/13/2024 1:18:30 PM) >SetUnits / UTCG
+(11/13/2024 1:18:30 PM) 
+(11/13/2024 1:18:30 PM) >SetUnits / EpSec
+(11/13/2024 1:18:30 PM) 
+(11/13/2024 1:18:30 PM) >SetUnits / UTCG
+(11/13/2024 1:18:30 PM) 
+(11/13/2024 1:18:30 PM) -Propagating objects
+(11/13/2024 1:18:30 PM) --->Scenario Analysis Period: 10 Nov 2024 18:00:00.000 <> 11 Nov 2024 18:00:00.000
+(11/13/2024 1:18:30 PM) -Getting Output Values
+(11/13/2024 1:18:30 PM) >SetUnits / EpSec
+(11/13/2024 1:18:30 PM) 
+(11/13/2024 1:18:30 PM) >SetUnits / UTCG
+(11/13/2024 1:18:30 PM) 
+(11/13/2024 1:18:30 PM) >SetUnits / EpSec
+(11/13/2024 1:18:30 PM) 
+(11/13/2024 1:18:30 PM) Executing Data Provider
+(11/13/2024 1:18:30 PM)    Name: Overall Value
+(11/13/2024 1:18:30 PM)    Object: /Scenario/LEO/CoverageDefinition/GroundCoverage/FigureOfMerit/AvgRevisit
+(11/13/2024 1:18:30 PM) Set Variable: LEO.GroundCoverage.AvgRevisit.Overall_Value.Average + output value: 18.9802176820811
+(11/13/2024 1:18:30 PM) >SetUnits / UTCG
+(11/13/2024 1:18:30 PM) 
+(11/13/2024 1:18:30 PM) >SetUnits / EpSec
+(11/13/2024 1:18:30 PM) 
+(11/13/2024 1:18:30 PM) Executing Data Provider
+(11/13/2024 1:18:30 PM)    Name: Overall Value
+(11/13/2024 1:18:30 PM)    Object: /Scenario/LEO/CoverageDefinition/GroundCoverage/FigureOfMerit/MaxRevisit
+(11/13/2024 1:18:30 PM) Set Variable: LEO.GroundCoverage.MaxRevisit.Overall_Value.Maximum + output value: 98.7788865813272
+(11/13/2024 1:18:30 PM) >SetUnits / UTCG
+(11/13/2024 1:18:30 PM) 
+(11/13/2024 1:18:30 PM) >SetUnits / EpSec
+(11/13/2024 1:18:30 PM) 
+(11/13/2024 1:18:30 PM) Executing Data Provider
+(11/13/2024 1:18:30 PM)    Name: CompleteChainAccessStartTime
+(11/13/2024 1:18:30 PM)    Object: /Scenario/LEO/Chain/Missile1Chain
+(11/13/2024 1:18:30 PM) >SetUnits / EpSec
+(11/13/2024 1:18:30 PM) 
+(11/13/2024 1:18:30 PM) >SetUnits / EpSec
+(11/13/2024 1:18:30 PM) 
+(11/13/2024 1:18:30 PM)    Start: 0
+(11/13/2024 1:18:30 PM)    Stop: 86400
+(11/13/2024 1:18:30 PM) Set Variable: LEO.Missile1Chain.Time_Instant.CompleteChainAccessStartTime.Time_Instant + output value: 1668276060.004
+(11/13/2024 1:18:30 PM) >SetUnits / UTCG
+(11/13/2024 1:18:30 PM) 
+(11/13/2024 1:18:30 PM) >SetUnits / EpSec
+(11/13/2024 1:18:30 PM) 
+(11/13/2024 1:18:30 PM) Executing Data Provider
+(11/13/2024 1:18:30 PM)    Name: CompleteChainAccessStartTime
+(11/13/2024 1:18:30 PM)    Object: /Scenario/LEO/Chain/Missile2Chain
+(11/13/2024 1:18:30 PM) >SetUnits / EpSec
+(11/13/2024 1:18:30 PM) 
+(11/13/2024 1:18:31 PM) >SetUnits / EpSec
+(11/13/2024 1:18:31 PM) 
+(11/13/2024 1:18:31 PM)    Start: 0
+(11/13/2024 1:18:31 PM)    Stop: 86400
+(11/13/2024 1:18:31 PM) Set Variable: LEO.Missile2Chain.Time_Instant.CompleteChainAccessStartTime.Time_Instant + output value: 1668319200.006
+(11/13/2024 1:18:31 PM) >SetUnits / UTCG
+(11/13/2024 1:18:31 PM) 
+(11/13/2024 1:18:31 PM) >SetUnits / EpSec
+(11/13/2024 1:18:31 PM) 
+(11/13/2024 1:18:31 PM) Executing Data Provider
+(11/13/2024 1:18:31 PM)    Name: CompleteChainAccessStartTime
+(11/13/2024 1:18:31 PM)    Object: /Scenario/LEO/Chain/Missile3Chain
+(11/13/2024 1:18:31 PM) >SetUnits / EpSec
+(11/13/2024 1:18:31 PM) 
+(11/13/2024 1:18:31 PM) >SetUnits / EpSec
+(11/13/2024 1:18:31 PM) 
+(11/13/2024 1:18:31 PM)    Start: 0
+(11/13/2024 1:18:31 PM)    Stop: 86400
+(11/13/2024 1:18:31 PM) Set Variable: LEO.Missile3Chain.Time_Instant.CompleteChainAccessStartTime.Time_Instant + output value: 1668351600.004
+(11/13/2024 1:18:31 PM) >SetUnits / UTCG
+(11/13/2024 1:18:31 PM) 
+(11/13/2024 1:18:31 PM) >SetUnits / EpSec
+(11/13/2024 1:18:31 PM) 
+(11/13/2024 1:18:31 PM) Executing Data Provider
+(11/13/2024 1:18:31 PM)    Name: Strand Access
+(11/13/2024 1:18:31 PM)    Object: /Scenario/LEO/Chain/LEO2Missiles
+(11/13/2024 1:18:31 PM) >SetUnits / EpSec
+(11/13/2024 1:18:31 PM) 
+(11/13/2024 1:18:31 PM) >SetUnits / EpSec
+(11/13/2024 1:18:31 PM) 
+(11/13/2024 1:18:31 PM)    Start: 0
+(11/13/2024 1:18:31 PM)    Stop: 86400
+(11/13/2024 1:18:33 PM) Set Variable: LEO.LEO2Missiles.Strand_Access.Duration.Mean + output value: 414.29681497701
+(11/13/2024 1:18:33 PM) >SetUnits / UTCG
+(11/13/2024 1:18:33 PM) 
+(11/13/2024 1:18:33 PM) IAgStkObjectRoot.BeginUpdate()
+(11/13/2024 1:18:33 PM) IAgStkObjectRoot.EndUpdate()
+(11/13/2024 1:18:33 PM) >GetDirectory / Scenario
+(11/13/2024 1:18:33 PM) C:\Users\brigh\TAMU Programming\Fall 2024\Aero 401\HYPERION\LEO\
+(11/13/2024 1:49:40 PM) 
+(11/13/2024 1:49:40 PM) --- 11/13/2024 1:49:40 PM
+(11/13/2024 1:49:40 PM) --- Exiting STK Plug-In
+(11/13/2024 1:49:40 PM) 
+(11/13/2024 1:49:40 PM) Running Macro: AnalyzerEnd
+(11/13/2024 1:49:40 PM) Running Macro: End
+(11/13/2024 1:49:40 PM) 
+(11/13/2024 1:49:40 PM) --- 11/13/2024 1:49:40 PM
+(11/13/2024 1:49:40 PM) --- Exiting Analyzer
+(11/13/2024 1:49:40 PM) 

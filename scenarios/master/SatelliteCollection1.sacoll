@@ -1,0 +1,871 @@
+stk.v.12.0
+WrittenBy    STK_v12.9.0
+
+BEGIN SatelliteCollection
+
+Name		 SatelliteCollection1
+
+BEGIN DefinitionData
+    StartTime		 10 Nov 2024 18:00:00.000000
+    StopTime		 11 Nov 2024 18:00:00.000000
+    SmartInterval		
+    BEGIN EVENTINTERVAL
+        EventInterval		
+        BEGIN EVENTINTERVAL
+            Type		 EVENTINTERVAL_LINKTO
+            Name		 AnalysisInterval
+            AbsolutePath		 Scenario
+        END EVENTINTERVAL
+        IntervalState		 Implicit
+    END EVENTINTERVAL
+
+    CentralBody		 Earth
+    BEGIN Walker
+        AutoSubsets		 ShellsAndPlanes
+        NumShells		 2
+        BEGIN Shell
+            Name		 "LEO"
+            Type		 "Delta"
+            NumPlanes		 8
+            NumSatsPerPlane		 4
+            InterPlanePhaseOffset		 1
+            Epoch		 "2024-11-10T18:00:00.000000000"
+            SemimajorAxis		  6.8780000000000000e+06
+            Eccentricity		  0.0000000000000000e+00
+            Inclination		  1.3962634015954636e+00
+            ArgumentOfPerigee		  0.0000000000000000e+00
+            RAAN		  0.0000000000000000e+00
+            MeanAnomaly		  0.0000000000000000e+00
+            ShellPropagator		 J2Perturbation
+            OrbElemCoordSys		 ICRF
+            PropagationCoordSys		 ICRF
+        END Shell
+        BEGIN Shell
+            Name		 "MEO"
+            Type		 "Delta"
+            NumPlanes		 8
+            NumSatsPerPlane		 4
+            InterPlanePhaseOffset		 1
+            Epoch		 "2024-11-10T18:00:00.000000000"
+            SemimajorAxis		  8.3780000000000000e+06
+            Eccentricity		  0.0000000000000000e+00
+            Inclination		  1.3962634015954636e+00
+            ArgumentOfPerigee		  0.0000000000000000e+00
+            RAAN		  0.0000000000000000e+00
+            MeanAnomaly		  0.0000000000000000e+00
+            ShellPropagator		 J2Perturbation
+            OrbElemCoordSys		 ICRF
+            PropagationCoordSys		 ICRF
+        END Shell
+    END Walker
+    NumConstellationEntries		 64
+    MaxNumErrorsToReport		 20
+    UseRoutingFile		 Off
+END DefinitionData
+
+BEGIN TemplateAssociations
+    SaveEntryTemplateAssociations		 Off
+
+    BEGIN Association
+        Subset		 "Shell_LEO"
+        Template		 Satellite/LEOSat
+    END Association
+
+    BEGIN Association
+        Subset		 "Shell_MEO"
+        Template		 Satellite/MEOSat
+    END Association
+
+END TemplateAssociations
+
+
+BEGIN Extensions
+
+    BEGIN ExternData
+    END ExternData
+
+    BEGIN ADFFileData
+    END ADFFileData
+
+    BEGIN Desc
+        BEGIN ShortText
+
+        END ShortText
+        BEGIN LongText
+
+        END LongText
+    END Desc
+
+    BEGIN Crdn
+    END Crdn
+
+    BEGIN Graphics
+        ShowAll		 Yes
+        Hide2D		 No
+        Hide3D		 No
+        ShowMetaDataInPick		 Yes
+        OrbitLinesTimeStep		 60
+        OrbitLinesType		 OnePeriod
+
+        BEGIN SubsetGfx
+            SubsetName		 AllLEOSWIR_Sensors
+            Show		 No
+            Color		 #00ff00
+            ColorAlpha		  1.0000000000000000e+00
+            MarkerStyle		 0
+            ShowMarker		 Yes
+            MarkerPixelSize		  1.0000000000000000e+01
+            ShowLabel		 Yes
+            ShowOrbits		 Yes
+            Font2d		 0
+        END SubsetGfx
+
+
+        BEGIN SubsetGfx
+            SubsetName		 AllLEOSat_Satellites
+            Show		 Yes
+            Color		 #0000ff
+            ColorAlpha		  1.0000000000000000e+00
+            MarkerStyle		 0
+            ShowMarker		 Yes
+            MarkerPixelSize		  1.0000000000000000e+01
+            ShowLabel		 Yes
+            ShowOrbits		 Yes
+            Font2d		 0
+        END SubsetGfx
+
+
+        BEGIN SubsetGfx
+            SubsetName		 AllMEOSWIR_Sensors
+            Show		 No
+            Color		 #00ff00
+            ColorAlpha		  1.0000000000000000e+00
+            MarkerStyle		 0
+            ShowMarker		 Yes
+            MarkerPixelSize		  1.0000000000000000e+01
+            ShowLabel		 Yes
+            ShowOrbits		 Yes
+            Font2d		 0
+        END SubsetGfx
+
+
+        BEGIN SubsetGfx
+            SubsetName		 AllMEOSat_Satellites
+            Show		 Yes
+            Color		 #ff00ff
+            ColorAlpha		  1.0000000000000000e+00
+            MarkerStyle		 0
+            ShowMarker		 Yes
+            MarkerPixelSize		  1.0000000000000000e+01
+            ShowLabel		 Yes
+            ShowOrbits		 Yes
+            Font2d		 0
+        END SubsetGfx
+
+
+        BEGIN SubsetGfx
+            SubsetName		 AllSatellites
+            Show		 No
+            Color		 #ffff00
+            ColorAlpha		  1.0000000000000000e+00
+            MarkerStyle		 0
+            ShowMarker		 Yes
+            MarkerPixelSize		  5.0000000000000000e+00
+            ShowLabel		 No
+            ShowOrbits		 No
+            Font2d		 0
+        END SubsetGfx
+
+
+        BEGIN SubsetGfx
+            SubsetName		 AllSensors
+            Show		 Yes
+            Color		 #00ff00
+            ColorAlpha		  1.0000000000000000e+00
+            MarkerStyle		 0
+            ShowMarker		 Yes
+            MarkerPixelSize		  1.0000000000000000e+01
+            ShowLabel		 No
+            ShowOrbits		 No
+            Font2d		 0
+        END SubsetGfx
+
+
+        BEGIN SubsetGfx
+            SubsetName		 Shell_LEO
+            Show		 No
+            Color		 #ff00ff
+            ColorAlpha		  1.0000000000000000e+00
+            MarkerStyle		 0
+            ShowMarker		 Yes
+            MarkerPixelSize		  5.0000000000000000e+00
+            ShowLabel		 No
+            ShowOrbits		 No
+            Font2d		 0
+        END SubsetGfx
+
+
+        BEGIN SubsetGfx
+            SubsetName		 Shell_LEO_Plane_1
+            Show		 No
+            Color		 #ff00ff
+            ColorAlpha		  1.0000000000000000e+00
+            MarkerStyle		 0
+            ShowMarker		 Yes
+            MarkerPixelSize		  5.0000000000000000e+00
+            ShowLabel		 No
+            ShowOrbits		 No
+            Font2d		 0
+        END SubsetGfx
+
+
+        BEGIN SubsetGfx
+            SubsetName		 Shell_LEO_Plane_2
+            Show		 No
+            Color		 #0000ff
+            ColorAlpha		  1.0000000000000000e+00
+            MarkerStyle		 0
+            ShowMarker		 Yes
+            MarkerPixelSize		  5.0000000000000000e+00
+            ShowLabel		 No
+            ShowOrbits		 No
+            Font2d		 0
+        END SubsetGfx
+
+
+        BEGIN SubsetGfx
+            SubsetName		 Shell_LEO_Plane_3
+            Show		 No
+            Color		 #00ffff
+            ColorAlpha		  1.0000000000000000e+00
+            MarkerStyle		 0
+            ShowMarker		 Yes
+            MarkerPixelSize		  5.0000000000000000e+00
+            ShowLabel		 No
+            ShowOrbits		 No
+            Font2d		 0
+        END SubsetGfx
+
+
+        BEGIN SubsetGfx
+            SubsetName		 Shell_LEO_Plane_4
+            Show		 No
+            Color		 #ffff00
+            ColorAlpha		  1.0000000000000000e+00
+            MarkerStyle		 0
+            ShowMarker		 Yes
+            MarkerPixelSize		  5.0000000000000000e+00
+            ShowLabel		 No
+            ShowOrbits		 No
+            Font2d		 0
+        END SubsetGfx
+
+
+        BEGIN SubsetGfx
+            SubsetName		 Shell_LEO_Plane_5
+            Show		 No
+            Color		 #ffff00
+            ColorAlpha		  1.0000000000000000e+00
+            MarkerStyle		 0
+            ShowMarker		 Yes
+            MarkerPixelSize		  5.0000000000000000e+00
+            ShowLabel		 No
+            ShowOrbits		 No
+            Font2d		 0
+        END SubsetGfx
+
+
+        BEGIN SubsetGfx
+            SubsetName		 Shell_LEO_Plane_6
+            Show		 No
+            Color		 #0000ff
+            ColorAlpha		  1.0000000000000000e+00
+            MarkerStyle		 0
+            ShowMarker		 Yes
+            MarkerPixelSize		  5.0000000000000000e+00
+            ShowLabel		 No
+            ShowOrbits		 No
+            Font2d		 0
+        END SubsetGfx
+
+
+        BEGIN SubsetGfx
+            SubsetName		 Shell_LEO_Plane_7
+            Show		 No
+            Color		 #ffffff
+            ColorAlpha		  1.0000000000000000e+00
+            MarkerStyle		 0
+            ShowMarker		 Yes
+            MarkerPixelSize		  5.0000000000000000e+00
+            ShowLabel		 No
+            ShowOrbits		 No
+            Font2d		 0
+        END SubsetGfx
+
+
+        BEGIN SubsetGfx
+            SubsetName		 Shell_LEO_Plane_8
+            Show		 No
+            Color		 #ff0000
+            ColorAlpha		  1.0000000000000000e+00
+            MarkerStyle		 0
+            ShowMarker		 Yes
+            MarkerPixelSize		  5.0000000000000000e+00
+            ShowLabel		 No
+            ShowOrbits		 No
+            Font2d		 0
+        END SubsetGfx
+
+
+        BEGIN SubsetGfx
+            SubsetName		 Shell_MEO
+            Show		 No
+            Color		 #00ff00
+            ColorAlpha		  1.0000000000000000e+00
+            MarkerStyle		 0
+            ShowMarker		 Yes
+            MarkerPixelSize		  5.0000000000000000e+00
+            ShowLabel		 No
+            ShowOrbits		 No
+            Font2d		 0
+        END SubsetGfx
+
+
+        BEGIN SubsetGfx
+            SubsetName		 Shell_MEO_Plane_1
+            Show		 No
+            Color		 #00ff00
+            ColorAlpha		  1.0000000000000000e+00
+            MarkerStyle		 0
+            ShowMarker		 Yes
+            MarkerPixelSize		  5.0000000000000000e+00
+            ShowLabel		 No
+            ShowOrbits		 No
+            Font2d		 0
+        END SubsetGfx
+
+
+        BEGIN SubsetGfx
+            SubsetName		 Shell_MEO_Plane_2
+            Show		 No
+            Color		 #00ffff
+            ColorAlpha		  1.0000000000000000e+00
+            MarkerStyle		 0
+            ShowMarker		 Yes
+            MarkerPixelSize		  5.0000000000000000e+00
+            ShowLabel		 No
+            ShowOrbits		 No
+            Font2d		 0
+        END SubsetGfx
+
+
+        BEGIN SubsetGfx
+            SubsetName		 Shell_MEO_Plane_3
+            Show		 No
+            Color		 #00ffff
+            ColorAlpha		  1.0000000000000000e+00
+            MarkerStyle		 0
+            ShowMarker		 Yes
+            MarkerPixelSize		  5.0000000000000000e+00
+            ShowLabel		 No
+            ShowOrbits		 No
+            Font2d		 0
+        END SubsetGfx
+
+
+        BEGIN SubsetGfx
+            SubsetName		 Shell_MEO_Plane_4
+            Show		 No
+            Color		 #ff00ff
+            ColorAlpha		  1.0000000000000000e+00
+            MarkerStyle		 0
+            ShowMarker		 Yes
+            MarkerPixelSize		  5.0000000000000000e+00
+            ShowLabel		 No
+            ShowOrbits		 No
+            Font2d		 0
+        END SubsetGfx
+
+
+        BEGIN SubsetGfx
+            SubsetName		 Shell_MEO_Plane_5
+            Show		 No
+            Color		 #ff0000
+            ColorAlpha		  1.0000000000000000e+00
+            MarkerStyle		 0
+            ShowMarker		 Yes
+            MarkerPixelSize		  5.0000000000000000e+00
+            ShowLabel		 No
+            ShowOrbits		 No
+            Font2d		 0
+        END SubsetGfx
+
+
+        BEGIN SubsetGfx
+            SubsetName		 Shell_MEO_Plane_6
+            Show		 No
+            Color		 #ffffff
+            ColorAlpha		  1.0000000000000000e+00
+            MarkerStyle		 0
+            ShowMarker		 Yes
+            MarkerPixelSize		  5.0000000000000000e+00
+            ShowLabel		 No
+            ShowOrbits		 No
+            Font2d		 0
+        END SubsetGfx
+
+
+        BEGIN SubsetGfx
+            SubsetName		 Shell_MEO_Plane_7
+            Show		 No
+            Color		 #00ff00
+            ColorAlpha		  1.0000000000000000e+00
+            MarkerStyle		 0
+            ShowMarker		 Yes
+            MarkerPixelSize		  5.0000000000000000e+00
+            ShowLabel		 No
+            ShowOrbits		 No
+            Font2d		 0
+        END SubsetGfx
+
+
+        BEGIN SubsetGfx
+            SubsetName		 Shell_MEO_Plane_8
+            Show		 No
+            Color		 #ffff00
+            ColorAlpha		  1.0000000000000000e+00
+            MarkerStyle		 0
+            ShowMarker		 Yes
+            MarkerPixelSize		  5.0000000000000000e+00
+            ShowLabel		 No
+            ShowOrbits		 No
+            Font2d		 0
+        END SubsetGfx
+
+    END Graphics
+
+END Extensions
+
+BEGIN SubObjects
+
+    BEGIN Subset
+
+        Name		 AllLEOSat_Satellites
+
+        BEGIN DefinitionData
+            ClassName		 "Satellite"
+            IsAutoGenerated		 True
+            SubsetType		 AllEntries
+            Metadata		 "Name" "LEOSat"
+        END DefinitionData
+
+    END Subset
+
+
+    BEGIN Subset
+
+        Name		 AllLEOSWIR_Sensors
+
+        BEGIN DefinitionData
+            ClassName		 "Sensor"
+            IsAutoGenerated		 True
+            SubsetType		 AllEntries
+            Metadata		 "Name" "LEOSWIR"
+        END DefinitionData
+
+    END Subset
+
+
+    BEGIN Subset
+
+        Name		 AllMEOSat_Satellites
+
+        BEGIN DefinitionData
+            ClassName		 "Satellite"
+            IsAutoGenerated		 True
+            SubsetType		 AllEntries
+            Metadata		 "Name" "MEOSat"
+        END DefinitionData
+
+    END Subset
+
+
+    BEGIN Subset
+
+        Name		 AllMEOSWIR_Sensors
+
+        BEGIN DefinitionData
+            ClassName		 "Sensor"
+            IsAutoGenerated		 True
+            SubsetType		 AllEntries
+            Metadata		 "Name" "MEOSWIR"
+        END DefinitionData
+
+    END Subset
+
+
+    BEGIN Subset
+
+        Name		 AllSatellites
+
+        BEGIN DefinitionData
+            ClassName		 "Satellite"
+            IsAutoGenerated		 True
+            SubsetType		 AllEntries
+        END DefinitionData
+
+    END Subset
+
+
+    BEGIN Subset
+
+        Name		 AllSensors
+
+        BEGIN DefinitionData
+            ClassName		 "Sensor"
+            IsAutoGenerated		 True
+            SubsetType		 AllEntries
+        END DefinitionData
+
+    END Subset
+
+
+    BEGIN Subset
+
+        Name		 Shell_LEO
+
+        BEGIN DefinitionData
+            ClassName		 "Satellite"
+            IsAutoGenerated		 True
+            SubsetType		 CreatedByDefn
+            BEGIN Query
+                StringMatch		 "Shell" Eq "LEO" NoMatchCase Equals
+            END Query
+        END DefinitionData
+
+    END Subset
+
+
+    BEGIN Subset
+
+        Name		 Shell_LEO_Plane_1
+
+        BEGIN DefinitionData
+            ClassName		 "Satellite"
+            IsAutoGenerated		 True
+            SubsetType		 CreatedByDefn
+            BEGIN Query
+                BEGIN AND
+                    StringMatch		 "Shell" Eq "LEO" NoMatchCase Equals
+                    StringMatch		 "Plane" Eq "1" NoMatchCase Equals
+                END AND
+            END Query
+        END DefinitionData
+
+    END Subset
+
+
+    BEGIN Subset
+
+        Name		 Shell_LEO_Plane_2
+
+        BEGIN DefinitionData
+            ClassName		 "Satellite"
+            IsAutoGenerated		 True
+            SubsetType		 CreatedByDefn
+            BEGIN Query
+                BEGIN AND
+                    StringMatch		 "Shell" Eq "LEO" NoMatchCase Equals
+                    StringMatch		 "Plane" Eq "2" NoMatchCase Equals
+                END AND
+            END Query
+        END DefinitionData
+
+    END Subset
+
+
+    BEGIN Subset
+
+        Name		 Shell_LEO_Plane_3
+
+        BEGIN DefinitionData
+            ClassName		 "Satellite"
+            IsAutoGenerated		 True
+            SubsetType		 CreatedByDefn
+            BEGIN Query
+                BEGIN AND
+                    StringMatch		 "Shell" Eq "LEO" NoMatchCase Equals
+                    StringMatch		 "Plane" Eq "3" NoMatchCase Equals
+                END AND
+            END Query
+        END DefinitionData
+
+    END Subset
+
+
+    BEGIN Subset
+
+        Name		 Shell_LEO_Plane_4
+
+        BEGIN DefinitionData
+            ClassName		 "Satellite"
+            IsAutoGenerated		 True
+            SubsetType		 CreatedByDefn
+            BEGIN Query
+                BEGIN AND
+                    StringMatch		 "Shell" Eq "LEO" NoMatchCase Equals
+                    StringMatch		 "Plane" Eq "4" NoMatchCase Equals
+                END AND
+            END Query
+        END DefinitionData
+
+    END Subset
+
+
+    BEGIN Subset
+
+        Name		 Shell_LEO_Plane_5
+
+        BEGIN DefinitionData
+            ClassName		 "Satellite"
+            IsAutoGenerated		 True
+            SubsetType		 CreatedByDefn
+            BEGIN Query
+                BEGIN AND
+                    StringMatch		 "Shell" Eq "LEO" NoMatchCase Equals
+                    StringMatch		 "Plane" Eq "5" NoMatchCase Equals
+                END AND
+            END Query
+        END DefinitionData
+
+    END Subset
+
+
+    BEGIN Subset
+
+        Name		 Shell_LEO_Plane_6
+
+        BEGIN DefinitionData
+            ClassName		 "Satellite"
+            IsAutoGenerated		 True
+            SubsetType		 CreatedByDefn
+            BEGIN Query
+                BEGIN AND
+                    StringMatch		 "Shell" Eq "LEO" NoMatchCase Equals
+                    StringMatch		 "Plane" Eq "6" NoMatchCase Equals
+                END AND
+            END Query
+        END DefinitionData
+
+    END Subset
+
+
+    BEGIN Subset
+
+        Name		 Shell_LEO_Plane_7
+
+        BEGIN DefinitionData
+            ClassName		 "Satellite"
+            IsAutoGenerated		 True
+            SubsetType		 CreatedByDefn
+            BEGIN Query
+                BEGIN AND
+                    StringMatch		 "Shell" Eq "LEO" NoMatchCase Equals
+                    StringMatch		 "Plane" Eq "7" NoMatchCase Equals
+                END AND
+            END Query
+        END DefinitionData
+
+    END Subset
+
+
+    BEGIN Subset
+
+        Name		 Shell_LEO_Plane_8
+
+        BEGIN DefinitionData
+            ClassName		 "Satellite"
+            IsAutoGenerated		 True
+            SubsetType		 CreatedByDefn
+            BEGIN Query
+                BEGIN AND
+                    StringMatch		 "Shell" Eq "LEO" NoMatchCase Equals
+                    StringMatch		 "Plane" Eq "8" NoMatchCase Equals
+                END AND
+            END Query
+        END DefinitionData
+
+    END Subset
+
+
+    BEGIN Subset
+
+        Name		 Shell_MEO
+
+        BEGIN DefinitionData
+            ClassName		 "Satellite"
+            IsAutoGenerated		 True
+            SubsetType		 CreatedByDefn
+            BEGIN Query
+                StringMatch		 "Shell" Eq "MEO" NoMatchCase Equals
+            END Query
+        END DefinitionData
+
+    END Subset
+
+
+    BEGIN Subset
+
+        Name		 Shell_MEO_Plane_1
+
+        BEGIN DefinitionData
+            ClassName		 "Satellite"
+            IsAutoGenerated		 True
+            SubsetType		 CreatedByDefn
+            BEGIN Query
+                BEGIN AND
+                    StringMatch		 "Shell" Eq "MEO" NoMatchCase Equals
+                    StringMatch		 "Plane" Eq "1" NoMatchCase Equals
+                END AND
+            END Query
+        END DefinitionData
+
+    END Subset
+
+
+    BEGIN Subset
+
+        Name		 Shell_MEO_Plane_2
+
+        BEGIN DefinitionData
+            ClassName		 "Satellite"
+            IsAutoGenerated		 True
+            SubsetType		 CreatedByDefn
+            BEGIN Query
+                BEGIN AND
+                    StringMatch		 "Shell" Eq "MEO" NoMatchCase Equals
+                    StringMatch		 "Plane" Eq "2" NoMatchCase Equals
+                END AND
+            END Query
+        END DefinitionData
+
+    END Subset
+
+
+    BEGIN Subset
+
+        Name		 Shell_MEO_Plane_3
+
+        BEGIN DefinitionData
+            ClassName		 "Satellite"
+            IsAutoGenerated		 True
+            SubsetType		 CreatedByDefn
+            BEGIN Query
+                BEGIN AND
+                    StringMatch		 "Shell" Eq "MEO" NoMatchCase Equals
+                    StringMatch		 "Plane" Eq "3" NoMatchCase Equals
+                END AND
+            END Query
+        END DefinitionData
+
+    END Subset
+
+
+    BEGIN Subset
+
+        Name		 Shell_MEO_Plane_4
+
+        BEGIN DefinitionData
+            ClassName		 "Satellite"
+            IsAutoGenerated		 True
+            SubsetType		 CreatedByDefn
+            BEGIN Query
+                BEGIN AND
+                    StringMatch		 "Shell" Eq "MEO" NoMatchCase Equals
+                    StringMatch		 "Plane" Eq "4" NoMatchCase Equals
+                END AND
+            END Query
+        END DefinitionData
+
+    END Subset
+
+
+    BEGIN Subset
+
+        Name		 Shell_MEO_Plane_5
+
+        BEGIN DefinitionData
+            ClassName		 "Satellite"
+            IsAutoGenerated		 True
+            SubsetType		 CreatedByDefn
+            BEGIN Query
+                BEGIN AND
+                    StringMatch		 "Shell" Eq "MEO" NoMatchCase Equals
+                    StringMatch		 "Plane" Eq "5" NoMatchCase Equals
+                END AND
+            END Query
+        END DefinitionData
+
+    END Subset
+
+
+    BEGIN Subset
+
+        Name		 Shell_MEO_Plane_6
+
+        BEGIN DefinitionData
+            ClassName		 "Satellite"
+            IsAutoGenerated		 True
+            SubsetType		 CreatedByDefn
+            BEGIN Query
+                BEGIN AND
+                    StringMatch		 "Shell" Eq "MEO" NoMatchCase Equals
+                    StringMatch		 "Plane" Eq "6" NoMatchCase Equals
+                END AND
+            END Query
+        END DefinitionData
+
+    END Subset
+
+
+    BEGIN Subset
+
+        Name		 Shell_MEO_Plane_7
+
+        BEGIN DefinitionData
+            ClassName		 "Satellite"
+            IsAutoGenerated		 True
+            SubsetType		 CreatedByDefn
+            BEGIN Query
+                BEGIN AND
+                    StringMatch		 "Shell" Eq "MEO" NoMatchCase Equals
+                    StringMatch		 "Plane" Eq "7" NoMatchCase Equals
+                END AND
+            END Query
+        END DefinitionData
+
+    END Subset
+
+
+    BEGIN Subset
+
+        Name		 Shell_MEO_Plane_8
+
+        BEGIN DefinitionData
+            ClassName		 "Satellite"
+            IsAutoGenerated		 True
+            SubsetType		 CreatedByDefn
+            BEGIN Query
+                BEGIN AND
+                    StringMatch		 "Shell" Eq "MEO" NoMatchCase Equals
+                    StringMatch		 "Plane" Eq "8" NoMatchCase Equals
+                END AND
+            END Query
+        END DefinitionData
+
+    END Subset
+
+
+END SubObjects
+END SatelliteCollection
+
