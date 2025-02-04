@@ -26,3 +26,5 @@ print("All 10 missiles added.")
 #     constellation.Objects.AddObject(missile.stk_object)
 
 root.Save()
+
+print("Henry is here.")

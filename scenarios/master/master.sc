@@ -1,5 +1,5 @@
 stk.v.12.0
-WrittenBy    STK_v12.9.0
+WrittenBy    STK_v12.9.1
 BEGIN Scenario
     Name		 master
 
@@ -533,32 +533,7 @@ BEGIN Scenario
                 BEGIN Favorite
                     Type		 Report
                     BaseDir		 Install
-                    Style		 Computed Strands
-                END Favorite
-                BEGIN Favorite
-                    Type		 Graph
-                    BaseDir		 Install
-                    Style		 Number Of Accesses
-                END Favorite
-                BEGIN Favorite
-                    Type		 Report
-                    BaseDir		 Install
-                    Style		 Optimal Strands by Time
-                END Favorite
-                BEGIN Favorite
-                    Type		 Report
-                    BaseDir		 Install
-                    Style		 Valid Paths
-                END Favorite
-                BEGIN Favorite
-                    Type		 Report
-                    BaseDir		 Install
-                    Style		 Individual Object Access
-                END Favorite
-                BEGIN Favorite
-                    Type		 Report
-                    BaseDir		 Install
-                    Style		 Time Ordered Access
+                    Style		 Individual Strand Access
                 END Favorite
                 BEGIN Favorite
                     Type		 Report
@@ -568,7 +543,32 @@ BEGIN Scenario
                 BEGIN Favorite
                     Type		 Report
                     BaseDir		 Install
-                    Style		 Individual Strand Access
+                    Style		 Time Ordered Access
+                END Favorite
+                BEGIN Favorite
+                    Type		 Report
+                    BaseDir		 Install
+                    Style		 Individual Object Access
+                END Favorite
+                BEGIN Favorite
+                    Type		 Report
+                    BaseDir		 Install
+                    Style		 Valid Paths
+                END Favorite
+                BEGIN Favorite
+                    Type		 Report
+                    BaseDir		 Install
+                    Style		 Optimal Strands by Time
+                END Favorite
+                BEGIN Favorite
+                    Type		 Graph
+                    BaseDir		 Install
+                    Style		 Number Of Accesses
+                END Favorite
+                BEGIN Favorite
+                    Type		 Report
+                    BaseDir		 Install
+                    Style		 Computed Strands
                 END Favorite
             END Class
         END ReportFavorites
@@ -1770,6 +1770,13 @@ BEGIN Scenario
 
         BEGIN SpiceExt
             OutputErrorMsgsOnLoad		 No
+            SpiceFile		 "asteroids.bsp"
+            SpiceFile		 "jupiter.bsp"
+            SpiceFile		 "mars.bsp"
+            SpiceFile		 "neptune.bsp"
+            SpiceFile		 "pluto.bsp"
+            SpiceFile		 "saturn.bsp"
+            SpiceFile		 "uranus.bsp"
             SpiceFile		 "planets.bsp"
         END SpiceExt
 
@@ -1782,7 +1789,7 @@ BEGIN Scenario
 
                 StartTime		 3 Feb 2025 06:00:00.000000000
                 EndTime		 4 Feb 2025 06:00:00.000000000
-                CurrentTime		 10 Nov 2024 18:02:51.000000000
+                CurrentTime		 3 Feb 2025 06:00:00.000000000
                 Direction		 Forward
                 UpdateDelta		 3
                 RefreshDelta		 0.010000
