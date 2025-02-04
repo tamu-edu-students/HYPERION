@@ -1,5 +1,5 @@
 stk.v.12.0
-WrittenBy    STK_v12.9.1
+WrittenBy    STK_v12.9.0
 BEGIN Scenario
     Name		 master
 
@@ -533,32 +533,7 @@ BEGIN Scenario
                 BEGIN Favorite
                     Type		 Report
                     BaseDir		 Install
-                    Style		 Individual Strand Access
-                END Favorite
-                BEGIN Favorite
-                    Type		 Report
-                    BaseDir		 Install
-                    Style		 Complete Chain Access
-                END Favorite
-                BEGIN Favorite
-                    Type		 Report
-                    BaseDir		 Install
-                    Style		 Time Ordered Access
-                END Favorite
-                BEGIN Favorite
-                    Type		 Report
-                    BaseDir		 Install
-                    Style		 Individual Object Access
-                END Favorite
-                BEGIN Favorite
-                    Type		 Report
-                    BaseDir		 Install
-                    Style		 Valid Paths
-                END Favorite
-                BEGIN Favorite
-                    Type		 Report
-                    BaseDir		 Install
-                    Style		 Optimal Strands by Time
+                    Style		 Computed Strands
                 END Favorite
                 BEGIN Favorite
                     Type		 Graph
@@ -568,7 +543,32 @@ BEGIN Scenario
                 BEGIN Favorite
                     Type		 Report
                     BaseDir		 Install
-                    Style		 Computed Strands
+                    Style		 Optimal Strands by Time
+                END Favorite
+                BEGIN Favorite
+                    Type		 Report
+                    BaseDir		 Install
+                    Style		 Valid Paths
+                END Favorite
+                BEGIN Favorite
+                    Type		 Report
+                    BaseDir		 Install
+                    Style		 Individual Object Access
+                END Favorite
+                BEGIN Favorite
+                    Type		 Report
+                    BaseDir		 Install
+                    Style		 Time Ordered Access
+                END Favorite
+                BEGIN Favorite
+                    Type		 Report
+                    BaseDir		 Install
+                    Style		 Complete Chain Access
+                END Favorite
+                BEGIN Favorite
+                    Type		 Report
+                    BaseDir		 Install
+                    Style		 Individual Strand Access
                 END Favorite
             END Class
         END ReportFavorites
@@ -1770,13 +1770,6 @@ BEGIN Scenario
 
         BEGIN SpiceExt
             OutputErrorMsgsOnLoad		 No
-            SpiceFile		 "asteroids.bsp"
-            SpiceFile		 "jupiter.bsp"
-            SpiceFile		 "mars.bsp"
-            SpiceFile		 "neptune.bsp"
-            SpiceFile		 "pluto.bsp"
-            SpiceFile		 "saturn.bsp"
-            SpiceFile		 "uranus.bsp"
             SpiceFile		 "planets.bsp"
         END SpiceExt
 
@@ -1789,7 +1782,7 @@ BEGIN Scenario
 
                 StartTime		 3 Feb 2025 06:00:00.000000000
                 EndTime		 4 Feb 2025 06:00:00.000000000
-                CurrentTime		 3 Feb 2025 06:00:00.000000000
+                CurrentTime		 10 Nov 2024 18:02:51.000000000
                 Direction		 Forward
                 UpdateDelta		 3
                 RefreshDelta		 0.010000
@@ -1875,8 +1868,8 @@ BEGIN Scenario
                     BEGIN MapAttributes
                         PrimaryBody		 Earth
                         SecondaryBody		 Sun
-                        CenterLatitude		 -0.2334630350194553
-                        CenterLongitude		 149.1093049125612
+                        CenterLatitude		 -0.1167315175097276
+                        CenterLongitude		 50.21099982781551
                         ProjectionAltitude		 63621860
                         FieldOfView		 35
                         OrthoDisplayDistance		 20000000
@@ -1912,8 +1905,8 @@ BEGIN Scenario
                         UseCloudsFile		 Off
                         BEGIN ZoomLocations
                             BEGIN ZoomLocation
-                                CenterLat		 -0.2334630350194553
-                                CenterLon		 149.1093049125612
+                                CenterLat		 -0.1167315175097276
+                                CenterLon		 50.21099982781551
                                 ZoomWidth		 360
                                 ZoomHeight		 180
                             END ZoomLocation

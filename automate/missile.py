@@ -1,3 +1,4 @@
+import os
 import pandas as pd
 import random
 from geopy.geocoders import Nominatim
@@ -69,6 +70,10 @@ class Missile(STKObjectBase):
         print(f"Mach Number: {self.Mach}")
 
         self.save_dir = save_dir
+
+        if not os.path.exists(self.save_dir):
+            os.makedirs(self.save_dir)
+            print(f"Directory '{self.save_dir}' created successfully.")
 
     def random_city(self, exclude_country=None, exclude_un=False, only_un=False):
         """
@@ -172,7 +177,7 @@ class Missile(STKObjectBase):
                 file.write(f"  City: {self.launch_site.get_city()}\n")
             except UnicodeEncodeError:
                 file.write(f"  City: Unavailable")
-                
+
             file.write(f"  Country: {self.launch_site.get_country()}\n")
             file.write(f"Target Site:\n")
             file.write(f"  Latitude: {self.target_site.get_lat()}\n")
