@@ -14,7 +14,7 @@ else:
     print("No scenario is currently open.")
 
 missiles = []
-for i in range(1):
+for i in range(5):
     missile_name = f"Missile{i+1}"
     missile = Missile(root, name=missile_name)
     missile.add()  # Add the missile to the STK scenario
@@ -25,3 +25,4 @@ print("All 10 missiles added.")
 # for missile in missiles:
 #     constellation.Objects.AddObject(missile.stk_object)
 
+root.Save()

@@ -6,9 +6,10 @@ from datetime import datetime, timedelta
 from stkObject import STKObjectBase 
 
 class Site:
-    def __init__(self, lat, lon, country):
+    def __init__(self, lat, lon, city, country):
         self.lat = lat
         self.lon = lon
+        self.city = city
         self.country = country
 
     def get_lat(self):
@@ -16,6 +17,9 @@ class Site:
     
     def get_lon(self):
         return self.lon
+    
+    def get_city(self):
+        return self.city
     
     def get_country(self):
         return self.country
@@ -39,14 +43,14 @@ class Missile(STKObjectBase):
         # Set or generate launch site
         if launch_site is None:
             self.launch_site = self.random_city()
-            print(f"Random Launch Site: {self.launch_site.get_lat(), self.launch_site.get_lon()} in {self.launch_site.get_country()}")
+            print(f"Random Launch Site: {self.launch_site.get_city()}, {self.launch_site.get_country()}")
         else:
             self.launch_site = launch_site
 
         # Set or generate target site in a different country
         if target_site is None:
             self.target_site = self.random_city(exclude_country=self.launch_site_country())
-            print(f"Random Target Site: {self.target_site.get_lat(), self.target_site.get_lon()} in {self.target_site.get_country()}")
+            print(f"Random Target Site: {self.target_site.get_city()},  {self.target_site.get_country()}")
         else:
             self.target_site = target_site
 
@@ -86,7 +90,7 @@ class Missile(STKObjectBase):
                 city_name = city['name']
                 location = self.geolocator.geocode(city_name)  # Geocode to get coordinates
                 if location:
-                    return Site(location.latitude, location.longitude, country)
+                    return Site(location.latitude, location.longitude, city_name, country)
 
 
     def launch_site_country(self):
@@ -162,10 +166,12 @@ class Missile(STKObjectBase):
             file.write(f"Launch Site:\n")
             file.write(f"  Latitude: {self.launch_site.get_lat()}\n")
             file.write(f"  Longitude: {self.launch_site.get_lon()}\n")
+            file.write(f"  City: {self.launch_site.get_city()}\n")
             file.write(f"  Country: {self.launch_site.get_country()}\n")
             file.write(f"Target Site:\n")
             file.write(f"  Latitude: {self.target_site.get_lat()}\n")
             file.write(f"  Longitude: {self.target_site.get_lon()}\n")
+            file.write(f"  City: {self.target_site.get_city()}\n")
             file.write(f"  Country: {self.target_site.get_country()}\n")
             file.write(f"Launch Time: {self.launch_time}\n")
 
