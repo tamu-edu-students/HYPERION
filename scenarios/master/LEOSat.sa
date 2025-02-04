@@ -1680,8 +1680,8 @@ BEGIN Satellite
             LaunchWindowUseEntireTraj		 Yes
             LaunchWindowTrajMETStart		 0
             LaunchWindowTrajMETStop		 900
-            LaunchWindowStart		 -86400
-            LaunchWindowStop		 -86400
+            LaunchWindowStart		 -7387200
+            LaunchWindowStop		 -7387200
             LaunchMETOffset		 0
             LaunchWindowUseSecEphem		 No 
             LaunchWindowUseScenFolderForSecEphem		 Yes

@@ -42,14 +42,15 @@ class Missile(STKObjectBase):
 
         # Set or generate launch site
         if launch_site is None:
-            self.launch_site = self.random_city()
+            self.launch_site = self.random_city(exclude_un=True)
+            # TODO: Error checking for city
             print(f"Random Launch Site: {self.launch_site.get_city()}, {self.launch_site.get_country()}")
         else:
             self.launch_site = launch_site
 
         # Set or generate target site in a different country
         if target_site is None:
-            self.target_site = self.random_city(exclude_country=self.launch_site_country())
+            self.target_site = self.random_city(exclude_country=self.launch_site_country(), only_un=True)
             print(f"Random Target Site: {self.target_site.get_city()},  {self.target_site.get_country()}")
         else:
             self.target_site = target_site
@@ -64,7 +65,7 @@ class Missile(STKObjectBase):
         print(f"Missile Launch Time: {self.launch_time}")
 
         # Set or generate Mach number
-        self.Mach = Mach if Mach else round(random.uniform(2.5, 10), 2)
+        self.Mach = Mach if Mach else round(random.uniform(5, 15), 2)
         print(f"Mach Number: {self.Mach}")
 
         self.save_dir = save_dir
@@ -81,9 +82,9 @@ class Missile(STKObjectBase):
 
             # Check if we need to exclude UN or non-UN countries
             if exclude_un and country in self.un_countries:
-                continue  # Skip this country if it's in the UN and we're excluding UN countries
+                continue 
             if only_un and country not in self.un_countries:
-                continue  # Skip if we're only looking for UN countries but this country isn't in the UN
+                continue 
 
             # Skip if the city is in the excluded country
             if exclude_country is None or country != exclude_country:
@@ -166,12 +167,22 @@ class Missile(STKObjectBase):
             file.write(f"Launch Site:\n")
             file.write(f"  Latitude: {self.launch_site.get_lat()}\n")
             file.write(f"  Longitude: {self.launch_site.get_lon()}\n")
-            file.write(f"  City: {self.launch_site.get_city()}\n")
+
+            try:
+                file.write(f"  City: {self.launch_site.get_city()}\n")
+            except UnicodeEncodeError:
+                file.write(f"  City: Unavailable")
+                
             file.write(f"  Country: {self.launch_site.get_country()}\n")
             file.write(f"Target Site:\n")
             file.write(f"  Latitude: {self.target_site.get_lat()}\n")
             file.write(f"  Longitude: {self.target_site.get_lon()}\n")
-            file.write(f"  City: {self.target_site.get_city()}\n")
+
+            try:
+                file.write(f"  City: {self.target_site.get_city()}\n")
+            except UnicodeEncodeError:
+                file.write(f"  City: Unavailable")
+
             file.write(f"  Country: {self.target_site.get_country()}\n")
             file.write(f"Launch Time: {self.launch_time}\n")
 

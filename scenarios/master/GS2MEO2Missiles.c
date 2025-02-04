@@ -11,17 +11,17 @@ BEGIN Chain
             MaxStrandDepth		 10
             BEGIN Connections
                 BEGIN ConnectionsForInst
-SatelliteCollection/HYPERION/Subset/AllMEOSWIR_Sensors
-Constellation/Missiles 0 1
+Constellation/GroundStations
+SatelliteCollection/HYPERION/Subset/AllMEOSat_Satellites 0 1
                 END ConnectionsForInst
                 BEGIN ConnectionsForInst
 SatelliteCollection/HYPERION/Subset/AllMEOSat_Satellites
-SatelliteCollection/HYPERION/Subset/AllMEOSWIR_Sensors 0 1
 SatelliteCollection/HYPERION/Subset/AllMEOSat_Satellites 0 1
+SatelliteCollection/HYPERION/Subset/AllMEOSWIR_Sensors 0 1
                 END ConnectionsForInst
                 BEGIN ConnectionsForInst
-Constellation/GroundStations
-SatelliteCollection/HYPERION/Subset/AllMEOSat_Satellites 0 1
+SatelliteCollection/HYPERION/Subset/AllMEOSWIR_Sensors
+Constellation/Missiles 0 1
                 END ConnectionsForInst
             END Connections
         END RoutingData

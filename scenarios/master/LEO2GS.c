@@ -12,8 +12,8 @@ BEGIN Chain
             BEGIN Connections
                 BEGIN ConnectionsForInst
 SatelliteCollection/HYPERION/Subset/AllLEOSat_Satellites
-SatelliteCollection/HYPERION/Subset/AllLEOSat_Satellites 0 3
 Constellation/GroundStations 0 1
+SatelliteCollection/HYPERION/Subset/AllLEOSat_Satellites 0 3
                 END ConnectionsForInst
             END Connections
         END RoutingData

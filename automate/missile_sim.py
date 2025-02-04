@@ -14,7 +14,7 @@ else:
     print("No scenario is currently open.")
 
 missiles = []
-for i in range(5):
+for i in range(10):
     missile_name = f"Missile{i+1}"
     missile = Missile(root, name=missile_name)
     missile.add()  # Add the missile to the STK scenario

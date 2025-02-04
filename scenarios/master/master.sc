@@ -314,8 +314,8 @@ BEGIN Scenario
             LaunchWindowUseEntireTraj		 Yes
             LaunchWindowTrajMETStart		 0
             LaunchWindowTrajMETStop		 900
-            LaunchWindowStart		 0
-            LaunchWindowStop		 86400
+            LaunchWindowStart		 -7300800
+            LaunchWindowStop		 -7214400
             LaunchMETOffset		 0
             LaunchWindowUseSecEphem		 No 
             LaunchWindowUseScenFolderForSecEphem		 Yes
@@ -533,32 +533,7 @@ BEGIN Scenario
                 BEGIN Favorite
                     Type		 Report
                     BaseDir		 Install
-                    Style		 Individual Strand Access
-                END Favorite
-                BEGIN Favorite
-                    Type		 Report
-                    BaseDir		 Install
-                    Style		 Complete Chain Access
-                END Favorite
-                BEGIN Favorite
-                    Type		 Report
-                    BaseDir		 Install
-                    Style		 Time Ordered Access
-                END Favorite
-                BEGIN Favorite
-                    Type		 Report
-                    BaseDir		 Install
-                    Style		 Individual Object Access
-                END Favorite
-                BEGIN Favorite
-                    Type		 Report
-                    BaseDir		 Install
-                    Style		 Valid Paths
-                END Favorite
-                BEGIN Favorite
-                    Type		 Report
-                    BaseDir		 Install
-                    Style		 Optimal Strands by Time
+                    Style		 Computed Strands
                 END Favorite
                 BEGIN Favorite
                     Type		 Graph
@@ -568,7 +543,32 @@ BEGIN Scenario
                 BEGIN Favorite
                     Type		 Report
                     BaseDir		 Install
-                    Style		 Computed Strands
+                    Style		 Optimal Strands by Time
+                END Favorite
+                BEGIN Favorite
+                    Type		 Report
+                    BaseDir		 Install
+                    Style		 Valid Paths
+                END Favorite
+                BEGIN Favorite
+                    Type		 Report
+                    BaseDir		 Install
+                    Style		 Individual Object Access
+                END Favorite
+                BEGIN Favorite
+                    Type		 Report
+                    BaseDir		 Install
+                    Style		 Time Ordered Access
+                END Favorite
+                BEGIN Favorite
+                    Type		 Report
+                    BaseDir		 Install
+                    Style		 Complete Chain Access
+                END Favorite
+                BEGIN Favorite
+                    Type		 Report
+                    BaseDir		 Install
+                    Style		 Individual Strand Access
                 END Favorite
             END Class
         END ReportFavorites
@@ -784,12 +784,6 @@ BEGIN Scenario
         END ExportDataFile
 
         BEGIN Desc
-            BEGIN ShortText
-
-            END ShortText
-            BEGIN LongText
-
-            END LongText
         END Desc
 
         BEGIN RfEnv
@@ -2489,6 +2483,21 @@ BEGIN Scenario
 
     BEGIN SubObjects
 
+        Class Aircraft
+
+            Missile1		
+            Missile10		
+            Missile2		
+            Missile3		
+            Missile4		
+            Missile5		
+            Missile6		
+            Missile7		
+            Missile8		
+            Missile9		
+
+        END Class
+
         Class Chain
 
             GS2LEO2Missiles		
@@ -2550,6 +2559,36 @@ BEGIN Scenario
             Constellation/GroundStations		
             Constellation/Missiles		
             CoverageDefinition/GroundCoverage		
+        END Instance
+        Instance Aircraft/Missile1
+            Aircraft/Missile1		
+        END Instance
+        Instance Aircraft/Missile10
+            Aircraft/Missile10		
+        END Instance
+        Instance Aircraft/Missile2
+            Aircraft/Missile2		
+        END Instance
+        Instance Aircraft/Missile3
+            Aircraft/Missile3		
+        END Instance
+        Instance Aircraft/Missile4
+            Aircraft/Missile4		
+        END Instance
+        Instance Aircraft/Missile5
+            Aircraft/Missile5		
+        END Instance
+        Instance Aircraft/Missile6
+            Aircraft/Missile6		
+        END Instance
+        Instance Aircraft/Missile7
+            Aircraft/Missile7		
+        END Instance
+        Instance Aircraft/Missile8
+            Aircraft/Missile8		
+        END Instance
+        Instance Aircraft/Missile9
+            Aircraft/Missile9		
         END Instance
         Instance Chain/GS2LEO2Missiles
             Chain/GS2LEO2Missiles		
