@@ -3,6 +3,7 @@ import random
 from geopy.geocoders import Nominatim
 from agi.stk12.stkobjects import *
 from datetime import datetime, timedelta
+from stkObject import STKObjectBase 
 
 class Site:
     def __init__(self, lat, lon, country):
@@ -19,18 +20,19 @@ class Site:
     def get_country(self):
         return self.country
 
-class Missile:
-    def __init__(self, root, name, launch_site=None, target_site=None, launch_time=None, Mach=None, cities_file="../data/world-cities.csv"):
+class Missile(STKObjectBase):
+    def __init__(self, root, name, launch_site=None, target_site=None, launch_time=None, Mach=None, cities_file="../data/world-cities.csv", un_countries_file="../data/UN-countries.txt", save_dir="../data/missiles/"):
         """
         Initializes a missile object with launch and target sites, launch time, and maximum Mach number.
         """
-        self.root = root
-        self.name = name
-
-        self.delete()
+        super().__init__(root, name, AgESTKObjectType.eAircraft) 
 
         # Load the cities dataset
         self.cities = pd.read_csv(cities_file)
+
+        # Load the UN countries dataset
+        with open(un_countries_file, 'r') as f:
+            self.un_countries = {line.strip() for line in f}
 
         self.geolocator = Nominatim(user_agent="missile_simulator")
 
@@ -57,18 +59,27 @@ class Missile:
         self.launch_time = launch_time if launch_time else (scenario_start + timedelta(seconds=random.randint(0, int(time_window.total_seconds())))).strftime("%d %b %Y %H:%M:%S.%f")
         print(f"Missile Launch Time: {self.launch_time}")
 
-        # Set or generate maximum Mach number
+        # Set or generate Mach number
         self.Mach = Mach if Mach else round(random.uniform(2.5, 10), 2)
-        print(f"Missile Maximum Mach: {self.Mach}")
+        print(f"Mach Number: {self.Mach}")
 
-    def random_city(self, exclude_country=None):
+        self.save_dir = save_dir
+
+    def random_city(self, exclude_country=None, exclude_un=False, only_un=False):
         """
         Selects a random city from the loaded cities dataset and geocodes it to get coordinates.
+        Allows filtering by non-UN countries for launch sites or UN countries for target sites.
         Ensures the city is not in the excluded country.
         """
         while True:
             city = self.cities.sample().iloc[0]  # Randomly sample a city
             country = city['country']
+
+            # Check if we need to exclude UN or non-UN countries
+            if exclude_un and country in self.un_countries:
+                continue  # Skip this country if it's in the UN and we're excluding UN countries
+            if only_un and country not in self.un_countries:
+                continue  # Skip if we're only looking for UN countries but this country isn't in the UN
 
             # Skip if the city is in the excluded country
             if exclude_country is None or country != exclude_country:
@@ -77,11 +88,25 @@ class Missile:
                 if location:
                     return Site(location.latitude, location.longitude, country)
 
+
     def launch_site_country(self):
         """
         Returns the country of the launch site.
         """
         return self.launch_site.country
+    
+    def get_impact_time(self):
+        """
+        Determines the impact time by retrieving the final waypoint time from the missile's propagated route.
+        """
+        # Access the missile object in STK
+        missile = self.root.CurrentScenario.Children.Item(self.name)
+        route = missile.Route
+
+        # Get the time of the last waypoint (impact time)
+        final_waypoint = route.Waypoints.Item(route.Waypoints.Count - 1)
+        self.impact_time = final_waypoint.Time 
+        print(f"Impact Time for {self.name}: {self.impact_time}")
 
     def add(self):
         """
@@ -119,18 +144,36 @@ class Missile:
 
         # Propagate the route
         route.Propagate()
+
+        self.get_impact_time()
+        self.save()
+
         print(f"Missile {self.name} added to STK.")
 
-    def delete(self):
+    def save(self):
         """
-        Checks if an object with the same name exists in STK and deletes it if found.
+        Saves the missile's details to a text file.
         """
-        try:
-            existing_object = self.root.CurrentScenario.Children.Item(self.name)
-            if existing_object:
-                print(f"Object '{self.name}' already exists. Deleting it...")
-                existing_object.Unload()
-                print(f"Object '{self.name}' deleted.")
-        except Exception:
-            print(f"No existing object named '{self.name}' found.")
-            
+        file_path = f"{self.save_dir + self.name}.txt"
+        with open(file_path, 'w') as file:
+            file.write("Missile Object Details\n")
+            file.write("======================\n")
+            file.write(f"Missile Name: {self.name}\n")
+            file.write(f"Launch Site:\n")
+            file.write(f"  Latitude: {self.launch_site.get_lat()}\n")
+            file.write(f"  Longitude: {self.launch_site.get_lon()}\n")
+            file.write(f"  Country: {self.launch_site.get_country()}\n")
+            file.write(f"Target Site:\n")
+            file.write(f"  Latitude: {self.target_site.get_lat()}\n")
+            file.write(f"  Longitude: {self.target_site.get_lon()}\n")
+            file.write(f"  Country: {self.target_site.get_country()}\n")
+            file.write(f"Launch Time: {self.launch_time}\n")
+
+            if hasattr(self, 'impact_time'):
+                file.write(f"Impact Time: {self.impact_time}\n")
+            else:
+                file.write("Impact Time: Not determined\n")
+
+            file.write(f"Mach Number: {self.Mach}\n")
+
+        print(f"Missile details saved to {file_path}.")    

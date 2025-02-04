@@ -13,8 +13,15 @@ if root.CurrentScenario is not None:
 else:
     print("No scenario is currently open.")
 
-# Create missile
-missile = Missile(root, name="MissileTest")
-missile.add()
+missiles = []
+for i in range(1):
+    missile_name = f"Missile{i+1}"
+    missile = Missile(root, name=missile_name)
+    missile.add()  # Add the missile to the STK scenario
+    missiles.append(missile)
+print("All 10 missiles added.")
 
-print("MissileTest added.")
+# constellation = root.CurrentScenario.Children.New(AgESTKObjectType.eConstellation, 'Missiles')
+# for missile in missiles:
+#     constellation.Objects.AddObject(missile.stk_object)
+
