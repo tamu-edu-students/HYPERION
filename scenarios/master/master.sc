@@ -5,10 +5,10 @@ BEGIN Scenario
 
     BEGIN Epoch
 
-        Epoch		 10 Nov 2024 18:00:00.000000000
+        Epoch		 3 Feb 2025 06:00:00.000000000
         SmartEpoch		
         BEGIN EVENT
-            Epoch		 10 Nov 2024 18:00:00.000000000
+            Epoch		 3 Feb 2025 06:00:00.000000000
             EventEpoch		
             BEGIN EVENT
                 Type		 EVENT_LINKTO
@@ -22,21 +22,15 @@ BEGIN Scenario
 
     BEGIN Interval
 
-        Start		 10 Nov 2024 18:00:00.000000000
-        Stop		 11 Nov 2024 18:00:00.000000000
+        Start		 3 Feb 2025 06:00:00.000000000
+        Stop		 4 Feb 2025 06:00:00.000000000
         SmartInterval		
         BEGIN EVENTINTERVAL
-            StartEvent		
-            BEGIN EVENT
-                Epoch		 10 Nov 2024 18:00:00.000000000
-                EpochState		 Explicit
-            END EVENT
-            StopEvent		
-            BEGIN EVENT
-                Epoch		 11 Nov 2024 18:00:00.000000000
-                EpochState		 Explicit
-            END EVENT
-            IntervalState		 StartStop
+            BEGIN Interval
+                Start		 3 Feb 2025 06:00:00.000000000
+                Stop		 4 Feb 2025 06:00:00.000000000
+            END Interval
+            IntervalState		 Explicit
         END EVENTINTERVAL
 
         EpochUsesAnalStart		 No
@@ -119,7 +113,7 @@ BEGIN Scenario
 
                         BEGIN Intervals
 
-"10 Nov 2024 18:00:00.000000000" "11 Nov 2024 18:00:00.000000000"
+"3 Feb 2025 06:00:00.000000000" "4 Feb 2025 06:00:00.000000000"
                         END Intervals
 
                     END IntervalList
@@ -157,7 +151,7 @@ BEGIN Scenario
 
                         BEGIN Intervals
 
-"10 Nov 2024 18:00:00.000000000" "11 Nov 2024 18:00:00.000000000"
+"3 Feb 2025 06:00:00.000000000" "4 Feb 2025 06:00:00.000000000"
                         END Intervals
 
                     END IntervalList
@@ -195,7 +189,7 @@ BEGIN Scenario
 
                         BEGIN Intervals
 
-"10 Nov 2024 18:00:00.000000000" "11 Nov 2024 18:00:00.000000000"
+"3 Feb 2025 06:00:00.000000000" "4 Feb 2025 06:00:00.000000000"
                         END Intervals
 
                     END IntervalList
@@ -233,7 +227,7 @@ BEGIN Scenario
 
                         BEGIN Intervals
 
-"10 Nov 2024 18:00:00.000000000" "11 Nov 2024 18:00:00.000000000"
+"3 Feb 2025 06:00:00.000000000" "4 Feb 2025 06:00:00.000000000"
                         END Intervals
 
                     END IntervalList
@@ -271,7 +265,7 @@ BEGIN Scenario
 
                         BEGIN Intervals
 
-"10 Nov 2024 18:00:00.000000000" "11 Nov 2024 18:00:00.000000000"
+"3 Feb 2025 06:00:00.000000000" "4 Feb 2025 06:00:00.000000000"
                         END Intervals
 
                     END IntervalList
@@ -539,32 +533,7 @@ BEGIN Scenario
                 BEGIN Favorite
                     Type		 Report
                     BaseDir		 Install
-                    Style		 Computed Strands
-                END Favorite
-                BEGIN Favorite
-                    Type		 Graph
-                    BaseDir		 Install
-                    Style		 Number Of Accesses
-                END Favorite
-                BEGIN Favorite
-                    Type		 Report
-                    BaseDir		 Install
-                    Style		 Optimal Strands by Time
-                END Favorite
-                BEGIN Favorite
-                    Type		 Report
-                    BaseDir		 Install
-                    Style		 Valid Paths
-                END Favorite
-                BEGIN Favorite
-                    Type		 Report
-                    BaseDir		 Install
-                    Style		 Individual Object Access
-                END Favorite
-                BEGIN Favorite
-                    Type		 Report
-                    BaseDir		 Install
-                    Style		 Time Ordered Access
+                    Style		 Individual Strand Access
                 END Favorite
                 BEGIN Favorite
                     Type		 Report
@@ -574,7 +543,32 @@ BEGIN Scenario
                 BEGIN Favorite
                     Type		 Report
                     BaseDir		 Install
-                    Style		 Individual Strand Access
+                    Style		 Time Ordered Access
+                END Favorite
+                BEGIN Favorite
+                    Type		 Report
+                    BaseDir		 Install
+                    Style		 Individual Object Access
+                END Favorite
+                BEGIN Favorite
+                    Type		 Report
+                    BaseDir		 Install
+                    Style		 Valid Paths
+                END Favorite
+                BEGIN Favorite
+                    Type		 Report
+                    BaseDir		 Install
+                    Style		 Optimal Strands by Time
+                END Favorite
+                BEGIN Favorite
+                    Type		 Graph
+                    BaseDir		 Install
+                    Style		 Number Of Accesses
+                END Favorite
+                BEGIN Favorite
+                    Type		 Report
+                    BaseDir		 Install
+                    Style		 Computed Strands
                 END Favorite
             END Class
         END ReportFavorites
@@ -790,6 +784,12 @@ BEGIN Scenario
         END ExportDataFile
 
         BEGIN Desc
+            BEGIN ShortText
+
+            END ShortText
+            BEGIN LongText
+
+            END LongText
         END Desc
 
         BEGIN RfEnv
@@ -1786,8 +1786,8 @@ BEGIN Scenario
 
             BEGIN Animation
 
-                StartTime		 10 Nov 2024 18:00:00.000000000
-                EndTime		 11 Nov 2024 18:00:00.000000000
+                StartTime		 3 Feb 2025 06:00:00.000000000
+                EndTime		 4 Feb 2025 06:00:00.000000000
                 CurrentTime		 10 Nov 2024 18:02:51.000000000
                 Direction		 Forward
                 UpdateDelta		 3
@@ -1874,8 +1874,8 @@ BEGIN Scenario
                     BEGIN MapAttributes
                         PrimaryBody		 Earth
                         SecondaryBody		 Sun
-                        CenterLatitude		 0
-                        CenterLongitude		 -166.0178137315066
+                        CenterLatitude		 -0.2334630350194553
+                        CenterLongitude		 149.1093049125612
                         ProjectionAltitude		 63621860
                         FieldOfView		 35
                         OrthoDisplayDistance		 20000000
@@ -1898,7 +1898,7 @@ BEGIN Scenario
                         ShowImageNames		 Off
                         ImageNameFont		 0
                         Projection		 EquidistantCylindrical
-                        Resolution		 VeryLow
+                        Resolution		 Low
                         CoordinateSys		 ECF
                         UseBackgroundImage		 On
                         UseBingForBackground		 On
@@ -1911,8 +1911,8 @@ BEGIN Scenario
                         UseCloudsFile		 Off
                         BEGIN ZoomLocations
                             BEGIN ZoomLocation
-                                CenterLat		 0
-                                CenterLon		 -166.0178137315066
+                                CenterLat		 -0.2334630350194553
+                                CenterLon		 149.1093049125612
                                 ZoomWidth		 360
                                 ZoomHeight		 180
                             END ZoomLocation
@@ -2090,7 +2090,7 @@ BEGIN Scenario
 
                     BEGIN Style
                         Name		 DefaultWithBing
-                        Time		 0
+                        Time		 -7300800
                         UpdateDelta		 10
 
                         BEGIN MapAttributes
@@ -2277,7 +2277,7 @@ BEGIN Scenario
 
                     BEGIN Style
                         Name		 DefaultWithoutBing
-                        Time		 0
+                        Time		 -7300800
                         UpdateDelta		 10
 
                         BEGIN MapAttributes
@@ -2489,14 +2489,6 @@ BEGIN Scenario
 
     BEGIN SubObjects
 
-        Class Aircraft
-
-            Missile1		
-            Missile2		
-            Missile3		
-
-        END Class
-
         Class Chain
 
             GS2LEO2Missiles		
@@ -2558,18 +2550,6 @@ BEGIN Scenario
             Constellation/GroundStations		
             Constellation/Missiles		
             CoverageDefinition/GroundCoverage		
-        END Instance
-        Instance Aircraft/Missile1
-            Aircraft/Missile1		
-            Constellation/Missiles		
-        END Instance
-        Instance Aircraft/Missile2
-            Aircraft/Missile2		
-            Constellation/Missiles		
-        END Instance
-        Instance Aircraft/Missile3
-            Aircraft/Missile3		
-            Constellation/Missiles		
         END Instance
         Instance Chain/GS2LEO2Missiles
             Chain/GS2LEO2Missiles		

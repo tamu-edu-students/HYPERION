@@ -19,8 +19,8 @@ SatelliteCollection/HYPERION/Subset/AllMEOSat_Satellites 0 1
         Recompute		 No
         LastRequestedToBeComputedInParallel		 No
         IntervalType		 0
-        ComputeIntervalStart		 0
-        ComputeIntervalStop		 86400
+        ComputeIntervalStart		 -7300800
+        ComputeIntervalStop		 -7214400
         ComputeIntervalPtr		
         BEGIN EVENTINTERVAL
             BEGIN Interval

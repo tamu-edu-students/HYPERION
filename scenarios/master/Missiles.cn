@@ -5,9 +5,6 @@ BEGIN Constellation
 
     Name		 Missiles
     BEGIN Definition
-        Object		 Aircraft/Missile1
-        Object		 Aircraft/Missile2
-        Object		 Aircraft/Missile3
         Type		 Constellation
         FromOperator		 Or
         FromOrder		 1
