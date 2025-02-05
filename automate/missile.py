@@ -118,7 +118,7 @@ class Missile(STKObjectBase):
         self.impact_time = final_waypoint.Time 
         print(f"Impact Time for {self.name}: {self.impact_time}")
 
-    def add(self):
+    def loadObject(self):
         """
         Adds the missile as an aircraft object to the STK scenario.
         """
@@ -156,11 +156,11 @@ class Missile(STKObjectBase):
         route.Propagate()
 
         self.get_impact_time()
-        self.save()
+        self.saveObject()
 
         print(f"Missile {self.name} added to STK.")
 
-    def save(self):
+    def saveObject(self):
         """
         Saves the missile's details to a text file.
         """

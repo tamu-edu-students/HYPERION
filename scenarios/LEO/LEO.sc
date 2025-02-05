@@ -92,7 +92,6 @@ BEGIN Scenario
     END StarCollection
 
     BEGIN ScenarioLicenses
-        Module		 stk_engine_runtime
         Module		 stk_mission_air
         Module		 stk_mission_level1
         Module		 stk_mission_level2
@@ -101,44 +100,6 @@ BEGIN Scenario
     END ScenarioLicenses
 
     BEGIN QuickReports
-
-        BEGIN Report
-            Name		 Access Data
-            Type		 Report
-            BaseDir		 Install
-            Style		 Access Data
-            AGIViewer		 Yes
-            Instance		 Chain/Missile1Chain
-            BEGIN TimeData
-                BEGIN Section
-                    SectionNumber		 1
-                    SectionType		 4
-                    ShowIntervals		 No
-                    BEGIN IntervalList
-
-                        DateUnitAbrv		 UTCG
-
-                        BEGIN Intervals
-
-"10 Nov 2024 18:00:00.000000000" "11 Nov 2024 18:00:00.000000000"
-                        END Intervals
-
-                    END IntervalList
-
-                    TimeType		 Interval
-                    SamplingType		 Default
-                    TimeBound		 0
-                END Section
-            END TimeData
-            DisplayOnLoad		 No
-            FrameType		 0
-            DockCircleID		 0
-            DockID		 0
-            WindowRectLeft		 638
-            WindowRectTop		 379
-            WindowRectRight		 2890
-            WindowRectBottom		 1466
-        END Report
 
         BEGIN Report
             Name		 Access Data1
@@ -214,44 +175,6 @@ BEGIN Scenario
             WindowRectTop		 475
             WindowRectRight		 2990
             WindowRectBottom		 1566
-        END Report
-
-        BEGIN Report
-            Name		 Access Data3
-            Type		 Report
-            BaseDir		 Install
-            Style		 Access Data
-            AGIViewer		 Yes
-            Instance		 Chain/Missile1Chain
-            BEGIN TimeData
-                BEGIN Section
-                    SectionNumber		 1
-                    SectionType		 4
-                    ShowIntervals		 No
-                    BEGIN IntervalList
-
-                        DateUnitAbrv		 UTCG
-
-                        BEGIN Intervals
-
-"10 Nov 2024 18:00:00.000000000" "11 Nov 2024 18:00:00.000000000"
-                        END Intervals
-
-                    END IntervalList
-
-                    TimeType		 Interval
-                    SamplingType		 Default
-                    TimeBound		 0
-                END Section
-            END TimeData
-            DisplayOnLoad		 No
-            FrameType		 0
-            DockCircleID		 0
-            DockID		 0
-            WindowRectLeft		 783
-            WindowRectTop		 524
-            WindowRectRight		 3039
-            WindowRectBottom		 1615
         END Report
 
         BEGIN Report
@@ -369,82 +292,6 @@ BEGIN Scenario
         END Report
 
         BEGIN Report
-            Name		 Access Data5
-            Type		 Report
-            BaseDir		 Install
-            Style		 Access Data
-            AGIViewer		 Yes
-            Instance		 Chain/Missile1Chain
-            BEGIN TimeData
-                BEGIN Section
-                    SectionNumber		 1
-                    SectionType		 4
-                    ShowIntervals		 No
-                    BEGIN IntervalList
-
-                        DateUnitAbrv		 UTCG
-
-                        BEGIN Intervals
-
-"10 Nov 2024 18:00:00.000000000" "11 Nov 2024 18:00:00.000000000"
-                        END Intervals
-
-                    END IntervalList
-
-                    TimeType		 Interval
-                    SamplingType		 Default
-                    TimeBound		 0
-                END Section
-            END TimeData
-            DisplayOnLoad		 No
-            FrameType		 0
-            DockCircleID		 0
-            DockID		 0
-            WindowRectLeft		 736
-            WindowRectTop		 477
-            WindowRectRight		 2988
-            WindowRectBottom		 1564
-        END Report
-
-        BEGIN Report
-            Name		 Access Data6
-            Type		 Report
-            BaseDir		 Install
-            Style		 Access Data
-            AGIViewer		 Yes
-            Instance		 Chain/Missile1Chain
-            BEGIN TimeData
-                BEGIN Section
-                    SectionNumber		 1
-                    SectionType		 4
-                    ShowIntervals		 No
-                    BEGIN IntervalList
-
-                        DateUnitAbrv		 UTCG
-
-                        BEGIN Intervals
-
-"10 Nov 2024 18:00:00.000000000" "11 Nov 2024 18:00:00.000000000"
-                        END Intervals
-
-                    END IntervalList
-
-                    TimeType		 Interval
-                    SamplingType		 Default
-                    TimeBound		 0
-                END Section
-            END TimeData
-            DisplayOnLoad		 No
-            FrameType		 0
-            DockCircleID		 0
-            DockID		 0
-            WindowRectLeft		 783
-            WindowRectTop		 524
-            WindowRectRight		 3039
-            WindowRectBottom		 1615
-        END Report
-
-        BEGIN Report
             Name		 Access Data7
             Type		 Report
             BaseDir		 Install
@@ -518,196 +365,6 @@ BEGIN Scenario
             WindowRectTop		 622
             WindowRectRight		 3137
             WindowRectBottom		 1713
-        END Report
-
-        BEGIN Report
-            Name		 Access Data9
-            Type		 Report
-            BaseDir		 Install
-            Style		 Access Data
-            AGIViewer		 Yes
-            Instance		 Chain/Missile1Chain
-            BEGIN TimeData
-                BEGIN Section
-                    SectionNumber		 1
-                    SectionType		 4
-                    ShowIntervals		 No
-                    BEGIN IntervalList
-
-                        DateUnitAbrv		 UTCG
-
-                        BEGIN Intervals
-
-"10 Nov 2024 18:00:00.000000000" "11 Nov 2024 18:00:00.000000000"
-                        END Intervals
-
-                    END IntervalList
-
-                    TimeType		 Interval
-                    SamplingType		 Default
-                    TimeBound		 0
-                END Section
-            END TimeData
-            DisplayOnLoad		 No
-            FrameType		 0
-            DockCircleID		 0
-            DockID		 0
-            WindowRectLeft		 930
-            WindowRectTop		 671
-            WindowRectRight		 3186
-            WindowRectBottom		 1762
-        END Report
-
-        BEGIN Report
-            Name		 Time Ordered Access
-            Type		 Report
-            BaseDir		 Install
-            Style		 Time Ordered Access
-            AGIViewer		 Yes
-            Instance		 Chain/Missile1Chain
-            BEGIN TimeData
-                BEGIN Section
-                    SectionNumber		 1
-                    SectionType		 4
-                    ShowIntervals		 No
-                    BEGIN IntervalList
-
-                        DateUnitAbrv		 UTCG
-
-                        BEGIN Intervals
-
-"10 Nov 2024 18:00:00.000000000" "11 Nov 2024 18:00:00.000000000"
-                        END Intervals
-
-                    END IntervalList
-
-                    TimeType		 Interval
-                    SamplingType		 Default
-                    TimeBound		 0
-                END Section
-            END TimeData
-            DisplayOnLoad		 No
-            FrameType		 0
-            DockCircleID		 0
-            DockID		 0
-            WindowRectLeft		 979
-            WindowRectTop		 720
-            WindowRectRight		 3235
-            WindowRectBottom		 1811
-        END Report
-
-        BEGIN Report
-            Name		 Time Ordered Access1
-            Type		 Report
-            BaseDir		 Install
-            Style		 Time Ordered Access
-            AGIViewer		 Yes
-            Instance		 Chain/Missile1Chain
-            BEGIN TimeData
-                BEGIN Section
-                    SectionNumber		 1
-                    SectionType		 4
-                    ShowIntervals		 No
-                    BEGIN IntervalList
-
-                        DateUnitAbrv		 UTCG
-
-                        BEGIN Intervals
-
-"10 Nov 2024 18:00:00.000000000" "11 Nov 2024 18:00:00.000000000"
-                        END Intervals
-
-                    END IntervalList
-
-                    TimeType		 Interval
-                    SamplingType		 Default
-                    TimeBound		 0
-                END Section
-            END TimeData
-            DisplayOnLoad		 No
-            FrameType		 0
-            DockCircleID		 0
-            DockID		 0
-            WindowRectLeft		 440
-            WindowRectTop		 181
-            WindowRectRight		 2696
-            WindowRectBottom		 1272
-        END Report
-
-        BEGIN Report
-            Name		 Complete Chain Access
-            Type		 Report
-            BaseDir		 Install
-            Style		 Complete Chain Access
-            AGIViewer		 Yes
-            Instance		 Chain/Missile1Chain
-            BEGIN TimeData
-                BEGIN Section
-                    SectionNumber		 1
-                    SectionType		 4
-                    ShowIntervals		 No
-                    BEGIN IntervalList
-
-                        DateUnitAbrv		 UTCG
-
-                        BEGIN Intervals
-
-"10 Nov 2024 18:00:00.000000000" "11 Nov 2024 18:00:00.000000000"
-                        END Intervals
-
-                    END IntervalList
-
-                    TimeType		 Interval
-                    SamplingType		 Default
-                    TimeBound		 0
-                END Section
-            END TimeData
-            DisplayOnLoad		 No
-            FrameType		 0
-            DockCircleID		 0
-            DockID		 0
-            WindowRectLeft		 687
-            WindowRectTop		 428
-            WindowRectRight		 2939
-            WindowRectBottom		 1515
-        END Report
-
-        BEGIN Report
-            Name		 Complete Chain Access1
-            Type		 Report
-            BaseDir		 Install
-            Style		 Complete Chain Access
-            AGIViewer		 Yes
-            Instance		 Chain/Missile1Chain
-            BEGIN TimeData
-                BEGIN Section
-                    SectionNumber		 1
-                    SectionType		 4
-                    ShowIntervals		 No
-                    BEGIN IntervalList
-
-                        DateUnitAbrv		 UTCG
-
-                        BEGIN Intervals
-
-"10 Nov 2024 18:00:00.000000000" "11 Nov 2024 18:00:00.000000000"
-                        END Intervals
-
-                    END IntervalList
-
-                    TimeType		 Interval
-                    SamplingType		 Default
-                    TimeBound		 0
-                END Section
-            END TimeData
-            DisplayOnLoad		 No
-            FrameType		 0
-            DockCircleID		 0
-            DockID		 0
-            WindowRectLeft		 687
-            WindowRectTop		 428
-            WindowRectRight		 2939
-            WindowRectBottom		 1515
         END Report
 
         BEGIN Report
@@ -822,44 +479,6 @@ BEGIN Scenario
             WindowRectTop		 573
             WindowRectRight		 3088
             WindowRectBottom		 1664
-        END Report
-
-        BEGIN Report
-            Name		 Complete Chain Access5
-            Type		 Report
-            BaseDir		 Install
-            Style		 Complete Chain Access
-            AGIViewer		 Yes
-            Instance		 Chain/Missile1Chain
-            BEGIN TimeData
-                BEGIN Section
-                    SectionNumber		 1
-                    SectionType		 4
-                    ShowIntervals		 No
-                    BEGIN IntervalList
-
-                        DateUnitAbrv		 UTCG
-
-                        BEGIN Intervals
-
-"10 Nov 2024 18:00:00.000000000" "11 Nov 2024 18:00:00.000000000"
-                        END Intervals
-
-                    END IntervalList
-
-                    TimeType		 Interval
-                    SamplingType		 Default
-                    TimeBound		 0
-                END Section
-            END TimeData
-            DisplayOnLoad		 No
-            FrameType		 0
-            DockCircleID		 0
-            DockID		 0
-            WindowRectLeft		 687
-            WindowRectTop		 428
-            WindowRectRight		 2939
-            WindowRectBottom		 1515
         END Report
 
         BEGIN Report
@@ -1486,52 +1105,16 @@ BEGIN Scenario
 
         BEGIN ReportFavorites
             BEGIN Class
-                Name		 FigureOfMerit
-                BEGIN Favorite
-                    Type		 Report
-                    BaseDir		 Install
-                    Style		 Grid Stats
-                END Favorite
-                BEGIN Favorite
-                    Type		 Graph
-                    BaseDir		 Install
-                    Style		 GI Point FOM
-                END Favorite
-            END Class
-            BEGIN Class
-                Name		 SatelliteCollection
-                BEGIN Favorite
-                    Type		 Report
-                    BaseDir		 Install
-                    Style		 All Satellites Walker
-                END Favorite
-                BEGIN Favorite
-                    Type		 Report
-                    BaseDir		 Install
-                    Style		 Configuration
-                END Favorite
-            END Class
-            BEGIN Class
                 Name		 Chain
                 BEGIN Favorite
-                    Type		 Graph
-                    BaseDir		 Install
-                    Style		 Individual Strand Access
-                END Favorite
-                BEGIN Favorite
-                    Type		 Graph
+                    Type		 Report
                     BaseDir		 Install
                     Style		 Complete Chain Access
                 END Favorite
                 BEGIN Favorite
                     Type		 Report
                     BaseDir		 Install
-                    Style		 Individual Strand Access
-                END Favorite
-                BEGIN Favorite
-                    Type		 Report
-                    BaseDir		 Install
-                    Style		 Access Data
+                    Style		 Time Ordered Access
                 END Favorite
                 BEGIN Favorite
                     Type		 Graph
@@ -1541,12 +1124,48 @@ BEGIN Scenario
                 BEGIN Favorite
                     Type		 Report
                     BaseDir		 Install
-                    Style		 Time Ordered Access
+                    Style		 Access Data
                 END Favorite
                 BEGIN Favorite
                     Type		 Report
                     BaseDir		 Install
+                    Style		 Individual Strand Access
+                END Favorite
+                BEGIN Favorite
+                    Type		 Graph
+                    BaseDir		 Install
                     Style		 Complete Chain Access
+                END Favorite
+                BEGIN Favorite
+                    Type		 Graph
+                    BaseDir		 Install
+                    Style		 Individual Strand Access
+                END Favorite
+            END Class
+            BEGIN Class
+                Name		 FigureOfMerit
+                BEGIN Favorite
+                    Type		 Graph
+                    BaseDir		 Install
+                    Style		 GI Point FOM
+                END Favorite
+                BEGIN Favorite
+                    Type		 Report
+                    BaseDir		 Install
+                    Style		 Grid Stats
+                END Favorite
+            END Class
+            BEGIN Class
+                Name		 SatelliteCollection
+                BEGIN Favorite
+                    Type		 Report
+                    BaseDir		 Install
+                    Style		 Configuration
+                END Favorite
+                BEGIN Favorite
+                    Type		 Report
+                    BaseDir		 Install
+                    Style		 All Satellites Walker
                 END Favorite
             END Class
         END ReportFavorites
@@ -2837,6 +2456,224 @@ BEGIN Scenario
                 TextShadowStyle		 Dark
                 TextShadowColor		 #000000
                 BingLevelOfDetailScale		 2
+                BEGIN Map
+                    MapNum		 1
+                    TrackingMode		 LatLon
+                    PickEnabled		 On
+                    PanEnabled		 On
+
+                    BEGIN MapAttributes
+                        PrimaryBody		 Earth
+                        SecondaryBody		 Sun
+                        CenterLatitude		 0
+                        CenterLongitude		 0
+                        ProjectionAltitude		 63621860
+                        FieldOfView		 35
+                        OrthoDisplayDistance		 20000000
+                        TransformTrajectory		 On
+                        EquatorialRadius		 6378137
+                        BackgroundColor		 #000000
+                        LatLonLines		 On
+                        LatSpacing		 30
+                        LonSpacing		 30
+                        LatLonLineColor		 #999999
+                        LatLonLineStyle		 2
+                        ShowOrthoDistGrid		 Off
+                        OrthoGridXSpacing		 5
+                        OrthoGridYSpacing		 5
+                        OrthoGridColor		 #ffffff
+                        ShowImageExtents		 Off
+                        ImageExtentLineColor		 #ffffff
+                        ImageExtentLineStyle		 0
+                        ImageExtentLineWidth		 1
+                        ShowImageNames		 Off
+                        ImageNameFont		 0
+                        Projection		 EquidistantCylindrical
+                        Resolution		 Low
+                        CoordinateSys		 ECF
+                        UseBackgroundImage		 On
+                        UseBingForBackground		 On
+                        BingType		 Aerial
+                        BingLogoHorizAlign		 Right
+                        BingLogoVertAlign		 Bottom
+                        BackgroundImageFile		 Basic.bmp
+                        UseNightLights		 Off
+                        NightLightsFactor		 3.5
+                        UseCloudsFile		 Off
+                        BEGIN ZoomLocations
+                            BEGIN ZoomLocation
+                                CenterLat		 0
+                                CenterLon		 0
+                                ZoomWidth		 360
+                                ZoomHeight		 180
+                            END ZoomLocation
+                        END ZoomLocations
+                        UseVarAspectRatio		 No
+                        SwapMapResolution		 Yes
+                        NoneToVLowSwapDist		 2000000
+                        VLowToLowSwapDist		 20000
+                        LowToMediumSwapDist		 10000
+                        MediumToHighSwapDist		 5000
+                        HighToVHighSwapDist		 1000
+                        VHighToSHighSwapDist		 100
+                        BEGIN Axes
+                            DisplayAxes		 no
+                            CoordSys		 CBI
+                            2aryCB		 Sun
+                            Display+x		 yes
+                            Label+x		 yes
+                            Color+x		 #ffffff
+                            Scale+x		 3
+                            Display-x		 yes
+                            Label-x		 yes
+                            Color-x		 #ffffff
+                            Scale-x		 3
+                            Display+y		 yes
+                            Label+y		 yes
+                            Color+y		 #ffffff
+                            Scale+y		 3
+                            Display-y		 yes
+                            Label-y		 yes
+                            Color-y		 #ffffff
+                            Scale-y		 3
+                            Display+z		 yes
+                            Label+z		 yes
+                            Color+z		 #ffffff
+                            Scale+z		 3
+                            Display-z		 yes
+                            Label-z		 yes
+                            Color-z		 #ffffff
+                            Scale-z		 3
+                        END Axes
+
+                    END MapAttributes
+
+                    BEGIN MapList
+                        BEGIN Detail
+                            Alias		 RWDB2_Coastlines
+                            Show		 Yes
+                            Color		 #8fbc8f
+                        END Detail
+                        BEGIN Detail
+                            Alias		 RWDB2_International_Borders
+                            Show		 No
+                            Color		 #8fbc8f
+                        END Detail
+                        BEGIN Detail
+                            Alias		 RWDB2_Islands
+                            Show		 No
+                            Color		 #8fbc8f
+                        END Detail
+                        BEGIN Detail
+                            Alias		 RWDB2_Lakes
+                            Show		 No
+                            Color		 #87cefa
+                        END Detail
+                        BEGIN Detail
+                            Alias		 RWDB2_Provincial_Borders
+                            Show		 No
+                            Color		 #8fbc8f
+                        END Detail
+                        BEGIN Detail
+                            Alias		 RWDB2_Rivers
+                            Show		 No
+                            Color		 #87cefa
+                        END Detail
+                    END MapList
+
+
+                    BEGIN MapAnnotations
+                    END MapAnnotations
+
+                    BEGIN DisplayFlags
+                        ShowLabels		 On
+                        ShowPassLabel		 Off
+                        ShowElsetNum		 Off
+                        ShowGndTracks		 On
+                        ShowGndMarkers		 On
+                        ShowOrbitMarkers		 On
+                        ShowPlanetOrbits		 Off
+                        ShowPlanetCBIPos		 On
+                        ShowPlanetCBILabel		 On
+                        ShowPlanetGndPos		 On
+                        ShowPlanetGndLabel		 On
+                        ShowSensors		 On
+                        ShowWayptMarkers		 Off
+                        ShowWayptTurnMarkers		 Off
+                        ShowOrbits		 On
+                        ShowDtedRegions		 Off
+                        ShowAreaTgtCentroids		 On
+                        ShowToolBar		 On
+                        ShowStatusBar		 On
+                        ShowScrollBars		 On
+                        AllowAnimUpdate		 Off
+                        AccShowLine		 On
+                        AccAnimHigh		 On
+                        AccStatHigh		 On
+                        AccAnimLineLineWidth		  1.0000000000000000e+00
+                        AccAnimLineLineStyle		 0
+                        ShowPrintButton		 On
+                        ShowAnimButtons		 On
+                        ShowAnimModeButtons		 On
+                        ShowZoomMsrButtons		 On
+                        ShowMapCbButton		 Off
+                    END DisplayFlags
+
+                    BEGIN RecordMovie
+                        OutputFormat		 VIDEO
+                        SdfSelected		 No
+                        BaseName		 Frame
+                        Digits		 4
+                        Frame		 0
+                        LastAnimTime		 0
+                        OutputMode		 Normal
+                        HiResAssembly		 Assemble
+                        HRWidth		 6000
+                        HRHeight		 4500
+                        HRDPI		 600
+                        UseSnapInterval		 No
+                        SnapInterval		 0
+                        VideoCodec		 "H264"
+                        Framerate		 30
+                        Bitrate		 10000000
+                    END RecordMovie
+
+
+                    BEGIN TimeDisplay
+                        Show		 0
+                        TextColor		 #ffffff
+                        TextTranslucency		 0
+                        ShowBackground		 0
+                        BackColor		 #4d4d4d
+                        BackTranslucency		 0.4
+                        XPosition		 20
+                        YPosition		 -20
+                    END TimeDisplay
+
+                    BEGIN LightingData
+                        DisplayAltitude		 0
+                        SubsolarPoint		 Off
+                        SubsolarPointColor		 #ffff00
+                        SubsolarPointMarkerStyle		 2
+
+                        ShowUmbraLine		 Off
+                        UmbraLineColor		 #000000
+                        UmbraLineStyle		 0
+                        UmbraLineWidth		 2
+                        FillUmbra		 On
+                        UmbraFillColor		 #000000
+                        ShowSunlightLine		 Off
+                        SunlightLineColor		 #ffff00
+                        SunlightLineStyle		 0
+                        SunlightLineWidth		 2
+                        FillSunlight		 On
+                        SunlightFillColor		 #ffffff
+                        SunlightMinOpacity		 0
+                        SunlightMaxOpacity		 0.2
+                        UmbraMaxOpacity		 0.7
+                        UmbraMinOpacity		 0.4
+                    END LightingData
+                END Map
 
                 BEGIN MapStyles
 
@@ -3248,8 +3085,6 @@ BEGIN Scenario
             Missile1		
             Missile2		
             Missile3		
-            MissileTest		
-            MissileTest1		
 
         END Class
 
@@ -3259,6 +3094,7 @@ BEGIN Scenario
             Missile1Chain		
             Missile2Chain		
             Missile3Chain		
+            MyChain		
 
         END Class
 
@@ -3295,13 +3131,13 @@ BEGIN Scenario
             Chain/Missile1Chain		
             Chain/Missile2Chain		
             Chain/Missile3Chain		
+            Chain/MyChain		
             Constellation/Missiles		
             CoverageDefinition/GroundCoverage		
         END Instance
         Instance Aircraft/Missile1
             Aircraft/Missile1		
             Chain/Missile1Chain		
-            Constellation/Missiles		
         END Instance
         Instance Aircraft/Missile2
             Aircraft/Missile2		
@@ -3312,12 +3148,6 @@ BEGIN Scenario
             Aircraft/Missile3		
             Chain/Missile3Chain		
             Constellation/Missiles		
-        END Instance
-        Instance Aircraft/MissileTest
-            Aircraft/MissileTest		
-        END Instance
-        Instance Aircraft/MissileTest1
-            Aircraft/MissileTest1		
         END Instance
         Instance Chain/LEO2Missiles
             Chain/LEO2Missiles		
@@ -3330,6 +3160,9 @@ BEGIN Scenario
         END Instance
         Instance Chain/Missile3Chain
             Chain/Missile3Chain		
+        END Instance
+        Instance Chain/MyChain
+            Chain/MyChain		
         END Instance
         Instance Constellation/Missiles
             Chain/LEO2Missiles		
@@ -3349,6 +3182,7 @@ BEGIN Scenario
             SatelliteCollection/LEOSats		
         END Instance
         Instance Satellite/LEOSat/Sensor/SWIR
+            Chain/MyChain		
             Satellite/LEOSat/Sensor/SWIR		
             SatelliteCollection/LEOSats		
         END Instance
@@ -3374,7 +3208,6 @@ BEGIN Scenario
         END Instance
         Instance SatelliteCollection/LEOSats/Subset/AllSensors
             Chain/LEO2Missiles		
-            Chain/Missile1Chain		
             Chain/Missile2Chain		
             Chain/Missile3Chain		
             CoverageDefinition/GroundCoverage		

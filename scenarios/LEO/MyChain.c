@@ -3,9 +3,9 @@ WrittenBy    STK_v12.9.0
 
 BEGIN Chain
 
-    Name		 Missile1Chain
+    Name		 MyChain
     BEGIN Definition
-        Object		 Aircraft/Missile1
+        Object		 Satellite/LEOSat/Sensor/SWIR
         Recompute		 Yes
         LastRequestedToBeComputedInParallel		 No
         IntervalType		 0
@@ -34,7 +34,7 @@ BEGIN Chain
         UseLightTimeDelay		 Yes
         DetectEventsUsingSamplesOnly		 No
         UseLoadIntervalFile		 No
-        AllowSameInstInStrands		 No
+        AllowSameInstInStrands		 Yes
         KeepStrandsWithNoIntvls		 No
         CovAssetMode		 Append
         ComputeOptimalPath		 No
@@ -67,8 +67,8 @@ BEGIN Chain
 
             BEGIN Attributes
 
-                StaticColor		 #00ffff
-                AnimationColor		 #ff00ff
+                StaticColor		 #00ff00
+                AnimationColor		 #00ffff
                 OptStrandsRampStartColor		 #00ff00
                 OptStrandsRampEndColor		 #ff0000
                 AnimationLineWidth		 2
