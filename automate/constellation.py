@@ -21,7 +21,7 @@ class Constellation(STKObjectBase):
 
         try:
             # Access the chain object and add the STK object
-            obj_to_add = self.root.CurrentScenario.Children.GetItemByName(obj_name)
+            obj_to_add = self.root.GetObjectFromPath(obj_path)
             if obj_to_add:
                 self.constellation.Objects.Add(obj_path)
                 print(f"Added '{obj_name}' to constellation '{self.name}'.")

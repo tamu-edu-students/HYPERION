@@ -18,18 +18,18 @@ class Chain(STKObjectBase):
         """
         obj_name = obj_path.rsplit('/', 1)[-1]
 
-        self.chain.Objects.Add(obj_path)
-        print(f"Added '{obj_name}' to chain '{self.name}'.")
+        # self.chain.Objects.Add(obj_path)
+        # print(f"Added '{obj_name}' to chain '{self.name}'.")
         
         # TODO: Fix for attached objects
-        # try:
-        #     # Access the chain object and add the STK object
-        #     obj_to_add = self.root.CurrentScenario.Children.GetItemByName(obj_name)
-        #     if obj_to_add:
-        #         self.chain.Objects.Add(obj_path)
-        #         print(f"Added '{obj_name}' to chain '{self.name}'.")
-        # except Exception as e:
-        #     print(f"Error adding '{obj_name}' to chain '{self.name}': {str(e)}")
+        try:
+            # Access the chain object and add the STK object
+            obj_to_add = self.root.GetObjectFromPath(obj_path)
+            if obj_to_add:
+                self.chain.Objects.Add(obj_path)
+                print(f"Added '{obj_name}' to chain '{self.name}'.")
+        except Exception as e:
+            print(f"Error adding '{obj_name}' to chain '{self.name}': {str(e)}")
 
     def computeAccess(self):
         """
