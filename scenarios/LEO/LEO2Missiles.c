@@ -6,15 +6,8 @@ BEGIN Chain
     Name		 LEO2Missiles
     BEGIN Definition
         BEGIN RoutingData
-            StartInst		 SatelliteCollection/LEOSats/Subset/AllSensors
             EndInst		 Constellation/Missiles
             MaxStrandDepth		 10
-            BEGIN Connections
-                BEGIN ConnectionsForInst
-SatelliteCollection/LEOSats/Subset/AllSensors
-Constellation/Missiles 0 1
-                END ConnectionsForInst
-            END Connections
         END RoutingData
         Recompute		 Yes
         LastRequestedToBeComputedInParallel		 No

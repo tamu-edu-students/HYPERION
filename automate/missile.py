@@ -6,6 +6,8 @@ from agi.stk12.stkobjects import *
 from datetime import datetime, timedelta
 from stkObject import STKObjectBase 
 
+COLOR = 255 # Standard Red
+
 class Site:
     def __init__(self, lat, lon, city, country):
         self.lat = lat
@@ -43,7 +45,7 @@ class Missile(STKObjectBase):
 
         # Set or generate launch site
         if launch_site is None:
-            self.launch_site = self.random_city(exclude_un=True)
+            self.launch_site = self.getRandomCity(exclude_un=True)
             # TODO: Error checking for city
             print(f"Random Launch Site: {self.launch_site.get_city()}, {self.launch_site.get_country()}")
         else:
@@ -51,7 +53,7 @@ class Missile(STKObjectBase):
 
         # Set or generate target site in a different country
         if target_site is None:
-            self.target_site = self.random_city(exclude_country=self.launch_site_country(), only_un=True)
+            self.target_site = self.getRandomCity(exclude_country=self.getLaunchCountry(), only_un=True)
             print(f"Random Target Site: {self.target_site.get_city()},  {self.target_site.get_country()}")
         else:
             self.target_site = target_site
@@ -75,7 +77,7 @@ class Missile(STKObjectBase):
             os.makedirs(self.save_dir)
             print(f"Directory '{self.save_dir}' created successfully.")
 
-    def random_city(self, exclude_country=None, exclude_un=False, only_un=False):
+    def getRandomCity(self, exclude_country=None, exclude_un=False, only_un=False):
         """
         Selects a random city from the loaded cities dataset and geocodes it to get coordinates.
         Allows filtering by non-UN countries for launch sites or UN countries for target sites.
@@ -99,13 +101,13 @@ class Missile(STKObjectBase):
                     return Site(location.latitude, location.longitude, city_name, country)
 
 
-    def launch_site_country(self):
+    def getLaunchCountry(self):
         """
         Returns the country of the launch site.
         """
         return self.launch_site.country
     
-    def get_impact_time(self):
+    def getImpactTime(self):
         """
         Determines the impact time by retrieving the final waypoint time from the missile's propagated route.
         """
@@ -152,11 +154,12 @@ class Missile(STKObjectBase):
         waypoint2.Altitude = 0  
         waypoint2.Speed = speed_kmps
 
+        # missile.Graphics.Attributes.Color = COLOR
+
         # Propagate the route
         route.Propagate()
 
-        self.get_impact_time()
-        self.saveObject()
+        self.getImpactTime()
 
         print(f"Missile {self.name} added to STK.")
 

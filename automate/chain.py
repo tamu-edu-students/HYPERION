@@ -12,20 +12,24 @@ class Chain(STKObjectBase):
 
         print(f"Chain '{self.name}' created.")
 
-    def addToChain(self, obj_path):
+    def addToObject(self, obj_path):
         """
         Adds an object by STK path to the chain.
         """
         obj_name = obj_path.rsplit('/', 1)[-1]
 
-        try:
-            # Access the chain object and add the STK object
-            obj_to_add = self.root.CurrentScenario.Children.GetItemByName(obj_name)
-            if obj_to_add:
-                self.chain.Objects.Add(obj_path)
-                print(f"Added '{obj_name}' to chain '{self.name}'.")
-        except Exception as e:
-            print(f"Error adding '{obj_name}' to chain '{self.name}': {str(e)}")
+        self.chain.Objects.Add(obj_path)
+        print(f"Added '{obj_name}' to chain '{self.name}'.")
+        
+        # TODO: Fix for attached objects
+        # try:
+        #     # Access the chain object and add the STK object
+        #     obj_to_add = self.root.CurrentScenario.Children.GetItemByName(obj_name)
+        #     if obj_to_add:
+        #         self.chain.Objects.Add(obj_path)
+        #         print(f"Added '{obj_name}' to chain '{self.name}'.")
+        # except Exception as e:
+        #     print(f"Error adding '{obj_name}' to chain '{self.name}': {str(e)}")
 
     def computeAccess(self):
         """
@@ -45,6 +49,7 @@ class Chain(STKObjectBase):
             return None
 
     def saveObject(self):
-        """TODO: Might be unecessary?
+        """
+        TODO: Might be unecessary?
         """
         return

@@ -40,7 +40,7 @@ class STKObjectBase:
         """
         Creates a new object in STK based on its type.
         """
-        raise NotImplementedError("Subclasses must implement the `addObject` method.")
+        raise NotImplementedError("Subclasses must implement the `loadObject` method.")
     
     def saveObject(self):
         """

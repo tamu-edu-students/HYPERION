@@ -1,36 +1,76 @@
 from agi.stk12.stkobjects import *
-import win32com.client # Interface with open STK window
+from agi.stk12.stkdesktop import STKDesktop # Interface with open STK window
 from missile import Missile
 from chain import Chain
+from satellite import Satellite
+from constellation import Constellation
 
 # Attach to an existing STK instance
-stkApp = win32com.client.GetActiveObject("STK12.Application")
+stk = stk = STKDesktop.AttachToApplication()
 
 # Get the root object to access the scenario
-root = stkApp.Personality2
+root = stk.Root
 
 if root.CurrentScenario is not None:
     print("Connected to scenario:", root.CurrentScenario.InstanceName)
 else:
     print("No scenario is currently open.")
 
-# chain = root.CurrentScenario.Children.New(AgESTKObjectType.eChain, 'MyChain')
-# chain.Objects.Add('Satellite/LEOSat/Sensor/SWIR')
+# Constants
+mu_E = 3.986004415e5 # km^3 / s^2
+r_E = 6.378137e3 # km
+
+### Constellation
+# Classical Elements
+a = 1000 + r_E # km
+e = 0
+Omega_0 = 0 # deg
+i = 82 # deg
+omega = 0 # deg
+M_0 = 0 # deg
+
+# Walker Constellation
+t = 30 # Total number of satellites
+p = 5 # Number of planes
+f = 3 # Phasing factor
+delta_M = (f * 360) / t # Change in mean anomaly for equivalent satellites in neighboring planes (deg)
+sats_per_plane = int(t / p) # Number of sats per plane
+
+# Constellation
+constellation_name = "LEOSats"
+constellation = Constellation(root, name=constellation_name)
+constellation.loadObject()
+
+# # Satellite generation
+# for plane in range(p):
+#     for sat in range(sats_per_plane):
+#         Omega = ((plane / p) * 360) + Omega_0
+#         M = (sat / sats_per_plane) * 360 + delta_M * plane + M_0
+
+#         sat_name = f"Sat_P{plane+1}_S{sat+1}"
+
+#         satellite = Satellite(root, sat_name, a, i, Omega, omega, e, M)
+#         satellite.loadObject()
+
+#         sat_path = satellite.getObjectType() + '/' + sat_name  
+#         constellation.addToObject(sat_path)
+
+constellation_path = constellation.getObjectType() + '/' + constellation_name
 
 for i in range(1):
-    missile_name = f"Missile{i+1}"
-    missile = Missile(root, name=missile_name)
-    missile.loadObject()
-
     chain_name = f"Missile{i+1}Chain"
     chain = Chain(root, name=chain_name)
     chain.loadObject()
+    # chain.addToObject(constellation_path)
+    chain.addToObject("Satellite/LEOSat/Sensor/SWIR")
 
+    missile_name = f"Missile{i+1}"
+    missile = Missile(root, name=missile_name)
+    missile.loadObject()
+    missile.saveObject()
     missile_path = missile.getObjectType() + '/' + missile_name
 
-    chain.addToChain(missile_path)
-#     chain.addToChain('SatelliteCollection/LEOSats/Subset')
-
+    chain.addToObject(missile_path)
 
 
 #     """
@@ -44,6 +84,5 @@ for i in range(1):
 #     Delete the missile"""
     
 # print("All 10 missiles added.")
-
 
 root.Save()

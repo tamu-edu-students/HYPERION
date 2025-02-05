@@ -6,15 +6,8 @@ BEGIN Chain
     Name		 Missile3Chain
     BEGIN Definition
         BEGIN RoutingData
-            StartInst		 SatelliteCollection/LEOSats/Subset/AllSensors
             EndInst		 Aircraft/Missile3
             MaxStrandDepth		 10
-            BEGIN Connections
-                BEGIN ConnectionsForInst
-SatelliteCollection/LEOSats/Subset/AllSensors
-Aircraft/Missile3 0 1
-                END ConnectionsForInst
-            END Connections
         END RoutingData
         Recompute		 No
         LastRequestedToBeComputedInParallel		 No

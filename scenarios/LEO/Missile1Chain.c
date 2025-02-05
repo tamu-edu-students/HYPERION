@@ -5,6 +5,7 @@ BEGIN Chain
 
     Name		 Missile1Chain
     BEGIN Definition
+        Object		 Satellite/LEOSat/Sensor/SWIR
         Object		 Aircraft/Missile1
         Recompute		 Yes
         LastRequestedToBeComputedInParallel		 No
@@ -45,6 +46,11 @@ BEGIN Chain
         OptimalPathLinkCompare		 Min
         OptimalPathStrandCompare		 Min
         OptimalPathCalcScalarIgnoreCommonParentLinks		 Yes
+        BEGIN StrandObjIndexes
+            STKInst		 Satellite/LEOSat/Sensor/SWIR
+            STKInst		 Aircraft/Missile1
+        END StrandObjIndexes
+
         SaveMode		 1
 
     END Definition
@@ -67,8 +73,8 @@ BEGIN Chain
 
             BEGIN Attributes
 
-                StaticColor		 #00ffff
-                AnimationColor		 #ff00ff
+                StaticColor		 #ffff00
+                AnimationColor		 #0000ff
                 OptStrandsRampStartColor		 #00ff00
                 OptStrandsRampEndColor		 #ff0000
                 AnimationLineWidth		 2

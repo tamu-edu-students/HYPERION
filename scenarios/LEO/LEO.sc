@@ -3100,6 +3100,7 @@ BEGIN Scenario
 
         Class Constellation
 
+            LEOSats		
             Missiles		
 
         END Class
@@ -3113,12 +3114,36 @@ BEGIN Scenario
         Class Satellite
 
             LEOSat		
-
-        END Class
-
-        Class SatelliteCollection
-
-            LEOSats		
+            Sat_P1_S1		
+            Sat_P1_S2		
+            Sat_P1_S3		
+            Sat_P1_S4		
+            Sat_P1_S5		
+            Sat_P1_S6		
+            Sat_P2_S1		
+            Sat_P2_S2		
+            Sat_P2_S3		
+            Sat_P2_S4		
+            Sat_P2_S5		
+            Sat_P2_S6		
+            Sat_P3_S1		
+            Sat_P3_S2		
+            Sat_P3_S3		
+            Sat_P3_S4		
+            Sat_P3_S5		
+            Sat_P3_S6		
+            Sat_P4_S1		
+            Sat_P4_S2		
+            Sat_P4_S3		
+            Sat_P4_S4		
+            Sat_P4_S5		
+            Sat_P4_S6		
+            Sat_P5_S1		
+            Sat_P5_S2		
+            Sat_P5_S3		
+            Sat_P5_S4		
+            Sat_P5_S5		
+            Sat_P5_S6		
 
         END Class
 
@@ -3132,6 +3157,7 @@ BEGIN Scenario
             Chain/Missile2Chain		
             Chain/Missile3Chain		
             Chain/MyChain		
+            Constellation/LEOSats		
             Constellation/Missiles		
             CoverageDefinition/GroundCoverage		
         END Instance
@@ -3164,6 +3190,8 @@ BEGIN Scenario
         Instance Chain/MyChain
             Chain/MyChain		
         END Instance
+        Instance Constellation/LEOSats
+        END Instance
         Instance Constellation/Missiles
             Chain/LEO2Missiles		
         END Instance
@@ -3179,63 +3207,101 @@ BEGIN Scenario
         Instance Satellite/LEOSat
             Satellite/LEOSat		
             Satellite/LEOSat/Sensor/SWIR		
-            SatelliteCollection/LEOSats		
         END Instance
         Instance Satellite/LEOSat/Sensor/SWIR
+            Chain/Missile1Chain		
             Chain/MyChain		
             Satellite/LEOSat/Sensor/SWIR		
-            SatelliteCollection/LEOSats		
         END Instance
-        Instance SatelliteCollection/LEOSats
-            SatelliteCollection/LEOSats		
-            SatelliteCollection/LEOSats/Subset/AllLEOSat_Satellites		
-            SatelliteCollection/LEOSats/Subset/AllSatellites		
-            SatelliteCollection/LEOSats/Subset/AllSensors		
-            SatelliteCollection/LEOSats/Subset/Shell_LEO		
-            SatelliteCollection/LEOSats/Subset/Shell_LEO_Equatorial		
-            SatelliteCollection/LEOSats/Subset/Shell_LEO_Equatorial_Plane_1		
-            SatelliteCollection/LEOSats/Subset/Shell_LEO_Plane_1		
-            SatelliteCollection/LEOSats/Subset/Shell_LEO_Plane_2		
-            SatelliteCollection/LEOSats/Subset/Shell_LEO_Plane_3		
-            SatelliteCollection/LEOSats/Subset/Shell_LEO_Plane_4		
-            SatelliteCollection/LEOSats/Subset/Shell_LEO_Plane_5		
+        Instance Satellite/Sat_P1_S1
+            Satellite/Sat_P1_S1		
         END Instance
-        Instance SatelliteCollection/LEOSats/Subset/AllLEOSat_Satellites
-            SatelliteCollection/LEOSats		
+        Instance Satellite/Sat_P1_S2
+            Satellite/Sat_P1_S2		
         END Instance
-        Instance SatelliteCollection/LEOSats/Subset/AllSatellites
-            SatelliteCollection/LEOSats		
+        Instance Satellite/Sat_P1_S3
+            Satellite/Sat_P1_S3		
         END Instance
-        Instance SatelliteCollection/LEOSats/Subset/AllSensors
-            Chain/LEO2Missiles		
-            Chain/Missile2Chain		
-            Chain/Missile3Chain		
-            CoverageDefinition/GroundCoverage		
-            SatelliteCollection/LEOSats		
+        Instance Satellite/Sat_P1_S4
+            Satellite/Sat_P1_S4		
         END Instance
-        Instance SatelliteCollection/LEOSats/Subset/Shell_LEO
-            SatelliteCollection/LEOSats		
+        Instance Satellite/Sat_P1_S5
+            Satellite/Sat_P1_S5		
         END Instance
-        Instance SatelliteCollection/LEOSats/Subset/Shell_LEO_Equatorial
-            SatelliteCollection/LEOSats		
+        Instance Satellite/Sat_P1_S6
+            Satellite/Sat_P1_S6		
         END Instance
-        Instance SatelliteCollection/LEOSats/Subset/Shell_LEO_Equatorial_Plane_1
-            SatelliteCollection/LEOSats		
+        Instance Satellite/Sat_P2_S1
+            Satellite/Sat_P2_S1		
         END Instance
-        Instance SatelliteCollection/LEOSats/Subset/Shell_LEO_Plane_1
-            SatelliteCollection/LEOSats		
+        Instance Satellite/Sat_P2_S2
+            Satellite/Sat_P2_S2		
         END Instance
-        Instance SatelliteCollection/LEOSats/Subset/Shell_LEO_Plane_2
-            SatelliteCollection/LEOSats		
+        Instance Satellite/Sat_P2_S3
+            Satellite/Sat_P2_S3		
         END Instance
-        Instance SatelliteCollection/LEOSats/Subset/Shell_LEO_Plane_3
-            SatelliteCollection/LEOSats		
+        Instance Satellite/Sat_P2_S4
+            Satellite/Sat_P2_S4		
         END Instance
-        Instance SatelliteCollection/LEOSats/Subset/Shell_LEO_Plane_4
-            SatelliteCollection/LEOSats		
+        Instance Satellite/Sat_P2_S5
+            Satellite/Sat_P2_S5		
         END Instance
-        Instance SatelliteCollection/LEOSats/Subset/Shell_LEO_Plane_5
-            SatelliteCollection/LEOSats		
+        Instance Satellite/Sat_P2_S6
+            Satellite/Sat_P2_S6		
+        END Instance
+        Instance Satellite/Sat_P3_S1
+            Satellite/Sat_P3_S1		
+        END Instance
+        Instance Satellite/Sat_P3_S2
+            Satellite/Sat_P3_S2		
+        END Instance
+        Instance Satellite/Sat_P3_S3
+            Satellite/Sat_P3_S3		
+        END Instance
+        Instance Satellite/Sat_P3_S4
+            Satellite/Sat_P3_S4		
+        END Instance
+        Instance Satellite/Sat_P3_S5
+            Satellite/Sat_P3_S5		
+        END Instance
+        Instance Satellite/Sat_P3_S6
+            Satellite/Sat_P3_S6		
+        END Instance
+        Instance Satellite/Sat_P4_S1
+            Satellite/Sat_P4_S1		
+        END Instance
+        Instance Satellite/Sat_P4_S2
+            Satellite/Sat_P4_S2		
+        END Instance
+        Instance Satellite/Sat_P4_S3
+            Satellite/Sat_P4_S3		
+        END Instance
+        Instance Satellite/Sat_P4_S4
+            Satellite/Sat_P4_S4		
+        END Instance
+        Instance Satellite/Sat_P4_S5
+            Satellite/Sat_P4_S5		
+        END Instance
+        Instance Satellite/Sat_P4_S6
+            Satellite/Sat_P4_S6		
+        END Instance
+        Instance Satellite/Sat_P5_S1
+            Satellite/Sat_P5_S1		
+        END Instance
+        Instance Satellite/Sat_P5_S2
+            Satellite/Sat_P5_S2		
+        END Instance
+        Instance Satellite/Sat_P5_S3
+            Satellite/Sat_P5_S3		
+        END Instance
+        Instance Satellite/Sat_P5_S4
+            Satellite/Sat_P5_S4		
+        END Instance
+        Instance Satellite/Sat_P5_S5
+            Satellite/Sat_P5_S5		
+        END Instance
+        Instance Satellite/Sat_P5_S6
+            Satellite/Sat_P5_S6		
         END Instance
     END References
 
