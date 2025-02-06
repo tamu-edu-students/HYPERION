@@ -13,7 +13,7 @@ class Sensor(STKStandaloneObject):
         - sensor_name: The name of the sensor.
         - conic_angle: The conic angle (field of regard) in degrees.
         """
-        super().__init__(root, sensor_name, AgESTKObjectType.eSensor, unload)
+        super().__init__(root, sensor_name, AgESTKObjectType.eSensor, unload=unload)
         self.satellite_name = satellite_name
         self.conic_angle = conic_angle
 

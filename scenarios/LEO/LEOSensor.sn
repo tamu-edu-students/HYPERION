@@ -96,7 +96,7 @@ BEGIN Sensor
                 Show		 Yes
                 LineStyle		 0
                 LineWidth		 1
-                PatternColor		 #ffffff
+                PatternColor		 #0000ff
 
             END Attributes
 
@@ -142,14 +142,14 @@ BEGIN Sensor
                 MatchTolerance		  9.0000000000000000e+01
                 ShowSwath		 No
                 ComputationalMethod		 Numerical
-                Color		 #ffffff
+                Color		 #0000ff
                 LineStyle		 0
                 LineWidth		 1
                 SwathIntervalPtr		
                 BEGIN EVENTINTERVAL
                     BEGIN Interval
-                        Start		 10 Nov 2024 18:00:00.000000000
-                        Stop		 11 Nov 2024 18:00:00.000000000
+                        Start		 3 Feb 2025 06:00:00.000000000
+                        Stop		 4 Feb 2025 06:00:00.000000000
                     END Interval
                     IntervalState		 Explicit
                 END EVENTINTERVAL

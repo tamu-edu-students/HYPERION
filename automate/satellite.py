@@ -23,10 +23,10 @@ class Satellite(STKStandaloneObject):
         super().__init__(root, name, AgESTKObjectType.eSatellite, unload=unload)
         self.a = a
         self.i = i
-        self.Omega = Omega
-        self.omega = omega
+        self.Omega = self._wrapTo360(Omega)
+        self.omega = self._wrapTo360(omega)
         self.e = e
-        self.M = M
+        self.M = self._wrapTo360(M)
 
         # Set the epoch to the scenario start time if not specified
         if epoch is None:
@@ -52,10 +52,10 @@ class Satellite(STKStandaloneObject):
         keplerian.SizeShape.SemiMajorAxis = self.a
         keplerian.SizeShape.Eccentricity = self.e
         keplerian.Orientation.Inclination = self.i
-        keplerian.Orientation.ArgOfPerigee = self._wrapTo360(self.omega)
-        keplerian.Orientation.AscNode.Value = self._wrapTo360(self.Omega)
+        keplerian.Orientation.ArgOfPerigee = self.omega
+        keplerian.Orientation.AscNode.Value = self.Omega
         keplerian.LocationType = AgEClassicalLocation.eLocationMeanAnomaly
-        keplerian.Location.Value = self._wrapTo360(self.M)
+        keplerian.Location.Value = self.M
 
         # Set the coordinate system and epoch
         keplerian.CoordinateSystemType = AgECoordinateSystem.eCoordinateSystemJ2000

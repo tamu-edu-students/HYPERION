@@ -3,11 +3,11 @@
     <Views Type = "Content">
         <ContentView Name = "Scenario Availability">
             <Row ClassName = "Scenario" ComponentName = "AvailabilityIntervals" DisplayName = "LEO AvailabilityIntervals" IsDefaultName = "True" IsExpanded = "False" IsGroup = "False" IsHidden = "False" Path = "/Application/STK/Scenario/LEO" Type = "IntervalList">
-                <Interval Name = "LEO AvailabilityIntervals" StartTime = "10 Nov 2024 18:00:00.000" StopTime = "11 Nov 2024 18:00:00.000" />
+                <Interval Name = "LEO AvailabilityIntervals" StartTime = "3 Feb 2025 06:00:00.000" StopTime = "4 Feb 2025 06:00:00.000" />
             </Row>
         </ContentView>
     </Views>
     <Views Type = "Time">
-        <TimeView FullViewRulerStartTime = "0.000000" FullViewRulerStopTime = "0.000000" GlobalIntervalComp = "AnalysisInterval" GlobalIntervalCompPath = "/Application/STK/Scenario/LEO" GlobalStartOffset = "0.000000" GlobalStartTime = "10 Nov 2024 18:00:00.000" GlobalStopOffset = "0.000000" GlobalStopTime = "11 Nov 2024 18:00:00.000" MaxFullViewTime = "0.000000" MinFullViewTime = "0.000000" Name = "Scenario Analysis Period" ViewportStartTime = "0.000000" ViewportStopTime = "0.000000" />
+        <TimeView FullViewRulerStartTime = "0.000000" FullViewRulerStopTime = "0.000000" GlobalIntervalComp = "AnalysisInterval" GlobalIntervalCompPath = "/Application/STK/Scenario/LEO" GlobalStartOffset = "0.000000" GlobalStartTime = "3 Feb 2025 06:00:00.000" GlobalStopOffset = "0.000000" GlobalStopTime = "4 Feb 2025 06:00:00.000" MaxFullViewTime = "0.000000" MinFullViewTime = "0.000000" Name = "Scenario Analysis Period" ViewportStartTime = "0.000000" ViewportStopTime = "0.000000" />
     </Views>
 </TimelineLine_Prefs>

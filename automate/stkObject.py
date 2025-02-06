@@ -1,6 +1,5 @@
 from agi.stk12.stkobjects import *
 
-
 class STKObjectBase:
     def __init__(self, root, name, object_type, unload=True):
         self.root = root
@@ -110,6 +109,23 @@ class STKContainerObject(STKObjectBase):
                 print(f"Added '{child_name}' to container '{self.name}'.")
         except Exception as e:
             print(f"Error adding '{child_name}' to container '{self.name}': {str(e)}")
+
+    def removeFromObject(self, child_path):
+        """
+        Removes an object by STK path from the container if it exists.
+        """
+        child_name = child_path.rsplit('/', 1)[-1]
+
+        self._setObjectIdentity()
+
+        try:
+            # Access the container object and remove the STK object using its path
+            obj_to_remove = self.root.GetObjectFromPath(child_path)
+            if obj_to_remove:
+                self.identity.Objects.RemoveObject(obj_to_remove)
+                print(f"Removed '{child_name}' from container '{self.name}'.")
+        except Exception as e:
+            print(f"Error removing '{child_name}' from container '{self.name}': {str(e)}")
 
 class STKStandaloneObject(STKObjectBase):
     def __init__(self, root, name, object_type, unload=True):

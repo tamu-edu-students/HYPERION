@@ -1,0 +1,1411 @@
+stk.v.12.0
+WrittenBy    STK_v12.9.0
+
+BEGIN Aircraft
+
+    Name		 Missile25
+
+    BEGIN VehiclePath
+        CentralBody		 Earth
+
+        BEGIN Interval
+
+            StartTime		 3 Feb 2025 16:17:28.000000000
+            StopTime		 3 Feb 2025 16:29:57.431930042
+
+        END Interval
+
+        StoreEphemeris		 Yes
+        SmoothInterp		 No
+
+        BEGIN GreatArc
+
+            VersionIndicator		 20071204
+            Method		 DetTimeAccFromVel
+
+            ArcSmartInterval		
+            BEGIN EVENTINTERVAL
+                StartEvent		
+                BEGIN EVENT
+                    Epoch		 3 Feb 2025 16:17:28.000000000
+                    EpochState		 Explicit
+                END EVENT
+                StopEvent		
+                BEGIN EVENT
+                    Epoch		 3 Feb 2025 16:17:28.000000000
+                    EpochState		 Explicit
+                END EVENT
+                IntervalState		 StartStop
+            END EVENTINTERVAL
+
+            TimeOfFirstWaypoint		 3 Feb 2025 16:17:28.000000000
+
+            UseScenTime		 No
+            ArcGranularity		  5.7295779513082323e-01
+            DefaultRate		  1.8005555555999999e+02
+            DefaultAltitude		  1.0668000000000000e+04
+            DefaultTurnRadius		  1.1685799999999999e+04
+            AltRef		 MSL
+            AltInterpMethod		 MSLHeight
+            NumberOfWaypoints		 2
+
+            BEGIN Waypoints
+
+                 0.0000000000000000e+00  3.7279933600000000e+01  4.0427511400000000e+01  0.0000000000000000e+00  2.0110416666666667e+03  0.0000000000000000e+00
+                 7.4943193004180648e+02  5.0797097200000010e+01  4.2005186600000009e+01  0.0000000000000000e+00  2.0110416666666667e+03  0.0000000000000000e+00
+
+            END Waypoints
+
+        END GreatArc
+
+    END VehiclePath
+
+    BEGIN Ephemeris
+
+        NumberOfEphemerisPoints		 25
+
+        ScenarioEpoch		 3 Feb 2025 06:00:00.000000
+
+# Epoch in JDate format: 2460709.75000000000000
+# Epoch in YYDDD format:   25034.25000000000000
+
+
+        InterpolationMethod		 GreatArcMSL
+
+        InterpolationSamplesM1		 1
+
+        CentralBody		 Earth
+
+        CoordinateSystem		 Fixed
+
+        BlockingFactor		 20
+
+# Time of first point: 3 Feb 2025 16:17:28.000000000 UTCG = 2460710.17879629629630 JDate = 25034.67879629629630 YYDDD
+
+        EphemerisTimePosVel		
+
+ 3.7048000000000000e+04  3.8679882238549022e+06  3.2951198359064856e+06  3.8421728438607594e+06 -1.0218201824073585e+03 -6.7362272426740583e+02  1.5957457583352666e+03
+ 3.7079238063079458e+04  3.8358801968114157e+06  3.2739165439877831e+06  3.8918322741478095e+06 -1.0338358789787080e+03 -6.8387466696042975e+02  1.5835995075446090e+03
+ 3.7110475124137418e+04  3.8034007058616662e+06  3.2523958140913234e+06  3.9411095913024386e+06 -1.0456632790456786e+03 -6.9398525743412733e+02  1.5713883525051892e+03
+ 3.7141711178579761e+04  3.7705537783398186e+06  3.2305604810561650e+06  3.9900008970779018e+06 -1.0574415056029986e+03 -7.0407321272940464e+02  1.5589698388405091e+03
+ 3.7172946222212973e+04  3.7373405727072232e+06  3.2084109224505364e+06  4.0384992465683422e+06 -1.0691659997938186e+03 -7.1413492703796987e+02  1.5463453546794788e+03
+ 3.7204180251245030e+04  3.7037647348814378e+06  3.1859496414085259e+06  4.0866002690920266e+06 -1.0807361816789839e+03 -7.2408413804555983e+02  1.5336231778732979e+03
+ 3.7235413262286143e+04  3.6698298217947511e+06  3.1631790667545032e+06  4.1342995246974048e+06 -1.0922412740316174e+03 -7.3399746287287667e+02  1.5207055299654219e+03
+ 3.7266645252349314e+04  3.6355377299460704e+06  3.1401001947717918e+06  4.1815906720268182e+06 -1.1036411034432499e+03 -7.4384051950177263e+02  1.5076359578516769e+03
+ 3.7297876218850717e+04  3.6008954683650881e+06  3.1167184362179758e+06  4.2284732716228561e+06 -1.1147925998422215e+03 -7.5348941135509369e+02  1.4945834708647824e+03
+ 3.7329106159609953e+04  3.5659060613529067e+06  3.0930357719964031e+06  4.2749424278586805e+06 -1.1259012816442048e+03 -7.6312167268285486e+02  1.4813102989391195e+03
+ 3.7360335072850081e+04  3.5305745770226615e+06  3.0690559570725928e+06  4.3209957286016820e+06 -1.1368059050971401e+03 -7.7259741258794259e+02  1.4680102715131570e+03
+ 3.7391562957197537e+04  3.4949016950916285e+06  3.0447789359991052e+06  4.3666254121847460e+06 -1.1478223886116962e+03 -7.8219128214310206e+02  1.4542933498474490e+03
+ 3.7422789763143839e+04  3.4588870287851887e+06  3.0202036900883080e+06  4.4118219202830689e+06 -1.1587014604902824e+03 -7.9168710605140575e+02  1.4404620913578676e+03
+ 3.7454015635735275e+04  3.4225383124171458e+06  2.9953363195200590e+06  4.4565864913196275e+06 -1.1693675792440004e+03 -8.0101854569631814e+02  1.4266174466664243e+03
+ 3.7485240429192083e+04  3.3858595318839070e+06  2.9701796055626413e+06  4.5009149401157601e+06 -1.1799181741114496e+03 -8.1027047283398849e+02  1.4126370547045456e+03
+ 3.7516464192287953e+04  3.3488547200350044e+06  2.9447364170212303e+06  4.5448037609694488e+06 -1.1903407345799060e+03 -8.1943186456507135e+02  1.3985381439219402e+03
+ 3.7547686925659000e+04  3.3115274574688976e+06  2.9190092172269253e+06  4.5882487263520295e+06 -1.2006471521464211e+03 -8.2851311320829245e+02  1.3843052489801651e+03
+ 3.7578908630340731e+04  3.2738811419478790e+06  2.8930003077802258e+06  4.6312453458484244e+06 -1.2108517715838748e+03 -8.3752689242728104e+02  1.3699179817721713e+03
+ 3.7610129307766852e+04  3.2359192849805374e+06  2.8667120889601125e+06  4.6737892662426326e+06 -1.2209442851488409e+03 -8.4646415846706930e+02  1.3553900051507192e+03
+ 3.7641348959767900e+04  3.1976449972529253e+06  2.8401466035881178e+06  4.7158755195834767e+06 -1.2309374292415732e+03 -8.5533628940776225e+02  1.3407018543970737e+03
+ 3.7672567588569727e+04  3.1590624798796438e+06  2.8133068599806665e+06  4.7575007162531111e+06 -1.2407683632857515e+03 -8.6408746413327890e+02  1.3259469476816794e+03
+ 3.7703785196791869e+04  3.1201760578703219e+06  2.7861959813793320e+06  4.7986617154577048e+06 -1.2505005075345721e+03 -8.7277397922092644e+02  1.3110311388064333e+03
+ 3.7735001787445733e+04  3.0809888136038473e+06  2.7588159838289586e+06  4.8393534844849817e+06 -1.2601166926956228e+03 -8.8138064072164957e+02  1.2959794257704809e+03
+ 3.7766217363932650e+04  3.0415046649102983e+06  2.7311696265379526e+06  4.8795722456411449e+06 -1.2696061728704851e+03 -8.8989784052499590e+02  1.2808085666123388e+03
+ 3.7797431930041806e+04  3.0017274489816143e+06  2.7032595969848195e+06  4.9193140997636029e+06 -1.2789718802643088e+03 -8.9832818488754583e+02  1.2655141195574513e+03
+
+
+    END Ephemeris
+
+    BEGIN MassProperties
+
+        Mass		  1.0000000000000000e+03
+        InertiaXX		  4.5000000000000000e+03
+        InertiaYX		  0.0000000000000000e+00
+        InertiaYY		  4.5000000000000000e+03
+        InertiaZX		  0.0000000000000000e+00
+        InertiaZY		  0.0000000000000000e+00
+        InertiaZZ		  4.5000000000000000e+03
+
+    END MassProperties
+
+    BEGIN Attitude
+
+        ScenarioEpoch		 3 Feb 2025 06:00:00.000000
+
+        BEGIN Profile
+            Name		 AircraftZDownAtt
+            UserNamed		 No
+            StartTime		  0.0000000000000000e+00
+            BEGIN AircraftZDown
+                Azimuth		  0.0000000000000000e+00
+            END AircraftZDown
+        END Profile
+
+    END Attitude
+
+    BEGIN Swath
+
+        SwathType		 ElevAngle
+        ElevationAngle		  0.0000000000000000e+00
+        HalfAngle		  0.0000000000000000e+00
+        Distance		  0.0000000000000000e+00
+        RepType		 NoSwath
+
+    END Swath
+
+    BEGIN Eclipse
+
+        Sunlight		 Off
+        SunlightLineStyle		 0
+        SunlightLineWidth		 3
+        SunlightMarkerStyle		 18
+
+        Penumbra		 Off
+        PenumbraLineStyle		 0
+        PenumbraLineWidth		 3
+        PenumbraMarkerStyle		 18
+
+        Umbra		 Off
+        UmbraLineStyle		 0
+        UmbraLineWidth		 3
+        UmbraMarkerStyle		 18
+
+        SunlightPenumbraLine		 Off
+        PenumbraUmbraLine		 Off
+
+        SunlightColor		 #ffff00
+        PenumbraColor		 #87cefa
+        UmbraColor		 #0000ff
+
+        ComputeUsingTerrain		 No
+        MaxStepWhenUsingTerrain		 10
+        MaxStepTerrain		 10
+        MaxStepCbShape		 7200
+        UseCustomEclipseBodies		 No
+
+    END Eclipse
+
+    BEGIN LineOfSightModel
+
+        ModelType		 CbShape
+        HeightAboveSurface		  0.0000000000000000e+00
+
+    END LineOfSightModel
+
+
+    BEGIN Extensions
+
+        BEGIN LaserCAT
+        END LaserCAT
+
+        BEGIN ExternData
+        END ExternData
+
+        BEGIN RFI
+        END RFI
+
+        BEGIN ADFFileData
+        END ADFFileData
+
+        BEGIN AccessConstraints
+            LineOfSight IncludeIntervals
+
+            UsePreferredMaxStep No
+            PreferredMaxStep 360
+        END AccessConstraints
+
+        BEGIN ObjectCoverage
+        END ObjectCoverage
+
+        BEGIN Desc
+        END Desc
+
+        BEGIN Atmosphere
+<?xml version = "1.0" standalone = "yes"?>
+<SCOPE>
+    <VAR name = "RFEnvironment">
+        <SCOPE>
+            <VAR name = "PropagationChannel">
+                <SCOPE>
+                    <VAR name = "UseITU618Section2p5">
+                        <BOOL>false</BOOL>
+                    </VAR>
+                    <VAR name = "UseCloudFogModel">
+                        <BOOL>false</BOOL>
+                    </VAR>
+                    <VAR name = "CloudFogModel">
+                        <VAR name = "ITU-R_P840-7">
+                            <SCOPE Class = "LinkEmbedControl">
+                                <VAR name = "ReferenceType">
+                                    <STRING>&quot;Unlinked&quot;</STRING>
+                                </VAR>
+                                <VAR name = "Component">
+                                    <VAR name = "ITU-R_P840-7">
+                                        <SCOPE Class = "CloudFogLossModel">
+                                            <VAR name = "Version">
+                                                <STRING>&quot;1.0.0 a&quot;</STRING>
+                                            </VAR>
+                                            <VAR name = "IdentifierInformation">
+                                                <SCOPE>
+                                                    <VAR name = "Identifier">
+                                                        <STRING>&quot;{E8019043-6013-4747-9B2A-18D8609AF717}&quot;</STRING>
+                                                    </VAR>
+                                                    <VAR name = "Version">
+                                                        <STRING>&quot;1&quot;</STRING>
+                                                    </VAR>
+                                                    <VAR name = "SdfInformation">
+                                                        <SCOPE>
+                                                            <VAR name = "Version">
+                                                                <STRING>&quot;0.0&quot;</STRING>
+                                                            </VAR>
+                                                            <VAR name = "Url">
+                                                                <STRING>&quot;&quot;</STRING>
+                                                            </VAR>
+                                                        </SCOPE>
+                                                    </VAR>
+                                                    <VAR name = "SourceIdentifierInformation">
+                                                        <SCOPE>
+                                                            <VAR name = "Identifier">
+                                                                <STRING>&quot;{E7BA4392-37BE-4446-A5C7-6068165B166A}&quot;</STRING>
+                                                            </VAR>
+                                                            <VAR name = "Version">
+                                                                <STRING>&quot;1&quot;</STRING>
+                                                            </VAR>
+                                                            <VAR name = "SdfInformation">
+                                                                <SCOPE>
+                                                                    <VAR name = "Version">
+                                                                        <STRING>&quot;0.0&quot;</STRING>
+                                                                    </VAR>
+                                                                    <VAR name = "Url">
+                                                                        <STRING>&quot;&quot;</STRING>
+                                                                    </VAR>
+                                                                </SCOPE>
+                                                            </VAR>
+                                                        </SCOPE>
+                                                    </VAR>
+                                                </SCOPE>
+                                            </VAR>
+                                            <VAR name = "ComponentName">
+                                                <STRING>&quot;ITU-R_P840-7&quot;</STRING>
+                                            </VAR>
+                                            <VAR name = "Description">
+                                                <STRING>&quot;ITU-R P840-7&quot;</STRING>
+                                            </VAR>
+                                            <VAR name = "Type">
+                                                <STRING>&quot;ITU-R P840-7&quot;</STRING>
+                                            </VAR>
+                                            <VAR name = "UserComment">
+                                                <STRING>&quot;ITU-R P840-7&quot;</STRING>
+                                            </VAR>
+                                            <VAR name = "ReadOnly">
+                                                <BOOL>false</BOOL>
+                                            </VAR>
+                                            <VAR name = "Clonable">
+                                                <BOOL>true</BOOL>
+                                            </VAR>
+                                            <VAR name = "Category">
+                                                <STRING>&quot;@Top&quot;</STRING>
+                                            </VAR>
+                                            <VAR name = "LiquidWaterDensityValueChoice">
+                                                <STRING>&quot;Liquid Water Content Density Value&quot;</STRING>
+                                            </VAR>
+                                            <VAR name = "CloudCeiling">
+                                                <QUANTITY Dimension = "DistanceUnit" Unit = "m">
+                                                    <REAL>3000</REAL>
+                                                </QUANTITY>
+                                            </VAR>
+                                            <VAR name = "CloudLayerThickness">
+                                                <QUANTITY Dimension = "DistanceUnit" Unit = "m">
+                                                    <REAL>500</REAL>
+                                                </QUANTITY>
+                                            </VAR>
+                                            <VAR name = "CloudTemp">
+                                                <QUANTITY Dimension = "Temperature" Unit = "K">
+                                                    <REAL>273.15</REAL>
+                                                </QUANTITY>
+                                            </VAR>
+                                            <VAR name = "CloudLiqWaterDensity">
+                                                <QUANTITY Dimension = "SmallDensity" Unit = "kg*m^-3">
+                                                    <REAL>0.0001</REAL>
+                                                </QUANTITY>
+                                            </VAR>
+                                            <VAR name = "AnnualAveragePercentValue">
+                                                <QUANTITY Dimension = "Percent" Unit = "unitValue">
+                                                    <REAL>0.01</REAL>
+                                                </QUANTITY>
+                                            </VAR>
+                                            <VAR name = "MonthlyAveragePercentValue">
+                                                <QUANTITY Dimension = "Percent" Unit = "unitValue">
+                                                    <REAL>0.01</REAL>
+                                                </QUANTITY>
+                                            </VAR>
+                                            <VAR name = "LiqWaterAverageDataMonth">
+                                                <INT>1</INT>
+                                            </VAR>
+                                            <VAR name = "UseRainHeightAsCloudThickness">
+                                                <BOOL>false</BOOL>
+                                            </VAR>
+                                        </SCOPE>
+                                    </VAR>
+                                </VAR>
+                            </SCOPE>
+                        </VAR>
+                    </VAR>
+                    <VAR name = "UseTropoScintModel">
+                        <BOOL>false</BOOL>
+                    </VAR>
+                    <VAR name = "TropoScintModel">
+                        <VAR name = "ITU-R_P618-12">
+                            <SCOPE Class = "LinkEmbedControl">
+                                <VAR name = "ReferenceType">
+                                    <STRING>&quot;Unlinked&quot;</STRING>
+                                </VAR>
+                                <VAR name = "Component">
+                                    <VAR name = "ITU-R_P618-12">
+                                        <SCOPE Class = "TropoScintLossModel">
+                                            <VAR name = "Version">
+                                                <STRING>&quot;1.0.0 a&quot;</STRING>
+                                            </VAR>
+                                            <VAR name = "IdentifierInformation">
+                                                <SCOPE>
+                                                    <VAR name = "Identifier">
+                                                        <STRING>&quot;{6CF3A3BE-7AAA-411D-8475-E69C407AD44F}&quot;</STRING>
+                                                    </VAR>
+                                                    <VAR name = "Version">
+                                                        <STRING>&quot;1&quot;</STRING>
+                                                    </VAR>
+                                                    <VAR name = "SdfInformation">
+                                                        <SCOPE>
+                                                            <VAR name = "Version">
+                                                                <STRING>&quot;0.0&quot;</STRING>
+                                                            </VAR>
+                                                            <VAR name = "Url">
+                                                                <STRING>&quot;&quot;</STRING>
+                                                            </VAR>
+                                                        </SCOPE>
+                                                    </VAR>
+                                                    <VAR name = "SourceIdentifierInformation">
+                                                        <SCOPE>
+                                                            <VAR name = "Identifier">
+                                                                <STRING>&quot;{BC27045B-5A54-458E-BF17-702BCFE40CA8}&quot;</STRING>
+                                                            </VAR>
+                                                            <VAR name = "Version">
+                                                                <STRING>&quot;1&quot;</STRING>
+                                                            </VAR>
+                                                            <VAR name = "SdfInformation">
+                                                                <SCOPE>
+                                                                    <VAR name = "Version">
+                                                                        <STRING>&quot;0.0&quot;</STRING>
+                                                                    </VAR>
+                                                                    <VAR name = "Url">
+                                                                        <STRING>&quot;&quot;</STRING>
+                                                                    </VAR>
+                                                                </SCOPE>
+                                                            </VAR>
+                                                        </SCOPE>
+                                                    </VAR>
+                                                </SCOPE>
+                                            </VAR>
+                                            <VAR name = "ComponentName">
+                                                <STRING>&quot;ITU-R_P618-12&quot;</STRING>
+                                            </VAR>
+                                            <VAR name = "Description">
+                                                <STRING>&quot;ITU-R P618-12&quot;</STRING>
+                                            </VAR>
+                                            <VAR name = "Type">
+                                                <STRING>&quot;ITU-R P618-12&quot;</STRING>
+                                            </VAR>
+                                            <VAR name = "UserComment">
+                                                <STRING>&quot;ITU-R P618-12&quot;</STRING>
+                                            </VAR>
+                                            <VAR name = "ReadOnly">
+                                                <BOOL>false</BOOL>
+                                            </VAR>
+                                            <VAR name = "Clonable">
+                                                <BOOL>true</BOOL>
+                                            </VAR>
+                                            <VAR name = "Category">
+                                                <STRING>&quot;@Top&quot;</STRING>
+                                            </VAR>
+                                            <VAR name = "FadeDepthAverageTimeChoice">
+                                                <STRING>&quot;Fade depth for the average year&quot;</STRING>
+                                            </VAR>
+                                            <VAR name = "FadeExceeded">
+                                                <QUANTITY Dimension = "Percent" Unit = "unitValue">
+                                                    <REAL>0.001</REAL>
+                                                </QUANTITY>
+                                            </VAR>
+                                            <VAR name = "PercentTimeRefracGrad">
+                                                <QUANTITY Dimension = "Percent" Unit = "unitValue">
+                                                    <REAL>0.1</REAL>
+                                                </QUANTITY>
+                                            </VAR>
+                                            <VAR name = "SurfaceTemperature">
+                                                <QUANTITY Dimension = "Temperature" Unit = "K">
+                                                    <REAL>273.15</REAL>
+                                                </QUANTITY>
+                                            </VAR>
+                                        </SCOPE>
+                                    </VAR>
+                                </VAR>
+                            </SCOPE>
+                        </VAR>
+                    </VAR>
+                    <VAR name = "UseIonoFadingModel">
+                        <BOOL>false</BOOL>
+                    </VAR>
+                    <VAR name = "IonoFadingModel">
+                        <VAR name = "ITU-R_P531-13">
+                            <SCOPE Class = "LinkEmbedControl">
+                                <VAR name = "ReferenceType">
+                                    <STRING>&quot;Unlinked&quot;</STRING>
+                                </VAR>
+                                <VAR name = "Component">
+                                    <VAR name = "ITU-R_P531-13">
+                                        <SCOPE Class = "IonoFadingLossModel">
+                                            <VAR name = "Version">
+                                                <STRING>&quot;1.0.0 a&quot;</STRING>
+                                            </VAR>
+                                            <VAR name = "IdentifierInformation">
+                                                <SCOPE>
+                                                    <VAR name = "Identifier">
+                                                        <STRING>&quot;{FAFA676C-27A4-4A23-87D0-0CFEEACF50D7}&quot;</STRING>
+                                                    </VAR>
+                                                    <VAR name = "Version">
+                                                        <STRING>&quot;1&quot;</STRING>
+                                                    </VAR>
+                                                    <VAR name = "SdfInformation">
+                                                        <SCOPE>
+                                                            <VAR name = "Version">
+                                                                <STRING>&quot;0.0&quot;</STRING>
+                                                            </VAR>
+                                                            <VAR name = "Url">
+                                                                <STRING>&quot;&quot;</STRING>
+                                                            </VAR>
+                                                        </SCOPE>
+                                                    </VAR>
+                                                    <VAR name = "SourceIdentifierInformation">
+                                                        <SCOPE>
+                                                            <VAR name = "Identifier">
+                                                                <STRING>&quot;{1699891E-9828-41C7-ADD4-4BE20EFC34A8}&quot;</STRING>
+                                                            </VAR>
+                                                            <VAR name = "Version">
+                                                                <STRING>&quot;1&quot;</STRING>
+                                                            </VAR>
+                                                            <VAR name = "SdfInformation">
+                                                                <SCOPE>
+                                                                    <VAR name = "Version">
+                                                                        <STRING>&quot;0.0&quot;</STRING>
+                                                                    </VAR>
+                                                                    <VAR name = "Url">
+                                                                        <STRING>&quot;&quot;</STRING>
+                                                                    </VAR>
+                                                                </SCOPE>
+                                                            </VAR>
+                                                        </SCOPE>
+                                                    </VAR>
+                                                </SCOPE>
+                                            </VAR>
+                                            <VAR name = "ComponentName">
+                                                <STRING>&quot;ITU-R_P531-13&quot;</STRING>
+                                            </VAR>
+                                            <VAR name = "Description">
+                                                <STRING>&quot;ITU-R P531-13&quot;</STRING>
+                                            </VAR>
+                                            <VAR name = "Type">
+                                                <STRING>&quot;ITU-R P531-13&quot;</STRING>
+                                            </VAR>
+                                            <VAR name = "UserComment">
+                                                <STRING>&quot;ITU-R P531-13&quot;</STRING>
+                                            </VAR>
+                                            <VAR name = "ReadOnly">
+                                                <BOOL>false</BOOL>
+                                            </VAR>
+                                            <VAR name = "Clonable">
+                                                <BOOL>true</BOOL>
+                                            </VAR>
+                                            <VAR name = "Category">
+                                                <STRING>&quot;@Top&quot;</STRING>
+                                            </VAR>
+                                            <VAR name = "UseAlternateAPFile">
+                                                <BOOL>false</BOOL>
+                                            </VAR>
+                                            <VAR name = "AlternateAPDataFile">
+                                                <STRING>&quot;&quot;</STRING>
+                                            </VAR>
+                                        </SCOPE>
+                                    </VAR>
+                                </VAR>
+                            </SCOPE>
+                        </VAR>
+                    </VAR>
+                    <VAR name = "UseRainModel">
+                        <BOOL>false</BOOL>
+                    </VAR>
+                    <VAR name = "RainModel">
+                        <VAR name = "ITU-R_P618-13">
+                            <SCOPE Class = "LinkEmbedControl">
+                                <VAR name = "ReferenceType">
+                                    <STRING>&quot;Unlinked&quot;</STRING>
+                                </VAR>
+                                <VAR name = "Component">
+                                    <VAR name = "ITU-R_P618-13">
+                                        <SCOPE Class = "RainLossModel">
+                                            <VAR name = "Version">
+                                                <STRING>&quot;1.0.0 a&quot;</STRING>
+                                            </VAR>
+                                            <VAR name = "IdentifierInformation">
+                                                <SCOPE>
+                                                    <VAR name = "Identifier">
+                                                        <STRING>&quot;{4A937117-6B8A-4145-BA2F-BEC43F11C67E}&quot;</STRING>
+                                                    </VAR>
+                                                    <VAR name = "Version">
+                                                        <STRING>&quot;1&quot;</STRING>
+                                                    </VAR>
+                                                    <VAR name = "SdfInformation">
+                                                        <SCOPE>
+                                                            <VAR name = "Version">
+                                                                <STRING>&quot;0.0&quot;</STRING>
+                                                            </VAR>
+                                                            <VAR name = "Url">
+                                                                <STRING>&quot;&quot;</STRING>
+                                                            </VAR>
+                                                        </SCOPE>
+                                                    </VAR>
+                                                    <VAR name = "SourceIdentifierInformation">
+                                                        <SCOPE>
+                                                            <VAR name = "Identifier">
+                                                                <STRING>&quot;{62382EA0-41C0-45F7-AA94-ACC684509D66}&quot;</STRING>
+                                                            </VAR>
+                                                            <VAR name = "Version">
+                                                                <STRING>&quot;1&quot;</STRING>
+                                                            </VAR>
+                                                            <VAR name = "SdfInformation">
+                                                                <SCOPE>
+                                                                    <VAR name = "Version">
+                                                                        <STRING>&quot;0.0&quot;</STRING>
+                                                                    </VAR>
+                                                                    <VAR name = "Url">
+                                                                        <STRING>&quot;&quot;</STRING>
+                                                                    </VAR>
+                                                                </SCOPE>
+                                                            </VAR>
+                                                        </SCOPE>
+                                                    </VAR>
+                                                </SCOPE>
+                                            </VAR>
+                                            <VAR name = "ComponentName">
+                                                <STRING>&quot;ITU-R_P618-13&quot;</STRING>
+                                            </VAR>
+                                            <VAR name = "Description">
+                                                <STRING>&quot;ITU-R P618-13 rain model&quot;</STRING>
+                                            </VAR>
+                                            <VAR name = "Type">
+                                                <STRING>&quot;ITU-R P618-13&quot;</STRING>
+                                            </VAR>
+                                            <VAR name = "UserComment">
+                                                <STRING>&quot;ITU-R P618-13 rain model&quot;</STRING>
+                                            </VAR>
+                                            <VAR name = "ReadOnly">
+                                                <BOOL>false</BOOL>
+                                            </VAR>
+                                            <VAR name = "Clonable">
+                                                <BOOL>true</BOOL>
+                                            </VAR>
+                                            <VAR name = "Category">
+                                                <STRING>&quot;@Top&quot;</STRING>
+                                            </VAR>
+                                            <VAR name = "SurfaceTemperature">
+                                                <QUANTITY Dimension = "Temperature" Unit = "K">
+                                                    <REAL>273.15</REAL>
+                                                </QUANTITY>
+                                            </VAR>
+                                            <VAR name = "EnableDepolarizationLoss">
+                                                <BOOL>false</BOOL>
+                                            </VAR>
+                                            <VAR name = "EnableITU1510">
+                                                <BOOL>false</BOOL>
+                                            </VAR>
+                                            <VAR name = "UseAnnualITU1510">
+                                                <BOOL>true</BOOL>
+                                            </VAR>
+                                            <VAR name = "ITU1510Month">
+                                                <STRING>&quot;January&quot;</STRING>
+                                            </VAR>
+                                        </SCOPE>
+                                    </VAR>
+                                </VAR>
+                            </SCOPE>
+                        </VAR>
+                    </VAR>
+                    <VAR name = "UseAtmosAbsorptionModel">
+                        <BOOL>false</BOOL>
+                    </VAR>
+                    <VAR name = "AtmosAbsorptionModel">
+                        <VAR name = "ITU-R_P676-9">
+                            <SCOPE Class = "LinkEmbedControl">
+                                <VAR name = "ReferenceType">
+                                    <STRING>&quot;Unlinked&quot;</STRING>
+                                </VAR>
+                                <VAR name = "Component">
+                                    <VAR name = "ITU-R_P676-9">
+                                        <SCOPE Class = "AtmosphericAbsorptionModel">
+                                            <VAR name = "Version">
+                                                <STRING>&quot;1.0.1 a&quot;</STRING>
+                                            </VAR>
+                                            <VAR name = "IdentifierInformation">
+                                                <SCOPE>
+                                                    <VAR name = "Identifier">
+                                                        <STRING>&quot;{8DE79210-E0BA-47DC-A2BC-050E1D71143F}&quot;</STRING>
+                                                    </VAR>
+                                                    <VAR name = "Version">
+                                                        <STRING>&quot;1&quot;</STRING>
+                                                    </VAR>
+                                                    <VAR name = "SdfInformation">
+                                                        <SCOPE>
+                                                            <VAR name = "Version">
+                                                                <STRING>&quot;0.0&quot;</STRING>
+                                                            </VAR>
+                                                            <VAR name = "Url">
+                                                                <STRING>&quot;&quot;</STRING>
+                                                            </VAR>
+                                                        </SCOPE>
+                                                    </VAR>
+                                                    <VAR name = "SourceIdentifierInformation">
+                                                        <SCOPE>
+                                                            <VAR name = "Identifier">
+                                                                <STRING>&quot;{5DBDF434-D4CA-44F6-8097-A6EBF681200D}&quot;</STRING>
+                                                            </VAR>
+                                                            <VAR name = "Version">
+                                                                <STRING>&quot;1&quot;</STRING>
+                                                            </VAR>
+                                                            <VAR name = "SdfInformation">
+                                                                <SCOPE>
+                                                                    <VAR name = "Version">
+                                                                        <STRING>&quot;0.0&quot;</STRING>
+                                                                    </VAR>
+                                                                    <VAR name = "Url">
+                                                                        <STRING>&quot;&quot;</STRING>
+                                                                    </VAR>
+                                                                </SCOPE>
+                                                            </VAR>
+                                                        </SCOPE>
+                                                    </VAR>
+                                                </SCOPE>
+                                            </VAR>
+                                            <VAR name = "ComponentName">
+                                                <STRING>&quot;ITU-R_P676-9&quot;</STRING>
+                                            </VAR>
+                                            <VAR name = "Description">
+                                                <STRING>&quot;ITU-R P676-9 gaseous absorption model&quot;</STRING>
+                                            </VAR>
+                                            <VAR name = "Type">
+                                                <STRING>&quot;ITU-R P676-9&quot;</STRING>
+                                            </VAR>
+                                            <VAR name = "UserComment">
+                                                <STRING>&quot;ITU-R P676-9 gaseous absorption model&quot;</STRING>
+                                            </VAR>
+                                            <VAR name = "ReadOnly">
+                                                <BOOL>false</BOOL>
+                                            </VAR>
+                                            <VAR name = "Clonable">
+                                                <BOOL>true</BOOL>
+                                            </VAR>
+                                            <VAR name = "Category">
+                                                <STRING>&quot;@Top&quot;</STRING>
+                                            </VAR>
+                                            <VAR name = "UseApproxMethod">
+                                                <BOOL>true</BOOL>
+                                            </VAR>
+                                            <VAR name = "UseSeasonalRegional">
+                                                <BOOL>true</BOOL>
+                                            </VAR>
+                                        </SCOPE>
+                                    </VAR>
+                                </VAR>
+                            </SCOPE>
+                        </VAR>
+                    </VAR>
+                    <VAR name = "UseUrbanTerresPropLossModel">
+                        <BOOL>false</BOOL>
+                    </VAR>
+                    <VAR name = "UrbanTerresPropLossModel">
+                        <VAR name = "Two_Ray">
+                            <SCOPE Class = "LinkEmbedControl">
+                                <VAR name = "ReferenceType">
+                                    <STRING>&quot;Unlinked&quot;</STRING>
+                                </VAR>
+                                <VAR name = "Component">
+                                    <VAR name = "Two_Ray">
+                                        <SCOPE Class = "UrbanTerrestrialPropagationLossModel">
+                                            <VAR name = "Version">
+                                                <STRING>&quot;1.0.0 a&quot;</STRING>
+                                            </VAR>
+                                            <VAR name = "IdentifierInformation">
+                                                <SCOPE>
+                                                    <VAR name = "Identifier">
+                                                        <STRING>&quot;{6EC489C2-F064-465E-B160-605A66125912}&quot;</STRING>
+                                                    </VAR>
+                                                    <VAR name = "Version">
+                                                        <STRING>&quot;1&quot;</STRING>
+                                                    </VAR>
+                                                    <VAR name = "SdfInformation">
+                                                        <SCOPE>
+                                                            <VAR name = "Version">
+                                                                <STRING>&quot;0.0&quot;</STRING>
+                                                            </VAR>
+                                                            <VAR name = "Url">
+                                                                <STRING>&quot;&quot;</STRING>
+                                                            </VAR>
+                                                        </SCOPE>
+                                                    </VAR>
+                                                    <VAR name = "SourceIdentifierInformation">
+                                                        <SCOPE>
+                                                            <VAR name = "Identifier">
+                                                                <STRING>&quot;{60FA4C9B-5D74-4743-A449-66CEB6DFC97B}&quot;</STRING>
+                                                            </VAR>
+                                                            <VAR name = "Version">
+                                                                <STRING>&quot;1&quot;</STRING>
+                                                            </VAR>
+                                                            <VAR name = "SdfInformation">
+                                                                <SCOPE>
+                                                                    <VAR name = "Version">
+                                                                        <STRING>&quot;0.0&quot;</STRING>
+                                                                    </VAR>
+                                                                    <VAR name = "Url">
+                                                                        <STRING>&quot;&quot;</STRING>
+                                                                    </VAR>
+                                                                </SCOPE>
+                                                            </VAR>
+                                                        </SCOPE>
+                                                    </VAR>
+                                                </SCOPE>
+                                            </VAR>
+                                            <VAR name = "ComponentName">
+                                                <STRING>&quot;Two_Ray&quot;</STRING>
+                                            </VAR>
+                                            <VAR name = "Description">
+                                                <STRING>&quot;Two Ray (Fourth Power Law) atmospheric absorption model&quot;</STRING>
+                                            </VAR>
+                                            <VAR name = "Type">
+                                                <STRING>&quot;Two Ray&quot;</STRING>
+                                            </VAR>
+                                            <VAR name = "UserComment">
+                                                <STRING>&quot;Two Ray (Fourth Power Law) atmospheric absorption model&quot;</STRING>
+                                            </VAR>
+                                            <VAR name = "ReadOnly">
+                                                <BOOL>false</BOOL>
+                                            </VAR>
+                                            <VAR name = "Clonable">
+                                                <BOOL>true</BOOL>
+                                            </VAR>
+                                            <VAR name = "Category">
+                                                <STRING>&quot;@Top&quot;</STRING>
+                                            </VAR>
+                                            <VAR name = "SurfaceTemperature">
+                                                <QUANTITY Dimension = "Temperature" Unit = "K">
+                                                    <REAL>273.15</REAL>
+                                                </QUANTITY>
+                                            </VAR>
+                                            <VAR name = "LossFactor">
+                                                <REAL>1</REAL>
+                                            </VAR>
+                                        </SCOPE>
+                                    </VAR>
+                                </VAR>
+                            </SCOPE>
+                        </VAR>
+                    </VAR>
+                    <VAR name = "UseCustomA">
+                        <BOOL>false</BOOL>
+                    </VAR>
+                    <VAR name = "UseCustomB">
+                        <BOOL>false</BOOL>
+                    </VAR>
+                    <VAR name = "UseCustomC">
+                        <BOOL>false</BOOL>
+                    </VAR>
+                </SCOPE>
+            </VAR>
+        </SCOPE>
+    </VAR>
+    <VAR name = "EnableLocalRainData">
+        <BOOL>false</BOOL>
+    </VAR>
+    <VAR name = "LocalRainIsoHeight">
+        <QUANTITY Dimension = "DistanceUnit" Unit = "m">
+            <REAL>2000</REAL>
+        </QUANTITY>
+    </VAR>
+    <VAR name = "LocalRainRate">
+        <QUANTITY Dimension = "SlowRate" Unit = "mm*hr^-1">
+            <REAL>1</REAL>
+        </QUANTITY>
+    </VAR>
+    <VAR name = "LocalSurfaceTemp">
+        <QUANTITY Dimension = "Temperature" Unit = "K">
+            <REAL>293.15</REAL>
+        </QUANTITY>
+    </VAR>
+</SCOPE>        END Atmosphere
+
+        BEGIN LaserEnv
+<?xml version = "1.0" standalone = "yes"?>
+<SCOPE>
+    <VAR name = "PropagationChannel">
+        <SCOPE>
+            <VAR name = "EnableAtmosphericLossModel">
+                <BOOL>false</BOOL>
+            </VAR>
+            <VAR name = "AtmosphericLossModel">
+                <VAR name = "Beer-Bouguer-Lambert_Law">
+                    <SCOPE Class = "LinkEmbedControl">
+                        <VAR name = "ReferenceType">
+                            <STRING>&quot;Unlinked&quot;</STRING>
+                        </VAR>
+                        <VAR name = "Component">
+                            <VAR name = "Beer-Bouguer-Lambert_Law">
+                                <SCOPE Class = "LaserAtmosphericAbsorptionLossModel">
+                                    <VAR name = "Version">
+                                        <STRING>&quot;1.0.0 a&quot;</STRING>
+                                    </VAR>
+                                    <VAR name = "IdentifierInformation">
+                                        <SCOPE>
+                                            <VAR name = "Identifier">
+                                                <STRING>&quot;{12FE4E46-1858-40E8-8712-3F91277067DA}&quot;</STRING>
+                                            </VAR>
+                                            <VAR name = "Version">
+                                                <STRING>&quot;1&quot;</STRING>
+                                            </VAR>
+                                            <VAR name = "SdfInformation">
+                                                <SCOPE>
+                                                    <VAR name = "Version">
+                                                        <STRING>&quot;0.0&quot;</STRING>
+                                                    </VAR>
+                                                    <VAR name = "Url">
+                                                        <STRING>&quot;&quot;</STRING>
+                                                    </VAR>
+                                                </SCOPE>
+                                            </VAR>
+                                            <VAR name = "SourceIdentifierInformation">
+                                                <SCOPE>
+                                                    <VAR name = "Identifier">
+                                                        <STRING>&quot;{6896684B-630D-472D-8027-385684842E74}&quot;</STRING>
+                                                    </VAR>
+                                                    <VAR name = "Version">
+                                                        <STRING>&quot;1&quot;</STRING>
+                                                    </VAR>
+                                                    <VAR name = "SdfInformation">
+                                                        <SCOPE>
+                                                            <VAR name = "Version">
+                                                                <STRING>&quot;0.0&quot;</STRING>
+                                                            </VAR>
+                                                            <VAR name = "Url">
+                                                                <STRING>&quot;&quot;</STRING>
+                                                            </VAR>
+                                                        </SCOPE>
+                                                    </VAR>
+                                                </SCOPE>
+                                            </VAR>
+                                        </SCOPE>
+                                    </VAR>
+                                    <VAR name = "ComponentName">
+                                        <STRING>&quot;Beer-Bouguer-Lambert_Law&quot;</STRING>
+                                    </VAR>
+                                    <VAR name = "Description">
+                                        <STRING>&quot;Model atmospheric loss for laser receivers using the Beer-Bouguer-Lambert Law&quot;</STRING>
+                                    </VAR>
+                                    <VAR name = "Type">
+                                        <STRING>&quot;Beer-Bouguer-Lambert Law&quot;</STRING>
+                                    </VAR>
+                                    <VAR name = "UserComment">
+                                        <STRING>&quot;Model atmospheric loss for laser receivers using the Beer-Bouguer-Lambert Law&quot;</STRING>
+                                    </VAR>
+                                    <VAR name = "ReadOnly">
+                                        <BOOL>false</BOOL>
+                                    </VAR>
+                                    <VAR name = "Clonable">
+                                        <BOOL>true</BOOL>
+                                    </VAR>
+                                    <VAR name = "Category">
+                                        <STRING>&quot;@Top&quot;</STRING>
+                                    </VAR>
+                                    <VAR name = "LayerList">
+                                        <LIST>
+                                            <SCOPE>
+                                                <VAR name = "LayerNum">
+                                                    <INT>1</INT>
+                                                </VAR>
+                                                <VAR name = "LayerTop">
+                                                    <QUANTITY Dimension = "DistanceUnit" Unit = "m">
+                                                        <REAL>100000</REAL>
+                                                    </QUANTITY>
+                                                </VAR>
+                                                <VAR name = "ExtinctionCoefficient">
+                                                    <QUANTITY Dimension = "UnitlessPerSmallDistance" Unit = "m^-1">
+                                                        <REAL>0</REAL>
+                                                    </QUANTITY>
+                                                </VAR>
+                                            </SCOPE>
+                                        </LIST>
+                                    </VAR>
+                                    <VAR name = "EnableEvenlySpacedHeights">
+                                        <BOOL>true</BOOL>
+                                    </VAR>
+                                    <VAR name = "MaxLayerHeight">
+                                        <QUANTITY Dimension = "DistanceUnit" Unit = "m">
+                                            <REAL>100000</REAL>
+                                        </QUANTITY>
+                                    </VAR>
+                                </SCOPE>
+                            </VAR>
+                        </VAR>
+                    </SCOPE>
+                </VAR>
+            </VAR>
+            <VAR name = "EnableTropoScintLossModel">
+                <BOOL>false</BOOL>
+            </VAR>
+            <VAR name = "TropoScintLossModel">
+                <VAR name = "ITU-R_P1814">
+                    <SCOPE Class = "LinkEmbedControl">
+                        <VAR name = "ReferenceType">
+                            <STRING>&quot;Unlinked&quot;</STRING>
+                        </VAR>
+                        <VAR name = "Component">
+                            <VAR name = "ITU-R_P1814">
+                                <SCOPE Class = "LaserTropoScintLossModel">
+                                    <VAR name = "Version">
+                                        <STRING>&quot;1.0.0 a&quot;</STRING>
+                                    </VAR>
+                                    <VAR name = "IdentifierInformation">
+                                        <SCOPE>
+                                            <VAR name = "Identifier">
+                                                <STRING>&quot;{E6C30B83-8F9E-451D-9581-909C50609F83}&quot;</STRING>
+                                            </VAR>
+                                            <VAR name = "Version">
+                                                <STRING>&quot;1&quot;</STRING>
+                                            </VAR>
+                                            <VAR name = "SdfInformation">
+                                                <SCOPE>
+                                                    <VAR name = "Version">
+                                                        <STRING>&quot;0.0&quot;</STRING>
+                                                    </VAR>
+                                                    <VAR name = "Url">
+                                                        <STRING>&quot;&quot;</STRING>
+                                                    </VAR>
+                                                </SCOPE>
+                                            </VAR>
+                                            <VAR name = "SourceIdentifierInformation">
+                                                <SCOPE>
+                                                    <VAR name = "Identifier">
+                                                        <STRING>&quot;{651AF2C8-7D6D-457E-8F99-1FB796A460BF}&quot;</STRING>
+                                                    </VAR>
+                                                    <VAR name = "Version">
+                                                        <STRING>&quot;1&quot;</STRING>
+                                                    </VAR>
+                                                    <VAR name = "SdfInformation">
+                                                        <SCOPE>
+                                                            <VAR name = "Version">
+                                                                <STRING>&quot;0.0&quot;</STRING>
+                                                            </VAR>
+                                                            <VAR name = "Url">
+                                                                <STRING>&quot;&quot;</STRING>
+                                                            </VAR>
+                                                        </SCOPE>
+                                                    </VAR>
+                                                </SCOPE>
+                                            </VAR>
+                                        </SCOPE>
+                                    </VAR>
+                                    <VAR name = "ComponentName">
+                                        <STRING>&quot;ITU-R_P1814&quot;</STRING>
+                                    </VAR>
+                                    <VAR name = "Description">
+                                        <STRING>&quot;ITU-R P1814&quot;</STRING>
+                                    </VAR>
+                                    <VAR name = "Type">
+                                        <STRING>&quot;ITU-R P1814&quot;</STRING>
+                                    </VAR>
+                                    <VAR name = "UserComment">
+                                        <STRING>&quot;ITU-R P1814&quot;</STRING>
+                                    </VAR>
+                                    <VAR name = "ReadOnly">
+                                        <BOOL>false</BOOL>
+                                    </VAR>
+                                    <VAR name = "Clonable">
+                                        <BOOL>true</BOOL>
+                                    </VAR>
+                                    <VAR name = "Category">
+                                        <STRING>&quot;@Top&quot;</STRING>
+                                    </VAR>
+                                    <VAR name = "AtmosphericTurbulenceModel">
+                                        <VAR name = "Constant">
+                                            <SCOPE Class = "AtmosphericTurbulenceModel">
+                                                <VAR name = "ConstantRefractiveIndexStructureParameter">
+                                                    <REAL>1.7e-14</REAL>
+                                                </VAR>
+                                                <VAR name = "Type">
+                                                    <STRING>&quot;Constant&quot;</STRING>
+                                                </VAR>
+                                            </SCOPE>
+                                        </VAR>
+                                    </VAR>
+                                </SCOPE>
+                            </VAR>
+                        </VAR>
+                    </SCOPE>
+                </VAR>
+            </VAR>
+        </SCOPE>
+    </VAR>
+</SCOPE>        END LaserEnv
+
+        BEGIN RadarCrossSection
+<?xml version = "1.0" standalone = "yes"?>
+<SCOPE>
+    <VAR name = "Inherit">
+        <BOOL>true</BOOL>
+    </VAR>
+    <VAR name = "Model">
+        <VAR name = "Radar_Cross_Section">
+            <SCOPE Class = "LinkEmbedControl" />
+        </VAR>
+    </VAR>
+</SCOPE>        END RadarCrossSection
+
+        BEGIN Ellipse
+            TimesTrackVehStartTime		 Yes
+        END Ellipse
+
+        BEGIN Crdn
+        END Crdn
+
+        BEGIN ChainProcessingDelay
+            ConstantDelay		  0.0000000000000000e+00
+        END ChainProcessingDelay
+
+        BEGIN Graphics
+
+            BEGIN GenericGraphics
+                IntvlHideShowAll		 Off
+                ShowPassLabel		 Off
+                ShowPathLabel		 Off
+                TransformTrajectory		 On
+                MinGfxGndTrkTimeStep		  0.0000000000000000e+00
+                MaxGfxGndTrkTimeStep		  6.0000000000000000e+02
+                MinGfxOrbitTimeStep		  0.0000000000000000e+00
+                MaxGfxOrbitTimeStep		  6.0000000000000000e+02
+                ShowGlintPoint		 Off
+                ShowGlintColor		 #ffffff
+                ShowGlintStyle		 2
+            END GenericGraphics
+
+            BEGIN AttributeData
+                ShowGfx		 On
+                AttributeType		                Basic		
+                BEGIN DefaultAttributes
+                    Show		 On
+                    Inherit		 On
+                    ShowLabel		 On
+                    ShowGndTrack		 On
+                    ShowGndMarker		 On
+                    ShowOrbit		 On
+                    ShowOrbitMarker		 On
+                    ShowElsetNum		 Off
+                    ShowSpecialSwath		 On
+                    AllColors		 #ffff00
+                    LineStyle		 0
+                    LineWidth		 2
+                    MarkerStyle		 18
+                    FontStyle		 0
+                    SwathLineStyle		 0
+                    SpecSwathLineStyle		 1
+                END DefaultAttributes
+
+                BEGIN CustomIntervalList
+                    BEGIN DefaultAttributes
+                        Show		 On
+                        Inherit		 On
+                        ShowLabel		 On
+                        ShowGndTrack		 On
+                        ShowGndMarker		 On
+                        ShowOrbit		 On
+                        ShowOrbitMarker		 On
+                        ShowElsetNum		 Off
+                        ShowSpecialSwath		 On
+                        AllColors		 #ffff00
+                        LineStyle		 0
+                        LineWidth		 2
+                        MarkerStyle		 18
+                        FontStyle		 0
+                        SwathLineStyle		 0
+                        SpecSwathLineStyle		 1
+                    END DefaultAttributes
+                END CustomIntervalList
+
+                BEGIN AccessIntervalsAttributes
+                    BEGIN AttrDuringAccess
+                        Show		 On
+                        Inherit		 On
+                        ShowLabel		 On
+                        ShowGndTrack		 On
+                        ShowGndMarker		 On
+                        ShowOrbit		 On
+                        ShowOrbitMarker		 On
+                        ShowElsetNum		 Off
+                        ShowSpecialSwath		 On
+                        AllColors		 #ffff00
+                        LineStyle		 0
+                        LineWidth		 2
+                        MarkerStyle		 18
+                        PickString		 During Access
+                        FontStyle		 0
+                        SwathLineStyle		 0
+                        SpecSwathLineStyle		 1
+                    END AttrDuringAccess
+                    BEGIN AttrDuringNoAccess
+                        Show		 Off
+                        Inherit		 On
+                        ShowLabel		 On
+                        ShowGndTrack		 On
+                        ShowGndMarker		 On
+                        ShowOrbit		 On
+                        ShowOrbitMarker		 On
+                        ShowElsetNum		 Off
+                        ShowSpecialSwath		 On
+                        AllColors		 #0000ff
+                        LineStyle		 0
+                        LineWidth		 2
+                        MarkerStyle		 18
+                        PickString		 No Access
+                        FontStyle		 0
+                        SwathLineStyle		 0
+                        SpecSwathLineStyle		 1
+                    END AttrDuringNoAccess
+                END AccessIntervalsAttributes
+
+                BEGIN TimeComponentIntervalsAttributes
+                    BEGIN DefaultAttributes
+                        Show		 On
+                        Inherit		 On
+                        ShowLabel		 On
+                        ShowGndTrack		 On
+                        ShowGndMarker		 On
+                        ShowOrbit		 On
+                        ShowOrbitMarker		 On
+                        ShowElsetNum		 Off
+                        ShowSpecialSwath		 On
+                        AllColors		 #ffff00
+                        LineStyle		 0
+                        LineWidth		 2
+                        MarkerStyle		 18
+                        FontStyle		 0
+                        SwathLineStyle		 0
+                        SpecSwathLineStyle		 1
+                    END DefaultAttributes
+                END TimeComponentIntervalsAttributes
+
+                BEGIN RealTimeAttributes
+                    BEGIN HistoryAttr
+                        Show		 On
+                        Inherit		 On
+                        ShowLabel		 On
+                        ShowGndTrack		 On
+                        ShowGndMarker		 On
+                        ShowOrbit		 On
+                        ShowOrbitMarker		 On
+                        ShowElsetNum		 Off
+                        ShowSpecialSwath		 On
+                        AllColors		 #0000ff
+                        LineStyle		 0
+                        LineWidth		 2
+                        MarkerStyle		 18
+                        PickString		 History
+                        FontStyle		 0
+                        SwathLineStyle		 0
+                        SpecSwathLineStyle		 1
+                    END HistoryAttr
+                    BEGIN SplineAttr
+                        Show		 On
+                        Inherit		 On
+                        ShowLabel		 On
+                        ShowGndTrack		 On
+                        ShowGndMarker		 On
+                        ShowOrbit		 On
+                        ShowOrbitMarker		 On
+                        ShowElsetNum		 Off
+                        ShowSpecialSwath		 On
+                        AllColors		 #ffff00
+                        LineStyle		 0
+                        LineWidth		 2
+                        MarkerStyle		 18
+                        PickString		 Splining
+                        FontStyle		 0
+                        SwathLineStyle		 0
+                        SpecSwathLineStyle		 1
+                    END SplineAttr
+                    BEGIN LookAheadAttr
+                        Show		 On
+                        Inherit		 On
+                        ShowLabel		 On
+                        ShowGndTrack		 On
+                        ShowGndMarker		 On
+                        ShowOrbit		 On
+                        ShowOrbitMarker		 On
+                        ShowElsetNum		 Off
+                        ShowSpecialSwath		 On
+                        AllColors		 #ffffff
+                        LineStyle		 0
+                        LineWidth		 2
+                        MarkerStyle		 18
+                        PickString		 Look Ahead
+                        FontStyle		 0
+                        SwathLineStyle		 0
+                        SpecSwathLineStyle		 1
+                    END LookAheadAttr
+                    BEGIN DropOutAttr
+                        Show		 On
+                        Inherit		 On
+                        ShowLabel		 On
+                        ShowGndTrack		 On
+                        ShowGndMarker		 On
+                        ShowOrbit		 On
+                        ShowOrbitMarker		 On
+                        ShowElsetNum		 Off
+                        ShowSpecialSwath		 On
+                        AllColors		 #ff0000
+                        LineStyle		 0
+                        LineWidth		 2
+                        MarkerStyle		 18
+                        PickString		 Drop Out
+                        FontStyle		 0
+                        SwathLineStyle		 0
+                        SpecSwathLineStyle		 1
+                    END DropOutAttr
+                END RealTimeAttributes
+            END AttributeData
+
+            BEGIN LeadTrailData
+                GtLeadingType		 AllData
+                GtTrailingType		 AllData
+                OrbitLeadingType		 AllData
+                OrbitTrailingType		 AllData
+            END LeadTrailData
+            BEGIN SaaData
+                ShowSaa		 Off
+                ShowSaaFill		 Off
+                SaaFillTranslucency		 0.7
+                TrackSaa		 On
+                SaaAltitude		 500000
+            END SaaData
+            BEGIN GroundTracks
+                BEGIN GroundTrack
+                    CentralBody		 Earth
+                END GroundTrack
+            END GroundTracks
+            BEGIN WaypointData
+                ShowWayptMarkers		 Off
+                ShowWayptTurnMarkers		 Off
+                ShowWayptMarkersExtEphem		 Off
+                NewWayptMarkerShow		 On
+                NewWayptShowLabel		 Off
+                NewWayptMarkerStyle		 3
+                WayptShow		 On
+                WayptShowLabel		 Off
+                WayptMarkerStyle		 3
+            END WaypointData
+            BEGIN EllipseSetGxData
+                BEGIN DefEllipseSetGx
+                    ShowStatic		 On
+                    ShowDynamic		 On
+                    UseLastDynPos		 Off
+                    HoldLastDynPos		 Off
+                    ShowName		 Off
+                    ShowMarker		 On
+                    MarkerStyle		 0
+                    LineStyle		 0
+                    LineWidth		 1
+                END DefEllipseSetGx
+            END EllipseSetGxData
+        END Graphics
+
+        BEGIN ContourGfx
+            ShowContours		 Off
+        END ContourGfx
+
+        BEGIN Contours
+            ActiveContourType		 Radar Cross Section
+
+            BEGIN ContourSet Radar Cross Section
+                Altitude		 0
+                ShowAtAltitude		 Off
+                Projected		 On
+                Relative		 On
+                ShowLabels		 Off
+                LineWidth		 1
+                DecimalDigits		 1
+                ColorRamp		 On
+                ColorRampStartColor		 #ff0000
+                ColorRampEndColor		 #0000ff
+                BEGIN ContourDefinition
+                    BEGIN CntrAntAzEl
+                        CoordinateSystem		 0
+                        BEGIN AzElPatternDef
+                            SetResolutionTogether		 0
+                            NumAzPoints		 361
+                            AzimuthRes		 1
+                            MinAzimuth		 -180
+                            MaxAzimuth		 180
+                            NumElPoints		 91
+                            ElevationRes		 1
+                            MinElevation		 0
+                            MaxElevation		 90
+                        END AzElPatternDef
+                    END CntrAntAzEl
+                    BEGIN RCSContour
+                        Frequency		 2997924580
+                        ComputeType		 0
+                    END RCSContour
+                END ContourDefinition
+            END ContourSet
+        END Contours
+
+        BEGIN VO
+        END VO
+
+        BEGIN 3dVolume
+            ActiveVolumeType		 Radar Cross Section
+
+            BEGIN VolumeSet Radar Cross Section
+                Scale		 100
+                MinimumDisplayedRcs		 1
+                Frequency		  1.4500000000000000e+10
+                ShowAsWireframe		 0
+                BEGIN AzElPatternDef
+                    SetResolutionTogether		 0
+                    NumAzPoints		 50
+                    AzimuthRes		 7.346938775510203
+                    MinAzimuth		 -180
+                    MaxAzimuth		 180
+                    NumElPoints		 50
+                    ElevationRes		 3.673469387755102
+                    MinElevation		 0
+                    MaxElevation		 180
+                END AzElPatternDef
+                ColorMethod		 1
+                MinimumColor		 16711680
+                MaximumColor		 255
+                RelativeToMaximum		 0
+            END VolumeSet
+            BEGIN VolumeGraphics
+                ShowContours		 No
+                ShowVolume		 No
+            END VolumeGraphics
+        END 3dVolume
+
+    END Extensions
+
+    BEGIN SubObjects
+
+    END SubObjects
+
+END Aircraft
+

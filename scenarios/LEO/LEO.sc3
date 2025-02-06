@@ -103,7 +103,7 @@ END
 EarthShapeModel		 "WGS84"
 BEGIN View
     ViewName		 HomeView
-    ViewTime		 -86400
+    ViewTime		 -7387200
     ViewUpdateDelta		 10
     CentralBody		 Earth
     BEGIN ViewCrdnAxes

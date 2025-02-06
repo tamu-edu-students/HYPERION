@@ -5,8 +5,8 @@ BEGIN Chain
 
     Name		 Missile1Chain
     BEGIN Definition
-        Object		 Constellation/LEOSensors
         Object		 Aircraft/Missile1
+        Object		 Constellation/LEOSensors_60
         Recompute		 Yes
         LastRequestedToBeComputedInParallel		 No
         IntervalType		 0
@@ -15,8 +15,8 @@ BEGIN Chain
         ComputeIntervalPtr		
         BEGIN EVENTINTERVAL
             BEGIN Interval
-                Start		 10 Nov 2024 18:00:00.000000000
-                Stop		 11 Nov 2024 18:00:00.000000000
+                Start		 3 Feb 2025 08:43:12.000000000
+                Stop		 3 Feb 2025 09:20:11.500364697
             END Interval
             IntervalState		 Explicit
         END EVENTINTERVAL
@@ -47,6 +47,7 @@ BEGIN Chain
         OptimalPathStrandCompare		 Min
         OptimalPathCalcScalarIgnoreCommonParentLinks		 Yes
         BEGIN StrandObjIndexes
+            STKInst		 Aircraft/Missile1
             STKInst		 Satellite/Sat_P1_S1/Sensor/LEOSensor
             STKInst		 Satellite/Sat_P1_S2/Sensor/LEOSensor
             STKInst		 Satellite/Sat_P1_S3/Sensor/LEOSensor
@@ -77,53 +78,46 @@ BEGIN Chain
             STKInst		 Satellite/Sat_P5_S4/Sensor/LEOSensor
             STKInst		 Satellite/Sat_P5_S5/Sensor/LEOSensor
             STKInst		 Satellite/Sat_P5_S6/Sensor/LEOSensor
-            STKInst		 Aircraft/Missile1
         END StrandObjIndexes
 
         SaveMode		 1
         BEGIN StrandAccessesByIndex
-            Strand		 4 30
-            Start		  4.1579774363061333e+04
-            Stop		  4.2773117913761387e+04
-            Strand		 5 30
-            Start		  4.0670490219127183e+04
-            Stop		  4.1503082572754334e+04
-            Strand		 6 30
-            Start		  3.9354007910000000e+04
-            Stop		  3.9983626696542000e+04
-            Strand		 9 30
-            Start		  4.1770310739081280e+04
-            Stop		  4.2298585778297893e+04
-            Strand		 10 30
-            Start		  4.0829615012960072e+04
-            Stop		  4.1606175473743271e+04
-            Strand		 11 30
-            Start		  3.9975498708594838e+04
-            Stop		  4.0817334719673650e+04
-            Strand		 13 30
-            Start		  4.2351666939363291e+04
-            Stop		  4.2784221719000001e+04
-            Strand		 14 30
-            Start		  4.1568569821291596e+04
-            Stop		  4.2349032220423425e+04
-            Strand		 15 30
-            Start		  4.0810443886944253e+04
-            Stop		  4.1508971363011828e+04
-            Strand		 16 30
-            Start		  4.0102984750889591e+04
-            Stop		  4.0630162137414904e+04
-            Strand		 20 30
-            Start		  4.0751644597938001e+04
-            Stop		  4.1688970158245495e+04
-            Strand		 21 30
-            Start		  3.9687051276081125e+04
-            Stop		  4.0757021041412256e+04
-            Strand		 22 30
-            Start		  3.9354010980999999e+04
-            Stop		  3.9531282946067302e+04
-            Strand		 27 30
-            Start		  3.9354011231999997e+04
-            Stop		  3.9645704132033017e+04
+            Strand		 0 4
+            Start		  1.0894318022440511e+04
+            Stop		  1.2011500364697054e+04
+            Strand		 0 9
+            Start		  1.1226496007083004e+04
+            Stop		  1.1723400647759940e+04
+            Strand		 0 10
+            Start		  1.0449988378715452e+04
+            Stop		  1.1200725689889841e+04
+            Strand		 0 13
+            Start		  1.1807565273493079e+04
+            Stop		  1.2011500364697054e+04
+            Strand		 0 14
+            Start		  1.1197983105221931e+04
+            Stop		  1.1761492481748257e+04
+            Strand		 0 15
+            Start		  1.0586802859232957e+04
+            Stop		  1.1166059770722553e+04
+            Strand		 0 16
+            Start		  9.9793435258218851e+03
+            Stop		  1.0567537400886495e+04
+            Strand		 0 17
+            Start		  9.7920000000000000e+03
+            Stop		  9.9647246901844592e+03
+            Strand		 0 19
+            Start		  1.1428764591825064e+04
+            Stop		  1.1709994917200687e+04
+            Strand		 0 20
+            Start		  1.0552268500914222e+04
+            Stop		  1.1295767286414055e+04
+            Strand		 0 21
+            Start		  1.0103500268209007e+04
+            Stop		  1.0476397906891829e+04
+            Strand		 0 26
+            Start		  9.7920000000000000e+03
+            Stop		  1.0756959309637854e+04
         END StrandAccessesByIndex
 
 
@@ -147,8 +141,8 @@ BEGIN Chain
 
             BEGIN Attributes
 
-                StaticColor		 #00ff00
-                AnimationColor		 #00ffff
+                StaticColor		 #ff0000
+                AnimationColor		 #ffffff
                 OptStrandsRampStartColor		 #00ff00
                 OptStrandsRampEndColor		 #ff0000
                 AnimationLineWidth		 2

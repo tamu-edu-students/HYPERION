@@ -12,8 +12,8 @@ BEGIN Chain
         Recompute		 Yes
         LastRequestedToBeComputedInParallel		 No
         IntervalType		 0
-        ComputeIntervalStart		 -86400
-        ComputeIntervalStop		 0
+        ComputeIntervalStart		 -7387200
+        ComputeIntervalStop		 -7300800
         ComputeIntervalPtr		
         BEGIN EVENTINTERVAL
             BEGIN Interval

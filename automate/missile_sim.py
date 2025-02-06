@@ -1,13 +1,14 @@
+import csv
 from agi.stk12.stkobjects import *
-from agi.stk12.stkdesktop import STKDesktop # Interface with open STK window
+from agi.stk12.stkdesktop import STKDesktop  # Interface with open STK window
 from missile import Missile
-from chain import Chain
+from chain import Chain, MissileChain
 from satellite import Satellite
 from constellation import Constellation
 from sensor import Sensor
 
 # Attach to an existing STK instance
-stk = stk = STKDesktop.AttachToApplication()
+stk = STKDesktop.AttachToApplication()
 
 # Get the root object to access the scenario
 root = stk.Root
@@ -18,68 +19,135 @@ else:
     print("No scenario is currently open.")
 
 # Constants
-mu_E = 3.986004415e5 # km^3 / s^2
-r_E = 6.378137e3 # km
+mu_E = 3.986004415e5  # km^3 / s^2
+r_E = 6.378137e3  # km
 
-### Constellation
-# Classical Elements
-a = 1000 + r_E # km
-e = 0
-Omega_0 = 0 # deg
-i = 82 # deg
-omega = 0 # deg
-M_0 = 0 # deg
 
-# Walker Constellation
-t = 30 # Total number of satellites
-p = 5 # Number of planes
-f = 3 # Phasing factor
-delta_M = (f * 360) / t # Change in mean anomaly for equivalent satellites in neighboring planes (deg)
-sats_per_plane = int(t / p) # Number of sats per plane
+def makeConstellation(root, conic_angle):
+    """
+    Creates a Walker constellation with attached sensors.
+    """
+    # Classical orbital elements and Walker parameters
+    a = 1000 + r_E  # km
+    i = 82  # deg
+    omega = 0  # deg
+    e = 0
+    Omega_0 = 0  # deg
+    M_0 = 0  # deg
 
-# Sensor
-conic_angle = 60 # deg
+    t = 30  # Total number of satellites
+    p = 5  # Number of planes
+    f = 3  # Phasing factor
+    delta_M = (f * 360) / t  # Change in mean anomaly for equivalent satellites
 
-# Constellation
-constellation_name = "LEOSensors"
-constellation = Constellation(root, constellation_name, unload=False)
-# constellation.loadObject()
+    sats_per_plane = int(t / p)
+    constellation_name = f"LEOSensors_{int(conic_angle)}"
+    constellation = Constellation(root, constellation_name)
+    constellation.loadObject()
 
-# # Satellite/sensor generation
-# for plane in range(p):
-#     for sat in range(sats_per_plane):
-#         Omega = ((plane / p) * 360) + Omega_0
-#         M = (sat / sats_per_plane) * 360 + delta_M * plane + M_0
+    for plane in range(p):
+        for sat in range(sats_per_plane):
+            Omega = ((plane / p) * 360) + Omega_0
+            M = (sat / sats_per_plane) * 360 + delta_M * plane + M_0
 
-#         sat_name = f"Sat_P{plane+1}_S{sat+1}"
-#         satellite = Satellite(root, sat_name, a, i, Omega, omega, e, M)
-#         satellite.loadObject()
+            sat_name = f"Sat_P{plane+1}_S{sat+1}"
+            satellite = Satellite(root, sat_name, a, i, Omega, omega, e, M)
+            satellite.loadObject()
 
-#         sat_path = satellite.getObjectPath()
-        
-#         sensor_name = "LEOSensor"
-#         sensor = Sensor(root, sat_name, sensor_name, conic_angle)
-#         sensor.loadObject()
+            sensor_name = "LEOSensor"
+            sensor = Sensor(root, sat_name, sensor_name, conic_angle)
+            sensor.loadObject()
 
-#         sensor_path = sensor.getObjectPath()
+            constellation.addToObject(sensor.getObjectPath())
 
-#         constellation.addToObject(sensor_path)
+    return constellation.getObjectPath()
 
-constellation_path = constellation.getObjectPath()
 
-for i in range(1):
-    chain_name = f"Missile{i+1}Chain"
-    chain = Chain(root, name=chain_name)
-    chain.loadObject()
-    chain.addToObject(constellation_path)
+def createMissiles(root, num_missiles):
+    """
+    Creates and returns missiles and missile chains without attaching the constellation yet.
+    """
+    missile_paths = []
+    for i in range(num_missiles):
+        chain_name = f"Missile{i+1}Chain"
+        chain = MissileChain(root, chain_name)
+        chain.loadObject()
 
-    missile_name = f"Missile{i+1}"
-    missile = Missile(root, name=missile_name)
-    missile.loadObject()
-    missile.saveObject()
-    missile_path = missile.getObjectPath()
+        missile_name = f"Missile{i+1}"
+        missile = Missile(root, missile_name)
+        missile.loadObject()
+        missile.saveObject()
+        missile_path = missile.getObjectPath()
+        missile_paths.append((chain, missile_path))
 
-    chain.addToObject(missile_path)
-    chain.computeAccess()
+        # Add the missile to the chain (constellations will be added later)
+        chain.addToObject(missile_path)
 
-root.Save()
+    return missile_paths
+
+
+def attachConstellationToChains(missile_paths, constellation_path):
+    """
+    Attaches the given constellation to all missile chains.
+    """
+    for chain, _ in missile_paths:
+        chain.addToObject(constellation_path)
+
+
+def computeAndSaveTracking(missile_paths, conic_angle, output_file):
+    """
+    Computes tracking percentages for each missile and saves the results.
+    """
+    results = []
+
+    for i, (chain, missile_path) in enumerate(missile_paths):
+        tracking_percent = chain.computeTrackingPercentage(missile_path)
+        results.append((i + 1, tracking_percent, conic_angle))
+        print(f"Missile {i + 1}: {tracking_percent:.2f}% tracked with conic angle {conic_angle}°")
+
+    # Save results to CSV
+    with open(output_file, mode='a', newline='') as file:
+        writer = csv.writer(file)
+        for missile_id, tracking_percent, conic_angle in results:
+            writer.writerow([missile_id, round(tracking_percent, 2), conic_angle])
+
+
+def main():
+    output_file = "../data/missile-tracking.csv"
+
+    with open(output_file, mode='w', newline='') as file:
+        writer = csv.writer(file)
+        writer.writerow(["Missile ID", "Tracking %", "Conic Angle (deg)"])
+
+    # Step 1: Create missiles and missile chains (once)
+    missile_paths = createMissiles(root, num_missiles=100)
+
+    # Step 2: Loop over conic angles
+    previous_constellation_path = None  
+
+    for conic_angle in range(30, 61, 10):
+        # Create the constellation for this conic angle
+        constellation_path = makeConstellation(root, conic_angle)
+
+        # Remove the previous constellation from all missile chains
+        if previous_constellation_path:
+            for chain, _ in missile_paths:
+                chain.removeFromObject(previous_constellation_path)
+
+        # Attach the new constellation to all missile chains
+        attachConstellationToChains(missile_paths, constellation_path)
+
+        # Compute tracking percentages and save results
+        computeAndSaveTracking(missile_paths, conic_angle, output_file)
+
+        # Update the previous constellation
+        previous_constellation_path = constellation_path
+
+
+    # Save the scenario
+    root.Save()
+    print("Scenario saved successfully.")
+
+
+if __name__ == "__main__":
+    main()

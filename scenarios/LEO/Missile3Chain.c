@@ -5,20 +5,17 @@ BEGIN Chain
 
     Name		 Missile3Chain
     BEGIN Definition
-        BEGIN RoutingData
-            EndInst		 Aircraft/Missile3
-            MaxStrandDepth		 10
-        END RoutingData
-        Recompute		 No
+        Object		 Aircraft/Missile3
+        Recompute		 Yes
         LastRequestedToBeComputedInParallel		 No
         IntervalType		 0
-        ComputeIntervalStart		 -86400
-        ComputeIntervalStop		 0
+        ComputeIntervalStart		 0
+        ComputeIntervalStop		 86400
         ComputeIntervalPtr		
         BEGIN EVENTINTERVAL
             BEGIN Interval
-                Start		 9 Nov 2024 18:00:00.000000000
-                Stop		 10 Nov 2024 18:00:00.000000000
+                Start		 3 Feb 2025 06:00:00.000000000
+                Stop		 4 Feb 2025 06:00:00.000000000
             END Interval
             IntervalState		 Explicit
         END EVENTINTERVAL
@@ -70,8 +67,8 @@ BEGIN Chain
 
             BEGIN Attributes
 
-                StaticColor		 #0000ff
-                AnimationColor		 #00ff00
+                StaticColor		 #00ffff
+                AnimationColor		 #ff00ff
                 OptStrandsRampStartColor		 #00ff00
                 OptStrandsRampEndColor		 #ff0000
                 AnimationLineWidth		 2
