@@ -1,11 +1,11 @@
 from agi.stk12.stkobjects import *
 from agi.stk12.stkutil import *
-from stkObject import STKObjectBase
+from stkObject import STKStandaloneObject
 
 COLOR = 16711680 # Standard blue
 
-class Satellite(STKObjectBase):
-    def __init__(self, root, name, a, i, Omega, omega=0, e=0, M=0, epoch=None):
+class Satellite(STKStandaloneObject):
+    def __init__(self, root, name, a, i, Omega, omega=0, e=0, M=0, epoch=None, unload=True):
         """
         Initializes a satellite in STK with orbital parameters for circular or eccentric orbits.
         
@@ -20,7 +20,7 @@ class Satellite(STKObjectBase):
         - M: Mean anomaly (deg) [default = 0].
         - epoch: The satellite's epoch [default is the scenario start time].
         """
-        super().__init__(root, name, AgESTKObjectType.eSatellite)
+        super().__init__(root, name, AgESTKObjectType.eSatellite, unload=unload)
         self.a = a
         self.i = i
         self.Omega = Omega
@@ -40,7 +40,7 @@ class Satellite(STKObjectBase):
         """
         return angle % 360
 
-    def loadObject(self):
+    def _loadObjectImplementation(self):
         """
         Configures the satellite's orbit using Keplerian elements and propagates it.
         """

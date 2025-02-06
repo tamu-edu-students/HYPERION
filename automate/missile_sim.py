@@ -4,6 +4,7 @@ from missile import Missile
 from chain import Chain
 from satellite import Satellite
 from constellation import Constellation
+from sensor import Sensor
 
 # Attach to an existing STK instance
 stk = stk = STKDesktop.AttachToApplication()
@@ -36,53 +37,49 @@ f = 3 # Phasing factor
 delta_M = (f * 360) / t # Change in mean anomaly for equivalent satellites in neighboring planes (deg)
 sats_per_plane = int(t / p) # Number of sats per plane
 
-# Constellation
-constellation_name = "LEOSats"
-constellation = Constellation(root, name=constellation_name)
-constellation.loadObject()
+# Sensor
+conic_angle = 60 # deg
 
-# # Satellite generation
+# Constellation
+constellation_name = "LEOSensors"
+constellation = Constellation(root, constellation_name, unload=False)
+# constellation.loadObject()
+
+# # Satellite/sensor generation
 # for plane in range(p):
 #     for sat in range(sats_per_plane):
 #         Omega = ((plane / p) * 360) + Omega_0
 #         M = (sat / sats_per_plane) * 360 + delta_M * plane + M_0
 
 #         sat_name = f"Sat_P{plane+1}_S{sat+1}"
-
 #         satellite = Satellite(root, sat_name, a, i, Omega, omega, e, M)
 #         satellite.loadObject()
 
-#         sat_path = satellite.getObjectType() + '/' + sat_name  
-#         constellation.addToObject(sat_path)
+#         sat_path = satellite.getObjectPath()
+        
+#         sensor_name = "LEOSensor"
+#         sensor = Sensor(root, sat_name, sensor_name, conic_angle)
+#         sensor.loadObject()
 
-constellation_path = constellation.getObjectType() + '/' + constellation_name
+#         sensor_path = sensor.getObjectPath()
+
+#         constellation.addToObject(sensor_path)
+
+constellation_path = constellation.getObjectPath()
 
 for i in range(1):
     chain_name = f"Missile{i+1}Chain"
     chain = Chain(root, name=chain_name)
     chain.loadObject()
-    # chain.addToObject(constellation_path)
-    chain.addToObject("Satellite/LEOSat/Sensor/SWIR")
+    chain.addToObject(constellation_path)
 
     missile_name = f"Missile{i+1}"
     missile = Missile(root, name=missile_name)
     missile.loadObject()
     missile.saveObject()
-    missile_path = missile.getObjectType() + '/' + missile_name
+    missile_path = missile.getObjectPath()
 
     chain.addToObject(missile_path)
-
-
-#     """
-#     Create Chain object called Missile{i+1}Chain
-#     Add Missile{i+1} to the chain
-#     Add LEOSats-AllSensors to chain. Note that LEOSats is a WalkerConstellation object in STK and it uses a satellite model, LEO sat that has an attached sensor. Since the constellation inherits from the satellite, each satellite has the sensor, thus AllSensors
-#     Compute access for the missile
-#     Using the launch time to impact time info about the missile, determine the % of time the missile is visible to the sensors (i.e. within the field of regard)
-#     Save the tracking % to a list
-#     Delete the chain
-#     Delete the missile"""
-    
-# print("All 10 missiles added.")
+    chain.computeAccess()
 
 root.Save()

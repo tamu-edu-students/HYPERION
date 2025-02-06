@@ -3,7 +3,7 @@ WrittenBy    STK_v12.9.0
 
 BEGIN Constellation
 
-    Name		 LEOSats
+    Name		 LEOSensors
     BEGIN Definition
         Object		 Satellite/Sat_P1_S1/Sensor/LEOSensor
         Object		 Satellite/Sat_P1_S2/Sensor/LEOSensor

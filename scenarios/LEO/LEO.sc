@@ -3100,7 +3100,7 @@ BEGIN Scenario
 
         Class Constellation
 
-            LEOSats		
+            LEOSensors		
             Missiles		
 
         END Class
@@ -3157,7 +3157,7 @@ BEGIN Scenario
             Chain/Missile2Chain		
             Chain/Missile3Chain		
             Chain/MyChain		
-            Constellation/LEOSats		
+            Constellation/LEOSensors		
             Constellation/Missiles		
             CoverageDefinition/GroundCoverage		
         END Instance
@@ -3190,7 +3190,8 @@ BEGIN Scenario
         Instance Chain/MyChain
             Chain/MyChain		
         END Instance
-        Instance Constellation/LEOSats
+        Instance Constellation/LEOSensors
+            Chain/Missile1Chain		
         END Instance
         Instance Constellation/Missiles
             Chain/LEO2Missiles		
@@ -3209,99 +3210,218 @@ BEGIN Scenario
             Satellite/LEOSat/Sensor/SWIR		
         END Instance
         Instance Satellite/LEOSat/Sensor/SWIR
-            Chain/Missile1Chain		
             Chain/MyChain		
             Satellite/LEOSat/Sensor/SWIR		
         END Instance
         Instance Satellite/Sat_P1_S1
             Satellite/Sat_P1_S1		
+            Satellite/Sat_P1_S1/Sensor/LEOSensor		
+        END Instance
+        Instance Satellite/Sat_P1_S1/Sensor/LEOSensor
+            Satellite/Sat_P1_S1/Sensor/LEOSensor		
         END Instance
         Instance Satellite/Sat_P1_S2
             Satellite/Sat_P1_S2		
+            Satellite/Sat_P1_S2/Sensor/LEOSensor		
+        END Instance
+        Instance Satellite/Sat_P1_S2/Sensor/LEOSensor
+            Satellite/Sat_P1_S2/Sensor/LEOSensor		
         END Instance
         Instance Satellite/Sat_P1_S3
             Satellite/Sat_P1_S3		
+            Satellite/Sat_P1_S3/Sensor/LEOSensor		
+        END Instance
+        Instance Satellite/Sat_P1_S3/Sensor/LEOSensor
+            Satellite/Sat_P1_S3/Sensor/LEOSensor		
         END Instance
         Instance Satellite/Sat_P1_S4
             Satellite/Sat_P1_S4		
+            Satellite/Sat_P1_S4/Sensor/LEOSensor		
+        END Instance
+        Instance Satellite/Sat_P1_S4/Sensor/LEOSensor
+            Satellite/Sat_P1_S4/Sensor/LEOSensor		
         END Instance
         Instance Satellite/Sat_P1_S5
             Satellite/Sat_P1_S5		
+            Satellite/Sat_P1_S5/Sensor/LEOSensor		
+        END Instance
+        Instance Satellite/Sat_P1_S5/Sensor/LEOSensor
+            Satellite/Sat_P1_S5/Sensor/LEOSensor		
         END Instance
         Instance Satellite/Sat_P1_S6
             Satellite/Sat_P1_S6		
+            Satellite/Sat_P1_S6/Sensor/LEOSensor		
+        END Instance
+        Instance Satellite/Sat_P1_S6/Sensor/LEOSensor
+            Satellite/Sat_P1_S6/Sensor/LEOSensor		
         END Instance
         Instance Satellite/Sat_P2_S1
             Satellite/Sat_P2_S1		
+            Satellite/Sat_P2_S1/Sensor/LEOSensor		
+        END Instance
+        Instance Satellite/Sat_P2_S1/Sensor/LEOSensor
+            Satellite/Sat_P2_S1/Sensor/LEOSensor		
         END Instance
         Instance Satellite/Sat_P2_S2
             Satellite/Sat_P2_S2		
+            Satellite/Sat_P2_S2/Sensor/LEOSensor		
+        END Instance
+        Instance Satellite/Sat_P2_S2/Sensor/LEOSensor
+            Satellite/Sat_P2_S2/Sensor/LEOSensor		
         END Instance
         Instance Satellite/Sat_P2_S3
             Satellite/Sat_P2_S3		
+            Satellite/Sat_P2_S3/Sensor/LEOSensor		
+        END Instance
+        Instance Satellite/Sat_P2_S3/Sensor/LEOSensor
+            Satellite/Sat_P2_S3/Sensor/LEOSensor		
         END Instance
         Instance Satellite/Sat_P2_S4
             Satellite/Sat_P2_S4		
+            Satellite/Sat_P2_S4/Sensor/LEOSensor		
+        END Instance
+        Instance Satellite/Sat_P2_S4/Sensor/LEOSensor
+            Satellite/Sat_P2_S4/Sensor/LEOSensor		
         END Instance
         Instance Satellite/Sat_P2_S5
             Satellite/Sat_P2_S5		
+            Satellite/Sat_P2_S5/Sensor/LEOSensor		
+        END Instance
+        Instance Satellite/Sat_P2_S5/Sensor/LEOSensor
+            Satellite/Sat_P2_S5/Sensor/LEOSensor		
         END Instance
         Instance Satellite/Sat_P2_S6
             Satellite/Sat_P2_S6		
+            Satellite/Sat_P2_S6/Sensor/LEOSensor		
+        END Instance
+        Instance Satellite/Sat_P2_S6/Sensor/LEOSensor
+            Satellite/Sat_P2_S6/Sensor/LEOSensor		
         END Instance
         Instance Satellite/Sat_P3_S1
             Satellite/Sat_P3_S1		
+            Satellite/Sat_P3_S1/Sensor/LEOSensor		
+        END Instance
+        Instance Satellite/Sat_P3_S1/Sensor/LEOSensor
+            Satellite/Sat_P3_S1/Sensor/LEOSensor		
         END Instance
         Instance Satellite/Sat_P3_S2
             Satellite/Sat_P3_S2		
+            Satellite/Sat_P3_S2/Sensor/LEOSensor		
+        END Instance
+        Instance Satellite/Sat_P3_S2/Sensor/LEOSensor
+            Satellite/Sat_P3_S2/Sensor/LEOSensor		
         END Instance
         Instance Satellite/Sat_P3_S3
             Satellite/Sat_P3_S3		
+            Satellite/Sat_P3_S3/Sensor/LEOSensor		
+        END Instance
+        Instance Satellite/Sat_P3_S3/Sensor/LEOSensor
+            Satellite/Sat_P3_S3/Sensor/LEOSensor		
         END Instance
         Instance Satellite/Sat_P3_S4
             Satellite/Sat_P3_S4		
+            Satellite/Sat_P3_S4/Sensor/LEOSensor		
+        END Instance
+        Instance Satellite/Sat_P3_S4/Sensor/LEOSensor
+            Satellite/Sat_P3_S4/Sensor/LEOSensor		
         END Instance
         Instance Satellite/Sat_P3_S5
             Satellite/Sat_P3_S5		
+            Satellite/Sat_P3_S5/Sensor/LEOSensor		
+        END Instance
+        Instance Satellite/Sat_P3_S5/Sensor/LEOSensor
+            Satellite/Sat_P3_S5/Sensor/LEOSensor		
         END Instance
         Instance Satellite/Sat_P3_S6
             Satellite/Sat_P3_S6		
+            Satellite/Sat_P3_S6/Sensor/LEOSensor		
+        END Instance
+        Instance Satellite/Sat_P3_S6/Sensor/LEOSensor
+            Satellite/Sat_P3_S6/Sensor/LEOSensor		
         END Instance
         Instance Satellite/Sat_P4_S1
             Satellite/Sat_P4_S1		
+            Satellite/Sat_P4_S1/Sensor/LEOSensor		
+        END Instance
+        Instance Satellite/Sat_P4_S1/Sensor/LEOSensor
+            Satellite/Sat_P4_S1/Sensor/LEOSensor		
         END Instance
         Instance Satellite/Sat_P4_S2
             Satellite/Sat_P4_S2		
+            Satellite/Sat_P4_S2/Sensor/LEOSensor		
+        END Instance
+        Instance Satellite/Sat_P4_S2/Sensor/LEOSensor
+            Satellite/Sat_P4_S2/Sensor/LEOSensor		
         END Instance
         Instance Satellite/Sat_P4_S3
             Satellite/Sat_P4_S3		
+            Satellite/Sat_P4_S3/Sensor/LEOSensor		
+        END Instance
+        Instance Satellite/Sat_P4_S3/Sensor/LEOSensor
+            Satellite/Sat_P4_S3/Sensor/LEOSensor		
         END Instance
         Instance Satellite/Sat_P4_S4
             Satellite/Sat_P4_S4		
+            Satellite/Sat_P4_S4/Sensor/LEOSensor		
+        END Instance
+        Instance Satellite/Sat_P4_S4/Sensor/LEOSensor
+            Satellite/Sat_P4_S4/Sensor/LEOSensor		
         END Instance
         Instance Satellite/Sat_P4_S5
             Satellite/Sat_P4_S5		
+            Satellite/Sat_P4_S5/Sensor/LEOSensor		
+        END Instance
+        Instance Satellite/Sat_P4_S5/Sensor/LEOSensor
+            Satellite/Sat_P4_S5/Sensor/LEOSensor		
         END Instance
         Instance Satellite/Sat_P4_S6
             Satellite/Sat_P4_S6		
+            Satellite/Sat_P4_S6/Sensor/LEOSensor		
+        END Instance
+        Instance Satellite/Sat_P4_S6/Sensor/LEOSensor
+            Satellite/Sat_P4_S6/Sensor/LEOSensor		
         END Instance
         Instance Satellite/Sat_P5_S1
             Satellite/Sat_P5_S1		
+            Satellite/Sat_P5_S1/Sensor/LEOSensor		
+        END Instance
+        Instance Satellite/Sat_P5_S1/Sensor/LEOSensor
+            Satellite/Sat_P5_S1/Sensor/LEOSensor		
         END Instance
         Instance Satellite/Sat_P5_S2
             Satellite/Sat_P5_S2		
+            Satellite/Sat_P5_S2/Sensor/LEOSensor		
+        END Instance
+        Instance Satellite/Sat_P5_S2/Sensor/LEOSensor
+            Satellite/Sat_P5_S2/Sensor/LEOSensor		
         END Instance
         Instance Satellite/Sat_P5_S3
             Satellite/Sat_P5_S3		
+            Satellite/Sat_P5_S3/Sensor/LEOSensor		
+        END Instance
+        Instance Satellite/Sat_P5_S3/Sensor/LEOSensor
+            Satellite/Sat_P5_S3/Sensor/LEOSensor		
         END Instance
         Instance Satellite/Sat_P5_S4
             Satellite/Sat_P5_S4		
+            Satellite/Sat_P5_S4/Sensor/LEOSensor		
+        END Instance
+        Instance Satellite/Sat_P5_S4/Sensor/LEOSensor
+            Satellite/Sat_P5_S4/Sensor/LEOSensor		
         END Instance
         Instance Satellite/Sat_P5_S5
             Satellite/Sat_P5_S5		
+            Satellite/Sat_P5_S5/Sensor/LEOSensor		
+        END Instance
+        Instance Satellite/Sat_P5_S5/Sensor/LEOSensor
+            Satellite/Sat_P5_S5/Sensor/LEOSensor		
         END Instance
         Instance Satellite/Sat_P5_S6
             Satellite/Sat_P5_S6		
+            Satellite/Sat_P5_S6/Sensor/LEOSensor		
+        END Instance
+        Instance Satellite/Sat_P5_S6/Sensor/LEOSensor
+            Satellite/Sat_P5_S6/Sensor/LEOSensor		
         END Instance
     END References
 

@@ -4,7 +4,7 @@ import random
 from geopy.geocoders import Nominatim
 from agi.stk12.stkobjects import *
 from datetime import datetime, timedelta
-from stkObject import STKObjectBase 
+from stkObject import STKStandaloneObject 
 
 COLOR = 255 # Standard Red
 
@@ -27,12 +27,12 @@ class Site:
     def get_country(self):
         return self.country
 
-class Missile(STKObjectBase):
-    def __init__(self, root, name, launch_site=None, target_site=None, launch_time=None, Mach=None, cities_file="../data/world-cities.csv", un_countries_file="../data/UN-countries.txt", save_dir="../data/missiles/"):
+class Missile(STKStandaloneObject):
+    def __init__(self, root, name, launch_site=None, target_site=None, launch_time=None, Mach=None, cities_file="../data/world-cities.csv", un_countries_file="../data/UN-countries.txt", save_dir="../data/missiles/", unload=True):
         """
         Initializes a missile object with launch and target sites, launch time, and maximum Mach number.
         """
-        super().__init__(root, name, AgESTKObjectType.eAircraft) 
+        super().__init__(root, name, AgESTKObjectType.eAircraft, unload=unload) 
 
         # Load the cities dataset
         self.cities = pd.read_csv(cities_file)
@@ -46,7 +46,6 @@ class Missile(STKObjectBase):
         # Set or generate launch site
         if launch_site is None:
             self.launch_site = self.getRandomCity(exclude_un=True)
-            # TODO: Error checking for city
             print(f"Random Launch Site: {self.launch_site.get_city()}, {self.launch_site.get_country()}")
         else:
             self.launch_site = launch_site
@@ -120,7 +119,7 @@ class Missile(STKObjectBase):
         self.impact_time = final_waypoint.Time 
         print(f"Impact Time for {self.name}: {self.impact_time}")
 
-    def loadObject(self):
+    def _loadObjectImplementation(self):
         """
         Adds the missile as an aircraft object to the STK scenario.
         """
@@ -154,6 +153,7 @@ class Missile(STKObjectBase):
         waypoint2.Altitude = 0  
         waypoint2.Speed = speed_kmps
 
+        # TODO: figure out color
         # missile.Graphics.Attributes.Color = COLOR
 
         # Propagate the route
