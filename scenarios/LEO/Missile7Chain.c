@@ -6,6 +6,7 @@ BEGIN Chain
     Name		 Missile7Chain
     BEGIN Definition
         Object		 Aircraft/Missile7
+        Object		 Constellation/LEOSensors_60
         Recompute		 Yes
         LastRequestedToBeComputedInParallel		 No
         IntervalType		 0
@@ -14,8 +15,8 @@ BEGIN Chain
         ComputeIntervalPtr		
         BEGIN EVENTINTERVAL
             BEGIN Interval
-                Start		 3 Feb 2025 06:00:00.000000000
-                Stop		 4 Feb 2025 06:00:00.000000000
+                Start		 3 Feb 2025 19:27:19.000000000
+                Stop		 3 Feb 2025 19:37:56.910855893
             END Interval
             IntervalState		 Explicit
         END EVENTINTERVAL
@@ -45,7 +46,53 @@ BEGIN Chain
         OptimalPathLinkCompare		 Min
         OptimalPathStrandCompare		 Min
         OptimalPathCalcScalarIgnoreCommonParentLinks		 Yes
+        BEGIN StrandObjIndexes
+            STKInst		 Aircraft/Missile7
+            STKInst		 Satellite/Sat_P1_S1/Sensor/LEOSensor
+            STKInst		 Satellite/Sat_P1_S2/Sensor/LEOSensor
+            STKInst		 Satellite/Sat_P1_S3/Sensor/LEOSensor
+            STKInst		 Satellite/Sat_P1_S4/Sensor/LEOSensor
+            STKInst		 Satellite/Sat_P1_S5/Sensor/LEOSensor
+            STKInst		 Satellite/Sat_P1_S6/Sensor/LEOSensor
+            STKInst		 Satellite/Sat_P2_S1/Sensor/LEOSensor
+            STKInst		 Satellite/Sat_P2_S2/Sensor/LEOSensor
+            STKInst		 Satellite/Sat_P2_S3/Sensor/LEOSensor
+            STKInst		 Satellite/Sat_P2_S4/Sensor/LEOSensor
+            STKInst		 Satellite/Sat_P2_S5/Sensor/LEOSensor
+            STKInst		 Satellite/Sat_P2_S6/Sensor/LEOSensor
+            STKInst		 Satellite/Sat_P3_S1/Sensor/LEOSensor
+            STKInst		 Satellite/Sat_P3_S2/Sensor/LEOSensor
+            STKInst		 Satellite/Sat_P3_S3/Sensor/LEOSensor
+            STKInst		 Satellite/Sat_P3_S4/Sensor/LEOSensor
+            STKInst		 Satellite/Sat_P3_S5/Sensor/LEOSensor
+            STKInst		 Satellite/Sat_P3_S6/Sensor/LEOSensor
+            STKInst		 Satellite/Sat_P4_S1/Sensor/LEOSensor
+            STKInst		 Satellite/Sat_P4_S2/Sensor/LEOSensor
+            STKInst		 Satellite/Sat_P4_S3/Sensor/LEOSensor
+            STKInst		 Satellite/Sat_P4_S4/Sensor/LEOSensor
+            STKInst		 Satellite/Sat_P4_S5/Sensor/LEOSensor
+            STKInst		 Satellite/Sat_P4_S6/Sensor/LEOSensor
+            STKInst		 Satellite/Sat_P5_S1/Sensor/LEOSensor
+            STKInst		 Satellite/Sat_P5_S2/Sensor/LEOSensor
+            STKInst		 Satellite/Sat_P5_S3/Sensor/LEOSensor
+            STKInst		 Satellite/Sat_P5_S4/Sensor/LEOSensor
+            STKInst		 Satellite/Sat_P5_S5/Sensor/LEOSensor
+            STKInst		 Satellite/Sat_P5_S6/Sensor/LEOSensor
+        END StrandObjIndexes
+
         SaveMode		 1
+        BEGIN StrandAccessesByIndex
+            Strand		 0 5
+            Start		  4.8439000000000000e+04
+            Stop		  4.9068483148264611e+04
+            Strand		 0 10
+            Start		  4.8985516937850691e+04
+            Stop		  4.9076910855892529e+04
+            Strand		 0 19
+            Start		  4.8799135386779490e+04
+            Stop		  4.9076910855892529e+04
+        END StrandAccessesByIndex
+
 
     END Definition
 
@@ -67,8 +114,8 @@ BEGIN Chain
 
             BEGIN Attributes
 
-                StaticColor		 #ffffff
-                AnimationColor		 #00ff00
+                StaticColor		 #ff00ff
+                AnimationColor		 #ffff00
                 OptStrandsRampStartColor		 #00ff00
                 OptStrandsRampEndColor		 #ff0000
                 AnimationLineWidth		 2

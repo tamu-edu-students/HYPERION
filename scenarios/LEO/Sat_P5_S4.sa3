@@ -66,12 +66,12 @@ BEGIN Covariance
     NonIntervalTranslucency		 0
     NonIntervalShow		 Yes
     NonIntervalUseCustomColor		 No
-    NonIntervalColorIndex		 #ff00ff
+    NonIntervalColorIndex		 #00ff00
     DefaultIntervalLineWidth		 1
     DefaultIntervalTranslucency		 0
     DefaultIntervalShow		 Yes
     DefaultIntervalUseCustomColor		 Yes
-    DefaultIntervalColorIndex		 #ffff00
+    DefaultIntervalColorIndex		 #00ffff
     UseIntervals		 No
     UseEllipticCoord		 No
 END

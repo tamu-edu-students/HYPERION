@@ -1998,7 +1998,7 @@ BEGIN Satellite
                     ShowOrbitMarker		 On
                     ShowElsetNum		 Off
                     ShowSpecialSwath		 On
-                    AllColors		 #ffff00
+                    AllColors		 #00ff00
                     LineStyle		 0
                     LineWidth		 2
                     MarkerStyle		 15
@@ -2018,7 +2018,7 @@ BEGIN Satellite
                         ShowOrbitMarker		 On
                         ShowElsetNum		 Off
                         ShowSpecialSwath		 On
-                        AllColors		 #ffff00
+                        AllColors		 #00ff00
                         LineStyle		 0
                         LineWidth		 2
                         MarkerStyle		 15
@@ -2039,7 +2039,7 @@ BEGIN Satellite
                         ShowOrbitMarker		 On
                         ShowElsetNum		 Off
                         ShowSpecialSwath		 On
-                        AllColors		 #ffff00
+                        AllColors		 #00ff00
                         LineStyle		 0
                         LineWidth		 2
                         MarkerStyle		 15
@@ -2058,7 +2058,7 @@ BEGIN Satellite
                         ShowOrbitMarker		 On
                         ShowElsetNum		 Off
                         ShowSpecialSwath		 On
-                        AllColors		 #0000ff
+                        AllColors		 #00ffff
                         LineStyle		 0
                         LineWidth		 2
                         MarkerStyle		 15
@@ -2080,7 +2080,7 @@ BEGIN Satellite
                         ShowOrbitMarker		 On
                         ShowElsetNum		 Off
                         ShowSpecialSwath		 On
-                        AllColors		 #ffff00
+                        AllColors		 #00ff00
                         LineStyle		 0
                         LineWidth		 2
                         MarkerStyle		 15
@@ -2101,7 +2101,7 @@ BEGIN Satellite
                         ShowOrbitMarker		 On
                         ShowElsetNum		 Off
                         ShowSpecialSwath		 On
-                        AllColors		 #0000ff
+                        AllColors		 #00ff00
                         LineStyle		 0
                         LineWidth		 2
                         MarkerStyle		 15

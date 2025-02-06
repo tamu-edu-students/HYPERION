@@ -1,0 +1,28 @@
+stk.v.12.0
+WrittenBy    STK_v12.9.0
+
+BEGIN Constellation
+
+    Name		 LEOSensors_58
+    BEGIN Definition
+        Object		 Satellite/Sat_P5_S3
+        Type		 Constellation
+        FromOperator		 Or
+        FromOrder		 1
+        ToOperator		 Or
+        ToOrder		 1
+        UseRoutingRulesFile		 No
+
+    END Definition
+
+    BEGIN Extensions
+
+        BEGIN ADFFileData
+        END ADFFileData
+
+        BEGIN Desc
+        END Desc
+
+    END Extensions
+
+END Constellation

@@ -15,8 +15,8 @@ BEGIN Chain
         ComputeIntervalPtr		
         BEGIN EVENTINTERVAL
             BEGIN Interval
-                Start		 3 Feb 2025 15:51:24.000000000
-                Stop		 3 Feb 2025 16:42:08.477107890
+                Start		 4 Feb 2025 01:31:15.000000000
+                Stop		 4 Feb 2025 02:07:17.884242626
             END Interval
             IntervalState		 Explicit
         END EVENTINTERVAL
@@ -83,23 +83,23 @@ BEGIN Chain
         SaveMode		 1
         BEGIN StrandAccessesByIndex
             Strand		 0 3
-            Start		  3.5484000000000000e+04
-            Stop		  3.6494546612485967e+04
-            Strand		 0 14
-            Start		  3.7718921885360949e+04
-            Stop		  3.8379274134777974e+04
+            Start		  7.0275000000000000e+04
+            Stop		  7.0521582581084949e+04
             Strand		 0 15
-            Start		  3.6835965921136129e+04
-            Stop		  3.7685412998010586e+04
+            Start		  7.1633742710968319e+04
+            Stop		  7.2323193713524597e+04
             Strand		 0 16
-            Start		  3.6194365669693238e+04
-            Stop		  3.6758779450493843e+04
-            Strand		 0 28
-            Start		  3.8445292337857209e+04
-            Stop		  3.8528477107890089e+04
+            Start		  7.0790382729148259e+04
+            Stop		  7.1593414666205776e+04
+            Strand		 0 17
+            Start		  7.0275000000000000e+04
+            Stop		  7.0797896250959253e+04
             Strand		 0 29
-            Start		  3.7577281945241455e+04
-            Stop		  3.8443931842648970e+04
+            Start		  7.2070850797347637e+04
+            Stop		  7.2437884242626373e+04
+            Strand		 0 30
+            Start		  7.1199790946842317e+04
+            Stop		  7.1983685892583380e+04
         END StrandAccessesByIndex
 
 

@@ -1,11 +1,10 @@
 import csv
+import time
+import matplotlib.pyplot as plt
+import pandas as pd
 from agi.stk12.stkobjects import *
 from agi.stk12.stkdesktop import STKDesktop  # Interface with open STK window
-from missile import Missile
-from chain import Chain, MissileChain
-from satellite import Satellite
-from constellation import Constellation
-from sensor import Sensor
+from objects import *
 
 # Attach to an existing STK instance
 stk = STKDesktop.AttachToApplication()
@@ -112,14 +111,14 @@ def computeAndSaveTracking(missile_paths, conic_angle, output_file):
             writer.writerow([missile_id, round(tracking_percent, 2), conic_angle])
 
 
-def main():
+def run():
     output_file = "../data/missile-tracking.csv"
 
     with open(output_file, mode='w', newline='') as file:
         writer = csv.writer(file)
         writer.writerow(["Missile ID", "Tracking %", "Conic Angle (deg)"])
 
-    # Step 1: Create missiles and missile chains (once)
+    # Step 1: Create missiles and missile chains 
     missile_paths = createMissiles(root, num_missiles=100)
 
     # Step 2: Loop over conic angles
@@ -148,6 +147,43 @@ def main():
     root.Save()
     print("Scenario saved successfully.")
 
+def plot(save_path = "../figures/missile-sim.png"):
+    data = pd.read_csv("../data/missile-tracking.csv")
+
+    plt.figure(figsize=(10, 6))
+
+    # Get unique conic angles and generate a color map dynamically
+    conic_angles = sorted(data["Conic Angle (deg)"].unique())
+    color_map = plt.colormaps['viridis'].resampled(len(conic_angles))
+
+    # Plot each conic angle group
+    for idx, conic_angle in enumerate(conic_angles):
+        subset = data[data["Conic Angle (deg)"] == conic_angle]
+        color = color_map(idx)  
+
+        # Scatter plot for the current conic angle
+        plt.scatter(subset["Missile ID"], subset["Tracking %"], label=f"{conic_angle}°", color=color, alpha=0.7)
+
+        # Calculate and plot the mean line
+        mean_tracking = subset["Tracking %"].mean()
+        plt.axhline(mean_tracking, color=color, linestyle='--', linewidth=1.5, alpha=0.8)
+
+    plt.xlabel("Missile ID")
+    plt.ylabel("Tracking Visibility (%)")
+    plt.legend(title="Conic Angle", loc='upper right', bbox_to_anchor=(1.15, 1))
+    plt.grid(True, linestyle='--', alpha=0.5)
+
+    # Save the figure
+    plt.savefig(save_path, format='png', dpi=300, bbox_inches='tight')
+    print(f"Plot saved to '{save_path}'.")
+
+
 
 if __name__ == "__main__":
-    main()
+    start_time = time.time()
+    run()
+    plot(save_path="../figures/missile-sim-30to60.png")
+    end_time = time.time()
+    duration = end_time - start_time
+
+    print(f"Simulation concluded after {duration:.2f} s")
