@@ -15,8 +15,8 @@ BEGIN Chain
         ComputeIntervalPtr		
         BEGIN EVENTINTERVAL
             BEGIN Interval
-                Start		 3 Feb 2025 16:31:14.000000000
-                Stop		 3 Feb 2025 18:24:22.581416029
+                Start		 3 Feb 2025 14:40:42.000000000
+                Stop		 3 Feb 2025 16:28:13.142553673
             END Interval
             IntervalState		 Explicit
         END EVENTINTERVAL
@@ -48,82 +48,52 @@ BEGIN Chain
         OptimalPathCalcScalarIgnoreCommonParentLinks		 Yes
         BEGIN StrandObjIndexes
             STKInst		 Aircraft/Missile34
-            STKInst		 Satellite/Sat_P1_S1/Sensor/LEOSensor
-            STKInst		 Satellite/Sat_P1_S2/Sensor/LEOSensor
-            STKInst		 Satellite/Sat_P1_S3/Sensor/LEOSensor
-            STKInst		 Satellite/Sat_P1_S4/Sensor/LEOSensor
-            STKInst		 Satellite/Sat_P1_S5/Sensor/LEOSensor
-            STKInst		 Satellite/Sat_P1_S6/Sensor/LEOSensor
-            STKInst		 Satellite/Sat_P2_S1/Sensor/LEOSensor
-            STKInst		 Satellite/Sat_P2_S2/Sensor/LEOSensor
-            STKInst		 Satellite/Sat_P2_S3/Sensor/LEOSensor
-            STKInst		 Satellite/Sat_P2_S4/Sensor/LEOSensor
-            STKInst		 Satellite/Sat_P2_S5/Sensor/LEOSensor
-            STKInst		 Satellite/Sat_P2_S6/Sensor/LEOSensor
-            STKInst		 Satellite/Sat_P3_S1/Sensor/LEOSensor
-            STKInst		 Satellite/Sat_P3_S2/Sensor/LEOSensor
-            STKInst		 Satellite/Sat_P3_S3/Sensor/LEOSensor
-            STKInst		 Satellite/Sat_P3_S4/Sensor/LEOSensor
-            STKInst		 Satellite/Sat_P3_S5/Sensor/LEOSensor
-            STKInst		 Satellite/Sat_P3_S6/Sensor/LEOSensor
-            STKInst		 Satellite/Sat_P4_S1/Sensor/LEOSensor
-            STKInst		 Satellite/Sat_P4_S2/Sensor/LEOSensor
-            STKInst		 Satellite/Sat_P4_S3/Sensor/LEOSensor
-            STKInst		 Satellite/Sat_P4_S4/Sensor/LEOSensor
-            STKInst		 Satellite/Sat_P4_S5/Sensor/LEOSensor
-            STKInst		 Satellite/Sat_P4_S6/Sensor/LEOSensor
-            STKInst		 Satellite/Sat_P5_S1/Sensor/LEOSensor
-            STKInst		 Satellite/Sat_P5_S2/Sensor/LEOSensor
-            STKInst		 Satellite/Sat_P5_S3/Sensor/LEOSensor
-            STKInst		 Satellite/Sat_P5_S4/Sensor/LEOSensor
-            STKInst		 Satellite/Sat_P5_S5/Sensor/LEOSensor
-            STKInst		 Satellite/Sat_P5_S6/Sensor/LEOSensor
         END StrandObjIndexes
 
         SaveMode		 1
         BEGIN StrandAccessesByIndex
             Strand		 0 1
-            Start		  4.3673195434752328e+04
-            Stop		  4.4370478386753603e+04
-            Strand		 0 6
-            Start		  4.4431577827106172e+04
-            Stop		  4.4662581416029068e+04
-            Strand		 0 8
-            Start		  4.2140176305270856e+04
-            Stop		  4.2535985755333750e+04
-            Strand		 0 9
-            Start		  4.1137801179702743e+04
-            Stop		  4.1898215403538983e+04
-            Strand		 0 10
-            Start		  4.0245599329026765e+04
-            Stop		  4.1114203354493431e+04
+            Start		  3.7043556914159009e+04
+            Stop		  3.7693142553672777e+04
+            Strand		 0 2
+            Start		  3.6184204278109792e+04
+            Stop		  3.7036884017260469e+04
+            Strand		 0 3
+            Start		  3.5411441467239820e+04
+            Stop		  3.6165179648628473e+04
+            Strand		 0 4
+            Start		  3.4764747643938987e+04
+            Stop		  3.5197293410937280e+04
+            Strand		 0 7
+            Start		  3.1242000000000000e+04
+            Stop		  3.1976188437812514e+04
             Strand		 0 11
-            Start		  3.9441180590780641e+04
-            Stop		  4.0235881776088594e+04
+            Start		  3.2945200234622593e+04
+            Stop		  3.3664046076400424e+04
             Strand		 0 12
-            Start		  3.8797258593610961e+04
-            Stop		  3.9218248301533669e+04
-            Strand		 0 18
-            Start		  3.7874000000000000e+04
-            Stop		  3.8400445405452592e+04
-            Strand		 0 21
-            Start		  4.2937189603123930e+04
-            Stop		  4.4012406138609433e+04
+            Start		  3.1988737586628842e+04
+            Stop		  3.2897448338513088e+04
+            Strand		 0 15
+            Start		  3.7619737167110739e+04
+            Stop		  3.7693142553672777e+04
+            Strand		 0 16
+            Start		  3.6804504218623057e+04
+            Stop		  3.7522369007397625e+04
             Strand		 0 22
-            Start		  4.1828086982078050e+04
-            Stop		  4.2948363747335687e+04
+            Start		  3.5546477109089996e+04
+            Stop		  3.6179842948350197e+04
             Strand		 0 23
-            Start		  4.1132464929029011e+04
-            Stop		  4.1488757960963048e+04
+            Start		  3.4199489054764061e+04
+            Stop		  3.5353638975842514e+04
+            Strand		 0 24
+            Start		  3.3188659520370275e+04
+            Stop		  3.4188418573185329e+04
             Strand		 0 25
-            Start		  3.7874000000000000e+04
-            Stop		  3.8571983079827936e+04
-            Strand		 0 29
-            Start		  3.9684345878238935e+04
-            Stop		  4.0467161819292967e+04
+            Start		  3.1242000000000000e+04
+            Stop		  3.2054202882799793e+04
             Strand		 0 30
-            Start		  3.8611234221920466e+04
-            Stop		  3.9625803309069357e+04
+            Start		  3.2311670677086171e+04
+            Stop		  3.2665318386424267e+04
         END StrandAccessesByIndex
 
 
@@ -147,8 +117,8 @@ BEGIN Chain
 
             BEGIN Attributes
 
-                StaticColor		 #ffffff
-                AnimationColor		 #00ff00
+                StaticColor		 #ffff00
+                AnimationColor		 #0000ff
                 OptStrandsRampStartColor		 #00ff00
                 OptStrandsRampEndColor		 #ff0000
                 AnimationLineWidth		 2

@@ -15,8 +15,8 @@ BEGIN Chain
         ComputeIntervalPtr		
         BEGIN EVENTINTERVAL
             BEGIN Interval
-                Start		 3 Feb 2025 23:48:09.000000000
-                Stop		 4 Feb 2025 00:43:10.256072894
+                Start		 3 Feb 2025 20:16:39.000000000
+                Stop		 3 Feb 2025 20:40:21.426059667
             END Interval
             IntervalState		 Explicit
         END EVENTINTERVAL
@@ -48,61 +48,25 @@ BEGIN Chain
         OptimalPathCalcScalarIgnoreCommonParentLinks		 Yes
         BEGIN StrandObjIndexes
             STKInst		 Aircraft/Missile17
-            STKInst		 Satellite/Sat_P1_S1/Sensor/LEOSensor
-            STKInst		 Satellite/Sat_P1_S2/Sensor/LEOSensor
-            STKInst		 Satellite/Sat_P1_S3/Sensor/LEOSensor
-            STKInst		 Satellite/Sat_P1_S4/Sensor/LEOSensor
-            STKInst		 Satellite/Sat_P1_S5/Sensor/LEOSensor
-            STKInst		 Satellite/Sat_P1_S6/Sensor/LEOSensor
-            STKInst		 Satellite/Sat_P2_S1/Sensor/LEOSensor
-            STKInst		 Satellite/Sat_P2_S2/Sensor/LEOSensor
-            STKInst		 Satellite/Sat_P2_S3/Sensor/LEOSensor
-            STKInst		 Satellite/Sat_P2_S4/Sensor/LEOSensor
-            STKInst		 Satellite/Sat_P2_S5/Sensor/LEOSensor
-            STKInst		 Satellite/Sat_P2_S6/Sensor/LEOSensor
-            STKInst		 Satellite/Sat_P3_S1/Sensor/LEOSensor
-            STKInst		 Satellite/Sat_P3_S2/Sensor/LEOSensor
-            STKInst		 Satellite/Sat_P3_S3/Sensor/LEOSensor
-            STKInst		 Satellite/Sat_P3_S4/Sensor/LEOSensor
-            STKInst		 Satellite/Sat_P3_S5/Sensor/LEOSensor
-            STKInst		 Satellite/Sat_P3_S6/Sensor/LEOSensor
-            STKInst		 Satellite/Sat_P4_S1/Sensor/LEOSensor
-            STKInst		 Satellite/Sat_P4_S2/Sensor/LEOSensor
-            STKInst		 Satellite/Sat_P4_S3/Sensor/LEOSensor
-            STKInst		 Satellite/Sat_P4_S4/Sensor/LEOSensor
-            STKInst		 Satellite/Sat_P4_S5/Sensor/LEOSensor
-            STKInst		 Satellite/Sat_P4_S6/Sensor/LEOSensor
-            STKInst		 Satellite/Sat_P5_S1/Sensor/LEOSensor
-            STKInst		 Satellite/Sat_P5_S2/Sensor/LEOSensor
-            STKInst		 Satellite/Sat_P5_S3/Sensor/LEOSensor
-            STKInst		 Satellite/Sat_P5_S4/Sensor/LEOSensor
-            STKInst		 Satellite/Sat_P5_S5/Sensor/LEOSensor
-            STKInst		 Satellite/Sat_P5_S6/Sensor/LEOSensor
         END StrandObjIndexes
 
         SaveMode		 1
         BEGIN StrandAccessesByIndex
             Strand		 0 1
-            Start		  6.5751856750622785e+04
-            Stop		  6.6797280727494566e+04
-            Strand		 0 6
-            Start		  6.6793685362528806e+04
-            Stop		  6.7390256072894466e+04
-            Strand		 0 8
-            Start		  6.4089000000000000e+04
-            Stop		  6.4602089915888355e+04
-            Strand		 0 14
-            Start		  6.7013509627777821e+04
-            Stop		  6.7390256072894466e+04
-            Strand		 0 21
-            Start		  6.5209831902216603e+04
-            Stop		  6.5969376668642391e+04
-            Strand		 0 22
-            Start		  6.4352364056746381e+04
-            Stop		  6.5205171590207392e+04
-            Strand		 0 23
-            Start		  6.4089000000000000e+04
-            Stop		  6.4244570322123996e+04
+            Start		  5.2720898541611139e+04
+            Stop		  5.2821426059666570e+04
+            Strand		 0 2
+            Start		  5.2155661660954764e+04
+            Stop		  5.2711540037714360e+04
+            Strand		 0 16
+            Start		  5.1650466979100500e+04
+            Stop		  5.2821426059666570e+04
+            Strand		 0 17
+            Start		  5.1399000000000000e+04
+            Stop		  5.1668503283970771e+04
+            Strand		 0 25
+            Start		  5.1399000000000000e+04
+            Stop		  5.1636006380940169e+04
         END StrandAccessesByIndex
 
 
@@ -126,8 +90,8 @@ BEGIN Chain
 
             BEGIN Attributes
 
-                StaticColor		 #0000ff
-                AnimationColor		 #ff0000
+                StaticColor		 #00ffff
+                AnimationColor		 #ff00ff
                 OptStrandsRampStartColor		 #00ff00
                 OptStrandsRampEndColor		 #ff0000
                 AnimationLineWidth		 2

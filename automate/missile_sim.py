@@ -22,9 +22,9 @@ mu_E = 3.986004415e5  # km^3 / s^2
 r_E = 6.378137e3  # km
 
 
-def makeConstellation(root, conic_angle):
+def makeLEOConstellation(root, conic_angle):
     """
-    Creates a Walker constellation with attached sensors.
+    Creates a Walker constellation with attached sensors and adds to a constellation object.
     """
     # Classical orbital elements and Walker parameters
     a = 1000 + r_E  # km
@@ -126,7 +126,7 @@ def run():
 
     for conic_angle in range(30, 61, 10):
         # Create the constellation for this conic angle
-        constellation_path = makeConstellation(root, conic_angle)
+        constellation_path = makeLEOConstellation(root, conic_angle)
 
         # Remove the previous constellation from all missile chains
         if previous_constellation_path:
@@ -186,4 +186,4 @@ if __name__ == "__main__":
     end_time = time.time()
     duration = end_time - start_time
 
-    print(f"Simulation concluded after {duration:.2f} s")
+    print(f"Simulation concluded after {duration/60:.2f} min")

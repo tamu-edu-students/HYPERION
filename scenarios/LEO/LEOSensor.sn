@@ -96,7 +96,7 @@ BEGIN Sensor
                 Show		 Yes
                 LineStyle		 0
                 LineWidth		 1
-                PatternColor		 #00ffff
+                PatternColor		 #ffffff
 
             END Attributes
 
@@ -142,7 +142,7 @@ BEGIN Sensor
                 MatchTolerance		  9.0000000000000000e+01
                 ShowSwath		 No
                 ComputationalMethod		 Numerical
-                Color		 #00ffff
+                Color		 #ffffff
                 LineStyle		 0
                 LineWidth		 1
                 SwathIntervalPtr		

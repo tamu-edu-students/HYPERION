@@ -15,8 +15,8 @@ BEGIN Chain
         ComputeIntervalPtr		
         BEGIN EVENTINTERVAL
             BEGIN Interval
-                Start		 3 Feb 2025 20:04:41.000000000
-                Stop		 3 Feb 2025 20:11:24.335444435
+                Start		 3 Feb 2025 06:45:45.000000000
+                Stop		 3 Feb 2025 07:26:02.895870044
             END Interval
             IntervalState		 Explicit
         END EVENTINTERVAL
@@ -48,49 +48,34 @@ BEGIN Chain
         OptimalPathCalcScalarIgnoreCommonParentLinks		 Yes
         BEGIN StrandObjIndexes
             STKInst		 Aircraft/Missile39
-            STKInst		 Satellite/Sat_P1_S1/Sensor/LEOSensor
-            STKInst		 Satellite/Sat_P1_S2/Sensor/LEOSensor
-            STKInst		 Satellite/Sat_P1_S3/Sensor/LEOSensor
-            STKInst		 Satellite/Sat_P1_S4/Sensor/LEOSensor
-            STKInst		 Satellite/Sat_P1_S5/Sensor/LEOSensor
-            STKInst		 Satellite/Sat_P1_S6/Sensor/LEOSensor
-            STKInst		 Satellite/Sat_P2_S1/Sensor/LEOSensor
-            STKInst		 Satellite/Sat_P2_S2/Sensor/LEOSensor
-            STKInst		 Satellite/Sat_P2_S3/Sensor/LEOSensor
-            STKInst		 Satellite/Sat_P2_S4/Sensor/LEOSensor
-            STKInst		 Satellite/Sat_P2_S5/Sensor/LEOSensor
-            STKInst		 Satellite/Sat_P2_S6/Sensor/LEOSensor
-            STKInst		 Satellite/Sat_P3_S1/Sensor/LEOSensor
-            STKInst		 Satellite/Sat_P3_S2/Sensor/LEOSensor
-            STKInst		 Satellite/Sat_P3_S3/Sensor/LEOSensor
-            STKInst		 Satellite/Sat_P3_S4/Sensor/LEOSensor
-            STKInst		 Satellite/Sat_P3_S5/Sensor/LEOSensor
-            STKInst		 Satellite/Sat_P3_S6/Sensor/LEOSensor
-            STKInst		 Satellite/Sat_P4_S1/Sensor/LEOSensor
-            STKInst		 Satellite/Sat_P4_S2/Sensor/LEOSensor
-            STKInst		 Satellite/Sat_P4_S3/Sensor/LEOSensor
-            STKInst		 Satellite/Sat_P4_S4/Sensor/LEOSensor
-            STKInst		 Satellite/Sat_P4_S5/Sensor/LEOSensor
-            STKInst		 Satellite/Sat_P4_S6/Sensor/LEOSensor
-            STKInst		 Satellite/Sat_P5_S1/Sensor/LEOSensor
-            STKInst		 Satellite/Sat_P5_S2/Sensor/LEOSensor
-            STKInst		 Satellite/Sat_P5_S3/Sensor/LEOSensor
-            STKInst		 Satellite/Sat_P5_S4/Sensor/LEOSensor
-            STKInst		 Satellite/Sat_P5_S5/Sensor/LEOSensor
-            STKInst		 Satellite/Sat_P5_S6/Sensor/LEOSensor
         END StrandObjIndexes
 
         SaveMode		 1
         BEGIN StrandAccessesByIndex
-            Strand		 0 7
-            Start		  5.0681000000000000e+04
-            Stop		  5.1084335444435426e+04
+            Strand		 0 5
+            Start		  2.7450000000000000e+03
+            Stop		  2.9069314082113788e+03
+            Strand		 0 10
+            Start		  5.0403658509258148e+03
+            Stop		  5.1628958700440098e+03
+            Strand		 0 11
+            Start		  4.3612803826531772e+03
+            Stop		  5.0370845594057082e+03
+            Strand		 0 17
+            Start		  3.1010405020535127e+03
+            Stop		  3.9269331653357376e+03
+            Strand		 0 18
+            Start		  2.7450000000000000e+03
+            Stop		  3.0014543569934458e+03
             Strand		 0 25
-            Start		  5.0681000000000000e+04
-            Stop		  5.0941419983932115e+04
+            Start		  3.7663324230452199e+03
+            Stop		  4.5133958635733652e+03
+            Strand		 0 26
+            Start		  3.2769259487292584e+03
+            Stop		  3.6862004461860397e+03
             Strand		 0 30
-            Start		  5.0932766233312774e+04
-            Stop		  5.1084335444435426e+04
+            Start		  4.6250619980422452e+03
+            Stop		  4.9743382007386081e+03
         END StrandAccessesByIndex
 
 
@@ -114,8 +99,8 @@ BEGIN Chain
 
             BEGIN Attributes
 
-                StaticColor		 #00ff00
-                AnimationColor		 #00ffff
+                StaticColor		 #0000ff
+                AnimationColor		 #ff0000
                 OptStrandsRampStartColor		 #00ff00
                 OptStrandsRampEndColor		 #ff0000
                 AnimationLineWidth		 2

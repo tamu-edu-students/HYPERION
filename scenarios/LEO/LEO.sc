@@ -172,44 +172,6 @@ BEGIN Scenario
         END Report
 
         BEGIN Report
-            Name		 Complete Chain Access4
-            Type		 Report
-            BaseDir		 Install
-            Style		 Complete Chain Access
-            AGIViewer		 Yes
-            Instance		 Chain/Missile76Chain
-            BEGIN TimeData
-                BEGIN Section
-                    SectionNumber		 1
-                    SectionType		 4
-                    ShowIntervals		 No
-                    BEGIN IntervalList
-
-                        DateUnitAbrv		 UTCG
-
-                        BEGIN Intervals
-
-"3 Feb 2025 06:00:00.000000000" "4 Feb 2025 06:00:00.000000000"
-                        END Intervals
-
-                    END IntervalList
-
-                    TimeType		 Interval
-                    SamplingType		 Default
-                    TimeBound		 0
-                END Section
-            END TimeData
-            DisplayOnLoad		 No
-            FrameType		 0
-            DockCircleID		 0
-            DockID		 0
-            WindowRectLeft		 832
-            WindowRectTop		 573
-            WindowRectRight		 3088
-            WindowRectBottom		 1664
-        END Report
-
-        BEGIN Report
             Name		 Grid Stats1
             Type		 Report
             BaseDir		 Install
