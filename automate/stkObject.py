@@ -1,21 +1,5 @@
 from agi.stk12.stkobjects import *
 
-def loadIfNotLoaded(func):
-    """
-    Decorator to check if the STK object is already loaded (i.e., self.identity is set).
-    If it is, it unloads the existing object and then calls the decorated method to reload or reconfigure it.
-    """
-    def wrapper(self, *args, **kwargs):
-        if self.identity is not None:
-            print(f"Object '{self.name}' is already loaded. Unloading it for reconfiguration...")
-            self.unloadObject()  # Unload the existing object
-            self.identity = None  # Reset identity to ensure the object is properly recreated
-
-        # Call the original loadObject function
-        return func(self, *args, **kwargs)
-
-    return wrapper
-
 
 class STKObjectBase:
     def __init__(self, root, name, object_type, unload=True):
