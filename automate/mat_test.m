@@ -16,11 +16,30 @@ stk = py.agi.stk12.stkdesktop.STKDesktop.AttachToApplication();
 root = stk.Root;
 
 % Check for active scenario
-if ~isempty(root.CurrentScenario)
-    disp(['Connected to scenario: ', string(root.CurrentScenario.InstanceName)]);
+scenario = root.CurrentScenario;
+if isempty(scenario)
+    error('No scenario is currently open.');
 else
-    error('No scenario is currently open in STK.');
+    disp(['Clearing objects in scenario: ', string(scenario.InstanceName)]);
 end
+
+% Clear current scenario
+while scenario.Children.Count > 0
+    children = scenario.Children;
+    disp(['Number of objects remaining: ', num2str(children.Count)]);
+
+    % Always target the first object to avoid skipping objects
+    try
+        child = children.Item(int32(0)); 
+        disp(['Deleting object: ', char(child.InstanceName)]);
+        child.Unload();  
+    catch ME
+        disp(['Failed to delete object: ', ME.message]);
+    end
+end
+
+disp('All objects have been cleared.');
+
 
 % Constants
 mu_E = 3.986004415e5;  % km^3 / s^2
@@ -40,7 +59,7 @@ planes = 5;
 phasing = 3;
 delta_M = (phasing * 360) / total_sats;
 sats_per_plane = total_sats / planes;
-conic_angle = 60;
+conic_angle = 45;
 
 % Loop through planes and satellites
 for plane = 0:(planes-1)

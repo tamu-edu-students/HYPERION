@@ -1,8 +1,10 @@
 from agi.stk12.stkobjects import *
 from agi.stk12.stkutil import *
+from agi.stk12.utilities.colors import Colors
 from .stkObject import STKStandaloneObject
 
-COLOR = 16711680 # Standard blue
+r, g, b = 0, 0, 255
+COLOR = Colors.FromRGB(r, g, b)
 
 class Satellite(STKStandaloneObject):
     def __init__(self, root, name, a, i, Omega, omega=0, e=0, M=0, epoch=None, unload=True):
@@ -63,7 +65,8 @@ class Satellite(STKStandaloneObject):
 
         # Assign the configuration and propagate
         satellite.Propagator.InitialState.Representation.Assign(keplerian)
-        # satellite.Graphics.Attributes.Color = COLOR
+
+        satellite.Graphics.Attributes.Color = COLOR
         # satellite.Graphics.Attributes.Line.Width = 0.05
 
         # Set propagator to J2 perturbation for realistic orbital modeling

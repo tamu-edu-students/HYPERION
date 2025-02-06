@@ -5,8 +5,9 @@ BEGIN Chain
 
     Name		 Missile49Chain
     BEGIN Definition
-        Object		 Aircraft/Missile49
-        Object		 Constellation/LEOSensors_60
+        BEGIN RoutingData
+            MaxStrandDepth		 10
+        END RoutingData
         Recompute		 Yes
         LastRequestedToBeComputedInParallel		 No
         IntervalType		 0
@@ -46,26 +47,7 @@ BEGIN Chain
         OptimalPathLinkCompare		 Min
         OptimalPathStrandCompare		 Min
         OptimalPathCalcScalarIgnoreCommonParentLinks		 Yes
-        BEGIN StrandObjIndexes
-            STKInst		 Aircraft/Missile49
-        END StrandObjIndexes
-
         SaveMode		 1
-        BEGIN StrandAccessesByIndex
-            Strand		 0 7
-            Start		  7.0858717347486891e+04
-            Stop		  7.0891161089566638e+04
-            Strand		 0 8
-            Start		  7.0083801187707344e+04
-            Stop		  7.0826822058600737e+04
-            Strand		 0 22
-            Start		  7.0847029029791709e+04
-            Stop		  7.0891161089566638e+04
-            Strand		 0 23
-            Start		  7.0325663652886666e+04
-            Stop		  7.0770915953441887e+04
-        END StrandAccessesByIndex
-
 
     END Definition
 

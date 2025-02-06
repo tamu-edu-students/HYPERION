@@ -5,8 +5,9 @@ BEGIN Chain
 
     Name		 Missile65Chain
     BEGIN Definition
-        Object		 Aircraft/Missile65
-        Object		 Constellation/LEOSensors_60
+        BEGIN RoutingData
+            MaxStrandDepth		 10
+        END RoutingData
         Recompute		 Yes
         LastRequestedToBeComputedInParallel		 No
         IntervalType		 0
@@ -46,20 +47,7 @@ BEGIN Chain
         OptimalPathLinkCompare		 Min
         OptimalPathStrandCompare		 Min
         OptimalPathCalcScalarIgnoreCommonParentLinks		 Yes
-        BEGIN StrandObjIndexes
-            STKInst		 Aircraft/Missile65
-        END StrandObjIndexes
-
         SaveMode		 1
-        BEGIN StrandAccessesByIndex
-            Strand		 0 16
-            Start		  1.6647268574075435e+04
-            Stop		  1.7206034780044047e+04
-            Strand		 0 25
-            Start		  1.6018000000000000e+04
-            Stop		  1.7218157008378665e+04
-        END StrandAccessesByIndex
-
 
     END Definition
 

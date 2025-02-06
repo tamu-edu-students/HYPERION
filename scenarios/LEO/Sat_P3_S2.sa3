@@ -23,7 +23,7 @@ Level3SwapDistance		 400000000
 Level4SwapDistance		 600000000
 ShowMarker		 Yes
 BEGIN Marker
-    Show		 Yes
+    Show		 No
     Type		 LineGraphic
     Shape		 Point
     IsTransparent		 No
@@ -66,12 +66,12 @@ BEGIN Covariance
     NonIntervalTranslucency		 0
     NonIntervalShow		 Yes
     NonIntervalUseCustomColor		 No
-    NonIntervalColorIndex		 #ff0000
+    NonIntervalColorIndex		 #0000ff
     DefaultIntervalLineWidth		 1
     DefaultIntervalTranslucency		 0
     DefaultIntervalShow		 Yes
     DefaultIntervalUseCustomColor		 Yes
-    DefaultIntervalColorIndex		 #ffffff
+    DefaultIntervalColorIndex		 #ff0000
     UseIntervals		 No
     UseEllipticCoord		 No
 END

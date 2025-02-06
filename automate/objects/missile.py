@@ -3,10 +3,12 @@ import pandas as pd
 import random
 from geopy.geocoders import Nominatim
 from agi.stk12.stkobjects import *
+from agi.stk12.utilities.colors import Colors
 from datetime import datetime, timedelta
 from .stkObject import STKStandaloneObject 
 
-COLOR = 255 # Standard Red
+r, g, b = 255, 0, 0
+COLOR = Colors.FromRGB(r, g, b)
 
 class Site:
     def __init__(self, lat, lon, city, country):
@@ -111,8 +113,7 @@ class Missile(STKStandaloneObject):
         waypoint2.Altitude = 0  
         waypoint2.Speed = speed_kmps
 
-        # TODO: figure out color
-        # missile.Graphics.Attributes.Color = COLOR
+        missile.Graphics.Attributes.Color = COLOR
 
         # Propagate the route
         route.Propagate()

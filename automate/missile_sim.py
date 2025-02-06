@@ -5,6 +5,7 @@ import pandas as pd
 from agi.stk12.stkobjects import *
 from agi.stk12.stkdesktop import STKDesktop  # Interface with open STK window
 from objects import *
+from utilities import *
 
 # Attach to an existing STK instance
 stk = STKDesktop.AttachToApplication()
@@ -49,7 +50,7 @@ def makeLEOConstellation(root, conic_angle):
             Omega = ((plane / p) * 360) + Omega_0
             M = (sat / sats_per_plane) * 360 + delta_M * plane + M_0
 
-            sat_name = f"Sat_P{plane+1}_S{sat+1}"
+            sat_name = f"LEOSat_P{plane+1}_S{sat+1}"
             satellite = Satellite(root, sat_name, a, i, Omega, omega, e, M)
             satellite.loadObject()
 
@@ -181,6 +182,7 @@ def plot(save_path = "../figures/missile-sim.png"):
 
 if __name__ == "__main__":
     start_time = time.time()
+    clearScenario(root.CurrentScenario)
     run()
     plot(save_path="../figures/missile-sim-30to60.png")
     end_time = time.time()

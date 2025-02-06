@@ -2,6 +2,7 @@ import time
 from agi.stk12.stkobjects import *
 from agi.stk12.stkdesktop import STKDesktop # Interface with open STK window
 from objects import *
+from utilities import *
 
 # Attach to an existing STK instance
 stk = STKDesktop.AttachToApplication()
@@ -10,6 +11,7 @@ stk = STKDesktop.AttachToApplication()
 root = stk.Root
 
 if root.CurrentScenario is not None:
+    scenario = root.CurrentScenario
     print("Connected to scenario:", root.CurrentScenario.InstanceName)
 else:
     print("No scenario is currently open.")
@@ -35,7 +37,7 @@ def makeLEOSats(root):
     f = 3  # Phasing factor
     delta_M = (f * 360) / t  # Change in mean anomaly for equivalent satellites
 
-    conic_angle = 60
+    conic_angle = 45
 
     sats_per_plane = int(t / p)
 
@@ -44,7 +46,7 @@ def makeLEOSats(root):
             Omega = ((plane / p) * 360) + Omega_0
             M = (sat / sats_per_plane) * 360 + delta_M * plane + M_0
 
-            sat_name = f"Sat_P{plane+1}_S{sat+1}"
+            sat_name = f"LEOSat_P{plane+1}_S{sat+1}"
             satellite = Satellite(root, sat_name, a, i, Omega, omega, e, M)
             satellite.loadObject()
 
@@ -57,6 +59,7 @@ def makeLEOSats(root):
 
 if __name__ == "__main__":
     start_time = time.time()
+    clearScenario(scenario)
     makeLEOSats(root)
     root.Save()
     print("Scenario saved successfully.")

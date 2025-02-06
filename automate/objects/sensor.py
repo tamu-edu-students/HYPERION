@@ -1,6 +1,10 @@
 from agi.stk12.stkobjects import *
 from agi.stk12.stkutil import *
+from agi.stk12.utilities.colors import Colors
 from .stkObject import STKStandaloneObject
+
+r, g, b = 0, 255, 0
+COLOR = Colors.FromRGB(r, g, b)
 
 class Sensor(STKStandaloneObject):
     def __init__(self, root, satellite_name, sensor_name, conic_angle, unload=True):
@@ -36,6 +40,8 @@ class Sensor(STKStandaloneObject):
             sensor.CommonTasks.SetPointingFixedEuler(
                 AgEEulerOrientationSequence.e312, 0, 0, 0  # Nadir-aligned (0, 0, 0)
             )
+
+            # sensor.Graphics.Attributes.Color = COLOR
 
             print(f"Sensor '{self.name}' attached to satellite '{self.satellite_name}' with a conic angle of {self.conic_angle}°.")
 
