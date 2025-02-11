@@ -1,8 +1,8 @@
 import time
 from agi.stk12.stkobjects import *
 from agi.stk12.stkdesktop import STKDesktop # Interface with open STK window
-from objects import *
-from utilities import *
+from src.objects import *
+from src.utilities import *
 
 # Attach to an existing STK instance
 stk = STKDesktop.AttachToApplication()
@@ -37,7 +37,7 @@ def makeLEOSats(root):
     f = 3  # Phasing factor
     delta_M = (f * 360) / t  # Change in mean anomaly for equivalent satellites
 
-    conic_angle = 45
+    conic_angle = 50
 
     sats_per_plane = int(t / p)
 

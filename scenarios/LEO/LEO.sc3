@@ -199,6 +199,7 @@ BEGIN SceneWindow
             END Detail
         END MapList
 
+        SnapDirectory		 C:\Users\brigh\TAMU Programming\HYPERION\figures
         SnapFileType		 BMP
         SnapOutputMode		 Normal
         OutputSnapToClipboard		 No
@@ -209,33 +210,6 @@ BEGIN SceneWindow
 
         BEGIN Globe
             AA		 Yes
-            BeginCentralBody "Sun"
-                Show		 Yes
-                Textured		 No
-                AltOffset		 0
-                Color		 #ffff00
-                SpecularColor		 #545454
-                Shininess		 40
-                ShowWater		 No
-                ShowUmbraCone		 No
-                ShowPenumbraCone		 No
-                ShowPenumbraLimit		 No
-                ShowSubsolarPoint		 No
-                _AGI_PIBEGINTERRAINIMAGECALLDATA "SRC"
-                    BlendMode		 Value
-                    BlendFactor		 1
-                    BlendAltitudeLowerFactor		 1
-                    BlendAltitudeUpperFactor		 0
-                    BlendAltitudeLowerAltitude		 500000
-                    BlendAltitudeUpperAltitude		 2500000
-                    TextureRole		 Day
-                    URI		 "file:///Sun.jp2"
-                    BeginImageSetDefOn
-                    END
-                    InBase		 Yes
-                    BaseOn		 Yes
-                END
-            EndCentralBody
             BeginCentralBody "Moon"
                 Show		 Yes
                 Textured		 Yes
@@ -257,6 +231,33 @@ BEGIN SceneWindow
                     BlendAltitudeUpperAltitude		 2500000
                     TextureRole		 Day
                     URI		 "file:///Moon.jp2"
+                    BeginImageSetDefOn
+                    END
+                    InBase		 Yes
+                    BaseOn		 Yes
+                END
+            EndCentralBody
+            BeginCentralBody "Sun"
+                Show		 Yes
+                Textured		 No
+                AltOffset		 0
+                Color		 #ffff00
+                SpecularColor		 #545454
+                Shininess		 40
+                ShowWater		 No
+                ShowUmbraCone		 No
+                ShowPenumbraCone		 No
+                ShowPenumbraLimit		 No
+                ShowSubsolarPoint		 No
+                _AGI_PIBEGINTERRAINIMAGECALLDATA "SRC"
+                    BlendMode		 Value
+                    BlendFactor		 1
+                    BlendAltitudeLowerFactor		 1
+                    BlendAltitudeUpperFactor		 0
+                    BlendAltitudeLowerAltitude		 500000
+                    BlendAltitudeUpperAltitude		 2500000
+                    TextureRole		 Day
+                    URI		 "file:///Sun.jp2"
                     BeginImageSetDefOn
                     END
                     InBase		 Yes
@@ -395,12 +396,12 @@ BEGIN SceneWindow
         END
         BEGIN CentralBodyOpts
             BeginCentralBody
-                Name		 "Sun"
-                ShowLabel		 No
-            EndCentralBody
-            BeginCentralBody
                 Name		 "Moon"
                 ShowLabel		 Yes
+            EndCentralBody
+            BeginCentralBody
+                Name		 "Sun"
+                ShowLabel		 No
             EndCentralBody
             BeginCentralBody
                 Name		 "Earth"
@@ -729,9 +730,9 @@ BEGIN SceneWindow
             UseLayer		 Yes
             FromName		 "Earth"
             FromRegPosAttView		 "Point"
-            FromPosition		  7.6669674377214327e+07  8.4546050490422890e+07  9.9490038619515225e+06
-            FromOffset		  7.6669674377214327e+07  8.4546050490422890e+07  9.9490038619515225e+06
-            FromOffsetLLR		  8.6950700029917533e-02  8.3421547520848272e-01  1.1456551095544565e+08
+            FromPosition		  1.0659275448220549e+06 -3.1340332145402852e+07  1.7653760223275658e+07
+            FromOffset		  1.0659275448220549e+06 -3.1340332145402852e+07  1.7653760223275658e+07
+            FromOffsetLLR		  5.1274379455023233e-01 -1.5367980649765893e+00  3.5986217785923146e+07
             ToName		 "Earth"
             ToRegPosAttView		 "Point"
             ToPosition		  0.0000000000000000e+00  0.0000000000000000e+00  0.0000000000000000e+00
@@ -739,9 +740,9 @@ BEGIN SceneWindow
             ToOffsetLLR		  0.0000000000000000e+00  0.0000000000000000e+00  0.0000000000000000e+00
             ConstantDistanceType		 None
             ConstantDistanceValue		 1
-            UpVector		 -5.8336346103471229e-02 -6.4329315379962670e-02  9.9622216894929694e-01
-            ViewRad		  1.1456551095544565e+08
-            ViewQuat		  4.0473506088176886e-01  3.9735447702388793e-02  1.7607092924225482e-02 -9.1340057749471526e-01
+            UpVector		 -1.6675315706621688e-02  4.9028654472215638e-01  8.7140176607033182e-01
+            ViewRad		  3.5986217785923146e+07
+            ViewQuat		  6.7227033535643044e-01 -1.8232492158909994e-01  1.7622922553413953e-01  6.9552388832801315e-01
             ViewCoordSystem		 From
             ViewFromToMode		 FromTo
             ViewToCBIMtx		  1.0000000000000000e+00  0.0000000000000000e+00  0.0000000000000000e+00  0.0000000000000000e+00  1.0000000000000000e+00  0.0000000000000000e+00  0.0000000000000000e+00  0.0000000000000000e+00  1.0000000000000000e+00
@@ -755,7 +756,7 @@ BEGIN SceneWindow
             MinAngleToUpAxis		  8.7266462599716477e-03
             InitUpAxisUp		 Yes
             TempUpAxisUp		 Yes
-            CrossAxis		  7.4076972812369613e-01 -6.7175904154357724e-01  0.0000000000000000e+00
+            CrossAxis		 -9.9942211476380338e-01 -3.3991712534779624e-02  0.0000000000000000e+00
             DefaultOffset		  3.5079753500000000e+07
             BaseDefaultOffset		  6.3781370000000000e+06
         END View

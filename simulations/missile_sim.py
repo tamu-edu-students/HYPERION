@@ -4,8 +4,8 @@ import matplotlib.pyplot as plt
 import pandas as pd
 from agi.stk12.stkobjects import *
 from agi.stk12.stkdesktop import STKDesktop  # Interface with open STK window
-from objects import *
-from utilities import *
+from src.objects import *
+from src.utilities import *
 
 # Attach to an existing STK instance
 stk = STKDesktop.AttachToApplication()

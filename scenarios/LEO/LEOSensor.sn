@@ -9,7 +9,7 @@ BEGIN Sensor
 
         BEGIN SimpleCone
 
-            ConeAngle		  5.9999999999999993e+01
+            ConeAngle		  5.0000000000000000e+01
             AngularPatternResolution		  4.0000000000000000e+00
 
         END SimpleCone
@@ -96,7 +96,7 @@ BEGIN Sensor
                 Show		 Yes
                 LineStyle		 0
                 LineWidth		 1
-                PatternColor		 #00ff00
+                PatternColor		 #0000ff
 
             END Attributes
 
@@ -142,7 +142,7 @@ BEGIN Sensor
                 MatchTolerance		  9.0000000000000000e+01
                 ShowSwath		 No
                 ComputationalMethod		 Numerical
-                Color		 #00ff00
+                Color		 #0000ff
                 LineStyle		 0
                 LineWidth		 1
                 SwathIntervalPtr		

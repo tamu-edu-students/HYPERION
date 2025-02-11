@@ -338,19 +338,19 @@ BEGIN Scenario
             BEGIN Class
                 Name		 Chain
                 BEGIN Favorite
-                    Type		 Graph
-                    BaseDir		 Install
-                    Style		 Individual Strand Access
-                END Favorite
-                BEGIN Favorite
-                    Type		 Graph
+                    Type		 Report
                     BaseDir		 Install
                     Style		 Complete Chain Access
                 END Favorite
                 BEGIN Favorite
                     Type		 Report
                     BaseDir		 Install
-                    Style		 Access Data
+                    Style		 Individual Strand Access
+                END Favorite
+                BEGIN Favorite
+                    Type		 Report
+                    BaseDir		 Install
+                    Style		 Time Ordered Access
                 END Favorite
                 BEGIN Favorite
                     Type		 Graph
@@ -360,30 +360,17 @@ BEGIN Scenario
                 BEGIN Favorite
                     Type		 Report
                     BaseDir		 Install
-                    Style		 Time Ordered Access
-                END Favorite
-                BEGIN Favorite
-                    Type		 Report
-                    BaseDir		 Install
-                    Style		 Individual Strand Access
-                END Favorite
-                BEGIN Favorite
-                    Type		 Report
-                    BaseDir		 Install
-                    Style		 Complete Chain Access
-                END Favorite
-            END Class
-            BEGIN Class
-                Name		 FigureOfMerit
-                BEGIN Favorite
-                    Type		 Report
-                    BaseDir		 Install
-                    Style		 Grid Stats
+                    Style		 Access Data
                 END Favorite
                 BEGIN Favorite
                     Type		 Graph
                     BaseDir		 Install
-                    Style		 GI Point FOM
+                    Style		 Complete Chain Access
+                END Favorite
+                BEGIN Favorite
+                    Type		 Graph
+                    BaseDir		 Install
+                    Style		 Individual Strand Access
                 END Favorite
             END Class
             BEGIN Class
@@ -391,12 +378,25 @@ BEGIN Scenario
                 BEGIN Favorite
                     Type		 Report
                     BaseDir		 Install
-                    Style		 All Satellites Walker
+                    Style		 Configuration
                 END Favorite
                 BEGIN Favorite
                     Type		 Report
                     BaseDir		 Install
-                    Style		 Configuration
+                    Style		 All Satellites Walker
+                END Favorite
+            END Class
+            BEGIN Class
+                Name		 FigureOfMerit
+                BEGIN Favorite
+                    Type		 Graph
+                    BaseDir		 Install
+                    Style		 GI Point FOM
+                END Favorite
+                BEGIN Favorite
+                    Type		 Report
+                    BaseDir		 Install
+                    Style		 Grid Stats
                 END Favorite
             END Class
         END ReportFavorites
@@ -1720,7 +1720,7 @@ BEGIN Scenario
                         ShowImageNames		 Off
                         ImageNameFont		 0
                         Projection		 EquidistantCylindrical
-                        Resolution		 VeryLow
+                        Resolution		 Low
                         CoordinateSys		 ECF
                         UseBackgroundImage		 On
                         UseBingForBackground		 On
@@ -1855,7 +1855,7 @@ BEGIN Scenario
                         SdfSelected		 No
                         BaseName		 Frame
                         Digits		 4
-                        Frame		 0
+                        Frame		 1
                         LastAnimTime		 0
                         OutputMode		 Normal
                         HiResAssembly		 Assemble
@@ -2311,11 +2311,256 @@ BEGIN Scenario
 
     BEGIN SubObjects
 
+        Class Satellite
+
+            LEOSat_P1_S1		
+            LEOSat_P1_S2		
+            LEOSat_P1_S3		
+            LEOSat_P1_S4		
+            LEOSat_P1_S5		
+            LEOSat_P1_S6		
+            LEOSat_P2_S1		
+            LEOSat_P2_S2		
+            LEOSat_P2_S3		
+            LEOSat_P2_S4		
+            LEOSat_P2_S5		
+            LEOSat_P2_S6		
+            LEOSat_P3_S1		
+            LEOSat_P3_S2		
+            LEOSat_P3_S3		
+            LEOSat_P3_S4		
+            LEOSat_P3_S5		
+            LEOSat_P3_S6		
+            LEOSat_P4_S1		
+            LEOSat_P4_S2		
+            LEOSat_P4_S3		
+            LEOSat_P4_S4		
+            LEOSat_P4_S5		
+            LEOSat_P4_S6		
+            LEOSat_P5_S1		
+            LEOSat_P5_S2		
+            LEOSat_P5_S3		
+            LEOSat_P5_S4		
+            LEOSat_P5_S5		
+            LEOSat_P5_S6		
+
+        END Class
+
     END SubObjects
 
     BEGIN References
         Instance *
             *		
+        END Instance
+        Instance Satellite/LEOSat_P1_S1
+            Satellite/LEOSat_P1_S1		
+            Satellite/LEOSat_P1_S1/Sensor/LEOSensor		
+        END Instance
+        Instance Satellite/LEOSat_P1_S1/Sensor/LEOSensor
+            Satellite/LEOSat_P1_S1/Sensor/LEOSensor		
+        END Instance
+        Instance Satellite/LEOSat_P1_S2
+            Satellite/LEOSat_P1_S2		
+            Satellite/LEOSat_P1_S2/Sensor/LEOSensor		
+        END Instance
+        Instance Satellite/LEOSat_P1_S2/Sensor/LEOSensor
+            Satellite/LEOSat_P1_S2/Sensor/LEOSensor		
+        END Instance
+        Instance Satellite/LEOSat_P1_S3
+            Satellite/LEOSat_P1_S3		
+            Satellite/LEOSat_P1_S3/Sensor/LEOSensor		
+        END Instance
+        Instance Satellite/LEOSat_P1_S3/Sensor/LEOSensor
+            Satellite/LEOSat_P1_S3/Sensor/LEOSensor		
+        END Instance
+        Instance Satellite/LEOSat_P1_S4
+            Satellite/LEOSat_P1_S4		
+            Satellite/LEOSat_P1_S4/Sensor/LEOSensor		
+        END Instance
+        Instance Satellite/LEOSat_P1_S4/Sensor/LEOSensor
+            Satellite/LEOSat_P1_S4/Sensor/LEOSensor		
+        END Instance
+        Instance Satellite/LEOSat_P1_S5
+            Satellite/LEOSat_P1_S5		
+            Satellite/LEOSat_P1_S5/Sensor/LEOSensor		
+        END Instance
+        Instance Satellite/LEOSat_P1_S5/Sensor/LEOSensor
+            Satellite/LEOSat_P1_S5/Sensor/LEOSensor		
+        END Instance
+        Instance Satellite/LEOSat_P1_S6
+            Satellite/LEOSat_P1_S6		
+            Satellite/LEOSat_P1_S6/Sensor/LEOSensor		
+        END Instance
+        Instance Satellite/LEOSat_P1_S6/Sensor/LEOSensor
+            Satellite/LEOSat_P1_S6/Sensor/LEOSensor		
+        END Instance
+        Instance Satellite/LEOSat_P2_S1
+            Satellite/LEOSat_P2_S1		
+            Satellite/LEOSat_P2_S1/Sensor/LEOSensor		
+        END Instance
+        Instance Satellite/LEOSat_P2_S1/Sensor/LEOSensor
+            Satellite/LEOSat_P2_S1/Sensor/LEOSensor		
+        END Instance
+        Instance Satellite/LEOSat_P2_S2
+            Satellite/LEOSat_P2_S2		
+            Satellite/LEOSat_P2_S2/Sensor/LEOSensor		
+        END Instance
+        Instance Satellite/LEOSat_P2_S2/Sensor/LEOSensor
+            Satellite/LEOSat_P2_S2/Sensor/LEOSensor		
+        END Instance
+        Instance Satellite/LEOSat_P2_S3
+            Satellite/LEOSat_P2_S3		
+            Satellite/LEOSat_P2_S3/Sensor/LEOSensor		
+        END Instance
+        Instance Satellite/LEOSat_P2_S3/Sensor/LEOSensor
+            Satellite/LEOSat_P2_S3/Sensor/LEOSensor		
+        END Instance
+        Instance Satellite/LEOSat_P2_S4
+            Satellite/LEOSat_P2_S4		
+            Satellite/LEOSat_P2_S4/Sensor/LEOSensor		
+        END Instance
+        Instance Satellite/LEOSat_P2_S4/Sensor/LEOSensor
+            Satellite/LEOSat_P2_S4/Sensor/LEOSensor		
+        END Instance
+        Instance Satellite/LEOSat_P2_S5
+            Satellite/LEOSat_P2_S5		
+            Satellite/LEOSat_P2_S5/Sensor/LEOSensor		
+        END Instance
+        Instance Satellite/LEOSat_P2_S5/Sensor/LEOSensor
+            Satellite/LEOSat_P2_S5/Sensor/LEOSensor		
+        END Instance
+        Instance Satellite/LEOSat_P2_S6
+            Satellite/LEOSat_P2_S6		
+            Satellite/LEOSat_P2_S6/Sensor/LEOSensor		
+        END Instance
+        Instance Satellite/LEOSat_P2_S6/Sensor/LEOSensor
+            Satellite/LEOSat_P2_S6/Sensor/LEOSensor		
+        END Instance
+        Instance Satellite/LEOSat_P3_S1
+            Satellite/LEOSat_P3_S1		
+            Satellite/LEOSat_P3_S1/Sensor/LEOSensor		
+        END Instance
+        Instance Satellite/LEOSat_P3_S1/Sensor/LEOSensor
+            Satellite/LEOSat_P3_S1/Sensor/LEOSensor		
+        END Instance
+        Instance Satellite/LEOSat_P3_S2
+            Satellite/LEOSat_P3_S2		
+            Satellite/LEOSat_P3_S2/Sensor/LEOSensor		
+        END Instance
+        Instance Satellite/LEOSat_P3_S2/Sensor/LEOSensor
+            Satellite/LEOSat_P3_S2/Sensor/LEOSensor		
+        END Instance
+        Instance Satellite/LEOSat_P3_S3
+            Satellite/LEOSat_P3_S3		
+            Satellite/LEOSat_P3_S3/Sensor/LEOSensor		
+        END Instance
+        Instance Satellite/LEOSat_P3_S3/Sensor/LEOSensor
+            Satellite/LEOSat_P3_S3/Sensor/LEOSensor		
+        END Instance
+        Instance Satellite/LEOSat_P3_S4
+            Satellite/LEOSat_P3_S4		
+            Satellite/LEOSat_P3_S4/Sensor/LEOSensor		
+        END Instance
+        Instance Satellite/LEOSat_P3_S4/Sensor/LEOSensor
+            Satellite/LEOSat_P3_S4/Sensor/LEOSensor		
+        END Instance
+        Instance Satellite/LEOSat_P3_S5
+            Satellite/LEOSat_P3_S5		
+            Satellite/LEOSat_P3_S5/Sensor/LEOSensor		
+        END Instance
+        Instance Satellite/LEOSat_P3_S5/Sensor/LEOSensor
+            Satellite/LEOSat_P3_S5/Sensor/LEOSensor		
+        END Instance
+        Instance Satellite/LEOSat_P3_S6
+            Satellite/LEOSat_P3_S6		
+            Satellite/LEOSat_P3_S6/Sensor/LEOSensor		
+        END Instance
+        Instance Satellite/LEOSat_P3_S6/Sensor/LEOSensor
+            Satellite/LEOSat_P3_S6/Sensor/LEOSensor		
+        END Instance
+        Instance Satellite/LEOSat_P4_S1
+            Satellite/LEOSat_P4_S1		
+            Satellite/LEOSat_P4_S1/Sensor/LEOSensor		
+        END Instance
+        Instance Satellite/LEOSat_P4_S1/Sensor/LEOSensor
+            Satellite/LEOSat_P4_S1/Sensor/LEOSensor		
+        END Instance
+        Instance Satellite/LEOSat_P4_S2
+            Satellite/LEOSat_P4_S2		
+            Satellite/LEOSat_P4_S2/Sensor/LEOSensor		
+        END Instance
+        Instance Satellite/LEOSat_P4_S2/Sensor/LEOSensor
+            Satellite/LEOSat_P4_S2/Sensor/LEOSensor		
+        END Instance
+        Instance Satellite/LEOSat_P4_S3
+            Satellite/LEOSat_P4_S3		
+            Satellite/LEOSat_P4_S3/Sensor/LEOSensor		
+        END Instance
+        Instance Satellite/LEOSat_P4_S3/Sensor/LEOSensor
+            Satellite/LEOSat_P4_S3/Sensor/LEOSensor		
+        END Instance
+        Instance Satellite/LEOSat_P4_S4
+            Satellite/LEOSat_P4_S4		
+            Satellite/LEOSat_P4_S4/Sensor/LEOSensor		
+        END Instance
+        Instance Satellite/LEOSat_P4_S4/Sensor/LEOSensor
+            Satellite/LEOSat_P4_S4/Sensor/LEOSensor		
+        END Instance
+        Instance Satellite/LEOSat_P4_S5
+            Satellite/LEOSat_P4_S5		
+            Satellite/LEOSat_P4_S5/Sensor/LEOSensor		
+        END Instance
+        Instance Satellite/LEOSat_P4_S5/Sensor/LEOSensor
+            Satellite/LEOSat_P4_S5/Sensor/LEOSensor		
+        END Instance
+        Instance Satellite/LEOSat_P4_S6
+            Satellite/LEOSat_P4_S6		
+            Satellite/LEOSat_P4_S6/Sensor/LEOSensor		
+        END Instance
+        Instance Satellite/LEOSat_P4_S6/Sensor/LEOSensor
+            Satellite/LEOSat_P4_S6/Sensor/LEOSensor		
+        END Instance
+        Instance Satellite/LEOSat_P5_S1
+            Satellite/LEOSat_P5_S1		
+            Satellite/LEOSat_P5_S1/Sensor/LEOSensor		
+        END Instance
+        Instance Satellite/LEOSat_P5_S1/Sensor/LEOSensor
+            Satellite/LEOSat_P5_S1/Sensor/LEOSensor		
+        END Instance
+        Instance Satellite/LEOSat_P5_S2
+            Satellite/LEOSat_P5_S2		
+            Satellite/LEOSat_P5_S2/Sensor/LEOSensor		
+        END Instance
+        Instance Satellite/LEOSat_P5_S2/Sensor/LEOSensor
+            Satellite/LEOSat_P5_S2/Sensor/LEOSensor		
+        END Instance
+        Instance Satellite/LEOSat_P5_S3
+            Satellite/LEOSat_P5_S3		
+            Satellite/LEOSat_P5_S3/Sensor/LEOSensor		
+        END Instance
+        Instance Satellite/LEOSat_P5_S3/Sensor/LEOSensor
+            Satellite/LEOSat_P5_S3/Sensor/LEOSensor		
+        END Instance
+        Instance Satellite/LEOSat_P5_S4
+            Satellite/LEOSat_P5_S4		
+            Satellite/LEOSat_P5_S4/Sensor/LEOSensor		
+        END Instance
+        Instance Satellite/LEOSat_P5_S4/Sensor/LEOSensor
+            Satellite/LEOSat_P5_S4/Sensor/LEOSensor		
+        END Instance
+        Instance Satellite/LEOSat_P5_S5
+            Satellite/LEOSat_P5_S5		
+            Satellite/LEOSat_P5_S5/Sensor/LEOSensor		
+        END Instance
+        Instance Satellite/LEOSat_P5_S5/Sensor/LEOSensor
+            Satellite/LEOSat_P5_S5/Sensor/LEOSensor		
+        END Instance
+        Instance Satellite/LEOSat_P5_S6
+            Satellite/LEOSat_P5_S6		
+            Satellite/LEOSat_P5_S6/Sensor/LEOSensor		
+        END Instance
+        Instance Satellite/LEOSat_P5_S6/Sensor/LEOSensor
+            Satellite/LEOSat_P5_S6/Sensor/LEOSensor		
         END Instance
     END References
 

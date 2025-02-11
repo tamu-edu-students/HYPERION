@@ -5,8 +5,8 @@ else
     disp(['Using Python version: ', pe.Version]);
 end
 
-if count(py.sys.path, 'C:\Your\path\to\HYPERION\automate\objects') == 0
-    insert(py.sys.path, int32(0), 'C:\Your\path\to\HYPERION\automate\objects');
+if count(py.sys.path, 'C:\Your\path\to\HYPERION\src\objects') == 0
+    insert(py.sys.path, int32(0), 'C:\Your\path\to\HYPERION\src\objects');
 end
 
 mod = py.importlib.import_module('objects');
