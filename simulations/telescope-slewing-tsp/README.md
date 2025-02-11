@@ -1,4 +1,0 @@
-# telescope-slewing-tsp
-Optimizing Telescope Slewing through the Traveling Salesman Problem using the Ant Colony Optimization algorithm
-
-In the navigation of celestial bodies, telescope slewing is similar to the Traveling Salesman Problem (TSP) where the objective is to minimize the distance traveled by finding the most efficient sequence of observations to reduce the telescope's positional adjustments. Traditional algorithms for the TSP (like the Greedy Search) serve as benchmarks for evaluating the effectiveness of the variants of Ant Colony Optimization (ACO). The results of Ant System (AS), ASElite (Ant System Elite) and MMAS (Max Min Ant System) are compared and evaluated. Hyperparameter tuning is done using Bayesian Optimisation and the results of the tuned and untuned parameters are compared. Some strategies yield a significantly shorter path in search spaces that are larger. However, this improvement comes at the expense of increased computational time.
