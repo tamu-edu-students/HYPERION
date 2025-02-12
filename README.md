@@ -61,11 +61,11 @@ class AdvancedSensor(Sensor):
 ### **Running Simulations**
 There are two ways to run simulations:
 
-1. **Using run_sim.py (Recommended)** → Dynamically selects and runs any simulation.
+1. **Using run.py (Recommended)** → Dynamically selects and runs any simulation.
 2. **Running a script directly** → Execute specific simulation modules.
 
-#### **Option 1: Running Simulations via run_sim.py (Recommended)**
-The easiest way to run any simulation is using `run_sim.py`.
+#### **Option 1: Running Simulations via run.py (Recommended)**
+The easiest way to run any simulation is using `run.py`.
 
 Follow these steps:
 
@@ -73,22 +73,24 @@ Follow these steps:
 2. Import all necessary functions from `src/`, or simply import all.
 3. The script should contain a `main(root)` function that executes the tasks.
 
-Example: `simulations/missile_sim.py`
+Example: `simulations/test.py`
 
 ```python
 from src import * 
 def main(root):
     print("Running missile simulation...")
+    missile = Missile(root, name="MyMissile")
+    missile.loadObject()
 ```
 
 4. Run the following command from the project root:
 
 ```bash
-python -m simulations.run_sim --mode engine --name Test
+python -m simulations.run --mode engine --name Test
 ```
 
-This launches `run_sim.py`, which will prompt you to enter a simulation name. 
-Enter the name of the simulation module, e.g., `missile_sim`.
+This launches `run.py`, which will prompt you to enter a simulation name. 
+Enter the name of the simulation module, e.g., `test`.
 
 The script will execute using the specified STK mode.
 
@@ -107,10 +109,10 @@ The script accepts flags to control how STK runs:
 Example:
 
 ```bash
-python -m simulations.run_sim --mode desktop --name LEO_Test
+python -m simulations.run --mode desktop --name TestScenario
 ```
 
-This starts STK in Desktop mode, creates a scenario named `LEO_Test`, and runs the selected simulation.
+This starts STK in Desktop mode, creates a scenario named `TestScenario`, and runs the selected simulation.
 
 #### **Engine Mode vs. Desktop Mode**
 
@@ -123,10 +125,10 @@ This starts STK in Desktop mode, creates a scenario named `LEO_Test`, and runs t
 If you prefer, you can run a simulation file directly:
 
 ```bash
-python simulations/missile_sim.py --mode engine --name Test
+python simulations/test.py --mode engine --name TestScenario
 ```
 
-This bypasses `run_sim.py` and executes the simulation script directly (if extra analysis beyond running the simulation is desired).
+This bypasses `run.py` and executes the simulation script directly (if extra analysis beyond running the simulation is desired).
 
 
 ## **Installing the STK Python API**
