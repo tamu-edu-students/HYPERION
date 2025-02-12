@@ -1,3 +1,4 @@
+import os
 from agi.stk12.stkobjects import *
 
 class STKObjectBase:
@@ -128,5 +129,11 @@ class STKContainerObject(STKObjectBase):
             print(f"Error removing '{child_name}' from container '{self.name}': {str(e)}")
 
 class STKStandaloneObject(STKObjectBase):
-    def __init__(self, root, name, object_type, unload=True):
+    def __init__(self, root, name, object_type, save_dir, unload=True):
         super().__init__(root, name, object_type, unload=unload)
+
+        self.save_dir = save_dir
+
+        if not os.path.exists(self.save_dir):
+                os.makedirs(self.save_dir)
+                print(f"Directory '{self.save_dir}' created successfully.")

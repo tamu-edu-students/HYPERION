@@ -1,4 +1,5 @@
 import os
+import csv
 import pandas as pd
 import random
 from geopy.geocoders import Nominatim
@@ -34,7 +35,7 @@ class Missile(STKStandaloneObject):
         """
         Initializes a missile object with launch and target sites, launch time, and maximum Mach number.
         """
-        super().__init__(root, name, AgESTKObjectType.eAircraft, unload=unload) 
+        super().__init__(root, name, AgESTKObjectType.eAircraft, save_dir, unload=unload) 
 
         if unload:
             # Load the cities dataset
@@ -72,12 +73,6 @@ class Missile(STKStandaloneObject):
             # Set or generate Mach number
             self.Mach = Mach if Mach else round(random.uniform(5, 15), 2)
             print(f"Mach Number: {self.Mach}")
-
-            self.save_dir = save_dir
-
-            if not os.path.exists(self.save_dir):
-                os.makedirs(self.save_dir)
-                print(f"Directory '{self.save_dir}' created successfully.")
 
     def _loadObjectImplementation(self):
         """
@@ -180,14 +175,28 @@ class Missile(STKStandaloneObject):
         self.impact_time = final_waypoint.Time 
         print(f"Impact Time for {self.name}: {self.impact_time}")
 
-    def saveObject(self):
+    def saveObject(self, file_name):
         """
-        Saves the missile's details to a text file.
+        Appends the missile's details to existing text and CSV files.
+
+        Parameters:
+        - file_name (str): Custom filename (without extension).
+        
+        Raises:
+        - FileNotFoundError: If the target file does not exist.
         """
-        file_path = f"{self.save_dir + self.name}.txt"
-        with open(file_path, 'w') as file:
-            file.write("Missile Object Details\n")
-            file.write("======================\n")
+
+        file_path_txt = os.path.join(self.save_dir, f"{file_name}.txt")
+        file_path_csv = os.path.join(self.save_dir, f"{file_name}.csv")
+
+        # Check if files exist before attempting to write
+        if not os.path.exists(file_path_txt) or not os.path.exists(file_path_csv):
+            raise FileNotFoundError(f"Error: One or both files do not exist. Ensure headers are created before appending data.\n"
+                                    f"Missing: {'TXT' if not os.path.exists(file_path_txt) else ''} "
+                                    f"{'CSV' if not os.path.exists(file_path_csv) else ''}")
+
+        # ---------------- TXT FILE HANDLING ----------------
+        with open(file_path_txt, 'a', encoding="utf-8") as file:
             file.write(f"Missile Name: {self.name}\n")
             file.write(f"Launch Site:\n")
             file.write(f"  Latitude: {self.launch_site.getLat()}\n")
@@ -196,7 +205,7 @@ class Missile(STKStandaloneObject):
             try:
                 file.write(f"  City: {self.launch_site.getCity()}\n")
             except UnicodeEncodeError:
-                file.write(f"  City: Unavailable")
+                file.write("  City: Unavailable\n")
 
             file.write(f"  Country: {self.launch_site.getCountry()}\n")
             file.write(f"Target Site:\n")
@@ -206,7 +215,7 @@ class Missile(STKStandaloneObject):
             try:
                 file.write(f"  City: {self.target_site.getCity()}\n")
             except UnicodeEncodeError:
-                file.write(f"  City: Unavailable")
+                file.write("  City: Unavailable\n")
 
             file.write(f"  Country: {self.target_site.getCountry()}\n")
             file.write(f"Launch Time: {self.launch_time}\n")
@@ -217,5 +226,30 @@ class Missile(STKStandaloneObject):
                 file.write("Impact Time: Not determined\n")
 
             file.write(f"Mach Number: {self.Mach}\n")
+            file.write("\n")  # Add spacing for readability
 
-        print(f"Missile details saved to {file_path}.")    
+        print(f"Missile details appended to {file_path_txt}.")
+
+        # ---------------- CSV FILE HANDLING ----------------
+        with open(file_path_csv, 'a', newline='', encoding="utf-8") as file:
+            writer = csv.writer(file)
+
+            # Prepare row data
+            try:
+                launch_city = self.launch_site.getCity()
+            except UnicodeEncodeError:
+                launch_city = "Unavailable"
+
+            try:
+                target_city = self.target_site.getCity()
+            except UnicodeEncodeError:
+                target_city = "Unavailable"
+
+            impact_time = self.impact_time if hasattr(self, 'impact_time') else "Not determined"
+
+            writer.writerow([self.name, 
+                            self.launch_site.getLat(), self.launch_site.getLon(), launch_city, self.launch_site.getCountry(),
+                            self.target_site.getLat(), self.target_site.getLon(), target_city, self.target_site.getCountry(),
+                            self.launch_time, impact_time, self.Mach])
+
+        print(f"Missile details appended to {file_path_csv}.")

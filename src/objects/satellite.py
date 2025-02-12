@@ -1,3 +1,5 @@
+import os
+import csv
 from agi.stk12.stkobjects import *
 from agi.stk12.stkutil import *
 from agi.stk12.utilities.colors import Colors
@@ -7,7 +9,7 @@ r, g, b = 0, 0, 255
 COLOR = Colors.FromRGB(r, g, b)
 
 class Satellite(STKStandaloneObject):
-    def __init__(self, root, name, a, i, Omega, omega=0, e=0, M=0, epoch=None, unload=True):
+    def __init__(self, root, name, a, i, Omega, omega=0, e=0, M=0, epoch=None, save_dir="data/satellites/", unload=True):
         """
         Initializes a satellite in STK with orbital parameters for circular or eccentric orbits.
         
@@ -22,7 +24,7 @@ class Satellite(STKStandaloneObject):
         - M: Mean anomaly (deg) [default = 0].
         - epoch: The satellite's epoch [default is the scenario start time].
         """
-        super().__init__(root, name, AgESTKObjectType.eSatellite, unload=unload)
+        super().__init__(root, name, AgESTKObjectType.eSatellite, save_dir, unload=unload)
         self.a = a
         self.i = i
         self.Omega = self._wrapTo360(Omega)
@@ -75,8 +77,50 @@ class Satellite(STKStandaloneObject):
 
         print(f"Satellite {self.name} loaded with RAAN={self.Omega}° and Mean Anomaly={self.M}°.")
 
-    def saveObject(self):
+    def saveObject(self, file_name):
         """
-        TODO
+        Appends the satellite's details to existing text and CSV files.
+
+        Parameters:
+        - file_name (str): Custom filename (without extension).
+
+        Raises:
+        - FileNotFoundError: If the target file does not exist.
         """
-        return
+
+        file_path_txt = os.path.join(self.save_dir, f"{file_name}.txt")
+        file_path_csv = os.path.join(self.save_dir, f"{file_name}.csv")
+
+        # Check if files exist before attempting to write
+        if not os.path.exists(file_path_txt) or not os.path.exists(file_path_csv):
+            raise FileNotFoundError(f"Error: One or both files do not exist. Ensure headers are created before appending data.\n"
+                                    f"Missing: {'TXT' if not os.path.exists(file_path_txt) else ''} "
+                                    f"{'CSV' if not os.path.exists(file_path_csv) else ''}")
+
+        # ---------------- TXT FILE HANDLING ----------------
+        with open(file_path_txt, 'a', encoding="utf-8") as file:
+            file.write(f"Satellite Name: {self.name}\n")
+            file.write(f"a: {self.a} km\n")
+            file.write(f"i: {self.i} deg\n")
+            file.write(f"Omega: {self.Omega} deg")
+            file.write(f"omega: {self.omega} deg")
+            file.write(f"e: {self.e}")
+            file.write(f"M: {self.M}")
+            file.write("\n")
+
+        print(f"Satellite details appended to {file_path_txt}.")
+
+        # ---------------- CSV FILE HANDLING ----------------
+        with open(file_path_csv, 'a', newline='', encoding="utf-8") as file:
+            writer = csv.writer(file)
+
+
+            writer.writerow([self.name, 
+                            self.a,
+                            self.i,
+                            self.Omega,
+                            self.omega,
+                            self.e,
+                            self.M])
+
+        print(f"Satellite details appended to {file_path_csv}.")

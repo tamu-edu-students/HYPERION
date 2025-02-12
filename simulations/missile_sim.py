@@ -7,6 +7,9 @@ from src import *
 mu_E = 3.986004415e5  # km^3 / s^2
 r_E = 6.378137e3  # km
 
+missile_file_name = "missiles-10"
+sat_file_name = "satellites-LEO"
+
 def makeLEOConstellation(root, conic_angle):
     """
     Creates a Walker constellation with attached sensors and adds to a constellation object.
@@ -37,6 +40,7 @@ def makeLEOConstellation(root, conic_angle):
             sat_name = f"LEOSat_P{plane+1}_S{sat+1}"
             satellite = Satellite(root, sat_name, a, i, Omega, omega, e, M)
             satellite.loadObject()
+            satellite.saveObject(sat_file_name)
 
             sensor_name = "LEOSensor"
             sensor = Sensor(root, sat_name, sensor_name, conic_angle)
@@ -59,7 +63,7 @@ def createMissiles(root, num_missiles):
         missile_name = f"Missile{i+1}"
         missile = Missile(root, missile_name)
         missile.loadObject()
-        missile.saveObject()
+        missile.saveObject(missile_file_name)
         missile_path = missile.getObjectPath()
         missile_paths.append((chain, missile_path))
 
@@ -93,6 +97,9 @@ def computeAndSaveTracking(missile_paths, conic_angle, output_file):
             writer.writerow([missile_id, round(tracking_percent, 2), conic_angle])
 
 def main(root):
+    makeHeaders(missile_file_name, "Missile")
+    makeHeaders(sat_file_name, "Satellite")
+    
     output_file = "data/missile-tracking.csv"
 
     with open(output_file, mode='w', newline='') as file:

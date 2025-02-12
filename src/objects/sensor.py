@@ -7,7 +7,7 @@ r, g, b = 0, 255, 0
 COLOR = Colors.FromRGB(r, g, b)
 
 class Sensor(STKStandaloneObject):
-    def __init__(self, root, satellite_name, sensor_name, conic_angle, unload=True):
+    def __init__(self, root, satellite_name, sensor_name, conic_angle, save_dir="data/sensors/", unload=True):
         """
         Initializes a simple conic sensor attached to a given satellite.
         
@@ -17,7 +17,7 @@ class Sensor(STKStandaloneObject):
         - sensor_name: The name of the sensor.
         - conic_angle: The conic angle (field of regard) in degrees.
         """
-        super().__init__(root, sensor_name, AgESTKObjectType.eSensor, unload=unload)
+        super().__init__(root, sensor_name, AgESTKObjectType.eSensor, save_dir, unload=unload)
         self.satellite_name = satellite_name
         self.conic_angle = conic_angle
 
