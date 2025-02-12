@@ -81,7 +81,7 @@ def main(root):
     print("Running missile simulation...")
 ```
 
-3. Run the following command from the project root:
+4. Run the following command from the project root:
 
 ```bash
 python -m simulations.run_sim --mode engine --name Test
