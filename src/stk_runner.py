@@ -1,6 +1,7 @@
 import os
 import shutil
 import time
+from .utilities import clearScenario
 
 def run_simulation(sim_function, mode="engine", scenario_name=None):
     """Handles simulation execution, scenario saving, and cleanup."""
@@ -10,6 +11,8 @@ def run_simulation(sim_function, mode="engine", scenario_name=None):
     
     # Initialize STK and scenario
     stk, root, scenario, attached = initialize_stk(mode, scenario_name)
+
+    clearScenario(scenario)
 
     try:
         if scenario is None:
