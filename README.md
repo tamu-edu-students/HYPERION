@@ -96,7 +96,7 @@ The script will execute using the specified STK mode.
 The script accepts flags to control how STK runs:
 
 | Flag      | Usage                                   | Description  |
-|-----------|----------------------------------------|--------------|
+|---------------|----------------------------------------|--------------|
 | `--mode`  | `--mode desktop` or `--mode engine`   | Runs STK in either Desktop (GUI) or Engine (headless, faster) mode. |
 | `--name`  | `--name TestScenario`                 | Specifies a scenario name to save results in `scenarios/{name}/{name}.sc`. |
 
