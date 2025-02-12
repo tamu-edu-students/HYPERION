@@ -49,8 +49,8 @@ class AdvancedSensor(Sensor):
 ### **Running Simulations**
 There are two ways to run simulations:
 
-**Using run_sim.py (Recommended)** → Dynamically selects and runs any simulation.
-**Running a script directly** → Execute specific simulation modules.
+1. **Using run_sim.py (Recommended)** → Dynamically selects and runs any simulation.
+2. **Running a script directly** → Execute specific simulation modules.
 
 #### **Option 1: Running Simulations via run_sim.py (Recommended)**
 The easiest way to run any simulation is using `run_sim.py`.
@@ -58,11 +58,13 @@ The easiest way to run any simulation is using `run_sim.py`.
 Follow these steps:
 
 1. **Create a new simulation file** in `simulations/`.
-2. The script should contain a `main(root)` function that executes the tasks.
+2. Import all necessary functions from `src/`, or simply import all.
+3. The script should contain a `main(root)` function that executes the tasks.
 
 Example: `simulations/missile_sim.py`
 
 ```python
+from src import * 
 def main(root):
     print("Running missile simulation...")
 ```
@@ -85,6 +87,10 @@ The script accepts flags to control how STK runs:
 |-----------|----------------------------------------|--------------|
 | `--mode`  | `--mode desktop` or `--mode engine`   | Runs STK in either Desktop (GUI) or Engine (headless, faster) mode. |
 | `--name`  | `--name TestScenario`                 | Specifies a scenario name to save results in `scenarios/{name}/{name}.sc`. |
+
+> Note that by default, engine mode is chosen.
+
+> Note that if the `--name` flag is not specified, the program will attempt to attach to a running instance of STK. Otherwise, the scenario **will not** be saved.
 
 Example:
 

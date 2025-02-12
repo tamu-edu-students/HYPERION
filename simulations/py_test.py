@@ -46,4 +46,4 @@ def main(root):
 
 if __name__ == "__main__":
     args = parse_arguments()
-    run_simulation(makeLEOSats, mode=args.mode, scenario_name=args.name)
+    run_simulation(main, mode=args.mode, scenario_name=args.name)
