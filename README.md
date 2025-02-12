@@ -11,10 +11,12 @@ Project HYPERION aims to design and deploy a constellation of satellites for the
 --- 
 
 ## Installation and Setup
-- Ensure STK is installed and the Python API is set up properly. If not, see **Installing the STK Python API** below
-- Clone the repository as normal
-- Run the command below to install dependencies:
+1. Ensure STK is installed and the Python API is set up properly. If not, see **Installing the STK Python API** below.
+2. Navigate to the desired host directory.
+3. Run the following commands below:
 ```bash
+git clone https://github.com/tamu-edu-students/HYPERION.git
+cd HYPERION
 python -m pip install -r requirements.txt
 ```
 
