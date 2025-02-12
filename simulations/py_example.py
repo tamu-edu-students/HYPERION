@@ -45,5 +45,5 @@ def main(root):
 
 
 if __name__ == "__main__":
-    args = parse_arguments()
-    run_simulation(main, mode=args.mode, scenario_name=args.name)
+    args = parse_args()
+    run(main, mode=args.mode, scenario_name=args.name)

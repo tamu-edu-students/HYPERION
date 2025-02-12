@@ -86,7 +86,7 @@ def main(root):
 4. Run the following command from the project root:
 
 ```bash
-python -m simulations.run --mode engine --name Test
+python -m simulations.run --mode engine --name TestScenario
 ```
 
 This launches `run.py`, which will prompt you to enter a simulation name. 
@@ -122,13 +122,26 @@ This starts STK in Desktop mode, creates a scenario named `TestScenario`, and ru
 | **Desktop** | Full GUI, visual feedback | Interactive debugging and visualization |
 
 #### **Option 2: Running a Simulation Script Directly**
-If you prefer, you can run a simulation file directly:
+If you prefer, you can run a simulation file directly. 
 
-```bash
-python simulations/test.py --mode engine --name TestScenario
+To do this, ensure your module includes the following code:
+
+```python
+if __name__ == "__main__":
+    args = parse_args()
+    run(main, mode=args.mode, scenario_name=args.name)
+    # Additional code goes here
 ```
 
-This bypasses `run.py` and executes the simulation script directly (if extra analysis beyond running the simulation is desired).
+You can add additional functionality at the end of the script (e.g., for plotting or post-processing purposes). See [`simulations/missile_sim`](./simulations/missile_sim.py) for an example.
+
+To execute the script directly, run:
+
+```bash
+python -m simulations.test --mode engine --name TestScenario
+```
+
+This bypasses `run.py` and executes the simulation script directly. This method is useful when extra analysis beyond running the simulation is required.
 
 
 ## **Installing the STK Python API**
