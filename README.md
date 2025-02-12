@@ -8,6 +8,16 @@
 
 Project HYPERION aims to design and deploy a constellation of satellites for the detection, tracking, and observation of hypersonic missiles. This repository contains all files, scripts, and scenarios needed to simulate, optimize, and automate the observation network using Python and STK.
 
+--- 
+
+## Installation and Setup
+- Ensure STK is installed and the Python API is set up properly. If not, see **Installing the STK Python API** below
+- Clone the repository as normal
+- Run the command below to install dependencies:
+```bash
+python -m pip install -r requirements.txt
+```
+
 ---
 
 ## Repository Structure

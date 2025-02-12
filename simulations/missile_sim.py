@@ -100,7 +100,7 @@ def main(root):
         writer.writerow(["Missile ID", "Tracking %", "Conic Angle (deg)"])
 
     # Step 1: Create missiles and missile chains 
-    missile_paths = createMissiles(root, num_missiles=100)
+    missile_paths = createMissiles(root, num_missiles=10)
 
     # Step 2: Loop over conic angles
     previous_constellation_path = None  
