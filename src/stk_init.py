@@ -2,7 +2,7 @@ import argparse
 from agi.stk12.stkdesktop import STKDesktop
 from agi.stk12.stkengine import STKEngine
 
-def initialize_stk(mode="desktop", scenario_name=None):
+def initialize_stk(mode="engine", scenario_name=None):
     """
     Initializes STK in either 'desktop' or 'engine' mode.
 
@@ -47,7 +47,7 @@ def initialize_stk(mode="desktop", scenario_name=None):
 def parse_arguments():
     """Handles command-line arguments."""
     parser = argparse.ArgumentParser(description="Choose STK mode: Desktop or Engine.")
-    parser.add_argument("--mode", choices=["desktop", "engine"], default="desktop", help="Run STK in 'desktop' or 'engine' mode.")
+    parser.add_argument("--mode", choices=["desktop", "engine"], default="engine", help="Run STK in 'desktop' or 'engine' mode.")
     parser.add_argument("--name", type=str, default=None, help="Scenario name (if applicable).")
     
     return parser.parse_args()
