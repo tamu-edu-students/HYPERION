@@ -30,7 +30,7 @@ class Site:
         return self.country
 
 class Missile(STKStandaloneObject):
-    def __init__(self, root, name, launch_site=None, target_site=None, launch_time=None, Mach=None, cities_file="../data/world-cities.csv", un_countries_file="../data/UN-countries.txt", save_dir="../data/missiles/", unload=True):
+    def __init__(self, root, name, launch_site=None, target_site=None, launch_time=None, Mach=None, cities_file="data/world-cities.csv", un_countries_file="data/UN-countries.txt", save_dir="data/missiles/", unload=True):
         """
         Initializes a missile object with launch and target sites, launch time, and maximum Mach number.
         """

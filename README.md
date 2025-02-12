@@ -18,9 +18,6 @@ Project HYPERION aims to design and deploy a constellation of satellites for the
 ### [**src/objects/**](./src/objects)
 - Python class library for interfacing with STK and performing simulation-based optimization.
 
-### [**src/utilities/**](./src/utilities)
-- Utility functions to support the class library and simulation framework.
-
 ### [**simulations/**](./simulations)
 - Various test simulations and validation scenarios that leverage the object library.
 
@@ -28,21 +25,91 @@ Project HYPERION aims to design and deploy a constellation of satellites for the
 
 ## **How to Use**
 
-This repository is designed to extend STK’s object model by developing a class-based framework for direct simulation within STK. A typical workflow involves:
-
-1. **Extending the Class Library**  
-   - Add constraints for communication systems, sensors, and other components.  
-   - Implement new functionalities such as sensor slewing algorithms or tracking performance analysis.
-
-2. **Running Simulations**  
-   - Use the provided test scenarios in `simulations/` to validate functionality.  
-   - Modify existing simulations or create new ones to explore different constraints and performance metrics.
-
-3. **Interfacing with STK**  
-   - STK provides both an **Engine API** and **Desktop Attach** functionality for running simulations.  
-   - To connect STK with Python, ensure the STK Python API is installed.
+This repository extends **STK’s object model** by providing a **class-based framework** for direct simulation within STK.  
+A typical workflow involves **extending the class library**, writing **new simulation scripts**, and running them efficiently using **command-line flags**.
 
 ---
+
+### **Extending the Class Library**
+Users can enhance STK simulations by adding:
+- **Custom Constraints** → Define specific conditions for **communications, sensors, tracking, or visibility**.
+- **New Functionalities** → Implement **sensor slewing algorithms, tracking performance analysis, or dynamic targeting**.
+
+Example:
+
+```python
+class AdvancedSensor(Sensor):
+    def __init__(self, root, satellite_name, sensor_name, conic_angle, slew_rate):
+        super().__init__(root, satellite_name, sensor_name, conic_angle)
+        self.slew_rate = slew_rate  # Slew rate for tracking targets dynamically
+```
+
+---
+
+### **Running Simulations**
+There are two ways to run simulations:
+
+**Using run_sim.py (Recommended)** → Dynamically selects and runs any simulation.
+**Running a script directly** → Execute specific simulation modules.
+
+#### **Option 1: Running Simulations via run_sim.py (Recommended)**
+The easiest way to run any simulation is using `run_sim.py`.
+
+Follow these steps:
+
+1. **Create a new simulation file** in `simulations/`.
+2. The script should contain a `main(root)` function that executes the tasks.
+
+Example: `simulations/missile_sim.py`
+
+```python
+def main(root):
+    print("Running missile simulation...")
+```
+
+3. Run the following command from the project root:
+
+```bash
+python -m simulations.run_sim --mode engine --name Test
+```
+
+This launches `run_sim.py`, which will prompt you to enter a simulation name. 
+Enter the name of the simulation module, e.g., `missile_sim`.
+
+The script will execute using the specified STK mode.
+
+#### **Explanation of Command-Line Flags**
+The script accepts flags to control how STK runs:
+
+| Flag      | Usage                                   | Description  |
+|-----------|----------------------------------------|--------------|
+| `--mode`  | `--mode desktop` or `--mode engine`   | Runs STK in either Desktop (GUI) or Engine (headless, faster) mode. |
+| `--name`  | `--name TestScenario`                 | Specifies a scenario name to save results in `scenarios/{name}/{name}.sc`. |
+
+Example:
+
+```bash
+python -m simulations.run_sim --mode desktop --name LEO_Test
+```
+
+This starts STK in Desktop mode, creates a scenario named `LEO_Test`, and runs the selected simulation.
+
+#### **Engine Mode vs. Desktop Mode**
+
+| Mode     | Features | Recommended For  |
+|----------|---------|------------------|
+| **Engine** | Faster (10x), no GUI, runs headless | Large-scale automated simulations |
+| **Desktop** | Full GUI, visual feedback | Interactive debugging and visualization |
+
+#### **Option 2: Running a Simulation Script Directly**
+If you prefer, you can run a simulation file directly:
+
+```bash
+python simulations/missile_sim.py --mode engine --name Test
+```
+
+This bypasses `run_sim.py` and executes the simulation script directly (if extra analysis beyond running the simulation is desired).
+
 
 ## **Installing the STK Python API**
 
@@ -74,12 +141,7 @@ To interface with STK via Python, follow these steps:
 
 ---
 
-## **Connecting to STK**
-
-Once the API is installed, users can leverage STK’s object model along with the HYPERION object library to build and analyze simulation scenarios.
-
-- Use test simulations in [`./simulations/`](./simulations) to verify STK connectivity.
-- Modify existing scenarios or create new ones to implement constraints and optimize tracking performance.
+## **Additional Resources**
 
 For additional documentation, refer to:
 

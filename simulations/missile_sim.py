@@ -1,27 +1,11 @@
 import csv
-import time
 import matplotlib.pyplot as plt
 import pandas as pd
-from agi.stk12.stkobjects import *
-from agi.stk12.stkdesktop import STKDesktop  # Interface with open STK window
-from src.objects import *
-from src.utilities import *
-
-# Attach to an existing STK instance
-stk = STKDesktop.AttachToApplication()
-
-# Get the root object to access the scenario
-root = stk.Root
-
-if root.CurrentScenario is not None:
-    print("Connected to scenario:", root.CurrentScenario.InstanceName)
-else:
-    print("No scenario is currently open.")
+from src import *
 
 # Constants
 mu_E = 3.986004415e5  # km^3 / s^2
 r_E = 6.378137e3  # km
-
 
 def makeLEOConstellation(root, conic_angle):
     """
@@ -62,7 +46,6 @@ def makeLEOConstellation(root, conic_angle):
 
     return constellation.getObjectPath()
 
-
 def createMissiles(root, num_missiles):
     """
     Creates and returns missiles and missile chains without attaching the constellation yet.
@@ -85,14 +68,12 @@ def createMissiles(root, num_missiles):
 
     return missile_paths
 
-
 def attachConstellationToChains(missile_paths, constellation_path):
     """
     Attaches the given constellation to all missile chains.
     """
     for chain, _ in missile_paths:
         chain.addToObject(constellation_path)
-
 
 def computeAndSaveTracking(missile_paths, conic_angle, output_file):
     """
@@ -111,9 +92,8 @@ def computeAndSaveTracking(missile_paths, conic_angle, output_file):
         for missile_id, tracking_percent, conic_angle in results:
             writer.writerow([missile_id, round(tracking_percent, 2), conic_angle])
 
-
-def run():
-    output_file = "../data/missile-tracking.csv"
+def main(root):
+    output_file = "data/missile-tracking.csv"
 
     with open(output_file, mode='w', newline='') as file:
         writer = csv.writer(file)
@@ -144,12 +124,8 @@ def run():
         previous_constellation_path = constellation_path
 
 
-    # Save the scenario
-    root.Save()
-    print("Scenario saved successfully.")
-
-def plot(save_path = "../figures/missile-sim.png"):
-    data = pd.read_csv("../data/missile-tracking.csv")
+def plot(save_path = "figures/missile-sim.png"):
+    data = pd.read_csv("data/missile-tracking.csv")
 
     plt.figure(figsize=(10, 6))
 
@@ -181,11 +157,6 @@ def plot(save_path = "../figures/missile-sim.png"):
 
 
 if __name__ == "__main__":
-    start_time = time.time()
-    clearScenario(root.CurrentScenario)
-    run()
-    plot(save_path="../figures/missile-sim-30to60.png")
-    end_time = time.time()
-    duration = end_time - start_time
-
-    print(f"Simulation concluded after {duration/60:.2f} min")
+    args = parse_arguments()
+    run_simulation(main, mode=args.mode, scenario_name=args.name)
+    plot(save_path="figures/missile-sim-30to60.png")

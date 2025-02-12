@@ -1,20 +1,4 @@
-import time
-from agi.stk12.stkobjects import *
-from agi.stk12.stkdesktop import STKDesktop # Interface with open STK window
-from src.objects import *
-from src.utilities import *
-
-# Attach to an existing STK instance
-stk = STKDesktop.AttachToApplication()
-
-# Get the root object to access the scenario
-root = stk.Root
-
-if root.CurrentScenario is not None:
-    scenario = root.CurrentScenario
-    print("Connected to scenario:", root.CurrentScenario.InstanceName)
-else:
-    print("No scenario is currently open.")
+from src import *
 
 # Constants
 mu_E = 3.986004415e5  # km^3 / s^2
@@ -54,16 +38,12 @@ def makeLEOSats(root):
             sensor = Sensor(root, sat_name, sensor_name, conic_angle)
             sensor.loadObject()
 
-
     print("LEO Satellites loaded successfully.")
 
-if __name__ == "__main__":
-    start_time = time.time()
-    clearScenario(scenario)
+def main(root):
     makeLEOSats(root)
-    root.Save()
-    print("Scenario saved successfully.")
-    end_time = time.time()
-    duration = end_time - start_time
 
-    print(f"Simulation concluded after {duration/60:.2f} min")
+
+if __name__ == "__main__":
+    args = parse_arguments()
+    run_simulation(makeLEOSats, mode=args.mode, scenario_name=args.name)
