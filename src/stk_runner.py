@@ -2,6 +2,7 @@ import os
 import shutil
 import time
 from .utilities import clearScenario
+from agi.stk12 import utilities
 
 def run(sim_function, mode="engine", scenario_name=None):
     """Handles simulation execution, scenario saving, and cleanup."""
@@ -10,7 +11,14 @@ def run(sim_function, mode="engine", scenario_name=None):
     start_time = time.time()
     
     # Initialize STK and scenario
-    stk, root, scenario, attached = initialize(mode, scenario_name)
+    try:
+        stk, root, scenario, attached = initialize(mode, scenario_name)
+    except utilities.exceptions.STKRuntimeError:
+        print("Make sure the proper license is enabled (i.e., connect to TAMU WiFi).")
+        return
+    except Exception as e:
+        print(f"The following exception was caught upon STK initialization: {e}")
+        return
 
     clearScenario(scenario)
 
