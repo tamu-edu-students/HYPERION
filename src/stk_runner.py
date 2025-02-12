@@ -1,6 +1,8 @@
 import os
 import shutil
 import time
+import signal
+import sys
 from .utilities import clearScenario
 from agi.stk12 import utilities
 
@@ -10,15 +12,40 @@ def run(sim_function, mode="engine", scenario_name=None):
 
     start_time = time.time()
     
+    # Ensure root and attached are defined before try-block
+    stk, root, scenario, attached = None, None, None, False  
+
+    def handle_interrupt(signal_received, frame):
+        """Handles user interrupts for a graceful shutdown."""
+        print("\nUser interrupt detected! Cleaning up and exiting...")
+
+        if root and root.CurrentScenario:
+            root.CloseScenario()
+            print("Scenario closed.")
+
+        if stk and mode == "engine":
+            stk.ShutDown()
+            print("STK Engine shut down.")
+
+        end_time = time.time()
+        print(f"Simulation interrupted after {(end_time - start_time)/60:.2f} min.")
+        sys.exit(0)
+
+    # Register the interrupt handler
+    signal.signal(signal.SIGINT, handle_interrupt)
+    
     # Initialize STK and scenario
     try:
         stk, root, scenario, attached = initialize(mode, scenario_name)
     except utilities.exceptions.STKRuntimeError:
         print("Make sure the proper license is enabled (i.e., connect to TAMU WiFi).")
-        return
+        sys.exit(0)
+    except KeyboardInterrupt:
+        handle_interrupt(signal.SIGINT, None)
+        sys.exit(0)
     except Exception as e:
         print(f"The following exception was caught upon STK initialization: {e}")
-        return
+        sys.exit(0)
 
     clearScenario(scenario)
 
@@ -46,12 +73,15 @@ def run(sim_function, mode="engine", scenario_name=None):
         else:
             print("No scenario name provided. Scenario will not be saved.")
 
+    except KeyboardInterrupt:
+        handle_interrupt(signal.SIGINT, None)
+
     finally:
-        if not attached and root.CurrentScenario:
+        if root and root.CurrentScenario:
             root.CloseScenario()
             print("Scenario closed.")
 
-        if mode == "engine":
+        if stk and mode == "engine":
             stk.ShutDown()
             print("STK Engine shut down.")
 
