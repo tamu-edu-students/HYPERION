@@ -5,9 +5,9 @@
 ## **1. Project Overview**
 ### **Goal**
 Develop an **optimized measurement strategy** for a satellite-borne sensor to **track a hypersonic missile** efficiently. The project will:
-- Define **sensor constraints** (Field of View (FoV) and slew rate).
+- Define **sensor constraints**.
 - **Simulate a missile trajectory** and compute visibility access times.
-- **Apply an Extended Kalman Filter (EKF)** to track the missile state from noisy measurements.
+- **Apply an Extended Kalman Filter (EKF)** to track the missile state from generated noisy measurements.
 - **Optimize measurement scheduling** to maximize information gain while minimizing sensor movement.
 - **Evaluate performance** by comparing different tracking strategies.
 
@@ -59,7 +59,7 @@ Develop an **optimized measurement strategy** for a satellite-borne sensor to **
 - **Greedy Heuristic**: Select the next measurement that maximizes information gain.
 - **Bayesian Optimization**: Tune parameters for when to take a measurement.
 - **POMDP (Partially Observable Markov Decision Process)**: Formulate as a sequential decision-making problem.
-- **Ant Colony Optimization (ACO)**: Treat as an optimal path problem.
+- **Ant Colony Optimization (ACO)**: Treat as an optimal path problem (think traveling salesman).
 
 **Expected Outputs:**
 - **Optimized measurement schedule** (`optimized_observations.csv`).
