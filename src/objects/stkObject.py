@@ -123,15 +123,19 @@ class STKContainerObject(STKObjectBase):
         except Exception as e:
             print(f"Error removing '{child_name}' from container '{self.name}': {str(e)}")
 
+
 class STKStandaloneObject(STKObjectBase):
-    def __init__(self, root, name, object_type, save_dir, unload=True):
+    def __init__(self, root, name, object_type, unload=True):
         super().__init__(root, name, object_type, unload=unload)
 
-        self.save_dir = save_dir
-
-        if not os.path.exists(self.save_dir):
-                os.makedirs(self.save_dir)
-                print(f"Directory '{self.save_dir}' created successfully.")
+    @classmethod
+    def ensureSaveDir(cls):
+        """
+        Ensures the save directory exists for this object type.
+        """
+        if not os.path.exists(cls.save_dir):
+            os.makedirs(cls.save_dir)
+            print(f"Directory '{cls.save_dir}' created successfully.")
 
     @staticmethod
     def makeHeaders(filename):
