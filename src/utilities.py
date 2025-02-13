@@ -1,6 +1,3 @@
-import os
-import csv
-
 def clearScenario(scenario):
     while scenario.Children.Count > 0:
         children = scenario.Children

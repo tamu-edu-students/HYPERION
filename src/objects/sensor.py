@@ -20,7 +20,7 @@ class Sensor(STKStandaloneObject):
         - conic_angle: The conic angle (field of regard) in degrees.
         """
 
-        Sensor.ensureSaveDir()
+        Sensor._ensureSaveDir()
 
         super().__init__(root, sensor_name, AgESTKObjectType.eSensor, unload=unload)
         self.satellite_name = satellite_name

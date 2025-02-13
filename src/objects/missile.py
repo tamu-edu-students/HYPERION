@@ -37,8 +37,8 @@ class Missile(STKStandaloneObject):
         """
         Initializes a missile object with launch and target sites, launch time, and maximum Mach number.
         """
-        Missile.ensureSaveDir()
-        
+        Missile._ensureSaveDir()
+
         super().__init__(root, name, AgESTKObjectType.eAircraft, unload=unload) 
 
         if unload:

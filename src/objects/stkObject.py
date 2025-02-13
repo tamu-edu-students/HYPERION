@@ -129,7 +129,7 @@ class STKStandaloneObject(STKObjectBase):
         super().__init__(root, name, object_type, unload=unload)
 
     @classmethod
-    def ensureSaveDir(cls):
+    def _ensureSaveDir(cls):
         """
         Ensures the save directory exists for this object type.
         """

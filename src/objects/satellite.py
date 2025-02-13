@@ -26,7 +26,7 @@ class Satellite(STKStandaloneObject):
         - M: Mean anomaly (deg) [default = 0].
         - epoch: The satellite's epoch [default is the scenario start time].
         """
-        Satellite.ensureSaveDir()
+        Satellite._ensureSaveDir()
 
         super().__init__(root, name, AgESTKObjectType.eSatellite, unload=unload)
         self.a = a
