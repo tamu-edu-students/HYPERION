@@ -9,7 +9,9 @@ r, g, b = 0, 0, 255
 COLOR = Colors.FromRGB(r, g, b)
 
 class Satellite(STKStandaloneObject):
-    def __init__(self, root, name, a, i, Omega, omega=0, e=0, M=0, epoch=None, save_dir="data/satellites/", unload=True):
+    save_dir =  "data/satellites/"
+
+    def __init__(self, root, name, a, i, Omega, omega=0, e=0, M=0, epoch=None, unload=True):
         """
         Initializes a satellite in STK with orbital parameters for circular or eccentric orbits.
         
@@ -24,7 +26,7 @@ class Satellite(STKStandaloneObject):
         - M: Mean anomaly (deg) [default = 0].
         - epoch: The satellite's epoch [default is the scenario start time].
         """
-        super().__init__(root, name, AgESTKObjectType.eSatellite, save_dir, unload=unload)
+        super().__init__(root, name, AgESTKObjectType.eSatellite, Satellite.save_dir, unload=unload)
         self.a = a
         self.i = i
         self.Omega = self._wrapTo360(Omega)
@@ -76,6 +78,29 @@ class Satellite(STKStandaloneObject):
         satellite.Propagator.Propagate()
 
         print(f"Satellite {self.name} loaded with RAAN={self.Omega}° and Mean Anomaly={self.M}°.")
+
+    @staticmethod
+    def makeHeaders(filename):
+
+        # Define file paths
+        file_path_txt = os.path.join(Satellite.save_dir, f"{filename}.txt")
+        file_path_csv = os.path.join(Satellite.save_dir, f"{filename}.csv")
+
+        # Ensure the directory exists
+        os.makedirs(Satellite.save_dir, exist_ok=True)
+
+        # ---------------- TXT FILE HEADER ----------------
+        with open(file_path_txt, 'w', encoding="utf-8") as file:
+            file.write("Satellite Object Details\n")
+            file.write("======================\n")
+
+        # ---------------- CSV FILE HEADER ----------------
+        with open(file_path_csv, 'w', newline='', encoding="utf-8") as file:
+            writer = csv.writer(file)
+            
+            writer.writerow(["Satellite Name", "a", "i", "Omega", "omega", "e", "M"])
+
+        print(f"Headers created for {file_path_txt} and {file_path_csv}.")
 
     def saveObject(self, file_name):
         """

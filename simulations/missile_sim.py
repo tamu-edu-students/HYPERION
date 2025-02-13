@@ -7,8 +7,8 @@ from src import *
 mu_E = 3.986004415e5  # km^3 / s^2
 r_E = 6.378137e3  # km
 
-missile_file_name = "missiles-10"
-sat_file_name = "satellites-LEO"
+missile_filename = "missiles-10"
+sat_filename = "satellites-LEO"
 
 def makeLEOConstellation(root, conic_angle):
     """
@@ -40,7 +40,7 @@ def makeLEOConstellation(root, conic_angle):
             sat_name = f"LEOSat_P{plane+1}_S{sat+1}"
             satellite = Satellite(root, sat_name, a, i, Omega, omega, e, M)
             satellite.loadObject()
-            satellite.saveObject(sat_file_name)
+            satellite.saveObject(sat_filename)
 
             sensor_name = "LEOSensor"
             sensor = Sensor(root, sat_name, sensor_name, conic_angle)
@@ -63,7 +63,7 @@ def createMissiles(root, num_missiles):
         missile_name = f"Missile{i+1}"
         missile = Missile(root, missile_name)
         missile.loadObject()
-        missile.saveObject(missile_file_name)
+        missile.saveObject(missile_filename)
         missile_path = missile.getObjectPath()
         missile_paths.append((chain, missile_path))
 
@@ -96,15 +96,14 @@ def computeAndSaveTracking(missile_paths, conic_angle, output_file):
         for missile_id, tracking_percent, conic_angle in results:
             writer.writerow([missile_id, round(tracking_percent, 2), conic_angle])
 
-def main(root):
-    makeHeaders(missile_file_name, "Missile")
-    makeHeaders(sat_file_name, "Satellite")
-    
+def main(root):    
     output_file = "data/missile-tracking.csv"
 
     with open(output_file, mode='w', newline='') as file:
         writer = csv.writer(file)
         writer.writerow(["Missile ID", "Tracking %", "Conic Angle (deg)"])
+
+    Missile.makeHeaders(missile_filename)
 
     # Step 1: Create missiles and missile chains 
     missile_paths = createMissiles(root, num_missiles=10)
@@ -113,6 +112,8 @@ def main(root):
     previous_constellation_path = None  
 
     for conic_angle in range(30, 61, 10):
+        Satellite.makeHeaders(sat_filename)
+        
         # Create the constellation for this conic angle
         constellation_path = makeLEOConstellation(root, conic_angle)
 

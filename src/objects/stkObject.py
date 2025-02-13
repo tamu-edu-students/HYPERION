@@ -83,12 +83,7 @@ class STKObjectBase:
 
         # Call the subclass-specific loading logic
         self._loadObjectImplementation()
-    
-    def saveObject(self):
-        """
-        Saves object details to a txt file.
-        """
-        raise NotImplementedError("Subclasses must implement the `saveObject` method.")
+
     
 class STKContainerObject(STKObjectBase):
     def __init__(self, root, name, object_type, unload=True):
@@ -137,3 +132,16 @@ class STKStandaloneObject(STKObjectBase):
         if not os.path.exists(self.save_dir):
                 os.makedirs(self.save_dir)
                 print(f"Directory '{self.save_dir}' created successfully.")
+
+    @staticmethod
+    def makeHeaders(filename):
+        """
+        Writes the appropriate csv and txt headers for saving object details.
+        """
+        raise NotImplementedError("Subclasses must implement the `makeHeaders` method.")
+    
+    def saveObject(self):
+        """
+        Saves object details to a txt and csv file.
+        """
+        raise NotImplementedError("Subclasses must implement the `saveObject` method.")

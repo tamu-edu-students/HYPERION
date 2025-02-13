@@ -5,7 +5,7 @@ from src.stk_runner import run
 if __name__ == "__main__":
     args = parse_args()
     
-    sim_name = input("Enter simulation script: ").strip()
+    sim_name = input("Enter simulation module: ").strip()
     
     try:
         sim_module = importlib.import_module(f"simulations.{sim_name}")

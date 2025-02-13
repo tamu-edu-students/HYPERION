@@ -31,11 +31,13 @@ class Site:
         return self.country
 
 class Missile(STKStandaloneObject):
-    def __init__(self, root, name, launch_site=None, target_site=None, launch_time=None, Mach=None, cities_file="data/world-cities.csv", un_countries_file="data/UN-countries.txt", save_dir="data/missiles/", unload=True):
+    save_dir = "data/missiles/"
+
+    def __init__(self, root, name, launch_site=None, target_site=None, launch_time=None, Mach=None, cities_file="data/world-cities.csv", un_countries_file="data/UN-countries.txt", unload=True):
         """
         Initializes a missile object with launch and target sites, launch time, and maximum Mach number.
         """
-        super().__init__(root, name, AgESTKObjectType.eAircraft, save_dir, unload=unload) 
+        super().__init__(root, name, AgESTKObjectType.eAircraft, Missile.save_dir, unload=unload) 
 
         if unload:
             # Load the cities dataset
@@ -174,6 +176,31 @@ class Missile(STKStandaloneObject):
         final_waypoint = route.Waypoints.Item(route.Waypoints.Count - 1)
         self.impact_time = final_waypoint.Time 
         print(f"Impact Time for {self.name}: {self.impact_time}")
+
+    @staticmethod
+    def makeHeaders(filename):
+
+        # Define file paths
+        file_path_txt = os.path.join(Missile.save_dir, f"{filename}.txt")
+        file_path_csv = os.path.join(Missile.save_dir, f"{filename}.csv")
+
+        # Ensure the directory exists
+        os.makedirs(Missile.save_dir, exist_ok=True)
+
+        # ---------------- TXT FILE HEADER ----------------
+        with open(file_path_txt, 'w', encoding="utf-8") as file:
+            file.write("Missile Object Details\n")
+            file.write("======================\n")
+
+        # ---------------- CSV FILE HEADER ----------------
+        with open(file_path_csv, 'w', newline='', encoding="utf-8") as file:
+            writer = csv.writer(file)
+
+            writer.writerow(["Missile Name", "Launch Latitude", "Launch Longitude", "Launch City", "Launch Country",
+                                "Target Latitude", "Target Longitude", "Target City", "Target Country",
+                                "Launch Time", "Impact Time", "Mach Number"])
+
+        print(f"Headers created for {file_path_txt} and {file_path_csv}.")
 
     def saveObject(self, file_name):
         """
