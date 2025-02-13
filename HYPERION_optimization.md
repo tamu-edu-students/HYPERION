@@ -199,8 +199,8 @@
 
 #### LEO
 <div style="display: flex; justify-content: center;">
-    <img src="figures/LEO_results_2142_sorted_avg_revisit_vs_sats.png" alt="Avg missile response vs number of LEO sats" width="450" style="margin-right: 10px;"/>
-    <img src="figures/LEO_results_2142_sorted_avg_revisit_vs_altitude.png" alt="Avg missile response vs LEO altitude" width="450"/>
+    <img src="figures/old/LEO_results_2142_sorted_avg_revisit_vs_sats.png" alt="Avg missile response vs number of LEO sats" width="450" style="margin-right: 10px;"/>
+    <img src="figures/old/LEO_results_2142_sorted_avg_revisit_vs_altitude.png" alt="Avg missile response vs LEO altitude" width="450"/>
 </div>
 
 <div style="display: flex; flex-direction: column; align-items: center; gap: 20px;">
@@ -215,14 +215,14 @@
 </div>
 
 <div style="text-align: center;">
-    <img src="figures\avg_gaps_vs_max_hops.png" alt="LEO heat map" width="800"/>
+    <img src="figures\old\avg_gaps_vs_max_hops.png" alt="LEO heat map" width="800"/>
 </div>
 
 
 #### MEO
 <div style="display: flex; justify-content: center;">
-    <img src="figures\MEO_results_1362_sorted_avg_access_vs_altitude.png" alt="Avg missile response vs number of LEO sats" width="450" style="margin-right: 10px;"/>
-    <img src="figures\MEO_results_1362_sorted_avg_access_vs_sats.png" alt="Avg missile response vs LEO altitude" width="450"/>
+    <img src="figures\old\MEO_results_1362_sorted_avg_access_vs_altitude.png" alt="Avg missile response vs number of LEO sats" width="450" style="margin-right: 10px;"/>
+    <img src="figures\old\MEO_results_1362_sorted_avg_access_vs_sats.png" alt="Avg missile response vs LEO altitude" width="450"/>
 </div>
 
 #### HYPERION
