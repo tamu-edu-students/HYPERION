@@ -1,14 +1,17 @@
 import csv
 import matplotlib.pyplot as plt
 import pandas as pd
+from icecream import ic
 from src import *
 
 # Constants
 mu_E = 3.986004415e5  # km^3 / s^2
 r_E = 6.378137e3  # km
 
+# File information
 missile_filename = "missiles-10"
 sat_filename = "satellites-LEO"
+output_file = "data/missile-tracking.csv"
 
 def makeLEOConstellation(root, conic_angle):
     """
@@ -50,26 +53,52 @@ def makeLEOConstellation(root, conic_angle):
 
     return constellation.getObjectPath()
 
-def createMissiles(root, num_missiles):
+def createMissiles(root, num_missiles=None, from_csv=False):
     """
     Creates and returns missiles and missile chains without attaching the constellation yet.
     """
     missile_paths = []
-    for i in range(num_missiles):
-        chain_name = f"Missile{i+1}Chain"
-        chain = MissileChain(root, chain_name)
-        chain.loadObject()
 
-        missile_name = f"Missile{i+1}"
-        missile = Missile(root, missile_name)
-        missile.loadObject()
-        missile.saveObject(missile_filename)
-        missile_path = missile.getObjectPath()
-        missile_paths.append((chain, missile_path))
+    if num_missiles is not None and not from_csv:
+        for i in range(num_missiles):
+            chain_name = f"Missile{i+1}Chain"
+            chain = MissileChain(root, chain_name)
+            chain.loadObject()
 
-        # Add the missile to the chain (constellations will be added later)
-        chain.addToObject(missile_path)
+            missile_name = f"Missile{i+1}"
+            missile = Missile(root, missile_name)
+            missile.loadObject()
+            missile.saveObject(missile_filename)
+            missile_path = missile.getObjectPath()
+            missile_paths.append((chain, missile_path))
 
+            # Add the missile to the chain (constellations will be added later)
+            chain.addToObject(missile_path)
+    
+    elif from_csv:
+        missile_file = "data/missiles/" + missile_filename + ".csv"
+        if not os.path.exists(missile_file):
+            raise FileNotFoundError(f"Missile file '{missile_file}' not found.")
+        
+        with open(missile_file, mode='r', newline='', encoding='utf-8') as file:
+            reader = csv.DictReader(file)
+            for i, row in enumerate(reader):
+                chain_name = f"Missile{i+1}Chain"
+                chain = MissileChain(root, chain_name)
+                chain.loadObject()
+
+                missile = Missile.fromCSV(root, row)
+                missile.loadObject()
+                
+                missile_path = missile.getObjectPath()
+                missile_paths.append((chain, missile_path))
+
+                # Add the missile to the chain (constellations will be added later)
+                chain.addToObject(missile_path)
+    
+    else:
+        raise RuntimeError("If not loading from a csv, the number of missiles must be specified.")
+    
     return missile_paths
 
 def attachConstellationToChains(missile_paths, constellation_path):
@@ -97,16 +126,15 @@ def computeAndSaveTracking(missile_paths, conic_angle, output_file):
             writer.writerow([missile_id, round(tracking_percent, 2), conic_angle])
 
 def main(root):    
-    output_file = "data/missile-tracking.csv"
-
     with open(output_file, mode='w', newline='') as file:
         writer = csv.writer(file)
         writer.writerow(["Missile ID", "Tracking %", "Conic Angle (deg)"])
 
-    Missile.makeHeaders(missile_filename)
+    # TODO: Make this less clunky
+    # Missile.makeHeaders(missile_filename)
 
     # Step 1: Create missiles and missile chains 
-    missile_paths = createMissiles(root, num_missiles=10)
+    missile_paths = createMissiles(root, num_missiles=10, from_csv=True)
 
     # Step 2: Loop over conic angles
     previous_constellation_path = None  
@@ -161,7 +189,6 @@ def plot(save_path = "figures/missile-sim.png"):
     # Save the figure
     plt.savefig(save_path, format='png', dpi=300, bbox_inches='tight')
     print(f"Plot saved to '{save_path}'.")
-
 
 
 if __name__ == "__main__":

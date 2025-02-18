@@ -137,6 +137,13 @@ class STKStandaloneObject(STKObjectBase):
             os.makedirs(cls.save_dir)
             print(f"Directory '{cls.save_dir}' created successfully.")
 
+    @classmethod
+    def fromCSV(cls, root, row):
+        """
+        Creates an object from a CSV row.
+        """
+        raise NotImplementedError("Subclasses must implement the `from_csv` method.")
+
     @staticmethod
     def makeHeaders(filename):
         """

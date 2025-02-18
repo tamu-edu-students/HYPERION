@@ -1,41 +1,94 @@
 import os
 import csv
-import pandas as pd
 import random
+import pandas as pd
+from datetime import datetime, timedelta
 from geopy.geocoders import Nominatim
 from agi.stk12.stkobjects import *
 from agi.stk12.utilities.colors import Colors
-from datetime import datetime, timedelta
 from .stkObject import STKStandaloneObject 
+from .site import Site
 
 r, g, b = 255, 0, 0
 COLOR = Colors.FromRGB(r, g, b)
 
-class Site:
-    def __init__(self, lat, lon, city, country):
-        self.lat = lat
-        self.lon = lon
-        self.city = city
-        self.country = country
-
-    def getLat(self):
-        return self.lat
-    
-    def getLon(self):
-        return self.lon
-    
-    def getCity(self):
-        return self.city
-    
-    def getCountry(self):
-        return self.country
-
 class Missile(STKStandaloneObject):
     save_dir = "data/missiles/"
+    cities_file="data/world-cities.csv"
+    un_countries_file="data/UN-countries.txt"
 
-    def __init__(self, root, name, launch_site=None, target_site=None, launch_time=None, Mach=None, cities_file="data/world-cities.csv", un_countries_file="data/UN-countries.txt", unload=True):
+    @classmethod
+    def fromCSV(cls, root, row):
+        """
+        Creates a Missile object from a CSV row.
+        """
+        name = row["Missile Name"]
+        launch_site = Site(float(row["Launch Latitude"]), float(row["Launch Longitude"]), row["Launch City"], row["Launch Country"])
+        target_site = Site(float(row["Target Latitude"]), float(row["Target Longitude"]), row["Target City"], row["Target Country"])
+        launch_time = row["Launch Time"]
+        Mach = float(row["Mach Number"])
+        
+        return cls(root, name, launch_site=launch_site, target_site=target_site, launch_time=launch_time, Mach=Mach)
+
+    def __init__(self, root, name, launch_site=None, target_site=None, launch_time=None, Mach=None, unload=True):
         """
         Initializes a missile object with launch and target sites, launch time, and maximum Mach number.
+
+        Parameters
+        ----------
+        root : agi.stk12.stkobjects.AgStkObjectRoot
+            The STK scenario root object, required for adding the missile to STK.
+
+        name : str
+            The name of the missile object, which will be used as its identifier in STK.
+
+        launch_site : Site, optional
+            A `Site` object representing the missile's launch location.
+            - Expected attributes:
+                - lat (float): Latitude in decimal degrees (-90 to 90).
+                - lon (float): Longitude in decimal degrees (-180 to 180).
+                - city (str): Name of the city where the launch occurs.
+                - country (str): Country name of the launch location.
+            - If `None`, a random launch site will be selected.
+
+        target_site : Site, optional
+            A `Site` object representing the missile's target location.
+            - Expected attributes (same as `launch_site`):
+                - lat (float): Latitude in decimal degrees.
+                - lon (float): Longitude in decimal degrees.
+                - city (str): Name of the target city.
+                - country (str): Country name of the target location.
+            - If `None`, a random target site will be selected, ensuring it is in a different country than the launch site.
+
+        launch_time : str, optional
+            The time of missile launch in STK-compatible datetime format: `"DD MMM YYYY HH:MM:SS.SSSSSS"`.
+            Example: `"01 Jan 2025 00:00:00.000000"`.
+            - If `None`, a random launch time will be selected within the scenario's time window.
+
+        Mach : float, optional
+            The maximum speed of the missile in Mach number.
+            - If `None`, a random Mach number will be generated in the range [5.0, 15.0].
+
+        unload : bool, default=True
+            Specifies whether the missile object should be automatically unloaded and recreated in STK upon initialization.
+            - `True`: Ensures a fresh missile instance is created in STK.
+            - `False`: Uses an existing missile object if available.
+
+        Raises
+        -------
+        RuntimeError
+            If a valid launch or target site cannot be determined after multiple retries.
+
+        Example Usage
+        --------------
+        ```python
+        root = stkRoot  # Assuming STK root object is initialized
+        launch = Site(22.3, 114.2, "Lam Tin", "Hong Kong")
+        target = Site(9.02, 13.18, "Tchéboa", "Cameroon")
+        
+        missile = Missile(root, "Missile1", launch_site=launch, target_site=target, launch_time="01 Jan 2025 00:00:00.000000", Mach=10.0)
+        missile.loadObject()  # Add missile to STK scenario
+        ```
         """
         Missile._ensureSaveDir()
 
@@ -43,10 +96,10 @@ class Missile(STKStandaloneObject):
 
         if unload:
             # Load the cities dataset
-            self.cities = pd.read_csv(cities_file)
+            self.cities = pd.read_csv(Missile.cities_file)
 
             # Load the UN countries dataset
-            with open(un_countries_file, 'r') as f:
+            with open(Missile.un_countries_file, 'r') as f:
                 self.un_countries = {line.strip() for line in f}
 
             self.geolocator = Nominatim(user_agent="missile_simulator", timeout=2)
@@ -208,10 +261,12 @@ class Missile(STKStandaloneObject):
         """
         Appends the missile's details to existing text and CSV files.
 
-        Parameters:
+        Parameters
+        ----------
         - file_name (str): Custom filename (without extension).
         
-        Raises:
+        Raises
+        -------
         - FileNotFoundError: If the target file does not exist.
         """
 
