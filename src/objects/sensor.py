@@ -1,3 +1,4 @@
+import os
 from agi.stk12.stkobjects import *
 from agi.stk12.stkutil import *
 from agi.stk12.utilities.colors import Colors

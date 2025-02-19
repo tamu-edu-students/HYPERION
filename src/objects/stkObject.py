@@ -134,7 +134,7 @@ class STKStandaloneObject(STKObjectBase):
         Ensures the save directory exists for this object type.
         """
         if not os.path.exists(cls.save_dir):
-            os.makedirs(cls.save_dir)
+            os.makedirs(cls.save_dir, exist_ok=True)
             print(f"Directory '{cls.save_dir}' created successfully.")
 
     @classmethod

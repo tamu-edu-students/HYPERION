@@ -47,7 +47,8 @@ def run(sim_function, mode="engine", scenario_name=None):
         print(f"The following exception was caught upon STK initialization: {e}")
         sys.exit(0)
 
-    clearScenario(scenario)
+    if scenario:
+        clearScenario(scenario)
 
     try:
         if scenario is None:
@@ -77,10 +78,6 @@ def run(sim_function, mode="engine", scenario_name=None):
         handle_interrupt(signal.SIGINT, None)
 
     finally:
-        if root and root.CurrentScenario:
-            root.CloseScenario()
-            print("Scenario closed.")
-
         if stk and mode == "engine":
             stk.ShutDown()
             print("STK Engine shut down.")
