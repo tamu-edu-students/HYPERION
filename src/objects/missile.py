@@ -2,8 +2,10 @@ import os
 import csv
 import random
 import pandas as pd
+import numpy as np
 from datetime import datetime, timedelta
 from geopy.geocoders import Nominatim
+from icecream import ic
 from agi.stk12.stkobjects import *
 from agi.stk12.utilities.colors import Colors
 from .stkObject import STKStandaloneObject 
@@ -131,6 +133,10 @@ class Missile(STKStandaloneObject):
             self.Mach = Mach if Mach else round(random.uniform(5, 15), 2)
             print(f"Mach Number: {self.Mach}")
 
+        else:
+            self.launch_time = self.getLaunchTime()
+            self.impact_time = self.getImpactTime()
+
     def _loadObjectImplementation(self):
         """
         Adds the missile as an aircraft object to the STK scenario.
@@ -219,6 +225,19 @@ class Missile(STKStandaloneObject):
         """
         return self.launch_site.country
     
+    def getLaunchTime(self):
+        """
+        Determines the launch time by retrieving the first waypoint time from the missile's propagated route.
+        """
+        # Access the missile object in STK
+        missile = self.root.CurrentScenario.Children.Item(self.name)
+        route = missile.Route
+
+        # Get the time of the last waypoint 
+        first_waypoint = route.Waypoints.Item(0)
+        self.launch_time = first_waypoint.Time 
+        print(f"Impact Time for {self.name}: {self.launch_time}")
+    
     def getImpactTime(self):
         """
         Determines the impact time by retrieving the final waypoint time from the missile's propagated route.
@@ -227,7 +246,7 @@ class Missile(STKStandaloneObject):
         missile = self.root.CurrentScenario.Children.Item(self.name)
         route = missile.Route
 
-        # Get the time of the last waypoint (impact time)
+        # Get the time of the last waypoint 
         final_waypoint = route.Waypoints.Item(route.Waypoints.Count - 1)
         self.impact_time = final_waypoint.Time 
         print(f"Impact Time for {self.name}: {self.impact_time}")
@@ -337,3 +356,39 @@ class Missile(STKStandaloneObject):
                             self.launch_time, impact_time, self.Mach])
 
         print(f"Missile details appended to {file_path_csv}.")
+
+    def getECFState(self, step_size=1):
+        """
+        Extracts ECF position and velocity for the missile at a given time step.
+        """
+
+        try:
+            self.root.UnitPreferences.Item("DateFormat").SetCurrentUnit("EpSec")
+
+            # Access the data providers
+            dp_val_position = self._identity.DataProviders.GetItemByName("Cartesian Position")
+            object_dp_position = dp_val_position.Group.GetItemByName("Fixed")
+            
+            dp_val_velocity = self._identity.DataProviders.GetItemByName("Cartesian Velocity")
+            object_dp_velocity = dp_val_velocity.Group.GetItemByName("Fixed")
+            
+
+            # Execute the query
+            position = object_dp_position.Exec(self.root.CurrentScenario.StartTime, self.root.CurrentScenario.StopTime, step_size) # km
+            velocity = object_dp_velocity.Exec(self.root.CurrentScenario.StartTime, self.root.CurrentScenario.StopTime, step_size) # km/s
+            
+            # State
+            x = np.array(position.DataSets.GetDataSetByName("x").GetValues(), dtype=float)
+            y = np.array(position.DataSets.GetDataSetByName("y").GetValues(), dtype=float)
+            z = np.array(position.DataSets.GetDataSetByName("z").GetValues(), dtype=float)
+            x_dot = np.array(velocity.DataSets.GetDataSetByName("vx").GetValues(), dtype=float)
+            y_dot = np.array(velocity.DataSets.GetDataSetByName("vy").GetValues(), dtype=float)
+            z_dot = np.array(velocity.DataSets.GetDataSetByName("vz").GetValues(), dtype=float)
+
+            state = np.column_stack((x, y, z, x_dot, y_dot, z_dot))
+
+        finally:
+            # Switch back to UTCG
+            self.root.UnitPreferences.Item("DateFormat").SetCurrentUnit("UTCG")
+
+        return state

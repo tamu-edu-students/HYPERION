@@ -49,5 +49,6 @@ def parse_args():
     parser = argparse.ArgumentParser(description="Choose STK mode: Desktop or Engine.")
     parser.add_argument("--mode", choices=["desktop", "engine"], default="engine", help="Run STK in 'desktop' or 'engine' mode.")
     parser.add_argument("--name", type=str, default=None, help="Scenario name (if applicable).")
+    parser.add_argument("-c", "--clear", action="store_true", help="Clear scenario before running.")
     
     return parser.parse_args()

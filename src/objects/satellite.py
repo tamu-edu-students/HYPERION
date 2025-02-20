@@ -1,17 +1,20 @@
 import os
 import csv
+from icecream import ic
 from agi.stk12.stkobjects import *
 from agi.stk12.stkutil import *
 from agi.stk12.utilities.colors import Colors
 from .stkObject import STKStandaloneObject
 
+
 r, g, b = 0, 0, 255
 COLOR = Colors.FromRGB(r, g, b)
 
+# TODO: Having unload parameter makes no sense if you still have to specify orbital parameters. Figure out a way around this
 class Satellite(STKStandaloneObject):
     save_dir =  "data/satellites/"
 
-    def __init__(self, root, name, a, i, Omega, omega=0, e=0, M=0, epoch=None, unload=True):
+    def __init__(self, root, name, a=None, i=None, Omega=None, omega=0, e=0, M=0, epoch=None, unload=True):
         """
         Initializes a satellite in STK with orbital parameters for circular or eccentric orbits.
         
@@ -29,18 +32,23 @@ class Satellite(STKStandaloneObject):
         Satellite._ensureSaveDir()
 
         super().__init__(root, name, AgESTKObjectType.eSatellite, unload=unload)
-        self.a = a
-        self.i = i
-        self.Omega = self._wrapTo360(Omega)
-        self.omega = self._wrapTo360(omega)
-        self.e = e
-        self.M = self._wrapTo360(M)
 
-        # Set the epoch to the scenario start time if not specified
-        if epoch is None:
-            self.epoch = root.CurrentScenario.StartTime
-        else:
-            self.epoch = epoch
+        if unload:
+            if a is None or i is None or Omega is None:
+                raise RuntimeError("If not connecting to an existing object, orbital parameters must be defined.")
+            else:
+                self.a = a
+                self.i = i
+                self.Omega = self._wrapTo360(Omega)
+                self.omega = self._wrapTo360(omega)
+                self.e = e
+                self.M = self._wrapTo360(M)
+
+            # Set the epoch to the scenario start time if not specified
+            if epoch is None:
+                self.epoch = root.CurrentScenario.StartTime
+            else:
+                self.epoch = epoch
 
     def _wrapTo360(self, angle):
         """
@@ -104,7 +112,7 @@ class Satellite(STKStandaloneObject):
 
         print(f"Headers created for {file_path_txt} and {file_path_csv}.")
 
-    def saveObject(self, file_name):
+    def saveObject(self, filename):
         """
         Appends the satellite's details to existing text and CSV files.
 
@@ -115,8 +123,8 @@ class Satellite(STKStandaloneObject):
         - FileNotFoundError: If the target file does not exist.
         """
 
-        file_path_txt = os.path.join(self.save_dir, f"{file_name}.txt")
-        file_path_csv = os.path.join(self.save_dir, f"{file_name}.csv")
+        file_path_txt = os.path.join(self.save_dir, f"{filename}.txt")
+        file_path_csv = os.path.join(self.save_dir, f"{filename}.csv")
 
         # Check if files exist before attempting to write
         if not os.path.exists(file_path_txt) or not os.path.exists(file_path_csv):

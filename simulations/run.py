@@ -9,6 +9,6 @@ if __name__ == "__main__":
     
     try:
         sim_module = importlib.import_module(f"simulations.{sim_name}")
-        run(sim_module.main, mode=args.mode, scenario_name=args.name)
+        run(sim_module.main, mode=args.mode, scenario_name=args.name, clear=args.clear)
     except ModuleNotFoundError:
         print(f"Simulation '{sim_name}' not found. Ensure it's in the 'simulations' folder.")

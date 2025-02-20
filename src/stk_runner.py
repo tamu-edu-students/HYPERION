@@ -6,7 +6,7 @@ import sys
 from .utilities import clearScenario
 from agi.stk12 import utilities
 
-def run(sim_function, mode="engine", scenario_name=None):
+def run(sim_function, mode="engine", scenario_name=None, clear=False):
     """Handles simulation execution, scenario saving, and cleanup."""
     from src.stk_init import initialize
 
@@ -47,7 +47,7 @@ def run(sim_function, mode="engine", scenario_name=None):
         print(f"The following exception was caught upon STK initialization: {e}")
         sys.exit(0)
 
-    if scenario:
+    if scenario and clear:
         clearScenario(scenario)
 
     try:

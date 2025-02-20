@@ -1,12 +1,13 @@
 import os
+from icecream import ic
 from agi.stk12.stkobjects import *
 
 class STKObjectBase:
     def __init__(self, root, name, object_type, unload=True):
+        self._identity = None # No STK identity initially
         self.root = root
         self.name = name
         self.object_type = object_type
-        self.identity = None # No STK identity initially
         
         # Ensure no duplicates by deleting existing objects with the same name if unload is set to true
         if unload:
@@ -37,10 +38,10 @@ class STKObjectBase:
             if parent_name:
                 # Search under the parent object
                 parent_object = self.root.CurrentScenario.Children.Item(parent_name)
-                self.identity = parent_object.Children.Item(self.name)
+                self._identity = parent_object.Children.Item(self.name)
             else:
                 # Search at the scenario level for top-level objects
-                self.identity = self.root.CurrentScenario.Children.Item(self.name)
+                self._identity = self.root.CurrentScenario.Children.Item(self.name)
         except Exception:
             print(f"Object '{self.name}' not found.")
 
@@ -54,9 +55,8 @@ class STKObjectBase:
         """
         Return STK path of an object.
         """
-        self._setObjectIdentity()
 
-        return self.identity.Path
+        return self._identity.Path
 
     def unloadObject(self):
         """
@@ -76,13 +76,31 @@ class STKObjectBase:
         Ensures the object is loaded properly, with unloading if needed.
         Calls the subclass-specific implementation of loading.
         """
-        if self.identity is not None:
+        if self._identity:
             print(f"Object '{self.name}' is already loaded. Unloading it for reconfiguration...")
             self.unloadObject()
-            self.identity = None  # Reset identity to ensure proper reloading
+            self._identity = None  # Reset identity to ensure proper reloading
 
         # Call the subclass-specific loading logic
         self._loadObjectImplementation()
+
+        self._setObjectIdentity()
+
+    def viewDataProviders(self):
+        # Get DataProviders collection
+        dp_collection = self._identity.DataProviders
+        if dp_collection.Count == 0:
+            print(f"Warning: No DataProviders found for '{self.name}'.")
+            return
+
+        # Print available DataProviders
+        print(f"Available DataProviders for '{self.name}':")
+        for i in range(dp_collection.Count):
+            try:
+                dp_name = dp_collection.Item(i).Name
+                print(f"- {dp_name}")
+            except Exception as dp_error:
+                print(f"Error retrieving DataProvider at index {i}: {dp_error}")
 
     
 class STKContainerObject(STKObjectBase):
@@ -95,13 +113,11 @@ class STKContainerObject(STKObjectBase):
         """
         child_name = child_path.rsplit('/', 1)[-1]
 
-        self._setObjectIdentity()
-
         try:
             # Access the container object and add the STK object using its path
             obj_to_add = self.root.GetObjectFromPath(child_path)
             if obj_to_add:
-                self.identity.Objects.AddObject(obj_to_add)
+                self._identity.Objects.AddObject(obj_to_add)
                 print(f"Added '{child_name}' to container '{self.name}'.")
         except Exception as e:
             print(f"Error adding '{child_name}' to container '{self.name}': {str(e)}")
@@ -112,13 +128,11 @@ class STKContainerObject(STKObjectBase):
         """
         child_name = child_path.rsplit('/', 1)[-1]
 
-        self._setObjectIdentity()
-
         try:
             # Access the container object and remove the STK object using its path
             obj_to_remove = self.root.GetObjectFromPath(child_path)
             if obj_to_remove:
-                self.identity.Objects.RemoveObject(obj_to_remove)
+                self._identity.Objects.RemoveObject(obj_to_remove)
                 print(f"Removed '{child_name}' from container '{self.name}'.")
         except Exception as e:
             print(f"Error removing '{child_name}' from container '{self.name}': {str(e)}")
@@ -133,9 +147,12 @@ class STKStandaloneObject(STKObjectBase):
         """
         Ensures the save directory exists for this object type.
         """
-        if not os.path.exists(cls.save_dir):
-            os.makedirs(cls.save_dir, exist_ok=True)
-            print(f"Directory '{cls.save_dir}' created successfully.")
+        try:
+            if not os.path.exists(cls.save_dir):
+                os.makedirs(cls.save_dir, exist_ok=True)
+                print(f"Directory '{cls.save_dir}' created successfully.")
+        except PermissionError:
+            print(f"Error: No permission to create '{cls.save_dir}'")
 
     @classmethod
     def fromCSV(cls, root, row):

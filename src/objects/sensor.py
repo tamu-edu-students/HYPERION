@@ -60,7 +60,7 @@ class Sensor(STKStandaloneObject):
         """
         self._setObjectIdentity(self.satellite_name)
 
-        return self.identity.Path
+        return self._identity.Path
 
     def saveObject(self):
         """

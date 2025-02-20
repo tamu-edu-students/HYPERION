@@ -4,23 +4,23 @@
 
 ## **1. Project Overview**
 ### **Goal**
-Develop an **optimized measurement strategy** for a satellite-borne sensor to **track a hypersonic missile** efficiently. The project will:
+Develop an optimized measurement strategy for a satellite-borne sensor to *rack a hypersonic missile efficiently. The project will:
 - Define **sensor constraints**.
 - **Simulate a missile trajectory** and compute visibility access times.
-- **Apply an Extended Kalman Filter (EKF)** to track the missile state from generated noisy measurements.
-- **Optimize measurement scheduling** to maximize information gain while minimizing sensor movement.
+- **Apply a filter** to track the missile state from generated noisy measurements.
+- **Optimize measurement scheduling** to maximize information gain or some other objective.
 - **Evaluate performance** by comparing different tracking strategies.
 
 ---
 
 ## **2. Workflow Outline**
 ### **Step 1: Define Sensor Constraints**
-- Set **Field of View (FoV)**: The angular area the sensor can observe at any given moment.
-- Set **Slew Rate**: The maximum angular velocity at which the sensor can reposition.
-
-**Expected Outputs:**
-- Defined **FoV limits** (e.g., 5° x 5°).
-- Defined **maximum slew rate** (e.g., 2°/sec).
+- Field of regard (FoR)
+- Field of view (FoV)
+- Slew rate
+- Sample rate
+- Integration time
+- Data limit
 
 ---
 

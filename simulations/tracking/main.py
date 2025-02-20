@@ -27,9 +27,15 @@ def makeSensor(root):
     return sensor 
 
 def main(root):
-    makeSensor(root)
+    sensor = makeSensor(root)
     missile = Missile(root, name="TestMissile")
+    # missile.viewDataProviders()
     missile.loadObject()
+
+    # Extract ECF Position and Velocity at 1s step size
+    state = missile.getECFState()
+
+    ic(state[:5])
 
     print("Running tracking optimization...")
     return
