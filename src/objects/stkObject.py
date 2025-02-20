@@ -3,6 +3,50 @@ from icecream import ic
 from agi.stk12.stkobjects import *
 
 class STKObjectBase:
+    @classmethod
+    def inspect(cls, stk_obj):
+        """
+        Inspects an STK object to determine its class, properties, and available methods.
+
+        Parameters:
+        - stk_obj: Any STK object.
+
+        Returns:
+        - Prints object type, available properties, and callable methods.
+        """
+        if stk_obj is None:
+            print("Object is None.")
+            return
+
+        # Print the object's type
+        print(f"\nInspecting STK Object: {stk_obj}")
+        print(f"Object Type: {type(stk_obj)}\n")
+
+        # List available attributes and methods
+        print("Available Attributes & Methods:")
+        for attr in dir(stk_obj):
+            if not attr.startswith("_"):  # Skip private attributes
+                try:
+                    attr_value = getattr(stk_obj, attr)
+                    if callable(attr_value):
+                        print(f"{attr}()  # Method")
+                    else:
+                        print(f"{attr} = {attr_value}  # Property")
+                except Exception as e:
+                    print(f"{attr}: Could not retrieve - {e}")
+
+        # If object has DataProviders, list them
+        if hasattr(stk_obj, "DataProviders"):
+            print("\nAvailable Data Providers:")
+            try:
+                for i in range(stk_obj.DataProviders.Count):
+                    dp_name = stk_obj.DataProviders.Item(i).Name
+                    print(f"- {dp_name}")
+            except Exception as e:
+                print(f"Could not retrieve DataProviders - {e}")
+
+        print("\nInspection Complete.\n")
+
     def __init__(self, root, name, object_type, unload=True):
         self._identity = None # No STK identity initially
         self.root = root

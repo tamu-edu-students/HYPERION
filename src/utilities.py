@@ -3,7 +3,7 @@ def clearScenario(scenario):
         children = scenario.Children
         print(f"Number of objects remaining: {children.Count}")
 
-        for i in range(children.Count):
+        for _ in range(children.Count):
             try:
                 child = children.Item(0)  # Always delete the first item to avoid skipping
                 print(f"Deleting object: {child.InstanceName}")

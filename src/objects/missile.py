@@ -366,8 +366,8 @@ class Missile(STKStandaloneObject):
             self.root.UnitPreferences.Item("DateFormat").SetCurrentUnit("EpSec")
 
             # Access the data providers
-            dp_val_position = ic(self._identity.DataProviders.GetItemByName("Cartesian Position"))
-            object_dp_position = ic(dp_val_position.Group.GetItemByName("Fixed"))
+            dp_val_position = self._identity.DataProviders.GetItemByName("Cartesian Position")
+            object_dp_position = dp_val_position.Group.GetItemByName("Fixed")
             
             dp_val_velocity = self._identity.DataProviders.GetItemByName("Cartesian Velocity")
             object_dp_velocity = dp_val_velocity.Group.GetItemByName("Fixed")
