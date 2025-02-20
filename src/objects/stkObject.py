@@ -81,8 +81,12 @@ class STKObjectBase:
             self.unloadObject()
             self._identity = None  # Reset identity to ensure proper reloading
 
+        project_root = os.getcwd()
+
         # Call the subclass-specific loading logic
         self._loadObjectImplementation()
+
+        os.chdir(project_root) # Reset the working directory
 
         self._setObjectIdentity()
 

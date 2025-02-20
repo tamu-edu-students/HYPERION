@@ -16,7 +16,7 @@ COLOR = Colors.FromRGB(r, g, b)
 
 class Missile(STKStandaloneObject):
     save_dir = "data/missiles/"
-    cities_file="data/world-cities.csv"
+    cities_file= os.path.abspath(os.path.join("data", "world-cities.csv"))
     un_countries_file="data/UN-countries.txt"
 
     @classmethod
@@ -98,7 +98,7 @@ class Missile(STKStandaloneObject):
 
         if unload:
             # Load the cities dataset
-            self.cities = pd.read_csv(Missile.cities_file)
+            self.cities = pd.read_csv(self.cities_file)
 
             # Load the UN countries dataset
             with open(Missile.un_countries_file, 'r') as f:
@@ -366,8 +366,8 @@ class Missile(STKStandaloneObject):
             self.root.UnitPreferences.Item("DateFormat").SetCurrentUnit("EpSec")
 
             # Access the data providers
-            dp_val_position = self._identity.DataProviders.GetItemByName("Cartesian Position")
-            object_dp_position = dp_val_position.Group.GetItemByName("Fixed")
+            dp_val_position = ic(self._identity.DataProviders.GetItemByName("Cartesian Position"))
+            object_dp_position = ic(dp_val_position.Group.GetItemByName("Fixed"))
             
             dp_val_velocity = self._identity.DataProviders.GetItemByName("Cartesian Velocity")
             object_dp_velocity = dp_val_velocity.Group.GetItemByName("Fixed")
@@ -376,19 +376,24 @@ class Missile(STKStandaloneObject):
             # Execute the query
             position = object_dp_position.Exec(self.root.CurrentScenario.StartTime, self.root.CurrentScenario.StopTime, step_size) # km
             velocity = object_dp_velocity.Exec(self.root.CurrentScenario.StartTime, self.root.CurrentScenario.StopTime, step_size) # km/s
+
+            # Times
+            times = np.array(position.DataSets.GetDataSetByName("Time").GetValues(), dtype=float)
+            times -= times[0]
             
             # State
             x = np.array(position.DataSets.GetDataSetByName("x").GetValues(), dtype=float)
             y = np.array(position.DataSets.GetDataSetByName("y").GetValues(), dtype=float)
             z = np.array(position.DataSets.GetDataSetByName("z").GetValues(), dtype=float)
-            x_dot = np.array(velocity.DataSets.GetDataSetByName("vx").GetValues(), dtype=float)
-            y_dot = np.array(velocity.DataSets.GetDataSetByName("vy").GetValues(), dtype=float)
-            z_dot = np.array(velocity.DataSets.GetDataSetByName("vz").GetValues(), dtype=float)
+            
+            x_dot = np.array(velocity.DataSets.GetDataSetByName("x").GetValues(), dtype=float)
+            y_dot = np.array(velocity.DataSets.GetDataSetByName("y").GetValues(), dtype=float)
+            z_dot = np.array(velocity.DataSets.GetDataSetByName("z").GetValues(), dtype=float)
 
-            state = np.column_stack((x, y, z, x_dot, y_dot, z_dot))
+            states = np.column_stack((x, y, z, x_dot, y_dot, z_dot))
 
         finally:
             # Switch back to UTCG
             self.root.UnitPreferences.Item("DateFormat").SetCurrentUnit("UTCG")
 
-        return state
+        return times, states

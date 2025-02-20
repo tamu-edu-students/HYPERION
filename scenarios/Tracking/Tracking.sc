@@ -86,53 +86,13 @@ BEGIN Scenario
     END StarCollection
 
     BEGIN ScenarioLicenses
+        Module		 stk_engine_runtime
         Module		 stk_mission_air
         Module		 stk_mission_level1
         Module		 stk_mission_level2
         Module		 stk_mission_level3
         Module		 stk_mission_space
     END ScenarioLicenses
-
-    BEGIN QuickReports
-
-        BEGIN Report
-            Name		 ECF Position Velocity
-            Type		 Report
-            BaseDir		 Install
-            Style		 ECF Position Velocity
-            AGIViewer		 Yes
-            Instance		 Aircraft/TestMissile
-            BEGIN TimeData
-                BEGIN Section
-                    SectionNumber		 1
-                    SectionType		 2
-                    ShowIntervals		 No
-                    BEGIN IntervalList
-
-                        DateUnitAbrv		 UTCG
-
-                        BEGIN Intervals
-
-"20 Feb 2025 01:41:28.000000000" "20 Feb 2025 02:01:45.143114173"
-                        END Intervals
-
-                    END IntervalList
-
-                    TimeType		 Interval
-                    SamplingType		 Default
-                    TimeBound		 0
-                END Section
-            END TimeData
-            DisplayOnLoad		 Yes
-            FrameType		 0
-            DockCircleID		 0
-            DockID		 0
-            WindowRectLeft		 308
-            WindowRectTop		 123
-            WindowRectRight		 3248
-            WindowRectBottom		 1824
-        END Report
-    END QuickReports
 
     BEGIN Extensions
 
@@ -163,7 +123,7 @@ BEGIN Scenario
             LaunchWindowTrajMETStart		 0
             LaunchWindowTrajMETStop		 900
             LaunchWindowStart		 0
-            LaunchWindowStop		 0
+            LaunchWindowStop		 86400
             LaunchMETOffset		 0
             LaunchWindowUseSecEphem		 No 
             LaunchWindowUseScenFolderForSecEphem		 Yes
@@ -376,14 +336,6 @@ BEGIN Scenario
         END ConnectReportUnits
 
         BEGIN ReportFavorites
-            BEGIN Class
-                Name		 Aircraft
-                BEGIN Favorite
-                    Type		 Report
-                    BaseDir		 Install
-                    Style		 ECF Position Velocity
-                END Favorite
-            END Class
         END ReportFavorites
 
         BEGIN ADFFileData
@@ -597,12 +549,6 @@ BEGIN Scenario
         END ExportDataFile
 
         BEGIN Desc
-            BEGIN ShortText
-
-            END ShortText
-            BEGIN LongText
-
-            END LongText
         END Desc
 
         BEGIN RfEnv
@@ -631,7 +577,7 @@ BEGIN Scenario
                                     <VAR name = "IdentifierInformation">
                                         <SCOPE>
                                             <VAR name = "Identifier">
-                                                <STRING>&quot;{0D0020C3-5872-48C3-AA95-BB1EF137ACB2}&quot;</STRING>
+                                                <STRING>&quot;{6119345B-EAED-42FA-AF0F-3C71EAD01538}&quot;</STRING>
                                             </VAR>
                                             <VAR name = "Version">
                                                 <STRING>&quot;1&quot;</STRING>
@@ -752,7 +698,7 @@ BEGIN Scenario
                                     <VAR name = "IdentifierInformation">
                                         <SCOPE>
                                             <VAR name = "Identifier">
-                                                <STRING>&quot;{BA036909-165F-4AC2-B02D-68967E8176F4}&quot;</STRING>
+                                                <STRING>&quot;{9E00570D-E963-4B76-BE43-5639AB8A1652}&quot;</STRING>
                                             </VAR>
                                             <VAR name = "Version">
                                                 <STRING>&quot;1&quot;</STRING>
@@ -852,7 +798,7 @@ BEGIN Scenario
                                     <VAR name = "IdentifierInformation">
                                         <SCOPE>
                                             <VAR name = "Identifier">
-                                                <STRING>&quot;{8773EC9E-6518-4E46-89A9-E8E4C4F08178}&quot;</STRING>
+                                                <STRING>&quot;{BCCD515F-686B-4394-AD8B-AD67BC0E678E}&quot;</STRING>
                                             </VAR>
                                             <VAR name = "Version">
                                                 <STRING>&quot;1&quot;</STRING>
@@ -940,7 +886,7 @@ BEGIN Scenario
                                     <VAR name = "IdentifierInformation">
                                         <SCOPE>
                                             <VAR name = "Identifier">
-                                                <STRING>&quot;{4619DFBA-B8A0-40BF-9C77-1C9E3C9527CC}&quot;</STRING>
+                                                <STRING>&quot;{FAFEA13E-D12F-45DE-AF42-6E2874CB4B26}&quot;</STRING>
                                             </VAR>
                                             <VAR name = "Version">
                                                 <STRING>&quot;1&quot;</STRING>
@@ -1039,7 +985,7 @@ BEGIN Scenario
                                     <VAR name = "IdentifierInformation">
                                         <SCOPE>
                                             <VAR name = "Identifier">
-                                                <STRING>&quot;{E8E0ADDF-DC59-45F3-99DF-23B077473FDB}&quot;</STRING>
+                                                <STRING>&quot;{6F4FAC06-35A8-4C63-BE54-F4862F0A3310}&quot;</STRING>
                                             </VAR>
                                             <VAR name = "Version">
                                                 <STRING>&quot;1&quot;</STRING>
@@ -1127,7 +1073,7 @@ BEGIN Scenario
                                     <VAR name = "IdentifierInformation">
                                         <SCOPE>
                                             <VAR name = "Identifier">
-                                                <STRING>&quot;{85EC7E6C-5E44-4F66-BB74-08F553AB025C}&quot;</STRING>
+                                                <STRING>&quot;{A01EB180-C77D-428E-8213-11978C4A0A56}&quot;</STRING>
                                             </VAR>
                                             <VAR name = "Version">
                                                 <STRING>&quot;1&quot;</STRING>
@@ -1258,7 +1204,7 @@ BEGIN Scenario
                                     <VAR name = "IdentifierInformation">
                                         <SCOPE>
                                             <VAR name = "Identifier">
-                                                <STRING>&quot;{AF10D792-DADD-4F19-AD5C-BB396DA1B46C}&quot;</STRING>
+                                                <STRING>&quot;{A5AC11DC-3C0A-470C-B563-2DDDFAD8E495}&quot;</STRING>
                                             </VAR>
                                             <VAR name = "Version">
                                                 <STRING>&quot;1&quot;</STRING>
@@ -1367,7 +1313,7 @@ BEGIN Scenario
                                     <VAR name = "IdentifierInformation">
                                         <SCOPE>
                                             <VAR name = "Identifier">
-                                                <STRING>&quot;{45AAF543-335F-4195-89B6-4FB55F9964B2}&quot;</STRING>
+                                                <STRING>&quot;{5E36ADBB-9F10-483C-9332-381346D0F0DF}&quot;</STRING>
                                             </VAR>
                                             <VAR name = "Version">
                                                 <STRING>&quot;1&quot;</STRING>
@@ -1468,7 +1414,7 @@ BEGIN Scenario
                             <VAR name = "IdentifierInformation">
                                 <SCOPE>
                                     <VAR name = "Identifier">
-                                        <STRING>&quot;{62934153-F6F0-4B37-9E89-0C40C1D5239E}&quot;</STRING>
+                                        <STRING>&quot;{CBBCBC11-BF53-4100-84A2-C87E151C9814}&quot;</STRING>
                                     </VAR>
                                     <VAR name = "Version">
                                         <STRING>&quot;1&quot;</STRING>
@@ -1678,224 +1624,6 @@ BEGIN Scenario
                 TextShadowStyle		 Dark
                 TextShadowColor		 #000000
                 BingLevelOfDetailScale		 2
-                BEGIN Map
-                    MapNum		 1
-                    TrackingMode		 LatLon
-                    PickEnabled		 On
-                    PanEnabled		 On
-
-                    BEGIN MapAttributes
-                        PrimaryBody		 Earth
-                        SecondaryBody		 Sun
-                        CenterLatitude		 0
-                        CenterLongitude		 0
-                        ProjectionAltitude		 63621860
-                        FieldOfView		 35
-                        OrthoDisplayDistance		 20000000
-                        TransformTrajectory		 On
-                        EquatorialRadius		 6378137
-                        BackgroundColor		 #000000
-                        LatLonLines		 On
-                        LatSpacing		 30
-                        LonSpacing		 30
-                        LatLonLineColor		 #999999
-                        LatLonLineStyle		 2
-                        ShowOrthoDistGrid		 Off
-                        OrthoGridXSpacing		 5
-                        OrthoGridYSpacing		 5
-                        OrthoGridColor		 #ffffff
-                        ShowImageExtents		 Off
-                        ImageExtentLineColor		 #ffffff
-                        ImageExtentLineStyle		 0
-                        ImageExtentLineWidth		 1
-                        ShowImageNames		 Off
-                        ImageNameFont		 0
-                        Projection		 EquidistantCylindrical
-                        Resolution		 VeryLow
-                        CoordinateSys		 ECF
-                        UseBackgroundImage		 On
-                        UseBingForBackground		 On
-                        BingType		 Aerial
-                        BingLogoHorizAlign		 Right
-                        BingLogoVertAlign		 Bottom
-                        BackgroundImageFile		 Basic.bmp
-                        UseNightLights		 Off
-                        NightLightsFactor		 3.5
-                        UseCloudsFile		 Off
-                        BEGIN ZoomLocations
-                            BEGIN ZoomLocation
-                                CenterLat		 0
-                                CenterLon		 0
-                                ZoomWidth		 360
-                                ZoomHeight		 180
-                            END ZoomLocation
-                        END ZoomLocations
-                        UseVarAspectRatio		 No
-                        SwapMapResolution		 Yes
-                        NoneToVLowSwapDist		 2000000
-                        VLowToLowSwapDist		 20000
-                        LowToMediumSwapDist		 10000
-                        MediumToHighSwapDist		 5000
-                        HighToVHighSwapDist		 1000
-                        VHighToSHighSwapDist		 100
-                        BEGIN Axes
-                            DisplayAxes		 no
-                            CoordSys		 CBI
-                            2aryCB		 Sun
-                            Display+x		 yes
-                            Label+x		 yes
-                            Color+x		 #ffffff
-                            Scale+x		 3
-                            Display-x		 yes
-                            Label-x		 yes
-                            Color-x		 #ffffff
-                            Scale-x		 3
-                            Display+y		 yes
-                            Label+y		 yes
-                            Color+y		 #ffffff
-                            Scale+y		 3
-                            Display-y		 yes
-                            Label-y		 yes
-                            Color-y		 #ffffff
-                            Scale-y		 3
-                            Display+z		 yes
-                            Label+z		 yes
-                            Color+z		 #ffffff
-                            Scale+z		 3
-                            Display-z		 yes
-                            Label-z		 yes
-                            Color-z		 #ffffff
-                            Scale-z		 3
-                        END Axes
-
-                    END MapAttributes
-
-                    BEGIN MapList
-                        BEGIN Detail
-                            Alias		 RWDB2_Coastlines
-                            Show		 Yes
-                            Color		 #8fbc8f
-                        END Detail
-                        BEGIN Detail
-                            Alias		 RWDB2_International_Borders
-                            Show		 No
-                            Color		 #8fbc8f
-                        END Detail
-                        BEGIN Detail
-                            Alias		 RWDB2_Islands
-                            Show		 No
-                            Color		 #8fbc8f
-                        END Detail
-                        BEGIN Detail
-                            Alias		 RWDB2_Lakes
-                            Show		 No
-                            Color		 #87cefa
-                        END Detail
-                        BEGIN Detail
-                            Alias		 RWDB2_Provincial_Borders
-                            Show		 No
-                            Color		 #8fbc8f
-                        END Detail
-                        BEGIN Detail
-                            Alias		 RWDB2_Rivers
-                            Show		 No
-                            Color		 #87cefa
-                        END Detail
-                    END MapList
-
-
-                    BEGIN MapAnnotations
-                    END MapAnnotations
-
-                    BEGIN DisplayFlags
-                        ShowLabels		 On
-                        ShowPassLabel		 Off
-                        ShowElsetNum		 Off
-                        ShowGndTracks		 On
-                        ShowGndMarkers		 On
-                        ShowOrbitMarkers		 On
-                        ShowPlanetOrbits		 Off
-                        ShowPlanetCBIPos		 On
-                        ShowPlanetCBILabel		 On
-                        ShowPlanetGndPos		 On
-                        ShowPlanetGndLabel		 On
-                        ShowSensors		 On
-                        ShowWayptMarkers		 Off
-                        ShowWayptTurnMarkers		 Off
-                        ShowOrbits		 On
-                        ShowDtedRegions		 Off
-                        ShowAreaTgtCentroids		 On
-                        ShowToolBar		 On
-                        ShowStatusBar		 On
-                        ShowScrollBars		 On
-                        AllowAnimUpdate		 Off
-                        AccShowLine		 On
-                        AccAnimHigh		 On
-                        AccStatHigh		 On
-                        AccAnimLineLineWidth		  1.0000000000000000e+00
-                        AccAnimLineLineStyle		 0
-                        ShowPrintButton		 On
-                        ShowAnimButtons		 On
-                        ShowAnimModeButtons		 On
-                        ShowZoomMsrButtons		 On
-                        ShowMapCbButton		 Off
-                    END DisplayFlags
-
-                    BEGIN RecordMovie
-                        OutputFormat		 VIDEO
-                        SdfSelected		 No
-                        BaseName		 Frame
-                        Digits		 4
-                        Frame		 0
-                        LastAnimTime		 0
-                        OutputMode		 Normal
-                        HiResAssembly		 Assemble
-                        HRWidth		 6000
-                        HRHeight		 4500
-                        HRDPI		 600
-                        UseSnapInterval		 No
-                        SnapInterval		 0
-                        VideoCodec		 "H264"
-                        Framerate		 30
-                        Bitrate		 10000000
-                    END RecordMovie
-
-
-                    BEGIN TimeDisplay
-                        Show		 0
-                        TextColor		 #ffffff
-                        TextTranslucency		 0
-                        ShowBackground		 0
-                        BackColor		 #4d4d4d
-                        BackTranslucency		 0.4
-                        XPosition		 20
-                        YPosition		 -20
-                    END TimeDisplay
-
-                    BEGIN LightingData
-                        DisplayAltitude		 0
-                        SubsolarPoint		 Off
-                        SubsolarPointColor		 #ffff00
-                        SubsolarPointMarkerStyle		 2
-
-                        ShowUmbraLine		 Off
-                        UmbraLineColor		 #000000
-                        UmbraLineStyle		 0
-                        UmbraLineWidth		 2
-                        FillUmbra		 On
-                        UmbraFillColor		 #000000
-                        ShowSunlightLine		 Off
-                        SunlightLineColor		 #ffff00
-                        SunlightLineStyle		 0
-                        SunlightLineWidth		 2
-                        FillSunlight		 On
-                        SunlightFillColor		 #ffffff
-                        SunlightMinOpacity		 0
-                        SunlightMaxOpacity		 0.2
-                        UmbraMaxOpacity		 0.7
-                        UmbraMinOpacity		 0.4
-                    END LightingData
-                END Map
 
                 BEGIN MapStyles
 
@@ -2032,6 +1760,7 @@ BEGIN Scenario
                         BEGIN RecordMovie
                             OutputFormat		 VIDEO
                             SdfSelected		 No
+                            Directory		 C:\Users\brigh\STK
                             BaseName		 Frame
                             Digits		 4
                             Frame		 0
@@ -2219,6 +1948,7 @@ BEGIN Scenario
                         BEGIN RecordMovie
                             OutputFormat		 VIDEO
                             SdfSelected		 No
+                            Directory		 C:\Users\brigh\STK
                             BaseName		 Frame
                             Digits		 4
                             Frame		 0

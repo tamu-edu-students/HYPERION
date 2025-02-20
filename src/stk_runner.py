@@ -1,8 +1,8 @@
 import os
-import shutil
 import time
 import signal
 import sys
+from icecream import ic
 from .utilities import clearScenario
 from agi.stk12 import utilities
 
@@ -11,6 +11,8 @@ def run(sim_function, mode="engine", scenario_name=None, clear=False):
     from src.stk_init import initialize
 
     start_time = time.time()
+
+    os.makedirs(os.path.abspath("scenarios"), exist_ok=True)
     
     # Ensure root and attached are defined before try-block
     stk, root, scenario, attached = None, None, None, False  
@@ -59,14 +61,15 @@ def run(sim_function, mode="engine", scenario_name=None, clear=False):
 
         # Handle scenario saving
         if scenario_name:
-            save_dir = os.path.join("scenarios", scenario_name)
-            if os.path.exists(save_dir):
-                shutil.rmtree(save_dir)  
-            os.makedirs(save_dir, exist_ok=True)  
+            save_path = os.path.abspath(os.path.join("scenarios", scenario_name, f"{scenario_name}.sc"))
 
-            save_path = os.path.abspath(os.path.join(save_dir, f"{scenario_name}.sc"))
-            print(f"Saving scenario to: {save_path}")
-            root.SaveAs(save_path)
+            if os.path.exists(save_path):
+                print("Saving scenario...")
+                root.Save()
+            else:
+                print(f"Saving scenario to: {save_path}")
+                root.SaveAs(save_path)
+
             print(f"Scenario saved.")
         elif attached:
             root.Save()

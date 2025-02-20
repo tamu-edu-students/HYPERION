@@ -1,4 +1,6 @@
 import argparse
+import os
+from icecream import ic
 from agi.stk12.stkdesktop import STKDesktop
 from agi.stk12.stkengine import STKEngine
 
@@ -12,21 +14,51 @@ def initialize(mode="engine", scenario_name=None):
         scenario (object): Reference to the STK scenario.
         attached (bool): True if attaching to an existing STK instance.
     """
-    attached = False  
+    attached = False
+    load_path = None  
+
+    # Attempt to find an existing scenario file
+    if scenario_name:
+        load_path = os.path.abspath(os.path.join("scenarios", scenario_name, f"{scenario_name}.sc"))
+
+        if not os.path.exists(load_path):  # Check if file actually exists
+            print(f"Scenario file '{scenario_name}' not found. Creating a new scenario instead.")
+            load_path = None  # Prevent invalid load attempt
 
     if mode == "engine":
         print("Starting STK in Engine mode...")
         stk = STKEngine.StartApplication(noGraphics=False)
         root = stk.NewObjectRoot()
-        root.NewScenario("TempScenario" if not scenario_name else scenario_name)
+
+        if load_path:
+            try:
+                root.Load(load_path)
+                print(f"Successfully loaded existing scenario: {scenario_name}.")
+            except Exception as e:
+                print(f"Error loading scenario {scenario_name}: {e}. Creating new scenario instead.")
+                root.NewScenario(scenario_name or "Temp")
+        else:
+            root.NewScenario(scenario_name or "Temp")
+            print("Created new scenario.")
+
         scenario = root.CurrentScenario
 
-    else:  
+    else:  # Desktop Mode
         if scenario_name:
-            print(f"Starting STK Desktop and creating scenario '{scenario_name}'...")
+            print("Starting STK Desktop...")
             stk = STKDesktop.StartApplication(visible=True)
             root = stk.Root
-            root.NewScenario(scenario_name)
+
+            if load_path:
+                try:
+                    root.Load(load_path)
+                    print(f"Successfully loaded existing scenario: {scenario_name}.")
+                except Exception as e:
+                    print(f"Error loading scenario {scenario_name}: {e}. Creating new scenario instead.")
+                    root.NewScenario(scenario_name)
+            else:
+                root.NewScenario(scenario_name or "Temp")
+                print("Created new scenario.")
         else:
             try:
                 print("Attempting to attach to running STK Desktop instance...")
@@ -35,14 +67,12 @@ def initialize(mode="engine", scenario_name=None):
                 attached = True  
                 print("Attached to existing STK instance.")
             except:
-                print("No running STK found. Starting new instance...")
-                stk = STKDesktop.StartApplication(visible=True)
-                root = stk.Root
-
-        scenario = root.CurrentScenario if root.CurrentScenario else None
+                print("No running STK found. Creating new scenario called 'Temp'...")
+                stk, root, scenario, attached = initialize(mode="desktop", scenario_name="Temp") 
+                
+        scenario = root.CurrentScenario
 
     return stk, root, scenario, attached
-
 
 def parse_args():
     """Handles command-line arguments."""
