@@ -98,6 +98,7 @@ def initialize(x0):
 def main(root):
     sensor = makeSensor(root)
     missile = Missile(root, name="TestMissile", unload=False)
+    ic(missile.getLaunchTime())
     # missile.viewDataProviders()
     # missile.loadObject()
 

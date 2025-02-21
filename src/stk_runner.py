@@ -21,10 +21,6 @@ def run(sim_function, mode="engine", scenario_name=None, clear=False):
         """Handles user interrupts for a graceful shutdown."""
         print("\nUser interrupt detected! Cleaning up and exiting...")
 
-        if root and root.CurrentScenario:
-            root.CloseScenario()
-            print("Scenario closed.")
-
         if stk and mode == "engine":
             stk.ShutDown()
             print("STK Engine shut down.")
@@ -77,13 +73,13 @@ def run(sim_function, mode="engine", scenario_name=None, clear=False):
         else:
             print("No scenario name provided. Scenario will not be saved.")
 
-    except KeyboardInterrupt:
-        handle_interrupt(signal.SIGINT, None)
-
-    finally:
         if stk and mode == "engine":
             stk.ShutDown()
             print("STK Engine shut down.")
 
         end_time = time.time()
         print(f"Simulation concluded after {(end_time - start_time)/60:.2f} min.")
+
+    except KeyboardInterrupt:
+        handle_interrupt(signal.SIGINT, None)
+        

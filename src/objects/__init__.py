@@ -1,5 +1,5 @@
-from .stkObject import STKContainerObject, STKStandaloneObject
-from .chain import Chain, MissileChain
+from .stkObject import STKObject, STKContainerObject, STKStandaloneObject
+from .chain import Chain
 from .constellation import Constellation
 from .satellite import Satellite
 from .sensor import Sensor

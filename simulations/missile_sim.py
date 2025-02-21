@@ -1,4 +1,5 @@
 import csv
+from datetime import datetime
 import matplotlib.pyplot as plt
 import pandas as pd
 from icecream import ic
@@ -49,31 +50,35 @@ def makeLEOConstellation(root, conic_angle):
             sensor = Sensor(root, sat_name, sensor_name, conic_angle)
             sensor.loadObject()
 
-            constellation.addToObject(sensor.getObjectPath())
+            constellation.addToObject(sensor)
 
-    return constellation.getObjectPath()
+    return constellation
 
 def createMissiles(root, num_missiles=None, from_csv=False):
     """
     Creates and returns missiles and missile chains without attaching the constellation yet.
     """
-    missile_paths = []
+
+    # Storage
+    missiles = []
+    chains = []
 
     if num_missiles is not None and not from_csv:
         for i in range(num_missiles):
             chain_name = f"Missile{i+1}Chain"
-            chain = MissileChain(root, chain_name)
+            chain = Chain(root, chain_name)
             chain.loadObject()
 
             missile_name = f"Missile{i+1}"
             missile = Missile(root, missile_name)
             missile.loadObject()
             missile.saveObject(missile_filename)
-            missile_path = missile.getObjectPath()
-            missile_paths.append((chain, missile_path))
 
             # Add the missile to the chain (constellations will be added later)
-            chain.addToObject(missile_path)
+            chain.addToObject(missile)
+
+            missiles.append(missile)
+            chains.append(chain)
     
     elif from_csv:
         missile_file = "data/missiles/" + missile_filename + ".csv"
@@ -84,38 +89,53 @@ def createMissiles(root, num_missiles=None, from_csv=False):
             reader = csv.DictReader(file)
             for i, row in enumerate(reader):
                 chain_name = f"Missile{i+1}Chain"
-                chain = MissileChain(root, chain_name)
+                chain = Chain(root, chain_name)
                 chain.loadObject()
 
                 missile = Missile.fromCSV(root, row)
                 missile.loadObject()
-                
-                missile_path = missile.getObjectPath()
-                missile_paths.append((chain, missile_path))
 
                 # Add the missile to the chain (constellations will be added later)
-                chain.addToObject(missile_path)
+                chain.addToObject(missile)
+
+                missiles.append(missile) 
+                chains.append(chain)
     
     else:
         raise RuntimeError("If not loading from a csv, the number of missiles must be specified.")
     
-    return missile_paths
+    return missiles, chains
 
-def attachConstellationToChains(missile_paths, constellation_path):
-    """
-    Attaches the given constellation to all missile chains.
-    """
-    for chain, _ in missile_paths:
-        chain.addToObject(constellation_path)
+def computeTrackingPercentage(missile:Missile, chain:Chain):
+        """
+        Computes the percentage of time the missile is tracked by valid chains.
+        """
+        missile_name = missile.getObjectName()
 
-def computeAndSaveTracking(missile_paths, conic_angle, output_file):
+        launch_time = missile.getLaunchTime()
+        impact_time = missile.getImpactTime()
+
+        launch_time = datetime.strptime(launch_time, "%d %b %Y %H:%M:%S.%f")
+        impact_time = datetime.strptime(impact_time, "%d %b %Y %H:%M:%S.%f")
+        total_trajectory_duration = (impact_time - launch_time).total_seconds()
+
+        # Compute total valid access duration using computeAccess
+        total_access_duration = chain.computeTotalAccess()
+
+        # Calculate the tracking percentage
+        tracking_percentage = (total_access_duration / total_trajectory_duration) * 100
+        print(f"Tracking percentage for missile '{missile_name}': {tracking_percentage:.2f}%")
+
+        return tracking_percentage
+
+def computeAndSaveTracking(missiles, chains, conic_angle, output_file):
     """
     Computes tracking percentages for each missile and saves the results.
     """
     results = []
 
-    for i, (chain, missile_path) in enumerate(missile_paths):
-        tracking_percent = chain.computeTrackingPercentage(missile_path)
+    for i in range(len(missiles)):
+        tracking_percent = computeTrackingPercentage(missiles[i], chains[i])
         results.append((i + 1, tracking_percent, conic_angle))
         print(f"Missile {i + 1}: {tracking_percent:.2f}% tracked with conic angle {conic_angle}°")
 
@@ -131,33 +151,33 @@ def main(root):
         writer.writerow(["Missile ID", "Tracking %", "Conic Angle (deg)"])
 
     # TODO: Make this less clunky
-    # Missile.makeHeaders(missile_filename)
+    Missile.makeHeaders(missile_filename)
 
     # Step 1: Create missiles and missile chains 
-    missile_paths = createMissiles(root, num_missiles=10, from_csv=True)
+    missiles, chains = createMissiles(root, num_missiles=10, from_csv=False)
 
     # Step 2: Loop over conic angles
-    previous_constellation_path = None  
+    prev_constellation = None  
 
     for conic_angle in range(30, 61, 10):
         Satellite.makeHeaders(sat_filename)
         
         # Create the constellation for this conic angle
-        constellation_path = makeLEOConstellation(root, conic_angle)
+        constellation = makeLEOConstellation(root, conic_angle)
 
         # Remove the previous constellation from all missile chains
-        if previous_constellation_path:
-            for chain, _ in missile_paths:
-                chain.removeFromObject(previous_constellation_path)
+        if prev_constellation:
+            for chain in chains:
+                chain.removeFromObject(prev_constellation)
 
-        # Attach the new constellation to all missile chains
-        attachConstellationToChains(missile_paths, constellation_path)
+        for chain in chains:
+            chain.addToObject(constellation)
 
         # Compute tracking percentages and save results
-        computeAndSaveTracking(missile_paths, conic_angle, output_file)
+        computeAndSaveTracking(missiles, chains, conic_angle, output_file)
 
         # Update the previous constellation
-        previous_constellation_path = constellation_path
+        prev_constellation = constellation
 
 
 def plot(save_path = "figures/missile-sim.png"):
@@ -193,5 +213,5 @@ def plot(save_path = "figures/missile-sim.png"):
 
 if __name__ == "__main__":
     args = parse_args()
-    run(main, mode=args.mode, scenario_name=args.name)
-    plot(save_path="figures/missile-sim-30to60.png")
+    run(main, mode=args.mode, scenario_name=args.name, clear=args.clear)
+    # plot(save_path="figures/missile-sim-30to60.png")

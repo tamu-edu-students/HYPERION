@@ -13,7 +13,7 @@ class Chain(STKContainerObject):
 
         print(f"Chain '{self.name}' created.")
 
-    def computeAccess(self):
+    def computeTotalAccess(self):
         """
         Computes the access for the chain, merges overlapping intervals, and returns the total duration of valid access intervals in seconds.
         """
@@ -70,36 +70,3 @@ class Chain(STKContainerObject):
         TODO: Might be unecessary?
         """
         return
-
-class MissileChain(Chain):
-    def __init__(self, root, name, unload=True):
-        super().__init__(root, name, unload=unload)
-
-    def computeTrackingPercentage(self, missile_path):
-        """
-        Computes the percentage of time the missile is tracked by valid chains.
-        """
-        missile_name = missile_path.split('/')[-1]
-
-        # Retrieve the missile object and its trajectory duration
-        missile = self.root.GetObjectFromPath(missile_path)
-        route = missile.Route
-
-        first_waypoint = route.Waypoints.Item(0)
-        launch_time = first_waypoint.Time
-
-        final_waypoint = route.Waypoints.Item(route.Waypoints.Count - 1)
-        impact_time = final_waypoint.Time 
-
-        launch_time = datetime.strptime(launch_time, "%d %b %Y %H:%M:%S.%f")
-        impact_time = datetime.strptime(impact_time, "%d %b %Y %H:%M:%S.%f")
-        total_trajectory_duration = (impact_time - launch_time).total_seconds()
-
-        # Compute total valid access duration using computeAccess
-        total_access_duration = self.computeAccess()
-
-        # Calculate the tracking percentage
-        tracking_percentage = (total_access_duration / total_trajectory_duration) * 100
-        print(f"Tracking percentage for missile '{missile_name}': {tracking_percentage:.2f}%")
-
-        return tracking_percentage

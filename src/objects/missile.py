@@ -176,7 +176,7 @@ class Missile(STKStandaloneObject):
         # Propagate the route
         route.Propagate()
 
-        self.getImpactTime()
+        self.impact_time = self.getImpactTime()
 
         print(f"Missile {self.name} added to STK.")
 
@@ -235,8 +235,10 @@ class Missile(STKStandaloneObject):
 
         # Get the time of the last waypoint 
         first_waypoint = route.Waypoints.Item(0)
-        self.launch_time = first_waypoint.Time 
-        print(f"Impact Time for {self.name}: {self.launch_time}")
+        launch_time = first_waypoint.Time 
+        print(f"Launch Time for {self.name}: {self.launch_time}")
+
+        return launch_time
     
     def getImpactTime(self):
         """
@@ -248,8 +250,10 @@ class Missile(STKStandaloneObject):
 
         # Get the time of the last waypoint 
         final_waypoint = route.Waypoints.Item(route.Waypoints.Count - 1)
-        self.impact_time = final_waypoint.Time 
-        print(f"Impact Time for {self.name}: {self.impact_time}")
+        impact_time = final_waypoint.Time 
+        print(f"Impact Time for {self.name}: {impact_time}")
+
+        return impact_time
 
     @staticmethod
     def makeHeaders(filename):
@@ -367,6 +371,7 @@ class Missile(STKStandaloneObject):
 
             # Access the data providers
             dp_val_position = self._identity.DataProviders.GetItemByName("Cartesian Position")
+            
             object_dp_position = dp_val_position.Group.GetItemByName("Fixed")
             
             dp_val_velocity = self._identity.DataProviders.GetItemByName("Cartesian Velocity")

@@ -2,7 +2,7 @@ import os
 from icecream import ic
 from agi.stk12.stkobjects import *
 
-class STKObjectBase:
+class STKObject:
     @classmethod
     def inspect(cls, stk_obj):
         """
@@ -95,26 +95,20 @@ class STKObjectBase:
         """
         raise NotImplementedError("Subclasses must implement the `_loadObjectImplementation` method.")
 
+    def getObjectName(self):
+        """
+        Return the name of the object.
+        """
+
+        return self.name
+
     def getObjectPath(self):
         """
         Return STK path of an object.
         """
 
         return self._identity.Path
-
-    def unloadObject(self):
-        """
-        Deletes an existing object with the same name in the scenario to avoid duplication.
-        """
-        try:
-            existing_object = self.root.CurrentScenario.Children.Item(self.name)
-            if existing_object:
-                print(f"Object '{self.name}' already exists. Deleting it...")
-                existing_object.Unload()
-                print(f"Object '{self.name}' deleted.")
-        except Exception:
-            print(f"No existing object named '{self.name}' found.")
-
+    
     def loadObject(self):
         """
         Ensures the object is loaded properly, with unloading if needed.
@@ -134,51 +128,48 @@ class STKObjectBase:
 
         self._setObjectIdentity()
 
-    def viewDataProviders(self):
-        # Get DataProviders collection
-        dp_collection = self._identity.DataProviders
-        if dp_collection.Count == 0:
-            print(f"Warning: No DataProviders found for '{self.name}'.")
-            return
-
-        # Print available DataProviders
-        print(f"Available DataProviders for '{self.name}':")
-        for i in range(dp_collection.Count):
-            try:
-                dp_name = dp_collection.Item(i).Name
-                print(f"- {dp_name}")
-            except Exception as dp_error:
-                print(f"Error retrieving DataProvider at index {i}: {dp_error}")
+    def unloadObject(self):
+        """
+        Deletes an existing object with the same name in the scenario to avoid duplication.
+        """
+        try:
+            existing_object = self.root.CurrentScenario.Children.Item(self.name)
+            if existing_object:
+                print(f"Object '{self.name}' already exists. Deleting it...")
+                existing_object.Unload()
+                print(f"Object '{self.name}' deleted.")
+        except Exception:
+            print(f"No existing object named '{self.name}' found.")
 
     
-class STKContainerObject(STKObjectBase):
+class STKContainerObject(STKObject):
     def __init__(self, root, name, object_type, unload=True):
         super().__init__(root, name, object_type, unload=unload)
 
-    def addToObject(self, child_path):
+    def addToObject(self, child:STKObject):
         """
-        Adds an object by STK path to the container.
+        Adds a child object to a container.
         """
-        child_name = child_path.rsplit('/', 1)[-1]
+        child_name = child.getObjectName()
 
         try:
             # Access the container object and add the STK object using its path
-            obj_to_add = self.root.GetObjectFromPath(child_path)
+            obj_to_add = self.root.GetObjectFromPath(child.getObjectPath())
             if obj_to_add:
                 self._identity.Objects.AddObject(obj_to_add)
                 print(f"Added '{child_name}' to container '{self.name}'.")
         except Exception as e:
             print(f"Error adding '{child_name}' to container '{self.name}': {str(e)}")
 
-    def removeFromObject(self, child_path):
+    def removeFromObject(self, child:STKObject):
         """
-        Removes an object by STK path from the container if it exists.
+        Removes a child object from the container if it exists.
         """
-        child_name = child_path.rsplit('/', 1)[-1]
+        child_name = child.getObjectName()
 
         try:
             # Access the container object and remove the STK object using its path
-            obj_to_remove = self.root.GetObjectFromPath(child_path)
+            obj_to_remove = self.root.GetObjectFromPath(child.getObjectPath())
             if obj_to_remove:
                 self._identity.Objects.RemoveObject(obj_to_remove)
                 print(f"Removed '{child_name}' from container '{self.name}'.")
@@ -186,7 +177,7 @@ class STKContainerObject(STKObjectBase):
             print(f"Error removing '{child_name}' from container '{self.name}': {str(e)}")
 
 
-class STKStandaloneObject(STKObjectBase):
+class STKStandaloneObject(STKObject):
     def __init__(self, root, name, object_type, unload=True):
         super().__init__(root, name, object_type, unload=unload)
 
