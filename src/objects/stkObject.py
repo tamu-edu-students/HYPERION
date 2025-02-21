@@ -2,6 +2,7 @@ import os
 from icecream import ic
 from agi.stk12.stkobjects import *
 
+# TODO: Having an unload flag doesnt make much sense. If the user want to attach to an existing object, they should not use the constructor anyways.
 class STKObject:
     @classmethod
     def inspect(cls, stk_obj):
@@ -31,7 +32,11 @@ class STKObject:
                     if callable(attr_value):
                         print(f"{attr}()  # Method")
                     else:
-                        print(f"{attr} = {attr_value}  # Property")
+                        # If the attribute is another STK object, show its type cleanly
+                        if "stk" in str(type(attr_value)):  
+                            print(f"{attr} = <{type(attr_value).__name__}>  # Property")
+                        else:
+                            print(f"{attr} = {attr_value}  # Property")
                 except Exception as e:
                     print(f"{attr}: Could not retrieve - {e}")
 

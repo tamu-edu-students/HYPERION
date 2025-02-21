@@ -1,5 +1,6 @@
 from agi.stk12.stkobjects import *
 from datetime import datetime
+from collections import defaultdict
 from .stkObject import STKContainerObject 
 
 class Chain(STKContainerObject):
@@ -12,6 +13,41 @@ class Chain(STKContainerObject):
         self.chain.ClearAccess()
 
         print(f"Chain '{self.name}' created.")
+
+    def computeIndividualAccess(self):
+        """
+        Computes the access duration for each individual object in the chain.
+
+        Returns:
+        - A dictionary where keys are unique names and values are total access times in seconds.
+        """
+        try:
+            self.chain.ComputeAccess()
+            print(f"Access computed for chain '{self.name}'.")
+
+            objectParticipationIntervals = self.chain.Vgt.EventIntervalCollections.Item('StrandAccessIntervals')
+            intervalListResult = objectParticipationIntervals.FindIntervalCollection()
+
+            # Dictionary to store total access time per satellite
+            access_times = defaultdict(float)
+
+            for i in range(intervalListResult.IntervalCollections.Count):
+                if intervalListResult.IsValid:
+                    for j in range(intervalListResult.IntervalCollections.Item(i).Count):
+                        start_time = datetime.strptime(intervalListResult.IntervalCollections.Item(i).Item(j).Start, "%d %b %Y %H:%M:%S.%f")
+                        stop_time = datetime.strptime(intervalListResult.IntervalCollections.Item(i).Item(j).Stop, "%d %b %Y %H:%M:%S.%f")
+                        duration = (stop_time - start_time).total_seconds()
+
+                        # Extract the satellite name from the interval object
+                        strand_name = objectParticipationIntervals.Labels[i]
+                        access_times[strand_name] += duration
+
+            print(f"Individual access times computed for chain '{self.name}'")
+            return dict(access_times)
+
+        except Exception as e:
+            print(f"Error computing individual access for chain '{self.name}': {str(e)}")
+            return {}
 
     def computeTotalAccess(self):
         """

@@ -14,7 +14,7 @@ missile_filename = "missiles-10"
 sat_filename = "satellites-LEO"
 output_file = "data/missile-tracking.csv"
 
-def makeLEOConstellation(root, conic_angle):
+def makeLEOSensorConstellation(root, conic_angle):
     """
     Creates a Walker constellation with attached sensors and adds to a constellation object.
     """
@@ -163,7 +163,7 @@ def main(root):
         Satellite.makeHeaders(sat_filename)
         
         # Create the constellation for this conic angle
-        constellation = makeLEOConstellation(root, conic_angle)
+        constellation = makeLEOSensorConstellation(root, conic_angle)
 
         # Remove the previous constellation from all missile chains
         if prev_constellation:

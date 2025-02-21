@@ -13,3 +13,5 @@ def clearScenario(scenario):
                 continue  # Continue if an object fails to delete
 
     print("All objects have been cleared.")
+
+# TODO: generalized inspection function that can be used in simulations

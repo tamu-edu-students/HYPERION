@@ -2283,12 +2283,6 @@ BEGIN Satellite
 
     BEGIN SubObjects
 
-        Class Sensor
-
-            LEOSensor		
-
-        END Class
-
     END SubObjects
 
 END Satellite
