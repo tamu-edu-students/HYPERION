@@ -6,7 +6,7 @@ from icecream import ic
 from .utilities import clearScenario
 from agi.stk12 import utilities
 
-def run(sim_function, mode="engine", scenario_name=None, clear=False):
+def run(sim_function, mode="engine", name=None, clear=False, days=1):
     """Handles simulation execution, scenario saving, and cleanup."""
     from src.stk_init import initialize
 
@@ -34,7 +34,7 @@ def run(sim_function, mode="engine", scenario_name=None, clear=False):
     
     # Initialize STK and scenario
     try:
-        stk, root, scenario, attached = initialize(mode, scenario_name)
+        stk, root, scenario, attached = initialize(mode, name, days)
     except utilities.exceptions.STKRuntimeError:
         print("Make sure the proper license is enabled (i.e., connect to TAMU WiFi).")
         sys.exit(0)
@@ -56,8 +56,8 @@ def run(sim_function, mode="engine", scenario_name=None, clear=False):
         sim_function(root)  # Run the user-specified simulation function
 
         # Handle scenario saving
-        if scenario_name:
-            save_path = os.path.abspath(os.path.join("scenarios", scenario_name, f"{scenario_name}.sc"))
+        if name:
+            save_path = os.path.abspath(os.path.join("scenarios", name, f"{name}.sc"))
 
             if os.path.exists(save_path):
                 print("Saving scenario...")

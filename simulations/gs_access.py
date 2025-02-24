@@ -1,78 +1,22 @@
 from src import * 
 
-# Constants
-mu_E = 3.986004415e5  # km^3 / s^2
-r_E = 6.378137e3  # km
-
-def makeLEOConstellation(root):
+def computeDailyCounts(counts_dict, days):
     """
-    Creates a Walker constellation and adds to a constellation object.
+    Computes the sum of all the access counts in a chain_counts dictionary.
+
+    Parameters:
+    - counts_dict (dict): Dictionary where keys are strand names and values are the number of accesses.
+    - days (int): The number of days.
+
+    Returns:
+    - int: The total count of all accesses.
     """
-    # Classical orbital elements and Walker parameters
-    a = 1000 + r_E  # km
-    i = 82  # deg
-    omega = 0  # deg
-    e = 0
-    Omega_0 = 0  # deg
-    M_0 = 0  # deg
-
-    t = 30  # Total number of satellites
-    p = 5  # Number of planes
-    f = 3  # Phasing factor
-    delta_M = (f * 360) / t  # Change in mean anomaly for equivalent satellites
-
-    sats_per_plane = int(t / p)
-    constellation_name = f"LEOSats"
-    constellation = Constellation(root, constellation_name)
-    constellation.loadObject()
-
-    for plane in range(p):
-        for sat in range(sats_per_plane):
-            Omega = ((plane / p) * 360) + Omega_0
-            M = (sat / sats_per_plane) * 360 + delta_M * plane + M_0
-
-            sat_name = f"LEOSat_P{plane+1}_S{sat+1}"
-            satellite = Satellite(root, sat_name, a, i, Omega, omega, e, M)
-            satellite.loadObject()
-
-            constellation.addToObject(satellite)
-
-    return constellation
-
-def makeMEOConstellation(root):
-    """
-    Creates a Walker constellation and adds to a constellation object.
-    """
-    # Classical orbital elements and Walker parameters
-    a = 10000 + r_E  # km
-    i = 90  # deg
-    omega = 0  # deg
-    e = 0
-    Omega_0 = 0  # deg
-    M_0 = 0  # deg
-
-    t = 21  # Total number of satellites
-    p = 7  # Number of planes
-    f = 3  # Phasing factor
-    delta_M = (f * 360) / t  # Change in mean anomaly for equivalent satellites
-
-    sats_per_plane = int(t / p)
-    constellation_name = f"MEOSats"
-    constellation = Constellation(root, constellation_name)
-    constellation.loadObject()
-
-    for plane in range(p):
-        for sat in range(sats_per_plane):
-            Omega = ((plane / p) * 360) + Omega_0
-            M = (sat / sats_per_plane) * 360 + delta_M * plane + M_0
-
-            sat_name = f"MEOat_P{plane+1}_S{sat+1}"
-            satellite = Satellite(root, sat_name, a, i, Omega, omega, e, M)
-            satellite.loadObject()
-
-            constellation.addToObject(satellite)
-
-    return constellation
+    if not counts_dict:
+        return 0
+    
+    total_counts = sum(counts_dict.values())
+    
+    return total_counts / days
 
 def computeAverageAccessTime(access_dict):
     """
@@ -101,9 +45,9 @@ def main(root):
     facility_1.loadObject()
     facility_2.loadObject()
     facility_3.loadObject()
-    
-    # sat_constellation = makeLEOConstellation(root) 
-    sat_constellation = makeMEOConstellation(root) 
+     
+    # sat_constellation = makeConstellation(root, "LEOSats", 1000, 82, 30, 5, 3)
+    sat_constellation = makeConstellation(root, "MEOSats", 10000, 90, 21, 7, 3) 
 
     chain_1 = Chain(root, "ASFChain")
     chain_2 = Chain(root, "NWSFChain")
@@ -123,6 +67,23 @@ def main(root):
 
     print("All objects are loaded.")
 
+    # Compute strand counts
+    chain_1_counts = chain_1.getStrandCounts()
+    chain_2_counts = chain_2.getStrandCounts()
+    chain_3_counts = chain_3.getStrandCounts()
+
+    print("Strand counts computed.")
+
+    avg_counts_1 = computeDailyCounts(chain_1_counts, 7)
+    avg_counts_2 = computeDailyCounts(chain_2_counts, 7)
+    avg_counts_3 = computeDailyCounts(chain_3_counts, 7)
+
+    print(f"Average daily contacts made to ASF: {int(avg_counts_1)}")
+    print(f"Average daily contacts made to NWSF: {int(avg_counts_2)}")
+    print(f"Average daily contacts made to NWGS: {int(avg_counts_3)}")
+    print(f"Average daily contacts made to ground stations: {int(avg_counts_1 + avg_counts_2 + avg_counts_3)}")
+
+    # Compute access times
     chain_1_access = chain_1.computeIndividualAccess()
     chain_2_access = chain_2.computeIndividualAccess()
     chain_3_access = chain_3.computeIndividualAccess()
@@ -137,4 +98,3 @@ def main(root):
     print(f"Average daily access time to NWSF: {avg_access_2/60:.2f} min")
     print(f"Average daily access time to NWGS: {avg_access_3/60:.2f} min")
     print(f"Average daily access to ground stations: {(avg_access_1 + avg_access_2 + avg_access_3)/60:.2f} min")
-

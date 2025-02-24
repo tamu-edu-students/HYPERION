@@ -14,6 +14,38 @@ class Chain(STKContainerObject):
 
         print(f"Chain '{self.name}' created.")
 
+    def getStrandCounts(self):
+        """
+        Computes the number of access occurrences for each strand in the chain.
+
+        Returns:
+        - A dictionary where keys are strand names.
+        and values are the number of times that strand has access.
+        """
+        try:
+            self.chain.ComputeAccess()
+            print(f"Access computed for chain '{self.name}'.")
+
+            objectParticipationIntervals = self.chain.Vgt.EventIntervalCollections.Item('StrandAccessIntervals')
+            intervalListResult = objectParticipationIntervals.FindIntervalCollection()
+
+            # Dictionary to store the number of accesses per strand
+            strand_counts = defaultdict(int)
+
+            for i in range(intervalListResult.IntervalCollections.Count):
+                if intervalListResult.IsValid:
+                    strand_name = objectParticipationIntervals.Labels[i]  # Get the strand name
+                    access_count = intervalListResult.IntervalCollections.Item(i).Count  # Get the count of accesses
+                    strand_counts[strand_name] += access_count
+
+            print(f"Strand access counts computed for chain '{self.name}'")
+            return dict(strand_counts)
+
+        except Exception as e:
+            print(f"Error computing strand counts for chain '{self.name}': {str(e)}")
+            return {}
+
+
     def computeIndividualAccess(self):
         """
         Computes the access duration for each individual object in the chain.

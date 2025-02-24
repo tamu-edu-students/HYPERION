@@ -4,7 +4,8 @@ from src import *
 mu_E = 3.986004415e5  # km^3 / s^2
 r_E = 6.378137e3  # km
 
-def makeLEOSats(root):
+# Note that a more general variation of this function is defined as a utility in src/utilities
+def makeLEOSensors(root):
     """
     Creates a Walker constellation with attached sensors.
     """
@@ -41,9 +42,9 @@ def makeLEOSats(root):
     print("LEO Satellites loaded successfully.")
 
 def main(root):
-    makeLEOSats(root)
+    makeLEOSensors(root)
 
 
 if __name__ == "__main__":
     args = parse_args()
-    run(main, mode=args.mode, scenario_name=args.name)
+    run(main, mode=args.mode, name=args.name)

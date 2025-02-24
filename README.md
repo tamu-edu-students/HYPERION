@@ -86,7 +86,7 @@ def main(root):
 4. Run the following command from the project root:
 
 ```bash
-python -m simulations.run --mode engine --name TestScenario
+python -m simulations.run
 ```
 
 This launches `run.py`, which will prompt you to enter a simulation name. 
@@ -101,6 +101,9 @@ The script accepts flags to control how STK runs:
 |---------------|--------------------------|--------------|
 | `--mode`  | `--mode desktop` or `--mode engine`   | Runs STK in either Desktop (GUI) or Engine (headless, faster) mode. |
 | `--name`  | `--name TestScenario`                 | Specifies a scenario name to save results in `scenarios/{name}/{name}.sc`. |
+| `-c`      | `-c`                                   | Clears the scenario before running to ensure a fresh start. |
+| `--days`  | `--days 7`                             | Sets the analysis period for the scenario, defining the end time as `start_time + {days}` (default: 1 day). |
+
 
 > Note that by default, engine mode is chosen.
 
@@ -109,7 +112,7 @@ The script accepts flags to control how STK runs:
 Example:
 
 ```bash
-python -m simulations.run --mode desktop --name TestScenario
+python -m simulations.run --mode desktop --name TestScenario --days 1
 ```
 
 This starts STK in Desktop mode, creates a scenario named `TestScenario`, and runs the selected simulation.
@@ -129,7 +132,7 @@ To do this, ensure your module includes the following code:
 ```python
 if __name__ == "__main__":
     args = parse_args()
-    run(main, mode=args.mode, scenario_name=args.name)
+    run(main, mode=args.mode, name=args.name, clear=args.clear, days=args.days)
     # Additional code goes here
 ```
 
@@ -138,7 +141,7 @@ You can add additional functionality at the end of the script (e.g., for plottin
 To execute the script directly, run:
 
 ```bash
-python -m simulations.test --mode engine --name TestScenario
+python -m simulations.test --mode engine --name TestScenario --days 1
 ```
 
 This bypasses `run.py` and executes the simulation script directly. This method is useful when extra analysis beyond running the simulation is required.

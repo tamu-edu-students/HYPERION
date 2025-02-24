@@ -213,5 +213,5 @@ def plot(save_path = "figures/missile-sim.png"):
 
 if __name__ == "__main__":
     args = parse_args()
-    run(main, mode=args.mode, scenario_name=args.name, clear=args.clear)
+    run(main, mode=args.mode, name=args.name, clear=args.clear)
     # plot(save_path="figures/missile-sim-30to60.png")

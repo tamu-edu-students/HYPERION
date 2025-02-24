@@ -236,7 +236,7 @@ class Missile(STKStandaloneObject):
         # Get the time of the last waypoint 
         first_waypoint = route.Waypoints.Item(0)
         launch_time = first_waypoint.Time 
-        print(f"Launch Time for {self.name}: {self.launch_time}")
+        print(f"Launch Time for {self.name}: {launch_time}")
 
         return launch_time
     

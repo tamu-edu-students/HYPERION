@@ -5,10 +5,10 @@ BEGIN Scenario
 
     BEGIN Epoch
 
-        Epoch		 3 Feb 2025 06:00:00.000000000
+        Epoch		 1 Jan 2025 06:00:00.000000000
         SmartEpoch		
         BEGIN EVENT
-            Epoch		 3 Feb 2025 06:00:00.000000000
+            Epoch		 1 Jan 2025 06:00:00.000000000
             EventEpoch		
             BEGIN EVENT
                 Type		 EVENT_LINKTO
@@ -22,13 +22,13 @@ BEGIN Scenario
 
     BEGIN Interval
 
-        Start		 3 Feb 2025 06:00:00.000000000
-        Stop		 4 Feb 2025 06:00:00.000000000
+        Start		 1 Jan 2025 06:00:00.000000000
+        Stop		 1 Feb 2025 06:00:00.000000000
         SmartInterval		
         BEGIN EVENTINTERVAL
             BEGIN Interval
-                Start		 3 Feb 2025 06:00:00.000000000
-                Stop		 4 Feb 2025 06:00:00.000000000
+                Start		 1 Jan 2025 06:00:00.000000000
+                Stop		 1 Feb 2025 06:00:00.000000000
             END Interval
             IntervalState		 Explicit
         END EVENTINTERVAL
@@ -92,6 +92,47 @@ BEGIN Scenario
         Module		 stk_mission_level3
         Module		 stk_mission_space
     END ScenarioLicenses
+
+    BEGIN QuickReports
+
+        BEGIN Report
+            Name		 Individual Strand Access
+            Type		 Report
+            BaseDir		 User
+            Style		 Individual Strand Access
+            AGIViewer		 Yes
+            Instance		 Chain/ASFChain
+            BEGIN TimeData
+                BEGIN Section
+                    SectionNumber		 1
+                    SectionType		 4
+                    ShowIntervals		 No
+                    BEGIN IntervalList
+
+                        DateUnitAbrv		 UTCG
+
+                        BEGIN Intervals
+
+"1 Jan 2025 06:00:00.000000000" "1 Feb 2025 06:00:00.000000000"
+                        END Intervals
+
+                    END IntervalList
+
+                    TimeType		 Interval
+                    SamplingType		 Default
+                    TimeBound		 0
+                END Section
+            END TimeData
+            DisplayOnLoad		 Yes
+            FrameType		 0
+            DockCircleID		 0
+            DockID		 0
+            WindowRectLeft		 427
+            WindowRectTop		 123
+            WindowRectRight		 3248
+            WindowRectBottom		 1824
+        END Report
+    END QuickReports
 
     BEGIN Extensions
 
@@ -337,6 +378,11 @@ BEGIN Scenario
         BEGIN ReportFavorites
             BEGIN Class
                 Name		 Chain
+                BEGIN Favorite
+                    Type		 Report
+                    BaseDir		 User
+                    Style		 Individual Strand Access
+                END Favorite
                 BEGIN Favorite
                     Type		 Report
                     BaseDir		 Install
@@ -612,6 +658,12 @@ BEGIN Scenario
         END ExportDataFile
 
         BEGIN Desc
+            BEGIN ShortText
+
+            END ShortText
+            BEGIN LongText
+
+            END LongText
         END Desc
 
         BEGIN RfEnv
@@ -1594,6 +1646,15 @@ BEGIN Scenario
         END Gator
 
         BEGIN Crdn
+            BEGIN EVENT
+                Type		 EVENT_DATECONSTANT
+                Name		 Today
+                Hardcoded		
+                Description		 Local midnight today.
+                LocalOffsetWholeDays		 0
+                LocalOffsetTime		  0.0000000000000000e+00
+                ComputedDate		 21 Feb 2025 06:00:00.000000000
+            END EVENT
         END Crdn
 
         BEGIN SpiceExt
@@ -1608,9 +1669,9 @@ BEGIN Scenario
 
             BEGIN Animation
 
-                StartTime		 3 Feb 2025 06:00:00.000000000
-                EndTime		 4 Feb 2025 06:00:00.000000000
-                CurrentTime		 3 Feb 2025 06:00:00.000000000
+                StartTime		 1 Jan 2025 06:00:00.000000000
+                EndTime		 1 Feb 2025 06:00:00.000000000
+                CurrentTime		 1 Jan 2025 06:00:00.000000000
                 Direction		 Forward
                 UpdateDelta		 10
                 RefreshDelta		 0.010000
@@ -1720,7 +1781,7 @@ BEGIN Scenario
                         ShowImageNames		 Off
                         ImageNameFont		 0
                         Projection		 EquidistantCylindrical
-                        Resolution		 Low
+                        Resolution		 VeryLow
                         CoordinateSys		 ECF
                         UseBackgroundImage		 On
                         UseBingForBackground		 On
@@ -1912,7 +1973,7 @@ BEGIN Scenario
 
                     BEGIN Style
                         Name		 DefaultWithBing
-                        Time		 -7387200
+                        Time		 -4536000
                         UpdateDelta		 10
 
                         BEGIN MapAttributes
@@ -2099,7 +2160,7 @@ BEGIN Scenario
 
                     BEGIN Style
                         Name		 DefaultWithoutBing
-                        Time		 -7387200
+                        Time		 -4536000
                         UpdateDelta		 10
 
                         BEGIN MapAttributes
@@ -2321,7 +2382,7 @@ BEGIN Scenario
 
         Class Constellation
 
-            LEOSats		
+            MEOSats		
 
         END Class
 
@@ -2335,36 +2396,27 @@ BEGIN Scenario
 
         Class Satellite
 
-            LEOSat_P1_S1		
-            LEOSat_P1_S2		
-            LEOSat_P1_S3		
-            LEOSat_P1_S4		
-            LEOSat_P1_S5		
-            LEOSat_P1_S6		
-            LEOSat_P2_S1		
-            LEOSat_P2_S2		
-            LEOSat_P2_S3		
-            LEOSat_P2_S4		
-            LEOSat_P2_S5		
-            LEOSat_P2_S6		
-            LEOSat_P3_S1		
-            LEOSat_P3_S2		
-            LEOSat_P3_S3		
-            LEOSat_P3_S4		
-            LEOSat_P3_S5		
-            LEOSat_P3_S6		
-            LEOSat_P4_S1		
-            LEOSat_P4_S2		
-            LEOSat_P4_S3		
-            LEOSat_P4_S4		
-            LEOSat_P4_S5		
-            LEOSat_P4_S6		
-            LEOSat_P5_S1		
-            LEOSat_P5_S2		
-            LEOSat_P5_S3		
-            LEOSat_P5_S4		
-            LEOSat_P5_S5		
-            LEOSat_P5_S6		
+            MEOSats_P1_S1		
+            MEOSats_P1_S2		
+            MEOSats_P1_S3		
+            MEOSats_P2_S1		
+            MEOSats_P2_S2		
+            MEOSats_P2_S3		
+            MEOSats_P3_S1		
+            MEOSats_P3_S2		
+            MEOSats_P3_S3		
+            MEOSats_P4_S1		
+            MEOSats_P4_S2		
+            MEOSats_P4_S3		
+            MEOSats_P5_S1		
+            MEOSats_P5_S2		
+            MEOSats_P5_S3		
+            MEOSats_P6_S1		
+            MEOSats_P6_S2		
+            MEOSats_P6_S3		
+            MEOSats_P7_S1		
+            MEOSats_P7_S2		
+            MEOSats_P7_S3		
 
         END Class
 
@@ -2376,7 +2428,7 @@ BEGIN Scenario
             Chain/ASFChain		
             Chain/NWGSChain		
             Chain/NWSFChain		
-            Constellation/LEOSats		
+            Constellation/MEOSats		
         END Instance
         Instance Chain/ASFChain
             Chain/ASFChain		
@@ -2387,7 +2439,7 @@ BEGIN Scenario
         Instance Chain/NWSFChain
             Chain/NWSFChain		
         END Instance
-        Instance Constellation/LEOSats
+        Instance Constellation/MEOSats
             Chain/ASFChain		
             Chain/NWGSChain		
             Chain/NWSFChain		
@@ -2404,95 +2456,68 @@ BEGIN Scenario
             Chain/NWSFChain		
             Facility/NWSF		
         END Instance
-        Instance Satellite/LEOSat_P1_S1
-            Satellite/LEOSat_P1_S1		
+        Instance Satellite/MEOSats_P1_S1
+            Satellite/MEOSats_P1_S1		
         END Instance
-        Instance Satellite/LEOSat_P1_S2
-            Satellite/LEOSat_P1_S2		
+        Instance Satellite/MEOSats_P1_S2
+            Satellite/MEOSats_P1_S2		
         END Instance
-        Instance Satellite/LEOSat_P1_S3
-            Satellite/LEOSat_P1_S3		
+        Instance Satellite/MEOSats_P1_S3
+            Satellite/MEOSats_P1_S3		
         END Instance
-        Instance Satellite/LEOSat_P1_S4
-            Satellite/LEOSat_P1_S4		
+        Instance Satellite/MEOSats_P2_S1
+            Satellite/MEOSats_P2_S1		
         END Instance
-        Instance Satellite/LEOSat_P1_S5
-            Satellite/LEOSat_P1_S5		
+        Instance Satellite/MEOSats_P2_S2
+            Satellite/MEOSats_P2_S2		
         END Instance
-        Instance Satellite/LEOSat_P1_S6
-            Satellite/LEOSat_P1_S6		
+        Instance Satellite/MEOSats_P2_S3
+            Satellite/MEOSats_P2_S3		
         END Instance
-        Instance Satellite/LEOSat_P2_S1
-            Satellite/LEOSat_P2_S1		
+        Instance Satellite/MEOSats_P3_S1
+            Satellite/MEOSats_P3_S1		
         END Instance
-        Instance Satellite/LEOSat_P2_S2
-            Satellite/LEOSat_P2_S2		
+        Instance Satellite/MEOSats_P3_S2
+            Satellite/MEOSats_P3_S2		
         END Instance
-        Instance Satellite/LEOSat_P2_S3
-            Satellite/LEOSat_P2_S3		
+        Instance Satellite/MEOSats_P3_S3
+            Satellite/MEOSats_P3_S3		
         END Instance
-        Instance Satellite/LEOSat_P2_S4
-            Satellite/LEOSat_P2_S4		
+        Instance Satellite/MEOSats_P4_S1
+            Satellite/MEOSats_P4_S1		
         END Instance
-        Instance Satellite/LEOSat_P2_S5
-            Satellite/LEOSat_P2_S5		
+        Instance Satellite/MEOSats_P4_S2
+            Satellite/MEOSats_P4_S2		
         END Instance
-        Instance Satellite/LEOSat_P2_S6
-            Satellite/LEOSat_P2_S6		
+        Instance Satellite/MEOSats_P4_S3
+            Satellite/MEOSats_P4_S3		
         END Instance
-        Instance Satellite/LEOSat_P3_S1
-            Satellite/LEOSat_P3_S1		
+        Instance Satellite/MEOSats_P5_S1
+            Satellite/MEOSats_P5_S1		
         END Instance
-        Instance Satellite/LEOSat_P3_S2
-            Satellite/LEOSat_P3_S2		
+        Instance Satellite/MEOSats_P5_S2
+            Satellite/MEOSats_P5_S2		
         END Instance
-        Instance Satellite/LEOSat_P3_S3
-            Satellite/LEOSat_P3_S3		
+        Instance Satellite/MEOSats_P5_S3
+            Satellite/MEOSats_P5_S3		
         END Instance
-        Instance Satellite/LEOSat_P3_S4
-            Satellite/LEOSat_P3_S4		
+        Instance Satellite/MEOSats_P6_S1
+            Satellite/MEOSats_P6_S1		
         END Instance
-        Instance Satellite/LEOSat_P3_S5
-            Satellite/LEOSat_P3_S5		
+        Instance Satellite/MEOSats_P6_S2
+            Satellite/MEOSats_P6_S2		
         END Instance
-        Instance Satellite/LEOSat_P3_S6
-            Satellite/LEOSat_P3_S6		
+        Instance Satellite/MEOSats_P6_S3
+            Satellite/MEOSats_P6_S3		
         END Instance
-        Instance Satellite/LEOSat_P4_S1
-            Satellite/LEOSat_P4_S1		
+        Instance Satellite/MEOSats_P7_S1
+            Satellite/MEOSats_P7_S1		
         END Instance
-        Instance Satellite/LEOSat_P4_S2
-            Satellite/LEOSat_P4_S2		
+        Instance Satellite/MEOSats_P7_S2
+            Satellite/MEOSats_P7_S2		
         END Instance
-        Instance Satellite/LEOSat_P4_S3
-            Satellite/LEOSat_P4_S3		
-        END Instance
-        Instance Satellite/LEOSat_P4_S4
-            Satellite/LEOSat_P4_S4		
-        END Instance
-        Instance Satellite/LEOSat_P4_S5
-            Satellite/LEOSat_P4_S5		
-        END Instance
-        Instance Satellite/LEOSat_P4_S6
-            Satellite/LEOSat_P4_S6		
-        END Instance
-        Instance Satellite/LEOSat_P5_S1
-            Satellite/LEOSat_P5_S1		
-        END Instance
-        Instance Satellite/LEOSat_P5_S2
-            Satellite/LEOSat_P5_S2		
-        END Instance
-        Instance Satellite/LEOSat_P5_S3
-            Satellite/LEOSat_P5_S3		
-        END Instance
-        Instance Satellite/LEOSat_P5_S4
-            Satellite/LEOSat_P5_S4		
-        END Instance
-        Instance Satellite/LEOSat_P5_S5
-            Satellite/LEOSat_P5_S5		
-        END Instance
-        Instance Satellite/LEOSat_P5_S6
-            Satellite/LEOSat_P5_S6		
+        Instance Satellite/MEOSats_P7_S3
+            Satellite/MEOSats_P7_S3		
         END Instance
     END References
 

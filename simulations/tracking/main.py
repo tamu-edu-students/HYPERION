@@ -96,11 +96,18 @@ def initialize(x0):
     return dynamics
 
 def main(root):
-    sensor = makeSensor(root)
-    missile = Missile(root, name="TestMissile", unload=False)
-    ic(missile.getLaunchTime())
+    # sensor = makeSensor(root)
+    sensors = makeConstellation(root, "LEOSats", 1000, 82, 30, 5, 3, 60)
+
+    chain = Chain(root, "Sensors2Missile")
+    chain.loadObject()
+    chain.addToObject(sensors)
+
+    missile = Missile(root, name="TestMissile")
     # missile.viewDataProviders()
-    # missile.loadObject()
+    missile.loadObject()
+
+    chain.addToObject(missile)
 
     # Extract ECF Position and Velocity at 1s step size
     times, states = missile.getECFState()
@@ -257,7 +264,7 @@ def plotError():
 if __name__ == "__main__":
     # ic.disable()
     args = parse_args()
-    run(main, mode=args.mode, scenario_name=args.name)
+    run(main, mode=args.mode, name=args.name)
     # simulate()
     # plotError()
     # plotTrajectory()

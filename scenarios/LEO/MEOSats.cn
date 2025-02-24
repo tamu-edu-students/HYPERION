@@ -1,0 +1,48 @@
+stk.v.12.0
+WrittenBy    STK_v12.9.0
+
+BEGIN Constellation
+
+    Name		 MEOSats
+    BEGIN Definition
+        Object		 Satellite/MEOSats_P1_S1
+        Object		 Satellite/MEOSats_P1_S2
+        Object		 Satellite/MEOSats_P1_S3
+        Object		 Satellite/MEOSats_P2_S1
+        Object		 Satellite/MEOSats_P2_S2
+        Object		 Satellite/MEOSats_P2_S3
+        Object		 Satellite/MEOSats_P3_S1
+        Object		 Satellite/MEOSats_P3_S2
+        Object		 Satellite/MEOSats_P3_S3
+        Object		 Satellite/MEOSats_P4_S1
+        Object		 Satellite/MEOSats_P4_S2
+        Object		 Satellite/MEOSats_P4_S3
+        Object		 Satellite/MEOSats_P5_S1
+        Object		 Satellite/MEOSats_P5_S2
+        Object		 Satellite/MEOSats_P5_S3
+        Object		 Satellite/MEOSats_P6_S1
+        Object		 Satellite/MEOSats_P6_S2
+        Object		 Satellite/MEOSats_P6_S3
+        Object		 Satellite/MEOSats_P7_S1
+        Object		 Satellite/MEOSats_P7_S2
+        Object		 Satellite/MEOSats_P7_S3
+        Type		 Constellation
+        FromOperator		 Or
+        FromOrder		 1
+        ToOperator		 Or
+        ToOrder		 1
+        UseRoutingRulesFile		 No
+
+    END Definition
+
+    BEGIN Extensions
+
+        BEGIN ADFFileData
+        END ADFFileData
+
+        BEGIN Desc
+        END Desc
+
+    END Extensions
+
+END Constellation
