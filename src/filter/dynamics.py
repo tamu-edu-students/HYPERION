@@ -1,105 +1,73 @@
 import numpy as np
 from icecream import ic
-from scipy.integrate import solve_ivp
-from scipy.linalg import expm
 
-class DynamicsModel:
-    def __init__(self, x0, F_func, u, G, Qs, mu_E):
-        """
-        Initialize the dynamics model.
+def x_dot_twobody(t: float, x: np.ndarray, mu: float) -> np.ndarray:
+    """
+    Computes the time derivative of the state vector for a two-body problem with thrust.
 
-        Parameters:
-        - x0: Initial state vector.
-        - F_func: Function that computes the dynamics matrix F(x).
-        - u: Control input vector.
-        - G: Input matrix for known inputs.
-        - Qs: Process noise spectral density matrix.
-        - mu_E: Gravitational parameter of Earth.
-        """
-        self.__x0 = x0
-        self.__F_func = F_func
-        self.__u = u
-        self.__G = G
-        self.__Qs = Qs
-        self.__mu_E = mu_E
+    Parameters
+    -----------
+    - t: Current time (unused in the dynamics).
+    - x: State vector.
+    - mu: Gravitational parameter of the central body.
 
-    def __Phi(self, tk, tkm1, xkm1, epsilon=1e-6):
-        """
-        Compute the state transition matrix Φ(tk, tkm1).
-        """
-        delta_t = tk - tkm1
-        if abs(delta_t) < epsilon:
-            return np.eye(6)
+    Returns
+    -------
+    - Time derivative of the state vector.
+    """
+    r = x[0:3]  
+    v = x[3:6]  
+    a_T = x[6:9]  
 
-        # Compute F(x) 
-        F_matrix = self.__F_func(xkm1, self.__mu_E)
+    dx = np.zeros_like(x)
+    dx[0:3] = v  
+    dx[3:6] = -mu / np.linalg.norm(r)**3 * r + a_T
+    dx[6:9] = np.zeros(3)
 
-        # Compute the state transition matrix once
-        return expm(F_matrix * delta_t)
+    return dx
 
-    def __integrate(self, tk, tkm1, integrand_fn):
-        """
-        Numerically integrate the given function over [tkm1, tk].
-        """
-        def wrapper(t, y):
-            return integrand_fn(t).flatten()
+def x_dot_Pxx_dot_twobody(t: float, y: np.ndarray, mu: float, Fw: np.ndarray, Pww: np.ndarray) -> np.ndarray:
+    """
+    Computes the time derivative of the state and covariance for a two-body problem with process noise.
 
-        result = solve_ivp(wrapper, [tkm1, tk], np.zeros_like(integrand_fn(tkm1).flatten()), t_eval=[tk])
-        return result.y[:, -1].reshape(integrand_fn(tkm1).shape)
+    Parameters
+    ----------
+    - t: Current time (unused in the dynamics).
+    - y: Flattened state and covariance vector.
+    - mu: Gravitational parameter of the central body.
+    - Fw: Process noise mapping matrix.
+    - Pww: Process noise covariance.
 
-    def __ukm1(self, tk, tkm1, Phi_tkm1):
-        """
-        Compute the discrete-time input term using:
-        ukm1 = ∫ (Φ(tk, τ) G u dτ)
-        """
-        def integrand(t):
-            return Phi_tkm1 @ self.__G @ self.__u
+    Returns
+    -------
+    - Time derivative of the state and covariance.
+    """
+    mx = y[:9]  
+    Pxx = y[9:].reshape(9, 9) 
 
-        return self.__integrate(tk, tkm1, integrand)
+    r = mx[0:3]  
+    v = mx[3:6]  
+    a_T = mx[6:9] 
 
-    def __Qkm1(self, tk, tkm1, Phi_tkm1):
-        """
-        Compute the discrete-time process noise covariance using:
-        Qkm1 = ∫ (Φ(tk, τ) Qs Φ(tk, τ).T dτ)
-        """
-        def integrand(t):
-            return Phi_tkm1 @ self.__Qs @ Phi_tkm1.T
+    r_norm = np.linalg.norm(r) 
 
-        return self.__integrate(tk, tkm1, integrand)
+    dy = np.zeros_like(y)
+    dy[0:3] = v  
+    dy[3:6] = -mu / r_norm**3 * r + a_T
+    dy[6:9] = np.zeros(3)
 
-    def __wkm1(self, tk, tkm1, Phi_tkm1):
-        """
-        Generate a random process noise sample wkm1 based on Qkm1.
-        """
-        Qkm1 = self.__Qkm1(tk, tkm1, Phi_tkm1)
+    # Compute gravity Jacobian (G)
+    G = (mu / r_norm**5) * (3 * np.outer(r, r) - (r_norm**2) * np.eye(3))
 
-        # Ensure Qkm1 is positive-definite
-        Qkm1 += np.eye(Qkm1.shape[0]) * 1e-9
+    # Construct state transition matrix
+    Fx = np.zeros((9, 9))
+    Fx[0:3, 3:6] = np.eye(3)
+    Fx[3:6, 0:3] = G
+    Fx[3:6, 6:9] = np.eye(3)
 
-        return np.random.multivariate_normal(np.zeros(Qkm1.shape[0]), Qkm1).reshape(-1, 1)
+    # Covariance propagation
+    FxPxx = Fx @ Pxx 
+    dPxx = FxPxx + FxPxx.T + Fw @ Pww @ Fw.T  
+    dy[9:] = dPxx.flatten()
 
-    ### Public ###
-    def get_x0(self):
-        return self.__x0 
-
-    def get_xk(self, tk, tkm1, xkm1=None, return_wkm1=False):
-        """
-        Generate the current state using:
-        xk = Φ(tk, tkm1) xkm1 + ukm1 + wkm1
-        """
-        if xkm1 is None:
-            xkm1 = self.__x0  # Use initial state if no previous state is provided
-
-        # Compute Φ(tk, tkm1) **ONCE**
-        Phi_tkm1 = ic(self.__Phi(tk, tkm1, xkm1))
-
-        # Compute ukm1 and wkm1 using the same Phi
-        ukm1 = ic(self.__ukm1(tk, tkm1, Phi_tkm1))
-        wkm1 = ic(self.__wkm1(tk, tkm1, Phi_tkm1))
-
-        # State propagation
-        xk = ic(Phi_tkm1 @ xkm1 + ukm1 + wkm1)
-
-        if return_wkm1:
-            return xk, wkm1
-        return xk
+    return dy

@@ -39,8 +39,8 @@ def get_az_el(r_M, r_S, v_S):
 r_M_ecf = np.array([2614.831, 2355.479, 5301.482])  
 
 # Given satellite position and velocity in ECI (km, km/s)
-r_S_eci = np.array([2615.971, 945.956, 6833.650])  
-v_S_eci = np.array([-6.872514, 0.399969, 2.575482])  
+r_S_eci = np.array([ 6.22750823e+02,  1.01583115e+03,  7.28128931e+03])  
+v_S_eci = np.array([-7.32337656e+00, 1.73571382e-01,  6.02135058e-01])  
 
 # Convert UTC to Ephemeris Time (ET)
 utc_time = "2025-02-24T16:33:50.527"
@@ -50,11 +50,13 @@ et = spice.str2et(utc_time)
 ecf2eci = spice.sxform("ITRF93", "J2000", et)
 
 # Convert missile position from ECF to ECI
-r_M_eci = np.dot(ecf2eci[:3, :3], r_M_ecf)  # Extract position transformation
+# r_M_eci = np.dot(ecf2eci[:3, :3], r_M_ecf)  # Extract position transformation
+r_M_eci = np.array([-2.59197109e+03, -2.81711190e+02,  5.80145220e+03])
 
 # Compute Azimuth and Elevation
 az, el = get_az_el(r_M_eci, r_S_eci, v_S_eci)
 print(f"Azimuth: {az:.2f} degrees, Elevation: {el:.2f} degrees")
+# Expected az: 339.8781403120632, expected el: -30.45257393504644
 
 # Unload SPICE kernels (clean-up)
 spice.kclear()

@@ -92,7 +92,6 @@ BEGIN Scenario
     END StarCollection
 
     BEGIN ScenarioLicenses
-        Module		 stk_engine_runtime
         Module		 stk_mission_air
         Module		 stk_mission_level1
         Module		 stk_mission_level2
@@ -343,32 +342,37 @@ BEGIN Scenario
 
         BEGIN ReportFavorites
             BEGIN Class
-                Name		 Satellite
-                BEGIN Favorite
-                    Type		 Report
-                    BaseDir		 Install
-                    Style		 J2000 Position Velocity
-                END Favorite
-            END Class
-            BEGIN Class
                 Name		 Access
                 BEGIN Favorite
                     Type		 Report
                     BaseDir		 Install
-                    Style		 AOS
+                    Style		 AER
                 END Favorite
                 BEGIN Favorite
                     Type		 Report
                     BaseDir		 Install
-                    Style		 AER
+                    Style		 AOS
                 END Favorite
             END Class
             BEGIN Class
                 Name		 Chain
                 BEGIN Favorite
                     Type		 Report
+                    BaseDir		 User
+                    Style		 Individual Strand Access
+                END Favorite
+                BEGIN Favorite
+                    Type		 Report
                     BaseDir		 Install
                     Style		 Access AER
+                END Favorite
+            END Class
+            BEGIN Class
+                Name		 Satellite
+                BEGIN Favorite
+                    Type		 Report
+                    BaseDir		 Install
+                    Style		 J2000 Position Velocity
                 END Favorite
             END Class
         END ReportFavorites
@@ -1659,6 +1663,224 @@ BEGIN Scenario
                 TextShadowStyle		 Dark
                 TextShadowColor		 #000000
                 BingLevelOfDetailScale		 2
+                BEGIN Map
+                    MapNum		 1
+                    TrackingMode		 LatLon
+                    PickEnabled		 On
+                    PanEnabled		 On
+
+                    BEGIN MapAttributes
+                        PrimaryBody		 Earth
+                        SecondaryBody		 Sun
+                        CenterLatitude		 0
+                        CenterLongitude		 0
+                        ProjectionAltitude		 63621860
+                        FieldOfView		 35
+                        OrthoDisplayDistance		 20000000
+                        TransformTrajectory		 On
+                        EquatorialRadius		 6378137
+                        BackgroundColor		 #000000
+                        LatLonLines		 On
+                        LatSpacing		 30
+                        LonSpacing		 30
+                        LatLonLineColor		 #999999
+                        LatLonLineStyle		 2
+                        ShowOrthoDistGrid		 Off
+                        OrthoGridXSpacing		 5
+                        OrthoGridYSpacing		 5
+                        OrthoGridColor		 #ffffff
+                        ShowImageExtents		 Off
+                        ImageExtentLineColor		 #ffffff
+                        ImageExtentLineStyle		 0
+                        ImageExtentLineWidth		 1
+                        ShowImageNames		 Off
+                        ImageNameFont		 0
+                        Projection		 EquidistantCylindrical
+                        Resolution		 VeryLow
+                        CoordinateSys		 ECF
+                        UseBackgroundImage		 On
+                        UseBingForBackground		 On
+                        BingType		 Aerial
+                        BingLogoHorizAlign		 Right
+                        BingLogoVertAlign		 Bottom
+                        BackgroundImageFile		 Basic.bmp
+                        UseNightLights		 Off
+                        NightLightsFactor		 3.5
+                        UseCloudsFile		 Off
+                        BEGIN ZoomLocations
+                            BEGIN ZoomLocation
+                                CenterLat		 0
+                                CenterLon		 0
+                                ZoomWidth		 360
+                                ZoomHeight		 180
+                            END ZoomLocation
+                        END ZoomLocations
+                        UseVarAspectRatio		 No
+                        SwapMapResolution		 Yes
+                        NoneToVLowSwapDist		 2000000
+                        VLowToLowSwapDist		 20000
+                        LowToMediumSwapDist		 10000
+                        MediumToHighSwapDist		 5000
+                        HighToVHighSwapDist		 1000
+                        VHighToSHighSwapDist		 100
+                        BEGIN Axes
+                            DisplayAxes		 no
+                            CoordSys		 CBI
+                            2aryCB		 Sun
+                            Display+x		 yes
+                            Label+x		 yes
+                            Color+x		 #ffffff
+                            Scale+x		 3
+                            Display-x		 yes
+                            Label-x		 yes
+                            Color-x		 #ffffff
+                            Scale-x		 3
+                            Display+y		 yes
+                            Label+y		 yes
+                            Color+y		 #ffffff
+                            Scale+y		 3
+                            Display-y		 yes
+                            Label-y		 yes
+                            Color-y		 #ffffff
+                            Scale-y		 3
+                            Display+z		 yes
+                            Label+z		 yes
+                            Color+z		 #ffffff
+                            Scale+z		 3
+                            Display-z		 yes
+                            Label-z		 yes
+                            Color-z		 #ffffff
+                            Scale-z		 3
+                        END Axes
+
+                    END MapAttributes
+
+                    BEGIN MapList
+                        BEGIN Detail
+                            Alias		 RWDB2_Coastlines
+                            Show		 Yes
+                            Color		 #8fbc8f
+                        END Detail
+                        BEGIN Detail
+                            Alias		 RWDB2_International_Borders
+                            Show		 No
+                            Color		 #8fbc8f
+                        END Detail
+                        BEGIN Detail
+                            Alias		 RWDB2_Islands
+                            Show		 No
+                            Color		 #8fbc8f
+                        END Detail
+                        BEGIN Detail
+                            Alias		 RWDB2_Lakes
+                            Show		 No
+                            Color		 #87cefa
+                        END Detail
+                        BEGIN Detail
+                            Alias		 RWDB2_Provincial_Borders
+                            Show		 No
+                            Color		 #8fbc8f
+                        END Detail
+                        BEGIN Detail
+                            Alias		 RWDB2_Rivers
+                            Show		 No
+                            Color		 #87cefa
+                        END Detail
+                    END MapList
+
+
+                    BEGIN MapAnnotations
+                    END MapAnnotations
+
+                    BEGIN DisplayFlags
+                        ShowLabels		 On
+                        ShowPassLabel		 Off
+                        ShowElsetNum		 Off
+                        ShowGndTracks		 On
+                        ShowGndMarkers		 On
+                        ShowOrbitMarkers		 On
+                        ShowPlanetOrbits		 Off
+                        ShowPlanetCBIPos		 On
+                        ShowPlanetCBILabel		 On
+                        ShowPlanetGndPos		 On
+                        ShowPlanetGndLabel		 On
+                        ShowSensors		 On
+                        ShowWayptMarkers		 Off
+                        ShowWayptTurnMarkers		 Off
+                        ShowOrbits		 On
+                        ShowDtedRegions		 Off
+                        ShowAreaTgtCentroids		 On
+                        ShowToolBar		 On
+                        ShowStatusBar		 On
+                        ShowScrollBars		 On
+                        AllowAnimUpdate		 Off
+                        AccShowLine		 On
+                        AccAnimHigh		 On
+                        AccStatHigh		 On
+                        AccAnimLineLineWidth		  1.0000000000000000e+00
+                        AccAnimLineLineStyle		 0
+                        ShowPrintButton		 On
+                        ShowAnimButtons		 On
+                        ShowAnimModeButtons		 On
+                        ShowZoomMsrButtons		 On
+                        ShowMapCbButton		 Off
+                    END DisplayFlags
+
+                    BEGIN RecordMovie
+                        OutputFormat		 VIDEO
+                        SdfSelected		 No
+                        BaseName		 Frame
+                        Digits		 4
+                        Frame		 0
+                        LastAnimTime		 0
+                        OutputMode		 Normal
+                        HiResAssembly		 Assemble
+                        HRWidth		 6000
+                        HRHeight		 4500
+                        HRDPI		 600
+                        UseSnapInterval		 No
+                        SnapInterval		 0
+                        VideoCodec		 "H264"
+                        Framerate		 30
+                        Bitrate		 10000000
+                    END RecordMovie
+
+
+                    BEGIN TimeDisplay
+                        Show		 0
+                        TextColor		 #ffffff
+                        TextTranslucency		 0
+                        ShowBackground		 0
+                        BackColor		 #4d4d4d
+                        BackTranslucency		 0.4
+                        XPosition		 20
+                        YPosition		 -20
+                    END TimeDisplay
+
+                    BEGIN LightingData
+                        DisplayAltitude		 0
+                        SubsolarPoint		 Off
+                        SubsolarPointColor		 #ffff00
+                        SubsolarPointMarkerStyle		 2
+
+                        ShowUmbraLine		 Off
+                        UmbraLineColor		 #000000
+                        UmbraLineStyle		 0
+                        UmbraLineWidth		 2
+                        FillUmbra		 On
+                        UmbraFillColor		 #000000
+                        ShowSunlightLine		 Off
+                        SunlightLineColor		 #ffff00
+                        SunlightLineStyle		 0
+                        SunlightLineWidth		 2
+                        FillSunlight		 On
+                        SunlightFillColor		 #ffffff
+                        SunlightMinOpacity		 0
+                        SunlightMaxOpacity		 0.2
+                        UmbraMaxOpacity		 0.7
+                        UmbraMinOpacity		 0.4
+                    END LightingData
+                END Map
 
                 BEGIN MapStyles
 

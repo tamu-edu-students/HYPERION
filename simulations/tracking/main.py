@@ -72,9 +72,9 @@ def initialize(x0):
     Qs = np.diag([0, 0, 0, qs, qs, qs])  # Small process noise on velocity
 
     # Create dynamics model object
-    dynamics = DynamicsModel(x0, compute_F, u, G, Qs, mu_E)
+    # dynamics = DynamicsModel(x0, compute_F, u, G, Qs, mu_E)
 
-    return dynamics
+    # return dynamics
 
 def main(root):
     sensors = makeConstellation(root, "LEOSats", 1000, 82, 30, 5, 3, 3, 120, "tracking")
@@ -87,7 +87,7 @@ def main(root):
     target_site = Site(38.8977, -77.0365, "Washington, DC", "United States")
 
     missile_name = "Missile"
-    missile = Missile(root, name=missile_name, launch_site=launch_site, target_site=target_site)
+    missile = Missile(root, name=missile_name, launch_site=launch_site, target_site=target_site, launch_time="19 Mar 2025 22:21:50.000")
     missile.loadObject()
 
     # Extract ECI Position and Velocity

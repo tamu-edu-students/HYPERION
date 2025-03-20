@@ -40,12 +40,6 @@ BEGIN Sensor
 
             END AssignedTargets
 
-            BEGIN TargetInviews
-
-                Aircraft/Missile 2025-03-19T04:42:37.373453935 2025-03-19T04:50:18.456332377
-
-            END TargetInviews
-
             SaveTargetAccesses		 Yes
 
             UseTargetSchedule		 No
