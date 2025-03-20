@@ -1,8 +1,8 @@
 from src import *
 
 # Constants
-mu_E = 3.986004415e5  # km^3 / s^2
-r_E = 6.378137e3  # km
+MU_E = 3.986004415e5  # km^3 / s^2
+R_E = 6.378137e3  # km
 
 # Note that a more general variation of this function is defined as a utility in src/utilities
 def makeLEOSensors(root):
@@ -10,7 +10,7 @@ def makeLEOSensors(root):
     Creates a Walker constellation with attached sensors.
     """
     # Classical orbital elements and Walker parameters
-    a = 1000 + r_E  # km
+    a = 1000 + R_E  # km
     i = 82  # deg
     omega = 0  # deg
     e = 0

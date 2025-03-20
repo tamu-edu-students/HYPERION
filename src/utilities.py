@@ -1,11 +1,13 @@
-from .objects import *
 import os 
 import requests
+import csv
+import numpy as np
 from agi.stk12.stkobjects import AgStkObjectRoot
+from .objects import *
 
 # Constants
-mu_E = 3.986004415e5  # km^3 / s^2
-r_E = 6.378137e3  # km
+MU_E = 3.986004415e5  # km^3 / s^2
+R_E = 6.378137e3  # km
 
 def clearScenario(scenario):
     while scenario.Children.Count > 0:
@@ -47,7 +49,7 @@ def makeConstellation(root: AgStkObjectRoot, name: str, h: float, i: float, t: i
     - Constellation object.
     """
     # Classical orbital elements and Walker parameters
-    a = h + r_E  # km
+    a = h + R_E  # km
     omega = 0  # deg
     e = 0
     Omega_0 = 0  # deg
@@ -142,3 +144,38 @@ def download_kernels():
             print(f"{filename} already exists. Skipping download.")
 
     print("All SPICE kernels are downloaded and saved in 'data/spice'.")
+
+def npz_to_csv(npz_filepath: str, output_csv: str = None):
+    """
+    Converts a NumPy .npz file into a human-readable .csv file.
+
+    Parameters
+    ----------
+    npz_filepath: Path to the .npz file to convert.
+    output_csv: Path to save the .csv file (default: same name as .npz file with .csv extension).
+    """
+    if not npz_filepath.endswith(".npz"):
+        npz_filepath += ".npz"
+
+    data = np.load(npz_filepath, allow_pickle=True)
+
+    # Default CSV filename if not provided
+    if output_csv is None:
+        output_csv = os.path.splitext(npz_filepath)[0] + ".csv"
+
+    keys = list(data.keys())
+
+    max_len = max(len(data[key]) for key in keys)
+
+    # Create a row-wise structure
+    csv_data = {key: list(data[key]) + [""] * (max_len - len(data[key])) for key in keys}  
+
+    with open(output_csv, mode="w", newline="") as file:
+        writer = csv.writer(file)
+    
+        writer.writerow(keys)
+        
+        for i in range(max_len):
+            writer.writerow([csv_data[key][i] for key in keys])
+
+    print(f"Converted {npz_filepath} to {output_csv}")

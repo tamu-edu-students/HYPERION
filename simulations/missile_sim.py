@@ -6,8 +6,8 @@ from icecream import ic
 from src import *
 
 # Constants
-mu_E = 3.986004415e5  # km^3 / s^2
-r_E = 6.378137e3  # km
+MU_E = 3.986004415e5  # km^3 / s^2
+R_E = 6.378137e3  # km
 
 # File information
 missile_filename = "missiles-10"
@@ -19,7 +19,7 @@ def makeLEOSensorConstellation(root, conic_angle):
     Creates a Walker constellation with attached sensors and adds to a constellation object.
     """
     # Classical orbital elements and Walker parameters
-    a = 1000 + r_E  # km
+    a = 1000 + R_E  # km
     i = 82  # deg
     omega = 0  # deg
     e = 0
