@@ -1,5 +1,6 @@
-data/old
-data/missiles
-data/satellites
-data/sensors
+# data/old
+# data/missiles
+# data/satellites
+# data/sensors
+data/*/
 **/__pycache__

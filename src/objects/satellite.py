@@ -1,24 +1,62 @@
 import os
 import csv
+import numpy as np
 from icecream import ic
 from agi.stk12.stkobjects import *
 from agi.stk12.stkutil import *
 from agi.stk12.utilities.colors import Colors
+from typing import Tuple
 from .stkObject import STKStandaloneObject
 
 
 r, g, b = 0, 0, 255
 COLOR = Colors.FromRGB(r, g, b)
 
-# TODO: Having unload parameter makes no sense if you still have to specify orbital parameters. Figure out a way around this
 class Satellite(STKStandaloneObject):
     save_dir =  "data/satellites/"
 
-    def __init__(self, root, name, a=None, i=None, Omega=None, omega=0, e=0, M=0, epoch=None, unload=True):
+    @classmethod
+    def attach(cls, root: AgStkObjectRoot, satellite_name: str):
+        """
+        Attaches to an already existing satellite in STK and returns a Satellite object.
+
+        Parameters
+        ----------
+        - root : The STK root object.
+        - satellite_name : The name of the satellite in STK.
+
+        Returns
+        -------
+        - satellite_instance : A Satellite object linked to the existing STK satellite.
+        """
+        try:
+            # Locate the satellite in STK
+            satellite_obj = root.CurrentScenario.Children.Item(satellite_name)
+
+            # Ensure it is a satellite
+            if satellite_obj.ClassType != AgESTKObjectType.eSatellite:
+                raise TypeError(f"Object '{satellite_name}' exists but is not a Satellite.")
+
+            # Create a new Satellite instance but do NOT reload it
+            satellite_instance = cls(root, satellite_name, a=0, i=0, Omega=0)  # Placeholder values
+
+            # Set identity to the existing satellite
+            satellite_instance._identity = satellite_obj
+
+            print(f"Attached to existing satellite '{satellite_name}'.")
+
+            return satellite_instance
+
+        except Exception as e:
+            print(f"Error: Could not attach to satellite '{satellite_name}': {str(e)}")
+            return None
+
+    def __init__(self, root: AgStkObjectRoot, name: str, a: float=None, i: float=None, Omega: float=None, omega:float=0, e:float=0, M:float=0, epoch=None):
         """
         Initializes a satellite in STK with orbital parameters for circular or eccentric orbits.
         
-        Parameters:
+        Parameters
+        ----------
         - root: The STK root object.
         - name: The name of the satellite.
         - a: Semi-major axis (km).
@@ -31,24 +69,23 @@ class Satellite(STKStandaloneObject):
         """
         Satellite._ensureSaveDir()
 
-        super().__init__(root, name, AgESTKObjectType.eSatellite, unload=unload)
+        super().__init__(root, name, AgESTKObjectType.eSatellite)
 
-        if unload:
-            if a is None or i is None or Omega is None:
-                raise RuntimeError("If not connecting to an existing object, orbital parameters must be defined.")
-            else:
-                self.a = a
-                self.i = i
-                self.Omega = self._wrapTo360(Omega)
-                self.omega = self._wrapTo360(omega)
-                self.e = e
-                self.M = self._wrapTo360(M)
+        if a is None or i is None or Omega is None:
+            raise RuntimeError("If not connecting to an existing object, orbital parameters must be defined.")
+        else:
+            self.a = a
+            self.i = i
+            self.Omega = self._wrapTo360(Omega)
+            self.omega = self._wrapTo360(omega)
+            self.e = e
+            self.M = self._wrapTo360(M)
 
-            # Set the epoch to the scenario start time if not specified
-            if epoch is None:
-                self.epoch = root.CurrentScenario.StartTime
-            else:
-                self.epoch = epoch
+        # Set the epoch to the scenario start time if not specified
+        if epoch is None:
+            self.epoch = root.CurrentScenario.StartTime
+        else:
+            self.epoch = epoch
 
     def _wrapTo360(self, angle):
         """
@@ -87,7 +124,7 @@ class Satellite(STKStandaloneObject):
         satellite.SetPropagatorType(AgEVePropagatorType.ePropagatorJ4Perturbation)
         satellite.Propagator.Propagate()
 
-        print(f"Satellite {self.name} loaded with RAAN={self.Omega}° and Mean Anomaly={self.M}°.")
+        print(f"Satellite '{self.name}' loaded with RAAN={self.Omega}° and Mean Anomaly={self.M}°.")
 
     @staticmethod
     def makeHeaders(filename):
@@ -159,3 +196,63 @@ class Satellite(STKStandaloneObject):
                             self.M])
 
         print(f"Satellite details appended to {file_path_csv}.")
+
+    def getECIState(self, start_time: str = None, end_time: str = None, step_size: int = 1) -> Tuple[np.ndarray, np.ndarray]:
+        """
+        Extracts ECI position and velocity for the satellite at a given time step.
+
+        Parameters
+        ----------
+        - start_time: The start time for data extraction (default: scenario start).
+        - end_time: The end time for data extraction (default: scenario end).
+        - step_size : The time granularity for saving data in seconds (default: 1s).
+
+        Returns
+        -------
+        - t_store: The timestamps of the flight path.
+        - states: The ECI states through the flight path.
+        """
+
+        try:
+            # Set default times if not provided
+            if start_time is None:
+                start_time = self.root.CurrentScenario.StartTime
+            if end_time is None:
+                end_time = self.root.CurrentScenario.StopTime
+
+
+            self.root.UnitPreferences.Item("DateFormat").SetCurrentUnit("EpSec")
+
+            # Access the data providers
+            dp_val_position = self._identity.DataProviders.GetItemByName("Cartesian Position")
+            dp_val_velocity = self._identity.DataProviders.GetItemByName("Cartesian Velocity")
+
+            # Get the J2000 (ECI) frame
+            object_dp_position = dp_val_position.Group.GetItemByName("J2000")
+            object_dp_velocity = dp_val_velocity.Group.GetItemByName("J2000")
+
+            # Execute the query
+            position = object_dp_position.Exec(start_time, end_time, step_size)  # km
+            velocity = object_dp_velocity.Exec(start_time, end_time, step_size)  # km/s
+
+            # Extract times
+            t_store = np.array(position.DataSets.GetDataSetByName("Time").GetValues(), dtype=float)
+
+            # Extract position 
+            x = np.array(position.DataSets.GetDataSetByName("x").GetValues(), dtype=float)
+            y = np.array(position.DataSets.GetDataSetByName("y").GetValues(), dtype=float)
+            z = np.array(position.DataSets.GetDataSetByName("z").GetValues(), dtype=float)
+
+            # Extract velocity
+            x_dot = np.array(velocity.DataSets.GetDataSetByName("x").GetValues(), dtype=float)
+            y_dot = np.array(velocity.DataSets.GetDataSetByName("y").GetValues(), dtype=float)
+            z_dot = np.array(velocity.DataSets.GetDataSetByName("z").GetValues(), dtype=float)
+
+            # Combine into state matrix
+            states = np.column_stack((x, y, z, x_dot, y_dot, z_dot))
+
+        finally:
+            # Switch back to UTCG for further computations
+            self.root.UnitPreferences.Item("DateFormat").SetCurrentUnit("UTCG")
+
+        return t_store, states

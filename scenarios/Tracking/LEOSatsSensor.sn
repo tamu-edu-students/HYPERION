@@ -9,7 +9,7 @@ BEGIN Sensor
 
         BEGIN SimpleCone
 
-            ConeAngle		  5.9999999999999993e+01
+            ConeAngle		  1.5000000000000002e+00
             AngularPatternResolution		  4.0000000000000000e+00
 
         END SimpleCone
@@ -21,16 +21,26 @@ BEGIN Sensor
 
     BEGIN Pointing
 
-        BEGIN Fixed
+        BEGIN Spinning
 
-            PointingMethod		 Euler
-            Sequence		 312
-            Qx		  0.0000000000000000e+00
-            Qy		  0.0000000000000000e+00
-            Qz		  0.0000000000000000e+00
-            Qs		  1.0000000000000000e+00
+            BEGIN Fixed
+                PointingMethod		 AzEl
+                Sequence		 323
+                Qx		  0.0000000000000000e+00
+                Qy		  0.0000000000000000e+00
+                Qz		  0.0000000000000000e+00
+                Qs		  1.0000000000000000e+00
+            END Fixed
+            ConeAngle		 20
+            SpinRate		 1
+            ThetaZero		 0
+            ScanMode		 Continuous
+            BEGIN Stable
+                Use		 No
+                Mode		 NorthStable
+            END Stable
 
-        END Fixed
+        END Spinning
 
     END Pointing
 
@@ -54,6 +64,7 @@ BEGIN Sensor
         BEGIN AccessConstraints
             FieldOfView IncludeIntervals
             LineOfSight IncludeIntervals
+            AzimuthAngle            Min		 -5.9999999999999993e+01            Max		  5.9999999999999993e+01 IncludeIntervals
 
             UsePreferredMaxStep No
             PreferredMaxStep 360
@@ -148,8 +159,8 @@ BEGIN Sensor
                 SwathIntervalPtr		
                 BEGIN EVENTINTERVAL
                     BEGIN Interval
-                        Start		 24 Feb 2025 07:27:24.000000000
-                        Stop		 25 Feb 2025 07:27:24.000000000
+                        Start		 19 Mar 2025 02:26:28.000000000
+                        Stop		 20 Mar 2025 02:26:28.000000000
                     END Interval
                     IntervalState		 Explicit
                 END EVENTINTERVAL

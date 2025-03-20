@@ -47,7 +47,7 @@ def initialize(mode="engine", name=None, days=1):
             root.NewScenario(name or "Temp")
             print("Created new scenario.")
 
-        scenario = root.CurrentScenario
+        scenario = root.CurrentScenario            
 
     else:  # Desktop Mode
         if name:
@@ -79,7 +79,7 @@ def initialize(mode="engine", name=None, days=1):
         scenario = root.CurrentScenario
 
     # Set Scenario Time Period
-    if not load_path: 
+    if not load_path and not attached: 
 
         current_time = datetime.datetime.now(datetime.timezone.utc).strftime("%d %b %Y %H:%M:%S")
 

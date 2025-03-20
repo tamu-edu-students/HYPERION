@@ -2,18 +2,15 @@ import os
 from icecream import ic
 from agi.stk12.stkobjects import *
 
-# TODO: Having an unload flag doesnt make much sense. If the user want to attach to an existing object, they should not use the constructor anyways.
 class STKObject:
     @classmethod
-    def inspect(cls, stk_obj):
+    def inspect(cls, stk_obj: AgStkObject):
         """
         Inspects an STK object to determine its class, properties, and available methods.
 
-        Parameters:
+        Parameters
+        ----------
         - stk_obj: Any STK object.
-
-        Returns:
-        - Prints object type, available properties, and callable methods.
         """
         if stk_obj is None:
             print("Object is None.")
@@ -50,26 +47,40 @@ class STKObject:
             except Exception as e:
                 print(f"Could not retrieve DataProviders - {e}")
 
-        print("\nInspection Complete.\n")
+        input("Press Enter to continue execution...")
+        print("Inspection Complete.\n")
 
-    def __init__(self, root, name, object_type, unload=True):
+    @classmethod
+    def attach(cls, root: AgStkObjectRoot, name: str):
+        """
+        Attaches to an existing STK object. Must be implemented in subclasses.
+
+        Parameters
+        ----------
+        - root : AgStkObjectRoot
+            The STK root object.
+        - name : str
+            The name of the object in STK.
+
+        Returns
+        -------
+        STKObject
+            An instance of the subclass attached to an existing STK object.
+        """
+        raise NotImplementedError(f"attach() must be implemented in subclasses of {cls.__name__}")
+
+    def __init__(self, root, name, object_type):
         self._identity = None # No STK identity initially
         self.root = root
         self.name = name
         self.object_type = object_type
-        
-        # Ensure no duplicates by deleting existing objects with the same name if unload is set to true
-        if unload:
-            self.unloadObject()
-        else:
-            self._setObjectIdentity()
 
     def _getObjectType(self):
         """
         Returns the object type as a string based on the object_type enum.
         """
         object_type_mapping = {
-            AgESTKObjectType.eAircraft: "Aircraft",
+            AgESTKObjectType.eAircraft: "Missile",
             AgESTKObjectType.eSatellite: "Satellite",
             AgESTKObjectType.eConstellation: "Constellation",
             AgESTKObjectType.eChain: "Chain",
@@ -79,33 +90,39 @@ class STKObject:
 
         return object_type_mapping.get(self.object_type, "Unknown")
     
-    def _setObjectIdentity(self, parent_name=None,):
+    def _setObjectIdentity(self):
         """
-        Sets the STK object identity.
+        Recursively searches for the object in the entire STK object tree.
+        If found, sets the object identity to the correct STK object.
         """
+        def recursive_search(parent):
+            """
+            Recursively searches through the children of a given STK object.
+            """
+            for i in range(parent.Children.Count):
+                child = parent.Children.Item(i)
+                if child.InstanceName == self.name:
+                    return child  # Found the object, return it
+
+                # Recursively search in this child's children
+                found = recursive_search(child)
+                if found:
+                    return found
+
+            return None  # Not found in this branch
+
         try:
-            if parent_name:
-                # Search under the parent object
-                parent_object = self.root.CurrentScenario.Children.Item(parent_name)
-                self._identity = parent_object.Children.Item(self.name)
-            else:
-                # Search at the scenario level for top-level objects
-                self._identity = self.root.CurrentScenario.Children.Item(self.name)
-        except Exception:
-            print(f"Object '{self.name}' not found.")
+            # Start search from the root scenario
+            self._identity = recursive_search(self.root.CurrentScenario)
+
+        except Exception as e:
+            print(f"Error during search for '{self.name}': {str(e)}")
 
     def _loadObjectImplementation(self):
         """
         Placeholder for subclasses to implement their object-specific loading logic.
         """
         raise NotImplementedError("Subclasses must implement the `_loadObjectImplementation` method.")
-
-    def getObjectName(self):
-        """
-        Return the name of the object.
-        """
-
-        return self.name
 
     def getObjectPath(self):
         """
@@ -148,14 +165,14 @@ class STKObject:
 
     
 class STKContainerObject(STKObject):
-    def __init__(self, root, name, object_type, unload=True):
-        super().__init__(root, name, object_type, unload=unload)
+    def __init__(self, root, name, object_type):
+        super().__init__(root, name, object_type)
 
-    def addToObject(self, child:STKObject):
+    def addToObject(self, child: STKObject):
         """
         Adds a child object to a container.
         """
-        child_name = child.getObjectName()
+        child_name = child.name 
 
         try:
             # Access the container object and add the STK object using its path
@@ -166,7 +183,7 @@ class STKContainerObject(STKObject):
         except Exception as e:
             print(f"Error adding '{child_name}' to container '{self.name}': {str(e)}")
 
-    def removeFromObject(self, child:STKObject):
+    def removeFromObject(self, child: STKObject):
         """
         Removes a child object from the container if it exists.
         """
@@ -183,8 +200,8 @@ class STKContainerObject(STKObject):
 
 
 class STKStandaloneObject(STKObject):
-    def __init__(self, root, name, object_type, unload=True):
-        super().__init__(root, name, object_type, unload=unload)
+    def __init__(self, root, name, object_type):
+        super().__init__(root, name, object_type)
 
     @classmethod
     def _ensureSaveDir(cls):

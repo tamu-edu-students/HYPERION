@@ -148,8 +148,8 @@ BEGIN Sensor
                 SwathIntervalPtr		
                 BEGIN EVENTINTERVAL
                     BEGIN Interval
-                        Start		 19 Feb 2025 18:00:00.000000000
-                        Stop		 20 Feb 2025 18:00:00.000000000
+                        Start		 19 Mar 2025 02:26:28.000000000
+                        Stop		 20 Mar 2025 02:26:28.000000000
                     END Interval
                     IntervalState		 Explicit
                 END EVENTINTERVAL

@@ -4,8 +4,8 @@ from collections import defaultdict
 from .stkObject import STKContainerObject 
 
 class Chain(STKContainerObject):
-    def __init__(self, root, name, unload=True):
-        super().__init__(root, name, AgESTKObjectType.eChain, unload=unload)
+    def __init__(self, root, name):
+        super().__init__(root, name, AgESTKObjectType.eChain)
 
     def _loadObjectImplementation(self):
         # Create the chain in STK
@@ -14,7 +14,7 @@ class Chain(STKContainerObject):
 
         print(f"Chain '{self.name}' created.")
 
-    def getStrandCounts(self):
+    def getStrandCounts(self) -> dict:
         """
         Computes the number of access occurrences for each strand in the chain.
 
@@ -46,7 +46,7 @@ class Chain(STKContainerObject):
             return {}
 
 
-    def computeIndividualAccess(self):
+    def computeIndividualAccess(self) -> dict:
         """
         Computes the access duration for each individual object in the chain.
 
@@ -81,7 +81,7 @@ class Chain(STKContainerObject):
             print(f"Error computing individual access for chain '{self.name}': {str(e)}")
             return {}
 
-    def computeTotalAccess(self):
+    def computeTotalAccess(self) -> float:
         """
         Computes the access for the chain, merges overlapping intervals, and returns the total duration of valid access intervals in seconds.
         """

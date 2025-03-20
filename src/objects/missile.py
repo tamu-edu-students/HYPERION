@@ -8,6 +8,7 @@ from geopy.geocoders import Nominatim
 from icecream import ic
 from agi.stk12.stkobjects import *
 from agi.stk12.utilities.colors import Colors
+from typing import Tuple
 from .stkObject import STKStandaloneObject 
 from .site import Site
 
@@ -32,110 +33,63 @@ class Missile(STKStandaloneObject):
         
         return cls(root, name, launch_site=launch_site, target_site=target_site, launch_time=launch_time, Mach=Mach)
 
-    def __init__(self, root, name, launch_site=None, target_site=None, launch_time=None, Mach=None, unload=True):
+    def __init__(self, root : AgStkObjectRoot, name: str, launch_site: Site=None, target_site: Site=None, launch_time: str=None, Mach: float=None):
         """
         Initializes a missile object with launch and target sites, launch time, and maximum Mach number.
 
         Parameters
         ----------
-        root : agi.stk12.stkobjects.AgStkObjectRoot
-            The STK scenario root object, required for adding the missile to STK.
-
-        name : str
-            The name of the missile object, which will be used as its identifier in STK.
-
-        launch_site : Site, optional
-            A `Site` object representing the missile's launch location.
-            - Expected attributes:
-                - lat (float): Latitude in decimal degrees (-90 to 90).
-                - lon (float): Longitude in decimal degrees (-180 to 180).
-                - city (str): Name of the city where the launch occurs.
-                - country (str): Country name of the launch location.
-            - If `None`, a random launch site will be selected.
-
-        target_site : Site, optional
-            A `Site` object representing the missile's target location.
-            - Expected attributes (same as `launch_site`):
-                - lat (float): Latitude in decimal degrees.
-                - lon (float): Longitude in decimal degrees.
-                - city (str): Name of the target city.
-                - country (str): Country name of the target location.
-            - If `None`, a random target site will be selected, ensuring it is in a different country than the launch site.
-
-        launch_time : str, optional
-            The time of missile launch in STK-compatible datetime format: `"DD MMM YYYY HH:MM:SS.SSSSSS"`.
+        - root: The STK scenario root object.
+        - name: The name of the missile object.
+        - launch_site: The missile's launch location.
+            If `None`, a random launch site will be selected.      
+        - target_site: The missile's impact location.
+            If `None`, a random target site will be selected.
+        - launch_time: The time of missile launch in STK-compatible datetime format: `"DD MMM YYYY HH:MM:SS.SSSSSS"`.
             Example: `"01 Jan 2025 00:00:00.000000"`.
-            - If `None`, a random launch time will be selected within the scenario's time window.
-
-        Mach : float, optional
-            The maximum speed of the missile in Mach number.
-            - If `None`, a random Mach number will be generated in the range [5.0, 15.0].
-
-        unload : bool, default=True
-            Specifies whether the missile object should be automatically unloaded and recreated in STK upon initialization.
-            - `True`: Ensures a fresh missile instance is created in STK.
-            - `False`: Uses an existing missile object if available.
-
-        Raises
-        -------
-        RuntimeError
-            If a valid launch or target site cannot be determined after multiple retries.
-
-        Example Usage
-        --------------
-        ```python
-        root = stkRoot  # Assuming STK root object is initialized
-        launch = Site(22.3, 114.2, "Lam Tin", "Hong Kong")
-        target = Site(9.02, 13.18, "Tchéboa", "Cameroon")
-        
-        missile = Missile(root, "Missile1", launch_site=launch, target_site=target, launch_time="01 Jan 2025 00:00:00.000000", Mach=10.0)
-        missile.loadObject()  # Add missile to STK scenario
-        ```
+            If `None`, a random launch time will be selected within the scenario's time window.
+        - Mach : The maximum speed of the missile in Mach number.
+            If `None`, a random Mach number will be generated in the range [5.0, 15.0].
         """
         Missile._ensureSaveDir()
 
-        super().__init__(root, name, AgESTKObjectType.eAircraft, unload=unload) 
+        super().__init__(root, name, AgESTKObjectType.eAircraft) 
 
-        if unload:
-            # Load the cities dataset
-            self.cities = pd.read_csv(self.cities_file)
+        # Load the cities dataset
+        self.cities = pd.read_csv(self.cities_file)
 
-            # Load the UN countries dataset
-            with open(Missile.un_countries_file, 'r') as f:
-                self.un_countries = {line.strip() for line in f}
+        # Load the UN countries dataset
+        with open(Missile.un_countries_file, 'r') as f:
+            self.un_countries = {line.strip() for line in f}
 
-            self.geolocator = Nominatim(user_agent="missile_simulator", timeout=2)
+        self.geolocator = Nominatim(user_agent="missile_simulator", timeout=2)
 
-            # Set or generate launch site
-            if launch_site is None:
-                self.launch_site = self.getRandomCity(exclude_un=True)
-                print(f"Random Launch Site: {self.launch_site.getCity()}, {self.launch_site.getCountry()}")
-            else:
-                self.launch_site = launch_site
-
-            # Set or generate target site in a different country
-            if target_site is None:
-                self.target_site = self.getRandomCity(exclude_country=self.getLaunchCountry(), only_un=True)
-                print(f"Random Target Site: {self.target_site.getCity()}, {self.target_site.getCountry()}")
-            else:
-                self.target_site = target_site
-
-            # Set or generate launch time within scenario time window
-            scenario = self.root.CurrentScenario
-            scenario_start = datetime.strptime(scenario.StartTime, "%d %b %Y %H:%M:%S.%f")
-            scenario_end = datetime.strptime(scenario.StopTime, "%d %b %Y %H:%M:%S.%f")
-            time_window = scenario_end - scenario_start - timedelta(hours=2)
-
-            self.launch_time = launch_time if launch_time else (scenario_start + timedelta(seconds=random.randint(0, int(time_window.total_seconds())))).strftime("%d %b %Y %H:%M:%S.%f")
-            print(f"Missile Launch Time: {self.launch_time}")
-
-            # Set or generate Mach number
-            self.Mach = Mach if Mach else round(random.uniform(5, 15), 2)
-            print(f"Mach Number: {self.Mach}")
-
+        # Set or generate launch site
+        if launch_site is None:
+            self.launch_site = self.getRandomCity(exclude_un=True)
+            print(f"Random Launch Site: {self.launch_site.city}, {self.launch_site.country}")
         else:
-            self.launch_time = self.getLaunchTime()
-            self.impact_time = self.getImpactTime()
+            self.launch_site = launch_site
+
+        # Set or generate target site in a different country
+        if target_site is None:
+            self.target_site = self.getRandomCity(exclude_country=self.launch_site.country, only_un=True)
+            print(f"Random Target Site: {self.target_site.city}, {self.target_site.country}")
+        else:
+            self.target_site = target_site
+
+        # Set or generate launch time within scenario time window
+        scenario = self.root.CurrentScenario
+        scenario_start = datetime.strptime(scenario.StartTime, "%d %b %Y %H:%M:%S.%f")
+        scenario_end = datetime.strptime(scenario.StopTime, "%d %b %Y %H:%M:%S.%f")
+        time_window = scenario_end - scenario_start - timedelta(hours=2)
+
+        self.launch_time = launch_time if launch_time else (scenario_start + timedelta(seconds=random.randint(0, int(time_window.total_seconds())))).strftime("%d %b %Y %H:%M:%S.%f")
+        print(f"Missile Launch Time: {self.launch_time}")
+
+        # Set or generate Mach number
+        self.Mach = Mach if Mach else round(random.uniform(5, 15), 2)
+        print(f"Mach Number: {self.Mach}")
 
     def _loadObjectImplementation(self):
         """
@@ -178,7 +132,7 @@ class Missile(STKStandaloneObject):
 
         self.impact_time = self.getImpactTime()
 
-        print(f"Missile {self.name} added to STK.")
+        print(f"Missile '{self.name}' added to STK.")
 
     def getRandomCity(self, exclude_country=None, exclude_un=False, only_un=False, max_retries=5):
         """
@@ -218,12 +172,6 @@ class Missile(STKStandaloneObject):
             retries += 1
 
         raise RuntimeError("Failed to geolocate a valid city after multiple retries.")
-
-    def getLaunchCountry(self):
-        """
-        Returns the country of the launch site.
-        """
-        return self.launch_site.country
     
     def getLaunchTime(self):
         """
@@ -236,7 +184,7 @@ class Missile(STKStandaloneObject):
         # Get the time of the last waypoint 
         first_waypoint = route.Waypoints.Item(0)
         launch_time = first_waypoint.Time 
-        print(f"Launch Time for {self.name}: {launch_time}")
+        print(f"Launch Time for '{self.name}': {launch_time}")
 
         return launch_time
     
@@ -251,7 +199,7 @@ class Missile(STKStandaloneObject):
         # Get the time of the last waypoint 
         final_waypoint = route.Waypoints.Item(route.Waypoints.Count - 1)
         impact_time = final_waypoint.Time 
-        print(f"Impact Time for {self.name}: {impact_time}")
+        print(f"Impact Time for '{self.name}': {impact_time}")
 
         return impact_time
 
@@ -306,25 +254,25 @@ class Missile(STKStandaloneObject):
         with open(file_path_txt, 'a', encoding="utf-8") as file:
             file.write(f"Missile Name: {self.name}\n")
             file.write(f"Launch Site:\n")
-            file.write(f"  Latitude: {self.launch_site.getLat()}\n")
-            file.write(f"  Longitude: {self.launch_site.getLon()}\n")
+            file.write(f"  Latitude: {self.launch_site.lat}\n")
+            file.write(f"  Longitude: {self.launch_site.lon}\n")
 
             try:
-                file.write(f"  City: {self.launch_site.getCity()}\n")
+                file.write(f"  City: {self.launch_site.city}\n")
             except UnicodeEncodeError:
                 file.write("  City: Unavailable\n")
 
-            file.write(f"  Country: {self.launch_site.getCountry()}\n")
+            file.write(f"  Country: {self.launch_site.country}\n")
             file.write(f"Target Site:\n")
-            file.write(f"  Latitude: {self.target_site.getLat()}\n")
-            file.write(f"  Longitude: {self.target_site.getLon()}\n")
+            file.write(f"  Latitude: {self.target_site.lat}\n")
+            file.write(f"  Longitude: {self.target_site.lon}\n")
 
             try:
-                file.write(f"  City: {self.target_site.getCity()}\n")
+                file.write(f"  City: {self.target_site.city}\n")
             except UnicodeEncodeError:
                 file.write("  City: Unavailable\n")
 
-            file.write(f"  Country: {self.target_site.getCountry()}\n")
+            file.write(f"  Country: {self.target_site.country}\n")
             file.write(f"Launch Time: {self.launch_time}\n")
 
             if hasattr(self, 'impact_time'):
@@ -343,27 +291,36 @@ class Missile(STKStandaloneObject):
 
             # Prepare row data
             try:
-                launch_city = self.launch_site.getCity()
+                launch_city = self.launch_site.city
             except UnicodeEncodeError:
                 launch_city = "Unavailable"
 
             try:
-                target_city = self.target_site.getCity()
+                target_city = self.target_site.city
             except UnicodeEncodeError:
                 target_city = "Unavailable"
 
             impact_time = self.impact_time if hasattr(self, 'impact_time') else "Not determined"
 
             writer.writerow([self.name, 
-                            self.launch_site.getLat(), self.launch_site.getLon(), launch_city, self.launch_site.getCountry(),
-                            self.target_site.getLat(), self.target_site.getLon(), target_city, self.target_site.getCountry(),
+                            self.launch_site.lat, self.launch_site.lon, launch_city, self.launch_site.country,
+                            self.target_site.lat, self.target_site.lon, target_city, self.target_site.country,
                             self.launch_time, impact_time, self.Mach])
 
         print(f"Missile details appended to {file_path_csv}.")
 
-    def getECFState(self, step_size=1):
+    def getECIState(self, step_size: int=1) -> Tuple[np.ndarray, np.ndarray]:
         """
-        Extracts ECF position and velocity for the missile at a given time step.
+        Extracts ECI position and velocity for the missile at a given time step.
+
+        Parameters
+        ---------
+        - step_size: The time granularity for saving data in seconds (default: 1s).
+
+        Returns
+        -------
+        - t_store: The timestamps of the flight path.
+        - states: The ECI states through the flight path.
         """
 
         try:
@@ -372,19 +329,17 @@ class Missile(STKStandaloneObject):
             # Access the data providers
             dp_val_position = self._identity.DataProviders.GetItemByName("Cartesian Position")
             
-            object_dp_position = dp_val_position.Group.GetItemByName("Fixed")
+            object_dp_position = dp_val_position.Group.GetItemByName("J2000")
             
             dp_val_velocity = self._identity.DataProviders.GetItemByName("Cartesian Velocity")
-            object_dp_velocity = dp_val_velocity.Group.GetItemByName("Fixed")
+            object_dp_velocity = dp_val_velocity.Group.GetItemByName("J2000")
             
-
             # Execute the query
             position = object_dp_position.Exec(self.root.CurrentScenario.StartTime, self.root.CurrentScenario.StopTime, step_size) # km
             velocity = object_dp_velocity.Exec(self.root.CurrentScenario.StartTime, self.root.CurrentScenario.StopTime, step_size) # km/s
 
             # Times
-            times = np.array(position.DataSets.GetDataSetByName("Time").GetValues(), dtype=float)
-            times -= times[0]
+            t_store = np.array(position.DataSets.GetDataSetByName("Time").GetValues(), dtype=float)
             
             # State
             x = np.array(position.DataSets.GetDataSetByName("x").GetValues(), dtype=float)
@@ -401,4 +356,4 @@ class Missile(STKStandaloneObject):
             # Switch back to UTCG
             self.root.UnitPreferences.Item("DateFormat").SetCurrentUnit("UTCG")
 
-        return times, states
+        return t_store, states

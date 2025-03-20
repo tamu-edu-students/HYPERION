@@ -2,8 +2,8 @@ from agi.stk12.stkobjects import *
 from .stkObject import STKContainerObject
 
 class Constellation(STKContainerObject):
-    def __init__(self, root, name, unload=True):
-        super().__init__(root, name, AgESTKObjectType.eConstellation, unload=unload)
+    def __init__(self, root, name):
+        super().__init__(root, name, AgESTKObjectType.eConstellation)
 
     def _loadObjectImplementation(self):
         """

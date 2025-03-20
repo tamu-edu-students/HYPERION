@@ -1,0 +1,2270 @@
+stk.v.12.0
+WrittenBy    STK_v12.9.0
+BEGIN Access
+    Scenario/Tracking/Satellite/LEOSats_P1_S5/Sensor/Sensor_P1_S5
+    Scenario/Tracking/Aircraft/Missile
+
+    IsComputed		 Yes
+    SaveComputedData		 Yes
+    ComputationMode		 1
+    UpdateOnReference		 Yes
+    DupIsDifferent		 No
+    UIOrderReversed		 No
+    UITimePeriod		 Object
+    UseLightTimeDelay		 Yes
+    ClockHost		 Base
+    TimeSense		 Receive
+    AberrationType		 Annual
+    TimeDelayConvergence		 5e-05
+    SetMaxStepFromInsts		 Yes
+    MaxTimeStep		 360
+    MinTimeStep		 0.01
+    TimeConvergence		 0.005
+    AbsValueConvergence		 1e-14
+    RelValueConvergence		 1e-08
+    DetectEventsUsingSamplesOnly		 No
+
+    BEGIN ConsideredIntervals
+
+        2025-03-19T05:15:43.028482469 2025-03-19T05:24:58.507083710
+
+    END ConsideredIntervals
+
+    BEGIN AccessIntervals
+
+        2025-03-19T05:15:43.028482469 2025-03-19T05:24:58.507083710
+
+    END AccessIntervals
+
+    BEGIN StageList
+
+        BEGIN Stage
+
+            MaxRelMotion		 0.34
+
+            BEGIN ConstraintList
+
+                BEGIN Constraint
+
+                    Name		 AzimuthAngle
+                    Instance		 Object1
+                    Action		 IncludeIntervals
+                    Type		 ZeroBound
+                    ConData		 Min		 -5.9999999999999993e+01Max		  5.9999999999999993e+01
+                    ComputationID		 1
+
+                    BEGIN ConstraintInputTimes
+
+                        2025-03-19T05:15:43.028482469 2025-03-19T05:24:58.507083710
+
+                    END ConstraintInputTimes
+
+                    StartConstrainedByAvailability		 No
+                    StopConstrainedByAvailability		 No
+
+                    BEGIN ConstraintSatisfaction
+
+                        2025-03-19T05:15:43.028482469 2025-03-19T05:24:58.507083710
+
+                    END ConstraintSatisfaction
+
+                END Constraint
+
+            END ConstraintList
+
+        END Stage
+
+
+        BEGIN Stage
+
+            MaxRelMotion		 0.34
+
+            BEGIN ConstraintList
+
+                BEGIN Constraint
+
+                    Name		 LineOfSight
+                    Instance		 Object1
+                    Action		 IncludeIntervals
+                    Type		 ZeroBound
+                    ComputationID		 2
+
+                    BEGIN ConstraintInputTimes
+
+                        2025-03-19T05:15:43.028482469 2025-03-19T05:24:58.507083710
+
+                    END ConstraintInputTimes
+
+                    StartConstrainedByAvailability		 No
+                    StopConstrainedByAvailability		 No
+
+                    BEGIN ConstraintSatisfaction
+
+                        2025-03-19T05:15:43.028482469 2025-03-19T05:24:58.507083710
+
+                    END ConstraintSatisfaction
+
+                END Constraint
+
+            END ConstraintList
+
+        END Stage
+
+
+        BEGIN Stage
+
+            MaxRelMotion		 0.17
+
+            BEGIN ConstraintList
+
+                BEGIN Constraint
+
+                    Name		 FieldOfView
+                    Instance		 Object1
+                    Action		 IncludeIntervals
+                    Type		 ZeroBound
+                    ComputationID		 3
+
+                    BEGIN ConstraintInputTimes
+
+                        2025-03-19T05:15:43.028482469 2025-03-19T05:24:58.507083710
+
+                    END ConstraintInputTimes
+
+                    StartConstrainedByAvailability		 No
+                    StopConstrainedByAvailability		 No
+
+                    BEGIN ConstraintSatisfaction
+
+                        2025-03-19T05:15:43.028482469 2025-03-19T05:24:58.507083710
+
+                    END ConstraintSatisfaction
+
+                END Constraint
+
+            END ConstraintList
+
+        END Stage
+
+
+    END StageList
+
+    Show		 Yes
+    Inherit		 Yes
+    ShowIV		 Yes
+    ShowLineGfx		 Yes
+    ShowHiliteGfx		 Yes
+    LineWidth		 1
+
+    LineStyle		 0
+    BEGIN Crdn
+    END Crdn
+
+END Access
+
+BEGIN Access
+    Scenario/Tracking/Satellite/LEOSats_P2_S5/Sensor/Sensor_P2_S5
+    Scenario/Tracking/Aircraft/Missile
+
+    IsComputed		 Yes
+    SaveComputedData		 Yes
+    ComputationMode		 1
+    UpdateOnReference		 Yes
+    DupIsDifferent		 No
+    UIOrderReversed		 No
+    UITimePeriod		 Object
+    UseLightTimeDelay		 Yes
+    ClockHost		 Base
+    TimeSense		 Receive
+    AberrationType		 Annual
+    TimeDelayConvergence		 5e-05
+    SetMaxStepFromInsts		 Yes
+    MaxTimeStep		 360
+    MinTimeStep		 0.01
+    TimeConvergence		 0.005
+    AbsValueConvergence		 1e-14
+    RelValueConvergence		 1e-08
+    DetectEventsUsingSamplesOnly		 No
+
+    BEGIN ConsideredIntervals
+
+        2025-03-19T04:59:09.607528239 2025-03-19T05:05:35.230715583
+
+    END ConsideredIntervals
+
+    BEGIN AccessIntervals
+
+        2025-03-19T04:59:09.607528239 2025-03-19T05:05:35.230715583
+
+    END AccessIntervals
+
+    BEGIN StageList
+
+        BEGIN Stage
+
+            MaxRelMotion		 0.34
+
+            BEGIN ConstraintList
+
+                BEGIN Constraint
+
+                    Name		 AzimuthAngle
+                    Instance		 Object1
+                    Action		 IncludeIntervals
+                    Type		 ZeroBound
+                    ConData		 Min		 -5.9999999999999993e+01Max		  5.9999999999999993e+01
+                    ComputationID		 1
+
+                    BEGIN ConstraintInputTimes
+
+                        2025-03-19T04:59:09.607528239 2025-03-19T05:05:35.230715583
+
+                    END ConstraintInputTimes
+
+                    StartConstrainedByAvailability		 No
+                    StopConstrainedByAvailability		 No
+
+                    BEGIN ConstraintSatisfaction
+
+                        2025-03-19T04:59:09.607528239 2025-03-19T05:05:35.230715583
+
+                    END ConstraintSatisfaction
+
+                END Constraint
+
+            END ConstraintList
+
+        END Stage
+
+
+        BEGIN Stage
+
+            MaxRelMotion		 0.34
+
+            BEGIN ConstraintList
+
+                BEGIN Constraint
+
+                    Name		 LineOfSight
+                    Instance		 Object1
+                    Action		 IncludeIntervals
+                    Type		 ZeroBound
+                    ComputationID		 2
+
+                    BEGIN ConstraintInputTimes
+
+                        2025-03-19T04:59:09.607528239 2025-03-19T05:05:35.230715583
+
+                    END ConstraintInputTimes
+
+                    StartConstrainedByAvailability		 No
+                    StopConstrainedByAvailability		 No
+
+                    BEGIN ConstraintSatisfaction
+
+                        2025-03-19T04:59:09.607528239 2025-03-19T05:05:35.230715583
+
+                    END ConstraintSatisfaction
+
+                END Constraint
+
+            END ConstraintList
+
+        END Stage
+
+
+        BEGIN Stage
+
+            MaxRelMotion		 0.17
+
+            BEGIN ConstraintList
+
+                BEGIN Constraint
+
+                    Name		 FieldOfView
+                    Instance		 Object1
+                    Action		 IncludeIntervals
+                    Type		 ZeroBound
+                    ComputationID		 3
+
+                    BEGIN ConstraintInputTimes
+
+                        2025-03-19T04:59:09.607528239 2025-03-19T05:05:35.230715583
+
+                    END ConstraintInputTimes
+
+                    StartConstrainedByAvailability		 No
+                    StopConstrainedByAvailability		 No
+
+                    BEGIN ConstraintSatisfaction
+
+                        2025-03-19T04:59:09.607528239 2025-03-19T05:05:35.230715583
+
+                    END ConstraintSatisfaction
+
+                END Constraint
+
+            END ConstraintList
+
+        END Stage
+
+
+    END StageList
+
+    Show		 Yes
+    Inherit		 Yes
+    ShowIV		 Yes
+    ShowLineGfx		 Yes
+    ShowHiliteGfx		 Yes
+    LineWidth		 1
+
+    LineStyle		 0
+    BEGIN Crdn
+    END Crdn
+
+END Access
+
+BEGIN Access
+    Scenario/Tracking/Satellite/LEOSats_P3_S5/Sensor/Sensor_P3_S5
+    Scenario/Tracking/Aircraft/Missile
+
+    IsComputed		 Yes
+    SaveComputedData		 Yes
+    ComputationMode		 1
+    UpdateOnReference		 Yes
+    DupIsDifferent		 No
+    UIOrderReversed		 No
+    UITimePeriod		 Object
+    UseLightTimeDelay		 Yes
+    ClockHost		 Base
+    TimeSense		 Receive
+    AberrationType		 Annual
+    TimeDelayConvergence		 5e-05
+    SetMaxStepFromInsts		 Yes
+    MaxTimeStep		 360
+    MinTimeStep		 0.01
+    TimeConvergence		 0.005
+    AbsValueConvergence		 1e-14
+    RelValueConvergence		 1e-08
+    DetectEventsUsingSamplesOnly		 No
+
+    BEGIN ConsideredIntervals
+
+        2025-03-19T04:45:25.678498102 2025-03-19T04:50:17.542639140
+
+    END ConsideredIntervals
+
+    BEGIN AccessIntervals
+
+        2025-03-19T04:45:25.678498102 2025-03-19T04:50:17.542639140
+
+    END AccessIntervals
+
+    BEGIN StageList
+
+        BEGIN Stage
+
+            MaxRelMotion		 0.34
+
+            BEGIN ConstraintList
+
+                BEGIN Constraint
+
+                    Name		 AzimuthAngle
+                    Instance		 Object1
+                    Action		 IncludeIntervals
+                    Type		 ZeroBound
+                    ConData		 Min		 -5.9999999999999993e+01Max		  5.9999999999999993e+01
+                    ComputationID		 1
+
+                    BEGIN ConstraintInputTimes
+
+                        2025-03-19T04:45:25.678498102 2025-03-19T04:50:17.542639140
+
+                    END ConstraintInputTimes
+
+                    StartConstrainedByAvailability		 No
+                    StopConstrainedByAvailability		 No
+
+                    BEGIN ConstraintSatisfaction
+
+                        2025-03-19T04:45:25.678498102 2025-03-19T04:50:17.542639140
+
+                    END ConstraintSatisfaction
+
+                END Constraint
+
+            END ConstraintList
+
+        END Stage
+
+
+        BEGIN Stage
+
+            MaxRelMotion		 0.34
+
+            BEGIN ConstraintList
+
+                BEGIN Constraint
+
+                    Name		 LineOfSight
+                    Instance		 Object1
+                    Action		 IncludeIntervals
+                    Type		 ZeroBound
+                    ComputationID		 2
+
+                    BEGIN ConstraintInputTimes
+
+                        2025-03-19T04:45:25.678498102 2025-03-19T04:50:17.542639140
+
+                    END ConstraintInputTimes
+
+                    StartConstrainedByAvailability		 No
+                    StopConstrainedByAvailability		 No
+
+                    BEGIN ConstraintSatisfaction
+
+                        2025-03-19T04:45:25.678498102 2025-03-19T04:50:17.542639140
+
+                    END ConstraintSatisfaction
+
+                END Constraint
+
+            END ConstraintList
+
+        END Stage
+
+
+        BEGIN Stage
+
+            MaxRelMotion		 0.17
+
+            BEGIN ConstraintList
+
+                BEGIN Constraint
+
+                    Name		 FieldOfView
+                    Instance		 Object1
+                    Action		 IncludeIntervals
+                    Type		 ZeroBound
+                    ComputationID		 3
+
+                    BEGIN ConstraintInputTimes
+
+                        2025-03-19T04:45:25.678498102 2025-03-19T04:50:17.542639140
+
+                    END ConstraintInputTimes
+
+                    StartConstrainedByAvailability		 No
+                    StopConstrainedByAvailability		 No
+
+                    BEGIN ConstraintSatisfaction
+
+                        2025-03-19T04:45:25.678498102 2025-03-19T04:50:17.542639140
+
+                    END ConstraintSatisfaction
+
+                END Constraint
+
+            END ConstraintList
+
+        END Stage
+
+
+    END StageList
+
+    Show		 Yes
+    Inherit		 Yes
+    ShowIV		 Yes
+    ShowLineGfx		 Yes
+    ShowHiliteGfx		 Yes
+    LineWidth		 1
+
+    LineStyle		 0
+    BEGIN Crdn
+    END Crdn
+
+END Access
+
+BEGIN Access
+    Scenario/Tracking/Satellite/LEOSats_P4_S2/Sensor/Sensor_P4_S2
+    Scenario/Tracking/Aircraft/Missile
+
+    IsComputed		 Yes
+    SaveComputedData		 Yes
+    ComputationMode		 1
+    UpdateOnReference		 Yes
+    DupIsDifferent		 No
+    UIOrderReversed		 No
+    UITimePeriod		 Object
+    UseLightTimeDelay		 Yes
+    ClockHost		 Base
+    TimeSense		 Receive
+    AberrationType		 Annual
+    TimeDelayConvergence		 5e-05
+    SetMaxStepFromInsts		 Yes
+    MaxTimeStep		 360
+    MinTimeStep		 0.01
+    TimeConvergence		 0.005
+    AbsValueConvergence		 1e-14
+    RelValueConvergence		 1e-08
+    DetectEventsUsingSamplesOnly		 No
+
+    BEGIN ConsideredIntervals
+
+        2025-03-19T05:17:15.854666383 2025-03-19T05:18:48.686894112
+
+    END ConsideredIntervals
+
+    BEGIN AccessIntervals
+
+        2025-03-19T05:17:15.854666383 2025-03-19T05:18:48.686894112
+
+    END AccessIntervals
+
+    BEGIN StageList
+
+        BEGIN Stage
+
+            MaxRelMotion		 0.34
+
+            BEGIN ConstraintList
+
+                BEGIN Constraint
+
+                    Name		 AzimuthAngle
+                    Instance		 Object1
+                    Action		 IncludeIntervals
+                    Type		 ZeroBound
+                    ConData		 Min		 -5.9999999999999993e+01Max		  5.9999999999999993e+01
+                    ComputationID		 1
+
+                    BEGIN ConstraintInputTimes
+
+                        2025-03-19T05:17:15.854666383 2025-03-19T05:18:48.686894112
+
+                    END ConstraintInputTimes
+
+                    StartConstrainedByAvailability		 No
+                    StopConstrainedByAvailability		 No
+
+                    BEGIN ConstraintSatisfaction
+
+                        2025-03-19T05:17:15.854666383 2025-03-19T05:18:48.686894112
+
+                    END ConstraintSatisfaction
+
+                END Constraint
+
+            END ConstraintList
+
+        END Stage
+
+
+        BEGIN Stage
+
+            MaxRelMotion		 0.34
+
+            BEGIN ConstraintList
+
+                BEGIN Constraint
+
+                    Name		 LineOfSight
+                    Instance		 Object1
+                    Action		 IncludeIntervals
+                    Type		 ZeroBound
+                    ComputationID		 2
+
+                    BEGIN ConstraintInputTimes
+
+                        2025-03-19T05:17:15.854666383 2025-03-19T05:18:48.686894112
+
+                    END ConstraintInputTimes
+
+                    StartConstrainedByAvailability		 No
+                    StopConstrainedByAvailability		 No
+
+                    BEGIN ConstraintSatisfaction
+
+                        2025-03-19T05:17:15.854666383 2025-03-19T05:18:48.686894112
+
+                    END ConstraintSatisfaction
+
+                END Constraint
+
+            END ConstraintList
+
+        END Stage
+
+
+        BEGIN Stage
+
+            MaxRelMotion		 0.17
+
+            BEGIN ConstraintList
+
+                BEGIN Constraint
+
+                    Name		 FieldOfView
+                    Instance		 Object1
+                    Action		 IncludeIntervals
+                    Type		 ZeroBound
+                    ComputationID		 3
+
+                    BEGIN ConstraintInputTimes
+
+                        2025-03-19T05:17:15.854666383 2025-03-19T05:18:48.686894112
+
+                    END ConstraintInputTimes
+
+                    StartConstrainedByAvailability		 No
+                    StopConstrainedByAvailability		 No
+
+                    BEGIN ConstraintSatisfaction
+
+                        2025-03-19T05:17:15.854666383 2025-03-19T05:18:48.686894112
+
+                    END ConstraintSatisfaction
+
+                END Constraint
+
+            END ConstraintList
+
+        END Stage
+
+
+    END StageList
+
+    Show		 Yes
+    Inherit		 Yes
+    ShowIV		 Yes
+    ShowLineGfx		 Yes
+    ShowHiliteGfx		 Yes
+    LineWidth		 1
+
+    LineStyle		 0
+    BEGIN Crdn
+    END Crdn
+
+END Access
+
+BEGIN Access
+    Scenario/Tracking/Satellite/LEOSats_P3_S3/Sensor/Sensor_P3_S3
+    Scenario/Tracking/Aircraft/Missile
+
+    IsComputed		 Yes
+    SaveComputedData		 Yes
+    ComputationMode		 1
+    UpdateOnReference		 Yes
+    DupIsDifferent		 No
+    UIOrderReversed		 No
+    UITimePeriod		 Object
+    UseLightTimeDelay		 Yes
+    ClockHost		 Base
+    TimeSense		 Receive
+    AberrationType		 Annual
+    TimeDelayConvergence		 5e-05
+    SetMaxStepFromInsts		 Yes
+    MaxTimeStep		 360
+    MinTimeStep		 0.01
+    TimeConvergence		 0.005
+    AbsValueConvergence		 1e-14
+    RelValueConvergence		 1e-08
+    DetectEventsUsingSamplesOnly		 No
+
+    BEGIN ConsideredIntervals
+
+        2025-03-19T05:13:10.912534370 2025-03-19T05:16:13.197438390
+
+    END ConsideredIntervals
+
+    BEGIN AccessIntervals
+
+        2025-03-19T05:13:10.917284370 2025-03-19T05:16:13.197438390
+
+    END AccessIntervals
+
+    BEGIN StageList
+
+        BEGIN Stage
+
+            MaxRelMotion		 0.34
+
+            BEGIN ConstraintList
+
+                BEGIN Constraint
+
+                    Name		 AzimuthAngle
+                    Instance		 Object1
+                    Action		 IncludeIntervals
+                    Type		 ZeroBound
+                    ConData		 Min		 -5.9999999999999993e+01Max		  5.9999999999999993e+01
+                    ComputationID		 1
+
+                    BEGIN ConstraintInputTimes
+
+                        2025-03-19T05:13:10.912534370 2025-03-19T05:16:13.197438390
+
+                    END ConstraintInputTimes
+
+                    StartConstrainedByAvailability		 No
+                    StopConstrainedByAvailability		 No
+
+                    BEGIN ConstraintSatisfaction
+
+                        2025-03-19T05:13:10.912534370 2025-03-19T05:16:13.197438390
+
+                    END ConstraintSatisfaction
+
+                END Constraint
+
+            END ConstraintList
+
+        END Stage
+
+
+        BEGIN Stage
+
+            MaxRelMotion		 0.34
+
+            BEGIN ConstraintList
+
+                BEGIN Constraint
+
+                    Name		 LineOfSight
+                    Instance		 Object1
+                    Action		 IncludeIntervals
+                    Type		 ZeroBound
+                    ComputationID		 2
+
+                    BEGIN ConstraintInputTimes
+
+                        2025-03-19T05:13:10.912534370 2025-03-19T05:16:13.197438390
+
+                    END ConstraintInputTimes
+
+                    StartConstrainedByAvailability		 No
+                    StopConstrainedByAvailability		 No
+
+                    BEGIN ConstraintSatisfaction
+
+                        2025-03-19T05:13:10.917284370 2025-03-19T05:16:13.197438390
+
+                    END ConstraintSatisfaction
+
+                END Constraint
+
+            END ConstraintList
+
+        END Stage
+
+
+        BEGIN Stage
+
+            MaxRelMotion		 0.17
+
+            BEGIN ConstraintList
+
+                BEGIN Constraint
+
+                    Name		 FieldOfView
+                    Instance		 Object1
+                    Action		 IncludeIntervals
+                    Type		 ZeroBound
+                    ComputationID		 3
+
+                    BEGIN ConstraintInputTimes
+
+                        2025-03-19T05:13:10.917284370 2025-03-19T05:16:13.197438390
+
+                    END ConstraintInputTimes
+
+                    StartConstrainedByAvailability		 No
+                    StopConstrainedByAvailability		 No
+
+                    BEGIN ConstraintSatisfaction
+
+                        2025-03-19T05:13:10.917284370 2025-03-19T05:16:13.197438390
+
+                    END ConstraintSatisfaction
+
+                END Constraint
+
+            END ConstraintList
+
+        END Stage
+
+
+    END StageList
+
+    Show		 Yes
+    Inherit		 Yes
+    ShowIV		 Yes
+    ShowLineGfx		 Yes
+    ShowHiliteGfx		 Yes
+    LineWidth		 1
+
+    LineStyle		 0
+    BEGIN Crdn
+    END Crdn
+
+END Access
+
+BEGIN Access
+    Scenario/Tracking/Satellite/LEOSats_P3_S2/Sensor/Sensor_P3_S2
+    Scenario/Tracking/Aircraft/Missile
+
+    IsComputed		 Yes
+    SaveComputedData		 Yes
+    ComputationMode		 1
+    UpdateOnReference		 Yes
+    DupIsDifferent		 No
+    UIOrderReversed		 No
+    UITimePeriod		 Object
+    UseLightTimeDelay		 Yes
+    ClockHost		 Base
+    TimeSense		 Receive
+    AberrationType		 Annual
+    TimeDelayConvergence		 5e-05
+    SetMaxStepFromInsts		 Yes
+    MaxTimeStep		 360
+    MinTimeStep		 0.01
+    TimeConvergence		 0.005
+    AbsValueConvergence		 1e-14
+    RelValueConvergence		 1e-08
+    DetectEventsUsingSamplesOnly		 No
+
+    BEGIN ConsideredIntervals
+
+        2025-03-19T05:27:22.260715479 2025-03-19T05:28:59.911240400
+
+    END ConsideredIntervals
+
+    BEGIN AccessIntervals
+
+        2025-03-19T05:27:22.260715479 2025-03-19T05:28:59.911240400
+
+    END AccessIntervals
+
+    BEGIN StageList
+
+        BEGIN Stage
+
+            MaxRelMotion		 0.34
+
+            BEGIN ConstraintList
+
+                BEGIN Constraint
+
+                    Name		 AzimuthAngle
+                    Instance		 Object1
+                    Action		 IncludeIntervals
+                    Type		 ZeroBound
+                    ConData		 Min		 -5.9999999999999993e+01Max		  5.9999999999999993e+01
+                    ComputationID		 1
+
+                    BEGIN ConstraintInputTimes
+
+                        2025-03-19T05:27:22.260715479 2025-03-19T05:28:59.911240400
+
+                    END ConstraintInputTimes
+
+                    StartConstrainedByAvailability		 No
+                    StopConstrainedByAvailability		 No
+
+                    BEGIN ConstraintSatisfaction
+
+                        2025-03-19T05:27:22.260715479 2025-03-19T05:28:59.911240400
+
+                    END ConstraintSatisfaction
+
+                END Constraint
+
+            END ConstraintList
+
+        END Stage
+
+
+        BEGIN Stage
+
+            MaxRelMotion		 0.34
+
+            BEGIN ConstraintList
+
+                BEGIN Constraint
+
+                    Name		 LineOfSight
+                    Instance		 Object1
+                    Action		 IncludeIntervals
+                    Type		 ZeroBound
+                    ComputationID		 2
+
+                    BEGIN ConstraintInputTimes
+
+                        2025-03-19T05:27:22.260715479 2025-03-19T05:28:59.911240400
+
+                    END ConstraintInputTimes
+
+                    StartConstrainedByAvailability		 No
+                    StopConstrainedByAvailability		 No
+
+                    BEGIN ConstraintSatisfaction
+
+                        2025-03-19T05:27:22.260715479 2025-03-19T05:28:59.911240400
+
+                    END ConstraintSatisfaction
+
+                END Constraint
+
+            END ConstraintList
+
+        END Stage
+
+
+        BEGIN Stage
+
+            MaxRelMotion		 0.17
+
+            BEGIN ConstraintList
+
+                BEGIN Constraint
+
+                    Name		 FieldOfView
+                    Instance		 Object1
+                    Action		 IncludeIntervals
+                    Type		 ZeroBound
+                    ComputationID		 3
+
+                    BEGIN ConstraintInputTimes
+
+                        2025-03-19T05:27:22.260715479 2025-03-19T05:28:59.911240400
+
+                    END ConstraintInputTimes
+
+                    StartConstrainedByAvailability		 No
+                    StopConstrainedByAvailability		 No
+
+                    BEGIN ConstraintSatisfaction
+
+                        2025-03-19T05:27:22.260715479 2025-03-19T05:28:59.911240400
+
+                    END ConstraintSatisfaction
+
+                END Constraint
+
+            END ConstraintList
+
+        END Stage
+
+
+    END StageList
+
+    Show		 Yes
+    Inherit		 Yes
+    ShowIV		 Yes
+    ShowLineGfx		 Yes
+    ShowHiliteGfx		 Yes
+    LineWidth		 1
+
+    LineStyle		 0
+    BEGIN Crdn
+    END Crdn
+
+END Access
+
+BEGIN Access
+    Scenario/Tracking/Satellite/LEOSats_P1_S6/Sensor/Sensor_P1_S6
+    Scenario/Tracking/Aircraft/Missile
+
+    IsComputed		 Yes
+    SaveComputedData		 Yes
+    ComputationMode		 1
+    UpdateOnReference		 Yes
+    DupIsDifferent		 No
+    UIOrderReversed		 No
+    UITimePeriod		 Object
+    UseLightTimeDelay		 Yes
+    ClockHost		 Base
+    TimeSense		 Receive
+    AberrationType		 Annual
+    TimeDelayConvergence		 5e-05
+    SetMaxStepFromInsts		 Yes
+    MaxTimeStep		 360
+    MinTimeStep		 0.01
+    TimeConvergence		 0.005
+    AbsValueConvergence		 1e-14
+    RelValueConvergence		 1e-08
+    DetectEventsUsingSamplesOnly		 No
+
+    BEGIN ConsideredIntervals
+
+        2025-03-19T04:53:52.641768759 2025-03-19T04:57:13.661380227
+
+    END ConsideredIntervals
+
+    BEGIN AccessIntervals
+
+        2025-03-19T04:53:52.641768759 2025-03-19T04:57:13.661380227
+
+    END AccessIntervals
+
+    BEGIN StageList
+
+        BEGIN Stage
+
+            MaxRelMotion		 0.34
+
+            BEGIN ConstraintList
+
+                BEGIN Constraint
+
+                    Name		 AzimuthAngle
+                    Instance		 Object1
+                    Action		 IncludeIntervals
+                    Type		 ZeroBound
+                    ConData		 Min		 -5.9999999999999993e+01Max		  5.9999999999999993e+01
+                    ComputationID		 1
+
+                    BEGIN ConstraintInputTimes
+
+                        2025-03-19T04:53:52.641768759 2025-03-19T04:57:13.661380227
+
+                    END ConstraintInputTimes
+
+                    StartConstrainedByAvailability		 No
+                    StopConstrainedByAvailability		 No
+
+                    BEGIN ConstraintSatisfaction
+
+                        2025-03-19T04:53:52.641768759 2025-03-19T04:57:13.661380227
+
+                    END ConstraintSatisfaction
+
+                END Constraint
+
+            END ConstraintList
+
+        END Stage
+
+
+        BEGIN Stage
+
+            MaxRelMotion		 0.34
+
+            BEGIN ConstraintList
+
+                BEGIN Constraint
+
+                    Name		 LineOfSight
+                    Instance		 Object1
+                    Action		 IncludeIntervals
+                    Type		 ZeroBound
+                    ComputationID		 2
+
+                    BEGIN ConstraintInputTimes
+
+                        2025-03-19T04:53:52.641768759 2025-03-19T04:57:13.661380227
+
+                    END ConstraintInputTimes
+
+                    StartConstrainedByAvailability		 No
+                    StopConstrainedByAvailability		 No
+
+                    BEGIN ConstraintSatisfaction
+
+                        2025-03-19T04:53:52.641768759 2025-03-19T04:57:13.661380227
+
+                    END ConstraintSatisfaction
+
+                END Constraint
+
+            END ConstraintList
+
+        END Stage
+
+
+        BEGIN Stage
+
+            MaxRelMotion		 0.17
+
+            BEGIN ConstraintList
+
+                BEGIN Constraint
+
+                    Name		 FieldOfView
+                    Instance		 Object1
+                    Action		 IncludeIntervals
+                    Type		 ZeroBound
+                    ComputationID		 3
+
+                    BEGIN ConstraintInputTimes
+
+                        2025-03-19T04:53:52.641768759 2025-03-19T04:57:13.661380227
+
+                    END ConstraintInputTimes
+
+                    StartConstrainedByAvailability		 No
+                    StopConstrainedByAvailability		 No
+
+                    BEGIN ConstraintSatisfaction
+
+                        2025-03-19T04:53:52.641768759 2025-03-19T04:57:13.661380227
+
+                    END ConstraintSatisfaction
+
+                END Constraint
+
+            END ConstraintList
+
+        END Stage
+
+
+    END StageList
+
+    Show		 Yes
+    Inherit		 Yes
+    ShowIV		 Yes
+    ShowLineGfx		 Yes
+    ShowHiliteGfx		 Yes
+    LineWidth		 1
+
+    LineStyle		 0
+    BEGIN Crdn
+    END Crdn
+
+END Access
+
+BEGIN Access
+    Scenario/Tracking/Satellite/LEOSats_P4_S3/Sensor/Sensor_P4_S3
+    Scenario/Tracking/Aircraft/Missile
+
+    IsComputed		 Yes
+    SaveComputedData		 Yes
+    ComputationMode		 1
+    UpdateOnReference		 Yes
+    DupIsDifferent		 No
+    UIOrderReversed		 No
+    UITimePeriod		 Object
+    UseLightTimeDelay		 Yes
+    ClockHost		 Base
+    TimeSense		 Receive
+    AberrationType		 Annual
+    TimeDelayConvergence		 5e-05
+    SetMaxStepFromInsts		 Yes
+    MaxTimeStep		 360
+    MinTimeStep		 0.01
+    TimeConvergence		 0.005
+    AbsValueConvergence		 1e-14
+    RelValueConvergence		 1e-08
+    DetectEventsUsingSamplesOnly		 No
+
+    BEGIN ConsideredIntervals
+
+        2025-03-19T05:00:49.339602403 2025-03-19T05:05:59.133103814
+
+    END ConsideredIntervals
+
+    BEGIN AccessIntervals
+
+        2025-03-19T05:00:49.339602403 2025-03-19T05:05:59.133103814
+
+    END AccessIntervals
+
+    BEGIN StageList
+
+        BEGIN Stage
+
+            MaxRelMotion		 0.34
+
+            BEGIN ConstraintList
+
+                BEGIN Constraint
+
+                    Name		 AzimuthAngle
+                    Instance		 Object1
+                    Action		 IncludeIntervals
+                    Type		 ZeroBound
+                    ConData		 Min		 -5.9999999999999993e+01Max		  5.9999999999999993e+01
+                    ComputationID		 1
+
+                    BEGIN ConstraintInputTimes
+
+                        2025-03-19T05:00:49.339602403 2025-03-19T05:05:59.133103814
+
+                    END ConstraintInputTimes
+
+                    StartConstrainedByAvailability		 No
+                    StopConstrainedByAvailability		 No
+
+                    BEGIN ConstraintSatisfaction
+
+                        2025-03-19T05:00:49.339602403 2025-03-19T05:05:59.133103814
+
+                    END ConstraintSatisfaction
+
+                END Constraint
+
+            END ConstraintList
+
+        END Stage
+
+
+        BEGIN Stage
+
+            MaxRelMotion		 0.34
+
+            BEGIN ConstraintList
+
+                BEGIN Constraint
+
+                    Name		 LineOfSight
+                    Instance		 Object1
+                    Action		 IncludeIntervals
+                    Type		 ZeroBound
+                    ComputationID		 2
+
+                    BEGIN ConstraintInputTimes
+
+                        2025-03-19T05:00:49.339602403 2025-03-19T05:05:59.133103814
+
+                    END ConstraintInputTimes
+
+                    StartConstrainedByAvailability		 No
+                    StopConstrainedByAvailability		 No
+
+                    BEGIN ConstraintSatisfaction
+
+                        2025-03-19T05:00:49.339602403 2025-03-19T05:05:59.133103814
+
+                    END ConstraintSatisfaction
+
+                END Constraint
+
+            END ConstraintList
+
+        END Stage
+
+
+        BEGIN Stage
+
+            MaxRelMotion		 0.17
+
+            BEGIN ConstraintList
+
+                BEGIN Constraint
+
+                    Name		 FieldOfView
+                    Instance		 Object1
+                    Action		 IncludeIntervals
+                    Type		 ZeroBound
+                    ComputationID		 3
+
+                    BEGIN ConstraintInputTimes
+
+                        2025-03-19T05:00:49.339602403 2025-03-19T05:05:59.133103814
+
+                    END ConstraintInputTimes
+
+                    StartConstrainedByAvailability		 No
+                    StopConstrainedByAvailability		 No
+
+                    BEGIN ConstraintSatisfaction
+
+                        2025-03-19T05:00:49.339602403 2025-03-19T05:05:59.133103814
+
+                    END ConstraintSatisfaction
+
+                END Constraint
+
+            END ConstraintList
+
+        END Stage
+
+
+    END StageList
+
+    Show		 Yes
+    Inherit		 Yes
+    ShowIV		 Yes
+    ShowLineGfx		 Yes
+    ShowHiliteGfx		 Yes
+    LineWidth		 1
+
+    LineStyle		 0
+    BEGIN Crdn
+    END Crdn
+
+END Access
+
+BEGIN Access
+    Scenario/Tracking/Satellite/LEOSats_P2_S6/Sensor/Sensor_P2_S6
+    Scenario/Tracking/Aircraft/Missile
+
+    IsComputed		 Yes
+    SaveComputedData		 Yes
+    ComputationMode		 1
+    UpdateOnReference		 Yes
+    DupIsDifferent		 No
+    UIOrderReversed		 No
+    UITimePeriod		 Object
+    UseLightTimeDelay		 Yes
+    ClockHost		 Base
+    TimeSense		 Receive
+    AberrationType		 Annual
+    TimeDelayConvergence		 5e-05
+    SetMaxStepFromInsts		 Yes
+    MaxTimeStep		 360
+    MinTimeStep		 0.01
+    TimeConvergence		 0.005
+    AbsValueConvergence		 1e-14
+    RelValueConvergence		 1e-08
+    DetectEventsUsingSamplesOnly		 No
+
+    BEGIN ConsideredIntervals
+
+        2025-03-19T04:42:37.373453935 2025-03-19T04:50:18.456332377
+
+    END ConsideredIntervals
+
+    BEGIN AccessIntervals
+
+        2025-03-19T04:42:37.373453935 2025-03-19T04:50:18.456332377
+
+    END AccessIntervals
+
+    BEGIN StageList
+
+        BEGIN Stage
+
+            MaxRelMotion		 0.34
+
+            BEGIN ConstraintList
+
+                BEGIN Constraint
+
+                    Name		 AzimuthAngle
+                    Instance		 Object1
+                    Action		 IncludeIntervals
+                    Type		 ZeroBound
+                    ConData		 Min		 -5.9999999999999993e+01Max		  5.9999999999999993e+01
+                    ComputationID		 1
+
+                    BEGIN ConstraintInputTimes
+
+                        2025-03-19T04:42:37.373453935 2025-03-19T04:50:18.456332377
+
+                    END ConstraintInputTimes
+
+                    StartConstrainedByAvailability		 No
+                    StopConstrainedByAvailability		 No
+
+                    BEGIN ConstraintSatisfaction
+
+                        2025-03-19T04:42:37.373453935 2025-03-19T04:50:18.456332377
+
+                    END ConstraintSatisfaction
+
+                END Constraint
+
+            END ConstraintList
+
+        END Stage
+
+
+        BEGIN Stage
+
+            MaxRelMotion		 0.34
+
+            BEGIN ConstraintList
+
+                BEGIN Constraint
+
+                    Name		 LineOfSight
+                    Instance		 Object1
+                    Action		 IncludeIntervals
+                    Type		 ZeroBound
+                    ComputationID		 2
+
+                    BEGIN ConstraintInputTimes
+
+                        2025-03-19T04:42:37.373453935 2025-03-19T04:50:18.456332377
+
+                    END ConstraintInputTimes
+
+                    StartConstrainedByAvailability		 No
+                    StopConstrainedByAvailability		 No
+
+                    BEGIN ConstraintSatisfaction
+
+                        2025-03-19T04:42:37.373453935 2025-03-19T04:50:18.456332377
+
+                    END ConstraintSatisfaction
+
+                END Constraint
+
+            END ConstraintList
+
+        END Stage
+
+
+        BEGIN Stage
+
+            MaxRelMotion		 0.17
+
+            BEGIN ConstraintList
+
+                BEGIN Constraint
+
+                    Name		 FieldOfView
+                    Instance		 Object1
+                    Action		 IncludeIntervals
+                    Type		 ZeroBound
+                    ComputationID		 3
+
+                    BEGIN ConstraintInputTimes
+
+                        2025-03-19T04:42:37.373453935 2025-03-19T04:50:18.456332377
+
+                    END ConstraintInputTimes
+
+                    StartConstrainedByAvailability		 No
+                    StopConstrainedByAvailability		 No
+
+                    BEGIN ConstraintSatisfaction
+
+                        2025-03-19T04:42:37.373453935 2025-03-19T04:50:18.456332377
+
+                    END ConstraintSatisfaction
+
+                END Constraint
+
+            END ConstraintList
+
+        END Stage
+
+
+    END StageList
+
+    Show		 Yes
+    Inherit		 Yes
+    ShowIV		 Yes
+    ShowLineGfx		 Yes
+    ShowHiliteGfx		 Yes
+    LineWidth		 1
+
+    LineStyle		 0
+    BEGIN Crdn
+    END Crdn
+
+END Access
+
+BEGIN Access
+    Scenario/Tracking/Satellite/LEOSats_P3_S6/Sensor/Sensor_P3_S6
+    Scenario/Tracking/Aircraft/Missile
+
+    IsComputed		 Yes
+    SaveComputedData		 Yes
+    ComputationMode		 1
+    UpdateOnReference		 Yes
+    DupIsDifferent		 No
+    UIOrderReversed		 No
+    UITimePeriod		 Object
+    UseLightTimeDelay		 Yes
+    ClockHost		 Base
+    TimeSense		 Receive
+    AberrationType		 Annual
+    TimeDelayConvergence		 5e-05
+    SetMaxStepFromInsts		 Yes
+    MaxTimeStep		 360
+    MinTimeStep		 0.01
+    TimeConvergence		 0.005
+    AbsValueConvergence		 1e-14
+    RelValueConvergence		 1e-08
+    DetectEventsUsingSamplesOnly		 No
+
+    BEGIN ConsideredIntervals
+
+        2025-03-19T04:31:51.785239012 2025-03-19T04:37:09.331482622
+
+    END ConsideredIntervals
+
+    BEGIN AccessIntervals
+
+        2025-03-19T04:31:51.785239012 2025-03-19T04:37:09.331482622
+
+    END AccessIntervals
+
+    BEGIN StageList
+
+        BEGIN Stage
+
+            MaxRelMotion		 0.34
+
+            BEGIN ConstraintList
+
+                BEGIN Constraint
+
+                    Name		 AzimuthAngle
+                    Instance		 Object1
+                    Action		 IncludeIntervals
+                    Type		 ZeroBound
+                    ConData		 Min		 -5.9999999999999993e+01Max		  5.9999999999999993e+01
+                    ComputationID		 1
+
+                    BEGIN ConstraintInputTimes
+
+                        2025-03-19T04:31:51.785239012 2025-03-19T04:37:09.331482622
+
+                    END ConstraintInputTimes
+
+                    StartConstrainedByAvailability		 No
+                    StopConstrainedByAvailability		 No
+
+                    BEGIN ConstraintSatisfaction
+
+                        2025-03-19T04:31:51.785239012 2025-03-19T04:37:09.331482622
+
+                    END ConstraintSatisfaction
+
+                END Constraint
+
+            END ConstraintList
+
+        END Stage
+
+
+        BEGIN Stage
+
+            MaxRelMotion		 0.34
+
+            BEGIN ConstraintList
+
+                BEGIN Constraint
+
+                    Name		 LineOfSight
+                    Instance		 Object1
+                    Action		 IncludeIntervals
+                    Type		 ZeroBound
+                    ComputationID		 2
+
+                    BEGIN ConstraintInputTimes
+
+                        2025-03-19T04:31:51.785239012 2025-03-19T04:37:09.331482622
+
+                    END ConstraintInputTimes
+
+                    StartConstrainedByAvailability		 No
+                    StopConstrainedByAvailability		 No
+
+                    BEGIN ConstraintSatisfaction
+
+                        2025-03-19T04:31:51.785239012 2025-03-19T04:37:09.331482622
+
+                    END ConstraintSatisfaction
+
+                END Constraint
+
+            END ConstraintList
+
+        END Stage
+
+
+        BEGIN Stage
+
+            MaxRelMotion		 0.17
+
+            BEGIN ConstraintList
+
+                BEGIN Constraint
+
+                    Name		 FieldOfView
+                    Instance		 Object1
+                    Action		 IncludeIntervals
+                    Type		 ZeroBound
+                    ComputationID		 3
+
+                    BEGIN ConstraintInputTimes
+
+                        2025-03-19T04:31:51.785239012 2025-03-19T04:37:09.331482622
+
+                    END ConstraintInputTimes
+
+                    StartConstrainedByAvailability		 No
+                    StopConstrainedByAvailability		 No
+
+                    BEGIN ConstraintSatisfaction
+
+                        2025-03-19T04:31:51.785239012 2025-03-19T04:37:09.331482622
+
+                    END ConstraintSatisfaction
+
+                END Constraint
+
+            END ConstraintList
+
+        END Stage
+
+
+    END StageList
+
+    Show		 Yes
+    Inherit		 Yes
+    ShowIV		 Yes
+    ShowLineGfx		 Yes
+    ShowHiliteGfx		 Yes
+    LineWidth		 1
+
+    LineStyle		 0
+    BEGIN Crdn
+    END Crdn
+
+END Access
+
+BEGIN Access
+    Scenario/Tracking/Satellite/LEOSats_P3_S4/Sensor/Sensor_P3_S4
+    Scenario/Tracking/Aircraft/Missile
+
+    IsComputed		 Yes
+    SaveComputedData		 Yes
+    ComputationMode		 1
+    UpdateOnReference		 Yes
+    DupIsDifferent		 No
+    UIOrderReversed		 No
+    UITimePeriod		 Object
+    UseLightTimeDelay		 Yes
+    ClockHost		 Base
+    TimeSense		 Receive
+    AberrationType		 Annual
+    TimeDelayConvergence		 5e-05
+    SetMaxStepFromInsts		 Yes
+    MaxTimeStep		 360
+    MinTimeStep		 0.01
+    TimeConvergence		 0.005
+    AbsValueConvergence		 1e-14
+    RelValueConvergence		 1e-08
+    DetectEventsUsingSamplesOnly		 No
+
+    BEGIN ConsideredIntervals
+
+        2025-03-19T04:59:10.259442810 2025-03-19T05:03:18.968549720
+
+    END ConsideredIntervals
+
+    BEGIN AccessIntervals
+
+        2025-03-19T04:59:10.259442810 2025-03-19T05:03:18.968549720
+
+    END AccessIntervals
+
+    BEGIN StageList
+
+        BEGIN Stage
+
+            MaxRelMotion		 0.34
+
+            BEGIN ConstraintList
+
+                BEGIN Constraint
+
+                    Name		 AzimuthAngle
+                    Instance		 Object1
+                    Action		 IncludeIntervals
+                    Type		 ZeroBound
+                    ConData		 Min		 -5.9999999999999993e+01Max		  5.9999999999999993e+01
+                    ComputationID		 1
+
+                    BEGIN ConstraintInputTimes
+
+                        2025-03-19T04:59:10.259442810 2025-03-19T05:03:18.968549720
+
+                    END ConstraintInputTimes
+
+                    StartConstrainedByAvailability		 No
+                    StopConstrainedByAvailability		 No
+
+                    BEGIN ConstraintSatisfaction
+
+                        2025-03-19T04:59:10.259442810 2025-03-19T05:03:18.968549720
+
+                    END ConstraintSatisfaction
+
+                END Constraint
+
+            END ConstraintList
+
+        END Stage
+
+
+        BEGIN Stage
+
+            MaxRelMotion		 0.34
+
+            BEGIN ConstraintList
+
+                BEGIN Constraint
+
+                    Name		 LineOfSight
+                    Instance		 Object1
+                    Action		 IncludeIntervals
+                    Type		 ZeroBound
+                    ComputationID		 2
+
+                    BEGIN ConstraintInputTimes
+
+                        2025-03-19T04:59:10.259442810 2025-03-19T05:03:18.968549720
+
+                    END ConstraintInputTimes
+
+                    StartConstrainedByAvailability		 No
+                    StopConstrainedByAvailability		 No
+
+                    BEGIN ConstraintSatisfaction
+
+                        2025-03-19T04:59:10.259442810 2025-03-19T05:03:18.968549720
+
+                    END ConstraintSatisfaction
+
+                END Constraint
+
+            END ConstraintList
+
+        END Stage
+
+
+        BEGIN Stage
+
+            MaxRelMotion		 0.17
+
+            BEGIN ConstraintList
+
+                BEGIN Constraint
+
+                    Name		 FieldOfView
+                    Instance		 Object1
+                    Action		 IncludeIntervals
+                    Type		 ZeroBound
+                    ComputationID		 3
+
+                    BEGIN ConstraintInputTimes
+
+                        2025-03-19T04:59:10.259442810 2025-03-19T05:03:18.968549720
+
+                    END ConstraintInputTimes
+
+                    StartConstrainedByAvailability		 No
+                    StopConstrainedByAvailability		 No
+
+                    BEGIN ConstraintSatisfaction
+
+                        2025-03-19T04:59:10.259442810 2025-03-19T05:03:18.968549720
+
+                    END ConstraintSatisfaction
+
+                END Constraint
+
+            END ConstraintList
+
+        END Stage
+
+
+    END StageList
+
+    Show		 Yes
+    Inherit		 Yes
+    ShowIV		 Yes
+    ShowLineGfx		 Yes
+    ShowHiliteGfx		 Yes
+    LineWidth		 1
+
+    LineStyle		 0
+    BEGIN Crdn
+    END Crdn
+
+END Access
+
+BEGIN Access
+    Scenario/Tracking/Satellite/LEOSats_P4_S4/Sensor/Sensor_P4_S4
+    Scenario/Tracking/Aircraft/Missile
+
+    IsComputed		 Yes
+    SaveComputedData		 Yes
+    ComputationMode		 1
+    UpdateOnReference		 Yes
+    DupIsDifferent		 No
+    UIOrderReversed		 No
+    UITimePeriod		 Object
+    UseLightTimeDelay		 Yes
+    ClockHost		 Base
+    TimeSense		 Receive
+    AberrationType		 Annual
+    TimeDelayConvergence		 5e-05
+    SetMaxStepFromInsts		 Yes
+    MaxTimeStep		 360
+    MinTimeStep		 0.01
+    TimeConvergence		 0.005
+    AbsValueConvergence		 1e-14
+    RelValueConvergence		 1e-08
+    DetectEventsUsingSamplesOnly		 No
+
+    BEGIN ConsideredIntervals
+
+        2025-03-19T04:45:25.977900465 2025-03-19T04:52:45.247407478
+
+    END ConsideredIntervals
+
+    BEGIN AccessIntervals
+
+        2025-03-19T04:45:25.977900465 2025-03-19T04:52:45.247407478
+
+    END AccessIntervals
+
+    BEGIN StageList
+
+        BEGIN Stage
+
+            MaxRelMotion		 0.34
+
+            BEGIN ConstraintList
+
+                BEGIN Constraint
+
+                    Name		 AzimuthAngle
+                    Instance		 Object1
+                    Action		 IncludeIntervals
+                    Type		 ZeroBound
+                    ConData		 Min		 -5.9999999999999993e+01Max		  5.9999999999999993e+01
+                    ComputationID		 1
+
+                    BEGIN ConstraintInputTimes
+
+                        2025-03-19T04:45:25.977900465 2025-03-19T04:52:45.247407478
+
+                    END ConstraintInputTimes
+
+                    StartConstrainedByAvailability		 No
+                    StopConstrainedByAvailability		 No
+
+                    BEGIN ConstraintSatisfaction
+
+                        2025-03-19T04:45:25.977900465 2025-03-19T04:52:45.247407478
+
+                    END ConstraintSatisfaction
+
+                END Constraint
+
+            END ConstraintList
+
+        END Stage
+
+
+        BEGIN Stage
+
+            MaxRelMotion		 0.34
+
+            BEGIN ConstraintList
+
+                BEGIN Constraint
+
+                    Name		 LineOfSight
+                    Instance		 Object1
+                    Action		 IncludeIntervals
+                    Type		 ZeroBound
+                    ComputationID		 2
+
+                    BEGIN ConstraintInputTimes
+
+                        2025-03-19T04:45:25.977900465 2025-03-19T04:52:45.247407478
+
+                    END ConstraintInputTimes
+
+                    StartConstrainedByAvailability		 No
+                    StopConstrainedByAvailability		 No
+
+                    BEGIN ConstraintSatisfaction
+
+                        2025-03-19T04:45:25.977900465 2025-03-19T04:52:45.247407478
+
+                    END ConstraintSatisfaction
+
+                END Constraint
+
+            END ConstraintList
+
+        END Stage
+
+
+        BEGIN Stage
+
+            MaxRelMotion		 0.17
+
+            BEGIN ConstraintList
+
+                BEGIN Constraint
+
+                    Name		 FieldOfView
+                    Instance		 Object1
+                    Action		 IncludeIntervals
+                    Type		 ZeroBound
+                    ComputationID		 3
+
+                    BEGIN ConstraintInputTimes
+
+                        2025-03-19T04:45:25.977900465 2025-03-19T04:52:45.247407478
+
+                    END ConstraintInputTimes
+
+                    StartConstrainedByAvailability		 No
+                    StopConstrainedByAvailability		 No
+
+                    BEGIN ConstraintSatisfaction
+
+                        2025-03-19T04:45:25.977900465 2025-03-19T04:52:45.247407478
+
+                    END ConstraintSatisfaction
+
+                END Constraint
+
+            END ConstraintList
+
+        END Stage
+
+
+    END StageList
+
+    Show		 Yes
+    Inherit		 Yes
+    ShowIV		 Yes
+    ShowLineGfx		 Yes
+    ShowHiliteGfx		 Yes
+    LineWidth		 1
+
+    LineStyle		 0
+    BEGIN Crdn
+    END Crdn
+
+END Access
+
+BEGIN Access
+    Scenario/Tracking/Satellite/LEOSats_P4_S5/Sensor/Sensor_P4_S5
+    Scenario/Tracking/Aircraft/Missile
+
+    IsComputed		 Yes
+    SaveComputedData		 Yes
+    ComputationMode		 1
+    UpdateOnReference		 Yes
+    DupIsDifferent		 No
+    UIOrderReversed		 No
+    UITimePeriod		 Object
+    UseLightTimeDelay		 Yes
+    ClockHost		 Base
+    TimeSense		 Receive
+    AberrationType		 Annual
+    TimeDelayConvergence		 5e-05
+    SetMaxStepFromInsts		 Yes
+    MaxTimeStep		 360
+    MinTimeStep		 0.01
+    TimeConvergence		 0.005
+    AbsValueConvergence		 1e-14
+    RelValueConvergence		 1e-08
+    DetectEventsUsingSamplesOnly		 No
+
+    BEGIN ConsideredIntervals
+
+        2025-03-19T04:31:11.151364856 2025-03-19T04:35:51.361403471
+
+    END ConsideredIntervals
+
+    BEGIN AccessIntervals
+
+        2025-03-19T04:31:11.151364856 2025-03-19T04:35:51.361403471
+
+    END AccessIntervals
+
+    BEGIN StageList
+
+        BEGIN Stage
+
+            MaxRelMotion		 0.34
+
+            BEGIN ConstraintList
+
+                BEGIN Constraint
+
+                    Name		 AzimuthAngle
+                    Instance		 Object1
+                    Action		 IncludeIntervals
+                    Type		 ZeroBound
+                    ConData		 Min		 -5.9999999999999993e+01Max		  5.9999999999999993e+01
+                    ComputationID		 1
+
+                    BEGIN ConstraintInputTimes
+
+                        2025-03-19T04:31:11.151364856 2025-03-19T04:35:51.361403471
+
+                    END ConstraintInputTimes
+
+                    StartConstrainedByAvailability		 No
+                    StopConstrainedByAvailability		 No
+
+                    BEGIN ConstraintSatisfaction
+
+                        2025-03-19T04:31:11.151364856 2025-03-19T04:35:51.361403471
+
+                    END ConstraintSatisfaction
+
+                END Constraint
+
+            END ConstraintList
+
+        END Stage
+
+
+        BEGIN Stage
+
+            MaxRelMotion		 0.34
+
+            BEGIN ConstraintList
+
+                BEGIN Constraint
+
+                    Name		 LineOfSight
+                    Instance		 Object1
+                    Action		 IncludeIntervals
+                    Type		 ZeroBound
+                    ComputationID		 2
+
+                    BEGIN ConstraintInputTimes
+
+                        2025-03-19T04:31:11.151364856 2025-03-19T04:35:51.361403471
+
+                    END ConstraintInputTimes
+
+                    StartConstrainedByAvailability		 No
+                    StopConstrainedByAvailability		 No
+
+                    BEGIN ConstraintSatisfaction
+
+                        2025-03-19T04:31:11.151364856 2025-03-19T04:35:51.361403471
+
+                    END ConstraintSatisfaction
+
+                END Constraint
+
+            END ConstraintList
+
+        END Stage
+
+
+        BEGIN Stage
+
+            MaxRelMotion		 0.17
+
+            BEGIN ConstraintList
+
+                BEGIN Constraint
+
+                    Name		 FieldOfView
+                    Instance		 Object1
+                    Action		 IncludeIntervals
+                    Type		 ZeroBound
+                    ComputationID		 3
+
+                    BEGIN ConstraintInputTimes
+
+                        2025-03-19T04:31:11.151364856 2025-03-19T04:35:51.361403471
+
+                    END ConstraintInputTimes
+
+                    StartConstrainedByAvailability		 No
+                    StopConstrainedByAvailability		 No
+
+                    BEGIN ConstraintSatisfaction
+
+                        2025-03-19T04:31:11.151364856 2025-03-19T04:35:51.361403471
+
+                    END ConstraintSatisfaction
+
+                END Constraint
+
+            END ConstraintList
+
+        END Stage
+
+
+    END StageList
+
+    Show		 Yes
+    Inherit		 Yes
+    ShowIV		 Yes
+    ShowLineGfx		 Yes
+    ShowHiliteGfx		 Yes
+    LineWidth		 1
+
+    LineStyle		 0
+    BEGIN Crdn
+    END Crdn
+
+END Access
+
+BEGIN Access
+    Scenario/Tracking/Satellite/LEOSats_P5_S4/Sensor/Sensor_P5_S4
+    Scenario/Tracking/Aircraft/Missile
+
+    IsComputed		 Yes
+    SaveComputedData		 Yes
+    ComputationMode		 1
+    UpdateOnReference		 Yes
+    DupIsDifferent		 No
+    UIOrderReversed		 No
+    UITimePeriod		 Object
+    UseLightTimeDelay		 Yes
+    ClockHost		 Base
+    TimeSense		 Receive
+    AberrationType		 Annual
+    TimeDelayConvergence		 5e-05
+    SetMaxStepFromInsts		 Yes
+    MaxTimeStep		 360
+    MinTimeStep		 0.01
+    TimeConvergence		 0.005
+    AbsValueConvergence		 1e-14
+    RelValueConvergence		 1e-08
+    DetectEventsUsingSamplesOnly		 No
+
+    BEGIN ConsideredIntervals
+
+        2025-03-19T04:32:14.259352062 2025-03-19T04:39:45.126201646
+
+    END ConsideredIntervals
+
+    BEGIN AccessIntervals
+
+        2025-03-19T04:32:14.259352062 2025-03-19T04:39:45.126201646
+
+    END AccessIntervals
+
+    BEGIN StageList
+
+        BEGIN Stage
+
+            MaxRelMotion		 0.34
+
+            BEGIN ConstraintList
+
+                BEGIN Constraint
+
+                    Name		 AzimuthAngle
+                    Instance		 Object1
+                    Action		 IncludeIntervals
+                    Type		 ZeroBound
+                    ConData		 Min		 -5.9999999999999993e+01Max		  5.9999999999999993e+01
+                    ComputationID		 1
+
+                    BEGIN ConstraintInputTimes
+
+                        2025-03-19T04:32:14.259352062 2025-03-19T04:39:45.126201646
+
+                    END ConstraintInputTimes
+
+                    StartConstrainedByAvailability		 No
+                    StopConstrainedByAvailability		 No
+
+                    BEGIN ConstraintSatisfaction
+
+                        2025-03-19T04:32:14.259352062 2025-03-19T04:39:45.126201646
+
+                    END ConstraintSatisfaction
+
+                END Constraint
+
+            END ConstraintList
+
+        END Stage
+
+
+        BEGIN Stage
+
+            MaxRelMotion		 0.34
+
+            BEGIN ConstraintList
+
+                BEGIN Constraint
+
+                    Name		 LineOfSight
+                    Instance		 Object1
+                    Action		 IncludeIntervals
+                    Type		 ZeroBound
+                    ComputationID		 2
+
+                    BEGIN ConstraintInputTimes
+
+                        2025-03-19T04:32:14.259352062 2025-03-19T04:39:45.126201646
+
+                    END ConstraintInputTimes
+
+                    StartConstrainedByAvailability		 No
+                    StopConstrainedByAvailability		 No
+
+                    BEGIN ConstraintSatisfaction
+
+                        2025-03-19T04:32:14.259352062 2025-03-19T04:39:45.126201646
+
+                    END ConstraintSatisfaction
+
+                END Constraint
+
+            END ConstraintList
+
+        END Stage
+
+
+        BEGIN Stage
+
+            MaxRelMotion		 0.17
+
+            BEGIN ConstraintList
+
+                BEGIN Constraint
+
+                    Name		 FieldOfView
+                    Instance		 Object1
+                    Action		 IncludeIntervals
+                    Type		 ZeroBound
+                    ComputationID		 3
+
+                    BEGIN ConstraintInputTimes
+
+                        2025-03-19T04:32:14.259352062 2025-03-19T04:39:45.126201646
+
+                    END ConstraintInputTimes
+
+                    StartConstrainedByAvailability		 No
+                    StopConstrainedByAvailability		 No
+
+                    BEGIN ConstraintSatisfaction
+
+                        2025-03-19T04:32:14.259352062 2025-03-19T04:39:45.126201646
+
+                    END ConstraintSatisfaction
+
+                END Constraint
+
+            END ConstraintList
+
+        END Stage
+
+
+    END StageList
+
+    Show		 Yes
+    Inherit		 Yes
+    ShowIV		 Yes
+    ShowLineGfx		 Yes
+    ShowHiliteGfx		 Yes
+    LineWidth		 1
+
+    LineStyle		 0
+    BEGIN Crdn
+    END Crdn
+
+END Access
+

@@ -3,8 +3,8 @@ import time
 import signal
 import sys
 from icecream import ic
-from .utilities import clearScenario
 from agi.stk12 import utilities
+from .utilities import clearScenario
 
 def run(sim_function, mode="engine", name=None, clear=False, days=1):
     """Handles simulation execution, scenario saving, and cleanup."""
@@ -19,7 +19,7 @@ def run(sim_function, mode="engine", name=None, clear=False, days=1):
 
     def handle_interrupt(signal_received, frame):
         """Handles user interrupts for a graceful shutdown."""
-        print("\nUser interrupt detected! Cleaning up and exiting...")
+        print("\n\nUser interrupt detected! Cleaning up and exiting...")
 
         if stk and mode == "engine":
             stk.ShutDown()

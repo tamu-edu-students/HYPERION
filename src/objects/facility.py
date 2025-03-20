@@ -10,26 +10,25 @@ COLOR = Colors.FromRGB(r, g, b)
 class Facility(STKStandaloneObject):
     save_dir = "data/facilities/"
 
-    def __init__(self, root, name, site=None, unload=True):
+    def __init__(self, root, name, site=None):
         Facility._ensureSaveDir()
 
-        super().__init__(root, name, AgESTKObjectType.eFacility, unload=unload)
+        super().__init__(root, name, AgESTKObjectType.eFacility)
 
-        if unload: 
-            self.name = name 
+        self.name = name 
 
-            if name == "ASF": # Alaska Satellite Facility
-                self.site = Site(64.794, -147.536, "Fairbanks", "United States")
+        if name == "ASF": # Alaska Satellite Facility
+            self.site = Site(64.794, -147.536, "Fairbanks", "United States")
 
-            elif name == "NWSF": # NASA White Sands Facility 
-                self.site = Site(32.507, -106.611, "Las Cruces", "United States")  
-            elif name == "NWGS": # NASA Wallops Ground Station     
-                self.site = Site(37.9333, -75.46778, "Wallops Island", "United States")
-            else: 
-                if site is None:
-                    raise RuntimeError("If not using a default site, a site object must be provided.")
-                else:
-                    self.site = site
+        elif name == "NWSF": # NASA White Sands Facility 
+            self.site = Site(32.507, -106.611, "Las Cruces", "United States")  
+        elif name == "NWGS": # NASA Wallops Ground Station     
+            self.site = Site(37.9333, -75.46778, "Wallops Island", "United States")
+        else: 
+            if site is None:
+                raise RuntimeError("If not using a default site, a site object must be provided.")
+            else:
+                self.site = site
     
     def _loadObjectImplementation(self): 
         """

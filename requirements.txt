@@ -7,3 +7,4 @@ scikit-optimize
 geopy
 agi.stk12  
 icecream
+spiceypy
