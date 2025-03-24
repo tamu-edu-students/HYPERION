@@ -8,3 +8,4 @@ geopy
 agi.stk12  
 icecream
 spiceypy
+pickle

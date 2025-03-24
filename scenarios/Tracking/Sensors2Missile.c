@@ -83,26 +83,29 @@ BEGIN Chain
         SaveMode		 1
         BEGIN StrandAccessesByIndex
             Strand		 4 30
-            Start		  7.2846818546563649e+04
-            Stop		  7.3057189591646806e+04
+            Start		  7.2674628098501475e+04
+            Stop		  7.3063107880284078e+04
             Strand		 5 30
-            Start		  7.1966038156693947e+04
-            Stop		  7.2362854769821017e+04
+            Start		  7.1895791954242144e+04
+            Stop		  7.2364675063063434e+04
             Strand		 8 30
-            Start		  7.3456582778210155e+04
-            Stop		  7.3759448291935420e+04
+            Start		  7.3359501416573636e+04
+            Stop		  7.3766852969584550e+04
             Strand		 9 30
-            Start		  7.2764589016646045e+04
-            Stop		  7.3047139329713391e+04
+            Start		  7.2651730384715353e+04
+            Stop		  7.3052116841399518e+04
             Strand		 10 30
-            Start		  7.2082944241007412e+04
-            Stop		  7.2328989871712096e+04
+            Start		  7.2002176655352319e+04
+            Stop		  7.2330574617872277e+04
+            Strand		 14 30
+            Start		  7.2952702891336914e+04
+            Stop		  7.3196140759406582e+04
             Strand		 15 30
-            Start		  7.2069507256903787e+04
-            Stop		  7.2476125095885363e+04
+            Start		  7.1971873081811893e+04
+            Stop		  7.2478145065442353e+04
             Strand		 26 30
-            Start		  7.2606896374787888e+04
-            Stop		  7.3330505862362857e+04
+            Start		  7.2388719438026703e+04
+            Stop		  7.3321591394058822e+04
         END StrandAccessesByIndex
 
 
@@ -126,8 +129,8 @@ BEGIN Chain
 
             BEGIN Attributes
 
-                StaticColor		 #00ffff
-                AnimationColor		 #ff00ff
+                StaticColor		 #0000ff
+                AnimationColor		 #ff0000
                 OptStrandsRampStartColor		 #00ff00
                 OptStrandsRampEndColor		 #ff0000
                 AnimationLineWidth		 2

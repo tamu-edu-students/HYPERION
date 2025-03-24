@@ -33,7 +33,7 @@ class Missile(STKStandaloneObject):
         
         return cls(root, name, launch_site=launch_site, target_site=target_site, launch_time=launch_time, Mach=Mach)
 
-    def __init__(self, root : AgStkObjectRoot, name: str, launch_site: Site=None, target_site: Site=None, launch_time: str=None, Mach: float=None):
+    def __init__(self, root : AgStkObjectRoot, name: str, launch_site: Site=None, target_site: Site=None, launch_time: str=None, Mach: float=None, h_max: float=None):
         """
         Initializes a missile object with launch and target sites, launch time, and maximum Mach number.
 
@@ -48,8 +48,10 @@ class Missile(STKStandaloneObject):
         - launch_time: The time of missile launch in STK-compatible datetime format: `"DD MMM YYYY HH:MM:SS.SSSSSS"`.
             Example: `"01 Jan 2025 00:00:00.000000"`.
             If `None`, a random launch time will be selected within the scenario's time window.
-        - Mach : The maximum speed of the missile in Mach number.
+        - Mach: The maximum speed of the missile in Mach number.
             If `None`, a random Mach number will be generated in the range [5.0, 15.0].
+        - h_max: The maximum altitude of the missile in km.
+            If `None`, a random altitude will be generated in the range [20, 100] km
         """
         Missile._ensureSaveDir()
 
@@ -91,6 +93,32 @@ class Missile(STKStandaloneObject):
         self.Mach = Mach if Mach else round(random.uniform(5, 15), 2)
         print(f"Mach Number: {self.Mach}")
 
+        # Set or generate altitude
+        self.h_max = h_max if h_max else round(random.uniform(20, 100), 2)
+        print(f"Altitude: {self.h_max} km")
+
+    @staticmethod
+    def _interpGreatCircle(lat1, lon1, lat2, lon2, f):
+        # Convert degrees to radians
+        lat1, lon1, lat2, lon2 = map(np.radians, [lat1, lon1, lat2, lon2])
+
+        delta = np.arccos(np.sin(lat1)*np.sin(lat2) + np.cos(lat1)*np.cos(lat2)*np.cos(lon2 - lon1))
+
+        if delta == 0:
+            return np.degrees(lat1), np.degrees(lon1)
+
+        A = np.sin((1 - f) * delta) / np.sin(delta)
+        B = np.sin(f * delta) / np.sin(delta)
+
+        x = A * np.cos(lat1) * np.cos(lon1) + B * np.cos(lat2) * np.cos(lon2)
+        y = A * np.cos(lat1) * np.sin(lon1) + B * np.cos(lat2) * np.sin(lon2)
+        z = A * np.sin(lat1) + B * np.sin(lat2)
+
+        lat = np.arctan2(z, np.sqrt(x**2 + y**2))
+        lon = np.arctan2(y, x)
+
+        return np.degrees(lat), np.degrees(lon)
+
     def _loadObjectImplementation(self):
         """
         Adds the missile as an aircraft object to the STK scenario.
@@ -111,19 +139,25 @@ class Missile(STKStandaloneObject):
         speed_kmh = self.Mach * 1225  # km/h
         speed_kmps = speed_kmh / 3600  # km/s
 
-        # Launch site
-        waypoint1 = route.Waypoints.Add()
-        waypoint1.Latitude = self.launch_site.lat
-        waypoint1.Longitude = self.launch_site.lon
-        waypoint1.Altitude = 0  
-        waypoint1.Speed = speed_kmps  
+        # Define number of waypoints and max altitude
+        N = 100 
 
-        # Target site
-        waypoint2 = route.Waypoints.Add()
-        waypoint2.Latitude = self.target_site.lat
-        waypoint2.Longitude = self.target_site.lon
-        waypoint2.Altitude = 0  
-        waypoint2.Speed = speed_kmps
+        for i in range(N + 1):
+            f = i / N  # normalized distance
+
+            lat, lon = self._interpGreatCircle(
+                self.launch_site.lat, self.launch_site.lon,
+                self.target_site.lat, self.target_site.lon,
+                f
+            )
+
+            h = 4 * self.h_max * f * (1 - f)
+
+            wp = route.Waypoints.Add()
+            wp.Latitude = float(lat)
+            wp.Longitude = float(lon)
+            wp.Altitude = h
+            wp.Speed = speed_kmps
 
         missile.Graphics.Attributes.Color = COLOR
 

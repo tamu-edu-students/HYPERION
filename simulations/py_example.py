@@ -42,9 +42,11 @@ def makeLEOSensors(root):
     print("LEO Satellites loaded successfully.")
 
 def main(root):
-    makeLEOSensors(root)
+    # makeLEOSensors(root)
+    launch_site = Site(62.96, 40.683, "Arkhangelsk Oblast", "Russia")
+    target_site = Site(38.8977, -77.0365, "Washington, DC", "United States")
 
-
-if __name__ == "__main__":
-    args = parse_args()
-    run(main, mode=args.mode, name=args.name)
+    missile_name = "Missile"
+    missile = Missile(root, name=missile_name, launch_site=launch_site, target_site=target_site, launch_time="19 Mar 2025 22:21:50.000", Mach=10, h_max=100)
+    missile.loadObject()
+    missile.getECIState()

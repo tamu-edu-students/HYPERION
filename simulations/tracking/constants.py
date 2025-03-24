@@ -15,3 +15,6 @@ SENSOR_STORE_FILENAME = "sensor_store"
 SAT_STORE_FILENAME = "sat_store"
 
 EKF_STORE_FILENAME = "ekf_store"
+
+POSITION_ERROR_FILENAME = "position_error"
+VELOCITY_ERROR_FILENAME = "velocity_error"
