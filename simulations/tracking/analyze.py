@@ -5,10 +5,20 @@ Analysis and plotting functions.
 """
 import os 
 import pickle
+import matplotlib as mpl
 import matplotlib.pyplot as plt
-from mpl_toolkits.mplot3d import Axes3D
+mpl.use("pgf")
+from matplotlib import rc
 from .constants import *
 from src import *
+
+# Use PGF backend for LaTeX compatibility
+plt.rcParams.update({
+    "pgf.texsystem": "pdflatex",
+    "font.family": "serif",
+    "text.usetex": True,
+    "pgf.rcfonts": False,
+})
 
 def plot_ekf():
     with open(os.path.join(DATA_DIR, EKF_STORE_FILENAME+".pkl"), "rb") as f:
@@ -30,6 +40,7 @@ def plot_ekf():
         axs_pos[i].plot(t_hours, -3 * sx[i, :], linestyle="--", color="tab:blue")
         axs_pos[i].set_ylabel(labels_pos[i])
         axs_pos[i].grid(True)
+        axs_pos[i].set_ylim(-20, 20)
 
     axs_pos[-1].set_xlabel("Time Elapsed [min]")
     axs_pos[0].legend(loc="upper right")
@@ -45,6 +56,7 @@ def plot_ekf():
         axs_vel[i-3].plot(t_hours, -3 * sx[i, :], linestyle="--", color="tab:blue")
         axs_vel[i-3].set_ylabel(labels_vel[i-3])
         axs_vel[i-3].grid(True)
+        axs_vel[i-3].set_ylim(-0.5, 0.5)
 
     axs_vel[-1].set_xlabel("Time Elapsed [min]")
     axs_vel[0].legend(loc="upper right")
@@ -52,6 +64,54 @@ def plot_ekf():
     plt.savefig(os.path.join(FIGURES_DIR, VELOCITY_ERROR_FILENAME+".pdf"))
     plt.close(fig_vel)
 
+def plot_monte_carlo():
+    # Load Monte Carlo results
+    with open(os.path.join(DATA_DIR, MONTE_CARLO_FILENAME + ".pkl"), "rb") as f:
+        data = pickle.load(f)
+
+    t = sec2min(data["t"].repeat(2))  # Interleaved time for stair-step visual
+    ex_sample = data["ex_sample"]
+    sx_sample = data["sx_sample"]
+    sx_ekf = data["sx_ekf"]
+
+    labels_pos = [r"$x$ [km]", r"$y$ [km]", r"$z$ [km]"]
+    labels_vel = [r"$\dot{x}$ [km/s]", r"$\dot{y}$ [km/s]", r"$\dot{z}$ [km/s]"]
+
+    ### Position ###
+    fig_pos, axs_pos = plt.subplots(3, 1, figsize=(8, 9), sharex=True)
+    for i in range(3):
+        axs_pos[i].plot(t, ex_sample[i, :], label="Sample Mean", color="tab:blue")
+        axs_pos[i].plot(t, 3 * sx_sample[i, :], linestyle="--", color="tab:blue", label=r"$\pm3\sigma$ Sample")
+        axs_pos[i].plot(t, -3 * sx_sample[i, :], linestyle="--", color="tab:blue")
+        axs_pos[i].plot(t, 3 * sx_ekf[i, :], linestyle="--", color="black", label=r"$\pm3\sigma$ EKF")
+        axs_pos[i].plot(t, -3 * sx_ekf[i, :], linestyle="--", color="black")
+        axs_pos[i].set_ylabel(labels_pos[i])
+        axs_pos[i].grid(True)
+        axs_pos[i].set_ylim(-20, 20)
+
+    axs_pos[-1].set_xlabel("Time Elapsed [min]")
+    axs_pos[0].legend(loc="upper right")
+    plt.tight_layout()
+    plt.savefig(os.path.join(FIGURES_DIR, MONTE_CARLO_POSITION_FILENAME+".pdf"))
+    plt.close(fig_pos)
+
+    ### Velocity ###
+    fig_vel, axs_vel = plt.subplots(3, 1, figsize=(8, 9), sharex=True)
+    for i in range(3, 6):
+        axs_vel[i-3].plot(t, ex_sample[i, :], label="Sample Mean", color="tab:blue")
+        axs_vel[i-3].plot(t, 3 * sx_sample[i, :], linestyle="--", color="tab:blue", label=r"$\pm3\sigma$ Sample")
+        axs_vel[i-3].plot(t, -3 * sx_sample[i, :], linestyle="--", color="tab:blue")
+        axs_vel[i-3].plot(t, 3 * sx_ekf[i, :], linestyle="--", color="black", label=r"$\pm3\sigma$ EKF")
+        axs_vel[i-3].plot(t, -3 * sx_ekf[i, :], linestyle="--", color="black")
+        axs_vel[i-3].set_ylabel(labels_vel[i-3])
+        axs_vel[i-3].grid(True)
+        axs_vel[i-3].set_ylim(-0.5, 0.5)
+
+    axs_vel[-1].set_xlabel("Time Elapsed [min]")
+    axs_vel[0].legend(loc="upper right")
+    plt.tight_layout()
+    plt.savefig(os.path.join(FIGURES_DIR, MONTE_CARLO_VELOCITY_FILENAME+".pdf"))
+    plt.close(fig_vel)
 
 def plot_trajectory():
     # Load missile truth
@@ -74,14 +134,14 @@ def plot_trajectory():
     # Plot
     fig = plt.figure(figsize=(10, 8))
     ax = fig.add_subplot(111, projection="3d")
-    ax.view_init(elev=25, azim=0)
+    ax.view_init(elev=25, azim=120)
 
     # Earth
     ax.plot_surface(x_earth, y_earth, z_earth, color='lightblue', alpha=0.5, zorder=0)
 
     # Trajectories
-    ax.plot(x_m_store[:, 0], x_m_store[:, 1], x_m_store[:, 2], label="Truth", color="black", zorder=1)
-    ax.plot(mx_post[0, :], mx_post[1, :], mx_post[2, :], label="EKF Estimate", color="tab:blue", zorder=2)
+    ax.plot(x_m_store[:, 0], x_m_store[:, 1], x_m_store[:, 2], label="Truth", color="black", zorder=1, linewidth=2.5)
+    ax.plot(mx_post[0, :], mx_post[1, :], mx_post[2, :], label="EKF Estimate", color="green", zorder=2, linewidth=2.5)
 
     ax.set_xlabel("X [km]")
     ax.set_ylabel("Y [km]")
@@ -98,4 +158,4 @@ def plot_trajectory():
     ax.set_box_aspect([1, 1, 1])  # equal aspect
 
     plt.tight_layout()
-    plt.show()
+    plt.savefig(os.path.join(FIGURES_DIR, TRAJECTORY_FILENAME + ".pdf"))

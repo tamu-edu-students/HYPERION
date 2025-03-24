@@ -31,7 +31,7 @@ def x_dot_Pxx_dot_twobody(t: float, y: np.ndarray, mu: float, Fw: np.ndarray, Pw
     Computes the time derivative of the state and covariance for a two-body problem with process noise.
 
     Parameters
-    ----------
+    ----------  
     - t: Current time (unused in the dynamics).
     - y: Flattened state and covariance vector.
     - mu: Gravitational parameter of the central body.
@@ -68,6 +68,41 @@ def x_dot_Pxx_dot_twobody(t: float, y: np.ndarray, mu: float, Fw: np.ndarray, Pw
     # Covariance propagation
     FxPxx = Fx @ Pxx 
     dPxx = FxPxx + FxPxx.T + Fw @ Pww @ Fw.T  
+    dy[6:] = dPxx.flatten()
+
+    return dy
+
+def x_dot_Pxx_dot_kinematic(t: float, y: np.ndarray, Fw: np.ndarray, Pww: np.ndarray) -> np.ndarray:
+    """
+    Propagates a constant-velocity model with additive process noise.
+
+    Parameters
+    ----------
+    - t: Time (not used here).
+    - y: Flattened state and covariance vector.
+    - Fw: Process noise mapping matrix.
+    - Pww: Process noise covariance.
+
+    Returns
+    -------
+    - Time derivative of the state and covariance vector.
+    """
+    mx = y[:6]  
+    Pxx = y[6:].reshape(6, 6)
+
+    r = mx[0:3]
+    v = mx[3:6]
+
+    dy = np.zeros_like(y)
+    dy[0:3] = v     
+    dy[3:6] = np.zeros(3)  # Constant velocity
+
+    Fx = np.zeros((6, 6))
+    Fx[0:3, 3:6] = np.eye(3)  
+
+    # Covariance propagation
+    FxPxx = Fx @ Pxx
+    dPxx = FxPxx + FxPxx.T + Fw @ Pww @ Fw.T
     dy[6:] = dPxx.flatten()
 
     return dy

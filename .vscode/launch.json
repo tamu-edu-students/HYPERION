@@ -1,0 +1,13 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Run Tracking Module",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "simulations.tracking.main",
+            "justMyCode": true,
+            "console": "integratedTerminal"
+        }
+    ]
+}
