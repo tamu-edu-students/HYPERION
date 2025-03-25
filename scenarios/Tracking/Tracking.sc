@@ -345,13 +345,13 @@ BEGIN Scenario
                 Name		 Chain
                 BEGIN Favorite
                     Type		 Report
-                    BaseDir		 Install
-                    Style		 Access AER
+                    BaseDir		 User
+                    Style		 Individual Strand Access
                 END Favorite
                 BEGIN Favorite
                     Type		 Report
-                    BaseDir		 User
-                    Style		 Individual Strand Access
+                    BaseDir		 Install
+                    Style		 Access AER
                 END Favorite
             END Class
             BEGIN Class
@@ -359,12 +359,12 @@ BEGIN Scenario
                 BEGIN Favorite
                     Type		 Report
                     BaseDir		 Install
-                    Style		 AOS
+                    Style		 AER
                 END Favorite
                 BEGIN Favorite
                     Type		 Report
                     BaseDir		 Install
-                    Style		 AER
+                    Style		 AOS
                 END Favorite
             END Class
             BEGIN Class

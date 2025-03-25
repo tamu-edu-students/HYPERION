@@ -16,6 +16,7 @@ SAT_STORE_FILENAME = "sat_store"
 
 EKF_STORE_FILENAME = "ekf_store"
 MONTE_CARLO_FILENAME = "monte_carlo_store"
+NOISE_PARAMS_FILENAME = "noise_params"
 
 POSITION_ERROR_FILENAME = "position_error"
 VELOCITY_ERROR_FILENAME = "velocity_error"

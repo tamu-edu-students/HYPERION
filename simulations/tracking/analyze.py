@@ -38,8 +38,8 @@ def plot_ekf():
     fig_pos, axs_pos = plt.subplots(3, 1, figsize=(8, 9), sharex=True)
     for i in range(3):
         axs_pos[i].plot(t_hours, ex[i, :], label="Error", color="black")
-        axs_pos[i].plot(t_hours, 3 * sx[i, :], linestyle="--", color="tab:blue", label=r"$\pm3\sigma$")
-        axs_pos[i].plot(t_hours, -3 * sx[i, :], linestyle="--", color="tab:blue")
+        axs_pos[i].plot(t_hours, 3 * sx[i, :], color="tab:blue", label=r"$\pm3\sigma$")
+        axs_pos[i].plot(t_hours, -3 * sx[i, :], color="tab:blue")
         axs_pos[i].set_ylabel(labels_pos[i])
         axs_pos[i].grid(True)
         axs_pos[i].set_ylim(-20, 20)
@@ -54,8 +54,8 @@ def plot_ekf():
     fig_vel, axs_vel = plt.subplots(3, 1, figsize=(8, 9), sharex=True)
     for i in range(3, 6):
         axs_vel[i-3].plot(t_hours, ex[i, :], label="Error", color="black")
-        axs_vel[i-3].plot(t_hours, 3 * sx[i, :], linestyle="--", color="tab:blue", label=r"$\pm3\sigma$")
-        axs_vel[i-3].plot(t_hours, -3 * sx[i, :], linestyle="--", color="tab:blue")
+        axs_vel[i-3].plot(t_hours, 3 * sx[i, :], color="tab:blue", label=r"$\pm3\sigma$")
+        axs_vel[i-3].plot(t_hours, -3 * sx[i, :], color="tab:blue")
         axs_vel[i-3].set_ylabel(labels_vel[i-3])
         axs_vel[i-3].grid(True)
         axs_vel[i-3].set_ylim(-0.5, 0.5)
@@ -171,7 +171,7 @@ def plot_trajectory_2D(t0_utc):
     m.drawcountries()
     m.drawmapboundary(fill_color='#ADD8E6')
     m.fillcontinents(color='#C19A6B', lake_color='#ADD8E6')
-    m.drawparallels(np.arange(20, 81, 20), labels=[1,0,0,0])
+    m.drawparallels(np.arange(20, 81, 10), labels=[1,0,0,0])
     m.drawmeridians(np.arange(-90, 61, 30), labels=[0,0,0,1])
 
     # Convert coordinates
@@ -216,7 +216,7 @@ def plot_trajectory_3D():
 
     # Trajectories
     ax.plot(x_m_store[:, 0], x_m_store[:, 1], x_m_store[:, 2], label="Truth", color="black", zorder=1, linewidth=2.5)
-    ax.plot(mx_post[0, :], mx_post[1, :], mx_post[2, :], label="EKF Estimate", color="green", zorder=2, linewidth=2.5)
+    ax.plot(mx_post[0, :], mx_post[1, :], mx_post[2, :], label="EKF Estimate", color="red", zorder=2, linewidth=2.5, linestyle="--")
 
     ax.set_xlabel("X [km]")
     ax.set_ylabel("Y [km]")

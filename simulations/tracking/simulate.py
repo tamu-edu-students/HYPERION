@@ -39,9 +39,9 @@ def propagate(mxkm1_post, Pxxkm1_post, tkm1, tk, Pww):
 
     return mxk_prior, Pxxk_prior
 
-def run_ekf(sigma_az=None, sigma_el=None, sigma_a=None, error=None):
-    # np.random.seed(0)
-    print(f"Starting simulation...")
+def run_ekf(meas_noise: list=None, process_noise: list=None, error: np.ndarray=None) -> float:
+    np.random.seed(0)
+    print(f"Running EKF...")
     
     start = time.time()
 
@@ -74,8 +74,13 @@ def run_ekf(sigma_az=None, sigma_el=None, sigma_a=None, error=None):
     sigma_r = m2km(100) # km
     sigma_v = m2km(1) # km/s
 
-    if sigma_a is None:
-        sigma_a = m2km(10) # km/s^2
+    # Unmodeled acceleration
+    if process_noise is None:
+        sigma_a_x = m2km(3.60918146) # km/s^2
+        sigma_a_y = m2km(9.99986972) # km/s^2
+        sigma_a_z = m2km(21.92139039) # km/s^2
+    else:
+        sigma_a_x, sigma_a_y, sigma_a_z = process_noise
 
     # Construct initial covariance matrix
     Pxx0 = np.diag([sigma_r**2]*3 + [sigma_v**2]*3)
@@ -86,12 +91,13 @@ def run_ekf(sigma_az=None, sigma_el=None, sigma_a=None, error=None):
         mx0 = tgt_x0 + error
 
     # Process noise
-    Pww = np.diag([sigma_a**2, sigma_a**2, sigma_a**2])
+    Pww = np.diag([sigma_a_x**2, sigma_a_y**2, (3 * sigma_a_z)**2])
 
-    if sigma_az is None:
-        sigma_az = np.deg2rad(0.5)
-    if sigma_el is None:
-        sigma_el = np.deg2rad(0.5)
+    if meas_noise is None:
+        sigma_az = np.deg2rad(0.14897404)
+        sigma_el = np.deg2rad(1.99995302)
+    else:
+        sigma_az, sigma_el = meas_noise
     
     # Measurement noise
     Hv = np.eye(2)
@@ -203,29 +209,53 @@ def run_ekf(sigma_az=None, sigma_el=None, sigma_a=None, error=None):
     with open(os.path.join(DATA_DIR, EKF_STORE_FILENAME+".pkl"), "wb") as f:
         pickle.dump(ekf_store, f)
 
-    print(f"Simulation completed after {duration:.2f} s.")
+    print(f"EKF run completed after {duration:.2f} s.")
 
     return np.mean(nees_store)
 
 def optimize_noise():
     def score(params):
-        sigma_az, sigma_el, sigma_a = params
-        mean_nees = run_ekf(sigma_az=np.deg2rad(sigma_az), sigma_el=np.deg2rad(sigma_el), sigma_a=m2km(sigma_a))
+        sigma_az, sigma_el, sigma_a_x, sigma_a_y, sigma_a_z = params
+
+        meas_noise = np.deg2rad([sigma_az, sigma_el])
+        process_noise = m2km(np.array([sigma_a_x, sigma_a_y, sigma_a_z]))
+
+        mean_nees = run_ekf(meas_noise=meas_noise, process_noise=process_noise)
+
         print(f"Params: {params}, Mean NEES: {mean_nees:.3f}")
+
         return mean_nees
 
-    initial_guess = [0.5, 0.5, 10]  # deg, deg, m/s^2
-    bounds = [(0.01, 5), (0.01, 5), (1e-4, 100)] 
+    initial_guess = [0.5, 0.5, 4, 4, 10]  # deg, deg, m/s^2, m/s^2, m/s^2
+    bounds = [(0.01, 2), (0.01, 2), (1e-1, 10), (1e-1, 10), (1e-1, 50)] 
 
     try:
-        result = minimize(score, initial_guess, bounds=bounds, method='L-BFGS-B')
+        start = time.time()
+        print("Optimizing noise params...")
+        result = minimize(score, initial_guess, bounds=bounds, method='Powell')
+        end = time.time()
+        duration = end - start
+        print(f"Optimization completed after {duration/60:.2f} min.")
     except KeyboardInterrupt:
         print("\nOptimization interrupted.")
+        return
 
     print("Optimal parameters:", result.x)
     print("Minimum mean NEES:", result.fun)
 
+    txt_path = os.path.join(DATA_DIR, NOISE_PARAMS_FILENAME+".txt")
+    with open(txt_path, "w") as f:
+        f.write("Best noise parameters (optimized):\n")
+        f.write(f"Sigma Azimuth (deg): {result.x[0]:.4f}\n")
+        f.write(f"Sigma Elevation (deg): {result.x[1]:.4f}\n")
+        f.write(f"Sigma Ax (m/s^2): {result.x[2]:.4f}\n")
+        f.write(f"Sigma Ay (m/s^2): {result.x[3]:.4f}\n")
+        f.write(f"Sigma Az (m/s^2): {result.x[4]:.4f}\n")
+        f.write(f"Final Mean NEES: {result.fun:.4f}\n")
+        f.write(f"Total Duration: {duration/60:.2f} min\n")
+
 def run_monte_carlo(num_samples=1000):
+    start = time.time()
     print(f"Running Monte Carlo with {num_samples} samples...")
 
     dim_state = 6
@@ -270,4 +300,6 @@ def run_monte_carlo(num_samples=1000):
             "sx_ekf": sx_ekf
         }, f)
 
-    print("Monte Carlo completed and results saved.")
+    end = time.time()
+    duration = end - start
+    print(f"Monte Carlo completed after {duration:.2f} s.")

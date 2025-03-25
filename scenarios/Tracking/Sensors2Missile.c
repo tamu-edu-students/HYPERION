@@ -83,29 +83,29 @@ BEGIN Chain
         SaveMode		 1
         BEGIN StrandAccessesByIndex
             Strand		 4 30
-            Start		  7.2674628098501475e+04
-            Stop		  7.3063107880284078e+04
+            Start		  7.2674626188992755e+04
+            Stop		  7.3063108110216388e+04
             Strand		 5 30
-            Start		  7.1895791954242144e+04
-            Stop		  7.2364675063063434e+04
+            Start		  7.1895788324439098e+04
+            Stop		  7.2364676832595287e+04
             Strand		 8 30
-            Start		  7.3359501416573636e+04
-            Stop		  7.3766852969584550e+04
+            Start		  7.3359499387206422e+04
+            Stop		  7.3766853582467447e+04
             Strand		 9 30
-            Start		  7.2651730384715353e+04
-            Stop		  7.3052116841399518e+04
+            Start		  7.2651733926600398e+04
+            Stop		  7.3052121931227259e+04
             Strand		 10 30
-            Start		  7.2002176655352319e+04
-            Stop		  7.2330574617872277e+04
+            Start		  7.2002169928815434e+04
+            Stop		  7.2330575350815445e+04
             Strand		 14 30
-            Start		  7.2952702891336914e+04
-            Stop		  7.3196140759406582e+04
+            Start		  7.2952686275183107e+04
+            Stop		  7.3196141077611406e+04
             Strand		 15 30
-            Start		  7.1971873081811893e+04
-            Stop		  7.2478145065442353e+04
+            Start		  7.1971862948148715e+04
+            Stop		  7.2478149339307667e+04
             Strand		 26 30
-            Start		  7.2388719438026703e+04
-            Stop		  7.3321591394058822e+04
+            Start		  7.2388711701764361e+04
+            Stop		  7.3321590313907363e+04
         END StrandAccessesByIndex
 
 
@@ -129,8 +129,8 @@ BEGIN Chain
 
             BEGIN Attributes
 
-                StaticColor		 #0000ff
-                AnimationColor		 #ff0000
+                StaticColor		 #00ffff
+                AnimationColor		 #ff00ff
                 OptStrandsRampStartColor		 #00ff00
                 OptStrandsRampEndColor		 #ff0000
                 AnimationLineWidth		 2

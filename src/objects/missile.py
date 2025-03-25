@@ -140,7 +140,7 @@ class Missile(STKStandaloneObject):
         speed_kmps = speed_kmh / 3600  # km/s
 
         # Define number of waypoints and max altitude
-        N = 100 
+        N = 1000
 
         for i in range(N + 1):
             f = i / N  # normalized distance
