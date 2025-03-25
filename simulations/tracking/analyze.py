@@ -162,17 +162,20 @@ def plot_trajectory_2D(t0_utc):
 
     ### Plot ###
     fig = plt.figure(figsize=(10, 6))
-    m = Basemap(projection='mill',
-                llcrnrlon=-90, llcrnrlat=20,
-                urcrnrlon=40, urcrnrlat=80,
-                resolution='l')
+    # m = Basemap(projection='mill',
+    #             llcrnrlon=-90, llcrnrlat=20,
+    #             urcrnrlon=40, urcrnrlat=80,
+    #             resolution='l')
+    m = Basemap(projection='mill', resolution='l')
 
     m.drawcoastlines()
     m.drawcountries()
     m.drawmapboundary(fill_color='#ADD8E6')
     m.fillcontinents(color='#C19A6B', lake_color='#ADD8E6')
-    m.drawparallels(np.arange(20, 81, 10), labels=[1,0,0,0])
-    m.drawmeridians(np.arange(-90, 61, 30), labels=[0,0,0,1])
+    # m.drawparallels(np.arange(20, 81, 10), labels=[1,0,0,0])
+    # m.drawmeridians(np.arange(-90, 61, 30), labels=[0,0,0,1])
+    m.drawparallels(np.arange(-90, 91, 30), labels=[1,0,0,0])
+    m.drawmeridians(np.arange(-180, 181, 60), labels=[0,0,0,1])
 
     # Convert coordinates
     x_truth, y_truth = m(lons_truth, lats_truth)

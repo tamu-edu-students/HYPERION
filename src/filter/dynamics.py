@@ -78,7 +78,7 @@ def x_dot_Pxx_dot_kinematic(t: float, y: np.ndarray, Fw: np.ndarray, Pww: np.nda
 
     Parameters
     ----------
-    - t: Time (not used here).
+    - t: Time.
     - y: Flattened state and covariance vector.
     - Fw: Process noise mapping matrix.
     - Pww: Process noise covariance.

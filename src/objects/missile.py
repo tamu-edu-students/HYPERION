@@ -95,7 +95,7 @@ class Missile(STKStandaloneObject):
 
         # Set or generate altitude
         self.h_max = h_max if h_max else round(random.uniform(20, 100), 2)
-        print(f"Altitude: {self.h_max} km")
+        print(f"Max Altitude: {self.h_max} km")
 
     @staticmethod
     def _interpGreatCircle(lat1, lon1, lat2, lon2, f):

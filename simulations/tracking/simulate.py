@@ -76,9 +76,10 @@ def run_ekf(meas_noise: list=None, process_noise: list=None, error: np.ndarray=N
 
     # Unmodeled acceleration
     if process_noise is None:
-        sigma_a_x = m2km(3.60918146) # km/s^2
-        sigma_a_y = m2km(9.99986972) # km/s^2
-        sigma_a_z = m2km(21.92139039) # km/s^2
+        # sigma_a_x = sigma_a_y = sigma_a_z = m2km(10) # km/s^2
+        sigma_a_x = m2km(0.47596044) # km/s^2
+        sigma_a_y = m2km(6.86718736) # km/s^2
+        sigma_a_z = m2km(23.91520045) # km/s^2
     else:
         sigma_a_x, sigma_a_y, sigma_a_z = process_noise
 
@@ -94,8 +95,9 @@ def run_ekf(meas_noise: list=None, process_noise: list=None, error: np.ndarray=N
     Pww = np.diag([sigma_a_x**2, sigma_a_y**2, (3 * sigma_a_z)**2])
 
     if meas_noise is None:
-        sigma_az = np.deg2rad(0.14897404)
-        sigma_el = np.deg2rad(1.99995302)
+        # sigma_az = sigma_el = np.deg2rad(1) # deg
+        sigma_az = np.deg2rad(1.27080407)
+        sigma_el = np.deg2rad(1.99995205)
     else:
         sigma_az, sigma_el = meas_noise
     

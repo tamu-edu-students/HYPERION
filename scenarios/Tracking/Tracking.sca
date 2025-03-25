@@ -1,7 +1,7 @@
 stk.v.12.0
 WrittenBy    STK_v12.9.0
 BEGIN Access
-    Scenario/Tracking/Satellite/LEOSats_P3_S3/Sensor/Sensor_P3_S3
+    Scenario/Tracking/Satellite/LEOSats_P4_S2/Sensor/Sensor_P4_S2
     Scenario/Tracking/Aircraft/Missile
 
     IsComputed		 Yes
@@ -26,13 +26,13 @@ BEGIN Access
 
     BEGIN ConsideredIntervals
 
-        2025-03-19T22:42:20.686275183 2025-03-19T22:46:24.141077611
+        2025-03-19T22:39:57.296595802 2025-03-19T22:47:40.505311661
 
     END ConsideredIntervals
 
     BEGIN AccessIntervals
 
-        2025-03-19T22:42:20.686275183 2025-03-19T22:46:24.141077611
+        2025-03-19T22:39:57.296595802 2025-03-19T22:47:40.505311661
 
     END AccessIntervals
 
@@ -55,7 +55,7 @@ BEGIN Access
 
                     BEGIN ConstraintInputTimes
 
-                        2025-03-19T22:42:20.686275183 2025-03-19T22:46:24.141077611
+                        2025-03-19T22:39:57.296595802 2025-03-19T22:47:40.505311661
 
                     END ConstraintInputTimes
 
@@ -64,7 +64,7 @@ BEGIN Access
 
                     BEGIN ConstraintSatisfaction
 
-                        2025-03-19T22:42:20.686275183 2025-03-19T22:46:24.141077611
+                        2025-03-19T22:39:57.296595802 2025-03-19T22:47:40.505311661
 
                     END ConstraintSatisfaction
 
@@ -91,7 +91,7 @@ BEGIN Access
 
                     BEGIN ConstraintInputTimes
 
-                        2025-03-19T22:42:20.686275183 2025-03-19T22:46:24.141077611
+                        2025-03-19T22:39:57.296595802 2025-03-19T22:47:40.505311661
 
                     END ConstraintInputTimes
 
@@ -100,7 +100,7 @@ BEGIN Access
 
                     BEGIN ConstraintSatisfaction
 
-                        2025-03-19T22:42:20.686275183 2025-03-19T22:46:24.141077611
+                        2025-03-19T22:39:57.296595802 2025-03-19T22:47:40.505311661
 
                     END ConstraintSatisfaction
 
@@ -127,7 +127,7 @@ BEGIN Access
 
                     BEGIN ConstraintInputTimes
 
-                        2025-03-19T22:42:20.686275183 2025-03-19T22:46:24.141077611
+                        2025-03-19T22:39:57.296595802 2025-03-19T22:47:40.505311661
 
                     END ConstraintInputTimes
 
@@ -136,493 +136,7 @@ BEGIN Access
 
                     BEGIN ConstraintSatisfaction
 
-                        2025-03-19T22:42:20.686275183 2025-03-19T22:46:24.141077611
-
-                    END ConstraintSatisfaction
-
-                END Constraint
-
-            END ConstraintList
-
-        END Stage
-
-
-    END StageList
-
-    Show		 Yes
-    Inherit		 Yes
-    ShowIV		 Yes
-    ShowLineGfx		 Yes
-    ShowHiliteGfx		 Yes
-    LineWidth		 1
-
-    LineStyle		 0
-    BEGIN Crdn
-    END Crdn
-
-END Access
-
-BEGIN Access
-    Scenario/Tracking/Satellite/LEOSats_P5_S3/Sensor/Sensor_P5_S3
-    Scenario/Tracking/Aircraft/Missile
-
-    IsComputed		 Yes
-    SaveComputedData		 Yes
-    ComputationMode		 1
-    UpdateOnReference		 Yes
-    DupIsDifferent		 No
-    UIOrderReversed		 No
-    UITimePeriod		 Object
-    UseLightTimeDelay		 Yes
-    ClockHost		 Base
-    TimeSense		 Receive
-    AberrationType		 Annual
-    TimeDelayConvergence		 5e-05
-    SetMaxStepFromInsts		 Yes
-    MaxTimeStep		 360
-    MinTimeStep		 0.01
-    TimeConvergence		 0.005
-    AbsValueConvergence		 1e-14
-    RelValueConvergence		 1e-08
-    DetectEventsUsingSamplesOnly		 No
-
-    BEGIN ConsideredIntervals
-
-        2025-03-19T22:32:56.711701764 2025-03-19T22:48:29.590313907
-
-    END ConsideredIntervals
-
-    BEGIN AccessIntervals
-
-        2025-03-19T22:32:56.711701764 2025-03-19T22:48:29.590313907
-
-    END AccessIntervals
-
-    BEGIN StageList
-
-        BEGIN Stage
-
-            MaxRelMotion		 0.34
-
-            BEGIN ConstraintList
-
-                BEGIN Constraint
-
-                    Name		 AzimuthAngle
-                    Instance		 Object1
-                    Action		 IncludeIntervals
-                    Type		 ZeroBound
-                    ConData		 Min		 -5.9999999999999993e+01Max		  5.9999999999999993e+01
-                    ComputationID		 1
-
-                    BEGIN ConstraintInputTimes
-
-                        2025-03-19T22:32:56.711701764 2025-03-19T22:48:29.590313907
-
-                    END ConstraintInputTimes
-
-                    StartConstrainedByAvailability		 No
-                    StopConstrainedByAvailability		 No
-
-                    BEGIN ConstraintSatisfaction
-
-                        2025-03-19T22:32:56.711701764 2025-03-19T22:48:29.590313907
-
-                    END ConstraintSatisfaction
-
-                END Constraint
-
-            END ConstraintList
-
-        END Stage
-
-
-        BEGIN Stage
-
-            MaxRelMotion		 0.34
-
-            BEGIN ConstraintList
-
-                BEGIN Constraint
-
-                    Name		 LineOfSight
-                    Instance		 Object1
-                    Action		 IncludeIntervals
-                    Type		 ZeroBound
-                    ComputationID		 2
-
-                    BEGIN ConstraintInputTimes
-
-                        2025-03-19T22:32:56.711701764 2025-03-19T22:48:29.590313907
-
-                    END ConstraintInputTimes
-
-                    StartConstrainedByAvailability		 No
-                    StopConstrainedByAvailability		 No
-
-                    BEGIN ConstraintSatisfaction
-
-                        2025-03-19T22:32:56.711701764 2025-03-19T22:48:29.590313907
-
-                    END ConstraintSatisfaction
-
-                END Constraint
-
-            END ConstraintList
-
-        END Stage
-
-
-        BEGIN Stage
-
-            MaxRelMotion		 0.17
-
-            BEGIN ConstraintList
-
-                BEGIN Constraint
-
-                    Name		 FieldOfView
-                    Instance		 Object1
-                    Action		 IncludeIntervals
-                    Type		 ZeroBound
-                    ComputationID		 3
-
-                    BEGIN ConstraintInputTimes
-
-                        2025-03-19T22:32:56.711701764 2025-03-19T22:48:29.590313907
-
-                    END ConstraintInputTimes
-
-                    StartConstrainedByAvailability		 No
-                    StopConstrainedByAvailability		 No
-
-                    BEGIN ConstraintSatisfaction
-
-                        2025-03-19T22:32:56.711701764 2025-03-19T22:48:29.590313907
-
-                    END ConstraintSatisfaction
-
-                END Constraint
-
-            END ConstraintList
-
-        END Stage
-
-
-    END StageList
-
-    Show		 Yes
-    Inherit		 Yes
-    ShowIV		 Yes
-    ShowLineGfx		 Yes
-    ShowHiliteGfx		 Yes
-    LineWidth		 1
-
-    LineStyle		 0
-    BEGIN Crdn
-    END Crdn
-
-END Access
-
-BEGIN Access
-    Scenario/Tracking/Satellite/LEOSats_P1_S5/Sensor/Sensor_P1_S5
-    Scenario/Tracking/Aircraft/Missile
-
-    IsComputed		 Yes
-    SaveComputedData		 Yes
-    ComputationMode		 1
-    UpdateOnReference		 Yes
-    DupIsDifferent		 No
-    UIOrderReversed		 No
-    UITimePeriod		 Object
-    UseLightTimeDelay		 Yes
-    ClockHost		 Base
-    TimeSense		 Receive
-    AberrationType		 Annual
-    TimeDelayConvergence		 5e-05
-    SetMaxStepFromInsts		 Yes
-    MaxTimeStep		 360
-    MinTimeStep		 0.01
-    TimeConvergence		 0.005
-    AbsValueConvergence		 1e-14
-    RelValueConvergence		 1e-08
-    DetectEventsUsingSamplesOnly		 No
-
-    BEGIN ConsideredIntervals
-
-        2025-03-19T22:37:42.626188993 2025-03-19T22:44:11.108110216
-
-    END ConsideredIntervals
-
-    BEGIN AccessIntervals
-
-        2025-03-19T22:37:42.626188993 2025-03-19T22:44:11.108110216
-
-    END AccessIntervals
-
-    BEGIN StageList
-
-        BEGIN Stage
-
-            MaxRelMotion		 0.34
-
-            BEGIN ConstraintList
-
-                BEGIN Constraint
-
-                    Name		 AzimuthAngle
-                    Instance		 Object1
-                    Action		 IncludeIntervals
-                    Type		 ZeroBound
-                    ConData		 Min		 -5.9999999999999993e+01Max		  5.9999999999999993e+01
-                    ComputationID		 1
-
-                    BEGIN ConstraintInputTimes
-
-                        2025-03-19T22:37:42.626188993 2025-03-19T22:44:11.108110216
-
-                    END ConstraintInputTimes
-
-                    StartConstrainedByAvailability		 No
-                    StopConstrainedByAvailability		 No
-
-                    BEGIN ConstraintSatisfaction
-
-                        2025-03-19T22:37:42.626188993 2025-03-19T22:44:11.108110216
-
-                    END ConstraintSatisfaction
-
-                END Constraint
-
-            END ConstraintList
-
-        END Stage
-
-
-        BEGIN Stage
-
-            MaxRelMotion		 0.34
-
-            BEGIN ConstraintList
-
-                BEGIN Constraint
-
-                    Name		 LineOfSight
-                    Instance		 Object1
-                    Action		 IncludeIntervals
-                    Type		 ZeroBound
-                    ComputationID		 2
-
-                    BEGIN ConstraintInputTimes
-
-                        2025-03-19T22:37:42.626188993 2025-03-19T22:44:11.108110216
-
-                    END ConstraintInputTimes
-
-                    StartConstrainedByAvailability		 No
-                    StopConstrainedByAvailability		 No
-
-                    BEGIN ConstraintSatisfaction
-
-                        2025-03-19T22:37:42.626188993 2025-03-19T22:44:11.108110216
-
-                    END ConstraintSatisfaction
-
-                END Constraint
-
-            END ConstraintList
-
-        END Stage
-
-
-        BEGIN Stage
-
-            MaxRelMotion		 0.17
-
-            BEGIN ConstraintList
-
-                BEGIN Constraint
-
-                    Name		 FieldOfView
-                    Instance		 Object1
-                    Action		 IncludeIntervals
-                    Type		 ZeroBound
-                    ComputationID		 3
-
-                    BEGIN ConstraintInputTimes
-
-                        2025-03-19T22:37:42.626188993 2025-03-19T22:44:11.108110216
-
-                    END ConstraintInputTimes
-
-                    StartConstrainedByAvailability		 No
-                    StopConstrainedByAvailability		 No
-
-                    BEGIN ConstraintSatisfaction
-
-                        2025-03-19T22:37:42.626188993 2025-03-19T22:44:11.108110216
-
-                    END ConstraintSatisfaction
-
-                END Constraint
-
-            END ConstraintList
-
-        END Stage
-
-
-    END StageList
-
-    Show		 Yes
-    Inherit		 Yes
-    ShowIV		 Yes
-    ShowLineGfx		 Yes
-    ShowHiliteGfx		 Yes
-    LineWidth		 1
-
-    LineStyle		 0
-    BEGIN Crdn
-    END Crdn
-
-END Access
-
-BEGIN Access
-    Scenario/Tracking/Satellite/LEOSats_P1_S6/Sensor/Sensor_P1_S6
-    Scenario/Tracking/Aircraft/Missile
-
-    IsComputed		 Yes
-    SaveComputedData		 Yes
-    ComputationMode		 1
-    UpdateOnReference		 Yes
-    DupIsDifferent		 No
-    UIOrderReversed		 No
-    UITimePeriod		 Object
-    UseLightTimeDelay		 Yes
-    ClockHost		 Base
-    TimeSense		 Receive
-    AberrationType		 Annual
-    TimeDelayConvergence		 5e-05
-    SetMaxStepFromInsts		 Yes
-    MaxTimeStep		 360
-    MinTimeStep		 0.01
-    TimeConvergence		 0.005
-    AbsValueConvergence		 1e-14
-    RelValueConvergence		 1e-08
-    DetectEventsUsingSamplesOnly		 No
-
-    BEGIN ConsideredIntervals
-
-        2025-03-19T22:24:43.788324439 2025-03-19T22:32:32.676832595
-
-    END ConsideredIntervals
-
-    BEGIN AccessIntervals
-
-        2025-03-19T22:24:43.788324439 2025-03-19T22:32:32.676832595
-
-    END AccessIntervals
-
-    BEGIN StageList
-
-        BEGIN Stage
-
-            MaxRelMotion		 0.34
-
-            BEGIN ConstraintList
-
-                BEGIN Constraint
-
-                    Name		 AzimuthAngle
-                    Instance		 Object1
-                    Action		 IncludeIntervals
-                    Type		 ZeroBound
-                    ConData		 Min		 -5.9999999999999993e+01Max		  5.9999999999999993e+01
-                    ComputationID		 1
-
-                    BEGIN ConstraintInputTimes
-
-                        2025-03-19T22:24:43.788324439 2025-03-19T22:32:32.676832595
-
-                    END ConstraintInputTimes
-
-                    StartConstrainedByAvailability		 No
-                    StopConstrainedByAvailability		 No
-
-                    BEGIN ConstraintSatisfaction
-
-                        2025-03-19T22:24:43.788324439 2025-03-19T22:32:32.676832595
-
-                    END ConstraintSatisfaction
-
-                END Constraint
-
-            END ConstraintList
-
-        END Stage
-
-
-        BEGIN Stage
-
-            MaxRelMotion		 0.34
-
-            BEGIN ConstraintList
-
-                BEGIN Constraint
-
-                    Name		 LineOfSight
-                    Instance		 Object1
-                    Action		 IncludeIntervals
-                    Type		 ZeroBound
-                    ComputationID		 2
-
-                    BEGIN ConstraintInputTimes
-
-                        2025-03-19T22:24:43.788324439 2025-03-19T22:32:32.676832595
-
-                    END ConstraintInputTimes
-
-                    StartConstrainedByAvailability		 No
-                    StopConstrainedByAvailability		 No
-
-                    BEGIN ConstraintSatisfaction
-
-                        2025-03-19T22:24:43.788324439 2025-03-19T22:32:32.676832595
-
-                    END ConstraintSatisfaction
-
-                END Constraint
-
-            END ConstraintList
-
-        END Stage
-
-
-        BEGIN Stage
-
-            MaxRelMotion		 0.17
-
-            BEGIN ConstraintList
-
-                BEGIN Constraint
-
-                    Name		 FieldOfView
-                    Instance		 Object1
-                    Action		 IncludeIntervals
-                    Type		 ZeroBound
-                    ComputationID		 3
-
-                    BEGIN ConstraintInputTimes
-
-                        2025-03-19T22:24:43.788324439 2025-03-19T22:32:32.676832595
-
-                    END ConstraintInputTimes
-
-                    StartConstrainedByAvailability		 No
-                    StopConstrainedByAvailability		 No
-
-                    BEGIN ConstraintSatisfaction
-
-                        2025-03-19T22:24:43.788324439 2025-03-19T22:32:32.676832595
+                        2025-03-19T22:39:57.296595802 2025-03-19T22:47:40.505311661
 
                     END ConstraintSatisfaction
 
@@ -674,13 +188,13 @@ BEGIN Access
 
     BEGIN ConsideredIntervals
 
-        2025-03-19T22:26:30.169928815 2025-03-19T22:31:58.575350815
+        2025-03-19T22:38:07.146892140 2025-03-19T22:43:26.062049106
 
     END ConsideredIntervals
 
     BEGIN AccessIntervals
 
-        2025-03-19T22:26:30.169928815 2025-03-19T22:31:58.575350815
+        2025-03-19T22:38:07.146892140 2025-03-19T22:43:26.062049106
 
     END AccessIntervals
 
@@ -703,7 +217,7 @@ BEGIN Access
 
                     BEGIN ConstraintInputTimes
 
-                        2025-03-19T22:26:30.169928815 2025-03-19T22:31:58.575350815
+                        2025-03-19T22:38:07.146892140 2025-03-19T22:43:26.062049106
 
                     END ConstraintInputTimes
 
@@ -712,7 +226,7 @@ BEGIN Access
 
                     BEGIN ConstraintSatisfaction
 
-                        2025-03-19T22:26:30.169928815 2025-03-19T22:31:58.575350815
+                        2025-03-19T22:38:07.146892140 2025-03-19T22:43:26.062049106
 
                     END ConstraintSatisfaction
 
@@ -739,7 +253,7 @@ BEGIN Access
 
                     BEGIN ConstraintInputTimes
 
-                        2025-03-19T22:26:30.169928815 2025-03-19T22:31:58.575350815
+                        2025-03-19T22:38:07.146892140 2025-03-19T22:43:26.062049106
 
                     END ConstraintInputTimes
 
@@ -748,7 +262,7 @@ BEGIN Access
 
                     BEGIN ConstraintSatisfaction
 
-                        2025-03-19T22:26:30.169928815 2025-03-19T22:31:58.575350815
+                        2025-03-19T22:38:07.146892140 2025-03-19T22:43:26.062049106
 
                     END ConstraintSatisfaction
 
@@ -775,7 +289,7 @@ BEGIN Access
 
                     BEGIN ConstraintInputTimes
 
-                        2025-03-19T22:26:30.169928815 2025-03-19T22:31:58.575350815
+                        2025-03-19T22:38:07.146892140 2025-03-19T22:43:26.062049106
 
                     END ConstraintInputTimes
 
@@ -784,7 +298,7 @@ BEGIN Access
 
                     BEGIN ConstraintSatisfaction
 
-                        2025-03-19T22:26:30.169928815 2025-03-19T22:31:58.575350815
+                        2025-03-19T22:38:07.146892140 2025-03-19T22:43:26.062049106
 
                     END ConstraintSatisfaction
 
@@ -811,7 +325,7 @@ BEGIN Access
 END Access
 
 BEGIN Access
-    Scenario/Tracking/Satellite/LEOSats_P2_S4/Sensor/Sensor_P2_S4
+    Scenario/Tracking/Satellite/LEOSats_P2_S6/Sensor/Sensor_P2_S6
     Scenario/Tracking/Aircraft/Missile
 
     IsComputed		 Yes
@@ -836,13 +350,13 @@ BEGIN Access
 
     BEGIN ConsideredIntervals
 
-        2025-03-19T22:37:19.733926600 2025-03-19T22:44:00.121931227
+        2025-03-19T22:24:19.299007427 2025-03-19T22:31:57.894068761
 
     END ConsideredIntervals
 
     BEGIN AccessIntervals
 
-        2025-03-19T22:37:19.733926600 2025-03-19T22:44:00.121931227
+        2025-03-19T22:24:19.299007427 2025-03-19T22:31:57.894068761
 
     END AccessIntervals
 
@@ -865,7 +379,7 @@ BEGIN Access
 
                     BEGIN ConstraintInputTimes
 
-                        2025-03-19T22:37:19.733926600 2025-03-19T22:44:00.121931227
+                        2025-03-19T22:24:19.299007427 2025-03-19T22:31:57.894068761
 
                     END ConstraintInputTimes
 
@@ -874,7 +388,7 @@ BEGIN Access
 
                     BEGIN ConstraintSatisfaction
 
-                        2025-03-19T22:37:19.733926600 2025-03-19T22:44:00.121931227
+                        2025-03-19T22:24:19.299007427 2025-03-19T22:31:57.894068761
 
                     END ConstraintSatisfaction
 
@@ -901,7 +415,7 @@ BEGIN Access
 
                     BEGIN ConstraintInputTimes
 
-                        2025-03-19T22:37:19.733926600 2025-03-19T22:44:00.121931227
+                        2025-03-19T22:24:19.299007427 2025-03-19T22:31:57.894068761
 
                     END ConstraintInputTimes
 
@@ -910,7 +424,7 @@ BEGIN Access
 
                     BEGIN ConstraintSatisfaction
 
-                        2025-03-19T22:37:19.733926600 2025-03-19T22:44:00.121931227
+                        2025-03-19T22:24:19.299007427 2025-03-19T22:31:57.894068761
 
                     END ConstraintSatisfaction
 
@@ -937,7 +451,7 @@ BEGIN Access
 
                     BEGIN ConstraintInputTimes
 
-                        2025-03-19T22:37:19.733926600 2025-03-19T22:44:00.121931227
+                        2025-03-19T22:24:19.299007427 2025-03-19T22:31:57.894068761
 
                     END ConstraintInputTimes
 
@@ -946,7 +460,7 @@ BEGIN Access
 
                     BEGIN ConstraintSatisfaction
 
-                        2025-03-19T22:37:19.733926600 2025-03-19T22:44:00.121931227
+                        2025-03-19T22:24:19.299007427 2025-03-19T22:31:57.894068761
 
                     END ConstraintSatisfaction
 
@@ -973,7 +487,7 @@ BEGIN Access
 END Access
 
 BEGIN Access
-    Scenario/Tracking/Satellite/LEOSats_P3_S4/Sensor/Sensor_P3_S4
+    Scenario/Tracking/Satellite/LEOSats_P4_S3/Sensor/Sensor_P4_S3
     Scenario/Tracking/Aircraft/Missile
 
     IsComputed		 Yes
@@ -998,13 +512,13 @@ BEGIN Access
 
     BEGIN ConsideredIntervals
 
-        2025-03-19T22:25:59.862948149 2025-03-19T22:34:26.149339308
+        2025-03-19T22:26:54.785072778 2025-03-19T22:32:15.054591763
 
     END ConsideredIntervals
 
     BEGIN AccessIntervals
 
-        2025-03-19T22:25:59.862948149 2025-03-19T22:34:26.149339308
+        2025-03-19T22:26:54.785072778 2025-03-19T22:32:15.054591763
 
     END AccessIntervals
 
@@ -1027,7 +541,7 @@ BEGIN Access
 
                     BEGIN ConstraintInputTimes
 
-                        2025-03-19T22:25:59.862948149 2025-03-19T22:34:26.149339308
+                        2025-03-19T22:26:54.785072778 2025-03-19T22:32:15.054591763
 
                     END ConstraintInputTimes
 
@@ -1036,7 +550,7 @@ BEGIN Access
 
                     BEGIN ConstraintSatisfaction
 
-                        2025-03-19T22:25:59.862948149 2025-03-19T22:34:26.149339308
+                        2025-03-19T22:26:54.785072778 2025-03-19T22:32:15.054591763
 
                     END ConstraintSatisfaction
 
@@ -1063,7 +577,7 @@ BEGIN Access
 
                     BEGIN ConstraintInputTimes
 
-                        2025-03-19T22:25:59.862948149 2025-03-19T22:34:26.149339308
+                        2025-03-19T22:26:54.785072778 2025-03-19T22:32:15.054591763
 
                     END ConstraintInputTimes
 
@@ -1072,7 +586,7 @@ BEGIN Access
 
                     BEGIN ConstraintSatisfaction
 
-                        2025-03-19T22:25:59.862948149 2025-03-19T22:34:26.149339308
+                        2025-03-19T22:26:54.785072778 2025-03-19T22:32:15.054591763
 
                     END ConstraintSatisfaction
 
@@ -1099,7 +613,7 @@ BEGIN Access
 
                     BEGIN ConstraintInputTimes
 
-                        2025-03-19T22:25:59.862948149 2025-03-19T22:34:26.149339308
+                        2025-03-19T22:26:54.785072778 2025-03-19T22:32:15.054591763
 
                     END ConstraintInputTimes
 
@@ -1108,169 +622,7 @@ BEGIN Access
 
                     BEGIN ConstraintSatisfaction
 
-                        2025-03-19T22:25:59.862948149 2025-03-19T22:34:26.149339308
-
-                    END ConstraintSatisfaction
-
-                END Constraint
-
-            END ConstraintList
-
-        END Stage
-
-
-    END StageList
-
-    Show		 Yes
-    Inherit		 Yes
-    ShowIV		 Yes
-    ShowLineGfx		 Yes
-    ShowHiliteGfx		 Yes
-    LineWidth		 1
-
-    LineStyle		 0
-    BEGIN Crdn
-    END Crdn
-
-END Access
-
-BEGIN Access
-    Scenario/Tracking/Satellite/LEOSats_P2_S3/Sensor/Sensor_P2_S3
-    Scenario/Tracking/Aircraft/Missile
-
-    IsComputed		 Yes
-    SaveComputedData		 Yes
-    ComputationMode		 1
-    UpdateOnReference		 Yes
-    DupIsDifferent		 No
-    UIOrderReversed		 No
-    UITimePeriod		 Object
-    UseLightTimeDelay		 Yes
-    ClockHost		 Base
-    TimeSense		 Receive
-    AberrationType		 Annual
-    TimeDelayConvergence		 5e-05
-    SetMaxStepFromInsts		 Yes
-    MaxTimeStep		 360
-    MinTimeStep		 0.01
-    TimeConvergence		 0.005
-    AbsValueConvergence		 1e-14
-    RelValueConvergence		 1e-08
-    DetectEventsUsingSamplesOnly		 No
-
-    BEGIN ConsideredIntervals
-
-        2025-03-19T22:49:07.499387206 2025-03-19T22:55:54.853582467
-
-    END ConsideredIntervals
-
-    BEGIN AccessIntervals
-
-        2025-03-19T22:49:07.499387206 2025-03-19T22:55:54.853582467
-
-    END AccessIntervals
-
-    BEGIN StageList
-
-        BEGIN Stage
-
-            MaxRelMotion		 0.34
-
-            BEGIN ConstraintList
-
-                BEGIN Constraint
-
-                    Name		 AzimuthAngle
-                    Instance		 Object1
-                    Action		 IncludeIntervals
-                    Type		 ZeroBound
-                    ConData		 Min		 -5.9999999999999993e+01Max		  5.9999999999999993e+01
-                    ComputationID		 1
-
-                    BEGIN ConstraintInputTimes
-
-                        2025-03-19T22:49:07.499387206 2025-03-19T22:55:54.853582467
-
-                    END ConstraintInputTimes
-
-                    StartConstrainedByAvailability		 No
-                    StopConstrainedByAvailability		 No
-
-                    BEGIN ConstraintSatisfaction
-
-                        2025-03-19T22:49:07.499387206 2025-03-19T22:55:54.853582467
-
-                    END ConstraintSatisfaction
-
-                END Constraint
-
-            END ConstraintList
-
-        END Stage
-
-
-        BEGIN Stage
-
-            MaxRelMotion		 0.34
-
-            BEGIN ConstraintList
-
-                BEGIN Constraint
-
-                    Name		 LineOfSight
-                    Instance		 Object1
-                    Action		 IncludeIntervals
-                    Type		 ZeroBound
-                    ComputationID		 2
-
-                    BEGIN ConstraintInputTimes
-
-                        2025-03-19T22:49:07.499387206 2025-03-19T22:55:54.853582467
-
-                    END ConstraintInputTimes
-
-                    StartConstrainedByAvailability		 No
-                    StopConstrainedByAvailability		 No
-
-                    BEGIN ConstraintSatisfaction
-
-                        2025-03-19T22:49:07.499387206 2025-03-19T22:55:54.853582467
-
-                    END ConstraintSatisfaction
-
-                END Constraint
-
-            END ConstraintList
-
-        END Stage
-
-
-        BEGIN Stage
-
-            MaxRelMotion		 0.17
-
-            BEGIN ConstraintList
-
-                BEGIN Constraint
-
-                    Name		 FieldOfView
-                    Instance		 Object1
-                    Action		 IncludeIntervals
-                    Type		 ZeroBound
-                    ComputationID		 3
-
-                    BEGIN ConstraintInputTimes
-
-                        2025-03-19T22:49:07.499387206 2025-03-19T22:55:54.853582467
-
-                    END ConstraintInputTimes
-
-                    StartConstrainedByAvailability		 No
-                    StopConstrainedByAvailability		 No
-
-                    BEGIN ConstraintSatisfaction
-
-                        2025-03-19T22:49:07.499387206 2025-03-19T22:55:54.853582467
+                        2025-03-19T22:26:54.785072778 2025-03-19T22:32:15.054591763
 
                     END ConstraintSatisfaction
 
