@@ -5,10 +5,12 @@ Analysis and plotting functions.
 """
 import os 
 import pickle
+import spiceypy as spice
 import matplotlib as mpl
 import matplotlib.pyplot as plt
 mpl.use("pgf")
 from matplotlib import rc
+from mpl_toolkits.basemap import Basemap
 from .constants import *
 from src import *
 
@@ -113,7 +115,80 @@ def plot_monte_carlo():
     plt.savefig(os.path.join(FIGURES_DIR, MONTE_CARLO_VELOCITY_FILENAME+".pdf"))
     plt.close(fig_vel)
 
-def plot_trajectory():
+def plot_trajectory_2D(t0_utc):
+    """
+    Parameters
+    ----------
+    - t0_utc: Launch time in SPICE format, e.g. "2025 MAR 19 22:21:50.000"
+    """
+    download_kernels()
+    load_kernels()
+    
+    # Load EKF and missile data
+    with open(os.path.join(DATA_DIR, EKF_STORE_FILENAME + ".pkl"), "rb") as f:
+        ekf_store = pickle.load(f)
+    missile_store = np.load(os.path.join(DATA_DIR, MISSILE_STORE_FILENAME + ".npz"), allow_pickle=True)
+    
+    x_m_store = missile_store["x_store"]
+    t_store = missile_store["t_store"]  - missile_store["t_store"][0]  # Relative to launch time
+
+    mx_post = ekf_store.mx_post
+    t_ekf = ekf_store.t  # Relative to launch time
+
+    # Convert launch time to datetime and SPICE ephemeris time (ET)
+    t0_et = spice.str2et(t0_utc)
+
+    ### Convert missile truth ECI to lat/lon ###
+    et_missile = t0_et + t_store  # seconds since ref time
+    x_m_llh = []
+    for i in range(len(t_store)):
+        x_eci = x_m_store[i][:3]
+        mat = spice.pxform("J2000", "ITRF93", et_missile[i])
+        x_ecef = mat @ x_eci
+        lon, lat, _ = spice.recgeo(x_ecef, R_E, 0.0)
+        x_m_llh.append((np.degrees(lon), np.degrees(lat)))
+    lons_truth, lats_truth = zip(*x_m_llh)
+
+    ### Convert EKF estimate ECI to lat/lon ###
+    et_ekf = t0_et + t_ekf
+    x_e_llh = []
+    for i in range(len(t_ekf)):
+        x_eci = mx_post[:3, i]
+        mat = spice.pxform("J2000", "ITRF93", et_ekf[i])
+        x_ecef = mat @ x_eci
+        lon, lat, _ = spice.recgeo(x_ecef, R_E, 0.0)
+        x_e_llh.append((np.degrees(lon), np.degrees(lat)))
+    lons_est, lats_est = zip(*x_e_llh)
+
+    ### Plot ###
+    fig = plt.figure(figsize=(10, 6))
+    m = Basemap(projection='mill',
+                llcrnrlon=-90, llcrnrlat=20,
+                urcrnrlon=40, urcrnrlat=80,
+                resolution='l')
+
+    m.drawcoastlines()
+    m.drawcountries()
+    m.drawmapboundary(fill_color='#ADD8E6')
+    m.fillcontinents(color='#C19A6B', lake_color='#ADD8E6')
+    m.drawparallels(np.arange(20, 81, 20), labels=[1,0,0,0])
+    m.drawmeridians(np.arange(-90, 61, 30), labels=[0,0,0,1])
+
+    # Convert coordinates
+    x_truth, y_truth = m(lons_truth, lats_truth)
+    x_est, y_est = m(lons_est, lats_est)
+
+    plt.plot(x_truth, y_truth, label="Truth", color="black", linewidth=2)
+    plt.plot(x_est, y_est, label="EKF Estimate", color="red", linewidth=2, linestyle="--")
+
+    plt.legend(loc="upper right")
+    plt.tight_layout()
+    plt.savefig(os.path.join(FIGURES_DIR, TRAJECTORY_2D_FILENAME + ".pdf"))
+    plt.close(fig)
+
+
+
+def plot_trajectory_3D():
     # Load missile truth
     missile_store = np.load(os.path.join(DATA_DIR, MISSILE_STORE_FILENAME + ".npz"), allow_pickle=True)
     x_m_store = missile_store["x_store"] 
@@ -158,4 +233,4 @@ def plot_trajectory():
     ax.set_box_aspect([1, 1, 1])  # equal aspect
 
     plt.tight_layout()
-    plt.savefig(os.path.join(FIGURES_DIR, TRAJECTORY_FILENAME + ".pdf"))
+    plt.savefig(os.path.join(FIGURES_DIR, TRAJECTORY_3D_FILENAME + ".pdf"))

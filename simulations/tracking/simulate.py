@@ -242,7 +242,7 @@ def run_monte_carlo(num_samples=1000):
     error_vectors = np.array([V @ sqrt_S @ zeta for zeta in zetas])
 
     # Run EKF for each sample
-    ex_post_samples = []
+    ex_samples = []
     for j, error in enumerate(error_vectors):
         print(f"Sample {j+1}/{num_samples}")
         
@@ -250,17 +250,17 @@ def run_monte_carlo(num_samples=1000):
         
         with open(os.path.join(DATA_DIR, EKF_STORE_FILENAME + ".pkl"), "rb") as f:
             ekf_store = pickle.load(f)
-            ex_post_samples.append(ekf_store.ex_post.copy())
+            ex_samples.append(ekf_store.ex.copy())
 
-    ex_post_matrix = np.stack(ex_post_samples, axis=-1)  # shape: (6, T, N)
+    ex_matrix = np.stack(ex_samples, axis=-1)  # shape: (6, T, 2N)
 
-    ex_sample_mean = np.mean(ex_post_matrix, axis=-1)  # shape: (6, T)
-    sx_sample = np.std(ex_post_matrix, axis=-1, ddof=1)
+    ex_sample_mean = np.mean(ex_matrix, axis=-1)  # shape: (6, T)
+    sx_sample = np.std(ex_matrix, axis=-1, ddof=1)
 
     with open(os.path.join(DATA_DIR, EKF_STORE_FILENAME + ".pkl"), "rb") as f:
         ekf_store = pickle.load(f)
         t = ekf_store.t
-        sx_ekf = ekf_store.sx_post
+        sx_ekf = ekf_store.sx
 
     with open(os.path.join(DATA_DIR, MONTE_CARLO_FILENAME + ".pkl"), "wb") as f:
         pickle.dump({

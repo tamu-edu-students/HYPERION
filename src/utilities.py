@@ -2,6 +2,7 @@ import os
 import requests
 import csv
 import numpy as np
+import spiceypy as spice
 from agi.stk12.stkobjects import AgStkObjectRoot
 from .objects import *
 
@@ -144,6 +145,15 @@ def download_kernels():
             print(f"{filename} already exists. Skipping download.")
 
     print("All SPICE kernels are downloaded and saved in 'data/spice'.")
+
+def load_kernels():
+    # Load required SPICE kernels
+    spice.furnsh("data/spice/naif0012.tls")  # Leap second kernel (LSK)
+    spice.furnsh("data/spice/pck00010.tpc")  # Earth orientation model
+    spice.furnsh("data/spice/earth_latest_high_prec.bpc")  # High-precision Earth orientation binary PCK
+    spice.furnsh("data/spice/de430.bsp")  # Planetary ephemeris kernel
+
+    print("All SPICE kernels have been loaded.")
 
 def npz_to_csv(npz_filepath: str, output_csv: str = None):
     """

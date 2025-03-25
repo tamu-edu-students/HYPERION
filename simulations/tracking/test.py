@@ -1,14 +1,9 @@
-from src import download_kernels
+from src import download_kernels, load_kernels
 import numpy as np
 import spiceypy as spice
 
 download_kernels()
-
-# Load required SPICE kernels
-spice.furnsh("data/spice/naif0012.tls")  # Leap second kernel (LSK)
-spice.furnsh("data/spice/pck00010.tpc")  # Earth orientation model
-spice.furnsh("data/spice/earth_latest_high_prec.bpc")  # High-precision Earth orientation binary PCK
-spice.furnsh("data/spice/de430.bsp")  # Planetary ephemeris kernel
+load_kernels()
 
 def get_az_el(r_M, r_S, v_S):
     """ Convert missile ECI coordinates to Azimuth and Elevation in VVLH frame. """

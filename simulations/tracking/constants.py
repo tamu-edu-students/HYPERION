@@ -21,4 +21,6 @@ POSITION_ERROR_FILENAME = "position_error"
 VELOCITY_ERROR_FILENAME = "velocity_error"
 MONTE_CARLO_POSITION_FILENAME = "monte_carlo_position"
 MONTE_CARLO_VELOCITY_FILENAME = "monte_carlo_velocity"
-TRAJECTORY_FILENAME = "trajectory"
+
+TRAJECTORY_2D_FILENAME = "trajectory_2d"
+TRAJECTORY_3D_FILENAME = "trajectory_3d"
