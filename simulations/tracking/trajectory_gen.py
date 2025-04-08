@@ -382,80 +382,153 @@ def make_ephemeris(trajectory):
 
 ### Plot ###
 def plot_altitude(trajectory):
-    times = np.hstack([seg.t for seg in trajectory])
-    positions = np.hstack([seg.y[0:3] for seg in trajectory]) 
-
-    r_magnitudes = np.linalg.norm(positions, axis=0)
-    altitudes = r_magnitudes - R_E  # km
-
     plt.figure(figsize=(8, 5))
-    plt.plot(times, altitudes)
+
+    # Define segment styling
+    colors = ["tab:red", "tab:orange", "tab:green"]
+    labels = ["Boost Phase", "Ballistic Re-entry", "Glide Phase"]
+
+    # Boost
+    for i in range(3):
+        seg = trajectory[i]
+        times = seg.t
+        positions = seg.y[0:3]
+        r_magnitudes = np.linalg.norm(positions, axis=0)
+        altitudes = r_magnitudes - R_E
+
+        label = labels[0] if i == 0 else None  
+        plt.plot(times, altitudes, color=colors[0], label=label)
+
+    # Ballistic Re-entry
+    seg = trajectory[3]
+    times = seg.t
+    positions = seg.y[0:3]
+    r_magnitudes = np.linalg.norm(positions, axis=0)
+    altitudes = r_magnitudes - R_E
+    plt.plot(times, altitudes, color=colors[1], label=labels[1])
+
+    # Glide
+    seg = trajectory[4]
+    times = seg.t
+    positions = seg.y[0:3]
+    r_magnitudes = np.linalg.norm(positions, axis=0)
+    altitudes = r_magnitudes - R_E
+    plt.plot(times, altitudes, color=colors[2], label=labels[2])
+
+    # Labels and layout
     plt.xlabel("Time Elapsed [s]")
     plt.ylabel("Altitude [km]")
     plt.grid(True)
+    plt.legend()
     plt.tight_layout()
     plt.savefig(os.path.join(FIGURES_DIR, "altitude.pdf"))
 
+
 def plot_velocity(trajectory):
-    times = np.hstack([seg.t for seg in trajectory])
-    velocities = np.hstack([seg.y[3:6] for seg in trajectory])
-
-    v_mag = np.linalg.norm(velocities, axis=0)
-
     plt.figure(figsize=(8, 5))
-    plt.plot(times, v_mag)
+
+    colors = ["tab:red", "tab:orange", "tab:green"]
+    labels = ["Boost Phase", "Ballistic Re-entry", "Glide Phase"]
+
+    # Plot first 3 segments (boost)
+    for i in range(3):
+        seg = trajectory[i]
+        times = seg.t
+        velocities = seg.y[3:6]
+        v_mag = np.linalg.norm(velocities, axis=0)
+
+        label = labels[0] if i == 0 else None  # Only label the first boost segment
+        plt.plot(times, v_mag, color=colors[0], label=label)
+
+    # Ballistic Re-entry
+    seg = trajectory[3]
+    times = seg.t
+    velocities = seg.y[3:6]
+    v_mag = np.linalg.norm(velocities, axis=0)
+    plt.plot(times, v_mag, color=colors[1], label=labels[1])
+
+    # Glide Phase
+    seg = trajectory[4]
+    times = seg.t
+    velocities = seg.y[3:6]
+    v_mag = np.linalg.norm(velocities, axis=0)
+    plt.plot(times, v_mag, color=colors[2], label=labels[2])
+
+    # Labels and layout
     plt.xlabel("Time Elapsed [s]")
-    plt.ylabel(r"$|| \mathbf{v} ||$ [km/s]")
+    plt.ylabel("Speed [km/s]")
     plt.grid(True)
+    plt.legend()
     plt.tight_layout()
     plt.savefig(os.path.join(FIGURES_DIR, "velocity.pdf"))
 
-def plot_mass(trajectory):
-    times = np.hstack([seg.t for seg in trajectory])
-    masses = np.hstack([seg.y[6] for seg in trajectory])
 
+def plot_mass(trajectory):
     plt.figure(figsize=(8, 5))
-    plt.plot(times, masses)
+
+    colors = ["tab:red", "tab:orange", "tab:green"]
+    labels = ["Boost Phase 1", "Boost Phase 2", "Boost Phase 3"]
+
+    for i in range(3):
+        seg = trajectory[i]
+        times = seg.t
+        masses = seg.y[6]
+        plt.plot(times, masses, color=colors[i], label=labels[i])
+
+    # Labels and layout
     plt.xlabel("Time Elapsed [s]")
-    plt.ylabel(r"Mass [kg]")
+    plt.ylabel("Mass [kg]")
     plt.grid(True)
+    plt.legend()
     plt.tight_layout()
     plt.savefig(os.path.join(FIGURES_DIR, "mass.pdf"))
 
 def plot_trajectory_2D(trajectory):
-    times = np.hstack([seg.t for seg in trajectory])
-    positions = np.hstack([seg.y[0:3] for seg in trajectory])  # ECI position
-
-    # Convert to lat/lon
-    lats = []
-    lons = []
-    for i in range(len(times)):
-        r_eci = positions[:, i]
-        mat = sp.pxform("J2000", "ITRF93", LAUNCH_ET + times[i])
-        r_ecef = mat @ r_eci
-        lon, lat, _ = sp.recgeo(r_ecef, R_E, 0.0)
-        lons.append(np.degrees(lon))
-        lats.append(np.degrees(lat))
-
-    # Plot on map
+    # Setup the map
     fig = plt.figure(figsize=(10, 6))
     m = Basemap(projection='mill',
                 llcrnrlon=-90, llcrnrlat=20,
                 urcrnrlon=60, urcrnrlat=80,
                 resolution='l')
-    # m = Basemap(projection='mill', resolution='l')
 
     m.drawcoastlines()
     m.drawcountries()
     m.drawmapboundary(fill_color='#ADD8E6')
     m.fillcontinents(color='#C19A6B', lake_color='#ADD8E6')
-    # m.drawparallels(np.arange(-90, 91, 30), labels=[1,0,0,0])
-    # m.drawmeridians(np.arange(-180, 181, 60), labels=[0,0,0,1])
     m.drawparallels(np.arange(20, 81, 10), labels=[1,0,0,0])
     m.drawmeridians(np.arange(-90, 61, 30), labels=[0,0,0,1])
 
-    x, y = m(lons, lats)
-    m.plot(x, y, color='red', linewidth=2, label='Missile Trajectory')
+    # Color and label settings
+    colors = ["tab:red", "tab:orange", "tab:green"]
+    labels = ["Boost Phase", "Ballistic Re-entry", "Glide Phase"]
+
+    for i, seg in enumerate(trajectory):
+        times = seg.t
+        positions = seg.y[0:3]
+
+        lats, lons = [], []
+        for j in range(len(times)):
+            r_eci = positions[:, j]
+            mat = sp.pxform("J2000", "ITRF93", LAUNCH_ET + times[j])
+            r_ecef = mat @ r_eci
+            lon, lat, _ = sp.recgeo(r_ecef, R_E, 0.0)
+            lons.append(np.degrees(lon))
+            lats.append(np.degrees(lat))
+
+        color = (
+            colors[0] if i < 3 else
+            colors[1] if i == 3 else
+            colors[2]
+        )
+        label = (
+            labels[0] if i == 0 else
+            labels[1] if i == 3 else
+            labels[2] if i == 4 else
+            None
+        )
+
+        x, y = m(lons, lats)
+        m.plot(x, y, color=color, linewidth=2, label=label)
 
     plt.legend(loc='upper right')
     plt.tight_layout()
@@ -493,6 +566,48 @@ def plot_trajectory_3D(trajectory):
     # plt.show()
     plt.savefig(os.path.join(FIGURES_DIR, TRAJECTORY_3D_FILENAME + ".pdf"))
 
+def plot_downrange(trajectory):
+    altitudes = []
+    downranges = []
+    total_range = 0.0
+    prev_point_ecef = None
+
+    for seg in trajectory:
+        for i in range(len(seg.t)):
+            r_eci = seg.y[0:3, i]
+            t = seg.t[i]
+
+            # Convert to ECEF
+            mat = sp.pxform("J2000", "ITRF93", LAUNCH_ET + t)
+            r_ecef = mat @ r_eci
+
+            # Compute altitude
+            h = np.linalg.norm(r_ecef) - R_E
+            altitudes.append(h)
+
+            # Compute horizontal distance incrementally along ECEF arc
+            if prev_point_ecef is None:
+                downranges.append(0.0)
+            else:
+                dR = np.linalg.norm(r_ecef - prev_point_ecef)
+                total_range += dR
+                downranges.append(total_range)
+
+            prev_point_ecef = r_ecef
+
+    # Convert m to km
+    downranges = np.array(downranges)
+    altitudes = np.array(altitudes)
+
+    # Plot
+    plt.figure(figsize=(9, 5))
+    plt.plot(downranges, altitudes, color="tab:blue", linewidth=2)
+    plt.xlabel("Downrange [km]")
+    plt.ylabel("Altitude [km]")
+    plt.grid(True)
+    plt.tight_layout()
+    plt.savefig(os.path.join(FIGURES_DIR, "downrange.pdf"))
+
 
 if __name__ == "__main__":
     # result = optimize()
@@ -509,3 +624,4 @@ if __name__ == "__main__":
     plot_mass(trajectory)
     plot_trajectory_2D(trajectory)
     plot_trajectory_3D(trajectory)
+    plot_downrange(trajectory)
