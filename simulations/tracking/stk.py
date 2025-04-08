@@ -19,8 +19,8 @@ def stkmain(root):
     target_site = Site(38.8977, -77.0365, "Washington, DC", "United States")
 
     missile_name = "Missile"
-    # missile = Missile(root, name=missile_name, launch_site=launch_site, target_site=target_site, launch_time="19 Mar 2025 22:21:50.000", Mach=10, h_max=100)
-    missile = Missile(root, name=missile_name, launch_time="19 Mar 2025 22:21:50.000")
+    missile = Missile(root, name=missile_name, launch_site=launch_site, target_site=target_site, launch_time="19 Mar 2025 22:21:50.000", Mach=10, h_max=100)
+    # missile = Missile(root, name=missile_name, launch_time="19 Mar 2025 22:21:50.000")
     missile.loadObject()
 
     # Extract ECI Position and Velocity

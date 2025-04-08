@@ -82,11 +82,11 @@ def plot_monte_carlo():
     ### Position ###
     fig_pos, axs_pos = plt.subplots(3, 1, figsize=(8, 9), sharex=True)
     for i in range(3):
-        axs_pos[i].plot(t, ex_sample[i, :], label="Sample Mean", color="tab:blue")
-        axs_pos[i].plot(t, 3 * sx_sample[i, :], linestyle="--", color="tab:blue", label=r"$\pm3\sigma$ Sample")
-        axs_pos[i].plot(t, -3 * sx_sample[i, :], linestyle="--", color="tab:blue")
-        axs_pos[i].plot(t, 3 * sx_ekf[i, :], linestyle="--", color="black", label=r"$\pm3\sigma$ EKF")
-        axs_pos[i].plot(t, -3 * sx_ekf[i, :], linestyle="--", color="black")
+        axs_pos[i].plot(t, ex_sample[i, :], label="Average Filter Error", color="tab:blue")
+        axs_pos[i].plot(t, 3 * sx_ekf[i, :], linestyle="--", color="tab:blue", label=r"Average Filter $\pm3\sigma$")
+        axs_pos[i].plot(t, -3 * sx_ekf[i, :], linestyle="--", color="tab:blue")
+        axs_pos[i].plot(t, 3 * sx_sample[i, :], linestyle="--", color="black", label=r"Monte Carlo $\pm3\sigma$")
+        axs_pos[i].plot(t, -3 * sx_sample[i, :], linestyle="--", color="black")
         axs_pos[i].set_ylabel(labels_pos[i])
         axs_pos[i].grid(True)
         axs_pos[i].set_ylim(-20, 20)
@@ -94,17 +94,17 @@ def plot_monte_carlo():
     axs_pos[-1].set_xlabel("Time Elapsed [min]")
     axs_pos[0].legend(loc="upper right")
     plt.tight_layout()
-    plt.savefig(os.path.join(FIGURES_DIR, MONTE_CARLO_POSITION_FILENAME+".pdf"))
+    plt.savefig(os.path.join(FIGURES_DIR, MONTE_CARLO_POSITION_FILENAME+".png"))
     plt.close(fig_pos)
 
     ### Velocity ###
     fig_vel, axs_vel = plt.subplots(3, 1, figsize=(8, 9), sharex=True)
     for i in range(3, 6):
-        axs_vel[i-3].plot(t, ex_sample[i, :], label="Sample Mean", color="tab:blue")
-        axs_vel[i-3].plot(t, 3 * sx_sample[i, :], linestyle="--", color="tab:blue", label=r"$\pm3\sigma$ Sample")
-        axs_vel[i-3].plot(t, -3 * sx_sample[i, :], linestyle="--", color="tab:blue")
-        axs_vel[i-3].plot(t, 3 * sx_ekf[i, :], linestyle="--", color="black", label=r"$\pm3\sigma$ EKF")
-        axs_vel[i-3].plot(t, -3 * sx_ekf[i, :], linestyle="--", color="black")
+        axs_vel[i-3].plot(t, ex_sample[i, :], label="Average Filter Error", color="tab:blue")
+        axs_vel[i-3].plot(t, 3 * sx_ekf[i, :], linestyle="--", color="tab:blue", label=r"Average Filter $\pm3\sigma$")
+        axs_vel[i-3].plot(t, -3 * sx_ekf[i, :], linestyle="--", color="tab:blue")
+        axs_vel[i-3].plot(t, 3 * sx_sample[i, :], linestyle="--", color="black", label=r"Monte Carlo $\pm3\sigma$")
+        axs_vel[i-3].plot(t, -3 * sx_sample[i, :], linestyle="--", color="black")
         axs_vel[i-3].set_ylabel(labels_vel[i-3])
         axs_vel[i-3].grid(True)
         axs_vel[i-3].set_ylim(-0.5, 0.5)
@@ -112,7 +112,7 @@ def plot_monte_carlo():
     axs_vel[-1].set_xlabel("Time Elapsed [min]")
     axs_vel[0].legend(loc="upper right")
     plt.tight_layout()
-    plt.savefig(os.path.join(FIGURES_DIR, MONTE_CARLO_VELOCITY_FILENAME+".pdf"))
+    plt.savefig(os.path.join(FIGURES_DIR, MONTE_CARLO_VELOCITY_FILENAME+".png"))
     plt.close(fig_vel)
 
 def plot_trajectory_2D(t0_utc):
@@ -188,8 +188,6 @@ def plot_trajectory_2D(t0_utc):
     plt.tight_layout()
     plt.savefig(os.path.join(FIGURES_DIR, TRAJECTORY_2D_FILENAME + ".pdf"))
     plt.close(fig)
-
-
 
 def plot_trajectory_3D():
     # Load missile truth

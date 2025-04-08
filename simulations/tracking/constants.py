@@ -3,6 +3,7 @@ import os
 # Constants
 MU_E = 3.986004415e5  # km^3 / s^2
 R_E = 6.378137e3  # km
+G0 = 9.8066 # m/s^2
 
 FIGURES_DIR = os.path.abspath("figures/tracking")
 DATA_DIR = os.path.abspath("data/tracking/")
