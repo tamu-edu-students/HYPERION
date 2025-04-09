@@ -343,29 +343,29 @@ BEGIN Scenario
 
         BEGIN ReportFavorites
             BEGIN Class
-                Name		 Chain
+                Name		 Missile
+                BEGIN Favorite
+                    Type		 Graph
+                    BaseDir		 Install
+                    Style		 Altitude vs Ground Range
+                END Favorite
                 BEGIN Favorite
                     Type		 Report
                     BaseDir		 Install
-                    Style		 Access AER
+                    Style		 Altitude vs Ground Range
                 END Favorite
+            END Class
+            BEGIN Class
+                Name		 Chain
                 BEGIN Favorite
                     Type		 Report
                     BaseDir		 User
                     Style		 Individual Strand Access
                 END Favorite
-            END Class
-            BEGIN Class
-                Name		 Missile
                 BEGIN Favorite
                     Type		 Report
                     BaseDir		 Install
-                    Style		 Altitude vs Ground Range
-                END Favorite
-                BEGIN Favorite
-                    Type		 Graph
-                    BaseDir		 Install
-                    Style		 Altitude vs Ground Range
+                    Style		 Access AER
                 END Favorite
             END Class
             BEGIN Class
@@ -373,12 +373,12 @@ BEGIN Scenario
                 BEGIN Favorite
                     Type		 Report
                     BaseDir		 Install
-                    Style		 AER
+                    Style		 AOS
                 END Favorite
                 BEGIN Favorite
                     Type		 Report
                     BaseDir		 Install
-                    Style		 AOS
+                    Style		 AER
                 END Favorite
             END Class
             BEGIN Class

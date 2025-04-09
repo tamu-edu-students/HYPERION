@@ -144,8 +144,10 @@ def x_dot_missile(t, x, nom_params):
     dx = np.zeros_like(x)
     dx[0:3] = v
     dx[3:6] = a_T + a_D + a_L + a_g
-    dx[6] = -T / (G0 * Isp)
+    dx[6] = -(kN2N(T)) / (G0 * Isp)
     dx[7:] = 0  # Deviation states are considered constant
+
+    # ic(m)
 
     return dx
 
@@ -216,10 +218,18 @@ def propagate(az: float = None, pitch: float = None, stage_durations: list = Non
         ]
 
     for stage in stages:
-        T_bar = stage["T"] * G0
+        T_bar = stage["T"] * G0  # Convert from tonnes-force to N
         Isp_bar = stage["Isp"]
         lambda_bar = 0.0  # No lift during boost
         nom_params = [T_bar, Isp_bar, beta_bar, rho0_bar, kp_bar, lambda_bar]
+
+        mass_initial = x[6]
+        mass_floor = mass_initial - stage["m"]
+
+        def mass_limit_event(t, x):
+            return x[6] - mass_floor
+        mass_limit_event.terminal = True
+        mass_limit_event.direction = -1
 
         sol = solve_ivp(
             fun=lambda t, x: x_dot_missile(t, x, nom_params),
@@ -227,13 +237,19 @@ def propagate(az: float = None, pitch: float = None, stage_durations: list = Non
             y0=x,
             max_step=1.0,
             rtol=1e-9,
-            atol=1e-9
+            atol=1e-9,
+            events=mass_limit_event
         )
 
         trajectory.append(sol)
         x = sol.y[:, -1]
-        x[6] -= stage["m"]  # Drop stage
-        t0 += stage["duration"]
+        mass_burned = mass_initial - x[6]
+        mass_unused = stage["m"] - mass_burned
+
+        # Drop the remaining unused fuel
+        x[6] -= max(0.0, mass_unused)
+
+        t0 += sol.t[-1] - sol.t[0]  # Actual burn duration, not full requested
 
     # === BALLISTIC RE-ENTRY PHASE ===
     T_bar = 0.0        # No thrust
@@ -324,6 +340,8 @@ def objective(vars):
     r_final = traj[-1].y[0:3, -1]
     r_target = target_site.geodetic2eci(LAUNCH_ET + traj[-1].t[-1])
     dist = np.linalg.norm(np.array(r_final) - np.array(r_target))
+
+    ic(dist)
 
     return dist
 

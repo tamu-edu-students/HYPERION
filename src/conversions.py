@@ -21,6 +21,6 @@ min2sec = lambda z: z * 60
 min2hr = lambda z: z / 60
 hr2min = lambda z: z * 60
 
-# Mass conversions
-kg2tonne = lambda z: z / 1000
-tonne2kg = lambda z: z * 1000
+# Mass/Force conversions
+N2kN = kg2tonne = lambda z: z / 1000
+kN2N = tonne2kg = lambda z: z * 1000
