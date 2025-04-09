@@ -343,6 +343,32 @@ BEGIN Scenario
 
         BEGIN ReportFavorites
             BEGIN Class
+                Name		 Chain
+                BEGIN Favorite
+                    Type		 Report
+                    BaseDir		 Install
+                    Style		 Access AER
+                END Favorite
+                BEGIN Favorite
+                    Type		 Report
+                    BaseDir		 User
+                    Style		 Individual Strand Access
+                END Favorite
+            END Class
+            BEGIN Class
+                Name		 Missile
+                BEGIN Favorite
+                    Type		 Report
+                    BaseDir		 Install
+                    Style		 Altitude vs Ground Range
+                END Favorite
+                BEGIN Favorite
+                    Type		 Graph
+                    BaseDir		 Install
+                    Style		 Altitude vs Ground Range
+                END Favorite
+            END Class
+            BEGIN Class
                 Name		 Access
                 BEGIN Favorite
                     Type		 Report
@@ -353,19 +379,6 @@ BEGIN Scenario
                     Type		 Report
                     BaseDir		 Install
                     Style		 AOS
-                END Favorite
-            END Class
-            BEGIN Class
-                Name		 Chain
-                BEGIN Favorite
-                    Type		 Report
-                    BaseDir		 User
-                    Style		 Individual Strand Access
-                END Favorite
-                BEGIN Favorite
-                    Type		 Report
-                    BaseDir		 Install
-                    Style		 Access AER
                 END Favorite
             END Class
             BEGIN Class
@@ -1587,9 +1600,9 @@ BEGIN Scenario
 
                 StartTime		 19 Mar 2025 02:26:28.000000000
                 EndTime		 20 Mar 2025 02:26:28.000000000
-                CurrentTime		 19 Mar 2025 22:53:46.708899997
+                CurrentTime		 19 Mar 2025 22:42:41.000000000
                 Direction		 Forward
-                UpdateDelta		 0.5
+                UpdateDelta		 1
                 RefreshDelta		 0.010000
                 XRealTimeMult		 1
                 RealTimeOffset		 0
@@ -2072,12 +2085,6 @@ BEGIN Scenario
 
     BEGIN SubObjects
 
-        Class Aircraft
-
-            Missile		
-
-        END Class
-
         Class Chain
 
             Sensors2Missile		
@@ -2087,6 +2094,12 @@ BEGIN Scenario
         Class Constellation
 
             LEOSatsSensors		
+
+        END Class
+
+        Class Missile
+
+            HypersonicMissile		
 
         END Class
 
@@ -2133,9 +2146,15 @@ BEGIN Scenario
             Chain/Sensors2Missile		
             Constellation/LEOSatsSensors		
         END Instance
-        Instance Aircraft/Missile
-            Aircraft/Missile		
+        Instance Chain/Sensors2Missile
             Chain/Sensors2Missile		
+        END Instance
+        Instance Constellation/LEOSatsSensors
+            Chain/Sensors2Missile		
+        END Instance
+        Instance Missile/HypersonicMissile
+            Chain/Sensors2Missile		
+            Missile/HypersonicMissile		
             Satellite/LEOSats_P1_S1/Sensor/Sensor_P1_S1		
             Satellite/LEOSats_P1_S2/Sensor/Sensor_P1_S2		
             Satellite/LEOSats_P1_S3/Sensor/Sensor_P1_S3		
@@ -2166,12 +2185,6 @@ BEGIN Scenario
             Satellite/LEOSats_P5_S4/Sensor/Sensor_P5_S4		
             Satellite/LEOSats_P5_S5/Sensor/Sensor_P5_S5		
             Satellite/LEOSats_P5_S6/Sensor/Sensor_P5_S6		
-        END Instance
-        Instance Chain/Sensors2Missile
-            Chain/Sensors2Missile		
-        END Instance
-        Instance Constellation/LEOSatsSensors
-            Chain/Sensors2Missile		
         END Instance
         Instance Satellite/LEOSats_P1_S1
             Satellite/LEOSats_P1_S1		

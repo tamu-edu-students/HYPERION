@@ -80,12 +80,13 @@ class STKObject:
         Returns the object type as a string based on the object_type enum.
         """
         object_type_mapping = {
-            AgESTKObjectType.eAircraft: "Missile",
+            AgESTKObjectType.eAircraft: "Aircraft",
             AgESTKObjectType.eSatellite: "Satellite",
             AgESTKObjectType.eConstellation: "Constellation",
             AgESTKObjectType.eChain: "Chain",
             AgESTKObjectType.eFacility: "Facility",
-            AgESTKObjectType.eSensor: "Sensor"
+            AgESTKObjectType.eSensor: "Sensor",
+            AgESTKObjectType.eMissile: "Missile"
         }
 
         return object_type_mapping.get(self.object_type, "Unknown")

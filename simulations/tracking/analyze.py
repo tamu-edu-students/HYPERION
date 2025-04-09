@@ -121,8 +121,6 @@ def plot_trajectory_2D(t0_utc):
     ----------
     - t0_utc: Launch time in SPICE format, e.g. "2025 MAR 19 22:21:50.000"
     """
-    download_kernels()
-    load_kernels()
     
     # Load EKF and missile data
     with open(os.path.join(DATA_DIR, EKF_STORE_FILENAME + ".pkl"), "rb") as f:

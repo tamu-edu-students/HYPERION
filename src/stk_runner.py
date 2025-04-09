@@ -19,15 +19,16 @@ def run(sim_function, mode="engine", name=None, clear=False, days=1):
 
     def handle_interrupt(signal_received, frame):
         """Handles user interrupts for a graceful shutdown."""
-        print("\n\nUser interrupt detected! Cleaning up and exiting...")
+        print("\n\n[!] User interrupt detected! Cleaning up and exiting...", flush=True)
 
         if stk and mode == "engine":
             stk.ShutDown()
-            print("STK Engine shut down.")
+            print("STK Engine shut down.", flush=True)
 
         end_time = time.time()
-        print(f"Simulation interrupted after {(end_time - start_time)/60:.2f} min.")
-        sys.exit(0)
+        print(f"Simulation interrupted after {(end_time - start_time)/60:.2f} min.", flush=True)
+        sys.exit(130)  # 130 is the standard exit code for SIGINT
+
 
     # Register the interrupt handler
     signal.signal(signal.SIGINT, handle_interrupt)

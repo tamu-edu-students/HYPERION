@@ -9,18 +9,14 @@ import os
 from .constants import *
 
 def stkmain(root):
-    sensors = makeConstellation(root, "LEOSats", 1000, 82, 30, 5, 3, 3, 120, "tracking")
-
-    chain = Chain(root, "Sensors2Missile")
-    chain.loadObject()
-    chain.addToObject(sensors)
-
-    launch_site = Site(62.96, 40.683, "Arkhangelsk Oblast", "Russia")
+    launch_site = Site(62.96, 40.683, "Arkhangelsk Oblast", "Russia", h=16.936)
     target_site = Site(38.8977, -77.0365, "Washington, DC", "United States")
 
-    missile_name = "Missile"
-    missile = Missile(root, name=missile_name, launch_site=launch_site, target_site=target_site, launch_time="19 Mar 2025 22:21:50.000", Mach=10, h_max=100)
-    # missile = Missile(root, name=missile_name, launch_time="19 Mar 2025 22:21:50.000")
+    missile_name = "HypersonicMissile"
+
+    # Launch azimuth, initial pitch angle, 3 stage durations, glide L/D
+    params = [-55.23789047929811, 50.50742095881391, 61.41250927, 117.93316114, 60.87570696, 2.0175381016605405] # Optimized missile params for this trajectory
+    missile = HypersonicMissile(root, name=missile_name, launch_site=launch_site, target_site=target_site, launch_time=LAUNCH_TIME, h_max=200, params=None)
     missile.loadObject()
 
     # Extract ECI Position and Velocity
@@ -29,6 +25,12 @@ def stkmain(root):
     np.savez(os.path.join(DATA_DIR, MISSILE_STORE_FILENAME), t_store=missile_t_store, x_store=missile_x_store)
 
     print("Saved ground truth.")
+
+    sensors = makeConstellation(root, "LEOSats", 1000, 82, 30, 5, 3, 3, 120, "tracking")
+
+    chain = Chain(root, "Sensors2Missile")
+    chain.loadObject()
+    chain.addToObject(sensors)
 
     # Iterate over all satellites and attach sensors to the missile
     scenario = root.CurrentScenario

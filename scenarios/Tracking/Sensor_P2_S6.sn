@@ -36,15 +36,9 @@ BEGIN Sensor
 
             BEGIN AssignedTargets
 
-                Aircraft/Missile
+                Missile/HypersonicMissile
 
             END AssignedTargets
-
-            BEGIN TargetInviews
-
-                Aircraft/Missile 2025-03-19T22:24:19.299007427 2025-03-19T22:31:57.894068761
-
-            END TargetInviews
 
             SaveTargetAccesses		 Yes
 

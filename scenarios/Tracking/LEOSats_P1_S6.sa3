@@ -61,17 +61,17 @@ END OrbitFrames
 BEGIN Covariance
     UseProbability		 Yes
     Probability		 95
-    Scale		 2.795483589172363
+    Scale		 2.795484103751791
     NonIntervalLineWidth		 1
     NonIntervalTranslucency		 0
     NonIntervalShow		 Yes
     NonIntervalUseCustomColor		 No
-    NonIntervalColorIndex		 #ff00ff
+    NonIntervalColorIndex		 #ffffff
     DefaultIntervalLineWidth		 1
     DefaultIntervalTranslucency		 0
     DefaultIntervalShow		 Yes
     DefaultIntervalUseCustomColor		 Yes
-    DefaultIntervalColorIndex		 #ffff00
+    DefaultIntervalColorIndex		 #00ff00
     UseIntervals		 No
     UseEllipticCoord		 No
 END

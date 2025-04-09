@@ -22,8 +22,6 @@ def makeLEOSensors(root):
     f = 3  # Phasing factor
     delta_M = (f * 360) / t  # Change in mean anomaly for equivalent satellites
 
-    conic_angle = 50
-
     sats_per_plane = int(t / p)
 
     for plane in range(p):

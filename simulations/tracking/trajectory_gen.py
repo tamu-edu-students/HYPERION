@@ -600,7 +600,7 @@ def plot_downrange(trajectory):
     altitudes = np.array(altitudes)
 
     # Plot
-    plt.figure(figsize=(9, 5))
+    plt.figure(figsize=(8, 5))
     plt.plot(downranges, altitudes, color="tab:blue", linewidth=2)
     plt.xlabel("Downrange [km]")
     plt.ylabel("Altitude [km]")

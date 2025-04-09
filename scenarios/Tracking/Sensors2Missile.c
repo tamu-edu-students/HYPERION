@@ -6,7 +6,7 @@ BEGIN Chain
     Name		 Sensors2Missile
     BEGIN Definition
         Object		 Constellation/LEOSatsSensors
-        Object		 Aircraft/Missile
+        Object		 Missile/HypersonicMissile
         Recompute		 Yes
         LastRequestedToBeComputedInParallel		 No
         IntervalType		 0
@@ -77,23 +77,32 @@ BEGIN Chain
             STKInst		 Satellite/LEOSats_P5_S4/Sensor/Sensor_P5_S4
             STKInst		 Satellite/LEOSats_P5_S5/Sensor/Sensor_P5_S5
             STKInst		 Satellite/LEOSats_P5_S6/Sensor/Sensor_P5_S6
-            STKInst		 Aircraft/Missile
+            STKInst		 Missile/HypersonicMissile
         END StrandObjIndexes
 
         SaveMode		 1
         BEGIN StrandAccessesByIndex
+            Strand		 4 30
+            Start		  7.2768618116468875e+04
+            Stop		  7.2870391680440705e+04
+            Strand		 5 30
+            Start		  7.1851740663234494e+04
+            Stop		  7.2291269470159124e+04
+            Strand		 8 30
+            Start		  7.3208578366984133e+04
+            Stop		  7.3692292354522040e+04
+            Strand		 9 30
+            Start		  7.2523857578319366e+04
+            Stop		  7.2861858209429338e+04
             Strand		 10 30
-            Start		  7.2699146892139805e+04
-            Stop		  7.3018062049105676e+04
-            Strand		 11 30
-            Start		  7.1871299007426802e+04
-            Stop		  7.2329894068760972e+04
-            Strand		 19 30
-            Start		  7.2809296595802138e+04
-            Stop		  7.3272505311660541e+04
-            Strand		 20 30
-            Start		  7.2026785072778221e+04
-            Stop		  7.2347054591763314e+04
+            Start		  7.1940650125913235e+04
+            Stop		  7.2239622331028309e+04
+            Strand		 15 30
+            Start		  7.1891228337872919e+04
+            Stop		  7.2356022093172083e+04
+            Strand		 26 30
+            Start		  7.2618211073178536e+04
+            Stop		  7.3411457067361305e+04
         END StrandAccessesByIndex
 
 
@@ -117,8 +126,8 @@ BEGIN Chain
 
             BEGIN Attributes
 
-                StaticColor		 #00ffff
-                AnimationColor		 #ff00ff
+                StaticColor		 #ff00ff
+                AnimationColor		 #ffff00
                 OptStrandsRampStartColor		 #00ff00
                 OptStrandsRampEndColor		 #ff0000
                 AnimationLineWidth		 2
