@@ -15,7 +15,7 @@ def stkmain(root):
     missile_name = "HypersonicMissile"
 
     # Launch azimuth, initial pitch angle, 3 stage durations, glide L/D
-    params = [-55.23789047929811, 50.50742095881391, 61.41250927, 117.93316114, 60.87570696, 2.0175381016605405] # Optimized missile params for this trajectory
+    params = [-56.178873485210254, 65.67820169636126, 55.56592769, 60.69760793, 72.03804614, 2.610998305555523] # Optimized missile params for this trajectory
     missile = HypersonicMissile(root, name=missile_name, launch_site=launch_site, target_site=target_site, launch_time=LAUNCH_TIME, h_max=200, params=None)
     missile.loadObject()
 

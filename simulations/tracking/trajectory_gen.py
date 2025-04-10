@@ -635,7 +635,7 @@ if __name__ == "__main__":
     # lambda_bar_glide = result[5]
 
     # trajectory = propagate(az=az, pitch=pitch, stage_durations=stage_durations, lambda_bar_glide=lambda_bar_glide)
-    trajectory = propagate(az=-55.23789047929811, pitch=50.50742095881391, stage_durations=[61.41250927, 117.93316114, 60.87570696], lambda_bar_glide=2.0175381016605405) # Optimized parameters
+    trajectory = propagate(az=-56, pitch=42, stage_durations=[54.63937857, 60.7000086, 55.07892748], lambda_bar_glide=2.1) # Optimized parameters
     make_ephemeris(trajectory)
     plot_altitude(trajectory)
     plot_velocity(trajectory)

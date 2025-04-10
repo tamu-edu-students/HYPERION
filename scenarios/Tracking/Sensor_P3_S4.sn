@@ -42,7 +42,7 @@ BEGIN Sensor
 
             BEGIN TargetInviews
 
-                Missile/HypersonicMissile 2025-03-19T22:24:42.448614885 2025-03-19T22:33:39.630458282
+                Missile/HypersonicMissile 2025-03-19T22:24:06.396670244 2025-03-19T22:32:53.441230319
 
             END TargetInviews
 

@@ -657,11 +657,11 @@ class HypersonicMissile(Missile):
         control_state = {}
 
         # Event: reentry at 100 km (pierce point)
-        def hit_100km(t, x):  
+        def hit_pierce_point(t, x):  
             r_mag = np.linalg.norm(x[0:3])
             return r_mag - (HypersonicMissile.R_E + 100.0)
-        hit_100km.terminal = True
-        hit_100km.direction = -1  # trigger when descending past 100 km
+        hit_pierce_point.terminal = True
+        hit_pierce_point.direction = -1  # trigger when descending past 100 km
 
         sol = solve_ivp(
             fun=lambda t, x: self._eom(t, x, nom_params, control_state),
@@ -670,7 +670,7 @@ class HypersonicMissile(Missile):
             max_step=1.0,
             rtol=1e-9,
             atol=1e-9,
-            events=hit_100km
+            events=hit_pierce_point
         )
 
         trajectory.append(sol)
@@ -682,12 +682,12 @@ class HypersonicMissile(Missile):
         control_state = {}
         x[12] = 0.0       # Set delta_lambda = 0
 
-        # Event: hit the ground (impact point)
-        def hit_0km(t, x): 
+        # Event: hit the impact point
+        def hit_ground(t, x): 
             r_mag = np.linalg.norm(x[0:3])
-            return r_mag - HypersonicMissile.R_E
-        hit_0km.terminal = True
-        hit_0km.direction = -1
+            return (r_mag - HypersonicMissile.R_E) + self.target_site.h
+        hit_ground.terminal = True
+        hit_ground.direction = -1
 
         sol = solve_ivp(
             fun=lambda t, x: self._eom(t, x, nom_params, control_state),
@@ -696,7 +696,7 @@ class HypersonicMissile(Missile):
             max_step=1.0,
             rtol=1e-9,
             atol=1e-9,
-            events=hit_0km
+            events=hit_ground
         )
 
         trajectory.append(sol)
@@ -712,8 +712,8 @@ class HypersonicMissile(Missile):
         penalty = 0.0
 
         # Soft bounds penalties
-        if not (50 < self.pitch < 90):
-            penalty += 1e3 + 10 * abs(self.pitch - np.clip(self.pitch, 50.1, 89.9))
+        if not (40 < self.pitch < 90):
+            penalty += 1e3 + 10 * abs(self.pitch - np.clip(self.pitch, 40.1, 89.9))
         if any(d < 10 for d in [dur1, dur2, dur3]):
             penalty += 1e3 + 10 * sum(abs(d - 10) for d in [dur1, dur2, dur3] if d < 10)
         if not (2 <= self.lambda_bar_glide <= 5):
@@ -742,12 +742,14 @@ class HypersonicMissile(Missile):
             for seg in traj
         ])
         if np.any(altitudes > self.h_max):
-            penalty += 1e3 + np.max(altitudes - self.h_max)
+            penalty += 1e4 + np.max(altitudes - self.h_max)
 
         # Final distance
         r_final = traj[-1].y[0:3, -1]
         r_target = self.target_site.geodetic2eci(self.launch_et + traj[-1].t[-1])
         dist = np.linalg.norm(np.array(r_final) - np.array(r_target))
+
+        ic(np.max(altitudes), penalty, params)
 
         print(f"Final distance to target: {dist:.3f} km")
 
@@ -755,6 +757,32 @@ class HypersonicMissile(Missile):
     
     def _optimize(self):
         print("Optimizing trajectory parameters...")
+
+        class OptimizationTimedOut(Exception):
+            def __init__(self, best_x):
+                self.best_x = best_x
+                super().__init__("Optimization timed out.")
+
+
+        class TimedObjectiveWrapper:
+            def __init__(self, obj_func, max_sec=600):
+                self.obj_func = obj_func
+                self.start_time = time.time()
+                self.max_sec = max_sec
+                self.best_x = None
+                self.best_val = np.inf
+
+            def __call__(self, x):
+                elapsed = time.time() - self.start_time
+                if elapsed > self.max_sec:
+                    raise OptimizationTimedOut(self.best_x)
+
+                val = self.obj_func(x)
+                if val < self.best_val:
+                    self.best_val = val
+                    self.best_x = x.copy()
+
+                return val
 
         def compute_az(lat1, lon1, lat2, lon2):
             lat1 = np.radians(lat1)
@@ -771,46 +799,44 @@ class HypersonicMissile(Missile):
         az0 = compute_az(self.launch_site.lat, self.launch_site.lon, self.target_site.lat, self.target_site.lon)
 
         # Initial guess
-        x0 = [az0, 50.0, 56.4, 60.7, 72.0, 2.6]
-
-        def make_timed_callback(max_seconds):
-            start_time = time.time()
-            def callback(xk):
-                elapsed = time.time() - start_time
-                if elapsed > max_seconds:
-                    raise TimeoutError(f"Optimization exceeded {max_seconds} seconds.")
-            return callback
+        # az, pitch, stage durations, stage thrusts, L/D glide
+        # x0 = [az0, 42, 56.4, 60.7, 72.0, 2.6]
+        x0 = [-56, 42, 54.63937857, 60.7000086, 55.07892748, 2.1]
 
         # === RUN OPTIMIZATION ===
-        result = minimize(
-            self._objective,
-            x0,
-            method="Powell",
-            bounds=[
-                (-180, 180),     # azimuth
-                (50, 90),        # pitch
-                (10, 120),       # stage 1 duration
-                (10, 120),       # stage 2 duration
-                (10, 120),       # stage 3 duration
-                (2.0, 5.0)       # L/D
-            ],
-            options={
-                "disp": True,
-                "maxiter": 500
-                },
-            callback=make_timed_callback(conversions.min2sec(20)) # 20 minute limit
-        )
+        wrapped_obj = TimedObjectiveWrapper(self._objective, max_sec=conversions.min2sec(20))
+        try:
+            result = minimize(
+                wrapped_obj,
+                x0,
+                method="Powell",
+                bounds=[
+                    (-180, 180),    # azimuth
+                    (40, 90),       # pitch
+                    (0, 200),       # stage 1 duration
+                    (0, 200),       # stage 2 duration
+                    (0, 200),       # stage 3 duration
+                    (2.0, 5.0)      # L/D
+                ],
+                options={
+                    "disp": True,
+                    "maxiter": 500
+                    }
+            )
+            x_opt = result.x
+        except OptimizationTimedOut as e:
+            print("Optimization timed out.")
+            x_opt = e.best_x if e.best_x is not None else x0
 
         print("\n=== OPTIMIZATION COMPLETE ===")
-        print("Azimuth angle (deg):", result.x[0])
-        print("Pitch angle (deg):", result.x[1])
-        print("Stage durations (s):", result.x[2:5])
-        print("L/D ratio:", result.x[5])
-        print("Distance to target (km):", result.fun)
+        print("Azimuth angle (deg):", x_opt[0])
+        print("Pitch angle (deg):", x_opt[1])
+        print("Stage durations (s):", x_opt[2:5])
+        print("L/D ratio:", x_opt[5])
+        self._objective(x_opt)
+        
+        return x_opt
 
-        return result.x
-
-    
     def _makeEphemeris(self):
         # Stitch together all time histories
         times = np.hstack([seg.t for seg in self.trajectory])
