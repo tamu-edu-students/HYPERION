@@ -11,7 +11,7 @@ from icecream import ic
 from agi.stk12.stkobjects import *
 from agi.stk12.utilities.colors import Colors
 from scipy.integrate import solve_ivp
-from scipy.optimize import minimize
+from scipy.optimize import minimize, differential_evolution
 from .stkObject import STKStandaloneObject 
 from .site import Site
 from .. import conversions
@@ -279,8 +279,8 @@ class Missile(STKStandaloneObject):
         - FileNotFoundError: If the target file does not exist.
         """
 
-        file_path_txt = os.path.join(self.save_dir, f"{file_name}.txt")
-        file_path_csv = os.path.join(self.save_dir, f"{file_name}.csv")
+        file_path_txt = os.path.join(Missile.save_dir, f"{file_name}.txt")
+        file_path_csv = os.path.join(Missile.save_dir, f"{file_name}.csv")
 
         # Check if files exist before attempting to write
         if not os.path.exists(file_path_txt) or not os.path.exists(file_path_csv):
@@ -402,6 +402,13 @@ class HypersonicMissile(Missile):
     R_E = 6.378137e3  # km
     G0 = 9.8066 # m/s^2 
 
+    # These are better suited to instance attributes
+    stages = [
+        {"T": 209 * G0, "Isp": 259, "m": conversions.tonne2kg(48.99)},
+        {"T": 124.7 * G0, "Isp": 309, "m": conversions.tonne2kg(27.67)},
+        {"T": 29.48 * G0, "Isp": 300, "m": conversions.tonne2kg(7.71)}
+    ] # kN, s, kg
+
     def __init__(self, root: AgStkObjectRoot, name: str, launch_site: Site, target_site: Site, launch_time: str, h_max: float, params: list[float] = None):
         """
         Initializes a hypersonic missile object using high-fidelity dynamics and a glide model.
@@ -429,6 +436,14 @@ class HypersonicMissile(Missile):
         super().__init__(root, name, launch_site=launch_site, target_site=target_site, launch_time=launch_time, h_max=h_max)
 
         self.launch_et = sp.str2et(self.launch_time)
+
+        @staticmethod
+        def max_stage_duration(m_stage, T, Isp):
+            T = conversions.kN2N(T) # N
+            m_dot = T / (Isp * HypersonicMissile.G0)  # kg/s
+            return m_stage / m_dot  # seconds
+
+        self.max_durs = [max_stage_duration(s["m"], s["T"], s["Isp"]) for s in HypersonicMissile.stages]
 
         # Run trajectory optimization
         if params is None:
@@ -594,8 +609,10 @@ class HypersonicMissile(Missile):
 
         v0 =  v_dir / np.linalg.norm(v_dir)  # Unit vector for an initial condition (km/s)
 
+        m0 = sum(stage["m"] for stage in HypersonicMissile.stages) + 1000.0
+
         # r, v, m, delta_T, delta_Isp, delta_beta, delta_rho0, delta_kp, delta_lambda
-        x0 = np.hstack([r0, v0, [89370, 0, 0, 0, 0, 0, 0]])
+        x0 = np.hstack([r0, v0, [m0, 0, 0, 0, 0, 0, 0]])
 
         # Constants
         beta_bar = 1.3e10     # kg/km^2
@@ -608,16 +625,27 @@ class HypersonicMissile(Missile):
 
         control_state = {}
 
-        # === BOOST PHASE ===
-        stages = [
-            {"duration": self.stage_durations[0], "T": 209, "Isp": 259, "m": conversions.tonne2kg(48.99)},
-            {"duration": self.stage_durations[1], "T": 124.7, "Isp": 309, "m": conversions.tonne2kg(27.67)},
-            {"duration": self.stage_durations[2], "T": 29.48, "Isp": 300, "m": conversions.tonne2kg(7.71)}
-        ] # 3 boost phases
+        def altitude_above_max(t, x):
+            r_mag = np.linalg.norm(x[0:3])
+            h = r_mag - HypersonicMissile.R_E
+            return self.h_max - h  # triggers when h > h_max
+        altitude_above_max.terminal = True
+        altitude_above_max.direction = -1
 
-        for stage in stages:
-            T_bar = stage["T"] * HypersonicMissile.G0  # Convert from tonnes-force to N
-            Isp_bar = stage["Isp"]
+        def altitude_below_zero(t, x):
+            r_mag = np.linalg.norm(x[0:3])
+            h = r_mag - HypersonicMissile.R_E
+            return h  # triggers when h < 0
+        altitude_below_zero.terminal = True
+        altitude_below_zero.direction = -1
+
+
+        # === BOOST PHASE ===
+        for i, stage in enumerate(HypersonicMissile.stages):
+            T_bar = stage["T"] # kN
+            Isp_bar = stage["Isp"] # s
+            duration = self.stage_durations[i]
+
             lambda_bar = 0.0  # No lift during boost
             nom_params = [T_bar, Isp_bar, beta_bar, rho0_bar, kp_bar, lambda_bar]
 
@@ -631,12 +659,12 @@ class HypersonicMissile(Missile):
 
             sol = solve_ivp(
                 fun=lambda t, x: self._eom(t, x, nom_params, control_state),
-                t_span=(t0, t0 + stage["duration"]),
+                t_span=(t0, t0 + duration),
                 y0=x,
                 max_step=1.0,
                 rtol=1e-9,
                 atol=1e-9,
-                events=mass_limit
+                events=[mass_limit, altitude_above_max, altitude_below_zero]
             )
 
             trajectory.append(sol)
@@ -670,7 +698,7 @@ class HypersonicMissile(Missile):
             max_step=1.0,
             rtol=1e-9,
             atol=1e-9,
-            events=hit_pierce_point
+            events=[hit_pierce_point, altitude_above_max, altitude_below_zero]
         )
 
         trajectory.append(sol)
@@ -696,7 +724,7 @@ class HypersonicMissile(Missile):
             max_step=1.0,
             rtol=1e-9,
             atol=1e-9,
-            events=hit_ground
+            events=[hit_ground, altitude_above_max, altitude_below_zero]
         )
 
         trajectory.append(sol)
@@ -704,60 +732,70 @@ class HypersonicMissile(Missile):
         return trajectory
     
     ### Optimize ###
-    def _objective(self, params):
-        # Decision variables: launch azimuth, initial pitch angle, boost durations, L/D ratio
-        self.az, self.pitch, dur1, dur2, dur3, self.lambda_bar_glide = params
-        self.stage_durations = [dur1, dur2, dur3]
+    def _objective(self, x: np.ndarray) -> float:
+        self.az, self.pitch = x[0], x[1]
+        self.stage_durations = x[2:5]
+        self.lambda_bar_glide = x[5]
 
         penalty = 0.0
-
-        # Soft bounds penalties
-        if not (40 < self.pitch < 90):
-            penalty += 1e3 + 10 * abs(self.pitch - np.clip(self.pitch, 40.1, 89.9))
-        if any(d < 10 for d in [dur1, dur2, dur3]):
-            penalty += 1e3 + 10 * sum(abs(d - 10) for d in [dur1, dur2, dur3] if d < 10)
-        if not (2 <= self.lambda_bar_glide <= 5):
-            penalty += 1e3 + 10 * abs(self.lambda_bar_glide - np.clip(self.lambda_bar_glide, 2.0, 5.0))
 
         try:
             traj = self._propagate()
         except:
             return 1e6 + penalty
-        
-        # === Add penalty if any boost stage ends early ===
-        actual_durations = [
-            traj[0].t[-1],                                # Boost 1: from t=0
-            traj[1].t[-1] - traj[1].t[0],                 # Boost 2
-            traj[2].t[-1] - traj[2].t[0]                  # Boost 3
-        ]
-        requested_durations = [dur1, dur2, dur3]
 
-        for i in range(3):
-            if actual_durations[i] < requested_durations[i] - 1e-3:
-                penalty += 1e4 * (requested_durations[i] - actual_durations[i])
-
-        # Altitudes
-        altitudes = np.hstack([
-            np.linalg.norm(seg.y[0:3], axis=0) - HypersonicMissile.R_E
-            for seg in traj
-        ])
-        if np.any(altitudes > self.h_max):
-            penalty += 1e4 + np.max(altitudes - self.h_max)
-
-        # Final distance
+        # Distance to target
         r_final = traj[-1].y[0:3, -1]
         r_target = self.target_site.geodetic2eci(self.launch_et + traj[-1].t[-1])
         dist = np.linalg.norm(np.array(r_final) - np.array(r_target))
 
-        ic(np.max(altitudes), penalty, params)
-
-        print(f"Final distance to target: {dist:.3f} km")
-
         return dist + penalty
-    
-    def _optimize(self):
-        print("Optimizing trajectory parameters...")
 
+    def _global_optimize(self) -> np.ndarray:
+        def compute_az(lat1, lon1, lat2, lon2):
+            lat1 = np.radians(lat1)
+            lon1 = np.radians(lon1)
+            lat2 = np.radians(lat2)
+            lon2 = np.radians(lon2)
+            dlon = lon2 - lon1
+
+            x = np.sin(dlon) * np.cos(lat2)
+            y = np.cos(lat1) * np.sin(lat2) - np.sin(lat1) * np.cos(lat2) * np.cos(dlon)
+
+            return np.degrees(np.arctan2(x, y))  # degrees from north
+
+        az0 = compute_az(self.launch_site.lat, self.launch_site.lon, self.target_site.lat, self.target_site.lon)
+
+        # Initial guess
+        # az, pitch, stage durations, stage thrusts, L/D glide
+        x0 = [az0, 42, 56.4, 60.7, 72.0, 2.6]
+        # x0 = [-56, 42, 54.63937857, 60.7000086, 55.07892748, 2.1]
+
+        bounds = [
+            (az0 - 10, az0 + 10),    # azimuth
+            (40, 60),                # pitch
+            (10, self.max_durs[0]),  # stage 1
+            (10, self.max_durs[1]),  # stage 2
+            (10, self.max_durs[2]),  # stage 3
+            (2.0, 5.0)               # L/D
+        ]
+
+        result = differential_evolution(
+            self._objective,
+            bounds,
+            x0=x0,
+            strategy='best1bin',
+            maxiter=10,
+            popsize=15,
+            tol=1e-3,
+            mutation=(0.5, 1),
+            recombination=0.7,
+            disp=True,
+            polish=False
+        )
+        return result.x
+    
+    def _local_refine(self, x0: np.ndarray) -> np.ndarray:
         class OptimizationTimedOut(Exception):
             def __init__(self, best_x):
                 self.best_x = best_x
@@ -783,59 +821,66 @@ class HypersonicMissile(Missile):
                     self.best_x = x.copy()
 
                 return val
+            
+        bounds = [
+            (x0[0] - 2, x0[0] + 2),    # azimuth
+            (40, 60),       # pitch
+            (10, self.max_durs[0]),      # stage 1
+            (10, self.max_durs[1]),      # stage 2
+            (10, self.max_durs[2]),      # stage 3
+            (2.0, 5.0)      # L/D
+        ]
 
-        def compute_az(lat1, lon1, lat2, lon2):
-            lat1 = np.radians(lat1)
-            lon1 = np.radians(lon1)
-            lat2 = np.radians(lat2)
-            lon2 = np.radians(lon2)
-            dlon = lon2 - lon1
+        wrapped_obj = TimedObjectiveWrapper(self._objective, max_sec=conversions.min2sec(10))
 
-            x = np.sin(dlon) * np.cos(lat2)
-            y = np.cos(lat1) * np.sin(lat2) - np.sin(lat1) * np.cos(lat2) * np.cos(dlon)
-
-            return np.degrees(np.arctan2(x, y))  # degrees from north
-
-        az0 = compute_az(self.launch_site.lat, self.launch_site.lon, self.target_site.lat, self.target_site.lon)
-
-        # Initial guess
-        # az, pitch, stage durations, stage thrusts, L/D glide
-        # x0 = [az0, 42, 56.4, 60.7, 72.0, 2.6]
-        x0 = [-56, 42, 54.63937857, 60.7000086, 55.07892748, 2.1]
-
-        # === RUN OPTIMIZATION ===
-        wrapped_obj = TimedObjectiveWrapper(self._objective, max_sec=conversions.min2sec(20))
         try:
             result = minimize(
                 wrapped_obj,
                 x0,
                 method="Powell",
-                bounds=[
-                    (-180, 180),    # azimuth
-                    (40, 90),       # pitch
-                    (0, 200),       # stage 1 duration
-                    (0, 200),       # stage 2 duration
-                    (0, 200),       # stage 3 duration
-                    (2.0, 5.0)      # L/D
-                ],
-                options={
-                    "disp": True,
-                    "maxiter": 500
-                    }
+                bounds=bounds,
+                options={"disp": True, "maxiter": 300}
             )
             x_opt = result.x
         except OptimizationTimedOut as e:
             print("Optimization timed out.")
             x_opt = e.best_x if e.best_x is not None else x0
 
-        print("\n=== OPTIMIZATION COMPLETE ===")
-        print("Azimuth angle (deg):", x_opt[0])
-        print("Pitch angle (deg):", x_opt[1])
-        print("Stage durations (s):", x_opt[2:5])
-        print("L/D ratio:", x_opt[5])
-        self._objective(x_opt)
-        
         return x_opt
+
+    def _optimize(self):
+        print("=== GLOBAL OPTIMIZATION ===")
+        x_global = self._global_optimize()
+
+        print("\n=== LOCAL REFINEMENT ===")
+        x_local = self._local_refine(x_global)
+
+        print("\n=== FINAL PARAMETERS ===")
+        print("Azimuth angle (deg):", x_local[0])
+        print("Pitch angle (deg):", x_local[1])
+        print("Stage durations (s):", x_local[2:5])
+        print("L/D ratio:", x_local[5])
+
+        self._objective(x_local)
+
+        param_path = os.path.join(HypersonicMissile.save_dir, "params.csv")
+        with open(param_path, 'a', newline='') as f:
+            writer = csv.writer(f)
+
+            # Write header if file is empty
+            if f.tell() == 0:
+                writer.writerow(["Azimuth [deg]", "Pitch [deg]", "Stage1 [s]", "Stage2 [s]", "Stage3 [s]", "L/D"])
+
+            writer.writerow([
+                round(x_local[0], 5),
+                round(x_local[1], 5),
+                round(x_local[2], 5),
+                round(x_local[3], 5),
+                round(x_local[4], 5),
+                round(x_local[5], 5),
+            ])
+
+        return x_local
 
     def _makeEphemeris(self):
         # Stitch together all time histories
@@ -843,7 +888,7 @@ class HypersonicMissile(Missile):
         states = np.hstack([seg.y[:6] for seg in self.trajectory])  # Only r and v
 
         # Write to STK ephemeris format
-        with open(os.path.join(Missile.save_dir, "missile.e"), 'w') as f:
+        with open(os.path.join(HypersonicMissile.save_dir, "missile.e"), 'w') as f:
             f.write("stk.v.12.0\n")
             f.write("BEGIN Ephemeris\n")
             f.write("NumberOfEphemerisPoints {}\n".format(len(times)))
@@ -874,7 +919,7 @@ class HypersonicMissile(Missile):
         missile.Graphics.Attributes.Color = COLOR
 
         propagator = missile.Trajectory
-        eph_path = os.path.abspath(os.path.join(Missile.save_dir, "missile.e"))
+        eph_path = os.path.abspath(os.path.join(HypersonicMissile.save_dir, "missile.e"))
         propagator.Filename = eph_path
         propagator.Propagate()
 
@@ -902,4 +947,3 @@ class HypersonicMissile(Missile):
 
         print(f"Impact Time for '{self.name}': {impact_time}")
         return impact_time
-
