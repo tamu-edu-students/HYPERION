@@ -769,7 +769,6 @@ class HypersonicMissile(Missile):
         # Initial guess
         # az, pitch, stage durations, stage thrusts, L/D glide
         x0 = [az0, 42, 56.4, 60.7, 72.0, 2.6]
-        # x0 = [-56, 42, 54.63937857, 60.7000086, 55.07892748, 2.1]
 
         bounds = [
             (az0 - 10, az0 + 10),    # azimuth
@@ -785,7 +784,7 @@ class HypersonicMissile(Missile):
             bounds,
             x0=x0,
             strategy='best1bin',
-            maxiter=10,
+            maxiter=5,
             popsize=15,
             tol=1e-3,
             mutation=(0.5, 1),
@@ -823,12 +822,12 @@ class HypersonicMissile(Missile):
                 return val
             
         bounds = [
-            (x0[0] - 2, x0[0] + 2),    # azimuth
-            (40, 60),       # pitch
-            (10, self.max_durs[0]),      # stage 1
-            (10, self.max_durs[1]),      # stage 2
-            (10, self.max_durs[2]),      # stage 3
-            (2.0, 5.0)      # L/D
+            (x0[0] - 2, x0[0] + 2),  # azimuth
+            (x0[1] - 2, x0[1] + 2),  # pitch
+            (x0[2] - 10, min(x0[2] + 10, self.max_durs[0])),  # stage 1
+            (x0[3] - 10, min(x0[3] + 10, self.max_durs[1])),  # stage 2
+            (x0[4] - 10, min(x0[4] + 10, self.max_durs[2])),  # stage 3
+            (x0[5] - 1, min(x0[5] + 1, 5))  # L/D
         ]
 
         wrapped_obj = TimedObjectiveWrapper(self._objective, max_sec=conversions.min2sec(10))
@@ -837,9 +836,9 @@ class HypersonicMissile(Missile):
             result = minimize(
                 wrapped_obj,
                 x0,
-                method="Powell",
+                method="L-BFGS-B",
                 bounds=bounds,
-                options={"disp": True, "maxiter": 300}
+                options={"disp": True, "maxiter": 30}
             )
             x_opt = result.x
         except OptimizationTimedOut as e:
@@ -850,7 +849,7 @@ class HypersonicMissile(Missile):
 
     def _optimize(self):
         print("=== GLOBAL OPTIMIZATION ===")
-        x_global = self._global_optimize()
+        x_global = self._global_optimize() 
 
         print("\n=== LOCAL REFINEMENT ===")
         x_local = self._local_refine(x_global)

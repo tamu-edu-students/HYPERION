@@ -9,3 +9,4 @@ agi.stk12
 icecream
 spiceypy
 scipy
+sympy
