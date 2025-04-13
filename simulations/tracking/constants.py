@@ -11,6 +11,7 @@ DATA_DIR = os.path.abspath("data/tracking/")
 os.makedirs(FIGURES_DIR, exist_ok=True)
 os.makedirs(DATA_DIR, exist_ok=True)
 
+SIM_START_TIME = "19 Mar 2025 02:26:28.000000000"
 LAUNCH_TIME = "19 Mar 2025 22:21:50.000"
 
 MISSILE_STORE_FILENAME = "missile_store"

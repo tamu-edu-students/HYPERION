@@ -81,8 +81,8 @@ def H_az_el(x_m: np.ndarray, x_s: np.ndarray) -> np.ndarray:
          -np.sqrt(rxy) / (rho**2)]
     ])
 
-    dr_dx_m = np.hstack([eci2vvlh, np.zeros((3, 3))]) 
+    dr_dx_m = np.hstack([eci2vvlh, np.zeros((3, 10))]) 
 
     H = dH_dr_vvlh @ dr_dx_m
-
+    
     return H

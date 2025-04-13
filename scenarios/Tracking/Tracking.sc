@@ -343,29 +343,11 @@ BEGIN Scenario
 
         BEGIN ReportFavorites
             BEGIN Class
-                Name		 Chain
+                Name		 Satellite
                 BEGIN Favorite
                     Type		 Report
                     BaseDir		 Install
-                    Style		 Access AER
-                END Favorite
-                BEGIN Favorite
-                    Type		 Report
-                    BaseDir		 User
-                    Style		 Individual Strand Access
-                END Favorite
-            END Class
-            BEGIN Class
-                Name		 Access
-                BEGIN Favorite
-                    Type		 Report
-                    BaseDir		 Install
-                    Style		 AER
-                END Favorite
-                BEGIN Favorite
-                    Type		 Report
-                    BaseDir		 Install
-                    Style		 AOS
+                    Style		 J2000 Position Velocity
                 END Favorite
             END Class
             BEGIN Class
@@ -382,11 +364,29 @@ BEGIN Scenario
                 END Favorite
             END Class
             BEGIN Class
-                Name		 Satellite
+                Name		 Access
                 BEGIN Favorite
                     Type		 Report
                     BaseDir		 Install
-                    Style		 J2000 Position Velocity
+                    Style		 AER
+                END Favorite
+                BEGIN Favorite
+                    Type		 Report
+                    BaseDir		 Install
+                    Style		 AOS
+                END Favorite
+            END Class
+            BEGIN Class
+                Name		 Chain
+                BEGIN Favorite
+                    Type		 Report
+                    BaseDir		 Install
+                    Style		 Access AER
+                END Favorite
+                BEGIN Favorite
+                    Type		 Report
+                    BaseDir		 User
+                    Style		 Individual Strand Access
                 END Favorite
             END Class
         END ReportFavorites

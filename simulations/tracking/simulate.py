@@ -3,6 +3,7 @@
 
 This is where the filter and simulation logic is hosted.
 """
+import datetime
 import os
 import numpy as np
 import time 
@@ -13,34 +14,29 @@ from scipy.integrate import solve_ivp
 from .constants import *
 from src import *
 
-def propagate(mxkm1_post, Pxxkm1_post, tkm1, tk, Pww):
-    dt = tk - tkm1
-
-    # Process noise mapping matrix Fw
-    Fw = np.vstack([
-        np.diag([0.5 * dt**2] * 3),
-        np.diag([dt] * 3)
-    ])  # shape (6, 3)
-
-    # Flatten state and covariance into a single vector
+def propagate(mxkm1_post: np.ndarray, Pxxkm1_post: np.ndarray, Qs: np.ndarray, nom_params: list[float], tkm1, tk) -> tuple[np.ndarray, np.ndarray]:
     y0 = np.hstack([mxkm1_post, Pxxkm1_post.flatten()])
 
-    # Define wrapper to pass parameters into the ODE
     def ode(t, y):
-        return x_dot_Pxx_dot_kinematic(t, y, Fw, Pww)
-        # return x_dot_Pxx_dot_twobody(t, y, mu, Fw, Pww)
-
-    # Integrate from tkm1 to tk
+        return x_dot_Pxx_dot_hypersonic(t, y, Qs, nom_params, tkm1)
+    
     sol = solve_ivp(ode, (tkm1, tk), y0, method='RK45', rtol=1e-8, atol=1e-10)
 
     yk = sol.y[:, -1]
-    mxk_prior = yk[:6]
-    Pxxk_prior = yk[6:].reshape(6, 6)
+    mxk_prior = yk[:13]
+    Pxxk_prior = yk[13:].reshape(13, 13)
 
     return mxk_prior, Pxxk_prior
 
-def run_ekf(meas_noise: list=None, process_noise: list=None, error: np.ndarray=None) -> float:
-    np.random.seed(0)
+def get_least_used_sensors(sensor_store):
+    """Returns a list of all sensor names sorted by ascending usage count."""
+    name_store = sensor_store["name_store"]
+    unique, counts = np.unique(name_store, return_counts=True)
+    sorted_sensors = sorted(zip(unique, counts), key=lambda x: x[1])
+    return [name for name, _ in sorted_sensors]
+
+def run_ekf(meas_noise: list=None, process_noise: list=None, ex0: np.ndarray=None, exclude_sensors=None) -> float:
+    # np.random.seed(0)
     print(f"Running EKF...")
     
     start = time.time()
@@ -49,55 +45,104 @@ def run_ekf(meas_noise: list=None, process_noise: list=None, error: np.ndarray=N
     sat_store = np.load(os.path.join(DATA_DIR, SAT_STORE_FILENAME+".npz"), allow_pickle=True)
     sensor_store = np.load(os.path.join(DATA_DIR, SENSOR_STORE_FILENAME+".npz"), allow_pickle=True)
 
-    dim_state = 6
+    dim_state_estimate = 13 # Full state
+    dim_state = 6 # Position & velocity
     dim_meas = 2
 
     # Missile
     t_store = missile_store["t_store"]
     x_m_store = missile_store["x_store"]
+    phase_store = missile_store["phase_store"]
+
+    # Parse both times
+    fmt = "%d %b %Y %H:%M:%S.%f"
+    sim_start_dt = datetime.datetime.strptime(SIM_START_TIME[:26], fmt)
+    launch_dt = datetime.datetime.strptime(LAUNCH_TIME, fmt)
+
+    offset = (launch_dt - sim_start_dt).total_seconds() #s
+
+    # Shift 
+    t_store += offset
 
     # Satellite
     x_s_store = np.vstack([np.full((1, dim_state), np.nan), sat_store["x_store"]])
 
     # Sensor
-    tz_store = np.insert(sensor_store["t_store"], 0, sensor_store["t_store"][0] - 3)
-    az_store = np.insert(sensor_store["az_store"], 0, np.nan)
-    el_store = np.insert(sensor_store["el_store"], 0, np.nan)
+    sensor_store = np.load(os.path.join(DATA_DIR, SENSOR_STORE_FILENAME+".npz"), allow_pickle=True)
+
+    name_store = sensor_store["name_store"]
+    tz_store = sensor_store["t_store"]
+    az_store = sensor_store["az_store"]
+    el_store = sensor_store["el_store"]
+
+    # Filter out excluded sensors
+    if exclude_sensors is not None and len(exclude_sensors) > 0:
+        mask = ~np.isin(name_store, exclude_sensors)
+        name_store = name_store[mask]
+        tz_store = tz_store[mask]
+        az_store = az_store[mask]
+        el_store = el_store[mask]
 
     num_meas = len(tz_store)
 
     t0 = tz_store[0] - t_store[0] 
     obs_x0 = x_s_store[0]
-    tgt_x0 = x_m_store[np.argmin(np.abs(t_store - tz_store[0]))]
+
+    tgt_idx0 = np.argmin(np.abs(t_store - tz_store[0]))
+    tgt_x0 = x_m_store[tgt_idx0]
 
     # Define standard deviations
-    sigma_r = m2km(100) # km
-    sigma_v = m2km(1) # km/s
+    sigma_r = m2km(1000)    # km
+    sigma_v = m2km(10)      # km/s
+    sigma_m = 1e-9             # kg
+    sigma_T = 50            # kN
+    sigma_Isp = 50          # s
+    sigma_beta = 1e-9          # kg/km^2
+    sigma_rho0 = 1e-9          # kg/km^3
+    sigma_kp = 1e-9            # km
+    sigma_lambda = 0.2      # dimensionless
+
+    # Construct initial covariance matrix
+    # r, v, m, delta_T, delta_Isp, delta_beta, delta_rho0, delta_kp, delta_lambda
+    Pxx0 = np.diag([
+        sigma_r**2, sigma_r**2, sigma_r**2,
+        sigma_v**2, sigma_v**2, sigma_v**2,
+        sigma_m**2,
+        sigma_T**2,
+        sigma_Isp**2,
+        sigma_beta**2,
+        sigma_rho0**2,
+        sigma_kp**2,
+        sigma_lambda**2
+    ])
+    # Pxx0 = np.zeros((13, 13))
+
+    if ex0 is None:
+        mx0 = tgt_x0 + np.random.multivariate_normal(np.zeros(dim_state_estimate), Pxx0)
+    else:
+        mx0 = tgt_x0 + ex0
+
+    # Nominal parameters
+    T_bar = 209 * G0     # kN
+    Isp_bar = 259        # s
+    beta_bar = 1.3e10    # kg/km^2
+    rho0_bar = 1.46e9    # kg/km^3
+    kp_bar = 6.970       # km
+    lambda_bar = 0       # dimensionless
+
+    nom_params = [T_bar, Isp_bar, beta_bar, rho0_bar, kp_bar, lambda_bar]
 
     # Unmodeled acceleration
     if process_noise is None:
-        # sigma_a_x = sigma_a_y = sigma_a_z = m2km(10) # km/s^2
-        sigma_a_x = m2km(0.47596044) # km/s^2
-        sigma_a_y = m2km(6.86718736) # km/s^2
-        sigma_a_z = m2km(23.91520045) # km/s^2
+        q_ax = q_ay = q_az = 1e-7 # km^2/s^5
     else:
-        sigma_a_x, sigma_a_y, sigma_a_z = process_noise
-
-    # Construct initial covariance matrix
-    Pxx0 = np.diag([sigma_r**2]*3 + [sigma_v**2]*3)
-
-    if error is None:
-        mx0 = tgt_x0 + np.random.multivariate_normal(np.zeros(6), Pxx0)
-    else:
-        mx0 = tgt_x0 + error
+        q_ax, q_ay, q_az = process_noise
 
     # Process noise
-    Pww = np.diag([sigma_a_x**2, sigma_a_y**2, (3 * sigma_a_z)**2])
-
+    Qs = np.diag([0, 0, 0, q_ax, q_ay, q_az, 0, 0, 0, 0, 0, 0, 0])
+    
     if meas_noise is None:
-        # sigma_az = sigma_el = np.deg2rad(1) # deg
-        sigma_az = np.deg2rad(1.27080407)
-        sigma_el = np.deg2rad(1.99995205)
+        sigma_az = sigma_el = asc2rad(3)
     else:
         sigma_az, sigma_el = meas_noise
     
@@ -105,32 +150,33 @@ def run_ekf(meas_noise: list=None, process_noise: list=None, error: np.ndarray=N
     Hv = np.eye(2)
     Pvv = np.diag([sigma_az**2, sigma_el**2])
 
-    ekf_store = EKFStore.initialize(dim_state, dim_meas, num_meas)
+    ekf_store = EKFStore.initialize(dim_state_estimate, dim_meas, num_meas)
     ekf_store.t = tz_store - t_store[0]
 
     # Initialize per-iteration values 
-    mxk_prior = np.full(dim_state, np.nan)
-    Pxxk_prior = np.full((dim_state, dim_state), np.nan)
+    mxk_prior = np.full(dim_state_estimate, np.nan)
+    Pxxk_prior = np.full((dim_state_estimate, dim_state_estimate), np.nan)
 
     mzk_prior = np.full(dim_meas, np.nan)
     Pxzk_prior = np.full((dim_meas, dim_meas), np.nan)
     Pzzk_prior = np.full((dim_meas, dim_meas), np.nan)
-    Kk = np.full((dim_state, dim_meas), np.nan)
+    Kk = np.full((dim_state_estimate, dim_state_estimate), np.nan)
 
-    mxk_post = np.full(dim_state, np.nan)
-    Pxxk_post = np.full((dim_state, dim_state), np.nan)
+    tk = t0
+    obs_xk = obs_x0
+    tgt_xk = tgt_x0
+    mxk_post = np.full(dim_state_estimate, np.nan)
+    Pxxk_post = np.full((dim_state_estimate, dim_state_estimate), np.nan)
 
     tkm1 = t0
     mxkm1_post = mx0
     Pxxkm1_post = Pxx0
-    obs_xk = obs_x0
-    tgt_xk = tgt_x0
 
     # Store initial values
-    ekf_store.mx[:, 1] = ekf_store.mx_post[:, 0] = mx0
-    ekf_store.Pxx[:, :, 1] = ekf_store.Pxx_post[:, :, 0] = Pxx0
-    ekf_store.ex[:, 1] = ekf_store.ex_post[:, 0] = tgt_x0 - mx0
-    ekf_store.sx[:, 1] = ekf_store.sx_post[:, 0] = np.sqrt(np.diag(Pxx0))
+    ekf_store.mx[:, 0] = ekf_store.mx_post[:, 0] = mx0
+    ekf_store.Pxx[:, :, 0] = ekf_store.Pxx_post[:, :, 0] = Pxx0
+    ekf_store.ex[:, 0] = ekf_store.ex_post[:, 0] = tgt_x0 - mx0
+    ekf_store.sx[:, 0] = ekf_store.sx_post[:, 0] = np.sqrt(np.diag(Pxx0))
 
     # Normalized Estimation Error Squared (NEES)
     nees_store = []
@@ -151,15 +197,37 @@ def run_ekf(meas_noise: list=None, process_noise: list=None, error: np.ndarray=N
         tgt_idx = np.argmin(np.abs(t_store - abs_tk))
         tgt_xk = x_m_store[tgt_idx]
 
+        if phase_store[tgt_idx] == "boost1":
+            T_bar = 209 * G0 
+            Isp_bar = 259
+            lambda_bar = 0
+        elif phase_store[tgt_idx] == "boost2":
+            T_bar = 124.7 * G0 
+            Isp_bar = 309
+            lambda_bar = 0
+        elif phase_store[tgt_idx] == "boost3":
+            T_bar = 29.48 * G0
+            Isp_bar = 300 
+            lambda_bar = 0
+        elif phase_store[tgt_idx] == "ballistic":
+            T_bar = 0
+            Isp_bar = 1e6
+            lambda_bar = 0
+        else:
+            T_bar = 0
+            Isp_bar = 1e6
+            lambda_bar = 1.99101
+
+        nom_params = [T_bar, Isp_bar, beta_bar, rho0_bar, kp_bar, lambda_bar]
+
         # Mean state 
         if tk - tkm1 == 0.0:
             mxk_prior = mxkm1_post
             Pxxk_prior = Pxxkm1_post
         else:
-            mxk_prior, Pxxk_prior = propagate(mxkm1_post, Pxxkm1_post, tkm1, tk, Pww)
+            mxk_prior, Pxxk_prior = propagate(mxkm1_post, Pxxkm1_post, Qs, nom_params, tkm1, tk)
 
         ### Update ###
-        # zk = np.deg2rad(np.array([az_store[k], el_store[k]])) + np.random.multivariate_normal(np.zeros(2), Pvv)
         zk = h_az_el(tgt_xk, obs_xk) + np.random.multivariate_normal(np.zeros(2), Pvv)
         
         mzk_prior = h_az_el(mxk_prior, obs_xk)
@@ -169,7 +237,7 @@ def run_ekf(meas_noise: list=None, process_noise: list=None, error: np.ndarray=N
         Pzzk_prior = Hxk @ Pxxk_prior @ Hxk.T + Hv @ Pvv @ Hv.T
         Kk = Pxzk_prior @ np.linalg.inv(Pzzk_prior)
         mxk_post = mxk_prior + Kk @ (zk - mzk_prior)
-        Pxxk_post = (np.eye(dim_state) - Kk @ Hxk) @ Pxxk_prior
+        Pxxk_post = (np.eye(dim_state_estimate) - Kk @ Hxk) @ Pxxk_prior
 
         ### Store ###
         exk_prior = tgt_xk - mxk_prior
@@ -260,43 +328,80 @@ def run_monte_carlo(num_samples=1000):
     start = time.time()
     print(f"Running Monte Carlo with {num_samples} samples...")
 
-    dim_state = 6
-    sigma_r = m2km(100)
-    sigma_v = m2km(1)
-    Pxx0 = np.diag([sigma_r**2]*3 + [sigma_v**2]*3)
+    dim_state_estimate = 13
+
+    # Define standard deviations
+    sigma_r = m2km(1000)     # km
+    sigma_v = m2km(10)       # km/s
+    sigma_m = 1e-9              # kg
+    sigma_T = 50             # kN
+    sigma_Isp = 50           # s
+    sigma_beta = 1e-9           # kg/km^2
+    sigma_rho0 = 1e-9           # kg/km^3
+    sigma_kp = 1e-9             # km
+    sigma_lambda = 0.2       # dimensionless
+
+    # Construct initial covariance matrix
+    # r, v, m, delta_T, delta_Isp, delta_beta, delta_rho0, delta_kp, delta_lambda
+    Pxx0 = np.diag([
+        sigma_r**2, sigma_r**2, sigma_r**2,
+        sigma_v**2, sigma_v**2, sigma_v**2,
+        sigma_m**2,
+        sigma_T**2,
+        sigma_Isp**2,
+        sigma_beta**2,
+        sigma_rho0**2,
+        sigma_kp**2,
+        sigma_lambda**2
+    ])
 
     # Eigen-decomposition
     S, V = np.linalg.eigh(Pxx0)
-    sqrt_S = np.diag(np.sqrt(S))
+    Sigma = np.diag(np.sqrt(S))
 
     # Generate samples
-    zetas = np.random.randn(num_samples, dim_state)
-    error_vectors = np.array([V @ sqrt_S @ zeta for zeta in zetas])
+    zetas = np.random.randn(num_samples, dim_state_estimate)
+    wx0_samples = np.array([V @ Sigma @ zeta for zeta in zetas])
+
+    # Compute sample mean and covariance
+    w_bar = np.mean(wx0_samples, axis=0)  
+    M = np.cov(wx0_samples, rowvar=False)  
+
+    D, Gamma = np.linalg.eigh(M)
+    Delta = np.diag(np.sqrt(D))
+
+    zx0_samples = wx0_samples - w_bar
+
+    # Crazy formula
+    R = V @ Sigma @ np.linalg.inv(Delta) @ Gamma.T
+
+    ex0_samples = np.array([R @ zx0 for zx0 in zx0_samples])      
 
     # Run EKF for each sample
     ex_samples = []
-    for j, error in enumerate(error_vectors):
+    sx_samples = []
+    for j, ex0 in enumerate(ex0_samples):
         print(f"Sample {j+1}/{num_samples}")
-        
-        run_ekf(error=error) 
+
+        run_ekf(ex0=ex0)
         
         with open(os.path.join(DATA_DIR, EKF_STORE_FILENAME + ".pkl"), "rb") as f:
             ekf_store = pickle.load(f)
             ex_samples.append(ekf_store.ex.copy())
+            sx_samples.append(ekf_store.sx.copy())
 
-    ex_matrix = np.stack(ex_samples, axis=-1)  # shape: (6, T, 2N)
+    tz = ekf_store.tz
 
-    ex_sample_mean = np.mean(ex_matrix, axis=-1)  # shape: (6, T)
+    ex_matrix = np.stack(ex_samples, axis=-1) 
+    sx_matrix = np.stack(sx_samples, axis=-1) 
+
+    ex_sample_mean = np.mean(ex_matrix, axis=-1)  
     sx_sample = np.std(ex_matrix, axis=-1, ddof=1)
-
-    with open(os.path.join(DATA_DIR, EKF_STORE_FILENAME + ".pkl"), "rb") as f:
-        ekf_store = pickle.load(f)
-        t = ekf_store.t
-        sx_ekf = ekf_store.sx
+    sx_ekf = np.mean(sx_matrix, axis=-1)
 
     with open(os.path.join(DATA_DIR, MONTE_CARLO_FILENAME + ".pkl"), "wb") as f:
         pickle.dump({
-            "t": t,
+            "tz": tz,
             "ex_sample": ex_sample_mean,
             "sx_sample": sx_sample,
             "sx_ekf": sx_ekf
@@ -305,3 +410,17 @@ def run_monte_carlo(num_samples=1000):
     end = time.time()
     duration = end - start
     print(f"Monte Carlo completed after {duration:.2f} s.")
+
+def evaluate_sensor_degradation():
+    sensor_store = np.load(os.path.join(DATA_DIR, SENSOR_STORE_FILENAME+".npz"), allow_pickle=True)
+    all_least_used = get_least_used_sensors(sensor_store)
+
+    print(f"Sensors ranked by least usage: {all_least_used}")
+    input("Press enter to continue...")
+
+    for i in range(len(all_least_used)):
+        exclude = all_least_used[:i]
+        print(f"\n=== Running EKF with {len(exclude)} sensor(s) excluded: {exclude} ===")
+        mean_nees = run_ekf(exclude_sensors=exclude)
+        print(f"Mean NEES with {len(exclude)} sensor(s) excluded: {mean_nees:.4f}")
+        input("Press enter to continue...")

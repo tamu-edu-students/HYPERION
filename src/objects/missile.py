@@ -784,7 +784,7 @@ class HypersonicMissile(Missile):
             bounds,
             x0=x0,
             strategy='best1bin',
-            maxiter=5,
+            maxiter=10,
             popsize=15,
             tol=1e-3,
             mutation=(0.5, 1),
@@ -860,7 +860,7 @@ class HypersonicMissile(Missile):
         print("Stage durations (s):", x_local[2:5])
         print("L/D ratio:", x_local[5])
 
-        self._objective(x_local)
+        print(f"Final distance to target: {self._objective(x_local):.3f} km")
 
         param_path = os.path.join(HypersonicMissile.save_dir, "params.csv")
         with open(param_path, 'a', newline='') as f:

@@ -110,7 +110,7 @@ def x_dot_Pxx_dot_kinematic(t: float, y: np.ndarray, Fw: np.ndarray, Pww: np.nda
 
     return dy
 
-def x_dot_Pxx_dot_hypersonic(t: float, y: np.ndarray, Qs: np.ndarray, nom_params: list[float]) -> np.ndarray:
+def x_dot_Pxx_dot_hypersonic(t: float, y: np.ndarray, Qs: np.ndarray, nom_params: list[float], tkm1: float) -> np.ndarray:
     """
     Propagates using the hypersonic missile dynamics model as defined in Tracy & Wright 2020, Acton 2014, and  Wright 2014.
     
@@ -151,6 +151,7 @@ def x_dot_Pxx_dot_hypersonic(t: float, y: np.ndarray, Qs: np.ndarray, nom_params
     r = mx[0:3]
     v = mx[3:6]
     m = mx[6]
+
     delta_T, delta_Isp, delta_beta, delta_rho0, delta_kp, delta_lambda = mx[7:]
 
     T_bar, Isp_bar, beta_bar, rho0_bar, kp_bar, lambda_bar = nom_params
@@ -184,7 +185,34 @@ def x_dot_Pxx_dot_hypersonic(t: float, y: np.ndarray, Qs: np.ndarray, nom_params
 
     h = r_mag - RE  # altitude (km)
 
-    # Lift in plane of velocity and local vertical, perpendicular to velocity
+    dot = np.dot(v_hat, r_hat)
+    gamma = np.arcsin(np.clip(dot, -1.0, 1.0))
+
+    omega_hat = np.cross(r_hat, v_hat) / np.linalg.norm(np.cross(r_hat, v_hat) + 1e-8)
+    gamma_dot = np.dot(omega_hat, r_hat)
+
+    # === Glide control law ===
+    if lambda_bar > 0:
+        Kp = 1.0
+        Kd = 20.0
+
+        if h > 20:
+            gamma_des = np.radians(3.0)
+        elif h > 2:
+            gamma_des = np.radians(0.0)
+        else:
+            gamma_des = np.radians(-3.0)
+
+        gamma_error = gamma - gamma_des
+        lambda_dot = -Kp * gamma_error - Kd * gamma_dot
+
+        dt = t - tkm1
+        delta_lambda += lambda_dot * dt
+
+        delta_lambda = np.clip(delta_lambda, -lambda_bar, 0.0)
+
+    lambda_ = lambda_bar + delta_lambda
+
     lift_dir = np.cross(np.cross(v_hat, r_hat), v_hat)
 
     lift_dir = np.cross(np.cross(v_hat, r_hat), v_hat)
@@ -205,7 +233,12 @@ def x_dot_Pxx_dot_hypersonic(t: float, y: np.ndarray, Qs: np.ndarray, nom_params
     dy = np.zeros_like(y)
     dy[0:3] = v
     dy[3:6] = a_T + a_D + a_L + a_g
-    dy[6] = -T * 1000 / (g0 * Isp)
+
+    if T > 1e-3:
+        dy[6] = -T * 1000 / (g0 * Isp)
+    else:
+        dy[6] = 0
+
     dy[7:13] = 0  # Deviation states are considered constant
 
     # === Jacobian ===
@@ -215,6 +248,10 @@ def x_dot_Pxx_dot_hypersonic(t: float, y: np.ndarray, Qs: np.ndarray, nom_params
 
     # Flatten lift_dir into 3 components
     l1, l2, l3 = lift_dir.tolist()
+
+    if np.linalg.norm(mx[3:6]) < 1e-6:
+        ic(t, m, "Velocity magnitude too small!", mx[3:6])
+        input("Press enter to continue...")
 
     # Evaluate Jacobian numerically
     Fx = _F_HYPERSONIC_FUNC(mx, T_bar, Isp_bar, beta_bar, rho0_bar, kp_bar, lambda_bar, mu, g0, RE, l1, l2, l3)

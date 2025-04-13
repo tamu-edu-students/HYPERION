@@ -15,14 +15,27 @@ def stkmain(root):
     missile_name = "HypersonicMissile"
 
     # Launch azimuth, initial pitch angle, 3 stage durations, glide L/D
-    params = [-56.178873485210254, 65.67820169636126, 55.56592769, 60.69760793, 72.03804614, 2.610998305555523] # Optimized missile params for this trajectory
-    missile = HypersonicMissile(root, name=missile_name, launch_site=launch_site, target_site=target_site, launch_time=LAUNCH_TIME, h_max=200, params=None)
+    params = [-55.02176,39.93449,30.30027,64.59083,39.10203,1.99101] # Optimized missile params for this trajectory
+    missile = HypersonicMissile(root, name=missile_name, launch_site=launch_site, target_site=target_site, launch_time=LAUNCH_TIME, h_max=200, params=params)
     missile.loadObject()
 
-    # Extract ECI Position and Velocity
-    missile_t_store, missile_x_store = missile.getECIState()
+    missile_t_store = np.hstack([seg.t for seg in missile.trajectory]) 
+    missile_x_store = np.hstack([seg.y for seg in missile.trajectory]).T  
 
-    np.savez(os.path.join(DATA_DIR, MISSILE_STORE_FILENAME), t_store=missile_t_store, x_store=missile_x_store)
+    phase_labels = ["boost1", "boost2", "boost3", "ballistic", "glide"]
+    segment_flags = []
+
+    for i, seg in enumerate(missile.trajectory):
+        n_pts = seg.t.size
+        segment_flags.append(np.full(n_pts, phase_labels[i]))
+
+    missile_phase_store = np.concatenate(segment_flags)    
+
+    np.savez(
+    os.path.join(DATA_DIR, MISSILE_STORE_FILENAME),
+    t_store=missile_t_store,
+    x_store=missile_x_store,
+    phase_store=missile_phase_store)
 
     print("Saved ground truth.")
 

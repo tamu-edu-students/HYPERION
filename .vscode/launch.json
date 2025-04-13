@@ -5,7 +5,7 @@
             "name": "Run Tracking Module",
             "type": "debugpy",
             "request": "launch",
-            "module": "simulations.tracking.test",
+            "module": "simulations.tracking.main",
             "justMyCode": true,
             "console": "integratedTerminal"
         }
