@@ -12,6 +12,7 @@ from scipy.optimize import minimize
 from icecream import ic
 from scipy.integrate import solve_ivp
 from .constants import *
+from .analyze import plot_altitude, plot_trajectory_2D, plot_speed
 from src import *
 
 def propagate(mxkm1_post: np.ndarray, Pxxkm1_post: np.ndarray, Qs: np.ndarray, nom_params: list[float], tkm1, tk) -> tuple[np.ndarray, np.ndarray]:
@@ -115,7 +116,6 @@ def run_ekf(meas_noise: list=None, process_noise: list=None, ex0: np.ndarray=Non
         sigma_kp**2,
         sigma_lambda**2
     ])
-    # Pxx0 = np.zeros((13, 13))
 
     if ex0 is None:
         mx0 = tgt_x0 + np.random.multivariate_normal(np.zeros(dim_state_estimate), Pxx0)
@@ -134,7 +134,7 @@ def run_ekf(meas_noise: list=None, process_noise: list=None, ex0: np.ndarray=Non
 
     # Unmodeled acceleration
     if process_noise is None:
-        q_ax = q_ay = q_az = 1e-7 # km^2/s^5
+        q_ax = q_ay = q_az = 5e-6 # km^2/s^5
     else:
         q_ax, q_ay, q_az = process_noise
 
@@ -142,7 +142,7 @@ def run_ekf(meas_noise: list=None, process_noise: list=None, ex0: np.ndarray=Non
     Qs = np.diag([0, 0, 0, q_ax, q_ay, q_az, 0, 0, 0, 0, 0, 0, 0])
     
     if meas_noise is None:
-        sigma_az = sigma_el = asc2rad(3)
+        sigma_az = sigma_el = np.deg2rad(0.03)
     else:
         sigma_az, sigma_el = meas_noise
     
@@ -181,6 +181,8 @@ def run_ekf(meas_noise: list=None, process_noise: list=None, ex0: np.ndarray=Non
     # Normalized Estimation Error Squared (NEES)
     nees_store = []
 
+    last_phase = None
+
     for k in range(1, num_meas):
         tkm1 = ekf_store.t[k-1]
         mxkm1_post = ekf_store.mx_post[:, k-1]
@@ -197,19 +199,25 @@ def run_ekf(meas_noise: list=None, process_noise: list=None, ex0: np.ndarray=Non
         tgt_idx = np.argmin(np.abs(t_store - abs_tk))
         tgt_xk = x_m_store[tgt_idx]
 
-        if phase_store[tgt_idx] == "boost1":
+        phase = phase_store[tgt_idx]
+
+        if phase != last_phase:
+            print(f"--- Phase transition to {phase} at t = {tk:.2f} ---")
+            last_phase = phase
+
+        if phase == "boost1":
             T_bar = 209 * G0 
             Isp_bar = 259
             lambda_bar = 0
-        elif phase_store[tgt_idx] == "boost2":
+        elif phase == "boost2":
             T_bar = 124.7 * G0 
             Isp_bar = 309
             lambda_bar = 0
-        elif phase_store[tgt_idx] == "boost3":
+        elif phase == "boost3":
             T_bar = 29.48 * G0
             Isp_bar = 300 
             lambda_bar = 0
-        elif phase_store[tgt_idx] == "ballistic":
+        elif phase == "ballistic":
             T_bar = 0
             Isp_bar = 1e6
             lambda_bar = 0
@@ -268,10 +276,23 @@ def run_ekf(meas_noise: list=None, process_noise: list=None, ex0: np.ndarray=Non
         ekf_store.z[:, k] = zk 
 
         try:
-            nees_k = exk_post.T @ np.linalg.inv(Pxxk_post) @ exk_post
+            nees_k = exk_post[0:6].T @ np.linalg.inv(Pxxk_post[0:6, 0:6]) @ exk_post[0:6]
             nees_store.append(nees_k)
         except np.linalg.LinAlgError:
-            nees_store.append(np.inf)    
+            nees_store.append(np.inf)   
+
+    if tk + t_store[0] < t_store[-1]:
+        mxf, Pxxf = propagate(mxk_post, Pxxk_post, Qs, nom_params, tk, t_store[-1] - t_store[0])
+        r_rss = km2m(np.sqrt(np.sum(np.diag(Pxxf)[0:3])))
+        v_rss = km2m(np.sqrt(np.sum(np.diag(Pxxf)[3:6])))
+
+        exf = x_m_store[-1] - mxf 
+
+        nees = exf[0:6].T @ np.linalg.inv(Pxxf[0:6, 0:6]) @ exf[0:6]
+
+        print(f"Final position RSS: {r_rss:.2f} m")
+        print(f"Final velocity RSS: {v_rss:.2f} m/s")
+        print(f"Final NEES score: {nees:.2f}")
 
     end = time.time()
     duration = end - start
@@ -390,7 +411,7 @@ def run_monte_carlo(num_samples=1000):
             ex_samples.append(ekf_store.ex.copy())
             sx_samples.append(ekf_store.sx.copy())
 
-    tz = ekf_store.tz
+    t = ekf_store.t
 
     ex_matrix = np.stack(ex_samples, axis=-1) 
     sx_matrix = np.stack(sx_samples, axis=-1) 
@@ -401,7 +422,7 @@ def run_monte_carlo(num_samples=1000):
 
     with open(os.path.join(DATA_DIR, MONTE_CARLO_FILENAME + ".pkl"), "wb") as f:
         pickle.dump({
-            "tz": tz,
+            "t": t,
             "ex_sample": ex_sample_mean,
             "sx_sample": sx_sample,
             "sx_ekf": sx_ekf
@@ -412,15 +433,19 @@ def run_monte_carlo(num_samples=1000):
     print(f"Monte Carlo completed after {duration:.2f} s.")
 
 def evaluate_sensor_degradation():
-    sensor_store = np.load(os.path.join(DATA_DIR, SENSOR_STORE_FILENAME+".npz"), allow_pickle=True)
+    sensor_store = np.load(os.path.join(DATA_DIR, SENSOR_STORE_FILENAME + ".npz"), allow_pickle=True)
     all_least_used = get_least_used_sensors(sensor_store)
 
     print(f"Sensors ranked by least usage: {all_least_used}")
-    input("Press enter to continue...")
 
     for i in range(len(all_least_used)):
         exclude = all_least_used[:i]
         print(f"\n=== Running EKF with {len(exclude)} sensor(s) excluded: {exclude} ===")
         mean_nees = run_ekf(exclude_sensors=exclude)
         print(f"Mean NEES with {len(exclude)} sensor(s) excluded: {mean_nees:.4f}")
-        input("Press enter to continue...")
+
+        # === Call plotting functions with numbered filenames ===
+        suffix = f"_{i}"
+        plot_altitude(filename="altitude" + suffix)
+        plot_trajectory_2D(filename="trajectory" + suffix)
+        plot_speed(filename="speed" + suffix)

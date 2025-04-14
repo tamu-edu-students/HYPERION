@@ -29,22 +29,22 @@ def plot_ekf():
     t = ekf_store.t  
     ex = ekf_store.ex  
     sx = ekf_store.sx 
-    t_interleaved = sec2min(t.repeat(2))
+    t_interleaved = t.repeat(2)
 
-    labels_pos = [r"$x$ [m]", r"$y$ [m]", r"$z$ [m]"]
+    labels_pos = [r"$x$ [km]", r"$y$ [km]", r"$z$ [km]"]
     labels_vel = [r"$\dot{x}$ [m/s]", r"$\dot{y}$ [m/s]", r"$\dot{z}$ [m/s]"]
 
     # --- Position Error Plots ---
     fig_pos, axs_pos = plt.subplots(3, 1, figsize=(8, 9), sharex=True)
     for i in range(3):
-        axs_pos[i].plot(t_interleaved, 1000 * ex[i, :], label="Error", color="black")
-        axs_pos[i].plot(t_interleaved, 1000 * 3 * sx[i, :], color="tab:blue", label=r"$\pm3\sigma$")
-        axs_pos[i].plot(t_interleaved, 1000 * -3 * sx[i, :], color="tab:blue")
+        axs_pos[i].plot(t_interleaved, ex[i, :], label="Error", color="black")
+        axs_pos[i].plot(t_interleaved, 3 * sx[i, :], color="tab:blue", label=r"$\pm3\sigma$")
+        axs_pos[i].plot(t_interleaved, -3 * sx[i, :], color="tab:blue")
         axs_pos[i].set_ylabel(labels_pos[i])
         axs_pos[i].grid(True)
-        axs_pos[i].set_ylim(-1000, 1000)
+        axs_pos[i].set_ylim(-5, 5)
 
-    axs_pos[-1].set_xlabel("Time Elapsed [min]")
+    axs_pos[-1].set_xlabel("Time Elapsed [s]")
     axs_pos[0].legend(loc="upper right")
     plt.tight_layout()
     plt.savefig(os.path.join(FIGURES_DIR, POSITION_ERROR_FILENAME+".pdf"))
@@ -60,7 +60,7 @@ def plot_ekf():
         axs_vel[i-3].grid(True)
         axs_vel[i-3].set_ylim(-100, 100)
 
-    axs_vel[-1].set_xlabel("Time Elapsed [min]")
+    axs_vel[-1].set_xlabel("Time Elapsed [s]")
     axs_vel[0].legend(loc="upper right")
     plt.tight_layout()
     plt.savefig(os.path.join(FIGURES_DIR, VELOCITY_ERROR_FILENAME+".pdf"))
@@ -115,12 +115,7 @@ def plot_monte_carlo():
     plt.savefig(os.path.join(FIGURES_DIR, MONTE_CARLO_VELOCITY_FILENAME+".png"))
     plt.close(fig_vel)
 
-def plot_trajectory_2D(t0_utc):
-    """
-    Parameters
-    ----------
-    - t0_utc: Launch time in SPICE format, e.g. "2025 MAR 19 22:21:50.000"
-    """
+def plot_trajectory_2D(filename: str = None):
     # Load EKF and missile data
     with open(os.path.join(DATA_DIR, EKF_STORE_FILENAME + ".pkl"), "rb") as f:
         ekf_store = pickle.load(f)
@@ -133,7 +128,7 @@ def plot_trajectory_2D(t0_utc):
     t_ekf = ekf_store.t  # Relative to launch time
 
     # Convert launch time to datetime and SPICE ephemeris time (ET)
-    t0_et = spice.str2et(t0_utc)
+    t0_et = spice.str2et(LAUNCH_TIME)
 
     ### Convert missile truth ECI to lat/lon ###
     et_missile = t0_et + t_store  # seconds since ref time
@@ -183,7 +178,11 @@ def plot_trajectory_2D(t0_utc):
 
     plt.legend(loc="upper right")
     plt.tight_layout()
-    plt.savefig(os.path.join(FIGURES_DIR, TRAJECTORY_2D_FILENAME + ".pdf"))
+
+    if filename is None:
+        plt.savefig(os.path.join(FIGURES_DIR, "trajectory", TRAJECTORY_2D_FILENAME + ".pdf"))
+    else:
+        plt.savefig(os.path.join(FIGURES_DIR, "trajectory", filename + ".pdf"))
     plt.close(fig)
 
 def plot_trajectory_3D():
@@ -234,7 +233,7 @@ def plot_trajectory_3D():
     plt.savefig(os.path.join(FIGURES_DIR, TRAJECTORY_3D_FILENAME + ".pdf"))
 
 ### Plot ###
-def plot_altitude():
+def plot_altitude(filename: str = None):
     plt.figure(figsize=(8, 5))
 
     # Define segment styling
@@ -287,9 +286,13 @@ def plot_altitude():
     plt.grid(True)
     plt.legend()
     plt.tight_layout()
-    plt.savefig(os.path.join(FIGURES_DIR, "altitude.pdf"))
 
-def plot_speed():
+    if filename is None:
+        plt.savefig(os.path.join(FIGURES_DIR, "altitude", "altitude.pdf"))
+    else:
+        plt.savefig(os.path.join(FIGURES_DIR, "altitude", filename + ".pdf"))
+
+def plot_speed(filename: str = None):
     plt.figure(figsize=(8, 5))
 
     # Phase colors and labels
@@ -342,4 +345,108 @@ def plot_speed():
     plt.grid(True)
     plt.legend()
     plt.tight_layout()
-    plt.savefig(os.path.join(FIGURES_DIR, "speed.pdf"))
+
+    if filename is None:
+        plt.savefig(os.path.join(FIGURES_DIR, "speed", "speed.pdf"))
+    else:
+       plt.savefig(os.path.join(FIGURES_DIR, "speed", filename + ".pdf")) 
+
+def plot_downrange(filename: str = None):
+    # === Load missile data ===
+    missile_store = np.load(os.path.join(DATA_DIR, MISSILE_STORE_FILENAME + ".npz"), allow_pickle=True)
+    t_store = missile_store["t_store"]
+    x_m_store = missile_store["x_store"]
+    phase_store = missile_store["phase_store"]
+
+    # === Compute downrange and altitude ===
+    altitudes = []
+    downranges = []
+    total_range = 0.0
+    prev_r_ecef = None
+
+    t0_et = spice.str2et(LAUNCH_TIME)
+
+    for i in range(len(t_store)):
+        r_eci = x_m_store[i, 0:3]
+        t = t_store[i]
+
+        mat = spice.pxform("J2000", "ITRF93", t0_et + t)
+        r_ecef = mat @ r_eci
+        h = np.linalg.norm(r_ecef) - R_E
+        altitudes.append(h)
+
+        if prev_r_ecef is None:
+            downranges.append(0.0)
+        else:
+            dR = np.linalg.norm(r_ecef - prev_r_ecef)
+            total_range += dR
+            downranges.append(total_range)
+
+        prev_r_ecef = r_ecef
+
+    downranges = np.array(downranges)
+    altitudes = np.array(altitudes)
+
+    h_max_idx = np.argmax(altitudes)
+
+    # Start of re-entry: first drop below 100 km after max altitude
+    reentry_start = h_max_idx + np.argmax(altitudes[h_max_idx:] < 100)
+
+    # Pull-up: from trough to next peak
+    trough_idx = reentry_start + np.argmin(altitudes[reentry_start:h_max_idx + 300])
+    pullup_window = 200  
+    end_idx = min(trough_idx + pullup_window, len(altitudes))
+    pullup_end = trough_idx + np.argmax(altitudes[trough_idx:end_idx])
+
+    # Glide: from pull-up peak to 2 km
+    glide_end = pullup_end + np.argmax(altitudes[pullup_end:] < 20)
+
+    # Phase masks
+    boost3_end = np.where(phase_store == "boost3")[0][-1] + 1
+
+    phase_masks = {
+        "Boost Phase 1": (phase_store == "boost1"),
+        "Boost Phase 2": (phase_store == "boost2"),
+        "Boost Phase 3": (phase_store == "boost3"),
+        "Ballistic": np.zeros_like(altitudes, dtype=bool),
+        "Re-entry": np.zeros_like(altitudes, dtype=bool),
+        "Pull-up": np.zeros_like(altitudes, dtype=bool),
+        "Glide": np.zeros_like(altitudes, dtype=bool),
+        "Dive": np.zeros_like(altitudes, dtype=bool),
+    }
+
+    phase_masks["Ballistic"][boost3_end:h_max_idx] = True
+    phase_masks["Re-entry"][h_max_idx:trough_idx] = True
+    phase_masks["Pull-up"][trough_idx:pullup_end] = True
+    phase_masks["Glide"][pullup_end:glide_end] = True
+    phase_masks["Dive"][glide_end:] = True
+
+
+    phase_colors = {
+        "Boost Phase 1": "tab:red",
+        "Boost Phase 2": "tab:orange",
+        "Boost Phase 3": "tab:green",
+        "Ballistic": "tab:olive",
+        "Re-entry": "tab:purple",
+        "Pull-up": "tab:blue",
+        "Glide": "tab:cyan",
+        "Dive": "tab:gray",
+    }
+
+    # === Plot ===
+    plt.figure(figsize=(8, 5))
+    for phase, mask in phase_masks.items():
+        if np.any(mask):
+            plt.plot(downranges[mask], altitudes[mask],
+                     color=phase_colors[phase], label=phase, linewidth=2)
+
+    plt.xlabel("Downrange [km]")
+    plt.ylabel("Altitude [km]")
+    plt.grid(True)
+    plt.legend()
+    plt.tight_layout()
+
+    if filename is None:
+        plt.savefig(os.path.join(FIGURES_DIR, "downrange.pdf"))
+    else:
+        plt.savefig(os.path.join(FIGURES_DIR, filename + ".pdf"))
